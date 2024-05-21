@@ -16,10 +16,13 @@ import SponsorTier from "../components/sponsor-tier.astro";
             if (email_input === null) {
                 return;
             }
-
             await fetch(
                 `https://docs.google.com/forms/d/e/1FAIpQLSehxA98qwT-AILVWUoxOMTrYXfuphVas5o5WTazUGc3M1lH0Q/formResponse?&submit=Submit?usp=pp_url&entry.844319193=${(email_input as HTMLInputElement).value}`,
-            );
+            ).catch(() => {});
+
+            document
+                .querySelectorAll("[signup-ok]")
+                .forEach((i) => (i.innerHTML = "signup ok"));
             return false;
         });
     });
@@ -65,6 +68,7 @@ import SponsorTier from "../components/sponsor-tier.astro";
                 <button type="submit" class="button button-primary"
                     >Sign Up</button
                 >
+                <p signup-ok></p>
             </form>
         </p>
     </div>
