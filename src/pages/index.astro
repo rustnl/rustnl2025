@@ -7,24 +7,64 @@ import Sponsor from "../components/sponsor.astro";
 import SponsorTier from "../components/sponsor-tier.astro";
 ---
 
+<script>
+    document.querySelectorAll("[signup-form]").forEach((form) => {
+        form.addEventListener("submit", async (e: SubmitEvent) => {
+            e.preventDefault();
+            console.log(e);
+            await fetch(
+                `https://docs.google.com/forms/d/e/1FAIpQLSehxA98qwT-AILVWUoxOMTrYXfuphVas5o5WTazUGc3M1lH0Q/formResponse?&submit=Submit?usp=pp_url&entry.844319193=${document.getElementById("email-signup").value}`,
+            );
+            return false;
+        });
+    });
+</script>
+
 <HomeLayout>
     <div class="markdown" slot="explainer">
-        <h1 id="explainer">RustNL 2024</h1>
+        <h1 id="explainer">RustWeek 2025</h1>
         <p>
-            RustNL 2024 is a wrap!<br />
-            Check out the recordings of Day 1 and 2 <a href="/live">here</a>.
+            After the <a href="https://2024.rustnl.org">2024 conference</a> we organised,
+            we knew we wanted more.
+            <br />
+            <br />
         </p>
-        <p>
-            RustNL 2024 was:
-        </p>
+        <p>RustWeek 2025</p>
         <ul>
-            <li><strong>Two days</strong> of talks and workshops</li>
-            <li>Interaction space and plenty of breaks to talk</li>
-            <li>425 students, professionals, companies and individuals</li>
+            <li><strong>Two days</strong> of talks</li>
+            <li>Interaction space and plenty of breaks to talk and connect</li>
+            <li>Activities, in and around Delft</li>
+            <li>
+                A two day unconference for project members and various working
+                groups
+            </li>
         </ul>
+        <p>
+            RustWeek 2025 is a conference organised by <a href="#about"
+                >RustNL</a
+            >
+        </p>
+        <p>
+            If you want a heads up when tickets are available, feel free to
+            leave your email address here: <br />(we won't advertise other
+            things through it)
+            <form signup-form class="button-group email-signup">
+                <input
+                    type="text"
+                    id="email-signup"
+                    name="email-signup"
+                    aria-label="Email"
+                    placeholder="email@example.com"
+                    required
+                />
+                <button type="submit" class="button button-primary"
+                    >Sign Up</button
+                >
+            </form>
+        </p>
     </div>
     <Fragment slot="sponsors">
-        <h3 class="text-2xl text-center">Our sponsors</h3>
+        <h3 class="text-2xl text-center">Last Year's Sponsors</h3>
         <SponsorTier name="Headline sponsor">
             <div class="sponsors-row">
                 <Sponsor
@@ -284,3 +324,13 @@ import SponsorTier from "../components/sponsor-tier.astro";
         </p>
     </div>
 </HomeLayout>
+
+<style>
+    input[type="text"] {
+        border-radius: var(--space-1);
+        font-size: var(--font-size-md);
+        font-weight: 700;
+        min-height: var(--space-12);
+        padding-inline: var(--space-6);
+    }
+</style>

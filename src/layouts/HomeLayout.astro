@@ -8,18 +8,21 @@ import "../styles/index.scss";
 
 <!doctype html>
 <html lang="en">
-  <Head title="RustNL 2024" />
+  <Head title="RustWeek" />
   <body>
     <Header />
     <div class="space-y-24">
       <section class="hero">
         <img src="/images/logo.svg" alt="Logo RustNL 2024" />
-        <p>May 7 & 8, 2024<br /><strong>Delft</strong>, The Netherlands</p>
+        <p>May 12 - 16, 2025<br /><strong>Delft</strong>, The Netherlands</p>
         <div class="button-group">
           <!-- href="https://www.eventbrite.nl/e/rustnl-2024-tickets-790061233417?aff=oddtdtcreator" -->
           <!-- a href="/directions" class="button button-primary">Directions</a-->
-          <a href="/schedule" class="button button-primary">Schedule</a>
-          <a href="/live" class="button button-secondary">🔴 Live recordings</a>
+          <!-- <a href="/schedule" class="button button-primary">Schedule</a> -->
+          <!-- <a href="/live" class="button button-secondary">🔴 Live recordings</a> -->
+          <!-- <a href="https://2024.rustnl.org" class="button button-secondary" -->
+          <!-- >Last Year</a -->
+          <!-- > -->
         </div>
         <a class="down-arrow" href="#explainer"></a>
       </section>
@@ -43,18 +46,33 @@ import "../styles/index.scss";
           </div>
         </div>
       </section>
-      <section class="container space-y-6">
+
+      <!-- <section class="container space-y-6">
         <h3 class="text-2xl text-center">Speaker highlights</h3>
         <div class="grid md:cols-2 xl:cols-4" id="speakers">
           <slot name="speakers" />
         </div>
       </section>
+
       <section class="container space-y-6">
         <div class="button-group">
           <a href="/speakers" class="button button-primary">All our speakers</a>
         </div>
-      </section>
+      </section> -->
+
       <section class="container space-y-6">
+        <h3 class="text-2xl text-center">Last Year's Speakers</h3>
+        <div class="grid md:cols-2 xl:cols-4" id="speakers">
+          <slot name="speakers" />
+        </div>
+      </section>
+      <div class="button-group">
+        <a href="https://2024.rustnl.org/speakers" class="button button-primary"
+          >All of last year's speakers!</a
+        >
+      </div>
+
+      <!-- <section class="container space-y-6">
         <h3 class="text-2xl text-center">Workshops by</h3>
         <div class="grid md:cols-2 xl:cols-4" id="workshops">
           <slot name="workshops" />
@@ -66,7 +84,8 @@ import "../styles/index.scss";
             href="/workshops">Workshop details</a
           >
         </div>
-      </section>
+      </section> -->
+
       <section class="container sponsors" id="sponsors">
         <slot name="sponsors" />
       </section>
@@ -74,7 +93,7 @@ import "../styles/index.scss";
         <div
           class="text-lg md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
         >
-          <slot name="about" />
+          <slot name="about" id="about" />
         </div>
       </section>
     </div>
