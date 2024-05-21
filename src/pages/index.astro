@@ -7,13 +7,18 @@ import Sponsor from "../components/sponsor.astro";
 import SponsorTier from "../components/sponsor-tier.astro";
 ---
 
-<script lang="javascript">
+<script>
     document.querySelectorAll("[signup-form]").forEach((form) => {
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
-            console.log(e);
+            const email_input: HTMLElement | null =
+                document.getElementById("email-signup");
+            if (email_input === null) {
+                return;
+            }
+
             await fetch(
-                `https://docs.google.com/forms/d/e/1FAIpQLSehxA98qwT-AILVWUoxOMTrYXfuphVas5o5WTazUGc3M1lH0Q/formResponse?&submit=Submit?usp=pp_url&entry.844319193=${document.getElementById("email-signup").value}`,
+                `https://docs.google.com/forms/d/e/1FAIpQLSehxA98qwT-AILVWUoxOMTrYXfuphVas5o5WTazUGc3M1lH0Q/formResponse?&submit=Submit?usp=pp_url&entry.844319193=${(email_input as HTMLInputElement).value}`,
             );
             return false;
         });
