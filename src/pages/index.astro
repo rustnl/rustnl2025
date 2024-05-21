@@ -7,9 +7,9 @@ import Sponsor from "../components/sponsor.astro";
 import SponsorTier from "../components/sponsor-tier.astro";
 ---
 
-<script>
+<script lang="javascript">
     document.querySelectorAll("[signup-form]").forEach((form) => {
-        form.addEventListener("submit", async (e: SubmitEvent) => {
+        form.addEventListener("submit", async (e) => {
             e.preventDefault();
             console.log(e);
             await fetch(
