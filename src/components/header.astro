@@ -4,10 +4,12 @@ const { withLogo } = Astro.props;
 ---
 
 <div class="header">
-  {withLogo &&
-    <a class="logo" href="/">
-      <img src="/images/logo.svg" alt="Logo RustNL 2024" />
-    </a>
+  {
+    withLogo && (
+      <a class="logo" href="/">
+        <img src="/images/logo.svg" alt="Logo Rust Week 2025" />
+      </a>
+    )
   }
   <div class="hamburger button button-primary" data-menu-toggle></div>
   <div class="menu" data-menu>
@@ -17,15 +19,15 @@ const { withLogo } = Astro.props;
 </div>
 
 <script>
-  const toggle = document.querySelector('[data-menu-toggle]');
-  const menu = document.querySelector('[data-menu]');
-  const overlay = document.querySelector('[data-menu-overlay]');
+  const toggle = document.querySelector("[data-menu-toggle]");
+  const menu = document.querySelector("[data-menu]");
+  const overlay = document.querySelector("[data-menu-overlay]");
 
   function toggleMenu() {
-    menu?.classList.toggle('open');
-    overlay?.classList.toggle('open');
-    toggle?.classList.toggle('open');
+    menu?.classList.toggle("open");
+    overlay?.classList.toggle("open");
+    toggle?.classList.toggle("open");
   }
 
-  toggle?.addEventListener('click', toggleMenu)
+  toggle?.addEventListener("click", toggleMenu);
 </script>

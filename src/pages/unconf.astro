@@ -9,7 +9,7 @@ import TimetableItem from "../components/timetable-item.astro";
     <div class="markdown" slot="unconf">
         <h2 class="text-2xl space-y-6" id="unconf">Support the ecosystem</h2>
         <p>
-            RustNL will host an unconference for Rust maintainers and Rust
+            Rust Week will host an unconference for Rust maintainers and Rust
             Project team members on <strong>May 9 & 10</strong>.
         </p>
         <p>
@@ -109,9 +109,17 @@ import TimetableItem from "../components/timetable-item.astro";
         </SponsorTier>
     </div>
     <ul class="timetable" slot="timetable-day1">
-        <TimetableItem time="09:00" title="Venue opens + registration" speaker="Machinehal" />
-        
-        <TimetableItem time="09:30" title="Welcome & Start of Day 1" speaker="Plenary opening @ Machinehal"/>
+        <TimetableItem
+            time="09:00"
+            title="Venue opens + registration"
+            speaker="Machinehal"
+        />
+
+        <TimetableItem
+            time="09:30"
+            title="Welcome & Start of Day 1"
+            speaker="Plenary opening @ Machinehal"
+        />
 
         <TimetableItem
             time="09:45"
@@ -128,7 +136,7 @@ import TimetableItem from "../components/timetable-item.astro";
         />
 
         <TimetableItem time="12:30" title="Lunch" speaker="Machinehal" />
-        
+
         <TimetableItem
             time="13:30"
             title="Unconf break-out sessions"
@@ -150,7 +158,11 @@ import TimetableItem from "../components/timetable-item.astro";
     <ul class="timetable" slot="timetable-day2">
         <TimetableItem time="09:00" title="Venue opens" speaker="Machinehal" />
 
-        <TimetableItem time="09:30" title="Start of day 2" speaker="Machinehal" />
+        <TimetableItem
+            time="09:30"
+            title="Start of day 2"
+            speaker="Machinehal"
+        />
 
         <TimetableItem
             time="09:30"
@@ -167,7 +179,7 @@ import TimetableItem from "../components/timetable-item.astro";
         />
 
         <TimetableItem time="12:30" title="Lunch" speaker="Machinehal" />
-        
+
         <TimetableItem
             time="13:30"
             title="Unconf break-out sessions"

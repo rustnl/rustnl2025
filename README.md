@@ -1,4 +1,4 @@
-# RustNL 2024 Website
+# RustNL 2025 Website
 
 ## Run in development
 
