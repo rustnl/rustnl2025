@@ -16,8 +16,9 @@ import SponsorTier from "../components/sponsor-tier.astro";
             if (email_input === null) {
                 return;
             }
+            //https://docs.google.com/forms/d/e/1FAIpQLScbKj6J5HFPkZYJ714gCn95TviF9XoqfHnC-KFr55NPF6t4aA/formResponse?&submit=Submit?usp=pp_url&entry.197666324=email@example.com
             await fetch(
-                `https://docs.google.com/forms/d/e/1FAIpQLSehxA98qwT-AILVWUoxOMTrYXfuphVas5o5WTazUGc3M1lH0Q/formResponse?&submit=Submit?usp=pp_url&entry.844319193=${(email_input as HTMLInputElement).value}`,
+                `https://docs.google.com/forms/d/e/1FAIpQLScbKj6J5HFPkZYJ714gCn95TviF9XoqfHnC-KFr55NPF6t4aA/formResponse?&submit=Submit?usp=pp_url&entry.197666324=${(email_input as HTMLInputElement).value}`,
             ).catch(() => {});
 
             document
