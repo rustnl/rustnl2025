@@ -31,22 +31,20 @@ import SponsorTier from "../components/sponsor-tier.astro";
 
 <HomeLayout>
     <div class="markdown" slot="explainer">
-        <h1 id="explainer">RustWeek 2025</h1>
+        <h1 id="explainer">Rust Week 2025</h1>
         <p>
-            RustNL will be back in 2025 with a new name, "RustWeek", and - you've guessed it - a full week of Rust!
+            RustNL will be back in 2025 with a new name: <strong
+                >Rust Week</strong
+            ><br />and - you've guessed it - a full week of Rust!
             <br />
         </p>
-        <p>RustWeek 2025</p>
         <ul>
-            <li><strong>Two days</strong> of talks</li>
+            <li>Two days of talks and workshops</li>
             <li>Interaction space and plenty of breaks to talk and connect</li>
-            <li>Activities, in and around Delft</li>
-            <li>
-                A two day unconference for project members and various working
-                groups
-            </li>
+            <li>Social events and activities</li>
+            <li>A two day unconference for project members and maintainers.</li>
         </ul>
-        <p>Looking for the 2024 website? Go <a href="https://2024.rustnl.org">here</a>.</p>
+        <h2 id="explainer">Get updates</h2>
         <p>
             If you want a heads-up when tickets are available, feel free to
             leave your email address here: <br />(we won't advertise other
@@ -66,10 +64,22 @@ import SponsorTier from "../components/sponsor-tier.astro";
                 <p signup-ok></p>
             </form>
         </p>
+        <p>
+            Or follow us on <a href="https://fosstodon.org/@rustnl" rel="me"
+                >Mastodon</a
+            >, <a href="https://twitter.com/Rust_NL">X</a>,
+
+            <a href="https://www.linkedin.com/company/rustnl/">LinkedIn</a>
+        </p>
+        <p>
+            Looking for the 2024 website? Go <a href="https://2024.rustnl.org"
+                >here</a
+            >.
+        </p>
     </div>
     <Fragment slot="sponsors">
         <h3 class="text-2xl text-center">Last Year's Sponsors</h3>
-<SponsorTier name="Ecosystem partners">
+        <SponsorTier name="Ecosystem partners">
             <div class="sponsors-row">
                 <Sponsor
                     name="Rust Foundation"
@@ -78,8 +88,8 @@ import SponsorTier from "../components/sponsor-tier.astro";
                     link="https://foundation.rust-lang.org/"
                 />
             </div>
-        </SponsorTier>        
-<SponsorTier name="Headline sponsor">
+        </SponsorTier>
+        <SponsorTier name="Headline sponsor">
             <div class="sponsors-row">
                 <Sponsor
                     name="Futurewei Technologies"
