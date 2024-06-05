@@ -16,10 +16,10 @@ import SponsorTier from "../components/sponsor-tier.astro";
             if (email_input === null) {
                 return;
             }
-            //https://docs.google.com/forms/d/e/1FAIpQLScbKj6J5HFPkZYJ714gCn95TviF9XoqfHnC-KFr55NPF6t4aA/formResponse?&submit=Submit?usp=pp_url&entry.197666324=email@example.com
+
             await fetch(
-                `https://docs.google.com/forms/d/e/1FAIpQLScbKj6J5HFPkZYJ714gCn95TviF9XoqfHnC-KFr55NPF6t4aA/formResponse?&submit=Submit?usp=pp_url&entry.197666324=${(email_input as HTMLInputElement).value}`,
-            ).catch(() => {});
+                `https://docs.google.com/forms/d/e/1FAIpQLSehxA98qwT-AILVWUoxOMTrYXfuphVas5o5WTazUGc3M1lH0Q/formResponse?&submit=Submit?usp=pp_url&entry.844319193=${(email_input as HTMLInputElement).value}`,
+            );
 
             document
                 .querySelectorAll("[signup-ok]")
@@ -49,20 +49,15 @@ import SponsorTier from "../components/sponsor-tier.astro";
             If you want a heads-up when tickets are available, feel free to
             leave your email address here: <br />(we won't advertise other
             things through it)
-            <form signup-form class="button-group email-signup">
-                <input
-                    type="text"
-                    id="email-signup"
-                    name="email-signup"
-                    aria-label="Email"
-                    placeholder="email@example.com"
-                    required
-                />
-                <button type="submit" class="button button-primary"
-                    >Sign Up</button
+
+            <div class="button-group">
+                <a
+                    class="button button-primary"
+                    style="color: white;"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLScbKj6J5HFPkZYJ714gCn95TviF9XoqfHnC-KFr55NPF6t4aA/viewform?usp=sf_link"
+                    >Sign Up</a
                 >
-                <p signup-ok></p>
-            </form>
+            </div>
         </p>
         <p>
             Or follow us on <a href="https://fosstodon.org/@rustnl" rel="me"
@@ -321,13 +316,3 @@ import SponsorTier from "../components/sponsor-tier.astro";
         />
     </Fragment>
 </HomeLayout>
-
-<style>
-    input[type="text"] {
-        border-radius: var(--space-1);
-        font-size: var(--font-size-md);
-        font-weight: 700;
-        min-height: var(--space-12);
-        padding-inline: var(--space-6);
-    }
-</style>
