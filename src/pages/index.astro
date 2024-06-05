@@ -33,9 +33,7 @@ import SponsorTier from "../components/sponsor-tier.astro";
     <div class="markdown" slot="explainer">
         <h1 id="explainer">RustWeek 2025</h1>
         <p>
-            After the <a href="https://2024.rustnl.org">2024 conference</a> we organised,
-            we knew we wanted more.
-            <br />
+            RustNL will be back in 2025 with a new name, "RustWeek", and - you've guessed it - a full week of Rust!
             <br />
         </p>
         <p>RustWeek 2025</p>
@@ -48,8 +46,9 @@ import SponsorTier from "../components/sponsor-tier.astro";
                 groups
             </li>
         </ul>
+        <p>Looking for the 2024 website? Go <a href="https://2024.rustnl.org">here</a>.</p>
         <p>
-            If you want a heads up when tickets are available, feel free to
+            If you want a heads-up when tickets are available, feel free to
             leave your email address here: <br />(we won't advertise other
             things through it)
             <form signup-form class="button-group email-signup">
@@ -70,7 +69,17 @@ import SponsorTier from "../components/sponsor-tier.astro";
     </div>
     <Fragment slot="sponsors">
         <h3 class="text-2xl text-center">Last Year's Sponsors</h3>
-        <SponsorTier name="Headline sponsor">
+<SponsorTier name="Ecosystem partners">
+            <div class="sponsors-row">
+                <Sponsor
+                    name="Rust Foundation"
+                    tier="ecosystem-partner"
+                    image="rustfoundation.png"
+                    link="https://foundation.rust-lang.org/"
+                />
+            </div>
+        </SponsorTier>        
+<SponsorTier name="Headline sponsor">
             <div class="sponsors-row">
                 <Sponsor
                     name="Futurewei Technologies"
@@ -106,16 +115,6 @@ import SponsorTier from "../components/sponsor-tier.astro";
                 />
             </div>
         </SponsorTier>
-        <!-- SponsorTier name="Livestream partners">
-            <div class="sponsors-row">
-                <Sponsor
-                    name="hyperswitch"
-                    tier="livestream"
-                    image="hyperswitch.png"
-                    link="https://hyperswitch.io"
-                />
-            </div>
-        </SponsorTier -->
         <SponsorTier name="Workshop partner">
             <div class="sponsors-row">
                 <Sponsor
@@ -135,16 +134,6 @@ import SponsorTier from "../components/sponsor-tier.astro";
                     tier="workshop-partner"
                     image="mainmatter.png"
                     link="https://mainmatter.com"
-                />
-            </div>
-        </SponsorTier>
-        <SponsorTier name="Ecosystem partners">
-            <div class="sponsors-row">
-                <Sponsor
-                    name="Rust Foundation"
-                    tier="ecosystem-partner"
-                    image="rustfoundation.png"
-                    link="https://foundation.rust-lang.org/"
                 />
             </div>
         </SponsorTier>
@@ -321,13 +310,6 @@ import SponsorTier from "../components/sponsor-tier.astro";
             youtube="https://www.youtube.com/watch?v=3aLPewRSiK8&list=PL8Q1w7Ff68DCM_fsMM4v9m473sYLvJwHS&index=4"
         />
     </Fragment>
-    <div class="markdown" slot="cfp">
-        <h3 class="text-2xl text-center" id="cfp">Call for Proposals</h3>
-        <p>
-            Our call for proposals closed on Feb 26. We'll announce the selected
-            speakers soon!
-        </p>
-    </div>
 </HomeLayout>
 
 <style>
