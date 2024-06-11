@@ -55,6 +55,14 @@
   img {
     height: auto;
     max-width: 100%;
+    
+    @include mixins.breakpoint(md) {
+      max-width: 60vw;  
+    }
+
+    @include mixins.breakpoint(xl) {
+      max-width: 45vw;
+    }
   }
 
   .nav {
