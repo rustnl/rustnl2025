@@ -37,12 +37,12 @@
 .down-arrow {
   aspect-ratio: 1;
   border: solid var(--color-red-400);
-  border-width: 0 1.5rem 1.5rem 0;
+  border-width: 0 1rem 1rem 0;
   display: inline-block;
   rotate: 0deg;
   animation: MoveUpDown 2s ease-in-out infinite;
   rotate: 45deg;
-  width: 72px;
+  width: 3rem;
 }
 
 
