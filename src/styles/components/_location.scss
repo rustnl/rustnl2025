@@ -63,9 +63,9 @@
 
   .image:nth-of-type(1) {
     aspect-ratio: 16 / 18;
-    background-image: url('/images/delft.jpg');
-    background-position: 16.66% center;
-    background-size: auto 100%;
+    background-image: url('/images/utrecht.webp');
+    background-position: right bottom;
+    background-size: cover;
 
     &.boat {
       background-image: url('/images/boat2.jpg');
@@ -88,7 +88,7 @@
     }
 
     &::before {
-      background-image: url('/images/delft-kerk.png');
+      background-image: url('/images/utrecht-kerk.png');
       background-repeat: no-repeat;
       background-size: auto 100%;
       background-position: 16.66% center;
