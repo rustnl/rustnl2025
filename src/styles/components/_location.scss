@@ -63,7 +63,7 @@
 
   .image:nth-of-type(1) {
     aspect-ratio: 16 / 18;
-    background-image: url('/images/utrecht.webp');
+    background-image: url('/images/utrecht.jpg');
     background-position: right bottom;
     background-size: cover;
 
@@ -90,8 +90,8 @@
     &::before {
       background-image: url('/images/utrecht-kerk.png');
       background-repeat: no-repeat;
-      background-size: auto 100%;
-      background-position: 16.66% center;
+      background-size: cover;
+      background-position: right bottom;
       content: '';
       inset: 0;
       position: absolute;
@@ -105,7 +105,7 @@
 
   .image:nth-of-type(2) {
     aspect-ratio: 16 / 9;
-    background-image: url('/images/lijm.jpg');
+    background-image: url('/images/utrecht-by-night.jpg');
     background-size: 120%;
     background-position: top;
     background-repeat: no-repeat;
