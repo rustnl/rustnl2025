@@ -7,28 +7,6 @@ import Sponsor from "../components/sponsor.astro";
 import SponsorTier from "../components/sponsor-tier.astro";
 ---
 
-<script>
-    document.querySelectorAll("[signup-form]").forEach((form) => {
-        form.addEventListener("submit", async (e) => {
-            e.preventDefault();
-            const email_input: HTMLElement | null =
-                document.getElementById("email-signup");
-            if (email_input === null) {
-                return;
-            }
-
-            await fetch(
-                `https://docs.google.com/forms/d/e/1FAIpQLSehxA98qwT-AILVWUoxOMTrYXfuphVas5o5WTazUGc3M1lH0Q/formResponse?&submit=Submit?usp=pp_url&entry.844319193=${(email_input as HTMLInputElement).value}`,
-            );
-
-            document
-                .querySelectorAll("[signup-ok]")
-                .forEach((i) => (i.innerHTML = "signup ok"));
-            return false;
-        });
-    });
-</script>
-
 <HomeLayout>
     <div class="markdown" slot="explainer">
         <h1 id="explainer">RustWeek 2025</h1>
@@ -65,9 +43,10 @@ import SponsorTier from "../components/sponsor-tier.astro";
             or
             <a href="https://www.linkedin.com/company/rustnl/">LinkedIn</a>.
         </p>
+
         <p>
-            The <strong>Call for Participation</strong> has not been opened yet. Follow our
-            social media to get notified when it opens.
+            The <strong>Call for Participation</strong> has not been opened yet.
+            Follow our social media to get notified when it opens.
         </p>
         <p>
             Looking for the 2024 website? Go <a href="https://2024.rustnl.org"
@@ -76,43 +55,17 @@ import SponsorTier from "../components/sponsor-tier.astro";
         </p>
     </div>
     <Fragment slot="sponsors">
-        <h3 class="text-2xl text-center">Last Year's Sponsors</h3>
-        <SponsorTier name="Ecosystem partners">
-            <div class="sponsors-row">
-                <Sponsor
-                    name="Rust Foundation"
-                    tier="ecosystem-partner"
-                    image="rustfoundation.png"
-                    link="https://foundation.rust-lang.org/"
-                />
-            </div>
-        </SponsorTier>
-        <SponsorTier name="Headline sponsor">
-            <div class="sponsors-row">
-                <Sponsor
-                    name="Futurewei Technologies"
-                    tier="headline"
-                    image="futurewei.png"
-                    link="https://www.futurewei.com/"
-                />
-            </div>
-        </SponsorTier>
-        <SponsorTier name="Silver sponsors">
-            <div class="sponsors-row">
-                <Sponsor
-                    name="Tandemdrive"
-                    tier="silver"
-                    image="tandemdrive.png"
-                    link="https://tandemdrive.com"
-                />
-                <Sponsor
-                    name="hyperswitch"
-                    tier="silver"
-                    image="hyperswitch.png"
-                    link="https://hyperswitch.io"
-                />
-            </div>
-        </SponsorTier>
+        <h3 class="text-2xl text-center">Sponsors</h3>
+        None yet, how about you?
+        <!-- <SponsorTier name="Ecosystem partners"> -->
+        <!--     <div class="sponsors-row"></div> -->
+        <!-- </SponsorTier> -->
+        <!-- <SponsorTier name="Headline sponsor"> -->
+        <!--     <div class="sponsors-row"></div> -->
+        <!-- </SponsorTier> -->
+        <!-- <SponsorTier name="Silver sponsors"> -->
+        <!--     <div class="sponsors-row"></div> -->
+        <!-- </SponsorTier> -->
         <SponsorTier name="Organizing partner">
             <div class="sponsors-row">
                 <Sponsor
@@ -121,90 +74,129 @@ import SponsorTier from "../components/sponsor-tier.astro";
                     image="tweede-golf-v2.png"
                     link="https://tweedegolf.nl"
                 />
+                <Sponsor
+                    name="Hexcat"
+                    tier="organizing-partner"
+                    image="hexcat.png"
+                    link="https://hexcat.nl"
+                />
             </div>
         </SponsorTier>
-        <SponsorTier name="Workshop partner">
+        <!-- <SponsorTier name="Workshop partner"> -->
+        <!--     <div class="sponsors-row"></div> -->
+        <!-- </SponsorTier> -->
+        <!-- <SponsorTier name="Ecosystem supporters"> -->
+        <!--     <div class="sponsors-row"></div> -->
+        <!-- </SponsorTier> -->
+        <!-- <SponsorTier name="NL Community sponsors"> -->
+        <!--     <div class="sponsors-row"></div> -->
+        <!-- </SponsorTier> -->
+        <!-- <SponsorTier name="NL Community supporters"> -->
+        <!--     <div class="sponsors-row"></div> -->
+        <!-- </SponsorTier> -->
+    </Fragment>
+    <Fragment slot="previous-sponsors">
+        <h3 class="text-2xl text-center">Last Year's Sponsors</h3>
+        <div class="sponsors-tiers space-y-6">
             <div class="sponsors-row">
                 <Sponsor
+                    name="Rust Foundation"
+                    tier="last-year"
+                    image="rustfoundation.png"
+                    link="https://foundation.rust-lang.org/"
+                />
+                <Sponsor
+                    name="Futurewei Technologies"
+                    tier="last-year"
+                    image="futurewei.png"
+                    link="https://www.futurewei.com/"
+                />
+                <Sponsor
+                    name="Tandemdrive"
+                    tier="last-year"
+                    image="tandemdrive.png"
+                    link="https://tandemdrive.com"
+                />
+                <Sponsor
+                    name="hyperswitch"
+                    tier="last-year"
+                    image="hyperswitch.png"
+                    link="https://hyperswitch.io"
+                />
+                <Sponsor
+                    name="Tweede golf"
+                    tier="last-year"
+                    image="tweede-golf-v2.png"
+                    link="https://tweedegolf.nl"
+                />
+                <Sponsor
                     name="One Variable"
-                    tier="workshop-partner"
+                    tier="last-year"
                     image="onevariable.png"
                     link="https://onevariable.com"
                 />
                 <Sponsor
                     name="Makepad"
-                    tier="workshop-partner"
+                    tier="last-year"
                     image="makepad.png"
                     link="https://makepad.nl"
                 />
                 <Sponsor
                     name="Mainmatter"
-                    tier="workshop-partner"
+                    tier="last-year"
                     image="mainmatter.png"
                     link="https://mainmatter.com"
                 />
-            </div>
-        </SponsorTier>
-        <SponsorTier name="Ecosystem supporters">
-            <div class="sponsors-row">
                 <Sponsor
                     name="Infineon Technologies"
-                    tier="ecosystem-supporter"
+                    tier="last-year"
                     image="infineon.png"
                     link="https://infineon.com/"
                 />
                 <Sponsor
                     name="Ferrous Systems"
-                    tier="ecosystem-supporter"
+                    tier="last-year"
                     image="ferrous.png"
                     link="https://ferrous-systems.com/"
                 />
-            </div>
-        </SponsorTier>
-        <SponsorTier name="NL Community sponsors">
-            <div class="sponsors-row">
                 <Sponsor
                     name="Technolution"
-                    tier="nl-sponsor"
+                    tier="last-year"
                     image="technolution.png"
                     link="https://technolution.com/"
                 />
                 <Sponsor
                     name="Baseflow"
-                    tier="nl-sponsor"
+                    tier="last-year"
                     image="baseflow.png"
                     link="https://baseflow.com/"
                 />
-            </div>
-        </SponsorTier>
-        <SponsorTier name="NL Community supporters">
-            <div class="sponsors-row">
                 <Sponsor
                     name="Jitter"
-                    tier="nl-supporter"
+                    tier="last-year"
                     image="jitter.png"
                     link="https://jitter.nl/"
                 />
                 <Sponsor
                     name="Polars"
-                    tier="nl-supporter"
+                    tier="last-year"
                     image="polars.png"
                     link="https://pola.rs/"
                 />
                 <Sponsor
                     name="Rocsys"
-                    tier="nl-supporter"
+                    tier="last-year"
                     image="rocsys.png"
                     link="https://rocsys.com/"
                 />
                 <Sponsor
                     name="NLnet Labs"
-                    tier="nl-supporter"
+                    tier="last-year"
                     image="nlnetlabs.png"
                     link="https://nlnetlabs.nl/"
                 />
             </div>
-        </SponsorTier>
+        </div>
     </Fragment>
     <div class="markdown" slot="about">
         <h2 class="text-2xl" id="about">About RustWeek</h2>

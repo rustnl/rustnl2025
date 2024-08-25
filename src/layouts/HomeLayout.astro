@@ -13,7 +13,10 @@ import "../styles/index.scss";
         <Header />
         <div class="space-y-24">
             <section class="hero">
-                <img src="/svg/hero-logo-rustweek-by-rustnl.svg" alt="Logo RustWeek 2025" />
+                <img
+                    src="/svg/hero-logo-rustweek-by-rustnl.svg"
+                    alt="Logo RustWeek 2025"
+                />
                 <p>May 13 - 17, 2025<br /> Utrecht, The Netherlands</p>
                 <div class="button-group">
                     <a href="#updates" class="button button-primary"
@@ -86,6 +89,9 @@ import "../styles/index.scss";
 
             <section class="container sponsors" id="sponsors">
                 <slot name="sponsors" />
+            </section>
+            <section class="container sponsors" id="sponsors">
+                <slot name="previous-sponsors" />
             </section>
             <section class="container md:grid md:cols-12">
                 <div

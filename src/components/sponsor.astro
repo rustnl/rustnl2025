@@ -21,6 +21,7 @@ switch (tier) {
         className = "size-s";
         break;
     case "nl-supporter":
+    case "last-year":
     case "ecosystem-supporter":
         className = "size-xs";
         break;
@@ -42,13 +43,15 @@ switch (tier) {
 }
 {
     !image && (
-        <span class="markdown"><a
-            title={name}
-            href={link}
-            target="_blank"
-            class={`${className}` + " text-lg"}
-        >
-            {name}
-        </a></span>
+        <span class="markdown">
+            <a
+                title={name}
+                href={link}
+                target="_blank"
+                class={`${className}` + " text-lg"}
+            >
+                {name}
+            </a>
+        </span>
     )
 }
