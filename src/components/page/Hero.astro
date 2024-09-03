@@ -10,7 +10,7 @@ const { style = "page" }: Props = Astro.props;
     <slot />
 </section>
 
-<style lang="scss">
+<style lang="scss" is:global>
     @import "../../styles/breakpoint.scss";
     @import "../../styles/variables.scss";
 
@@ -35,7 +35,7 @@ const { style = "page" }: Props = Astro.props;
 
         @include breakpoint(md) {
             border-width: space(6) space(6) 0 space(6);
-            padding-block: space(1) 2;
+            padding-block: space(12);
             padding-inline: space(6);
         }
 

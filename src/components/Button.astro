@@ -16,7 +16,7 @@ const { link, ty = "primary", inFooter = false }: Props = Astro.props;
     <slot>{link}</slot>
 </a>
 
-<style lang="scss">
+<style lang="scss" is:global>
     @import "../styles/variables.scss";
 
     .button {

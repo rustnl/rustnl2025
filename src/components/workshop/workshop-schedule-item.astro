@@ -7,7 +7,7 @@ interface Props {
     on: boolean;
 }
 
-const { name, author, span, link, on } = Astro.props;
+const { name, author, span, on } = Astro.props;
 ---
 
 <a class:list={["workshop-schedule ", { on: on }]} href={`/workshops/${name}`}>

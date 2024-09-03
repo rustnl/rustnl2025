@@ -19,7 +19,7 @@ const { withLogo = false }: Props = Astro.props;
             </a>
         )
     }
-    <div class="hamburger button button-primary" data-menu-toggle></div>
+    <div class="hamburger button primary" data-menu-toggle></div>
     <div class="menu" data-menu>
         <Menu location="header" />
     </div>
@@ -93,6 +93,7 @@ const { withLogo = false }: Props = Astro.props;
             translate: 0 100%;
             visibility: hidden;
             width: calc(100% - space(8));
+            gap: space(3);
 
             @include breakpoint(lg) {
                 align-items: center;
