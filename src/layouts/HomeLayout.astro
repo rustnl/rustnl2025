@@ -49,6 +49,10 @@ import "../styles/index.scss";
             font-size: $font-size-xl;
             text-align: center;
         }
+
+        .leftheader {
+            font-size: $font-size-2xl;
+        }
     </style>
 
     <Head title="RustWeek 2025" />
@@ -110,7 +114,7 @@ import "../styles/index.scss";
                 <div
                     class="about md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
                 >
-                    <h3 id="about" class="header">About RustWeek</h3>
+                    <h3 id="about" class="leftheader">About RustWeek</h3>
 
                     <slot name="about" id="about" />
                 </div>
