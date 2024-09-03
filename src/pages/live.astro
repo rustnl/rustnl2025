@@ -1,28 +1,36 @@
 ---
-import LiveLayout from "../layouts/LiveLayout.astro";
+import CommonLayout from "../layouts/CommonLayout.astro";
 ---
 
-<LiveLayout>
+<CommonLayout title="🔴 Live recordings" header="RustWeek Live">
     <div>
         <br /><br />
-        <h2 class="text-2xl">Day 1</h2>
+        <h2>Conference Day 1</h2>
         <iframe
             style="aspect-ratio: 16/9; width:60vw;"
-            src="https://www.youtube.com/embed/XLefuzE-ABU?si=ou4-PMZx0dkQ_t5a"
-            title="RustNL 2024 Conference Day 1"
+            src=""
+            title="RustWeek 2025 Conference Day 1"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen></iframe>
         <br /><br /><br /><br />
-        <h2 class="text-2xl">Day 2</h2>
+        <h2>Conference Day 2</h2>
         <iframe
             style="aspect-ratio: 16/9; width:60vw;"
-            src="https://www.youtube.com/embed/521NfGf7AR0"
-            title="RustNL 2024 Conference Day 2"
+            src=""
+            title="RustWeek 2025 Conference Day 2"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen></iframe>
     </div>
-</LiveLayout>
+</CommonLayout>
+
+<style lang="scss">
+    @import "../styles/variables.scss";
+
+    h2 {
+        font-size: font-size-2xl;
+    }
+</style>

@@ -1,0 +1,57 @@
+---
+import Menu from "./menu.astro";
+---
+
+<footer class="footer">
+    <div class="menu">
+        <Menu location="footer" />
+    </div>
+    <div class="menu">
+        <!-- <a href="/directions">Directions</a> -->
+        <!-- <a href="/boat">Boat to venue</a> -->
+        <!-- <a href="/workshops">Workshops</a> -->
+        <!-- <a href="/unconf">RustNL 2024 unconf</a> -->
+        <!-- <a href="https://europe2024.gosim.org/">Co-located event: GOSIM Europe</a> -->
+    </div>
+    <div class="menu">
+        <!-- <a href="/resources/sponsorship-prospectus-rustnl-2024.pdf">Sponsorships</a> -->
+        <a href="/code-of-conduct">Code of conduct</a>
+        <a href="/accessibility">Accessibility</a>
+        <!-- <a href="/health-brief">Health and Safety Policy</a> -->
+        <!-- <a href="/directions">Getting to the Venue</a> -->
+        <a href="https://twitter.com/Rust_NL">X</a>
+        <a href="https://fosstodon.org/@rustnl" rel="me">Mastodon</a>
+        <a href="https://www.linkedin.com/company/rustnl/">LinkedIn</a>
+    </div>
+</footer>
+
+<style lang="scss">
+    @import "../../styles/variables.scss";
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: $color-red-400;
+        margin-block-start: space(24);
+        padding: space(8) space(4);
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: space(4);
+
+            &:first-of-type,
+            &:nth-of-type(2) {
+                border-block-end: 1px solid $color-red-500;
+                margin-block-end: space(3);
+                padding-block-end: space(3);
+            }
+
+            a {
+                color: $color-neutral-400;
+            }
+        }
+    }
+</style>

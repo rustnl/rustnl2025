@@ -1,0 +1,36 @@
+@use 'sass:math';
+@import './breakpoint.scss';
+
+$color-neutral-400: #FFF0E6;
+$color-neutral-500: #FFE6D6;
+
+$color-red-400: #E74310;
+$color-red-500: #B33118;
+$color-blue-400: #729ECB;
+$color-yellow-400: #FFA700;
+$color-yellow-500: #E69601;
+
+$font-family: 'Work Sans',
+  sans-serif;
+$font-size-scale: 1.333;
+$font-size-base: 1rem;
+$font-size-md: $font-size-base;
+$font-size-lg: calc($font-size-md * $font-size-scale);
+$font-size-xl: calc($font-size-lg * $font-size-scale);
+$font-size-2xl: calc($font-size-xl * $font-size-scale);
+$font-size-3xl: calc($font-size-2xl * $font-size-scale);
+
+$font-weight-light: 300;
+
+$line-height-normal: 1.5;
+$line-height-tight: 1.125;
+
+
+@function space($i) {
+  @return calc(0.25rem * $i)
+}
+
+
+@include breakpoint(xl) {
+  $font-size-scale: 1.414;
+}

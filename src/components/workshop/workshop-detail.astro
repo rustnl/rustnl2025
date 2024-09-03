@@ -1,0 +1,24 @@
+---
+const { title, time, id } = Astro.props;
+---
+
+<div class="markdown workshop-detail">
+    <div class="space-y-6">
+        <h2>{title}</h2>
+        <strong>
+            {time}
+        </strong>
+        <div class="space-y-6" id={id}>
+            <slot />
+        </div>
+    </div>
+</div>
+
+<style lang="scss">
+    @import "../../styles/variables.scss";
+
+    .workshop-detail h2 {
+        font-size: $font-size-lg;
+        font-style: italic;
+    }
+</style>

@@ -1,0 +1,22 @@
+---
+
+---
+
+<div class="button-group">
+    <slot />
+</div>
+
+<style lang="scss">
+    @import "../styles/variables.scss";
+
+    .button-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: space(3);
+        justify-content: center;
+    }
+
+    .button-group-center {
+        justify-content: center;
+    }
+</style>

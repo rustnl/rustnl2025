@@ -1,0 +1,43 @@
+---
+import Head from "../components/page/head.astro";
+import Footer from "../components/page/footer.astro";
+import Header from "../components/page/header.astro";
+import Hero from "../components/page/Hero.astro";
+import "../styles/index.scss";
+
+interface Props {
+    title: string;
+    header: string;
+    withLogo?: boolean;
+}
+
+const { title, header, withLogo = false } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <Head title={`${title} - Rust Week 2025`} />
+
+    <body>
+        <style lang="scss">
+            @import "../styles/variables.scss";
+
+            .header {
+                font-size: $font-size-3xl;
+            }
+        </style>
+
+        <Header withLogo={withLogo} />
+
+        <Hero>
+            <h1 class="header">{header}</h1>
+            <slot name="hero" />
+        </Hero>
+
+        <section class="main">
+            <slot />
+        </section>
+
+        <Footer />
+    </body>
+</html>

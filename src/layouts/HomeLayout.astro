@@ -1,102 +1,117 @@
 ---
-import Head from "../components/head.astro";
-import Header from "../components/header.astro";
-import Footer from "../components/footer.astro";
+import Head from "../components/page/head.astro";
+import Header from "../components/page/header.astro";
+import Footer from "../components/page/footer.astro";
+import Hero from "../components/page/Hero.astro";
+
+import ButtonGroup from "../components/ButtonGroup.astro";
+import Button from "../components/Button.astro";
+
+import Sponsors from "../components/sponsor/Sponsors.astro";
+
+import Location from "../components/Location.astro";
 
 import "../styles/index.scss";
 ---
 
 <!doctype html>
 <html lang="en">
+    <style lang="scss">
+        @import "../styles/variables.scss";
+
+        .down-arrow {
+            aspect-ratio: 1;
+            border: solid $color-red-400;
+            border-width: 0 1rem 1rem 0;
+            display: inline-block;
+            rotate: 0deg;
+            animation: MoveUpDown 2s ease-in-out infinite;
+            rotate: 45deg;
+            width: 3rem;
+        }
+
+        @keyframes MoveUpDown {
+            0%,
+            100% {
+                translate: 0 0;
+            }
+            50% {
+                translate: 0 0.4em;
+            }
+        }
+
+        .explainer,
+        .about {
+            font-size: $font-size-lg;
+        }
+
+        .header {
+            font-size: $font-size-xl;
+            text-align: center;
+        }
+    </style>
+
     <Head title="RustWeek 2025" />
     <body>
         <Header />
         <div class="space-y-24">
-            <section class="hero">
+            <Hero style="home">
                 <img
                     src="/svg/hero-logo-rustweek-by-rustnl.svg"
                     alt="Logo RustWeek 2025"
                 />
                 <p>May 13 - 17, 2025<br /> Utrecht, The Netherlands</p>
-                <div class="button-group">
-                    <a href="https://www.eventbrite.nl/e/rust-week-2025-tickets-1001676961757?aff=oddtdtcreator" class="button button-primary"
-                        >Tickets</a
+
+                <ButtonGroup>
+                    <Button
+                        link="https://www.eventbrite.nl/e/rust-week-2025-tickets-1001676961757?aff=oddtdtcreator"
+                        >Tickets</Button
                     >
-                </div>
+                </ButtonGroup>
+
                 <a class="down-arrow" href="#explainer"></a>
-            </section>
+            </Hero>
             <section class="container md:grid md:cols-12">
                 <div
-                    class="text-lg md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
+                    class="explainer md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
                 >
                     <slot name="explainer" />
                 </div>
             </section>
             <section class="container">
-                <div class="location">
-                    <div class="image"></div>
-                    <div class="image"></div>
-                    <div class="image">
-                        <div class="ferris"></div>
-                        <div class="ferris-arms"></div>
-                    </div>
-                    <div class="ferris">
-                        <img src="/images/ferris.png" alt="" />
-                    </div>
-                </div>
+                <Location />
             </section>
 
-            <!-- <section class="container space-y-6">
-        <h3 class="text-2xl text-center">Speaker highlights</h3>
-        <div class="grid md:cols-2 xl:cols-4" id="speakers">
-          <slot name="speakers" />
-        </div>
-      </section>
-
-      <section class="container space-y-6">
-        <div class="button-group">
-          <a href="/speakers" class="button button-primary">All our speakers</a>
-        </div>
-      </section> -->
-
             <section class="container space-y-6">
-                <h3 class="text-2xl text-center">Last Year's Speakers</h3>
+                <h3 class="header">Last Year's Speakers</h3>
                 <div class="grid md:cols-2 xl:cols-4" id="speakers">
                     <slot name="speakers" />
                 </div>
             </section>
-            <div class="button-group">
-                <a
-                    href="https://2024.rustnl.org/speakers"
-                    class="button button-primary"
-                    >All of last year's speakers!</a
+            <ButtonGroup>
+                <Button link="https://2024.rustnl.org/speakers"
+                    >All of last year's speakers!</Button
                 >
-            </div>
+            </ButtonGroup>
 
-            <!-- <section class="container space-y-6">
-        <h3 class="text-2xl text-center">Workshops by</h3>
-        <div class="grid md:cols-2 xl:cols-4" id="workshops">
-          <slot name="workshops" />
-        </div>
-        <div class="button-group">
-          <a
-            class="button button-primary"
-            style="text-decoration: none;color:var(--color-neutral-400);"
-            href="/workshops">Workshop details</a
-          >
-        </div>
-      </section> -->
-
-            <section class="container sponsors" id="sponsors">
-                <slot name="sponsors" />
+            <section class="container" id="sponsors">
+                <Sponsors>
+                    <h3 class="header">Sponsors</h3>
+                    <slot name="sponsors" />
+                </Sponsors>
             </section>
-            <section class="container sponsors" id="sponsors">
-                <slot name="previous-sponsors" />
+            <section class="container" id="previous-sponsors">
+                <Sponsors>
+                    <h3 class="header">Last Year's Sponsors</h3>
+                    <slot name="previous-sponsors" />
+                </Sponsors>
             </section>
             <section class="container md:grid md:cols-12">
                 <div
-                    class="text-lg md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
+                    class="about md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
                 >
+                    <h3 id="about" class="header">About RustWeek</h3>
+
                     <slot name="about" id="about" />
                 </div>
             </section>

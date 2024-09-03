@@ -1,282 +1,304 @@
 ---
-import WorkshopLayout from "../layouts/WorkshopLayout.astro";
-import WorkshopDetail from "../components/workshop-detail.astro";
-import Trainer from "../components/trainer.astro";
+import WorkshopDetail from "../components/workshop/workshop-detail.astro";
+import Workshop from "../components/workshop/Workshop.astro";
+
+import Trainer from "../components/people/Trainer.astro";
+import CommonLayout from "../layouts/CommonLayout.astro";
 ---
 
-<WorkshopLayout>
-    <div class="workshop">
-        <!-- in the 'Chaos' building -->
-        <WorkshopDetail
-            title="Using `postcard` to talk to your Microcontroller"
-            time="Tuesday (day 1) 09:00-13:00"
-            id="james"
-        >
-            <p>
-                This workshop is focused on setting up communications between a
-                host PC and an embedded system. Having the skills to do this
-                quickly and reliably can help your next project, whether you are
-                starting a project that requires heavy interaction with a host
-                PC, or setting up a testing interface for triggering hardware
-                events, or building tooling to make it easier to see what your
-                system is doing.
-            </p>
-            <p>
-                James will explain the different crates that can be used, how
-                they fit together, and techniques + recipes for solving a
-                number of common challenges. You'll build your own communication
-                link over USB to a microcontroller. This workshop is best suited
-                to developers that are comfortable writing and running Rust on
-                `no_std` microcontrollers already, particularly using the
-                `embassy` framework. You will be provided working projects to
-                start from, and will be expected to customize and extend them to
-                achieve the different goals of the workshop.
-            </p>
-            <p>
-                This workshop is led by James Munns of OneVariable UG. James is
-                the author of the `postcard` crate, and has built dozens of
-                PC-to-MCU links like these for client projects over the past
-                years.
-            </p>
-        </WorkshopDetail>
-        <div class="space-y-3">
-            <h4>Workshop by</h4>
-            <Trainer
-                name="James Munns"
-                image="james.png"
-                description="Embedded, systems and Rust consultant & Director @ OneVariable"
-                bio="James is a software engineer currently living in Berlin. He primarily works with Rust and Embedded Systems."
-                linkedin="https://www.linkedin.com/in/james-munns-8a42b429/"
-                twitter=""
-                mastodon=""
-                github="github.com/jamesmunns"
-            />
-        </div>
-        <div class="space-y-3">
-            <h4 class="text-lg">Get your ticket!</h4>
-            <p>
-                Conference incl workshop tickets are <strong>sold out</strong>.
-            </p>
-            <p>
-                <strong>Already have a ticket for the conference?</strong><br />
-                You'll need an additional workshop ticket.
-            </p>
-            <ul>
-                <li>Workshop ticket - Individual - € 225</li>
-                <li>Workshop ticket - Employer-paid - € 300</li>
-            </ul>
-            <p>
-                Go to <a
-                    href="https://www.eventbrite.com/e/790061233417/?discount=postcard-workshop"
-                    >Workshop tickets</a
-                >, and choose the <strong>"Postcard"</strong> workshop ticket.
-            </p>
-        </div>
-    </div>
+<CommonLayout title="Workshops" header="Workshops" withLogo>
+    <section class="container py-12 space-y-6">
+        <div class="grid xl:cols-12" id="workshops">
+            <div class="xl:col-start-4 xl:col-end-10 space-y-12">
+                <slot />
 
-    <div class="workshop">
-        <!--  in the 'Experiment' building -->
-        <WorkshopDetail
-            title="Building UIs with Makepad"
-            time="Tuesday (day 1) 14:00-17:30"
-            id="rik"
-        >
-            <p>
-                In this workshop we will use a small RiscV microcontroller
-                (ESP32C3, provided by the workshop) to build a connectionless
-                chat application running on your PC written with the Makepad UI
-                library. We will be using the ESP NOW protocol, an IOT protocol
-                that allows you to send and receive messages without being
-                connected to a wifi hotspot. The Rust toolchain and libraries
-                needed to program this MCU are available directly from cargo and
-                crates io, as well as makepad studio and framework. We will use
-                Makepad Studio to write both the MCU program and the chat UI
-                that connects to the ESP32 over USB serial and thus allows
-                sending and receiving these messages from the local space. At
-                end we will hopefully have a working local (lossy) chatroom.
-            </p>
+                <Workshop>
+                    <!-- in the 'Chaos' building -->
+                    <WorkshopDetail
+                        title="Using `postcard` to talk to your Microcontroller"
+                        time="Tuesday (day 1) 09:00-13:00"
+                        id="james"
+                    >
+                        <p>
+                            This workshop is focused on setting up
+                            communications between a host PC and an embedded
+                            system. Having the skills to do this quickly and
+                            reliably can help your next project, whether you are
+                            starting a project that requires heavy interaction
+                            with a host PC, or setting up a testing interface
+                            for triggering hardware events, or building tooling
+                            to make it easier to see what your system is doing.
+                        </p>
+                        <p>
+                            James will explain the different crates that can be
+                            used, how they fit together, and techniques +
+                            recipes for solving a number of common challenges.
+                            You'll build your own communication link over USB to
+                            a microcontroller. This workshop is best suited to
+                            developers that are comfortable writing and running
+                            Rust on `no_std` microcontrollers already,
+                            particularly using the `embassy` framework. You will
+                            be provided working projects to start from, and will
+                            be expected to customize and extend them to achieve
+                            the different goals of the workshop.
+                        </p>
+                        <p>
+                            This workshop is led by James Munns of OneVariable
+                            UG. James is the author of the `postcard` crate, and
+                            has built dozens of PC-to-MCU links like these for
+                            client projects over the past years.
+                        </p>
+                    </WorkshopDetail>
+                    <div class="space-y-3">
+                        <h4>Workshop by</h4>
+                        <Trainer
+                            name="James Munns"
+                            image="james.png"
+                            description="Embedded, systems and Rust consultant & Director @ OneVariable"
+                            bio="James is a software engineer currently living in Berlin. He primarily works with Rust and Embedded Systems."
+                            linkedin="https://www.linkedin.com/in/james-munns-8a42b429/"
+                            twitter=""
+                            mastodon=""
+                            github="github.com/jamesmunns"
+                        />
+                    </div>
+                    <div class="space-y-3">
+                        <h4 >Get your ticket!</h4>
+                        <p>
+                            Conference incl workshop tickets are <strong
+                                >sold out</strong
+                            >.
+                        </p>
+                        <p>
+                            <strong
+                                >Already have a ticket for the conference?</strong
+                            ><br />
+                            You'll need an additional workshop ticket.
+                        </p>
+                        <ul>
+                            <li>Workshop ticket - Individual - € 225</li>
+                            <li>Workshop ticket - Employer-paid - € 300</li>
+                        </ul>
+                        <p>
+                            Go to <a
+                                href="https://www.eventbrite.com/e/790061233417/?discount=postcard-workshop"
+                                >Workshop tickets</a
+                            >, and choose the <strong>"Postcard"</strong> workshop
+                            ticket.
+                        </p>
+                    </div>
+                </Workshop>
 
-            <p>
-                In this workshop you will be introduced to:
-                <ul>
-                    <li>
-                        Embedded Rust programming (no_std) on the esp32c3 RiscV
-                        toolchain
-                    </li>
-                    <li>
-                        Writing simple Rust UI applications with Makepad Studio
-                        for Makepad UI framework.
-                    </li>
-                </ul>
-            </p>
-        </WorkshopDetail>
+                <Workshop>
+                    <!--  in the 'Experiment' building -->
+                    <WorkshopDetail
+                        title="Building UIs with Makepad"
+                        time="Tuesday (day 1) 14:00-17:30"
+                        id="rik"
+                    >
+                        <p>
+                            In this workshop we will use a small RiscV
+                            microcontroller (ESP32C3, provided by the workshop)
+                            to build a connectionless chat application running
+                            on your PC written with the Makepad UI library. We
+                            will be using the ESP NOW protocol, an IOT protocol
+                            that allows you to send and receive messages without
+                            being connected to a wifi hotspot. The Rust
+                            toolchain and libraries needed to program this MCU
+                            are available directly from cargo and crates io, as
+                            well as makepad studio and framework. We will use
+                            Makepad Studio to write both the MCU program and the
+                            chat UI that connects to the ESP32 over USB serial
+                            and thus allows sending and receiving these messages
+                            from the local space. At end we will hopefully have
+                            a working local (lossy) chatroom.
+                        </p>
 
-        <div class="space-y-3">
-            <h4>Workshop by</h4>
-            <Trainer
-                name="Rik Arends"
-                image="rik.jpeg"
-                description="Founder @ Makepad"
-                linkedin="https://www.linkedin.com/in/arendsrik/"
-                twitter="https://twitter.com/rikarends"
-                mastodon=""
-                github="https://github.com/makepad/makepad"
-            />
-        </div>
-        <div class="space-y-3">
-            <h4 class="text-lg">Get your ticket!</h4>
-            <p>
-                Conference incl workshop tickets are <strong>sold out</strong>.
-            </p>
-            <p>
-                <strong>Already have a ticket for the conference?</strong><br />
-                You'll need an additional workshop ticket.
-            </p>
-            <ul>
-                <li>Workshop ticket - Individual - € 225</li>
-                <li>Workshop ticket - Employer-paid - € 300</li>
-            </ul>
-            <p>
-                Go to <a
-                    href="https://www.eventbrite.com/e/790061233417/?discount=makepad-workshop"
-                    >Workshop tickets</a
-                >, and choose the <strong>"Makepad"</strong> workshop ticket.
-            </p>
-        </div>
-    </div>
+                        <p>
+                            In this workshop you will be introduced to:
+                            <ul>
+                                <li>
+                                    Embedded Rust programming (no_std) on the
+                                    esp32c3 RiscV toolchain
+                                </li>
+                                <li>
+                                    Writing simple Rust UI applications with
+                                    Makepad Studio for Makepad UI framework.
+                                </li>
+                            </ul>
+                        </p>
+                    </WorkshopDetail>
 
-    <div class="workshop">
-        <!--  in the 'Chaos' building -->
-        <WorkshopDetail
-            title="Mix-in-Rust"
-            time="Wednesday (day 2) 09:00-13:00"
-            id="tim-and-henk"
-        >
-            <p>
-                Are you a happy Rust developer, who cannot wait but struggles to
-                introduce Rust at their day job? Is the fear of working with
-                foreign code keeping your team from getting to work with your
-                favourite programming language? This workshop is for you!
-            </p>
-            <p>
-                In the Mix-in-Rust, you'll get the tools and know-how to
-                introduce Rust in your current, non-rust projects. We'll go over
-                the hardships of FFI, the way Rust tackles them, and what
-                tooling is out there to make Rust speak other langauges.
-            </p>
-            <p>
-                Note that during this worksop, we'll assume intermediate
-                knowledge of Rust, as well as some basic knowledge of C.
-                Basically, you should know what a pointer is.
-            </p>
-        </WorkshopDetail>
-        <div class="space-y-3">
-            <h4>Workshop by</h4>
-            <Trainer
-                name="Henk Oordt"
-                image="henk.png"
-                description="Rust trainer & Embedded software engineer @ Tweede golf"
-                bio="Henk is an embedded software engineer at Tweede golf, and one of the lucky people that mainly use Rust in embedded. He's so passionate about Rust that he can't help spreading the word by hosting Rust training for all kinds of areas, and by developing teach-rs, the modular, reusable Rust university course platform."
-                linkedin="https://www.linkedin.com/in/hdoordt/"
-                twitter="https://twitter.com/hdoordt"
-                mastodon=""
-                github="https://github.com/hdoordt/"
-            />
-            <Trainer
-                name="Tamme Dittrich"
-                image="tamme.jpg"
-                description="Embedded Rust engineer @ Tweede golf"
-                bio="With both an educational and professional background in industrial applications of embedded software, Tamme's experience stretches from FPGAs to Industrial automation protocols."
-                linkedin="https://www.linkedin.com/in/tamme-dittrich-81b225227/"
-                github="https://github.com/tdittr"
-            />
-        </div>
-        <div class="space-y-3">
-            <h4 class="text-lg">Get your ticket!</h4>
-            <p>
-                Conference incl workshop tickets are <strong>sold out</strong>.
-            </p>
-            <p>
-                <strong>Already have a ticket for the conference?</strong><br />
-                You'll need an additional workshop ticket.
-            </p>
-            <ul>
-                <li>Workshop ticket - Individual - € 225</li>
-                <li>Workshop ticket - Employer-paid - € 300</li>
-            </ul>
-            <p>
-                Go to <a
-                    href="https://www.eventbrite.com/e/790061233417/?discount=mix-in-rust-workshop"
-                    >Workshop tickets</a
-                >, and choose the <strong>"Mix-in Rust"</strong> workshop ticket.
-            </p>
-        </div>
-    </div>
+                    <div class="space-y-3">
+                        <h4>Workshop by</h4>
+                        <Trainer
+                            name="Rik Arends"
+                            image="rik.jpeg"
+                            description="Founder @ Makepad"
+                            linkedin="https://www.linkedin.com/in/arendsrik/"
+                            twitter="https://twitter.com/rikarends"
+                            mastodon=""
+                            github="https://github.com/makepad/makepad"
+                        />
+                    </div>
+                    <div class="space-y-3">
+                        <h4>Get your ticket!</h4>
+                        <p>
+                            Conference incl workshop tickets are <strong
+                                >sold out</strong
+                            >.
+                        </p>
+                        <p>
+                            <strong
+                                >Already have a ticket for the conference?</strong
+                            ><br />
+                            You'll need an additional workshop ticket.
+                        </p>
+                        <ul>
+                            <li>Workshop ticket - Individual - € 225</li>
+                            <li>Workshop ticket - Employer-paid - € 300</li>
+                        </ul>
+                        <p>
+                            Go to <a
+                                href="https://www.eventbrite.com/e/790061233417/?discount=makepad-workshop"
+                                >Workshop tickets</a
+                            >, and choose the <strong>"Makepad"</strong> workshop
+                            ticket.
+                        </p>
+                    </div>
+                </Workshop>
 
-    <div class="workshop">
-        <!-- in the 'Experiment' building -->
-        <WorkshopDetail
-            title="Building debuggable applications—a tracing crate masterclass"
-            time="Wednesday (day 2) 09:00-13:00"
-            id="luca"
-        >
-            <p>
-                Your Rust application has finally been deployed to production!
-                Nice! But is it working? This workshop will show you how the
-                tracing crate can be leveraged to instrument your application
-                and make sure you have enough information to diagnose issues
-                when they occur.
-            </p>
-            <p>
-                This workshop is designed for developers operating Rust services
-                in production-like environments or preparing to do so.
-            </p>
-            <p>
-                An introduction to the tracing instrumentation library, covering
-                both how to instrument your code (capturing fields, log levels,
-                macros) and how to process the resulting telemetry data in your
-                application (subscriber configuration, logging levels, log
-                filtering). We'll also touch on how tracing integrates with
-                OpenTelemetry.
-            </p>
-        </WorkshopDetail>
-        <div class="space-y-3">
-            <h4>Workshop by</h4>
-            <Trainer
-                name="Luca Palmieri"
-                image="luca.png"
-                description="Principal Engineering Consultant @ Mainmatter"
-                bio="Luca Palmieri builds technology products for a living. He has been part of the Rust community since 2018 and is best known as the author of “Zero to Production in Rust”, the go-to book for backend development in Rust."
-                linkedin="https://www.linkedin.com/in/luca-palmieri"
-                twitter="https://twitter.com/algo_luca"
-                mastodon=""
-                github="https://github.com/LukeMathWalker"
-            />
+                <Workshop>
+                    <!--  in the 'Chaos' building -->
+                    <WorkshopDetail
+                        title="Mix-in-Rust"
+                        time="Wednesday (day 2) 09:00-13:00"
+                        id="tim-and-henk"
+                    >
+                        <p>
+                            Are you a happy Rust developer, who cannot wait but
+                            struggles to introduce Rust at their day job? Is the
+                            fear of working with foreign code keeping your team
+                            from getting to work with your favourite programming
+                            language? This workshop is for you!
+                        </p>
+                        <p>
+                            In the Mix-in-Rust, you'll get the tools and
+                            know-how to introduce Rust in your current, non-rust
+                            projects. We'll go over the hardships of FFI, the
+                            way Rust tackles them, and what tooling is out there
+                            to make Rust speak other langauges.
+                        </p>
+                        <p>
+                            Note that during this worksop, we'll assume
+                            intermediate knowledge of Rust, as well as some
+                            basic knowledge of C. Basically, you should know
+                            what a pointer is.
+                        </p>
+                    </WorkshopDetail>
+                    <div class="space-y-3">
+                        <h4>Workshop by</h4>
+                        <Trainer
+                            name="Henk Oordt"
+                            image="henk.png"
+                            description="Rust trainer & Embedded software engineer @ Tweede golf"
+                            bio="Henk is an embedded software engineer at Tweede golf, and one of the lucky people that mainly use Rust in embedded. He's so passionate about Rust that he can't help spreading the word by hosting Rust training for all kinds of areas, and by developing teach-rs, the modular, reusable Rust university course platform."
+                            linkedin="https://www.linkedin.com/in/hdoordt/"
+                            twitter="https://twitter.com/hdoordt"
+                            mastodon=""
+                            github="https://github.com/hdoordt/"
+                        />
+                        <Trainer
+                            name="Tamme Dittrich"
+                            image="tamme.jpg"
+                            description="Embedded Rust engineer @ Tweede golf"
+                            bio="With both an educational and professional background in industrial applications of embedded software, Tamme's experience stretches from FPGAs to Industrial automation protocols."
+                            linkedin="https://www.linkedin.com/in/tamme-dittrich-81b225227/"
+                            github="https://github.com/tdittr"
+                        />
+                    </div>
+                    <div class="space-y-3">
+                        <h4>Get your ticket!</h4>
+                        <p>
+                            Conference incl workshop tickets are <strong
+                                >sold out</strong
+                            >.
+                        </p>
+                        <p>
+                            <strong
+                                >Already have a ticket for the conference?</strong
+                            ><br />
+                            You'll need an additional workshop ticket.
+                        </p>
+                        <ul>
+                            <li>Workshop ticket - Individual - € 225</li>
+                            <li>Workshop ticket - Employer-paid - € 300</li>
+                        </ul>
+                        <p>
+                            Go to <a
+                                href="https://www.eventbrite.com/e/790061233417/?discount=mix-in-rust-workshop"
+                                >Workshop tickets</a
+                            >, and choose the <strong>"Mix-in Rust"</strong> workshop
+                            ticket.
+                        </p>
+                    </div>
+                </Workshop>
+
+                <Workshop>
+                    <!-- in the 'Experiment' building -->
+                    <WorkshopDetail
+                        title="Building debuggable applications—a tracing crate masterclass"
+                        time="Wednesday (day 2) 09:00-13:00"
+                        id="luca"
+                    >
+                        <p>
+                            Your Rust application has finally been deployed to
+                            production! Nice! But is it working? This workshop
+                            will show you how the tracing crate can be leveraged
+                            to instrument your application and make sure you
+                            have enough information to diagnose issues when they
+                            occur.
+                        </p>
+                        <p>
+                            This workshop is designed for developers operating
+                            Rust services in production-like environments or
+                            preparing to do so.
+                        </p>
+                        <p>
+                            An introduction to the tracing instrumentation
+                            library, covering both how to instrument your code
+                            (capturing fields, log levels, macros) and how to
+                            process the resulting telemetry data in your
+                            application (subscriber configuration, logging
+                            levels, log filtering). We'll also touch on how
+                            tracing integrates with OpenTelemetry.
+                        </p>
+                    </WorkshopDetail>
+                    <div class="space-y-3">
+                        <h4>Workshop by</h4>
+                        <Trainer
+                            name="Luca Palmieri"
+                            image="luca.png"
+                            description="Principal Engineering Consultant @ Mainmatter"
+                            bio="Luca Palmieri builds technology products for a living. He has been part of the Rust community since 2018 and is best known as the author of “Zero to Production in Rust”, the go-to book for backend development in Rust."
+                            linkedin="https://www.linkedin.com/in/luca-palmieri"
+                            twitter="https://twitter.com/algo_luca"
+                            mastodon=""
+                            github="https://github.com/LukeMathWalker"
+                        />
+                    </div>
+                    <div class="space-y-3">
+                        <h1 style="font-size: 40px;">Sold Out</h1>
+                    </div>
+                </Workshop>
+            </div>
         </div>
-        <div class="space-y-3">
-            <h1 style="font-size: 40px;">Sold Out</h1>
-            <!-- <h4 class="text-lg">Get your ticket!</h4>
-            <p>
-                - Conference incl workshop - Individual - € 455<br />
-                - Conference incl workshop - Employer-paid - € 750<br />
-                <br />
-                Go to <a
-                    href="https://www.eventbrite.com/e/rustnl-2024-tickets-790061233417"
-                    >Conference incl workshop tickets</a
-                >, and choose <strong>"Tracing"</strong> after checking out.<br
-                />
-                <br />
-                <strong>Already have a ticket for the conference?</strong><br />
-                You'll need an additional workshop ticket.<br /><br />
-                - Workshop ticket - Individual - € 225<br />
-                - Workshop ticket - Employer-paid - € 300<br />
-                <br />
-                Go to <a
-                    href="https://www.eventbrite.com/e/790061233417/?discount=tracing-workshop"
-                    >Workshop tickets</a
-                >, and choose the <strong>"Tracing"</strong> workshop ticket.<br
-                />
-            </p> -->
-        </div>
-    </div>
-</WorkshopLayout>
+    </section>
+</CommonLayout>
+
+<style lang="scss">
+@import "../styles/variables.scss";
+h4 {
+    font-size: $font-size-lg;
+    }
+</style>
