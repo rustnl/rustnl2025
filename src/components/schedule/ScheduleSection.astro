@@ -1,0 +1,38 @@
+---
+
+---
+
+<div class="schedule-section">
+    <span class="location">
+        <slot name="location" />
+    </span>
+
+    <slot />
+</div>
+
+<style lang="scss">
+    @import "../../styles/variables.scss";
+    @import "../../styles/breakpoint.scss";
+
+    .schedule-section {
+        display: flex;
+        flex-direction: column;
+
+        background: $color-neutral-400;
+
+        padding: 0.2em 0.4em 0.5em 0.4em;
+        border-radius: 0.25em;
+
+        flex-grow: 1;
+
+        @include breakpoint(lg) {
+            min-height: 12em;
+        }
+
+        .location {
+            font-size: $font-size-sm;
+            text-align: center;
+            margin-bottom: 0.5em;
+        }
+    }
+</style>

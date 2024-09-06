@@ -1,0 +1,202 @@
+---
+import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
+
+interface Props {
+    logo?: boolean;
+}
+
+const { logo = false } = Astro.props;
+---
+
+<div class:list={["schedule", logo]}>
+    {
+        logo && (
+            <img
+                src="/svg/hero-logo-rustweek-by-rustnl.svg"
+                alt="Logo RustWeek 2025"
+            />
+        )
+    }
+    <div class="days">
+        <div class="mon">Monday 12 May</div>
+        <div class="tue">Tuesday 13 May</div>
+        <div class="wed">Wednesday 14 May</div>
+        <div class="thu">
+            Thursday 15 May <span class="birthday"
+                >10 year birthday of Rust 1.0!</span
+            >
+        </div>
+        <div class="fri">Friday 16 May</div>
+        <div class="sat">Saturday 17 May</div>
+        <slot />
+    </div>
+
+    <div class="organize">
+        Do you know a fun activity to do with the other attendees during social activity time? Let us know by filling in <a href="https://forms.gle/fKocgjB4x4TejQYV9">this form</a>.
+    </div>
+</div>
+
+<style lang="scss">
+    @import "../../styles/variables.scss";
+    @import "../../styles/breakpoint.scss";
+
+    .schedule {
+        display: grid;
+        padding: 4em 1em 4em 1em;
+
+        &.logo {
+            padding-top: 1em;
+        }
+
+        .organize {
+            text-align: center;
+            a {
+                color: unset;
+            }
+        }
+
+        gap: 2em;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        align-items: center;
+
+        position: relative;
+
+        background: $color-yellow-400;
+        z-index: 0;
+
+        &::before {
+            background-color: $color-yellow-500;
+            clip-path: polygon(0 0, 100% 0, 100% 100%);
+            content: "";
+            inset: 0;
+            position: absolute;
+            z-index: -1;
+        }
+
+        &::after {
+            background-image: url("/images/stripes.svg");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: min(40rem, 60%) auto;
+            bottom: 0;
+            content: "";
+            height: space(3);
+            position: absolute;
+            width: 100%;
+            align-self: center;
+        }
+
+        .birthday {
+            position: absolute;
+
+            transform: rotate(-10deg) translateY(0.5em) translateX(-7em);
+            @include breakpoint(lg) {
+                transform: rotate(-20deg) translateY(-5em) translateX(-7em);
+            }
+
+            color: white;
+            font-style: italic;
+            font-size: $font-size-md;
+            width: min(10em, 80vw);
+            text-align: center;
+
+            z-index: 2;
+
+            // not sure I like this so leave it in like this for now
+            display: none;
+        }
+
+        .days {
+            display: grid;
+
+            gap: 2em;
+
+            justify-content: center;
+
+            font-size: 120%;
+
+            grid-template-columns: auto;
+            grid-template-areas:
+                "mon"
+                "mon-s"
+                "tue"
+                "tue-s"
+                "wed"
+                "wed-s"
+                "thu"
+                "thu-s"
+                "fri"
+                "fri-s"
+                "sat"
+                "sat-s";
+
+            div {
+                font-weight: bold;
+                position: relative;
+
+                font-size: $font-size-xl;
+                @include breakpoint(lg) {
+                    font-size: $font-size-lg;
+                }
+                text-align: center;
+            }
+
+            .mon {
+                grid-area: mon;
+            }
+            .tue {
+                grid-area: tue;
+            }
+            .wed {
+                grid-area: wed;
+            }
+            .thu {
+                grid-area: thu;
+            }
+            .fri {
+                grid-area: fri;
+            }
+            .sat {
+                grid-area: sat;
+            }
+
+            @include breakpoint(xl) {
+                div {
+                    font-size: $font-size-lg !important;
+                }
+            }
+
+            @include breakpoint(lg) {
+                grid-template-columns: repeat(6, 1fr);
+                grid-template-rows: auto;
+                grid-template-areas:
+                    "mon   tue   wed   thu   fri   sat"
+                    "mon-s tue-s wed-s thu-s fri-s sat-s";
+
+                gap: 1em;
+                font-size: 100%;
+
+                justify-content: unset;
+
+                div {
+                    font-size: $font-size-md;
+                }
+            }
+        }
+
+        img {
+            height: min(8em, 30vw);
+            align-self: center;
+            justify-self: center;
+
+            @include breakpoint(md) {
+                max-width: 60vw;
+            }
+
+            @include breakpoint(xl) {
+                max-width: 40vw;
+            }
+        }
+    }
+</style>

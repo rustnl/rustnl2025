@@ -1,0 +1,151 @@
+---
+import Schedule from "./Schedule.astro";
+import ScheduleDay from "./ScheduleDay.astro";
+import ScheduleSection from "./ScheduleSection.astro";
+import ScheduleItem from "./ScheduleItem.astro";
+import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
+---
+
+<Schedule logo>
+    <ScheduleDay>
+        <ScheduleSection>
+            <span slot="location">Utrecht, NL</span>
+
+            <ScheduleItem>
+                <span slot="header">Social Activities</span>
+                <span slot="time">12:00—22:00</span>
+                <Fragment slot="activities">
+                    <li>To be announced</li>
+                    <OrganizeOwnActivity />
+                </Fragment>
+            </ScheduleItem>
+        </ScheduleSection>
+    </ScheduleDay>
+    <ScheduleDay>
+        <ScheduleSection>
+            <span slot="location">Kinepolis Jaarbeurs, Utrecht, NL</span>
+
+            <ScheduleItem>
+                <span slot="header">Conference day 1</span>
+                <span slot="attendees">600—800</span>
+                <span slot="time">09:00—18:00</span>
+                <Fragment slot="activities">
+                    <li>Main stage</li>
+                    <li>Critical Infrastructure track</li>
+                    <li>...</li>
+                </Fragment>
+            </ScheduleItem>
+            <ScheduleItem>
+                <span slot="header">Social activities</span>
+                <span slot="time">18:00—22:00</span>
+                <Fragment slot="activities">
+                    <li>To be announced</li>
+                    <OrganizeOwnActivity />
+                </Fragment>
+            </ScheduleItem>
+        </ScheduleSection>
+    </ScheduleDay>
+    <ScheduleDay>
+        <ScheduleSection>
+            <span slot="location">Kinepolis Jaarbeurs, Utrecht, NL</span>
+
+            <ScheduleItem>
+                <span slot="header">Conference day 2</span>
+                <span slot="attendees">600—800</span>
+                <span slot="time">09:00—18:00</span>
+                <Fragment slot="activities">
+                    <li>Main stage</li>
+                    <li>...</li>
+                </Fragment>
+            </ScheduleItem>
+            <ScheduleItem>
+                <span slot="header">Social activities</span>
+                <span slot="time">18:00—22:00</span>
+                <Fragment slot="activities">
+                    <li>To be announced</li>
+                    <OrganizeOwnActivity />
+                </Fragment>
+            </ScheduleItem>
+        </ScheduleSection>
+    </ScheduleDay>
+
+    <ScheduleDay>
+        <ScheduleSection>
+            <span slot="location">Dus, Sophialaan 1, Utrecht, NL</span>
+
+            <ScheduleItem>
+                <span slot="header">Workshops</span>
+                <span slot="attendees">100</span>
+                <span slot="time">09:00—13:00</span>
+                <Fragment slot="activities">
+                    <li>...</li>
+                </Fragment>
+            </ScheduleItem>
+            <ScheduleItem>
+                <span slot="header">10 Years of Rust Celebration</span>
+                <span slot="attendees">350</span>
+                <span slot="time">14:00—20:00</span>
+                <Fragment slot="activities">
+                    <li>To be announced</li>
+                    <OrganizeOwnActivity />
+                </Fragment>
+            </ScheduleItem>
+        </ScheduleSection>
+    </ScheduleDay>
+
+    <ScheduleDay>
+        <ScheduleSection>
+            <span slot="location">TBD, Utrecht, NL</span>
+
+            <ScheduleItem>
+                <span slot="header">Hackathon</span>
+                <span slot="attendees">200</span>
+                <span slot="time">09:00—18:00</span>
+                <Fragment slot="activities">
+                    <li>Build with Rust</li>
+                    <li>Promote your own project!</li>
+                </Fragment>
+            </ScheduleItem>
+        </ScheduleSection>
+        <ScheduleSection>
+            <span slot="location">Dus, Sophialaan 1, Utrecht, NL</span>
+
+            <ScheduleItem>
+                <span slot="header">Rust All-Hands & Unconference</span>
+                <span slot="attendees">200</span>
+                <span slot="time">09:00—18:00</span>
+                <Fragment slot="activities">
+                    <li>Invitation Only</li>
+                </Fragment>
+            </ScheduleItem>
+        </ScheduleSection>
+    </ScheduleDay>
+
+    <ScheduleDay>
+        <ScheduleSection>
+            <span slot="location">TBD, Utrecht, NL</span>
+
+            <ScheduleItem>
+                <span slot="header">Social Activities</span>
+                <span slot="attendees">200</span>
+                <span slot="time">09:00—22:00</span>
+                <Fragment slot="activities">
+                    <li>To be announced</li>
+                    <OrganizeOwnActivity />
+                </Fragment>
+            </ScheduleItem>
+        </ScheduleSection>
+        <ScheduleSection>
+            <span slot="location">Dus, Sophialaan 1, Utrecht, NL</span>
+
+            <ScheduleItem>
+                <span slot="header">Rust All-Hands & Unconference</span>
+                <span slot="attendees">200</span>
+                <span slot="time">09:00—18:00</span>
+                <Fragment slot="activities">
+                    <li>Invitation Only</li>
+                </Fragment>
+            </ScheduleItem>
+        </ScheduleSection>
+    </ScheduleDay>
+</Schedule>

@@ -1,0 +1,73 @@
+---
+
+---
+
+<div class="schedule-item">
+    <h1>
+        <slot name="header" />
+    </h1>
+    <span class="attendees">
+        <slot name="attendees" />
+        <span>attendees</span>
+    </span>
+    <span class="time">
+        <slot name="time" />
+    </span>
+    <ul class="activities">
+        <slot name="activities" />
+    </ul>
+</div>
+
+<style lang="scss">
+    @import "../../styles/variables.scss";
+    @import "../../styles/breakpoint.scss";
+
+    .schedule-item {
+        display: flex;
+        flex-direction: column;
+
+        .activities {
+            :global(li) {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .attendees {
+            color: #1e79d6;
+            font-size: $font-size-sm;
+
+            font-size: $font-size-md;
+            @include breakpoint(lg) {
+                font-size: $font-size-sm;
+            }
+
+            text-align: center;
+            font-style: italic;
+
+            *:only-child {
+                display: none;
+            }
+        }
+
+        .time {
+            text-align: center;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: $font-size-lg;
+            @include breakpoint(lg) {
+                font-size: calc($font-size-md * (sqrt($font-size-scale)));
+            }
+            text-align: center;
+            line-height: 100%;
+        }
+    }
+</style>
