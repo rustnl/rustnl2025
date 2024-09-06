@@ -1,0 +1,65 @@
+---
+import Button from "../Button.astro";
+
+interface Props {
+    location: "header" | "footer";
+}
+
+const { location }: Props = Astro.props;
+---
+
+<div class:list={["menu", location]}>
+    <!-- <a href="/speakers">Speakers</a> --><!-- <a href="/schedule">Schedule</a> --><!-- <a href="/industry">Industry</a> -->
+    <a href="/about">About</a>
+    <a href="mailto:2025@rustnl.org">Contact</a>
+    <Button
+        link="https://www.eventbrite.nl/e/rust-week-2025-tickets-1001676961757?aff=oddtdtcreator"
+        ty="secondary"
+        inFooter={location == "footer"}>Tickets</Button
+    >
+</div>
+
+<style lang="scss">
+    @import "../../styles/variables.scss";
+    @import "../../styles/breakpoint.scss";
+
+    .menu {
+        display: contents;
+
+        &.footer {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: space(2);
+
+            a {
+                color: $color-neutral-400;
+            }
+        }
+
+        &.header {
+            a {
+                align-items: center;
+                color: inherit;
+                display: flex;
+                font-weight: 700;
+                min-height: space(12);
+                text-decoration: none;
+                width: 100%;
+
+                @include breakpoint(lg) {
+                    color: $color-neutral-400;
+                    width: auto;
+                }
+            }
+
+            a:last-child {
+                margin-block-start: space(3);
+
+                @include breakpoint(lg) {
+                    margin-block-start: 0;
+                }
+            }
+        }
+    }
+</style>

@@ -1,0 +1,54 @@
+---
+interface Props {
+    link: string;
+    ty?: "primary" | "secondary";
+    inFooter?: boolean;
+}
+
+const { link, ty = "primary", inFooter = false }: Props = Astro.props;
+---
+
+<a
+    class:list={["button", ty, inFooter ? "footer" : null]}
+    style="text-decoration: none;color:$color-neutral-400;"
+    href={link}
+>
+    <slot>{link}</slot>
+</a>
+
+<style lang="scss" is:global>
+    @import "../styles/variables.scss";
+
+    .button {
+        align-items: center;
+        border-radius: space(1);
+        border: 1px solid transparent;
+        cursor: pointer;
+        display: inline-flex;
+        font-size: $font-size-md;
+        font-weight: 700;
+        min-height: space(12);
+        padding-inline: space(6);
+        text-align: center;
+        text-decoration: none;
+        user-select: none;
+
+        &.primary {
+            background-color: $color-red-400;
+            color: $color-neutral-400;
+        }
+
+        &.secondary {
+            border: 1px solid $color-red-400;
+            color: $color-red-400;
+        }
+
+        &.footer {
+            all: unset;
+
+            text-decoration: underline !important;
+            cursor: pointer;
+            color: $color-neutral-400;
+        }
+    }
+</style>

@@ -1,53 +1,67 @@
 ---
 import IndustryLayout from "../layouts/IndustryLayout.astro";
-import Speaker from "../components/speaker.astro";
-import TimetableItem from "../components/timetable-item.astro";
-import Sponsor from "../components/sponsor.astro";
-import SponsorTier from "../components/sponsor-tier.astro";
+
+import Speaker from "../components/people/SpeakerSmall.astro";
+
+import Sponsor from "../components/sponsor/sponsor.astro";
+import SponsorTier from "../components/sponsor/sponsor-tier.astro";
+
+import TimetableItem from "../components/timetable/timetable-item.astro";
+import Timetable from "../components/timetable/timetable.astro";
+
+import Markdown from "../components/Markdown.astro";
+import Button from "../components/Button.astro";
+import ButtonGroup from "../components/ButtonGroup.astro";
 ---
 
 <IndustryLayout>
-    <div class="markdown" slot="about-industry">
-        <h2 class="text-2xl space-y-6" id="about">About the industry track</h2>
+    <Markdown slot="about-industry">
+        <h2 class="header space-y-6" id="about">About the industry track</h2>
+        <p>The industry track was a blast!</p>
         <p>
-            The industry track was a blast!
-        </p>
-        <p>
-            This track was dedicated to decision makers exploring the adoption of Rust in their organisation and featured:
-        
+            This track was dedicated to decision makers exploring the adoption
+            of Rust in their organisation and featured:
         </p>
         <p>
             <ul>
-                <li>Frédéric Ameye's 'Rust at Renault' talk (slides <a href="https://tweedegolf.nl/images/frederic-ameye-rustnl2024-slides.pdf">here</a>)</li>
-                <li>Jakub Beránek's 'Global State of Rust' talk (slides <a href="https://tweedegolf.nl/images/jakub-beranek-rustnl2024-slides.pdf">here</a>)</li>
+                <li>
+                    Frédéric Ameye's 'Rust at Renault' talk (slides <a
+                        href="https://tweedegolf.nl/images/frederic-ameye-rustnl2024-slides.pdf"
+                        >here</a
+                    >)
+                </li>
+                <li>
+                    Jakub Beránek's 'Global State of Rust' talk (slides <a
+                        href="https://tweedegolf.nl/images/jakub-beranek-rustnl2024-slides.pdf"
+                        >here</a
+                    >)
+                </li>
                 <li>insightful discussions with industry experts</li>
             </ul>
         </p>
         <p>
             Date & time: <strong>Tuesday May 7, 13:30 - 17:00 CET</strong>.
         </p>
-        <h3 class="text-lg">City & venue</h3>
-        <p class="text-lg">
-            Lijm en Cultuur ('Chaos' building), <br /> Rotterdamseweg 272, <br /> 2628 AT Delft, The Netherlands
+        <h3 class="venue">City & venue</h3>
+        <p class="venue">
+            Lijm en Cultuur ('Chaos' building), <br /> Rotterdamseweg 272, <br
+            /> 2628 AT Delft, The Netherlands
         </p>
-    </div>
-    <div class="markdown" slot="tickets">
-        <h2 class="text-2xl space-y-6" id="about">Tickets</h2>
+    </Markdown>
+    <Markdown slot="tickets">
+        <h2 class="header space-y-6" id="about">Tickets</h2>
         <p>
             To attend the industry track, you will need an Industry Track
             ticket.<br />
             Tickets are EUR 99,- ex vat.
         </p>
-        <div class="button-group">
-            <a
-                class="button button-primary"
-                style="text-decoration: none;color:var(--color-neutral-400);"
-                target="_blank"
-                href="https://www.eventbrite.nl/e/790061233417/?discount=industry-track-only"
-                >Get Industry Track ticket</a
+        <ButtonGroup>
+            <Button
+                link="https://www.eventbrite.nl/e/790061233417/?discount=industry-track-only"
+                >Get Industry Track ticket</Button
             >
-        </div>
-    </div>
+        </ButtonGroup>
+    </Markdown>
     <Fragment slot="speakers">
         <Speaker
             name="Frédéric Ameye"
@@ -88,160 +102,168 @@ import SponsorTier from "../components/sponsor-tier.astro";
 
     <div slot="sponsors">
         <SponsorTier name="Gold sponsor">
-            <div class="sponsors-row">
-                <Sponsor
-                    name="ISRG"
-                    tier="industry-partner"
-                    image="isrg.png"
-                    link="https://www.abetterinternet.org/"
-                />
-                <Sponsor
-                    name="Baseflow"
-                    tier="nl-sponsor"
-                    image="baseflow.png"
-                    link="https://baseflow.com/"
-                />
-                <Sponsor
-                    name="JetBrains"
-                    tier="industry-partner"
-                    image="jetbrains.png"
-                    link="https://www.jetbrains.com/"
-                />
-            </div>
+            <Sponsor
+                name="ISRG"
+                tier="industry-partner"
+                image="isrg.png"
+                link="https://www.abetterinternet.org/"
+            />
+            <Sponsor
+                name="Baseflow"
+                tier="nl-sponsor"
+                image="baseflow.png"
+                link="https://baseflow.com/"
+            />
+            <Sponsor
+                name="JetBrains"
+                tier="industry-partner"
+                image="jetbrains.png"
+                link="https://www.jetbrains.com/"
+            />
         </SponsorTier>
         <SponsorTier name="Ecosystem partner">
-            <div class="sponsors-row">
-                <Sponsor
-                    name="Rust Foundation"
-                    tier="industry-partner"
-                    image="rustfoundation.png"
-                    link="https://foundation.rust-lang.org/"
-                />
-                <Sponsor
-                    name="Futurewei Technologies"
-                    tier="industry-partner"
-                    image="futurewei.png"
-                    link="https://www.futurewei.com/"
-                />
-            </div>
+            <Sponsor
+                name="Rust Foundation"
+                tier="industry-partner"
+                image="rustfoundation.png"
+                link="https://foundation.rust-lang.org/"
+            />
+            <Sponsor
+                name="Futurewei Technologies"
+                tier="industry-partner"
+                image="futurewei.png"
+                link="https://www.futurewei.com/"
+            />
         </SponsorTier>
         <SponsorTier name="Industry partners">
-            <div class="sponsors-row">
-                <Sponsor
-                    name="Infineon Technologies"
-                    tier="industry-partner"
-                    image="infineon.png"
-                    link="https://infineon.com/"
-                />
-                <Sponsor
-                    name="Ampere"
-                    tier="industry-partner"
-                    image="ampere-transparent.png"
-                    link="https://www.ampere.cars/"
-                />
-            </div>
-            <div class="sponsors-row">
-                <Sponsor
-                    name="1Password"
-                    tier="industry-partner"
-                    image="1password.png"
-                    link="https://1password.com/"
-                />
-                <Sponsor
-                    name="Albelli"
-                    tier="industry-partner"
-                    image="albelli-transparent.png"
-                    link="https://www.albelli.nl/"
-                />
-            </div>
+            <Sponsor
+                name="Infineon Technologies"
+                tier="industry-partner"
+                image="infineon.png"
+                link="https://infineon.com/"
+            />
+            <Sponsor
+                name="Ampere"
+                tier="industry-partner"
+                image="ampere-transparent.png"
+                link="https://www.ampere.cars/"
+            />
+            <Sponsor
+                name="1Password"
+                tier="industry-partner"
+                image="1password.png"
+                link="https://1password.com/"
+            />
+            <Sponsor
+                name="Albelli"
+                tier="industry-partner"
+                image="albelli-transparent.png"
+                link="https://www.albelli.nl/"
+            />
+        </SponsorTier>
         <SponsorTier name="Round table moderators">
-            <div class="sponsors-row">
-                <Sponsor
-                    name="Matthias Endler"
-                    tier="industry-partner"
-                    link="https://corrode.dev/"
-                />
-                <Sponsor
-                    name="Wouter Geraedts"
-                    tier="industry-partner"
-                    link="https://sarif.nl/"
-                />
-                <Sponsor
-                    name="Kris van Rens"
-                    tier="industry-partner"
-                    link="https://vanrens.org/"
-                />
-                <Sponsor
-                    name="Jonathan Pallant"
-                    tier="industry-partner"
-                    link="https://ferrous-systems.com/"
-                />
-                <Sponsor
-                    name="Luca Palmieri"
-                    tier="industry-partner"
-                    link="https://mainmatter.com/"
-                />
-                <Sponsor
-                    name="Dion Dokter"
-                    tier="industry-partner"
-                    link="https://tweedegolf.nl/en/about/23/dion"
-                />
-                <Sponsor
-                    name="Hugo van de Pol"
-                    tier="industry-partner"
-                    link="https://tweedegolf.nl/en/about/9/hugo"
-                />
-            </div>
+            <Sponsor
+                name="Matthias Endler"
+                tier="industry-partner"
+                link="https://corrode.dev/"
+            />
+            <Sponsor
+                name="Wouter Geraedts"
+                tier="industry-partner"
+                link="https://sarif.nl/"
+            />
+            <Sponsor
+                name="Kris van Rens"
+                tier="industry-partner"
+                link="https://vanrens.org/"
+            />
+            <Sponsor
+                name="Jonathan Pallant"
+                tier="industry-partner"
+                link="https://ferrous-systems.com/"
+            />
+            <Sponsor
+                name="Luca Palmieri"
+                tier="industry-partner"
+                link="https://mainmatter.com/"
+            />
+            <Sponsor
+                name="Dion Dokter"
+                tier="industry-partner"
+                link="https://tweedegolf.nl/en/about/23/dion"
+            />
+            <Sponsor
+                name="Hugo van de Pol"
+                tier="industry-partner"
+                link="https://tweedegolf.nl/en/about/9/hugo"
+            />
         </SponsorTier>
         <SponsorTier name="Powered by">
-            <div class="sponsors-row">
-                <Sponsor
-                    name="Tweede golf"
-                    tier="industry-partner"
-                    image="tweede-golf-v2.png"
-                    link="https://tweedegolf.nl"
-                />
-                <Sponsor
-                    name="RustNL"
-                    tier="industry-partner"
-                    image="../rustnl-logo-square.svg"
-                    link="/about"
-                />
-            </div>
+            <Sponsor
+                name="Tweede golf"
+                tier="industry-partner"
+                image="tweede-golf-v2.png"
+                link="https://tweedegolf.nl"
+            />
+            <Sponsor
+                name="RustNL"
+                tier="industry-partner"
+                image="../rustnl-logo-square.svg"
+                link="/about"
+            />
         </SponsorTier>
-    </div>
-    <ul class="timetable" slot="timetable-day">
-        <TimetableItem time="13:30" title="Registration at 'Chaos' building" />
-        <TimetableItem time="14.00" title="Opening" speaker="Matthias Endler" />
-        <TimetableItem
-            time="14.05"
-            title="Rust at Renault"
-            speaker="Frédéric Ameye"
-        />
-        <TimetableItem
-            time="14.30"
-            title="Global State of Rust"
-            speaker="Jakub Beránek"
-        />
-        <TimetableItem time="14.50" title="Short break" />
-        <TimetableItem
-            time="15.00"
-            title="Industry Panel - learn from Infineon, 1Password, Albelli and Rust Foundation"
-            speaker="Paul Lenz, Ed Page, Tiago Manczak, Joachim den Hertog, Floris van der Grinten"
-        />
-        <TimetableItem
-            time="15:30"
-            title="Roundtable discussions - on adopting Rust"
-            speaker="Moderated by Kris van Rens, Matthias Endler, Wouter Geraedts, Jonathan Pallant, Luca Palmieri, Dion Dokter, Hugo van de Pol"
-        />
-        <TimetableItem
-            time="16.35"
-            title="Closing Remarks"
-            speaker="Sid Askary, Matthias Endler"
-        />
-        <TimetableItem
-            time="16.45"
-            title="Drinks (with conference attendees)"
-        />
-    </ul>
-</IndustryLayout>
+        <Timetable slot="timetable-day">
+            <TimetableItem
+                time="13:30"
+                title="Registration at 'Chaos' building"
+            />
+            <TimetableItem
+                time="14.00"
+                title="Opening"
+                speaker="Matthias Endler"
+            />
+            <TimetableItem
+                time="14.05"
+                title="Rust at Renault"
+                speaker="Frédéric Ameye"
+            />
+            <TimetableItem
+                time="14.30"
+                title="Global State of Rust"
+                speaker="Jakub Beránek"
+            />
+            <TimetableItem time="14.50" title="Short break" />
+            <TimetableItem
+                time="15.00"
+                title="Industry Panel - learn from Infineon, 1Password, Albelli and Rust Foundation"
+                speaker="Paul Lenz, Ed Page, Tiago Manczak, Joachim den Hertog, Floris van der Grinten"
+            />
+            <TimetableItem
+                time="15:30"
+                title="Roundtable discussions - on adopting Rust"
+                speaker="Moderated by Kris van Rens, Matthias Endler, Wouter Geraedts, Jonathan Pallant, Luca Palmieri, Dion Dokter, Hugo van de Pol"
+            />
+            <TimetableItem
+                time="16.35"
+                title="Closing Remarks"
+                speaker="Sid Askary, Matthias Endler"
+            />
+            <TimetableItem
+                time="16.45"
+                title="Drinks (with conference attendees)"
+            />
+        </Timetable>
+    </div></IndustryLayout
+>
+
+<style lang="scss">
+    @import "../styles/variables.scss";
+
+    .header {
+        font-size: $font-size-2xl;
+    }
+
+    .venue {
+        font-size: $font-size-lg;
+    }
+</style>

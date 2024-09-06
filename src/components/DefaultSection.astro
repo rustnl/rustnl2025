@@ -1,0 +1,30 @@
+---
+interface Props {
+    header: string;
+}
+
+const { header }: Props = Astro.props;
+---
+
+<section class="container md:grid md:cols-12 py-12">
+    <div class="text md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10">
+        <div class="markdown" slot="participate">
+            <h2 class="space-y-6">{header}</h2>
+            <p>
+                <slot />
+            </p>
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+    @import "../styles/variables.scss";
+
+    .text {
+        font-size: $font-size-lg;
+    }
+    .header {
+        font-size: $font-size-xl;
+        tet-align: center;
+    }
+</style>

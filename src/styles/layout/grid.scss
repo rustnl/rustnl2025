@@ -1,0 +1,72 @@
+@use 'sass:map';
+@import '../breakpoint.scss';
+@import '../variables.scss';
+@import '../maps.scss';
+
+.grid {
+  display: grid;
+  gap: space(6);
+}
+
+.grid.gap-0 {
+  gap: 0;
+}
+
+@for $i from 1 through 12 {
+  .cols-#{$i} {
+    grid-template-columns: repeat($i, 1fr);
+  }
+
+  .col-#{$i} {
+    grid-column: span $i;
+  }
+}
+
+@for $i from 1 through 13 {
+  .col-start-#{$i} {
+    grid-column-start: $i;
+  }
+
+  .col-end-#{$i} {
+    grid-column-end: $i;
+  }
+}
+
+@each $breakpoint in map.keys($breakpoints) {
+  @include breakpoint($breakpoint) {
+    .#{$breakpoint}\:grid {
+      display: grid;
+      gap: space(6);
+    }
+  }
+}
+
+@each $breakpoint in map.keys($breakpoints) {
+  @for $i from 1 through 12 {
+    @include breakpoint($breakpoint) {
+      .#{$breakpoint}\:cols-#{$i} {
+        grid-template-columns: repeat($i, 1fr);
+      }
+    }
+
+    @include breakpoint($breakpoint) {
+      .#{$breakpoint}\:col-#{$i} {
+        grid-column: span $i;
+      }
+    }
+  }
+
+  @for $i from 1 through 13 {
+    @include breakpoint($breakpoint) {
+      .#{$breakpoint}\:col-start-#{$i} {
+        grid-column-start: $i;
+      }
+    }
+
+    @include breakpoint($breakpoint) {
+      .#{$breakpoint}\:col-end-#{$i} {
+        grid-column-end: $i;
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@use 'sass:map';
+@import '../breakpoint.scss';
+@import '../variables.scss';
+@import '../maps.scss';
+
+@for $i from 1 through 24 {
+  .space-y-#{$i}>*+* {
+    margin-block-start: space($i);
+  }
+}
+
+@for $i from 1 through 24 {
+  .p-#{$i} {
+    padding: space($i);
+  }
+
+  .px-#{$i} {
+    padding-inline: space($i);
+  }
+
+  .py-#{$i} {
+    padding-block: space($i);
+  }
+}
+
+@each $breakpoint in map.keys($breakpoints) {
+  @include breakpoint($breakpoint) {
+    .#{$breakpoint}\:space-y-0>*+* {
+      margin-block-start: 0;
+    }
+  }
+
+  @for $i from 1 through 24 {
+    @include breakpoint($breakpoint) {
+      .#{$breakpoint}\:space-y-#{$i}>*+* {
+        margin-block-start: space($i);
+      }
+    }
+
+    @include breakpoint($breakpoint) {
+      .#{$breakpoint}\:p-#{$i} {
+        padding: space($i);
+      }
+    }
+
+    @include breakpoint($breakpoint) {
+      .#{$breakpoint}\:px-#{$i} {
+        padding-inline: space($i);
+      }
+    }
+
+    @include breakpoint($breakpoint) {
+      .#{$breakpoint}\:py-#{$i} {
+        padding-block: space($i);
+      }
+    }
+  }
+}

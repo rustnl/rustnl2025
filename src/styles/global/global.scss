@@ -1,0 +1,55 @@
+@import "../variables.scss";
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: $color-neutral-400;
+  color: $color-red-500;
+  font-family: $font-family;
+  font-size: $font-size-md;
+  font-weight: 300;
+  line-height: $line-height-normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+  font-weight: 700;
+}
+
+
+.anchor {
+  scroll-margin-top: space(24);
+}
+
+ul {
+  padding-left: 40px;
+}
+
+li {
+  list-style: disc;
+  padding-bottom: 0.2em;
+}
+
+blockquote {
+  border-left: solid 4px $color-red-500;
+  padding-left: 1em;
+}
+
+blockquote>p {
+  margin-block-start: space(6);
+}

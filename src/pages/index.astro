@@ -1,10 +1,16 @@
 ---
 import HomeLayout from "../layouts/HomeLayout.astro";
-import Speaker from "../components/speaker.astro";
-import Speakers from "../components/speakers.astro";
-import PreviousSpeaker from "../components/previous_speaker.astro";
-import Sponsor from "../components/sponsor.astro";
-import SponsorTier from "../components/sponsor-tier.astro";
+
+import SpeakerSmall from "../components/people/SpeakerSmall.astro";
+import TwoSpeakers from "../components/people/TwoSpeakers.astro";
+import LastYearSpeaker from "../components/people/LastYearSpeaker.astro";
+
+import Sponsor from "../components/sponsor/sponsor.astro";
+import SponsorTier from "../components/sponsor/sponsor-tier.astro";
+
+import Button from "../components/Button.astro";
+import ButtonGroup from "../components/ButtonGroup.astro";
+import Markdown from "../components/Markdown.astro";
 ---
 
 <HomeLayout>
@@ -18,28 +24,37 @@ import SponsorTier from "../components/sponsor-tier.astro";
 
         <h2>The conference</h2>
         <ul>
-            <li>Two days of talks (Tue 13 and Wed 14) and one day with workshops (Thu 15)</li>
+            <li>
+                Two days of talks (Tue 13 and Wed 14) and one day with workshops
+                (Thu 15)
+            </li>
             <li>Sponsor and interaction space to talk and connect</li>
             <li>Social events and activities all-week (Mon 12 - Fri 16)</li>
         </ul>
-        <div class="button-group">
-            <a
-                href="https://www.eventbrite.nl/e/rust-week-2025-tickets-1001676961757?aff=oddtdtcreator"
-                class="button button-secondary">Tickets</a
+        <ButtonGroup>
+            <Button
+                link="https://www.eventbrite.nl/e/rust-week-2025-tickets-1001676961757?aff=oddtdtcreator"
+                ty="secondary">Tickets</Button
             >
-        </div>
+        </ButtonGroup>
         <br />
         <h2>Rust All Hands and Unconference</h2>
         <ul>
             <li>
-                The 1st Rust All Hands since 2018! (Fri 16 and Sat 17)<br />Details on <a
-                    href="https://blog.rust-lang.org/inside-rust/2024/09/02/all-hands.html">rust-lang.org</a
-                > 
+                The 1st Rust All Hands since 2018! (Fri 16 and Sat 17)<br
+                />Details on <a
+                    href="https://blog.rust-lang.org/inside-rust/2024/09/02/all-hands.html"
+                    >rust-lang.org</a
+                >
             </li>
             <li>Party! A celebration of 10 years of stable Rust (Thu 15)</li>
             <li>A two day unconference for maintainers (Fri 16 and Sat 17)</li>
         </ul>
-        <p>Please note: the All Hands and Unconference events are invite-based. The Rust All Hands is an event for people affiliated with the Rust project. Stay tuned for updates on all-hands & unconf.</p>
+        <p>
+            Please note: the All Hands and Unconference events are invite-based.
+            The Rust All Hands is an event for people affiliated with the Rust
+            project. Stay tuned for updates on all-hands & unconf.
+        </p>
         <br />
         <h2>Call for Proposals</h2>
         <p>
@@ -60,7 +75,6 @@ import SponsorTier from "../components/sponsor-tier.astro";
         </p>
     </div>
     <Fragment slot="sponsors">
-        <h3 class="text-2xl text-center">Sponsors</h3>
         None yet, how about you?
         <!-- <SponsorTier name="Ecosystem partners"> -->
         <!--     <div class="sponsors-row"></div> -->
@@ -72,20 +86,18 @@ import SponsorTier from "../components/sponsor-tier.astro";
         <!--     <div class="sponsors-row"></div> -->
         <!-- </SponsorTier> -->
         <SponsorTier name="Organizing partners">
-            <div class="sponsors-row">
-                <Sponsor
-                    name="Tweede golf"
-                    tier="organizing-partner"
-                    image="tweede-golf-v2.png"
-                    link="https://tweedegolf.nl"
-                />
-                <Sponsor
-                    name="Hexcat"
-                    tier="organizing-partner"
-                    image="hexcat.png"
-                    link="https://hexcat.nl"
-                />
-            </div>
+            <Sponsor
+                name="Tweede golf"
+                tier="organizing-partner"
+                image="tweede-golf-v2.png"
+                link="https://tweedegolf.nl"
+            />
+            <Sponsor
+                name="Hexcat"
+                tier="organizing-partner"
+                image="hexcat.png"
+                link="https://hexcat.nl"
+            />
         </SponsorTier>
         <!-- <SponsorTier name="Workshop partner"> -->
         <!--     <div class="sponsors-row"></div> -->
@@ -101,214 +113,206 @@ import SponsorTier from "../components/sponsor-tier.astro";
         <!-- </SponsorTier> -->
     </Fragment>
     <Fragment slot="previous-sponsors">
-        <h3 class="text-2xl text-center">Last Year's Sponsors</h3>
-        <div class="sponsors-tiers space-y-6">
-            <div class="sponsors-row">
-                <Sponsor
-                    name="Rust Foundation"
-                    tier="last-year"
-                    image="rustfoundation.png"
-                    link="https://foundation.rust-lang.org/"
-                />
-                <Sponsor
-                    name="Futurewei Technologies"
-                    tier="last-year"
-                    image="futurewei.png"
-                    link="https://www.futurewei.com/"
-                />
-                <Sponsor
-                    name="Tandemdrive"
-                    tier="last-year"
-                    image="tandemdrive.png"
-                    link="https://tandemdrive.com"
-                />
-                <Sponsor
-                    name="hyperswitch"
-                    tier="last-year"
-                    image="hyperswitch.png"
-                    link="https://hyperswitch.io"
-                />
-                <Sponsor
-                    name="Tweede golf"
-                    tier="last-year"
-                    image="tweede-golf-v2.png"
-                    link="https://tweedegolf.nl"
-                />
-                <Sponsor
-                    name="One Variable"
-                    tier="last-year"
-                    image="onevariable.png"
-                    link="https://onevariable.com"
-                />
-                <Sponsor
-                    name="Makepad"
-                    tier="last-year"
-                    image="makepad.png"
-                    link="https://makepad.nl"
-                />
-                <Sponsor
-                    name="Mainmatter"
-                    tier="last-year"
-                    image="mainmatter.png"
-                    link="https://mainmatter.com"
-                />
-                <Sponsor
-                    name="Infineon Technologies"
-                    tier="last-year"
-                    image="infineon.png"
-                    link="https://infineon.com/"
-                />
-                <Sponsor
-                    name="Ferrous Systems"
-                    tier="last-year"
-                    image="ferrous.png"
-                    link="https://ferrous-systems.com/"
-                />
-                <Sponsor
-                    name="Technolution"
-                    tier="last-year"
-                    image="technolution.png"
-                    link="https://technolution.com/"
-                />
-                <Sponsor
-                    name="Baseflow"
-                    tier="last-year"
-                    image="baseflow.png"
-                    link="https://baseflow.com/"
-                />
-                <Sponsor
-                    name="Jitter"
-                    tier="last-year"
-                    image="jitter.png"
-                    link="https://jitter.nl/"
-                />
-                <Sponsor
-                    name="Polars"
-                    tier="last-year"
-                    image="polars.png"
-                    link="https://pola.rs/"
-                />
-                <Sponsor
-                    name="Rocsys"
-                    tier="last-year"
-                    image="rocsys.png"
-                    link="https://rocsys.com/"
-                />
-                <Sponsor
-                    name="NLnet Labs"
-                    tier="last-year"
-                    image="nlnetlabs.png"
-                    link="https://nlnetlabs.nl/"
-                />
-            </div>
-        </div>
+        <SponsorTier name="">
+            <Sponsor
+                name="Rust Foundation"
+                tier="last-year"
+                image="rustfoundation.png"
+                link="https://foundation.rust-lang.org/"
+            />
+            <Sponsor
+                name="Futurewei Technologies"
+                tier="last-year"
+                image="futurewei.png"
+                link="https://www.futurewei.com/"
+            />
+            <Sponsor
+                name="Tandemdrive"
+                tier="last-year"
+                image="tandemdrive.png"
+                link="https://tandemdrive.com"
+            />
+            <Sponsor
+                name="hyperswitch"
+                tier="last-year"
+                image="hyperswitch.png"
+                link="https://hyperswitch.io"
+            />
+            <Sponsor
+                name="Tweede golf"
+                tier="last-year"
+                image="tweede-golf-v2.png"
+                link="https://tweedegolf.nl"
+            />
+            <Sponsor
+                name="One Variable"
+                tier="last-year"
+                image="onevariable.png"
+                link="https://onevariable.com"
+            />
+            <Sponsor
+                name="Makepad"
+                tier="last-year"
+                image="makepad.png"
+                link="https://makepad.nl"
+            />
+            <Sponsor
+                name="Mainmatter"
+                tier="last-year"
+                image="mainmatter.png"
+                link="https://mainmatter.com"
+            />
+            <Sponsor
+                name="Infineon Technologies"
+                tier="last-year"
+                image="infineon.png"
+                link="https://infineon.com/"
+            />
+            <Sponsor
+                name="Ferrous Systems"
+                tier="last-year"
+                image="ferrous.png"
+                link="https://ferrous-systems.com/"
+            />
+            <Sponsor
+                name="Technolution"
+                tier="last-year"
+                image="technolution.png"
+                link="https://technolution.com/"
+            />
+            <Sponsor
+                name="Baseflow"
+                tier="last-year"
+                image="baseflow.png"
+                link="https://baseflow.com/"
+            />
+            <Sponsor
+                name="Jitter"
+                tier="last-year"
+                image="jitter.png"
+                link="https://jitter.nl/"
+            />
+            <Sponsor
+                name="Polars"
+                tier="last-year"
+                image="polars.png"
+                link="https://pola.rs/"
+            />
+            <Sponsor
+                name="Rocsys"
+                tier="last-year"
+                image="rocsys.png"
+                link="https://rocsys.com/"
+            />
+            <Sponsor
+                name="NLnet Labs"
+                tier="last-year"
+                image="nlnetlabs.png"
+                link="https://nlnetlabs.nl/"
+            />
+        </SponsorTier>
     </Fragment>
-    <div class="markdown" slot="about">
-        <h2 class="text-2xl" id="about">About RustWeek</h2>
+    <Markdown slot="about">
         <p>
             RustWeek is organised by Stichting Rust Nederland, RustNL for short,
             a non-profit that strives to promote the implementation of the Rust
             programming language.
         </p>
-        <div class="button-group">
-            <a
-                class="button button-primary"
-                style="text-decoration: none;color:var(--color-neutral-400);"
-                href="/about">More About Us</a
-            >
-        </div>
-    </div>
+        <ButtonGroup>
+            <Button link="/about">More About Us</Button>
+        </ButtonGroup>
+    </Markdown>
     <Fragment slot="speakers">
-        <Speaker
+        <SpeakerSmall
             name="Alice Ryhl"
             image="alice.jpg"
             description="Software engineer at Google"
         />
-        <Speaker
+        <SpeakerSmall
             name="Raph Levien"
             image="raph.jpg"
             description="Research engineer at Google"
         />
-        <Speaker
+        <SpeakerSmall
             name="Rik Arends"
             image="rik.jpeg"
             description="Founder @ Makepad"
         />
-        <Speaker
+        <SpeakerSmall
             name="Sophia Turner"
             image="sophia.jpg"
             description="Language Architect"
         />
-        <Speaker
+        <SpeakerSmall
             name="Dario Nieuwenhuis"
             image="dario.jpg"
             description="Akiles CTO & Embassy project lead"
         />
-        <Speaker
+        <SpeakerSmall
             name="Mara Bos"
             image="mara.jpg"
             description="Rust leadership council & Principal Rust Expert @ Huawei"
         />
-        <Speaker
+        <SpeakerSmall
             name="Niko Matsakis"
             image="niko.png"
             description="Language team co-lead & Senior Principal Engineer @ AWS"
         />
-        <Speaker
+        <SpeakerSmall
             name="Michael Melchiore"
             image="michaelmelchiore.jpg"
             description="On-Board Processing Specialist @ Airbus"
         />
     </Fragment>
     <Fragment slot="workshops">
-        <Speaker
+        <SpeakerSmall
             name="James Munns"
             image="james.png"
             description="Embedded, systems and Rust consultant & Director @ OneVariable"
         />
-        <Speaker
+        <SpeakerSmall
             name="Rik Arends"
             image="rik.jpeg"
             description="Founder @ Makepad"
         />
-        <Speakers>
-            <Speaker
+        <TwoSpeakers>
+            <SpeakerSmall
                 name="Tamme Dittrich"
                 image="tamme.jpg"
                 description="Embedded Rust engineer @ Tweede golf"
             />
-            <Speaker
+            <SpeakerSmall
                 name="Henk Oordt"
                 image="henk.png"
                 description="Writing & teaching Rust @ Tweede golf"
             />
-        </Speakers>
-        <Speaker
+        </TwoSpeakers>
+        <SpeakerSmall
             name="Luca Palmieri"
             image="luca.png"
             description="Principal Engineering Consultant @ Mainmatter"
         />
     </Fragment>
     <Fragment slot="previous-speakers">
-        <PreviousSpeaker
+        <LastYearSpeaker
             name="Nicolas Nethercote"
             image="nicholas.png"
             talk="The status of parallel rustc"
             youtube="https://www.youtube.com/watch?v=q2vJ8Faundw&list=PL8Q1w7Ff68DCM_fsMM4v9m473sYLvJwHS&index=9"
         />
-        <PreviousSpeaker
+        <LastYearSpeaker
             name="Rik Arends"
             image="rik.jpeg"
             talk="Makepad: Designing modern UIs with Rust"
             youtube="https://www.youtube.com/watch?v=rC4FCS-oMpg&list=PL8Q1w7Ff68DCM_fsMM4v9m473sYLvJwHS&index=1"
         />
-        <PreviousSpeaker
+        <LastYearSpeaker
             name="Jonathan Kelley"
             image="jonathan.jpg"
             talk="Write once, run everywhere: building apps with Dioxus"
             youtube="https://www.youtube.com/watch?v=aSxdmXjZutI&list=PL8Q1w7Ff68DCM_fsMM4v9m473sYLvJwHS&index=6"
         />
-        <PreviousSpeaker
+        <LastYearSpeaker
             name="Ed Page"
             image="ed.jpg"
             talk="Testing My Patience: An Exploration of Testing in Rust"
@@ -316,3 +320,11 @@ import SponsorTier from "../components/sponsor-tier.astro";
         />
     </Fragment>
 </HomeLayout>
+
+<style lang="scss">
+    @import "../styles/variables.scss";
+
+    h2 {
+        font-size: $font-size-lg;
+    }
+</style>

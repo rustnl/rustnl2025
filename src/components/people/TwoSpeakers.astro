@@ -1,0 +1,46 @@
+---
+
+---
+
+<div class="speakers">
+    <slot />
+</div>
+
+<style lang="scss">
+    @import "../../styles/variables.scss";
+    @import "../../styles/breakpoint.scss";
+
+    @media not all and (max-width: 768px) {
+        .speakers {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .speakers {
+        background-color: $color-yellow-400;
+        border: 1px solid $color-yellow-500;
+        position: relative;
+        z-index: 0;
+
+        &::after {
+            background-color: $color-yellow-500;
+            clip-path: polygon(0 0, 0% 100%, 100% 0);
+            content: "";
+            inset: 0;
+            position: absolute;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .speaker {
+            background-color: transparent;
+            border: 0;
+        }
+
+        .speaker::after {
+            display: none;
+        }
+    }
+</style>

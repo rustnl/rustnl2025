@@ -1,0 +1,25 @@
+---
+import CommonLayout from "./CommonLayout.astro";
+import Markdown from "../components/Markdown.astro";
+import "../styles/index.scss";
+
+const { frontmatter } = Astro.props;
+const { title } = frontmatter;
+---
+
+<CommonLayout title={title} header={title} withLogo>
+    <div class="content">
+        <Markdown>
+            <slot />
+        </Markdown>
+    </div>
+</CommonLayout>
+
+<style lang="scss">
+    .content {
+        font-size: large;
+
+        max-width: 45em;
+        padding: 1em;
+    }
+</style>

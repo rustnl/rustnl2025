@@ -1,101 +1,134 @@
 ---
-import AboutLayout from "../layouts/AboutLayout.astro";
-import Organiser from "../components/organiser.astro";
+import Organiser from "../components/people/Organiser.astro";
+import CommonLayout from "../layouts/CommonLayout.astro";
 ---
 
-<AboutLayout>
-    <div class="markdown" slot="about-long">
-        <h2 class="text-2xl space-y-6" id="about">About RustNL</h2>
-        <p>
-            Stichting Rust Nederland, RustNL for short, is a non-profit that
-            strives to promote the implementation of the Rust programming
-            language.
-        </p>
-        <p>
-            RustNL organizes meetups and events to bring the Rust community
-            together, like RustWeek.
-        </p>
-        <p>
-            The foundation's details can be found on <a
-                href="https://rustnl.org">rustnl.org</a
-            >.
-        </p>
-    </div>
-    <Fragment slot="organisers">
-        <Organiser
-            name="Erik Jonkers"
-            image="erik.jpg"
-            description="Board member of the RustNL foundation and Director of Open Source of software agency Tweede golf."
-        />
-        <Organiser
-            name="Laura Pircalaboiu"
-            image="laura.png"
-            description="Embedded software engineer at Q*Bird"
-        />
-        <Organiser
-            name="Jonathan Dönszelmann"
-            image="jonathan.png"
-            description="Lecturer in Embedded Systems at Delft University of Technology and founder of Hexcat"
-        />
-        <Organiser
-            name="Terts Diepraam"
-            image="terts.png"
-            description="Maintainer on Uutils and Software Engineer at NLnet Labs"
-        />
-        <Organiser
-            name="Mara Bos"
-            image="mara.jpg"
-            description="Rust leadership council and founder of Hexcat"
-        />
-    </Fragment>
-    <Fragment slot="volunteers">
-        <Organiser
-            name="Wouter Geraedts"
-            image="wouter.jpeg"
-            description="Board member of RustNL and one of the MCs of the conference."
-        />
-        <Organiser
-            name="Dirkjan Ochtman"
-            image="dirkjan.png"
-            description="Board member of RustNL and advisor for the organizing team."
-        />
-        <Organiser
-            name="Alex Band"
-            image="alex.jpg"
-            description="Alex is Director of Product Development at NLnet Labs and one of the MCs at the conference."
-        />
-        <Organiser
-            name="Vivian Roest"
-            image="vivian.png"
-            description="MSC Student and Teaching Assistant at Delft University of Technology"
-        />
-        <Organiser
-            name="Jonathan Brouwer"
-            image="jonathanb.png"
-            description="Software Engineer at Technolution and certified 'The other Jonathan'"
-        />
-        <Organiser
-            name="Arav Khanna"
-            image="arav.png"
-            description="BSc Computer Science Student and Privacy Enthusiast"
-        />
-    </Fragment>
+<CommonLayout title="About" header="About" withLogo>
+    <section class="container md:grid md:cols-12 py-12">
+        <div
+            class="abouttext md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
+        >
+            <h1 class="leftheader">About RustNL</h1>
 
-    <Fragment slot="support">
-        <Organiser
-            name="Tweede golf"
-            image="empty.png"
-            description="Tweede golf is organizing partner of RustNL 2024."
-        />
-        <Organiser
-            name="The Red Dress Effect"
-            image="empty.png"
-            description="Anna Kocks of the Red Dress Effect is an event planner of tech events, supporting us with the logistics of the conference."
-        />
-        <Organiser
-            name="Grafische Republiek"
-            image="empty.png"
-            description="Erwin is designer and front-end developer at Grafische Republiek."
-        />
-    </Fragment>
-</AboutLayout>
+            <p>
+                Stichting Rust Nederland, RustNL for short, is a non-profit that
+                strives to promote the implementation of the Rust programming
+                language.
+            </p>
+            <p>
+                RustNL organizes meetups and events to bring the Rust community
+                together, like RustWeek.
+            </p>
+            <p>
+                The foundation's details can be found on <a
+                    href="https://rustnl.org">rustnl.org</a
+                >.
+            </p>
+        </div>
+    </section>
+    <section class="container py-12 space-y-6">
+        <div
+            class="space-y-12 md:grid md:cols-2 md:space-y-0"
+            style="justify-content: center;"
+        >
+        </div>
+        <h3 class="header">RustWeek 2025 team</h3>
+        <div class="grid md:cols-2 xl:cols-3" id="organisers">
+            <Organiser
+                name="Erik Jonkers"
+                image="erik.jpg"
+                description="Board member of the RustNL foundation and Director of Open Source of software agency Tweede golf."
+            />
+            <Organiser
+                name="Laura Pircalaboiu"
+                image="laura.png"
+                description="Embedded software engineer at Q*Bird"
+            />
+            <Organiser
+                name="Jonathan Dönszelmann"
+                image="jonathan.png"
+                description="Lecturer in Embedded Systems at Delft University of Technology and founder of Hexcat"
+            />
+            <Organiser
+                name="Terts Diepraam"
+                image="terts.png"
+                description="Maintainer on Uutils and Software Engineer at NLnet Labs"
+            />
+            <Organiser
+                name="Mara Bos"
+                image="mara.jpg"
+                description="Rust leadership council and founder of Hexcat"
+            />
+        </div>
+
+        <!-- <h3 class="header  py-12">Volunteers</h3> -->
+        <!-- <div class="grid md:cols-2 xl:cols-4" id="volunteers"> -->
+        <!--     <Organiser -->
+        <!--         name="Wouter Geraedts" -->
+        <!--         image="wouter.jpeg" -->
+        <!--         description="Board member of RustNL and one of the MCs of the conference." -->
+        <!--     /> -->
+        <!--     <Organiser -->
+        <!--         name="Dirkjan Ochtman" -->
+        <!--         image="dirkjan.png" -->
+        <!--         description="Board member of RustNL and advisor for the organizing team." -->
+        <!--     /> -->
+        <!--     <Organiser -->
+        <!--         name="Alex Band" -->
+        <!--         image="alex.jpg" -->
+        <!--         description="Alex is Director of Product Development at NLnet Labs and one of the MCs at the conference." -->
+        <!--     /> -->
+        <!--     <Organiser -->
+        <!--         name="Vivian Roest" -->
+        <!--         image="vivian.png" -->
+        <!--         description="MSC Student and Teaching Assistant at Delft University of Technology" -->
+        <!--     /> -->
+        <!--     <Organiser -->
+        <!--         name="Jonathan Brouwer" -->
+        <!--         image="jonathanb.png" -->
+        <!--         description="Software Engineer at Technolution and certified 'The other Jonathan'" -->
+        <!--     /> -->
+        <!--     <Organiser -->
+        <!--         name="Arav Khanna" -->
+        <!--         image="arav.png" -->
+        <!--         description="BSc Computer Science Student and Privacy Enthusiast" -->
+        <!--     /> -->
+        <!-- </div> -->
+
+        <!-- <h3 class="header py-12">Supporting Us</h3> -->
+        <!-- <div class="grid md:cols-2 xl:cols-4" id="support"> -->
+        <!--     <Organiser -->
+        <!--         name="Tweede golf" -->
+        <!--         image="empty.png" -->
+        <!--         description="Tweede golf is organizing partner of RustNL 2024." -->
+        <!--     /> -->
+        <!--     <Organiser -->
+        <!--         name="The Red Dress Effect" -->
+        <!--         image="empty.png" -->
+        <!--         description="Anna Kocks of the Red Dress Effect is an event planner of tech events, supporting us with the logistics of the conference." -->
+        <!--     /> -->
+        <!--     <Organiser -->
+        <!--         name="Grafische Republiek" -->
+        <!--         image="empty.png" -->
+        <!--         description="Erwin is designer and front-end developer at Grafische Republiek." -->
+        <!--     /> -->
+        <!-- </div> -->
+    </section>
+</CommonLayout>
+
+<style lang="scss">
+    @import "../styles/variables.scss";
+
+    .abouttext {
+        font-size: $font-size-lg;
+    }
+
+    .header {
+        font-size: $font-size-2xl;
+        text-align: center;
+    }
+    .leftheader {
+        font-size: $font-size-2xl;
+        margin-bottom: space(6);
+    }
+</style>

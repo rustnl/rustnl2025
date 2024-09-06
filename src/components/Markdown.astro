@@ -1,0 +1,35 @@
+---
+
+---
+
+<div class="markdown">
+    <slot />
+</div>
+
+<style lang="scss" is:global>
+    @import "../styles/variables.scss";
+
+    .markdown {
+        > * + * {
+            margin-block-start: calc($font-size-md * $line-height-normal);
+        }
+
+        a {
+            text-decoration: underline;
+            color: inherit;
+        }
+
+        h1 {
+            font-size: $font-size-2xl;
+        }
+
+        h2 {
+            font-size: $font-size-xl;
+        }
+
+        ul {
+            list-style: disc;
+            padding-inline-start: $font-size-lg;
+        }
+    }
+</style>

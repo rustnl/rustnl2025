@@ -1,0 +1,100 @@
+---
+import Markdown from "../Markdown.astro";
+
+const { name, tier, link, image } = Astro.props;
+
+let className = "size-md";
+switch (tier) {
+    case "headline":
+        className = "size-xl";
+        break;
+    case "gold":
+        className = "size-l";
+        break;
+    case "silver":
+    case "organizing-partner":
+    case "ecosystem-partner":
+        className = "size-md";
+        break;
+    case "nl-sponsor":
+    case "workshop-partner":
+    case "livestream":
+    case "industry-partner":
+        className = "size-s";
+        break;
+    case "nl-supporter":
+    case "last-year":
+    case "ecosystem-supporter":
+        className = "size-xs";
+        break;
+    default:
+        className = "size-md";
+        break;
+}
+---
+
+{
+    image && (
+        <div
+            title={name}
+            onclick={`window.open('${link}', '_blank', 'noopener, noreferrer')`}
+            class={`sponsor ${className}`}
+            style={`--image: url(/images/sponsors/${image}`}
+        />
+    )
+}
+{
+!image && (
+    <Markdown>
+            <a
+                title={name}
+                href={link}
+                target="_blank"
+                class=className
+            >
+                {name}
+            </a>
+    </Markdown>
+    )
+}
+
+<style lang="scss">
+    @import "../../styles/variables.scss";
+
+    a {
+        font-size: $font-size-lg;
+    }
+
+    .sponsor {
+        aspect-ratio: 16 / 9;
+        border-radius: space(1);
+        border: 1px solid $color-red-400;
+        max-width: 20rem;
+        width: 100%;
+        background-image: var(--image);
+        background-size: 80% auto;
+        background-repeat: no-repeat;
+        background-position: center center;
+        cursor: pointer;
+
+        &.size-xl {
+            max-width: 30rem;
+        }
+
+        &.size-l {
+            max-width: 25rem;
+        }
+
+        &.size-md {
+            max-width: 20rem;
+        }
+
+        &.size-s {
+            max-width: 15rem;
+        }
+
+        &.size-xs {
+            max-width: 10rem;
+        }
+    }
+</style>

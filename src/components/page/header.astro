@@ -1,0 +1,146 @@
+---
+import Menu from "./menu.astro";
+
+interface Props {
+    withLogo?: boolean;
+}
+
+const { withLogo = false }: Props = Astro.props;
+---
+
+<div class="header">
+    {
+        withLogo && (
+            <a class="logo" href="/">
+                <img
+                    src="/svg/hero-logo-rustweek.svg"
+                    alt="Logo RustWeek 2025"
+                />
+            </a>
+        )
+    }
+    <div class="hamburger button primary" data-menu-toggle></div>
+    <div class="menu" data-menu>
+        <Menu location="header" />
+    </div>
+    <div class="overlay" data-menu-overlay></div>
+</div>
+
+<script>
+    const toggle = document.querySelector("[data-menu-toggle]");
+    const menu = document.querySelector("[data-menu]");
+    const overlay = document.querySelector("[data-menu-overlay]");
+
+    function toggleMenu() {
+        menu?.classList.toggle("open");
+        overlay?.classList.toggle("open");
+        toggle?.classList.toggle("open");
+    }
+
+    toggle?.addEventListener("click", toggleMenu);
+</script>
+
+<style lang="scss">
+    @import "../../styles/variables.scss";
+    @import "../../styles/breakpoint.scss";
+
+    .header {
+        align-items: center;
+        display: flex;
+        height: space(24);
+        padding-inline: space(4);
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+
+        .logo {
+            img {
+                height: space(12);
+            }
+        }
+
+        .hamburger {
+            margin-inline-start: auto;
+
+            @include breakpoint(lg) {
+                display: none;
+            }
+
+            &::before {
+                content: "Menu";
+            }
+
+            &.open::before {
+                content: "Close";
+            }
+        }
+
+        .menu {
+            align-items: flex-start;
+            background-color: $color-neutral-400;
+            border: 1px solid $color-red-500;
+            bottom: space(3);
+            display: flex;
+            flex-direction: column;
+            left: space(4);
+            opacity: 0;
+            padding: space(4);
+            position: absolute;
+            transform-origin: top;
+            transform: scaleY(0);
+            transition-duration: 250ms;
+            transition-property: opacity, visibility, transform;
+            translate: 0 100%;
+            visibility: hidden;
+            width: calc(100% - space(8));
+            gap: space(3);
+
+            @include breakpoint(lg) {
+                align-items: center;
+                background-color: transparent;
+                border: none;
+                bottom: auto;
+                flex-direction: row;
+                gap: space(6);
+                left: auto;
+                margin-inline-start: auto;
+                opacity: 1;
+                padding: 0;
+                position: static;
+                transform: scaleY(1);
+                translate: none;
+                visibility: visible;
+                width: auto;
+            }
+
+            &.open {
+                opacity: 1;
+                transform: scaleY(1);
+                visibility: visible;
+            }
+        }
+
+        .overlay {
+            background-color: $color-yellow-500;
+            inset: 0;
+            opacity: 0;
+            pointer-events: none;
+            position: fixed;
+            transition-duration: 250ms;
+            transition-property: opacity, visibility;
+            visibility: hidden;
+            z-index: -1;
+
+            @include breakpoint(lg) {
+                visibility: hidden;
+                display: none;
+            }
+
+            &.open {
+                visibility: visible;
+                opacity: 0.75;
+                pointer-events: all;
+            }
+        }
+    }
+</style>

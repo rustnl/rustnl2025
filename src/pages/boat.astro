@@ -1,63 +1,134 @@
 ---
-import BoatLayout from "../layouts/BoatLayout.astro";
-import TimetableItem from "../components/timetable-item.astro";
+import CommonLayout from "../layouts/CommonLayout.astro";
+
+import Markdown from "../components/Markdown.astro";
+import Location from "../components/Location.astro";
+
+import DoubleTimetable from "../components/timetable/DoubleTimetable.astro";
+import TimetableItem from "../components/timetable/timetable-item.astro";
+import Timetable from "../components/timetable/timetable.astro";
 ---
 
-<BoatLayout>
-    <div class="markdown" slot="boat-explainer">
-        <p>
-            Travel from the city center (Delft Station) to the venue through the
-            Delft canals in the free RustNL tour boats!
-        </p>
-    </div>
-    <ul class="timetable" slot="timetable-day1">
-        <TimetableItem
-            time="08:20"
-            title="Boat 1"
-            speaker="From Delft Station to Venue (30 min)"
-        />
-        <TimetableItem
-            time="08:35"
-            title="Boat 2"
-            speaker="From Delft Station to Venue (30 min)"
-        />
+<CommonLayout title="Boat Schedule" header="Boat Schedule">
+    <Markdown>
+        <div class="container md:grid md:cols-12 py-24">
+            <div
+                class="boat-description md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
+            >
+                Travel from the city center (Delft Station) to the venue through
+                the Delft canals in the free RustNL tour boats!
+                <ul>
+                    <li>
+                        <a href="#schedule">Schedule</a>
+                    </li>
+                    <li><a href="#boarding">Departure location</a></li>
+                </ul>
+            </div>
+        </div>
+    </Markdown>
 
-        <TimetableItem time="09:45 - 18:00" title="Conference Day 1" />
+    <Location />
 
-        <TimetableItem
-            time="18:00"
-            title="Boat 1"
-            speaker="From Venue to Delft Station (30 min)"
-        />
-        <TimetableItem
-            time="18:10"
-            title="Boat 2"
-            speaker="From Venue to Delft + city tour (1h 15 min)"
-        />
-    </ul>
-    <ul class="timetable" slot="timetable-day2">
-        <TimetableItem
-            time="08:20"
-            title="Boat 1"
-            speaker="From Delft Station to Venue (30 min)"
-        />
-        <TimetableItem
-            time="08:35"
-            title="Boat 2"
-            speaker="From Delft Station to Venue (30 min)"
-        />
+    <section class="container py-24" id="schedule">
+        <DoubleTimetable>
+            <span slot="name-1"
+                >Boat schedule <strong>Day 1 / May 7</strong></span
+            >
+            <Timetable slot="1">
+                <TimetableItem
+                    time="08:20"
+                    title="Boat 1"
+                    speaker="From Delft Station to Venue (30 min)"
+                />
+                <TimetableItem
+                    time="08:35"
+                    title="Boat 2"
+                    speaker="From Delft Station to Venue (30 min)"
+                />
 
-        <TimetableItem time="09:45 - 19:00" title="Conference Day 2" />
+                <TimetableItem time="09:45 - 18:00" title="Conference Day 1" />
 
-        <TimetableItem
-            time="19:00"
-            title="Boat 1"
-            speaker="From Venue to Delft Station (30 min)"
-        />
-        <TimetableItem
-            time="19:10"
-            title="Boat 2"
-            speaker="From Venue to Delft Station (30 min)"
-        />
-    </ul>
-</BoatLayout>
+                <TimetableItem
+                    time="18:00"
+                    title="Boat 1"
+                    speaker="From Venue to Delft Station (30 min)"
+                />
+                <TimetableItem
+                    time="18:10"
+                    title="Boat 2"
+                    speaker="From Venue to Delft + city tour (1h 15 min)"
+                />
+            </Timetable>
+            <span slot="name-2">
+                Boat schedule <strong>Day 2 / May 8</strong>
+            </span>
+            <Timetable slot="2">
+                <TimetableItem
+                    time="08:20"
+                    title="Boat 1"
+                    speaker="From Delft Station to Venue (30 min)"
+                />
+                <TimetableItem
+                    time="08:35"
+                    title="Boat 2"
+                    speaker="From Delft Station to Venue (30 min)"
+                />
+
+                <TimetableItem time="09:45 - 19:00" title="Conference Day 2" />
+
+                <TimetableItem
+                    time="19:00"
+                    title="Boat 1"
+                    speaker="From Venue to Delft Station (30 min)"
+                />
+                <TimetableItem
+                    time="19:10"
+                    title="Boat 2"
+                    speaker="From Venue to Delft Station (30 min)"
+                />
+            </Timetable>
+        </DoubleTimetable>
+    </section>
+    <section class="container md:grid md:cols-12 py-12">
+        <Markdown>
+            <div
+                id="boarding"
+                class="boat-description md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
+            >
+                <h2>Boarding location</h2>
+                <p>
+                    The boats depart <a
+                        href="https://maps.app.goo.gl/PreLoJkHd1Hp4XSw6"
+                        >next to the Delft train station</a
+                    >.<br />Look for a RustNL flag to find the exact spot. <br
+                    /><br />
+
+                    <img src="/images/boat-map.jpg" width="80%" /><br />
+                </p>
+            </div>
+        </Markdown>
+        <div
+            class="boat-description md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
+        >
+            <p>
+                <br /><strong>Please note</strong><br /> The boats can accommodate
+                100 people in total.<br />Not to worry, if the boats are full
+                the bus station is directly adjacent, see the
+                <a href="/directions">getting there</a>
+                page for bus details and more options.
+            </p>
+        </div>
+    </section>
+</CommonLayout>
+
+<style lang="scss">
+    @import "../styles/variables.scss";
+
+    .boat-description {
+        font-size: $font-size-lg;
+
+        h2 {
+            font-size: $font-size-xl;
+        }
+    }
+</style>
