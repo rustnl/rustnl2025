@@ -24,32 +24,32 @@
 }
 
 @each $breakpoint in map.keys($breakpoints) {
-  @include breakpoint($breakpoint) {
+  @include wider_than($breakpoint) {
     .#{$breakpoint}\:space-y-0>*+* {
       margin-block-start: 0;
     }
   }
 
   @for $i from 1 through 24 {
-    @include breakpoint($breakpoint) {
+    @include wider_than($breakpoint) {
       .#{$breakpoint}\:space-y-#{$i}>*+* {
         margin-block-start: space($i);
       }
     }
 
-    @include breakpoint($breakpoint) {
+    @include wider_than($breakpoint) {
       .#{$breakpoint}\:p-#{$i} {
         padding: space($i);
       }
     }
 
-    @include breakpoint($breakpoint) {
+    @include wider_than($breakpoint) {
       .#{$breakpoint}\:px-#{$i} {
         padding-inline: space($i);
       }
     }
 
-    @include breakpoint($breakpoint) {
+    @include wider_than($breakpoint) {
       .#{$breakpoint}\:py-#{$i} {
         padding-block: space($i);
       }

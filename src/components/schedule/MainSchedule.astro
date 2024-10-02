@@ -1,0 +1,165 @@
+---
+import Schedule from "./Schedule.astro";
+import ScheduleDay from "./ScheduleDay.astro";
+import ScheduleSection from "./ScheduleSection.astro";
+import ScheduleItem from "./ScheduleItem.astro";
+import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
+---
+
+<Schedule logo>
+    <ScheduleDay>
+        <ScheduleSection>
+            <span slot="location">Utrecht,&nbsp;NL</span>
+
+            <ScheduleItem>
+                <span slot="header">Social activities</span>
+                <span slot="attendees">in small groups</span>
+                <span slot="time">12:00–22:00</span>
+                <Fragment slot="activities">
+                    <p>City tour</p>
+                    <p>Ferris sticker hunt</p>
+                    <p>Bouldering</p>
+                    <p>Bowling</p>
+                    <p>Laser tag</p>
+                    <p>…</p>
+                    <OrganizeOwnActivity />
+                </Fragment>
+            </ScheduleItem>
+        </ScheduleSection>
+    </ScheduleDay>
+    <ScheduleDay>
+        <ScheduleSection>
+            <span slot="location">Kinepolis Jaarbeurs, Utrecht,&nbsp;NL</span>
+
+            <ScheduleItem>
+                <span slot="header">Conference day 1</span>
+                <span slot="attendees">800 attendees</span>
+                <span slot="time">09:00–18:00</span>
+                <Fragment slot="activities">
+                    <p>Main stage</p>
+                    <p>Industry track</p>
+                    <p>Rust Project track</p>
+                    <p>Embedded expo</p>
+                </Fragment>
+            </ScheduleItem>
+            <ScheduleItem>
+                <span slot="header">Social activities</span>
+                <span slot="time">18:00–22:00</span>
+                <Fragment slot="activities">
+                    <p>To be announced</p>
+                    <OrganizeOwnActivity />
+                </Fragment>
+            </ScheduleItem>
+        </ScheduleSection>
+    </ScheduleDay>
+    <ScheduleDay>
+        <ScheduleSection>
+            <span slot="location">Kinepolis Jaarbeurs, Utrecht,&nbsp;NL</span>
+
+            <ScheduleItem>
+                <span slot="header">Conference day 2</span>
+                <span slot="attendees">800 attendees</span>
+                <span slot="time">09:00–18:00</span>
+                <Fragment slot="activities">
+                    <p>Main stage</p>
+                    <p>Critical infrastructure track</p>
+                    <p>Rust Project track</p>
+                    <p>Embedded expo</p>
+                </Fragment>
+            </ScheduleItem>
+            <ScheduleItem>
+                <span slot="header">Social activities</span>
+                <span slot="time">18:00–22:00</span>
+                <Fragment slot="activities">
+                    <p>To be announced</p>
+                    <OrganizeOwnActivity />
+                </Fragment>
+            </ScheduleItem>
+        </ScheduleSection>
+    </ScheduleDay>
+
+    <ScheduleDay>
+        <ScheduleSection>
+            <span slot="location">DUS, Sophialaan&nbsp;1, Utrecht,&nbsp;NL</span>
+
+            <ScheduleItem>
+                <span slot="header">Workshops</span>
+                <span slot="attendees">100 attendees</span>
+                <span slot="time">09:00–13:00</span>
+                <Fragment slot="activities">
+                    <p>To be announced</p>
+                </Fragment>
+            </ScheduleItem>
+            <ScheduleItem align_end>
+                <span slot="header">10 Years of Rust Celebration</span>
+                <span slot="attendees">400 attendees</span>
+                <span slot="time">14:00–20:00</span>
+                <Fragment slot="activities">
+                    <p>Live release of Rust&nbsp;1.89!</p>
+                </Fragment>
+            </ScheduleItem>
+        </ScheduleSection>
+    </ScheduleDay>
+
+    <ScheduleDay>
+        <ScheduleSection>
+            <span slot="location">TBD, Utrecht, NL</span>
+
+            <ScheduleItem>
+                <span slot="header">Hackathon</span>
+                <span slot="attendees">200 attendees</span>
+                <span slot="time">09:00–18:00</span>
+                <Fragment slot="activities">
+                    <p>Collaborative coding</p>
+                    <p class="align-end">Promote your own project!</p>
+                </Fragment>
+            </ScheduleItem>
+        </ScheduleSection>
+        <ScheduleSection>
+            <span slot="location">DUS, Sophialaan&nbsp;1, Utrecht,&nbsp;NL</span>
+
+            <ScheduleItem>
+                <span slot="header">Rust All-Hands & Unconference</span>
+                <span slot="attendees">200 attendees</span>
+                <span slot="time">09:00–18:00</span>
+                <Fragment slot="activities">
+                    <p>Invitation only</p>
+                </Fragment>
+            </ScheduleItem>
+        </ScheduleSection>
+    </ScheduleDay>
+
+    <ScheduleDay>
+        <ScheduleSection>
+            <span slot="location">Utrecht,&nbsp;NL</span>
+
+            <ScheduleItem>
+                <span slot="header">Social activities</span>
+                <span slot="attendees">in small groups</span>
+                <span slot="time">09:00–22:00</span>
+                <Fragment slot="activities">
+                    <p>To be announced</p>
+                    <OrganizeOwnActivity />
+                </Fragment>
+            </ScheduleItem>
+        </ScheduleSection>
+        <ScheduleSection>
+            <span slot="location">DUS, Sophialaan&nbsp;1, Utrecht,&nbsp;NL</span>
+
+            <ScheduleItem>
+                <span slot="header">Rust All-Hands & Unconference</span>
+                <span slot="attendees">200 attendees</span>
+                <span slot="time">09:00–18:00</span>
+                <Fragment slot="activities">
+                    <p>Invitation only</p>
+                </Fragment>
+            </ScheduleItem>
+        </ScheduleSection>
+    </ScheduleDay>
+</Schedule>
+
+<style>
+.align-end {
+    margin-top: auto !important;
+}
+</style>

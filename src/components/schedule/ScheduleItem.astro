@@ -1,0 +1,98 @@
+---
+
+interface Props {
+    align_end?: boolean;
+}
+
+const {align_end = false}: Props = Astro.props;
+
+---
+
+<div class:list={["schedule-item", align_end?"align-end":null]}>
+    <h4>
+        <slot name="header" />
+    </h4>
+    <span class="attendees">
+        <slot name="attendees" />
+    </span>
+    <div class="activities">
+        <p class="time">
+            <slot name="time" />
+        </p>
+        <slot name="activities" />
+    </div>
+</div>
+
+<style lang="scss">
+    @import "../../styles/variables.scss";
+    @import "../../styles/breakpoint.scss";
+
+    .align-end {
+        margin-top: auto;
+    }
+
+    :global(.location) + .schedule-item {
+        flex-grow: 1;
+    }
+    .schedule-item {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+
+        margin-bottom: 1em;
+        &:last-child {
+            margin-bottom: 0em;
+        }
+
+        .attendees + .activities {
+            margin-top: 0.2em;
+        }
+
+        .activities {
+            :global(p) {
+                margin: 0;
+                padding: 0;
+                margin-bottom: 0.4em;
+                line-height: 1em;
+            }
+
+            margin: 0;
+            margin-top: 0.4em;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+
+            flex-grow: 1;
+        }
+
+        .attendees {
+            color: #1e79d6;
+            font-size: $font-size-sm;
+
+            font-size: $font-size-md;
+            @include wider_than(lg) {
+                font-size: $font-size-sm;
+            }
+
+            font-style: italic;
+
+            *:only-child {
+                display: none;
+            }
+        }
+
+        .time {
+        }
+
+        h4 {
+            font-size: $font-size-lg;
+            @include wider_than(lg) {
+                font-size: calc($font-size-md * (sqrt($font-size-scale)));
+            }
+            line-height: 1em;
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+    }
+</style>

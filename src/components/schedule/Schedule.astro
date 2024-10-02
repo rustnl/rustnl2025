@@ -1,0 +1,238 @@
+---
+import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
+
+interface Props {
+    logo?: boolean;
+}
+
+const { logo = false } = Astro.props;
+---
+
+<div class:list={["schedule", logo]}>
+    {
+        logo && (
+            <img
+                src="/svg/hero-logo-rustweek-by-rustnl.svg"
+                alt="Logo RustWeek 2025"
+                class="logo"
+            />
+        )
+    }
+    <div class="days">
+        <div class="mon">Monday 12&nbsp;May</div>
+        <div class="tue">Tuesday 13&nbsp;May</div>
+        <div class="wed">Wednesday 14&nbsp;May</div>
+        <div class="thu">
+            Thursday 15&nbsp;May <span class="birthday"
+                >10 year birthday of&nbsp;Rust&nbsp;1.0!</span
+            >
+        </div>
+        <div class="fri">Friday 16&nbsp;May</div>
+        <div class="sat">Saturday 17&nbsp;May</div>
+        <slot />
+    </div>
+
+    <div class="organize">
+        Do you have any suggestions for fun social activities with other Rustaceans?
+        Let us know by filling out <a href="https://forms.gle/fKocgjB4x4TejQYV9">this form</a >.
+    </div>
+</div>
+
+<style lang="scss">
+    @import "../../styles/variables.scss";
+    @import "../../styles/breakpoint.scss";
+
+    .schedule {
+        display: grid;
+        padding: 2em 2em 4em 2em;
+
+        @include smaller_than(md) {
+            padding: 1em 2em 4em 1em;
+        }
+
+        .organize {
+            text-align: center;
+            a {
+                color: unset;
+            }
+        }
+
+        gap: 2em;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        align-items: center;
+
+        position: relative;
+
+        background: $color-yellow-400;
+        z-index: 0;
+
+        &::before {
+            background-color: $color-yellow-500;
+            clip-path: polygon(0 0, 100% 0, 100% 100%);
+            content: "";
+            inset: 0;
+            position: absolute;
+            z-index: -1;
+        }
+
+        &::after {
+            background-image: url("/images/stripes.svg");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: min(40rem, 60%) auto;
+            bottom: 0;
+            content: "";
+            height: space(3);
+            position: absolute;
+            width: 100%;
+            align-self: center;
+        }
+
+        .birthday {
+            position: absolute;
+
+            transform: skew(0deg, -8deg) rotate(-12deg) translateY(-3.3em)
+                translateX(-5em);
+
+            color: white;
+            font-style: italic;
+            font-size: $font-size-md;
+            width: min(10em, 80vw);
+            text-align: right;
+            line-height: 1em;
+
+            z-index: 2;
+        }
+
+        .days {
+            display: grid;
+
+            gap: 0.2em;
+
+            justify-content: center;
+
+            font-size: 120%;
+
+            grid-template-columns: auto;
+            grid-template-areas:
+                "mon"
+                "mon-s"
+                "tue"
+                "tue-s"
+                "wed"
+                "wed-s"
+                "thu"
+                "thu-s"
+                "fri"
+                "fri-s"
+                "sat"
+                "sat-s";
+
+            div {
+                font-weight: bold;
+                position: relative;
+
+                text-align: center;
+
+                @include smaller_than(lg) {
+                    margin-top: 0.5em;
+                }
+
+                font-size: $font-size-xl;
+                @include wider_than(lg) {
+                    font-size: calc(1.4 * $font-size-md);
+                    margin-bottom: 0.1em;
+                }
+
+                margin-left: -1em;
+                margin-right: -1em;
+
+                @include wider_than(xl) {
+                    font-size: $font-size-lg !important;
+                }
+            }
+
+            .mon {
+                grid-area: mon;
+            }
+            .tue {
+                grid-area: tue;
+            }
+            .wed {
+                grid-area: wed;
+            }
+            .thu {
+                grid-area: thu;
+
+                @include smaller_than(lg) {
+                    margin-top: 2em;
+                }
+            }
+            .fri {
+                grid-area: fri;
+            }
+            .sat {
+                grid-area: sat;
+            }
+
+            @include wider_than(lg) {
+                @include smaller_than(xl) {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: auto;
+                grid-template-areas:
+                    "mon   tue   wed" 
+                    "mon-s tue-s wed-s"
+                    "thu   fri   sat"
+                    "thu-s fri-s sat-s";
+
+                gap: 0em 1em;
+
+                font-size: 100%;
+
+                justify-content: unset;
+
+                div {
+                    font-size: $font-size-xl;
+                }
+
+                .thu, .fri, .sat {
+                    margin-top: 2em;
+                    }
+                }
+            }
+
+            @include wider_than(xl) {
+                grid-template-columns: repeat(6, 1fr);
+                grid-template-rows: auto;
+                grid-template-areas:
+                    "mon   tue   wed   thu   fri   sat"
+                    "mon-s tue-s wed-s thu-s fri-s sat-s";
+
+                gap: 0em 1em;
+
+                font-size: 100%;
+
+                justify-content: unset;
+
+                div {
+                    font-size: $font-size-md;
+                }
+            }
+        }
+
+        img {
+            height: min(8em, 30vw);
+            align-self: center;
+            justify-self: center;
+
+            @include wider_than(md) {
+                max-width: 60vw;
+            }
+
+            @include wider_than(xl) {
+                max-width: 40vw;
+            }
+        }
+    }
+</style>

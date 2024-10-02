@@ -47,7 +47,7 @@ const { location }: Props = Astro.props;
                 text-decoration: none;
                 width: 100%;
 
-                @include breakpoint(lg) {
+                @include wider_than(lg) {
                     color: $color-neutral-400;
                     width: auto;
                 }
@@ -56,7 +56,7 @@ const { location }: Props = Astro.props;
             a:last-child {
                 margin-block-start: space(3);
 
-                @include breakpoint(lg) {
+                @include wider_than(lg) {
                     margin-block-start: 0;
                 }
             }

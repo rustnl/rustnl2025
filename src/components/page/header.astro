@@ -62,7 +62,7 @@ const { withLogo = false }: Props = Astro.props;
         .hamburger {
             margin-inline-start: auto;
 
-            @include breakpoint(lg) {
+            @include wider_than(lg) {
                 display: none;
             }
 
@@ -95,7 +95,7 @@ const { withLogo = false }: Props = Astro.props;
             width: calc(100% - space(8));
             gap: space(3);
 
-            @include breakpoint(lg) {
+            @include wider_than(lg) {
                 align-items: center;
                 background-color: transparent;
                 border: none;
@@ -131,7 +131,7 @@ const { withLogo = false }: Props = Astro.props;
             visibility: hidden;
             z-index: -1;
 
-            @include breakpoint(lg) {
+            @include wider_than(lg) {
                 visibility: hidden;
                 display: none;
             }

@@ -33,13 +33,13 @@ const { style = "page" }: Props = Astro.props;
         text-align: center;
         z-index: 0;
 
-        @include breakpoint(md) {
+        @include wider_than(md) {
             border-width: space(6) space(6) 0 space(6);
             padding-block: space(12);
             padding-inline: space(6);
         }
 
-        @include breakpoint(xl) {
+        @include wider_than(xl) {
             border-width: space(12) space(12) 0 space(12);
             padding-block: space(24);
             padding-inline: space(12);
@@ -71,11 +71,11 @@ const { style = "page" }: Props = Astro.props;
             height: auto;
             max-width: 95vw;
 
-            @include breakpoint(md) {
+            @include wider_than(md) {
                 max-width: 60vw;
             }
 
-            @include breakpoint(xl) {
+            @include wider_than(xl) {
                 max-width: 40vw;
             }
         }

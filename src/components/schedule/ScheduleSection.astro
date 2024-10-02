@@ -1,0 +1,36 @@
+---
+
+---
+
+<div class="schedule-section">
+    <span class="location">
+        <slot name="location" />
+    </span>
+
+    <slot />
+</div>
+
+<style lang="scss">
+    @import "../../styles/variables.scss";
+    @import "../../styles/breakpoint.scss";
+
+    .schedule-section {
+        display: flex;
+        flex-direction: column;
+
+        background: $color-neutral-400;
+
+        padding: 0.2em 0.4em 0.1em 0.4em;
+        border-radius: 0.25em;
+
+        flex-grow: 1;
+
+        .location {
+            font-size: $font-size-sm;
+            text-align: center;
+            margin-bottom: 0.5em;
+            margin-left: -0.4em;
+            margin-right: -0.4em;
+        }
+    }
+</style>

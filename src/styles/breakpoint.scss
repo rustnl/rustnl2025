@@ -5,13 +5,21 @@ $breakpoints: (
   'sm': 40rem,
   'md': 48rem,
   'lg': 64rem,
-  'xl': 75rem,
+  'xl': 79rem,
   'xxl': 90rem,
 );
 
-@mixin breakpoint($breakpoint) {
+@mixin wider_than($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
     @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
+
+@mixin smaller_than($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media not (min-width: map-get($breakpoints, $breakpoint)) {
       @content;
     }
   }
