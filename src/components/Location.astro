@@ -23,7 +23,7 @@
     .location {
         position: relative;
 
-        @include breakpoint(sm) {
+        @include wider_than(sm) {
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-areas:
@@ -47,7 +47,7 @@
         > .ferris {
             display: none;
 
-            @include breakpoint(sm) {
+            @include wider_than(sm) {
                 align-items: flex-start;
                 aspect-ratio: 16 / 9;
                 display: flex;
@@ -60,17 +60,17 @@
                 z-index: -2;
             }
 
-            @include breakpoint(xl) {
+            @include wider_than(xl) {
                 top: -24px;
             }
 
             img {
-                @include breakpoint(sm) {
+                @include wider_than(sm) {
                     rotate: -30deg;
                     width: 144px;
                 }
 
-                @include breakpoint(xl) {
+                @include wider_than(xl) {
                     width: 288px;
                 }
             }
@@ -91,7 +91,7 @@
                 background-image: url("/images/boat2.jpg");
             }
 
-            @include breakpoint(sm) {
+            @include wider_than(sm) {
                 aspect-ratio: auto;
                 grid-area: a;
             }
@@ -140,7 +140,7 @@
                 background-image: url("/images/vakwerkhuis.jpg");
             }
 
-            @include breakpoint(sm) {
+            @include wider_than(sm) {
                 grid-area: b;
             }
         }
@@ -148,7 +148,7 @@
         .image:nth-of-type(3) {
             display: none;
 
-            @include breakpoint(sm) {
+            @include wider_than(sm) {
                 aspect-ratio: 16 / 9;
                 background-color: $color-yellow-400;
                 grid-area: c;
@@ -158,7 +158,7 @@
             }
 
             &::after {
-                @include breakpoint(sm) {
+                @include wider_than(sm) {
                     background-color: $color-yellow-500;
                     content: "";
                     inset: 0 50% 0 0;
@@ -167,7 +167,7 @@
             }
 
             &:hover .ferris {
-                @include breakpoint(sm) {
+                @include wider_than(sm) {
                     translate: 0;
                 }
 
@@ -176,7 +176,7 @@
             }
 
             &:hover .ferris-arms {
-                @include breakpoint(sm) {
+                @include wider_than(sm) {
                     opacity: 1;
                     translate: 0px;
                 }
@@ -189,7 +189,7 @@
 
             > .ferris,
             > .ferris-arms {
-                @include breakpoint(sm) {
+                @include wider_than(sm) {
                     background-repeat: no-repeat;
                     background-size: contain;
                     height: 120px;
@@ -198,14 +198,14 @@
                     width: 144px;
                 }
 
-                @include breakpoint(xl) {
+                @include wider_than(xl) {
                     height: 240px;
                     width: 288px;
                 }
             }
 
             > .ferris {
-                @include breakpoint(sm) {
+                @include wider_than(sm) {
                     background-image: url("/images/ferris.png");
                     /* This timing is for the leaving animation */
                     transition: translate 300ms ease-out;
@@ -214,7 +214,7 @@
             }
 
             > .ferris-arms {
-                @include breakpoint(sm) {
+                @include wider_than(sm) {
                     background-image: url("/images/ferris-arms.png");
                     background-position: center -12px;
                     /* This timing is for the leaving animation */

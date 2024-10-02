@@ -9,13 +9,18 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
 <Schedule logo>
     <ScheduleDay>
         <ScheduleSection>
-            <span slot="location">Utrecht, NL</span>
+            <span slot="location">Utrecht,&nbsp;NL</span>
 
             <ScheduleItem>
-                <span slot="header">Social Activities</span>
-                <span slot="time">12:00—22:00</span>
+                <span slot="header">Social activities</span>
+                <span slot="time">12:00–22:00</span>
                 <Fragment slot="activities">
-                    <li>To be announced</li>
+                    <p>City tour</p>
+                    <p>Ferris sticker hunt</p>
+                    <p>Bouldering</p>
+                    <p>Bowling</p>
+                    <p>Laser tag</p>
+                    <p>…</p>
                     <OrganizeOwnActivity />
                 </Fragment>
             </ScheduleItem>
@@ -23,23 +28,24 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
     </ScheduleDay>
     <ScheduleDay>
         <ScheduleSection>
-            <span slot="location">Kinepolis Jaarbeurs, Utrecht, NL</span>
+            <span slot="location">Kinepolis Jaarbeurs, Utrecht,&nbsp;NL</span>
 
             <ScheduleItem>
                 <span slot="header">Conference day 1</span>
-                <span slot="attendees">600—800</span>
-                <span slot="time">09:00—18:00</span>
+                <span slot="attendees">600–800</span>
+                <span slot="time">09:00–18:00</span>
                 <Fragment slot="activities">
-                    <li>Main stage</li>
-                    <li>Critical Infrastructure track</li>
-                    <li>...</li>
+                    <p>Main stage</p>
+                    <p>Critical infrastructure track</p>
+                    <p>Industry track</p>
+                    <p>Embedded expo</p>
                 </Fragment>
             </ScheduleItem>
             <ScheduleItem>
                 <span slot="header">Social activities</span>
-                <span slot="time">18:00—22:00</span>
+                <span slot="time">18:00–22:00</span>
                 <Fragment slot="activities">
-                    <li>To be announced</li>
+                    <p>To be announced</p>
                     <OrganizeOwnActivity />
                 </Fragment>
             </ScheduleItem>
@@ -47,22 +53,24 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
     </ScheduleDay>
     <ScheduleDay>
         <ScheduleSection>
-            <span slot="location">Kinepolis Jaarbeurs, Utrecht, NL</span>
+            <span slot="location">Kinepolis Jaarbeurs, Utrecht,&nbsp;NL</span>
 
             <ScheduleItem>
                 <span slot="header">Conference day 2</span>
-                <span slot="attendees">600—800</span>
-                <span slot="time">09:00—18:00</span>
+                <span slot="attendees">600–800</span>
+                <span slot="time">09:00–18:00</span>
                 <Fragment slot="activities">
-                    <li>Main stage</li>
-                    <li>...</li>
+                    <p>Main stage</p>
+                    <p>Critical infrastructure track</p>
+                    <p>Industry track</p>
+                    <p>Embedded expo</p>
                 </Fragment>
             </ScheduleItem>
             <ScheduleItem>
                 <span slot="header">Social activities</span>
-                <span slot="time">18:00—22:00</span>
+                <span slot="time">18:00–22:00</span>
                 <Fragment slot="activities">
-                    <li>To be announced</li>
+                    <p>To be announced</p>
                     <OrganizeOwnActivity />
                 </Fragment>
             </ScheduleItem>
@@ -71,23 +79,22 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
 
     <ScheduleDay>
         <ScheduleSection>
-            <span slot="location">Dus, Sophialaan 1, Utrecht, NL</span>
+            <span slot="location">DUS, Sophialaan&nbsp;1, Utrecht,&nbsp;NL</span>
 
             <ScheduleItem>
                 <span slot="header">Workshops</span>
                 <span slot="attendees">100</span>
                 <span slot="time">09:00—13:00</span>
                 <Fragment slot="activities">
-                    <li>...</li>
+                    <p>To be announced</p>
                 </Fragment>
             </ScheduleItem>
-            <ScheduleItem>
+            <ScheduleItem align_end>
                 <span slot="header">10 Years of Rust Celebration</span>
                 <span slot="attendees">350</span>
-                <span slot="time">14:00—20:00</span>
+                <span slot="time">14:00–20:00</span>
                 <Fragment slot="activities">
-                    <li>To be announced</li>
-                    <OrganizeOwnActivity />
+                    <p>Live release of Rust&nbsp;1.89!</p>
                 </Fragment>
             </ScheduleItem>
         </ScheduleSection>
@@ -100,22 +107,22 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
             <ScheduleItem>
                 <span slot="header">Hackathon</span>
                 <span slot="attendees">200</span>
-                <span slot="time">09:00—18:00</span>
+                <span slot="time">09:00–18:00</span>
                 <Fragment slot="activities">
-                    <li>Build with Rust</li>
-                    <li>Promote your own project!</li>
+                    <p>Collaborative coding</p>
+                    <p class="align-end">Promote your own project!</p>
                 </Fragment>
             </ScheduleItem>
         </ScheduleSection>
         <ScheduleSection>
-            <span slot="location">Dus, Sophialaan 1, Utrecht, NL</span>
+            <span slot="location">DUS, Sophialaan&nbsp;1, Utrecht,&nbsp;NL</span>
 
             <ScheduleItem>
                 <span slot="header">Rust All-Hands & Unconference</span>
                 <span slot="attendees">200</span>
                 <span slot="time">09:00—18:00</span>
                 <Fragment slot="activities">
-                    <li>Invitation Only</li>
+                    <p>Invitation only</p>
                 </Fragment>
             </ScheduleItem>
         </ScheduleSection>
@@ -123,29 +130,35 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
 
     <ScheduleDay>
         <ScheduleSection>
-            <span slot="location">TBD, Utrecht, NL</span>
+            <span slot="location">TBD, Utrecht,&nbsp;NL</span>
 
             <ScheduleItem>
-                <span slot="header">Social Activities</span>
+                <span slot="header">Social activities</span>
                 <span slot="attendees">200</span>
-                <span slot="time">09:00—22:00</span>
+                <span slot="time">09:00–22:00</span>
                 <Fragment slot="activities">
-                    <li>To be announced</li>
+                    <p>To be announced</p>
                     <OrganizeOwnActivity />
                 </Fragment>
             </ScheduleItem>
         </ScheduleSection>
         <ScheduleSection>
-            <span slot="location">Dus, Sophialaan 1, Utrecht, NL</span>
+            <span slot="location">DUS, Sophialaan&nbsp;1, Utrecht,&nbsp;NL</span>
 
             <ScheduleItem>
                 <span slot="header">Rust All-Hands & Unconference</span>
                 <span slot="attendees">200</span>
-                <span slot="time">09:00—18:00</span>
+                <span slot="time">09:00–18:00</span>
                 <Fragment slot="activities">
-                    <li>Invitation Only</li>
+                    <p>Invitation only</p>
                 </Fragment>
             </ScheduleItem>
         </ScheduleSection>
     </ScheduleDay>
 </Schedule>
+
+<style>
+.align-end {
+    margin-top: auto !important;
+}
+</style>

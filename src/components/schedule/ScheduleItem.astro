@@ -1,42 +1,70 @@
 ---
 
+interface Props {
+    align_end?: boolean;
+}
+
+const {align_end = false}: Props = Astro.props;
+
 ---
 
-<div class="schedule-item">
-    <h1>
+<div class:list={["schedule-item", align_end?"align-end":null]}>
+    <h4>
         <slot name="header" />
-    </h1>
+    </h4>
     <span class="attendees">
         <slot name="attendees" />
         <span>attendees</span>
     </span>
-    <span class="time">
-        <slot name="time" />
-    </span>
-    <ul class="activities">
+    <div class="activities">
+        <p class="time">
+            <slot name="time" />
+        </p>
         <slot name="activities" />
-    </ul>
+    </div>
 </div>
 
 <style lang="scss">
     @import "../../styles/variables.scss";
     @import "../../styles/breakpoint.scss";
 
+    .align-end {
+        margin-top: auto;
+    }
+
+    :global(.location) + .schedule-item {
+        flex-grow: 1;
+    }
     .schedule-item {
         display: flex;
         flex-direction: column;
+        text-align: center;
+
+
+        margin-bottom: 1em;
+        &:last-child {
+            margin-bottom: 0em;
+        }
+
+        .attendees + .activities {
+            margin-top: 0.2em;
+        }
 
         .activities {
-            :global(li) {
-                list-style-type: none;
+            :global(p) {
                 margin: 0;
                 padding: 0;
+                margin-bottom: 0.4em;
+                line-height: 1em;
             }
+
             margin: 0;
+            margin-top: 0.4em;
             padding: 0;
-            text-align: center;
             display: flex;
             flex-direction: column;
+
+            flex-grow: 1;
         }
 
         .attendees {
@@ -44,11 +72,10 @@
             font-size: $font-size-sm;
 
             font-size: $font-size-md;
-            @include breakpoint(lg) {
+            @include wider_than(lg) {
                 font-size: $font-size-sm;
             }
 
-            text-align: center;
             font-style: italic;
 
             *:only-child {
@@ -57,17 +84,16 @@
         }
 
         .time {
-            text-align: center;
-            margin-bottom: 0.5em;
         }
 
-        h1 {
+        h4 {
             font-size: $font-size-lg;
-            @include breakpoint(lg) {
+            @include wider_than(lg) {
                 font-size: calc($font-size-md * (sqrt($font-size-scale)));
             }
-            text-align: center;
-            line-height: 100%;
+            line-height: 1em;
+            margin-bottom: 0;
+            margin-top: 0;
         }
     }
 </style>

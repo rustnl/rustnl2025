@@ -6,11 +6,11 @@
   padding-inline: space(4);
   width: min(100%, 96rem);
 
-  @include breakpoint(md) {
+  @include wider_than(md) {
     padding-inline: space(6);
   }
 
-  @include breakpoint(xl) {
+  @include wider_than(xl) {
     padding-inline: space(12);
   }
 }

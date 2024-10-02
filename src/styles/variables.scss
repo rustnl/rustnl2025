@@ -32,6 +32,6 @@ $line-height-tight: 1.125;
 }
 
 
-@include breakpoint(xl) {
+@include wider_than(xl) {
   $font-size-scale: 1.414;
 }
