@@ -43,6 +43,8 @@ import "../styles/index.scss";
         }
 
         .explainer,
+        .cfp,
+        .where,
         .about {
             font-size: $font-size-lg;
         }
@@ -55,6 +57,10 @@ import "../styles/index.scss";
         .leftheader {
             font-size: $font-size-2xl;
         }
+
+        #schedule {
+            margin-block-start: 2rem;
+        }
     </style>
 
     <Head title="RustWeek 2025" />
@@ -64,9 +70,9 @@ import "../styles/index.scss";
             <Hero style="home">
                 <img
                     src="/svg/hero-logo-rustweek-by-rustnl.svg"
-                    alt="Logo RustWeek 2025"
+                    alt="RustWeek 2025"
                 />
-                <p>May 13 - 17, 2025<br /> Utrecht, The Netherlands</p>
+                <p>May 13–17, 2025<br /> Utrecht, The Netherlands</p>
 
                 <ButtonGroup>
                     <Button
@@ -84,13 +90,29 @@ import "../styles/index.scss";
                     <slot name="explainer" />
                 </div>
             </section>
-            <Location />
             <section class="container" id="schedule">
                 <MainSchedule />
             </section>
 
+            <section class="container md:grid md:cols-12" id="where">
+                <div
+                    class="where md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
+                >
+                    <slot name="where" />
+                </div>
+            </section>
+            <Location />
+
+            <section class="container md:grid md:cols-12">
+                <div
+                    class="cfp md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
+                >
+                    <slot name="cfp" />
+                </div>
+            </section>
+
             <section class="container space-y-6">
-                <h3 class="header">Last Year's Speakers</h3>
+                <h2 class="header">Last Year's Speakers</h2>
                 <div class="grid md:cols-2 xl:cols-4" id="speakers">
                     <slot name="speakers" />
                 </div>
@@ -103,13 +125,13 @@ import "../styles/index.scss";
 
             <section class="container" id="sponsors">
                 <Sponsors>
-                    <h3 class="header">Sponsors</h3>
+                    <h2 class="header">Sponsors</h2>
                     <slot name="sponsors" />
                 </Sponsors>
             </section>
             <section class="container" id="previous-sponsors">
                 <Sponsors>
-                    <h3 class="header">Last Year's Sponsors</h3>
+                    <h2 class="header">Last Year's Sponsors</h2>
                     <slot name="previous-sponsors" />
                 </Sponsors>
             </section>
@@ -117,7 +139,7 @@ import "../styles/index.scss";
                 <div
                     class="about md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
                 >
-                    <h3 id="about" class="leftheader">About RustWeek</h3>
+                    <h2 id="about" class="leftheader">About RustWeek</h2>
 
                     <slot name="about" id="about" />
                 </div>
