@@ -5,22 +5,57 @@ import LocationDusVenue from "../components/LocationDusVenue.astro";
 import LocationDusRooms from "../components/LocationDusRooms.astro";
 ---
 
-<CommonLayout title="Unconf & All Hands Venue" header="Unconf & All Hands Venue" withLogo>
+<CommonLayout
+    title="Unconf & All Hands Venue"
+    header="Unconf & All Hands Venue"
+    withLogo
+>
     <section class="container md:grid md:cols-12 py-12">
         <div
             class="abouttext md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
         >
             <h1 class="leftheader">Unconf & All Hands Venue</h1>
             <p>
-                TODO
+                The workshops and celebration (Thu May 16) and the all-hands and
+                unconference (Fri & Sat May 16-17) will take place at <a
+                    href="https://www.dusutrecht.nl/"
+                    >De Utrechtse Stadsvrijheid</a
+                >, for which transport from the city centre will be provided.
+                For the detailed schedule see <a href="/#schedule">here</a>.
             </p>
         </div>
     </section>
-    <section class="container py-12 space-y-6">
-        <LocationDusVenue />
+    <section class="container md:grid md:cols-12 py-12">
+        <div
+            class="abouttext md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
+        >
+            <h3>Main hall & outside area</h3>
+            <p>
+                The venue has a spacious outside area and a main hall to relax,
+                have lunch and hold the 10 year celebration party.
+            </p>
+        </div>
     </section>
-    <section class="container py-12 space-y-6">
-        <LocationDusRooms />
+    <LocationDusVenue />
+    <section class="container md:grid md:cols-12 py-12">
+        <div
+            class="abouttext md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
+        >
+            <h3>All hands and unconf rooms</h3>
+            <p>
+                Over 20 modern, climate controlled rooms varying in size from 8
+                to 200 offer plenty of space for the all hands and unconference.
+            </p>
+        </div>
+    </section>
+    <LocationDusRooms />
+    <section class="container md:cols-12 py-12">
+        <div
+            class="abouttext md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
+        >
+            <h3>Floor plan</h3>
+        </div>
+        <img style="width: 100%" src="/images/venues/plattegrond.svg" />
     </section>
 </CommonLayout>
 
