@@ -18,14 +18,14 @@ const {
 ---
 
 <SpeakerWrapper id={link}>
-    <div class="space-y-6">
+    <div class="space-y-s speaker-wrapper">
         <SpeakerImage
             src={`/images/speakers/${image}`}
             alt={`Picture of ${name}`}
         />
         <div>
-            <h4>{name}</h4>
-            <h3>{title}</h3>
+            <h2>{name}</h2>
+            <p class="speaker-title">{title}</p>
         </div>
         <div class="speaker-detail markdown">
             {
@@ -62,7 +62,7 @@ const {
     </div>
 </SpeakerWrapper>
 
-<style>
+<style lang="scss">
     @import "../../styles/variables.scss";
 
     .time {
@@ -72,11 +72,23 @@ const {
         text-decoration: unset;
     }
 
-    .speaker-detail {
-        padding-bottom: 1.5em;
+    .speaker-wrapper {
+        width: 100%;
     }
 
-    h4 {
+    .speaker-title {
+        font-size: 1.2em;
+        padding: 0;
+        margin: 0;
+    }
+
+    .speaker-detail {
+        width: 100%;
+        padding-bottom: 1.5em;
+        text-align: left;
+    }
+
+    h2 {
         font-size: $font-size-xl;
         font-weight: $font-weight-light;
         line-height: $line-height-tight;
