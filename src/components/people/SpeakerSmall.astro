@@ -13,7 +13,7 @@ const { name, image, description } = Astro.props;
         />
         <div>
             <h4>{name}</h4>
-            <h3>{description}</h3>
+            <p class="description">{description}</p>
         </div>
     </div>
 </SpeakerWrapper>
@@ -26,6 +26,12 @@ const { name, image, description } = Astro.props;
         font-size: $font-size-lg;
         font-weight: $font-weight-light;
         line-height: $line-height-tight;
+        margin-bottom: 0;
+    }
+
+    .description {
+        font-size: $font-size-md;
+        font-weight: 700;
     }
 
     img {

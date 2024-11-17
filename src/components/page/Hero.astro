@@ -16,12 +16,15 @@ const { style = "page" }: Props = Astro.props;
 
     .hero {
         align-items: center;
-        background-color: $color-yellow-400;
+        background:
+        linear-gradient(rgb(0 0 0 / 50%), rgb(255 255 255 / 30%), rgb(0 0 0 / 50%)),
+        no-repeat right 30% / cover url("images/background.jpg");
         box-sizing: border-box;
-        color: $color-neutral-400;
+        color: white;
         display: flex;
         flex-direction: column;
         font-size: $font-size-xl;
+        font-weight: 700;
 
         gap: space(10);
         justify-content: center;
@@ -45,15 +48,6 @@ const { style = "page" }: Props = Astro.props;
             padding-inline: space(12);
         }
 
-        &::before {
-            background-color: $color-yellow-500;
-            clip-path: polygon(0 0, 100% 0, 100% 100%);
-            content: "";
-            inset: 0;
-            position: absolute;
-            z-index: -1;
-        }
-
         &::after {
             background-image: url("/images/stripes.svg");
             background-position: center center;
@@ -67,7 +61,7 @@ const { style = "page" }: Props = Astro.props;
             width: 100%;
         }
 
-        img {
+        svg {
             height: auto;
             max-width: 95vw;
 

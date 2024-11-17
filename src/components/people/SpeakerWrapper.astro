@@ -9,26 +9,31 @@
     @import "../../styles/variables.scss";
 
     .speaker {
+        flex: 1 1 0px;
+        min-width: 15em;
+        max-width: 20em;
         align-items: center;
-        background-color: $color-yellow-400;
-        border: 1px solid $color-yellow-500;
+        background-color: $color-neutral-500;
+        border-top: 3px solid $color-red-400;
+        border-bottom: 3px solid $color-red-400;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         padding: space(6);
         position: relative;
         text-align: center;
-        z-index: 0;
+        color: $color-black;
+        // box-shadow: 3px 3px 3px 3px #aaaaaa;
 
-        &::after {
-            background-color: $color-yellow-500;
-            clip-path: polygon(0 0, 0% 100%, 100% 0);
-            content: "";
-            inset: 0;
-            position: absolute;
-            z-index: -1;
-            opacity: 0.5;
-        }
+        // &::after {
+        //     background-color: $color-yellow-500;
+        //     clip-path: polygon(0 0, 0% 100%, 100% 0);
+        //     content: "";
+        //     inset: 0;
+        //     position: absolute;
+        //     z-index: -1;
+        //     opacity: 0.5;
+        // }
 
         &:nth-child(odd)::after {
             clip-path: polygon(100% 100%, 0 0, 0 100%);

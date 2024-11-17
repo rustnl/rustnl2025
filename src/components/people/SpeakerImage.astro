@@ -10,6 +10,8 @@ const { src, alt }: Props = Astro.props;
 <img src={src} alt={alt} />
 
 <style lang="scss">
+    @import "../../styles/variables.scss";
+
     img {
         align-self: center;
         border-radius: 100%;
@@ -17,5 +19,6 @@ const { src, alt }: Props = Astro.props;
         max-width: 192px;
         vertical-align: middle;
         width: 100%;
+        border: 1px solid #1e1e24;
     }
 </style>
