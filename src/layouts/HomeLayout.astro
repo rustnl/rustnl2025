@@ -49,13 +49,9 @@ import "../styles/index.scss";
             font-size: $font-size-lg;
         }
 
-        .header {
-            font-size: $font-size-xl;
+        h2 {
+            font-size: 2rem;
             text-align: center;
-        }
-
-        .leftheader {
-            font-size: $font-size-2xl;
         }
 
         #schedule {
@@ -90,9 +86,28 @@ import "../styles/index.scss";
                     <slot name="explainer" />
                 </div>
             </section>
-            <section class="container" id="schedule">
+            <section class="container anchor" id="schedule">
                 <MainSchedule />
             </section>
+
+            <section class="container space-y-6 anchor" id="speakers">
+                <h2>Speakers</h2>
+                <div class="grid md:cols-2 xl:cols-4">
+                    <slot name="speakers" />
+                </div>
+            </section>
+            <ButtonGroup>
+                <Button link="/speakers">All speakers (more soon!) </Button>
+            </ButtonGroup>
+            <section class="container md:grid md:cols-12">
+                <div
+                class="cfp md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
+                >
+                    <slot name="cfp" />
+                </div>
+            </section>
+
+            <Location />
 
             <section class="container md:grid md:cols-12" id="where">
                 <div
@@ -101,37 +116,16 @@ import "../styles/index.scss";
                     <slot name="where" />
                 </div>
             </section>
-            <Location />
-
-            <section class="container md:grid md:cols-12">
-                <div
-                    class="cfp md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
-                >
-                    <slot name="cfp" />
-                </div>
-            </section>
-
-            <section class="container space-y-6">
-                <h2 class="header">Last Year's Speakers</h2>
-                <div class="grid md:cols-2 xl:cols-4" id="speakers">
-                    <slot name="speakers" />
-                </div>
-            </section>
-            <ButtonGroup>
-                <Button link="https://2024.rustnl.org/speakers"
-                    >All of last year's speakers!</Button
-                >
-            </ButtonGroup>
 
             <section class="container" id="sponsors">
                 <Sponsors>
-                    <h2 class="header">Sponsors</h2>
+                    <h2>Sponsors</h2>
                     <slot name="sponsors" />
                 </Sponsors>
             </section>
             <section class="container" id="previous-sponsors">
                 <Sponsors>
-                    <h2 class="header">Last Year's Sponsors</h2>
+                    <h2>Last Year's Sponsors</h2>
                     <slot name="previous-sponsors" />
                 </Sponsors>
             </section>
@@ -139,8 +133,6 @@ import "../styles/index.scss";
                 <div
                     class="about md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
                 >
-                    <h2 id="about" class="leftheader">About RustWeek</h2>
-
                     <slot name="about" id="about" />
                 </div>
             </section>

@@ -39,10 +39,10 @@ import Markdown from "../components/Markdown.astro";
     <div slot="cfp">
         <h2>Call for Proposals</h2>
         <p>
-            The Call for Proposals has not been opened yet.
+            The Call for Proposals has not opened yet. It will open on Dec 1st. Ahead of the CFP we will announce four invited speakers.
         </p>
         <p>
-            Follow our social media to get notified when it opens:
+            Follow our social media stay up to date:
             <a href="https://fosstodon.org/@rustnl" rel="me">Mastodon</a>, <a
                 href="https://twitter.com/Rust_NL">X</a
             >
@@ -52,7 +52,7 @@ import Markdown from "../components/Markdown.astro";
     </div>
 
     <div slot="where">
-        <h2 class="header">Location</h2>
+        <h2>Location: Utrecht</h2>
         <p>
         RustWeek 2025 will take place in Utrecht, one of the largest and most beautiful cities of the Netherlands.
         Utrecht is known for its medieval city centre and lovely canals, and has excellent public transport and walkability.
@@ -71,7 +71,7 @@ import Markdown from "../components/Markdown.astro";
     </div>
 
     <Fragment slot="sponsors">
-        <p>Download our <a target="_blank" href="/resources/sponsorship-prospectus-rustweek-2025.pdf">Sponsor prospectus</a> or contact us via <a href="mailto:sponsors@rustnl.org">sponsors@rustnl.org</a> if your organisation is interested in sponsoring!</p>
+        <p>Interested in sponsoring? Download our <a target="_blank" href="/resources/sponsorship-prospectus-rustweek-2025.pdf">Sponsorship prospectus</a> or <a href="mailto:sponsors@rustnl.org">contact us</a></p>
         <!-- <SponsorTier name="Ecosystem partners"> -->
         <!--     <div class="sponsors-row"></div> -->
         <!-- </SponsorTier> -->
@@ -208,7 +208,8 @@ import Markdown from "../components/Markdown.astro";
             />
         </SponsorTier>
     </Fragment>
-    <Markdown slot="about">
+    <div slot="about">
+        <h2 id="about">About RustWeek</h2>
         <p>
             RustWeek is organised by Stichting Rust Nederland, RustNL for short,
             a non-profit that strives to promote the implementation of the Rust
@@ -217,47 +218,22 @@ import Markdown from "../components/Markdown.astro";
         <ButtonGroup>
             <Button link="/about">More About Us</Button>
         </ButtonGroup>
-    </Markdown>
+    </div>
     <Fragment slot="speakers">
         <SpeakerSmall
-            name="Alice Ryhl"
-            image="alice.jpg"
-            description="Software engineer at Google"
+            name="Alice Ivy Cecile"
+            image="alice_cecile.jpg"
+            description="Bevy community leader & mad scientist"
         />
         <SpeakerSmall
-            name="Raph Levien"
-            image="raph.jpg"
-            description="Research engineer at Google"
+            name="Pietro Albini"
+            image="pietro_albini.jpg"
+            description="Rust Project's Infra & Release teams"
         />
         <SpeakerSmall
-            name="Rik Arends"
-            image="rik.jpeg"
-            description="Founder @ Makepad"
-        />
-        <SpeakerSmall
-            name="Sophia Turner"
-            image="sophia.jpg"
-            description="Language Architect"
-        />
-        <SpeakerSmall
-            name="Dario Nieuwenhuis"
-            image="dario.jpg"
-            description="Akiles CTO & Embassy project lead"
-        />
-        <SpeakerSmall
-            name="Mara Bos"
-            image="mara.jpg"
-            description="Rust leadership council & Principal Rust Expert @ Huawei"
-        />
-        <SpeakerSmall
-            name="Niko Matsakis"
-            image="niko.png"
-            description="Language team co-lead & Senior Principal Engineer @ AWS"
-        />
-        <SpeakerSmall
-            name="Michael Melchiore"
-            image="michaelmelchiore.jpg"
-            description="On-Board Processing Specialist @ Airbus"
+            name="You?"
+            image="empty.png"
+            description="Respond to the CFP!"
         />
     </Fragment>
     <Fragment slot="workshops">
@@ -316,11 +292,3 @@ import Markdown from "../components/Markdown.astro";
         />
     </Fragment>
 </HomeLayout>
-
-<style lang="scss">
-    @import "../styles/variables.scss";
-
-    h2 {
-        font-size: $font-size-lg;
-    }
-</style>
