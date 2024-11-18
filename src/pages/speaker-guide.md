@@ -1,9 +1,11 @@
 ---
 layout: "../layouts/MarkdownLayout.astro"
-title: "Speaker FAQ"
+title: "Speaker Guide"
 ---
 
 If you're looking at this page, we'd like to thank you for speaking at RustWeek 2025! As a speaker, you might have some questions about the conference. We're happy to answer any questions you have, but here are at least some frequently asked question you can look at.
+
+If you have any questions not answered on this page, you can send Terts an email at <terts.diepraam@gmail.com>.
 
 ## When am I speaking?
 
@@ -33,10 +35,4 @@ Here are some additional factoids and tips:
 
 ## Will the talk be live streamed and recorded?
 
-Yes. The talk will be live streamed to Vimeo and uploaded to YouTube after you've been given a chance to review the recording.
-
-## Who can I contact if I have more questions?
-
-You can find more general information about the conference on the pages about [accessibility](/accessibility), the [code of conduct](/code-of-conduct) and the rest of this website.
-
-You can send Terts an email at terts.diepraam@gmail.com.
+Yes. The talk will be live streamed and uploaded to YouTube after you've been given a chance to review the recording.
