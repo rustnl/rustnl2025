@@ -86,10 +86,28 @@ import Divider from "../components/Divider.astro";
                     <slot name="explainer" />
                 </div>
             </section>
-            <section class="container" id="schedule">
+            <section class="container anchor" id="schedule">
                 <MainSchedule />
             </section>
+
+            <section class="container space-y-6">
+                <h2 class="header">Speakers</h2>
+                <slot name="speakers" />
+            </section>
+            <ButtonGroup>
+                <Button link="/speakers"
+                    >All speakers (more soon!)</Button
+                >
+            </ButtonGroup>
             
+            <section class="container md:grid md:cols-12">
+                <div
+                    class="cfp md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
+                >
+                    <slot name="cfp" />
+                </div>
+            </section>
+
             <Divider />
 
             <section class="container md:grid md:cols-12" id="where">
@@ -102,24 +120,6 @@ import Divider from "../components/Divider.astro";
             
             <Location />
 
-            <section class="container md:grid md:cols-12">
-                <div
-                    class="cfp md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
-                >
-                    <slot name="cfp" />
-                </div>
-            </section>
-
-            <section class="container space-y-6">
-                <h2 class="header">Speakers</h2>
-                <slot name="speakers" />
-            </section>
-            <ButtonGroup>
-                <Button link="/speakers"
-                    >More speakers will be announced soon!</Button
-                >
-            </ButtonGroup>
-
             <Divider />
 
             <section class="container" id="sponsors">
@@ -128,8 +128,6 @@ import Divider from "../components/Divider.astro";
                     <slot name="sponsors" />
                 </Sponsors>
             </section>
-
-            <Divider />
 
             <section class="container" id="previous-sponsors">
                 <Sponsors>
