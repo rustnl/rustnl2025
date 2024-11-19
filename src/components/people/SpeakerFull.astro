@@ -1,7 +1,4 @@
 ---
-import SpeakerWrapper from "./SpeakerWrapper.astro";
-import SpeakerImage from "./SpeakerImage.astro";
-
 const {
     name,
     image,
@@ -17,9 +14,9 @@ const {
 } = Astro.props;
 ---
 
-<SpeakerWrapper id={link}>
+<div id={link}>
     <div class="space-y-s speaker-wrapper">
-        <SpeakerImage
+        <img
             src={`/images/speakers/${image}`}
             alt={`Picture of ${name}`}
         />
@@ -60,7 +57,7 @@ const {
             }
         </div>
     </div>
-</SpeakerWrapper>
+</div>
 
 <style lang="scss">
     @import "../../styles/variables.scss";
