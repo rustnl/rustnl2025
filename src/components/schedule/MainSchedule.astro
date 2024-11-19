@@ -6,7 +6,7 @@ import ScheduleItem from "./ScheduleItem.astro";
 import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
 ---
 
-<Schedule>
+<Schedule logo>
     <ScheduleDay>
         <ScheduleSection>
             <span slot="location">Utrecht,&nbsp;NL</span>
@@ -47,7 +47,7 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
                 <span slot="time">18:00–22:00</span>
                 <Fragment slot="activities">
                     <p>To be announced</p>
-                    <!-- <OrganizeOwnActivity /> -->
+                    <OrganizeOwnActivity />
                 </Fragment>
             </ScheduleItem>
         </ScheduleSection>
@@ -72,7 +72,7 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
                 <span slot="time">18:00–22:00</span>
                 <Fragment slot="activities">
                     <p>To be announced</p>
-                    <!-- <OrganizeOwnActivity /> -->
+                    <OrganizeOwnActivity />
                 </Fragment>
             </ScheduleItem>
         </ScheduleSection>
@@ -111,6 +111,7 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
                 <span slot="time">09:00–18:00</span>
                 <Fragment slot="activities">
                     <p>Collaborative coding</p>
+                    <p>Promote your own project!</p>
                 </Fragment>
             </ScheduleItem>
         </ScheduleSection>
@@ -138,6 +139,7 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
                 <span slot="time">09:00–22:00</span>
                 <Fragment slot="activities">
                     <p>To be announced</p>
+                    <OrganizeOwnActivity />
                 </Fragment>
             </ScheduleItem>
         </ScheduleSection>
