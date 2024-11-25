@@ -1,0 +1,45 @@
+---
+import Organiser from "../components/people/Organiser.astro";
+import CommonLayout from "../layouts/CommonLayout.astro";
+---
+
+<CommonLayout title="Industry" header="Industry Track" withLogo>
+    <section class="container md:grid md:cols-12 py-12">
+        <div
+            class="abouttext md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
+        >
+            <h1 class="leftheader">Industry track returns!</h1>
+
+            <p>
+                Following the success of the first Industry Track at RustNL 2024, this track dedicated to Rust adoption is back at RustWeek 2025!
+            </p>
+            <p>
+                The track will take place on the first day of the conference: <br><b>Tuesday, 13 May, from 10:00 AM to 4:30 PM</b>.
+            </p>
+
+            <p>
+                <b>City & venue</b><br>
+                Kinepolis Jaarbeurs Utrecht<br>
+                Jaarbeursboulevard 300<br>
+                3521 BC Utrecht
+            </p>
+        </div>
+    </section>
+</CommonLayout>
+
+<style lang="scss">
+    @import "../styles/variables.scss";
+
+    .abouttext {
+        font-size: $font-size-lg;
+    }
+
+    .header {
+        font-size: $font-size-2xl;
+        text-align: center;
+    }
+    .leftheader {
+        font-size: $font-size-2xl;
+        margin-bottom: space(6);
+    }
+</style>
