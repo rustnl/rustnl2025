@@ -1,0 +1,230 @@
+---
+
+---
+
+<section class="container py-24 space-y-12">
+    <div class="location">
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image">
+        </div>
+        <div class="ferris">
+            <img src="/images/ferris.png" alt="" />
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+    @import "../styles/breakpoint.scss";
+    @import "../styles/variables.scss";
+
+    .location {
+        position: relative;
+
+        @include wider_than(sm) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "a b"
+                "a c";
+        }
+
+        &::before {
+            aspect-ratio: 16 / 9;
+            background-color: $color-neutral-500;
+            clip-path: polygon(0 100%, 100% 0, 100% 100%);
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            translate: 0 -100%;
+            width: 50%;
+            z-index: -1;
+        }
+
+        > .ferris {
+            display: none;
+
+            @include wider_than(sm) {
+                align-items: flex-start;
+                aspect-ratio: 16 / 9;
+                display: flex;
+                justify-content: flex-end;
+                position: absolute;
+                top: -12px;
+                right: 24px;
+                translate: 0 -100%;
+                width: 50%;
+                z-index: -2;
+            }
+
+            @include wider_than(xl) {
+                top: -24px;
+            }
+
+            img {
+                @include wider_than(sm) {
+                    rotate: -30deg;
+                    width: 144px;
+                }
+
+                @include wider_than(xl) {
+                    width: 288px;
+                }
+            }
+        }
+
+        .image {
+            background-color: $color-neutral-500;
+            position: relative;
+        }
+
+        .image:nth-of-type(1) {
+            aspect-ratio: 16 / 18;
+            background-image: url("/images/venues/dus-rooms1.jpg");
+            background-position: right bottom;
+            background-size: cover;
+
+            &.boat {
+                background-image: url("/images/boat2.jpg");
+            }
+
+            @include wider_than(sm) {
+                aspect-ratio: auto;
+                grid-area: a;
+            }
+
+            &::after {
+                aspect-ratio: 16 / 9;
+                background-color: $color-red-400;
+                clip-path: polygon(0 0, 100% 0, 0 100%);
+                content: "";
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+            }
+
+            &::before {
+                // background-image: url("/images/utrecht-kerk.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: right bottom;
+                content: "";
+                inset: 0;
+                position: absolute;
+                z-index: 1;
+            }
+
+            &.boat::before {
+                background-image: none;
+            }
+        }
+
+        .image:nth-of-type(2) {
+            aspect-ratio: 16 / 9;
+            background-image: url("/images/venues/dus-rooms2.jpg");
+            background-size: 120%;
+            background-position: top;
+            background-repeat: no-repeat;
+
+            &.boat {
+                background-size: 100%;
+                background-image: url("/images/boat1.jpg");
+            }
+
+            &.unconf {
+                background-size: 100%;
+                background-image: url("/images/vakwerkhuis.jpg");
+            }
+
+            @include wider_than(sm) {
+                grid-area: b;
+            }
+        }
+
+        .image:nth-of-type(3) {
+            display: none;
+
+            @include wider_than(sm) {
+                aspect-ratio: 16 / 9;
+                background-color: $color-yellow-400;
+                grid-area: c;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            &::after {
+                @include wider_than(sm) {
+                    background-color: $color-yellow-500;
+                    content: "";
+                    inset: 0 50% 0 0;
+                    position: absolute;
+                }
+            }
+
+            &:hover .ferris {
+                @include wider_than(sm) {
+                    translate: 0;
+                }
+
+                /* This timing is for the entering animation */
+                transition: translate 300ms 200ms ease-out;
+            }
+
+            &:hover .ferris-arms {
+                @include wider_than(sm) {
+                    opacity: 1;
+                    translate: 0px;
+                }
+
+                /* This timing is for the entering animation */
+                transition:
+                    opacity 200ms ease-in,
+                    translate 200ms ease-out;
+            }
+
+            > .ferris,
+            > .ferris-arms {
+                @include wider_than(sm) {
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    height: 120px;
+                    position: absolute;
+                    rotate: 90deg;
+                    width: 144px;
+                }
+
+                @include wider_than(xl) {
+                    height: 240px;
+                    width: 288px;
+                }
+            }
+
+            > .ferris {
+                @include wider_than(sm) {
+                    background-image: url("/images/ferris.png");
+                    /* This timing is for the leaving animation */
+                    transition: translate 300ms ease-out;
+                    translate: -24px;
+                }
+            }
+
+            > .ferris-arms {
+                @include wider_than(sm) {
+                    background-image: url("/images/ferris-arms.png");
+                    background-position: center -12px;
+                    /* This timing is for the leaving animation */
+                    transition:
+                        opacity 200ms 300ms ease-out,
+                        translate 200ms 200ms ease-out;
+                    translate: 10px;
+                    opacity: 0;
+                    z-index: 1;
+                    clip-path: circle(34%);
+                }
+            }
+        }
+    }
+</style>
