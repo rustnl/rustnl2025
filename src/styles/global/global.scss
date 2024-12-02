@@ -35,6 +35,10 @@ b {
   font-weight: 700;
 }
 
+h1 {
+  text-decoration: underline $color-red-400 0.1em;
+}
+
 
 .anchor {
   scroll-margin-top: space(24);
