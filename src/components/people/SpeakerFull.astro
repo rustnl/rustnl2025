@@ -102,6 +102,11 @@ const {
             display: inline-block;
 
             aspect-ratio: 1/1;
+
+            @include smaller_than(lg) {
+                max-width: 50%;
+                align-self: center;
+            }
         }
 
         .main-info {
@@ -138,13 +143,6 @@ const {
                 flex-direction: row;
                 gap: 0.3em;
 
-                @include smaller_than(lg) {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-
-                    margin-top: 0.5em;
-                }
                 @include wider_than(lg) {
                     font-size: $font-size-md;
                     text-align: left !important;
