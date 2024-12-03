@@ -16,9 +16,7 @@ const { style = "page" }: Props = Astro.props;
 
     .hero {
         align-items: center;
-        background:
-        linear-gradient(rgb(0 0 0 / 50%), rgb(255 255 255 / 30%), rgb(0 0 0 / 50%)),
-        no-repeat right 30% / cover url("images/background.jpg");
+        background: $color-yellow-400;
         box-sizing: border-box;
         color: white;
         display: flex;
@@ -46,6 +44,15 @@ const { style = "page" }: Props = Astro.props;
             border-width: space(12) space(12) 0 space(12);
             padding-block: space(24);
             padding-inline: space(12);
+        }
+
+        &::before {
+            background: $color-yellow-500;
+            clip-path: polygon(0 0, 100% 0, 100% 100%);
+            content: "";
+            inset: 0;
+            position: absolute;
+            z-index: -1;
         }
 
         &::after {
