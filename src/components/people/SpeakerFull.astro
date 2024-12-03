@@ -93,7 +93,6 @@ const {
         }
 
         img {
-            align-self: center;
             border-radius: 0.5em;
             vertical-align: middle;
 
@@ -135,6 +134,10 @@ const {
             }
 
             .socials {
+                display: flex;
+                flex-direction: row;
+                gap: 0.3em;
+
                 @include smaller_than(lg) {
                     position: absolute;
                     top: 0;
