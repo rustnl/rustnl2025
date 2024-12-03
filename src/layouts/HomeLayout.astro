@@ -122,14 +122,14 @@ import Divider from "../components/Divider.astro";
 
             <section class="container" id="sponsors">
                 <Sponsors>
-                    <h2 class="header">Sponsors</h2>
+                    <h2>Sponsors</h2>
                     <slot name="sponsors" />
                 </Sponsors>
             </section>
 
             <section class="container" id="previous-sponsors">
                 <Sponsors>
-                    <h2 class="header">Last Year's Sponsors</h2>
+                    <h2>Last Year's Sponsors</h2>
                     <slot name="previous-sponsors" />
                 </Sponsors>
             </section>
@@ -137,8 +137,6 @@ import Divider from "../components/Divider.astro";
                 <div
                     class="about md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
                 >
-                    <h2 id="about" class="leftheader">About RustWeek</h2>
-
                     <slot name="about" id="about" />
                 </div>
             </section>
