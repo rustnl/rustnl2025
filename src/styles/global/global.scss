@@ -1,5 +1,9 @@
 @import "../variables.scss";
 
+:root {
+  --hero-color: white;
+}
+
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -12,8 +16,8 @@ html {
 }
 
 body {
-  background-color: $color-neutral-400;
-  color: $color-red-500;
+  background-color: $color-background;
+  color: $color-black;
   font-family: $font-family;
   font-size: $font-size-md;
   font-weight: 300;
@@ -29,6 +33,10 @@ h6,
 strong,
 b {
   font-weight: 700;
+}
+
+h1 {
+  text-decoration: underline $color-red-400 0.1em;
 }
 
 
@@ -52,4 +60,14 @@ blockquote {
 
 blockquote>p {
   margin-block-start: space(6);
+}
+
+h1 {
+  font-size: $font-size-2xl;
+  text-align: center;
+}
+
+h2 {
+  // font-size: $font-size-2xl;
+  text-align: center;
 }

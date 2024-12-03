@@ -9,15 +9,14 @@ const { location }: Props = Astro.props;
 ---
 
 <div class:list={["menu", location]}>
-    <!-- <a href="/speakers">Speakers</a> --><!-- <a href="/schedule">Schedule</a> --><!-- <a href="/industry">Industry</a> -->
     <a href="/#schedule" onclick="document.querySelector('[data-menu-toggle]').click()">Schedule</a>
     <a href="/#cfp" onclick="document.querySelector('[data-menu-toggle]').click()">CFP</a>
-    <a href="/#speakers" onclick="document.querySelector('[data-menu-toggle]').click()">Speakers</a>
+    <a href="/speakers">Speakers</a>
     <a href="/about">About</a>
     <a href="mailto:2025@rustnl.org">Contact</a>
     <Button
         link="https://www.eventbrite.nl/e/rust-week-2025-tickets-1001676961757?aff=oddtdtcreator"
-        ty="secondary"
+        ty="primary"
         inFooter={location == "footer"}>Tickets</Button
     >
 </div>
@@ -36,7 +35,7 @@ const { location }: Props = Astro.props;
             gap: space(2);
 
             a {
-                color: $color-neutral-400;
+                color: #ffffff;
             }
         }
 
@@ -51,7 +50,7 @@ const { location }: Props = Astro.props;
                 width: 100%;
 
                 @include wider_than(lg) {
-                    color: $color-neutral-400;
+                    color: #ffffff;
                     width: auto;
                 }
             }

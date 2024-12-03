@@ -1,0 +1,68 @@
+---
+const { name, image, description, linkedin, twitter, mastodon, github, youtube } = Astro.props;
+---
+
+<div class="person">
+    <img 
+        src={`/images/people/${image}`} 
+        alt={`Picture of ${name}`}
+    />
+    <div>
+        <h4>{name}</h4>
+        <p class="description">{description}</p>
+    </div>
+
+</div>
+
+<style lang="scss">
+    @import "../../styles/breakpoint.scss";
+    @import "../../styles/variables.scss";
+
+    .person {
+        width: 13em;
+        aspect-ratio: 2/3;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        a {
+            color: inherit;
+            text-decoration: underline;
+            display: inline-block;
+        }
+
+        .socials {
+            display: flex;
+            gap: 12px;
+        }
+
+        .speaker-detail {
+            text-align: left;
+        }
+
+        h4 {
+            font-size: $font-size-lg;
+            font-weight: $font-weight-light;
+            line-height: $line-height-tight;
+
+            margin-bottom: 0;
+            margin-top: 0.2em;
+        }
+
+        .description {
+            margin-top: 0.5em;
+            font-size: $font-size-sm;
+        }
+
+        img {
+            align-self: center;
+            border-radius: 0.3em;
+            height: auto;
+            vertical-align: middle;
+            width: 100%;
+            background: $color-yellow-400;
+
+            aspect-ratio: 1/1;
+        }
+    }
+</style>

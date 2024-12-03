@@ -1,7 +1,7 @@
 ---
 import IndustryLayout from "../layouts/IndustryLayout.astro";
 
-import Speaker from "../components/people/SpeakerSmall.astro";
+import Person from "../components/people/Person.astro";
 
 import Sponsor from "../components/sponsor/sponsor.astro";
 import SponsorTier from "../components/sponsor/sponsor-tier.astro";
@@ -63,37 +63,37 @@ import ButtonGroup from "../components/ButtonGroup.astro";
         </ButtonGroup>
     </Markdown>
     <Fragment slot="speakers">
-        <Speaker
+        <Person
             name="Frédéric Ameye"
             image="frederic.png"
             description="Cybersecurity architect at Ampere"
         />
-        <Speaker
+        <Person
             name="Jakub Beránek"
             image="jakub.jpg"
             description="Rust Survey Team Co-lead"
         />
-        <Speaker
+        <Person
             name="Tiago Manczak"
             image="tiago.jpeg"
             description="Principal firmware engineer at Infineon"
         />
-        <Speaker
+        <Person
             name="Joachim den Hertog"
             image="joachim.jpeg"
             description="Senior Principal Engineer at Storio Group (formerly Albelli)"
         />
-        <Speaker
+        <Person
             name="Paul Lenz"
             image="paullenz.jpg"
             description="Director of Finance and Funding at the Rust Foundation"
         />
-        <Speaker
+        <Person
             name="Floris van der Grinten"
             image="floris.jpg"
             description="Senior Engineer at 1Password"
         />
-        <Speaker
+        <Person
             name="Ed Page"
             image="ed.jpg"
             description="Member of the Rust Cargo Team"

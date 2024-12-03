@@ -1,5 +1,6 @@
 ---
-import Organiser from "../components/people/Organiser.astro";
+import Person from "../components/people/Person.astro";
+import PeopleList from "../components/people/PeopleList.astro";
 import CommonLayout from "../layouts/CommonLayout.astro";
 ---
 
@@ -8,8 +9,6 @@ import CommonLayout from "../layouts/CommonLayout.astro";
         <div
             class="abouttext md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
         >
-            <h1 class="leftheader">About RustNL</h1>
-
             <p>
                 Stichting Rust Nederland, RustNL for short, is a non-profit that
                 strives to promote the implementation of the Rust programming
@@ -32,34 +31,34 @@ import CommonLayout from "../layouts/CommonLayout.astro";
             style="justify-content: center;"
         >
         </div>
-        <h3 class="header">RustWeek 2025 team</h3>
-        <div class="grid md:cols-2 xl:cols-3" id="organisers">
-            <Organiser
+        <h3 class="header" id="organisers">RustWeek 2025 team</h3>
+        <PeopleList>
+            <Person
                 name="Erik Jonkers"
                 image="erik.jpg"
                 description="Board member of the RustNL foundation and Director of Open Source of software agency Tweede golf."
             />
-            <Organiser
+            <Person
                 name="Laura Pircalaboiu"
                 image="laura.png"
                 description="Embedded software engineer at Q*Bird"
             />
-            <Organiser
+            <Person
                 name="Jonathan Dönszelmann"
                 image="jonathan.png"
                 description="Lecturer in Embedded Systems at Delft University of Technology and founder of Hexcat"
             />
-            <Organiser
+            <Person
                 name="Terts Diepraam"
                 image="terts.png"
                 description="Maintainer on Uutils and Software Engineer at NLnet Labs"
             />
-            <Organiser
+            <Person
                 name="Mara Bos"
                 image="mara.jpg"
                 description="Rust leadership council and founder of Hexcat"
             />
-        </div>
+        </PeopleList>
 
         <!-- <h3 class="header  py-12">Volunteers</h3> -->
         <!-- <div class="grid md:cols-2 xl:cols-4" id="volunteers"> -->

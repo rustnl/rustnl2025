@@ -1,22 +1,26 @@
 ---
+import { string } from 'astro/zod';
+
 interface Props {
     link: string;
     ty?: "primary" | "secondary";
     inFooter?: boolean;
+    scale?: number;
 }
 
-const { link, ty = "primary", inFooter = false }: Props = Astro.props;
+const { link, ty = "primary", inFooter = false, scale = 1 }: Props = Astro.props;
+
 ---
 
 <a
     class:list={["button", ty, inFooter ? "footer" : null]}
-    style="text-decoration: none;color:$color-neutral-400;"
+    style=`text-decoration: none;color:$color-neutral-400;`
     href={link}
 >
     <slot>{link}</slot>
 </a>
 
-<style lang="scss" is:global>
+<style lang="scss" is:global define:vars={{ scale }}>
     @import "../styles/variables.scss";
 
     .button {
@@ -25,10 +29,10 @@ const { link, ty = "primary", inFooter = false }: Props = Astro.props;
         border: 1px solid transparent;
         cursor: pointer;
         display: inline-flex;
-        font-size: $font-size-md;
+        font-size: calc(var(--scale) * $font-size-md);
         font-weight: 700;
-        min-height: space(12);
-        padding-inline: space(6);
+        // min-height: calc(var(--scale) * space(12));
+        padding: calc(var(--scale) * space(3)) calc(var(--scale) * space(6));
         text-align: center;
         text-decoration: none;
         user-select: none;

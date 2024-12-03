@@ -1,6 +1,5 @@
 ---
-import SpeakerWrapper from "./SpeakerWrapper.astro";
-import SpeakerImage from "./SpeakerImage.astro";
+import Icon from "../Icon.astro";
 
 const {
     name,
@@ -17,80 +16,167 @@ const {
 } = Astro.props;
 ---
 
-<SpeakerWrapper id={link}>
-    <div class="space-y-s speaker-wrapper">
-        <SpeakerImage
-            src={`/images/speakers/${image}`}
+<div class="person" id={link}>
+    <div class="image-part">
+        <img
+            src={`/images/people/${image}`}
             alt={`Picture of ${name}`}
         />
-        <div>
+        <div class="main-info">
             <h2>{name}</h2>
             <p class="speaker-title">{title}</p>
-        </div>
-        <div class="speaker-detail markdown">
+
+            <div class="socials">
+                {linkedin && <a href={linkedin}><Icon name="linkedin" /></a>}
+                {twitter && <a href={twitter}><Icon name="x" /></a>}
+                {mastodon && <a href={mastodon}><Icon name="mastodon" /></a>}
+                {github && <a href={github}><Icon name="github" /></a>}
+            </div>
             {
                 bio && (
-                    <div>
+                    <div class="bio">
                         <h3>About</h3>
                         <p>{bio}</p>
                     </div>
                 )
             }
-            <div>
-                {talkTitle && <h3>The talk</h3>}<br />
-                {talkTitle && <p style="font-style: italic;">{talkTitle}</p>}<br
-                />
-                {talkAbstract && <p>{talkAbstract}</p>}
-                <slot />
-            </div>
-
-            <div class="socials">
-                {linkedin && <a href={linkedin}>LinkedIn</a>}
-                {twitter && <a href={twitter}>X</a>}
-                {mastodon && <a href={mastodon}>Mastodon</a>}
-                {github && <a href={github}>GitHub</a>}
-            </div>
-
-            {
-                link && (
-                    <a href={`/schedule#${link}`} class="time">
-                        <strong>show in schedule</strong>
-                    </a>
-                )
-            }
         </div>
     </div>
-</SpeakerWrapper>
+
+    <div>
+        <div>
+            {talkTitle && <h3>The talk</h3>}<br />
+            {talkTitle && <p style="font-style: italic;">{talkTitle}</p>}<br
+            />
+            {talkAbstract && <p>{talkAbstract}</p>}
+            <slot />
+        </div>
+
+        {
+            link && (
+                <a href={`/schedule#${link}`} class="time">
+                    <strong>show in schedule</strong>
+                </a>
+            )
+        }
+    </div>
+</div>
 
 <style lang="scss">
     @import "../../styles/variables.scss";
+    @import "../../styles/breakpoint.scss";
 
-    .time {
-        position: absolute;
-        bottom: 1em;
-        right: 1em;
-        text-decoration: unset;
-    }
+    .person {
+        display: flex;
+        flex-direction: column;
 
-    .speaker-wrapper {
-        width: 100%;
-    }
 
-    .speaker-title {
-        font-size: 1.2em;
-        padding: 0;
-        margin: 0;
-    }
+        width: 50em;
+        @include smaller_than(lg) {
+            width: 100%;
+            margin-left: 2em;
+            margin-right: 2em;
+        }
 
-    .speaker-detail {
-        width: 100%;
-        padding-bottom: 1.5em;
-        text-align: left;
-    }
+        .image-part {
+            @include wider_than(lg) {
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                gap: 2em;
+            }
 
-    h2 {
-        font-size: $font-size-xl;
-        font-weight: $font-weight-light;
-        line-height: $line-height-tight;
+            @include smaller_than(lg) {
+                display: flex;
+                flex-direction: column;
+            }
+
+        }
+
+        img {
+            border-radius: 0.5em;
+            vertical-align: middle;
+
+            width: 100%;
+            height: auto;
+
+            display: inline-block;
+
+            aspect-ratio: 1/1;
+
+            @include smaller_than(lg) {
+                max-width: 50%;
+                align-self: center;
+            }
+        }
+
+        .main-info {
+            position: relative;
+            font-size: $font-size-lg;
+
+
+            @include smaller_than(lg) {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+
+
+            h2 {
+                font-weight: $font-weight-light;
+                line-height: $line-height-tight;
+
+                margin-top: 0.25em;
+                margin-bottom: 0em;
+
+
+                @include wider_than(lg) {
+                    text-align: left !important;
+                }
+            }
+
+            .speaker-title {
+                font-size: $font-size-md;
+            }
+
+            .socials {
+                display: flex;
+                flex-direction: row;
+                gap: 0.3em;
+
+                @include wider_than(lg) {
+                    font-size: $font-size-md;
+                    text-align: left !important;
+                }
+            }
+
+            .bio {
+                h3 {
+                    margin: 0;
+                    font-size: $font-size-lg;
+                }
+
+                p {
+                    margin: 0;
+
+                    @include wider_than(lg) {
+                        font-size: $font-size-md;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+
+        .time {
+            position: absolute;
+            bottom: 1em;
+            right: 1em;
+            text-decoration: unset;
+        }
+
+        .speaker-detail {
+            width: 100%;
+            padding-bottom: 1.5em;
+            text-align: left;
+        }
     }
 </style>
