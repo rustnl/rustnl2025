@@ -1,9 +1,9 @@
 ---
 import HomeLayout from "../layouts/HomeLayout.astro";
 
-import SpeakerSmall from "../components/people/SpeakerSmall.astro";
+import PeopleList from "../components/people/PeopleList.astro";
+import Person from "../components/people/Person.astro";
 import TwoSpeakers from "../components/people/TwoSpeakers.astro";
-import LastYearSpeaker from "../components/people/LastYearSpeaker.astro";
 
 import Sponsor from "../components/sponsor/sponsor.astro";
 import SponsorTier from "../components/sponsor/sponsor-tier.astro";
@@ -30,10 +30,11 @@ import Markdown from "../components/Markdown.astro";
             sponsor and interaction space to talk and connect, and social
             activities all-week.
         </p>
+        <p>
+            Additionally, we're hosting Rust's 10th birthday celebration, an unconference
+            for maintainers, and the first official Rust All Hands since 2019!
+        </p>
     </div>
-    Additionally, we're hosting Rust's 10th birthday celebration, an unconference
-    for maintainers, and the first official Rust All Hands since 2019!
-    <p></p>
 
     <div slot="cfp">
         <h2 id="cfp">Call for Proposals</h2>
@@ -241,76 +242,81 @@ import Markdown from "../components/Markdown.astro";
         </ButtonGroup>
     </div>
     <Fragment slot="speakers">
-        <SpeakerSmall
+        <Person
             name="Alice Ivy Cecile"
             image="alice_cecile.jpg"
             description="Bevy community leader & mad scientist"
         />
-        <SpeakerSmall
+        <Person
             name="Pietro Albini"
             image="pietro_albini.jpg"
             description="Rust Project's Infra & Release teams"
         />
-        <SpeakerSmall
+        <Person
             name="Alex Crichton"
             image="alex_crichton.jpg"
             description="Core Contributor of WasmTime"
         />
-        <SpeakerSmall
+        <Person
             name="Miguel Ojeda"
             image="miguel_ojeda.jpg"
             description="Maintainer of Rust for Linux"
         />
+        <Person
+            name="You?"
+            image="empty.png"
+            description="Respond to the CFP!"
+        />
     </Fragment>
     <Fragment slot="workshops">
-        <SpeakerSmall
+        <Person
             name="James Munns"
             image="james.png"
             description="Embedded, systems and Rust consultant & Director @ OneVariable"
         />
-        <SpeakerSmall
+        <Person
             name="Rik Arends"
             image="rik.jpeg"
             description="Founder @ Makepad"
         />
         <TwoSpeakers>
-            <SpeakerSmall
+            <Person
                 name="Tamme Dittrich"
                 image="tamme.jpg"
                 description="Embedded Rust engineer @ Tweede golf"
             />
-            <SpeakerSmall
+            <Person
                 name="Henk Oordt"
                 image="henk.png"
                 description="Writing & teaching Rust @ Tweede golf"
             />
         </TwoSpeakers>
-        <SpeakerSmall
+        <Person
             name="Luca Palmieri"
             image="luca.png"
             description="Principal Engineering Consultant @ Mainmatter"
         />
     </Fragment>
     <Fragment slot="previous-speakers">
-        <LastYearSpeaker
+        <Person
             name="Nicolas Nethercote"
             image="nicholas.png"
             talk="The status of parallel rustc"
             youtube="https://www.youtube.com/watch?v=q2vJ8Faundw&list=PL8Q1w7Ff68DCM_fsMM4v9m473sYLvJwHS&index=9"
         />
-        <LastYearSpeaker
+        <Person
             name="Rik Arends"
             image="rik.jpeg"
             talk="Makepad: Designing modern UIs with Rust"
             youtube="https://www.youtube.com/watch?v=rC4FCS-oMpg&list=PL8Q1w7Ff68DCM_fsMM4v9m473sYLvJwHS&index=1"
         />
-        <LastYearSpeaker
+        <Person
             name="Jonathan Kelley"
             image="jonathan.jpg"
             talk="Write once, run everywhere: building apps with Dioxus"
             youtube="https://www.youtube.com/watch?v=aSxdmXjZutI&list=PL8Q1w7Ff68DCM_fsMM4v9m473sYLvJwHS&index=6"
         />
-        <LastYearSpeaker
+        <Person
             name="Ed Page"
             image="ed.jpg"
             talk="Testing My Patience: An Exploration of Testing in Rust"

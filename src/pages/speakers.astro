@@ -4,54 +4,50 @@ import CommonLayout from "../layouts/CommonLayout.astro";
 ---
 
 <CommonLayout title="Speakers" header="Speakers" withLogo>
-    <section class="container py-12 space-y-6">
-        <div class="grid xl:cols-12" id="speakers">
-            <div class="xl:col-start-4 xl:col-end-10 space-y-12">
-                <SpeakerFull
-                    name="Alice Ivy Cecile"
-                    image="alice_cecile.jpg"
-                    title="Project manager, engineer, mad scientist. "
-                    talkTitle=""
-                    talkAbstract=""
-                    bio="Alice leads and coordinates Bevy's bubbling open source community as they build the next generation of game engine in Rust!"
-                    mastodon="https://mastodon.gamedev.place/@alice_i_cecile"
-                    github="https://github.com/alice-i-cecile"
-                />
-                <SpeakerFull
-                    name="Pietro Albini"
-                    image="pietro_albini.jpg"
-                    title="Rust Project's Infra & Release teams"
-                    talkTitle=""
-                    talkAbstract=""
-                    bio=""
-                    mastodon="https://hachyderm.io/@pietroalbini"
-                    github="https://github.com/pietroalbini"
-                />
-                <SpeakerFull
-                    name="Alex Crichton"
-                    image="alex_crichton.jpg"
-                    title="Core Contributor of WasmTime"
-                    talkTitle=""
-                    talkAbstract=""
-                    bio="I'm a Rust team alumni who participated on a number of teams including Core, Cargo, Libs, and others. I contributed to Rust prior to it's 1.0 release in 2015 and the years afterwards. Nowadays I've shifted my focus to WebAssembly and primarily work on Wasmtime, an out-of-browser WebAssembly engine. I also help maintain the Rust and WebAssembly integration and targets."
-                    mastodon=""
-                    github="https://github.com/alexcrichton"
-                    twitter="https://x.com/alex_crichton"
-                />
-                <SpeakerFull
-                    name="Miguel Ojeda"
-                    image="miguel_ojeda.jpg"
-                    title="Maintainer of Rust for Linux"
-                    talkTitle=""
-                    talkAbstract=""
-                    bio="Miguel Ojeda is a software engineer who maintains the Rust for Linux project. He was the Spanish NB in the ISO C committee, with an interest in Undefined Behavior and memory safety topics. Previously, Miguel was a Staff Member at CERN in the Beams department and a Fellow in the Physics department."
-                    mastodon=""
-                    github="https://github.com/ojeda"
-                    linkedin="https://www.linkedin.com/in/ojedamiguel/"
-                />
-                <p class="more-soon">More speakers will be announced soon!</p>
-            </div>
-        </div>
+    <section id="speakers" class="speakers">
+        <SpeakerFull
+            name="Alice Ivy Cecile"
+            image="alice_cecile.jpg"
+            title="Project manager, engineer, mad scientist. "
+            talkTitle=""
+            talkAbstract=""
+            bio="Alice leads and coordinates Bevy's bubbling open source community as they build the next generation of game engine in Rust!"
+            mastodon="https://mastodon.gamedev.place/@alice_i_cecile"
+            github="https://github.com/alice-i-cecile"
+        />
+        <SpeakerFull
+            name="Pietro Albini"
+            image="pietro_albini.jpg"
+            title="Rust Project's Infra & Release teams"
+            talkTitle=""
+            talkAbstract=""
+            bio=""
+            mastodon="https://hachyderm.io/@pietroalbini"
+            github="https://github.com/pietroalbini"
+        />
+        <SpeakerFull
+            name="Alex Crichton"
+            image="alex_crichton.jpg"
+            title="Core Contributor of WasmTime"
+            talkTitle=""
+            talkAbstract=""
+            bio="I'm a Rust team alumni who participated on a number of teams including Core, Cargo, Libs, and others. I contributed to Rust prior to it's 1.0 release in 2015 and the years afterwards. Nowadays I've shifted my focus to WebAssembly and primarily work on Wasmtime, an out-of-browser WebAssembly engine. I also help maintain the Rust and WebAssembly integration and targets."
+            mastodon=""
+            github="https://github.com/alexcrichton"
+            twitter="https://x.com/alex_crichton"
+        />
+        <SpeakerFull
+            name="Miguel Ojeda"
+            image="miguel_ojeda.jpg"
+            title="Maintainer of Rust for Linux"
+            talkTitle=""
+            talkAbstract=""
+            bio="Miguel Ojeda is a software engineer who maintains the Rust for Linux project. He was the Spanish NB in the ISO C committee, with an interest in Undefined Behavior and memory safety topics. Previously, Miguel was a Staff Member at CERN in the Beams department and a Fellow in the Physics department."
+            mastodon=""
+            github="https://github.com/ojeda"
+            linkedin="https://www.linkedin.com/in/ojedamiguel/"
+        />
+        <p class="more-soon">More speakers will be announced soon!</p>
     </section>
 </CommonLayout>
 
@@ -60,6 +56,14 @@ import CommonLayout from "../layouts/CommonLayout.astro";
     @import "../styles/breakpoint.scss";
 
     .speakers {
+        padding-top: 5em;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: min(40em, 90%);
     }
 
     .more-soon {

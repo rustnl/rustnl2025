@@ -12,8 +12,10 @@ import MainSchedule from "../components/schedule/MainSchedule.astro";
 import Sponsors from "../components/sponsor/Sponsors.astro";
 
 import Location from "../components/Location.astro";
-
+import HeroImage from "../../public/svg/hero-logo-rustweek-by-rustnl.svg?raw";
 import "../styles/index.scss";
+import Divider from "../components/Divider.astro";
+import PersonList from "../components/people/PeopleList.astro";
 ---
 
 <!doctype html>
@@ -42,36 +44,35 @@ import "../styles/index.scss";
             }
         }
 
-        .explainer,
-        .cfp,
-        .where,
-        .about {
-            font-size: $font-size-lg;
-        }
-
-        h2 {
-            font-size: 2rem;
-            text-align: center;
+        .leftheader {
+            font-size: $font-size-2xl;
         }
 
         #schedule {
             margin-block-start: 2rem;
+        }
+
+        #speakers {
+            display: flex;
+            flex-direction: row;
+            gap: space(6);
+            flex-wrap: wrap;
+            justify-content: center;
         }
     </style>
 
     <Head title="RustWeek 2025" />
     <body>
         <Header />
-        <div class="space-y-24">
+        <div class="space-y-12">
             <Hero style="home">
-                <img
-                    src="/svg/hero-logo-rustweek-by-rustnl.svg"
-                    alt="RustWeek 2025"
-                />
+                <Fragment set:html={HeroImage} />
+
                 <p>May 13–17, 2025<br /> Utrecht, The Netherlands</p>
 
                 <ButtonGroup>
                     <Button
+                        scale={1.5}
                         link="https://www.eventbrite.nl/e/rust-week-2025-tickets-1001676961757?aff=oddtdtcreator"
                         >Tickets</Button
                     >
@@ -90,24 +91,27 @@ import "../styles/index.scss";
                 <MainSchedule />
             </section>
 
-            <section class="container space-y-6 anchor" id="speakers">
-                <h2>Speakers</h2>
-                <div class="grid md:cols-2 xl:cols-4">
+            <section class="container space-y-6">
+                <h2 class="header">Speakers</h2>
+                <PersonList>
                     <slot name="speakers" />
-                </div>
+                </PersonList>
             </section>
             <ButtonGroup>
-                <Button link="/speakers">All speakers (more soon!) </Button>
+                <Button link="/speakers"
+                    >All speakers (more soon!)</Button
+                >
             </ButtonGroup>
+            
             <section class="container md:grid md:cols-12">
                 <div
-                class="cfp md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
+                    class="cfp md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
                 >
                     <slot name="cfp" />
                 </div>
             </section>
 
-            <Location />
+            <Divider />
 
             <section class="container md:grid md:cols-12" id="where">
                 <div
@@ -116,6 +120,8 @@ import "../styles/index.scss";
                     <slot name="where" />
                 </div>
             </section>
+            
+            <Location />
 
             <section class="container" id="sponsors">
                 <Sponsors>
@@ -123,6 +129,7 @@ import "../styles/index.scss";
                     <slot name="sponsors" />
                 </Sponsors>
             </section>
+
             <section class="container" id="previous-sponsors">
                 <Sponsors>
                     <h2>Last Year's Sponsors</h2>

@@ -16,12 +16,13 @@ const { style = "page" }: Props = Astro.props;
 
     .hero {
         align-items: center;
-        background-color: $color-yellow-400;
+        background: $color-yellow-400;
         box-sizing: border-box;
-        color: $color-neutral-400;
+        color: white;
         display: flex;
         flex-direction: column;
         font-size: $font-size-xl;
+        font-weight: 700;
 
         gap: space(10);
         justify-content: center;
@@ -46,7 +47,7 @@ const { style = "page" }: Props = Astro.props;
         }
 
         &::before {
-            background-color: $color-yellow-500;
+            background: $color-yellow-500;
             clip-path: polygon(0 0, 100% 0, 100% 100%);
             content: "";
             inset: 0;
@@ -67,7 +68,7 @@ const { style = "page" }: Props = Astro.props;
             width: 100%;
         }
 
-        img {
+        svg {
             height: auto;
             max-width: 95vw;
 
