@@ -9,6 +9,7 @@ interface Props {
     title: string;
     header: string;
     withLogo?: boolean;
+    withoutMenu?: boolean;
 }
 
 const { title, header, withLogo = false, withoutMenu = false } = Astro.props;

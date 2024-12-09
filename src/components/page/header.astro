@@ -3,6 +3,7 @@ import Menu from "./menu.astro";
 
 interface Props {
     withLogo?: boolean;
+    withoutMenu?: boolean;
 }
 
 const { withLogo = false, withoutMenu = false }: Props = Astro.props;
