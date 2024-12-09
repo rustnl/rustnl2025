@@ -11,7 +11,7 @@ interface Props {
     withLogo?: boolean;
 }
 
-const { title, header, withLogo = false } = Astro.props;
+const { title, header, withLogo = false, withoutMenu = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -27,7 +27,7 @@ const { title, header, withLogo = false } = Astro.props;
             }
         </style>
 
-        <Header withLogo={withLogo} />
+            <Header withLogo={withLogo} withoutMenu={withoutMenu} />
 
         <Hero>
             <h1 class="header">{header}</h1>

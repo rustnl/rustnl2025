@@ -1,0 +1,121 @@
+---
+import Schedule from "./Schedule.astro";
+import ScheduleDay from "./ScheduleDay.astro";
+import ScheduleSection from "./ScheduleSection.astro";
+import ScheduleItem from "./ScheduleItem.astro";
+import BottomNote from "./BottomNote.astro";
+---
+
+<Schedule>
+    <ScheduleDay>
+        <ScheduleSection>
+            <span slot="location">Utrecht,&nbsp;NL</span>
+
+            <ScheduleItem>
+                <span slot="header">&mdash;</span>
+                <Fragment slot="activities">
+                    <p>Explore Utrecht, hang out with friends, or join one of the social activities with other Rustaceans.</p>
+                    <BottomNote>See <a href="/">RustWeek 2025</a></BottomNote>
+                </Fragment>
+            </ScheduleItem>
+        </ScheduleSection>
+    </ScheduleDay>
+    <ScheduleDay>
+        <ScheduleSection>
+            <span slot="location">Kinepolis Jaarbeurs, Utrecht,&nbsp;NL</span>
+
+            <ScheduleItem>
+                <span slot="header">Conference day 1</span>
+                <span slot="attendees">800 attendees</span>
+                <span slot="time">09:00–18:00</span>
+                <Fragment slot="activities">
+                    <p>Enjoy talks and meet Rustaceans</p>
+                    <BottomNote>See <a href="/">RustWeek 2025</a></BottomNote>
+                </Fragment>
+            </ScheduleItem>
+        </ScheduleSection>
+    </ScheduleDay>
+    <ScheduleDay>
+        <ScheduleSection>
+            <span slot="location">Kinepolis Jaarbeurs, Utrecht,&nbsp;NL</span>
+
+            <ScheduleItem>
+                <span slot="header">Conference day 2</span>
+                <span slot="attendees">800 attendees</span>
+                <span slot="time">09:00–18:00</span>
+                <Fragment slot="activities">
+                    <p>With dedicated<br /><em>Rust Project track</em></p>
+                    <BottomNote>Project talks TBD</BottomNote>
+                </Fragment>
+            </ScheduleItem>
+        </ScheduleSection>
+    </ScheduleDay>
+
+    <ScheduleDay>
+        <ScheduleSection>
+            <span slot="location">DUS, Sophialaan&nbsp;1, Utrecht,&nbsp;NL</span>
+
+            <ScheduleItem>
+                <span slot="header">Pre-All-Hands</span>
+                <span slot="attendees">optional</span>
+                <span slot="time">09:00–13:00</span>
+                <Fragment slot="activities">
+                    <p>Boardgames? Lego?</p>
+                    <p>Hang out with friends?</p>
+                </Fragment>
+            </ScheduleItem>
+            <ScheduleItem align_end>
+                <span slot="header">10 Years of Rust Celebration</span>
+                <span slot="attendees">400 attendees</span>
+                <span slot="time">14:00–20:00</span>
+                <Fragment slot="activities">
+                    <p>Live release of Rust&nbsp;1.87!</p>
+                </Fragment>
+            </ScheduleItem>
+        </ScheduleSection>
+    </ScheduleDay>
+
+    <ScheduleDay>
+        <ScheduleSection>
+            <span slot="location">DUS, Sophialaan&nbsp;1, Utrecht,&nbsp;NL</span>
+
+            <ScheduleItem>
+                <span slot="header">All-Hands</span>
+                <span slot="attendees">100-150 attendees</span>
+                <span slot="time">09:00–18:00</span>
+                <Fragment slot="activities">
+                    <p>Dedicated rooms per team</p>
+                    <BottomNote>Room schedules TBD</BottomNote>
+                    <p>Room assignments TBD</p>
+                </Fragment>
+            </ScheduleItem>
+        </ScheduleSection>
+    </ScheduleDay>
+
+    <ScheduleDay>
+        <ScheduleSection>
+            <span slot="location">DUS, Sophialaan&nbsp;1, Utrecht,&nbsp;NL</span>
+
+            <ScheduleItem>
+                <span slot="header">All-Hands</span>
+                <span slot="attendees">100-150 attendees</span>
+                <span slot="time">09:00–18:00</span>
+                <Fragment slot="activities">
+                    <p>Dedicated rooms per team</p>
+                    <BottomNote>Room schedules TBD</BottomNote>
+                    <p>Room assignments TBD</p>
+                </Fragment>
+            </ScheduleItem>
+        </ScheduleSection>
+    </ScheduleDay>
+
+</Schedule>
+
+<style>
+.align-end {
+    margin-top: auto !important;
+}
+em {
+    font-style: italic;
+}
+</style>
