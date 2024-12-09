@@ -26,61 +26,89 @@ import Markdown from "../components/Markdown.astro";
             Location: <strong>Utrecht, the Netherlands</strong>
         </p>
         <p>
-            The conference includes two days of talks,
-            one day of workshops, sponsor and interaction space to talk and connect,
-            and social activities all-week.
+            The conference includes two days of talks, one day of workshops,
+            sponsor and interaction space to talk and connect, and social
+            activities all-week.
         </p>
-        </p>
-            Additionally, we're hosting Rust's 10th birthday celebration,
-            an unconference for maintainers, and the first official Rust All Hands since 2019!
-        <p>
     </div>
+    Additionally, we're hosting Rust's 10th birthday celebration, an unconference
+    for maintainers, and the first official Rust All Hands since 2019!
+    <p></p>
 
     <div slot="cfp">
-        <h2>Call for Proposals</h2>
+        <h2 id="cfp">Call for Proposals</h2>
         <p>
-            The Call for Proposals has not opened yet. It will open on Dec 1st. Ahead of the CFP we will announce four invited speakers.
-        </p>
-        <p>
-            Follow our social media stay up to date:
-            <a href="https://fosstodon.org/@rustnl" rel="me">Mastodon</a>, <a
-                href="https://twitter.com/Rust_NL">X</a
-            >
-            or
-            <a href="https://www.linkedin.com/company/rustnl/">LinkedIn</a>.
+            The Call for Proposals is <a href="https://www.papercall.io/rust-week">now open</a>. It will close Jan 12, 2025.<br />
+            Ahead of the CFP selection we will announce four invited speakers.
         </p>
     </div>
 
     <div slot="where">
         <h2>Location: Utrecht</h2>
         <p>
-        RustWeek 2025 will take place in Utrecht, one of the largest and most beautiful cities of the Netherlands.
-        Utrecht is known for its medieval city centre and lovely canals, and has excellent public transport and walkability.
+            RustWeek 2025 will take place in Utrecht, one of the largest and
+            most beautiful cities of the Netherlands. Utrecht is known for its
+            medieval city centre and lovely canals, and has excellent public
+            transport and walkability.
         </p>
         <p>
-        A 24/7 <a href="https://www.ns.nl/en/journeyplanner/#/?vertrek=Schiphol Airport&aankomst=Utrecht Centraal">train connection</a>
-        from Amsterdam Schiphol Airport (AMS) takes you directly to Utrecht in just half an hour.
-        (No need to buy a ticket; just check in and out with your bank card, credit card, or phone.)
+            Utrecht's train station is the biggest and most central train
+            station in the country, making it the central hub for trains
+            in the Netherlands.
+            Many international trains stop here as well, so the conference will be
+            easy to reach by train.
         </p>
         <p>
-        The two conference days will take place at Kinepolis Jaarbeurs Utrecht, just a few minutes walk from the Utrecht Centraal train station.
+            If you have to come by airplane, a 24/7 <a
+                href="https://www.ns.nl/en/journeyplanner/#/?vertrek=Schiphol Airport&aankomst=Utrecht Centraal"
+                >train connection</a
+            >
+            from Amsterdam Schiphol Airport (AMS) takes you directly to Utrecht in
+            just half an hour. (No need to buy a ticket; just check in and out with
+            your bank card, credit card, or phone.)
         </p>
         <p>
-        The workshops, all-hands, and unconference will take place at De Utrechtse Stadsvrijheid, for which transport from the city centre will be provided.
+            The two conference days will take place at Kinepolis Jaarbeurs
+            Utrecht, just a few minutes walk from the Utrecht Centraal train
+            station.
+        </p>
+        <p>
+            The workshops, all-hands, and unconference will take place at De
+            Utrechtse Stadsvrijheid, for which transport from the city centre
+            will be provided.
         </p>
     </div>
 
     <Fragment slot="sponsors">
-        <p>Interested in sponsoring? Download our <a target="_blank" href="/resources/sponsorship-prospectus-rustweek-2025.pdf">Sponsorship prospectus</a> or <a href="mailto:sponsors@rustnl.org">contact us</a></p>
-        <!-- <SponsorTier name="Ecosystem partners"> -->
-        <!--     <div class="sponsors-row"></div> -->
-        <!-- </SponsorTier> -->
+        <p>
+            Interested in sponsoring? Download our <a
+                target="_blank"
+                href="/resources/sponsorship-prospectus-rustweek-2025.pdf"
+                >Sponsorship prospectus</a
+            > or <a href="mailto:sponsors@rustnl.org">contact us</a>
+        </p>
         <!-- <SponsorTier name="Headline sponsor"> -->
-        <!--     <div class="sponsors-row"></div> -->
         <!-- </SponsorTier> -->
-        <!-- <SponsorTier name="Silver sponsors"> -->
-        <!--     <div class="sponsors-row"></div> -->
-        <!-- </SponsorTier> -->
+        <SponsorTier name="">
+            <Sponsor
+                name="Rust Foundation"
+                tier="ecosystem-partner"
+                image="rustfoundation.png"
+                link="https://foundation.rust-lang.org/"
+            />
+            <Sponsor
+                name="Google"
+                tier="ecosystem-partner"
+                image="google.png"
+                link="https://google.com/"
+            />
+            <Sponsor
+                name="Arm"
+                tier="silver"
+                image="arm-blue.png"
+                link="https://www.arm.com/"
+            />
+        </SponsorTier>
         <SponsorTier name="Organizing partners">
             <Sponsor
                 name="Tweede golf"
@@ -231,9 +259,14 @@ import Markdown from "../components/Markdown.astro";
             description="Rust Project's Infra & Release teams"
         />
         <SpeakerSmall
-            name="You?"
-            image="empty.png"
-            description="Respond to the CFP!"
+            name="Alex Crichton"
+            image="alex_crichton.jpg"
+            description="Core Contributor of WasmTime"
+        />
+        <SpeakerSmall
+            name="Miguel Ojeda"
+            image="miguel_ojeda.jpg"
+            description="Maintainer of Rust for Linux"
         />
     </Fragment>
     <Fragment slot="workshops">
