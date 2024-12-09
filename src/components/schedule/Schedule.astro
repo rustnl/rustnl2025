@@ -23,18 +23,17 @@ const { logo = false } = Astro.props;
         <div class="tue">Tuesday 13&nbsp;May</div>
         <div class="wed">Wednesday 14&nbsp;May</div>
         <div class="thu">
-            Thursday 15&nbsp;May <span class="birthday"
+            Thursday 15&nbsp;May { logo && <span class="birthday"
                 >10 year birthday of&nbsp;Rust&nbsp;1.0!</span
-            >
+            > }
         </div>
         <div class="fri">Friday 16&nbsp;May</div>
         <div class="sat">Saturday 17&nbsp;May</div>
         <slot />
     </div>
 
-    <div class="organize">
-        Do you have any suggestions for fun social activities with other Rustaceans?
-        Let us know by filling out <a href="https://forms.gle/fKocgjB4x4TejQYV9">this form</a >.
+    <div class="extra">
+        <slot name="extra" />
     </div>
 </div>
 
@@ -50,7 +49,7 @@ const { logo = false } = Astro.props;
             padding: 1em 2em 4em 1em;
         }
 
-        .organize {
+        .extra {
             text-align: center;
             a {
                 color: unset;
