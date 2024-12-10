@@ -1,5 +1,5 @@
 ---
-layout: "../pages/Industry.astro"
+layout: "../pages/industry.astro"
 title: "Industry Track"
 ---
 
