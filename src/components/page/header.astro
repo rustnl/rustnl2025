@@ -3,9 +3,10 @@ import Menu from "./menu.astro";
 
 interface Props {
     withLogo?: boolean;
+    withoutMenu?: boolean;
 }
 
-const { withLogo = false }: Props = Astro.props;
+const { withLogo = false, withoutMenu = false }: Props = Astro.props;
 ---
 
 <div class="header">
@@ -19,11 +20,15 @@ const { withLogo = false }: Props = Astro.props;
             </a>
         )
     }
-    <div class="hamburger button primary" data-menu-toggle></div>
-    <div class="menu" data-menu>
-        <Menu location="header" />
-    </div>
-    <div class="overlay" data-menu-overlay></div>
+    {
+        !withoutMenu && (
+            <div class="hamburger button primary" data-menu-toggle></div>
+            <div class="menu" data-menu>
+                <Menu location="header" />
+            </div>
+            <div class="overlay" data-menu-overlay></div>
+        )
+    }
 </div>
 
 <script>
