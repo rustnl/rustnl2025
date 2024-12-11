@@ -21,7 +21,10 @@ const { style = "page" }: Props = Astro.props;
         color: white;
         display: flex;
         flex-direction: column;
-        font-size: $font-size-xl;
+        font-size: $font-size-lg;
+        @include wider_than(sm) {
+            font-size: $font-size-xl;
+        }
         font-weight: 600;
 
         // background:

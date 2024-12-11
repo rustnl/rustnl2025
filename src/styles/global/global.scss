@@ -63,16 +63,23 @@ blockquote>p {
 }
 
 h1 {
-  font-size: $font-size-2xl;
+  font-size: $font-size-xl;
   text-align: center;
   margin: 0;
   padding-block: 2rem;
+
+  @include wider_than(sm) {
+    font-size: $font-size-2xl;
+  }
 }
 
 h2 {
-  font-size: $font-size-xl;
+  font-size: $font-size-lg;
   margin: 0;
   padding-block: 1rem 0.5rem;
+  @include wider_than(sm) {
+    font-size: $font-size-xl;
+  }
 }
 
 .text-center {
