@@ -91,18 +91,18 @@ import PersonList from "../components/people/PeopleList.astro";
                 <MainSchedule />
             </section>
 
-            <section class="container space-y-6">
-                <h2 class="text-center">Speakers</h2>
-                <PersonList>
-                    <slot name="speakers" />
-                </PersonList>
+            <section class="container">
+                <div class="space-y-6">
+                    <h2 class="text-center">Speakers</h2>
+                    <PersonList>
+                        <slot name="speakers" />
+                    </PersonList>
+                </div>
+                <ButtonGroup>
+                    <Button link="/speakers">All speakers (more soon!)</Button>
+                </ButtonGroup>
             </section>
-            <ButtonGroup>
-                <Button link="/speakers"
-                    >All speakers (more soon!)</Button
-                >
-            </ButtonGroup>
-            
+
             <section class="container md:grid md:cols-12">
                 <div
                     class="cfp md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
@@ -120,7 +120,7 @@ import PersonList from "../components/people/PeopleList.astro";
                     <slot name="where" />
                 </div>
             </section>
-            
+
             <Location />
 
             <section class="container" id="sponsors">
@@ -130,6 +130,8 @@ import PersonList from "../components/people/PeopleList.astro";
                 </Sponsors>
             </section>
 
+            <Divider />
+            
             <section class="container md:grid md:cols-12">
                 <div
                     class="about md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
