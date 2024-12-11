@@ -38,7 +38,6 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
                 <Fragment slot="activities">
                     <p>Main stage</p>
                     <p>Industry track</p>
-                    <p>Rust Project track</p>
                     <p>Embedded expo</p>
                 </Fragment>
             </ScheduleItem>
@@ -156,6 +155,11 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
             </ScheduleItem>
         </ScheduleSection>
     </ScheduleDay>
+
+    <div slot="extra">
+        Do you have any suggestions for fun social activities with other Rustaceans?
+        Let us know by filling out <a href="https://forms.gle/fKocgjB4x4TejQYV9">this form</a >.
+    </div>
 </Schedule>
 
 <style>
