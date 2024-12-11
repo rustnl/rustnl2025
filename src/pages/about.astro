@@ -5,7 +5,7 @@ import CommonLayout from "../layouts/CommonLayout.astro";
 ---
 
 <CommonLayout title="About" header="About" withLogo>
-    <section class="container md:grid md:cols-12 py-12">
+    <section class="container md:grid md:cols-12">
         <div
             class="abouttext md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
         >
@@ -31,7 +31,7 @@ import CommonLayout from "../layouts/CommonLayout.astro";
             style="justify-content: center;"
         >
         </div>
-        <h3 class="header" id="organisers">RustWeek 2025 team</h3>
+        <h2 class="text-center" id="organisers">RustWeek 2025 team</h2>
         <PeopleList>
             <Person
                 name="Erik Jonkers"
@@ -60,7 +60,7 @@ import CommonLayout from "../layouts/CommonLayout.astro";
             />
         </PeopleList>
 
-        <!-- <h3 class="header  py-12">Volunteers</h3> -->
+        <!-- <h3 class="py-12">Volunteers</h3> -->
         <!-- <div class="grid md:cols-2 xl:cols-4" id="volunteers"> -->
         <!--     <Organiser -->
         <!--         name="Wouter Geraedts" -->
@@ -94,7 +94,7 @@ import CommonLayout from "../layouts/CommonLayout.astro";
         <!--     /> -->
         <!-- </div> -->
 
-        <!-- <h3 class="header py-12">Supporting Us</h3> -->
+        <!-- <h3 class="py-12">Supporting Us</h3> -->
         <!-- <div class="grid md:cols-2 xl:cols-4" id="support"> -->
         <!--     <Organiser -->
         <!--         name="Tweede golf" -->
@@ -114,16 +114,3 @@ import CommonLayout from "../layouts/CommonLayout.astro";
         <!-- </div> -->
     </section>
 </CommonLayout>
-
-<style lang="scss">
-    @import "../styles/variables.scss";
-
-    .header {
-        font-size: $font-size-2xl;
-        text-align: center;
-    }
-    .leftheader {
-        font-size: $font-size-2xl;
-        margin-bottom: space(6);
-    }
-</style>

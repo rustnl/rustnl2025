@@ -22,20 +22,16 @@ const { title, header, withLogo = false, withoutMenu = false } = Astro.props;
     <body>
         <style lang="scss">
             @import "../styles/variables.scss";
-
-            .header {
-                font-size: $font-size-3xl;
-                text-decoration: none;
-            }
         </style>
-
             <Header withLogo={withLogo} withoutMenu={withoutMenu} />
-
         <Hero>
-            <h1 class="header">{header}</h1>
             <slot name="hero" />
         </Hero>
-
+        
+        <section>
+            <h1>{header}</h1> 
+        <section>
+        
         <section class="main">
             <slot />
         </section>

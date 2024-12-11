@@ -35,7 +35,7 @@ b {
   font-weight: 700;
 }
 
-h1 {
+h1, h2 {
   text-decoration: underline $color-red-400 0.1em;
 }
 
@@ -65,9 +65,16 @@ blockquote>p {
 h1 {
   font-size: $font-size-2xl;
   text-align: center;
+  margin: 0;
+  padding-block: 2rem;
 }
 
 h2 {
-  // font-size: $font-size-2xl;
+  font-size: $font-size-xl;
+  margin: 0;
+  padding-block: 1rem 0.5rem;
+}
+
+.text-center {
   text-align: center;
 }
