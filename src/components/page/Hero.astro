@@ -16,12 +16,23 @@ const { style = "page" }: Props = Astro.props;
 
     .hero {
         align-items: center;
-        background-color: $color-yellow-400;
+        background: $color-yellow-400;
         box-sizing: border-box;
-        color: $color-neutral-400;
+        color: white;
         display: flex;
         flex-direction: column;
-        font-size: $font-size-xl;
+        font-size: $font-size-lg;
+        @include wider_than(sm) {
+            font-size: $font-size-xl;
+        }
+        font-weight: 600;
+
+        // background:
+        // linear-gradient(rgb(0 0 0 / 50%), rgb(255 255 255 / 30%), rgb(0 0 0 / 50%)),
+        // no-repeat right 30% / cover url("images/backgrounds/background.jpg");
+        // no-repeat right 30% / cover url("images/backgrounds/background-conf-stage.webp");
+        // no-repeat right 30% / cover url("images/backgrounds/background-conf-stage-opening.jpeg");
+        // no-repeat right 30% / cover url("images/backgrounds/background-conf-stage-side.jpg");
 
         gap: space(10);
         justify-content: center;
@@ -32,6 +43,7 @@ const { style = "page" }: Props = Astro.props;
         position: relative;
         text-align: center;
         z-index: 0;
+        margin-block-end: 2rem;
 
         @include wider_than(md) {
             border-width: space(6) space(6) 0 space(6);
@@ -46,7 +58,7 @@ const { style = "page" }: Props = Astro.props;
         }
 
         &::before {
-            background-color: $color-yellow-500;
+            background: $color-yellow-500;
             clip-path: polygon(0 0, 100% 0, 100% 100%);
             content: "";
             inset: 0;
@@ -67,7 +79,7 @@ const { style = "page" }: Props = Astro.props;
             width: 100%;
         }
 
-        img {
+        svg {
             height: auto;
             max-width: 95vw;
 
@@ -89,7 +101,7 @@ const { style = "page" }: Props = Astro.props;
         }
 
         &.page {
-            min-height: 384px;
+            min-height: 84px;
 
             img {
                 max-height: 3rem;

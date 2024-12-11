@@ -67,14 +67,8 @@ const {align_end = false}: Props = Astro.props;
         }
 
         .attendees {
-            color: #1e79d6;
             font-size: $font-size-sm;
-
-            font-size: $font-size-md;
-            @include wider_than(lg) {
-                font-size: $font-size-sm;
-            }
-
+            color: $color-blue-400;
             font-style: italic;
 
             *:only-child {
@@ -86,10 +80,10 @@ const {align_end = false}: Props = Astro.props;
         }
 
         h4 {
-            font-size: $font-size-lg;
-            @include wider_than(lg) {
-                font-size: calc($font-size-md * (sqrt($font-size-scale)));
-            }
+            font-size: $font-size-sm;
+            // @include wider_than(lg) {
+            //     font-size: $font-size-md;
+            // }
             line-height: 1em;
             margin-bottom: 0;
             margin-top: 0;

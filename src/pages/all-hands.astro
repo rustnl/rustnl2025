@@ -1,5 +1,4 @@
 ---
-import Organiser from "../components/people/Organiser.astro";
 import CommonLayout from "../layouts/CommonLayout.astro";
 import LocationDusMix from "../components/LocationDusMix.astro";
 import RustProjectSchedule from "../components/schedule/RustProjectSchedule.astro";
@@ -10,17 +9,17 @@ import RustProjectSchedule from "../components/schedule/RustProjectSchedule.astr
     header="Rust All-Hands 2025"
     withoutMenu
 >
-    <section class="container md:grid md:cols-12 py-12" style="padding-block-end: 1em;">
+    <section class="container md:grid md:cols-12" style="padding-block-end: 1em;">
         <div class="abouttext md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10" >
             <p>
             The <b>Rust All-Hands 2025</b> will take place as part of <a href="/">RustWeek 2025</a>,
             which includes a conference and other activities.</p>
         </div>
         <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10" >
-            <p style="margin-bottom: 5em; border: 1px solid black; padding: 1em;">
+            <p style="margin-bottom: 2em; border: 1px solid black; padding: 1em;">
                 NOTE: All information on this page is for <b>Rust project members</b>.
                 If you are not a member of the Rust project, please check out the <a href="/">RustWeek 2025</a> homepage instead.
-            <p>
+            </p>
             <h2>Schedule</h2>
             <p >If you are a member of the Rust Project and attending RustWeek 2025, your week will look like this:</p>
         </div>
@@ -156,20 +155,3 @@ import RustProjectSchedule from "../components/schedule/RustProjectSchedule.astr
         </div>
     </section>
 </CommonLayout>
-
-<style lang="scss">
-    @import "../styles/variables.scss";
-
-    .abouttext {
-        font-size: $font-size-lg;
-    }
-
-    .header {
-        font-size: $font-size-2xl;
-        text-align: center;
-    }
-    h2 {
-        font-size: $font-size-xl;
-        margin-bottom: space(6);
-    }
-</style>

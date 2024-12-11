@@ -1,0 +1,16 @@
+---
+
+---
+
+<div class="people">
+    <slot />
+</div>
+
+<style>
+    .people {
+        display: grid;
+        gap: 2em;
+        grid-template-columns: repeat(auto-fit, minmax(18.5rem, 1fr));
+        margin-block-end: 3rem;
+    }
+</style>

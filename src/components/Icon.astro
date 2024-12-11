@@ -1,0 +1,12 @@
+---
+const {name} = Astro.props;
+---
+
+<img class="icon" src={`https://unpkg.com/simple-icons@v13/icons/${name}.svg`} alt={`icon of ${name}`}>
+
+<style>
+.icon {
+    height: 1em;
+    aspect-ratio: 1/1;
+}
+</style>
