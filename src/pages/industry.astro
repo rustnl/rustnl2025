@@ -31,6 +31,64 @@ import ButtonGroup from "../components/ButtonGroup.astro";
             /> 3521 BC Utrecht, The Netherlands
         </p>
     </Markdown>
+    <Timetable slot="timetable-day">
+        <TimetableItem
+            time="9.30"
+            title="Registration"
+        />
+        <TimetableItem
+            time="10.00"
+            title="Opening"
+            speaker="Hugo van de Pol"
+        />
+        <TimetableItem
+            time="10.05"
+            title="Rust at Volvo"
+            speaker="Julius Gustavsson"
+        />
+        <TimetableItem
+            time="10.25"
+            title="Global State of Rust"
+            speaker="Niko Matsakis"
+        />
+        <TimetableItem time="10.45" title="Short break" />
+        <TimetableItem
+            time="11.00"
+            title="Expert Tables round 1 - learn from industry Rust pioneers"
+            speaker="Experts to be announced"
+        />
+        <TimetableItem time="12.00" title="Lunch" />
+        <TimetableItem
+            time="13.00"
+            title="Round 1 Recap"
+            speaker="Hugo van de Pol"
+        />
+        <TimetableItem
+            time="13.15"
+            title="Talk number 3"
+            speaker="Speaker to be announced"
+        />
+        <TimetableItem
+            time="13:40"
+            title="Expert Tables round 2 - learn from industry Rust pioneers"
+            speaker="Experts to be announced"
+        />
+        <TimetableItem time="14.30" title="Coffee break" />
+        <TimetableItem
+            time="14.50"
+            title="Round 2 Recap"
+            speaker="Hugo van de Pol"
+        />
+        <TimetableItem
+            time="15.05"
+            title="Closking Keynote"
+            speaker="Speaker to be announced"
+        />
+        <TimetableItem
+            time="15.30"
+            title="Drinks"
+        />
+    </Timetable>
     <Markdown slot="tickets">
         <h2 class="header space-y-6" id="about">Tickets</h2>
         <p>
@@ -93,63 +151,6 @@ import ButtonGroup from "../components/ButtonGroup.astro";
                 link="/about"
             />
         </SponsorTier>
-        <Timetable slot="timetable-day">
-            <TimetableItem
-                time="9.30"
-                title="Registration"
-            />
-            <TimetableItem
-                time="10.00"
-                title="Opening"
-                speaker="Hugo van de Pol"
-            />
-            <TimetableItem
-                time="10.05"
-                title="Rust at Volvo"
-                speaker="Julius Gustavsson"
-            />
-            <TimetableItem
-                time="10.25"
-                title="Global State of Rust"
-                speaker="Niko Matsakis"
-            />
-            <TimetableItem time="10.45" title="Short break" />
-            <TimetableItem
-                time="11.00"
-                title="Expert Tables round 1 - learn from industry Rust pioneers"
-                speaker="Experts to be announced"
-            />
-            <TimetableItem time="12.00" title="Lunch" />
-            <TimetableItem
-                time="13.00"
-                title="Round 1 Recap"
-                speaker="Hugo van de Pol"
-            />
-            <TimetableItem
-                time="13.15"
-                title="Talk number 3"
-                speaker="Speaker to be announced"
-            />
-            <TimetableItem
-                time="13:40"
-                title="Expert Tables round 2 - learn from industry Rust pioneers"
-                speaker="Experts to be announced"
-            />
-            <TimetableItem time="14.30" title="Coffee break" />
-            <TimetableItem
-                time="14.50"
-                title="Round 2 Recap"
-                speaker="Hugo van de Pol"
-            />
-            <TimetableItem
-                time="15.05"
-                title="Closking Keynote"
-                speaker="Speaker to be announced"
-            <TimetableItem
-                time="15.30"
-                title="Drinks"
-            />
-        </Timetable>
     </div></IndustryLayout
 >
 
