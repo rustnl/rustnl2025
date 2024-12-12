@@ -36,7 +36,10 @@ b {
 }
 
 h1, h2 {
-  text-decoration: underline $color-red-400 0.1em;
+  // note: writing this as text-decoration shorthand does not work on safari 
+  text-decoration-line: underline;
+  text-decoration-color: $color-red-400;
+  text-decoration-thickness: 0.3rem;
 }
 
 
