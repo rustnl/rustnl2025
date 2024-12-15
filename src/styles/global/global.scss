@@ -85,3 +85,20 @@ h2 {
 .text-center {
   text-align: center;
 }
+
+a {
+    color: inherit;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration-color: $color-red-400;
+    }
+
+    &:visited {
+      color: inherit;
+    }
+}
+
+.schedule a {
+  color: inherit;
+}
