@@ -21,6 +21,14 @@
   .py-#{$i} {
     padding-block: space($i);
   }
+
+  .pt-#{$i} {
+    padding-block-start: space($i);
+  }
+
+  .pb-#{$i} {
+    padding-block-end: space($i);
+  }
 }
 
 @each $breakpoint in map.keys($breakpoints) {
