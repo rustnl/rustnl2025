@@ -1,5 +1,5 @@
 ---
-import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
+import HeroImage from "../../../public/svg/hero-logo-rustweek-by-rustnl.svg?raw";
 
 interface Props {
     logo?: boolean;
@@ -11,11 +11,9 @@ const { logo = false } = Astro.props;
 <div class:list={["schedule", logo]}>
     {
         logo && (
-            <img
-                src="/svg/hero-logo-rustweek-by-rustnl.svg"
-                alt="Logo RustWeek 2025"
-                class="logo"
-            />
+            <div class="image-wrapper">
+                <Fragment set:html={HeroImage} />
+            </div>
         )
     }
     <div class="days">
@@ -43,7 +41,7 @@ const { logo = false } = Astro.props;
 
     .schedule {
         display: grid;
-        padding: 2em 2em 4em 2em;
+        padding: 2em 2em 2em 2em;
 
         @include smaller_than(md) {
             padding: 1em 2em 4em 1em;
@@ -62,9 +60,10 @@ const { logo = false } = Astro.props;
         align-items: center;
 
         position: relative;
-
+        color: $color-red-500;
         background: $color-yellow-400;
         z-index: 0;
+
 
         &::before {
             background-color: $color-yellow-500;
@@ -96,7 +95,7 @@ const { logo = false } = Astro.props;
 
             color: white;
             font-style: italic;
-            font-size: $font-size-md;
+            font-size: $font-size-sm;
             width: min(10em, 80vw);
             text-align: right;
             line-height: 1em;
@@ -110,8 +109,6 @@ const { logo = false } = Astro.props;
             gap: 0.2em;
 
             justify-content: center;
-
-            font-size: 120%;
 
             grid-template-columns: auto;
             grid-template-areas:
@@ -138,9 +135,9 @@ const { logo = false } = Astro.props;
                     margin-top: 0.5em;
                 }
 
-                font-size: $font-size-xl;
+                font-size: $font-size-sm;
                 @include wider_than(lg) {
-                    font-size: calc(1.4 * $font-size-md);
+                    font-size: calc(1.4 * $font-size-sm);
                     margin-bottom: 0.1em;
                 }
 
@@ -148,7 +145,7 @@ const { logo = false } = Astro.props;
                 margin-right: -1em;
 
                 @include wider_than(xl) {
-                    font-size: $font-size-lg !important;
+                    font-size: $font-size-md !important;
                 }
             }
 
@@ -177,26 +174,26 @@ const { logo = false } = Astro.props;
 
             @include wider_than(lg) {
                 @include smaller_than(xl) {
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: auto;
-                grid-template-areas:
-                    "mon   tue   wed" 
-                    "mon-s tue-s wed-s"
-                    "thu   fri   sat"
-                    "thu-s fri-s sat-s";
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-rows: auto;
+                    grid-template-areas:
+                        "mon   tue   wed"
+                        "mon-s tue-s wed-s"
+                        "thu   fri   sat"
+                        "thu-s fri-s sat-s";
 
-                gap: 0em 1em;
+                    gap: 0em 1em;
 
-                font-size: 100%;
+                    justify-content: unset;
 
-                justify-content: unset;
+                    div {
+                        font-size: $font-size-lg;
+                    }
 
-                div {
-                    font-size: $font-size-xl;
-                }
-
-                .thu, .fri, .sat {
-                    margin-top: 2em;
+                    .thu,
+                    .fri,
+                    .sat {
+                        margin-top: 2em;
                     }
                 }
             }
@@ -210,18 +207,18 @@ const { logo = false } = Astro.props;
 
                 gap: 0em 1em;
 
-                font-size: 100%;
-
                 justify-content: unset;
 
                 div {
-                    font-size: $font-size-md;
+                    font-size: $font-size-sm;
                 }
             }
         }
 
-        img {
-            height: min(8em, 30vw);
+        .image-wrapper {
+            color: $color-neutral-400;
+            height: min(5em, 30vw);
+            aspect-ratio: 3;
             align-self: center;
             justify-self: center;
 
