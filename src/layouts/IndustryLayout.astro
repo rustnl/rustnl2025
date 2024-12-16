@@ -66,7 +66,7 @@ import "../styles/index.scss";
             >
             </div>
         </section>
-        <section class="container py-24 space-y-6">
+        <section class="container py-24 space-y-6 speakers">
             <h3 class="speakers-header">Speakers and experts</h3>
             <div class="grid md:cols-2 xl:cols-4" id="speakers">
                 <slot name="speakers" />
@@ -84,7 +84,7 @@ import "../styles/index.scss";
 <style lang="scss">
 @import "../styles/variables.scss";
 
-.track-schedule:after {
+.track-schedule:after, .speakers:before, .sponsors:before {
   margin-top: 30px;
   min-height: 15px;
   background-image: url(/images/stripes.svg);
@@ -95,7 +95,7 @@ import "../styles/index.scss";
   display: block;
   height: var(--space-6);
   position: relative;
-  margin: var(--space-12) 0 0 0;
+  margin: var(--space-12) 0;
 }
 
 .tickets-text {
@@ -113,6 +113,10 @@ import "../styles/index.scss";
 .speakers-header,
 .track-partners-header {
     text-align: center;
+}
+
+.speakers-header, .track-partners-header {
+    margin-top: 100px;
 }
 
 .industry-track-anouncement {
