@@ -1,26 +1,18 @@
 ---
-
+import BottomNote from "./BottomNote.astro";
 ---
 
-<p>
-    <a href="https://forms.gle/fKocgjB4x4TejQYV9">Organize your own activity!</a
-    >
-</p>
+<BottomNote>
+    <a href="https://forms.gle/fKocgjB4x4TejQYV9">Organize your own activity!</a>
+</BottomNote>
 
 <style lang="scss">
-    @import "../../styles/variables.scss";
-    @import "../../styles/breakpoint.scss";
-
     a {
         color: unset;
         text-decoration: none;
 
         &:hover {
-            text-decoration: underpne;
+            text-decoration: underline;
         }
-    }
-
-    p {
-        margin-top: auto !important;
     }
 </style>

@@ -1,0 +1,175 @@
+---
+import Organiser from "../components/people/Organiser.astro";
+import CommonLayout from "../layouts/CommonLayout.astro";
+import LocationDusMix from "../components/LocationDusMix.astro";
+import RustProjectSchedule from "../components/schedule/RustProjectSchedule.astro";
+---
+
+<CommonLayout
+    title="Rust All-Hands 2025"
+    header="Rust All-Hands 2025"
+    withoutMenu
+>
+    <section class="container md:grid md:cols-12 py-12" style="padding-block-end: 1em;">
+        <div class="abouttext md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10" >
+            <p>
+            The <b>Rust All-Hands 2025</b> will take place as part of <a href="/">RustWeek 2025</a>,
+            which includes a conference and other activities.</p>
+        </div>
+        <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10" >
+            <p style="margin-bottom: 5em; border: 1px solid black; padding: 1em;">
+                NOTE: All information on this page is for <b>Rust project members</b>.
+                If you are not a member of the Rust project, please check out the <a href="/">RustWeek 2025</a> homepage instead.
+            <p>
+            <h2>Schedule</h2>
+            <p >If you are a member of the Rust Project and attending RustWeek 2025, your week will look like this:</p>
+        </div>
+    </section>
+    <section class="container anchor" id="schedule">
+        <RustProjectSchedule />
+    </section>
+
+    <section class="container md:grid md:cols-12 py-12" style="padding-block: 1em;">
+        <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10" >
+            <p>
+            RustWeek 2025 includes social activities organised by and for all attending Rustaceans.
+            You are very welcome to join these activities or organise your own.
+            </p>
+            <p>Check out the <a href="/">RustWeek 2025</a> homepage for details.</p>
+        </div>
+        <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10" >
+            <h2>Rust Project track (Wednesday)</h2>
+            <p>
+            On Wednesday, the second day of the RustWeek 2025 conference,
+            there will be a dedicated room for the "Rust Project track".
+            </p>
+            <p>
+            Team members can give talks as part of this track that are mainly relevant
+            to Rust project members and contributors.
+            </p>
+            <p>
+            If you want to give a talk as part of this track, reach out to Mara on Zulip.
+            If you want to give a talk for a wider audience,
+            consider submitting your talk to the <a href="https://www.papercall.io/rust-week">RustWeek 2025 Call for Proposals</a>.
+            </p>
+            <p>
+            To attend the conference, you'll need a <a href="https://www.eventbrite.nl/e/rust-week-2025-tickets-1001676961757?aff=oddtdtcreator">conference ticket</a>.
+            If your employer is unable to pay for your ticket, you can request the Rust Foundation to pay for your ticket by contacting grants@rust-foundation.org.
+            </p>
+        </div>
+        <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10" >
+            <h2>Pre-All-Hands (Thursday)</h2>
+            <p>
+            The venue of the All-Hands will open a day early for an optional and informal "pre-all-hands" day.
+            There will be no set schedules or plans.
+            </p>
+            <p>
+            If you do feel the urge to do anything productive on this day, there will be plenty of rooms to work or collaborate with others.
+            For everyone else, there will be boardgames, Lego, outdoor games, and plenty of other team members to hang out with.
+            </p>
+            <p>
+            You don't need a separate ticket for the Pre-All-Hands.
+            </p>
+        </div>
+        <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10" >
+            <h2>Celebration (Thursday afternoon)</h2>
+            <p>
+            At the same venue, in the afternoon and evening, we will be celebrating the 10th birthday of Rust 1.0
+            together with Rust project alumni, Rust users, and sponsors.
+            </p>
+            <p>
+            Rust's 10th birthday happens to fall exactly on the same day as the release of Rust 1.87.0,
+            which will happen live on stage.
+            </p>
+            <p>
+            To attend the celebration, you'll need a ticket.
+            Tickets will be free for all attendees of the Rust All-Hands.
+            (More info later.)
+            </p>
+        </div>
+        <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10">
+            <h2>All-Hands (Friday and Saturday)</h2>
+            <p>
+            The Rust All-Hands 2025 will officially begin on Friday.
+            Other than one or two plenary sessions, each of the team will have their own schedule
+            and their own dedicated room.
+            </p>
+            <p>
+            The All-Hands Planning Team (to be established soon) will coordinate the schedules and room assignments in advance,
+            to maximize the opportunities for collaboration between teams.
+            </p>
+            <p>
+            We will have 12 rooms available to us: 4 small rooms (~12 seats), 4 slightly bigger rooms (~14 seats),
+            a medium sized room (~20 seats), a large square room (~40 seats), a long rectangular room (~48 seats),
+            and a big room that fits all of us (~200 seats in a theatre layout).
+            </p>
+            <p>
+            Each room will have tables made out of cardboard that you can write on,
+            a whiteboard and/or flipover, and a large HDMI screen.
+            </p>
+            <p>
+            To attend the Rust All-Hands, you'll need to <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeoEsZGLGokSK0Gn8GVRHhM23KgbwKsp67oxi79KfdsbipkQ/viewform">register</a>.
+            </p>
+        </div>
+    </section>
+    <section class="container md:grid md:cols-12 py-12" style="padding-block: 1em;">
+        <div class="md:col-start-1 md:col-end-13 xl:col-start-2 xl:col-end-12" >
+        <img style="width: 100%" src="/images/venues/plattegrond2.svg" />
+        </div>
+    </section>
+    <section class="container md:grid md:cols-12 py-12" style="padding-block-start: 1em;">
+        <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10" >
+            <h2>Co-located Unconference</h2>
+            <p>
+            At the same venue, in the other wing of the same building,
+            there will be a parallel event: an unconference for Rust maintainers.
+            This unconference will include rooms for Rust for Linux, Bevy, UI/app development, the embedded working group, and more (TBD).
+            </p>
+            <p>
+            This provides a great opportunity for collaboration.
+            You can invite potential users to your discussions about new Rust features,
+            or you can ask to join one of the maintainer rooms to hear about their Rust needs.
+            </p>
+        </div>
+        <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10" style="padding-block-end: 5em;">
+            <h2>Travel and Hotel</h2>
+            <p>
+            See the <a href="/#where">RustWeek 2025 homepage</a> for details on the location of the conference and how to travel there.
+            </p>
+            <p>
+            We are currently working on hotel recommendations and reservations.
+            </p>
+            <p>
+            If you don't have an employer that pays for your trip, you can request a reimbursement from the Rust Foundation by contacting grants@rust-foundation.org.
+            </p>
+        </div>
+    </section>
+    <LocationDusMix />
+    <section class="container md:grid md:cols-12 py-12">
+        <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10" >
+            <p>
+            This page will be updated with more information in the following weeks and months.
+            </p>
+            <p>
+            If you have any logistical or organisational questions, please reach out to Mara on Zulip!
+            </p>
+        </div>
+    </section>
+</CommonLayout>
+
+<style lang="scss">
+    @import "../styles/variables.scss";
+
+    .abouttext {
+        font-size: $font-size-lg;
+    }
+
+    .header {
+        font-size: $font-size-2xl;
+        text-align: center;
+    }
+    h2 {
+        font-size: $font-size-xl;
+        margin-bottom: space(6);
+    }
+</style>
