@@ -19,32 +19,26 @@ import ButtonGroup from "../components/ButtonGroup.astro";
         <h2 class="header space-y-6" id="about">About the industry track</h2>
         <p>The industry track is back at RustWeek 2025!</p>
         <p>
-            Following the succes of the first edition, this track is dedicated to decision makers exploring the adoption
-            of Rust in their organisation. 
+            Following the succes of the first edition, this track is dedicated
+            to decision makers exploring the adoption of Rust in their
+            organisation.
         </p>
         <p>
             Date & time: <strong>Tuesday May 13, 9:30 - 16:30 CET</strong>.
         </p>
         <h3 class="venue">City & venue</h3>
         <p class="venue">
-            Kinepolis Jaarbeurs Utrecht, <br /> Jaarbeursboulevard 300, <br
-            /> 3521 BC Utrecht, The Netherlands
+            Kinepolis Jaarbeurs Utrecht, <br /> Jaarbeursboulevard 300, <br /> 3521
+            BC Utrecht, The Netherlands
         </p>
     </Markdown>
     <Timetable slot="timetable-day">
+        <TimetableItem time="9.30" title="Registration" />
+        <TimetableItem time="10.00" title="Opening" speaker="Hugo van de Pol" />
         <TimetableItem
-            time="9.30"
-            title="Registration"
-        />
-        <TimetableItem
-            time="10.00"
-            title="Opening"
-            speaker="Hugo van de Pol"
-        />
-        <TimetableItem
-        time="10.05"
-        title="Our Vision for Rust"
-        speaker="Niko Matsakis"
+            time="10.05"
+            title="Our Vision for Rust"
+            speaker="Niko Matsakis"
         />
         <TimetableItem
             time="10.25"
@@ -84,10 +78,7 @@ import ButtonGroup from "../components/ButtonGroup.astro";
             title="Closking Keynote"
             speaker="Speaker to be announced"
         />
-        <TimetableItem
-            time="15.30"
-            title="Drinks"
-        />
+        <TimetableItem time="15.30" title="Drinks" />
     </Timetable>
     <Markdown slot="tickets">
         <h2 class="header space-y-6" id="about">Tickets</h2>
