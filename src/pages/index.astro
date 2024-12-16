@@ -93,22 +93,28 @@ import Divider from "../components/Divider.astro";
         <!-- </SponsorTier> -->
         <SponsorTier name="">
             <Sponsor
-                name="Rust Foundation"
-                tier="ecosystem-partner"
-                image="rustfoundation.png"
-                link="https://foundation.rust-lang.org/"
-            />
-            <Sponsor
-                name="Google"
-                tier="ecosystem-partner"
-                image="google.png"
-                link="https://google.com/"
+            name="Google"
+            tier="ecosystem-partner"
+            image="google.png"
+            link="https://google.com/"
             />
             <Sponsor
                 name="Arm"
                 tier="silver"
                 image="arm-blue.png"
                 link="https://www.arm.com/"
+            />
+            <Sponsor
+                name="Espressif"
+                tier="bronze"
+                image="unconf/espressif.svg"
+                link="https://espressif.com/"
+                />
+            <Sponsor
+                name="Rust Foundation"
+                tier="ecosystem-partner"
+                image="rustfoundation.png"
+                link="https://foundation.rust-lang.org/"
             />
         </SponsorTier>
         <SponsorTier name="Organizing partners">
@@ -137,106 +143,6 @@ import Divider from "../components/Divider.astro";
         <!-- <SponsorTier name="NL Community supporters"> -->
         <!--     <div class="sponsors-row"></div> -->
         <!-- </SponsorTier> -->
-    </Fragment>
-    <Fragment slot="previous-sponsors">
-        <SponsorTier name="">
-            <Sponsor
-                name="Rust Foundation"
-                tier="last-year"
-                image="rustfoundation.png"
-                link="https://foundation.rust-lang.org/"
-            />
-            <Sponsor
-                name="Futurewei Technologies"
-                tier="last-year"
-                image="futurewei.png"
-                link="https://www.futurewei.com/"
-            />
-            <Sponsor
-                name="Tandemdrive"
-                tier="last-year"
-                image="tandemdrive.png"
-                link="https://tandemdrive.com"
-            />
-            <Sponsor
-                name="hyperswitch"
-                tier="last-year"
-                image="hyperswitch.png"
-                link="https://hyperswitch.io"
-            />
-            <Sponsor
-                name="Tweede golf"
-                tier="last-year"
-                image="tweede-golf-v2.png"
-                link="https://tweedegolf.nl"
-            />
-            <Sponsor
-                name="One Variable"
-                tier="last-year"
-                image="onevariable.png"
-                link="https://onevariable.com"
-            />
-            <Sponsor
-                name="Makepad"
-                tier="last-year"
-                image="makepad.png"
-                link="https://makepad.nl"
-            />
-            <Sponsor
-                name="Mainmatter"
-                tier="last-year"
-                image="mainmatter.png"
-                link="https://mainmatter.com"
-            />
-            <Sponsor
-                name="Infineon Technologies"
-                tier="last-year"
-                image="infineon.png"
-                link="https://infineon.com/"
-            />
-            <Sponsor
-                name="Ferrous Systems"
-                tier="last-year"
-                image="ferrous.png"
-                link="https://ferrous-systems.com/"
-            />
-            <Sponsor
-                name="Technolution"
-                tier="last-year"
-                image="technolution.png"
-                link="https://technolution.com/"
-            />
-            <Sponsor
-                name="Baseflow"
-                tier="last-year"
-                image="baseflow.png"
-                link="https://baseflow.com/"
-            />
-            <Sponsor
-                name="Jitter"
-                tier="last-year"
-                image="jitter.png"
-                link="https://jitter.nl/"
-            />
-            <Sponsor
-                name="Polars"
-                tier="last-year"
-                image="polars.png"
-                link="https://pola.rs/"
-            />
-            <Sponsor
-                name="Rocsys"
-                tier="last-year"
-                image="rocsys.png"
-                link="https://rocsys.com/"
-            />
-            <Sponsor
-                name="NLnet Labs"
-                tier="last-year"
-                image="nlnetlabs.png"
-                link="https://nlnetlabs.nl/"
-            />
-        </SponsorTier>
     </Fragment>
     <div slot="about">
         <h2 id="about">About RustWeek</h2>
@@ -298,32 +204,6 @@ import Divider from "../components/Divider.astro";
             name="Luca Palmieri"
             image="luca.png"
             description="Principal Engineering Consultant @ Mainmatter"
-        />
-    </Fragment>
-    <Fragment slot="previous-speakers">
-        <Person
-            name="Nicolas Nethercote"
-            image="nicholas.png"
-            talk="The status of parallel rustc"
-            youtube="https://www.youtube.com/watch?v=q2vJ8Faundw&list=PL8Q1w7Ff68DCM_fsMM4v9m473sYLvJwHS&index=9"
-        />
-        <Person
-            name="Rik Arends"
-            image="rik.jpeg"
-            talk="Makepad: Designing modern UIs with Rust"
-            youtube="https://www.youtube.com/watch?v=rC4FCS-oMpg&list=PL8Q1w7Ff68DCM_fsMM4v9m473sYLvJwHS&index=1"
-        />
-        <Person
-            name="Jonathan Kelley"
-            image="jonathan.jpg"
-            talk="Write once, run everywhere: building apps with Dioxus"
-            youtube="https://www.youtube.com/watch?v=aSxdmXjZutI&list=PL8Q1w7Ff68DCM_fsMM4v9m473sYLvJwHS&index=6"
-        />
-        <Person
-            name="Ed Page"
-            image="ed.jpg"
-            talk="Testing My Patience: An Exploration of Testing in Rust"
-            youtube="https://www.youtube.com/watch?v=3aLPewRSiK8&list=PL8Q1w7Ff68DCM_fsMM4v9m473sYLvJwHS&index=4"
         />
     </Fragment>
 </HomeLayout>
