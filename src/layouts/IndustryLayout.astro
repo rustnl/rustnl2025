@@ -11,8 +11,8 @@ import "../styles/index.scss";
 <CommonLayout title="Industry track" header="Industry track" withLogo>
     <Fragment slot="hero">
         <p class="industry-track-anouncement">
-            May 7, 2024
-            <br /> Delft, The Netherlands
+            May 13, 2025
+            <br /> Utrecht, The Netherlands
         </p>
 
         <Button link="#tickets">Buy Ticket</Button>
@@ -35,12 +35,15 @@ import "../styles/index.scss";
         >
             <div class="space-y-12 md:grid md:cols-2 md:space-y-0">
                 <!--div class="space-y-6 px-3 sm:px-6 md:space-y-12 xl:px-12"-->
-                <div class="markdown">
+                <div class="markdown schedule-description">
                     <h3 class="schedule-header">Industry track schedule</h3>
-                    <p class="schedule-description">
-                        A track about Rust adoption for decision makers to
-                        interact with and learn from industry peers.
-                    </p>
+                    <p>The industry track features a mixed program with three inspiring talks and two rounds of Expert Tables.</p>
+
+                    <p>Our speaker lineup includes ecosystem leaders like Niko Matsakis, co-lead of the Rust language design team, and Rust pioneers such as Julius Gustavsson from Volvo.</p>
+
+                    <p>The expert table sessions provide an opportunity for insightful discussions with a seasoned Rust expert and your industry peers.</p>
+
+                    <p>Seven expert table topics are offered ranging from using Rust in existing projects, to the first steps in Rust adoption, to how Rust as a language is being developed.</p>
                 </div>
                 <slot name="timetable-day" />
             </div>
@@ -63,8 +66,8 @@ import "../styles/index.scss";
             >
             </div>
         </section>
-        <section class="container py-24 space-y-6">
-            <h3 class="speakers-header">Speakers and panelists</h3>
+        <section class="container py-24 space-y-6 speakers">
+            <h3 class="speakers-header">Speakers and experts</h3>
             <div class="grid md:cols-2 xl:cols-4" id="speakers">
                 <slot name="speakers" />
             </div>
@@ -81,10 +84,18 @@ import "../styles/index.scss";
 <style lang="scss">
 @import "../styles/variables.scss";
 
-
-.speakers-header, .track-partners-header {
-    font-size: font-size-2xl;
-    text-align: center;
+.track-schedule:after, .speakers:before, .sponsors:before {
+  margin-top: 30px;
+  min-height: 15px;
+  background-image: url(/images/stripes.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  content: "";
+  display: block;
+  height: var(--space-6);
+  position: relative;
+  margin: var(--space-12) 0;
 }
 
 .tickets-text {
@@ -92,8 +103,20 @@ import "../styles/index.scss";
     text-align: center;
 }
 
-.schedule-header {
+.schedule-header, 
+.speakers-header,
+.track-partners-header {
     font-size: $font-size-2xl;
+    margin-block: 0;
+}
+
+.speakers-header,
+.track-partners-header {
+    text-align: center;
+}
+
+.speakers-header, .track-partners-header {
+    margin-top: 100px;
 }
 
 .industry-track-anouncement {

@@ -1,0 +1,146 @@
+---
+import IndustryLayout from "../layouts/IndustryLayout.astro";
+
+import Speaker from "../components/people/SpeakerSmall.astro";
+
+import Sponsor from "../components/sponsor/sponsor.astro";
+import SponsorTier from "../components/sponsor/sponsor-tier.astro";
+
+import TimetableItem from "../components/timetable/timetable-item.astro";
+import Timetable from "../components/timetable/timetable.astro";
+
+import Markdown from "../components/Markdown.astro";
+import Button from "../components/Button.astro";
+import ButtonGroup from "../components/ButtonGroup.astro";
+---
+
+<IndustryLayout>
+    <Markdown slot="about-industry">
+        <h2 class="header space-y-6" id="about">About the industry track</h2>
+        <p>The industry track is back at RustWeek 2025!</p>
+        <p>
+            Following the succes of the first edition, this track is dedicated
+            to decision makers exploring the adoption of Rust in their
+            organisation.
+        </p>
+        <p>
+            Date & time: <strong>Tuesday May 13, 9:30 - 16:30 CET</strong>.
+        </p>
+        <h3 class="venue">City & venue</h3>
+        <p class="venue">
+            Kinepolis Jaarbeurs Utrecht, <br /> Jaarbeursboulevard 300, <br /> 3521
+            BC Utrecht, The Netherlands
+        </p>
+    </Markdown>
+    <Timetable slot="timetable-day">
+        <TimetableItem time="9.30" title="Registration" />
+        <TimetableItem time="10.00" title="Opening" speaker="Hugo van de Pol" />
+        <TimetableItem
+            time="10.05"
+            title="Our Vision for Rust"
+            speaker="Niko Matsakis"
+        />
+        <TimetableItem
+            time="10.25"
+            title="Rust at Volvo"
+            speaker="Julius Gustavsson"
+        />
+        <TimetableItem time="10.45" title="Short break" />
+        <TimetableItem
+            time="11.00"
+            title="Expert Tables Round 1 - choose a topic and learn from a seasoned Rust expert as well as your industry peers"
+            speaker="Experts to be announced"
+        />
+        <TimetableItem
+            time="12.00"
+            title="Expert Tables Round 1 Recap"
+            speaker="Hugo van de Pol"
+        />
+        <TimetableItem time="12.15" title="Lunch" />
+        <TimetableItem
+            time="13.15"
+            title="Global State of Rust"
+            speaker="Speaker to be announced"
+        />
+        <TimetableItem
+            time="13.45"
+            title="Expert Tables Round 2 - choose a topic and learn from a seasoned Rust expert as well as your industry peers"
+            speaker="Experts to be announced"
+        />
+        <TimetableItem time="14.45" title="Coffee break" />
+        <TimetableItem
+            time="15.00"
+            title="Expert Tables Round 2 Recap"
+            speaker="Hugo van de Pol"
+        />
+        <TimetableItem
+            time="15.15"
+            title="Closking Keynote"
+            speaker="Speaker to be announced"
+        />
+        <TimetableItem time="15.30" title="Drinks" />
+    </Timetable>
+    <Markdown slot="tickets">
+        <h2 class="header space-y-6" id="about">Tickets</h2>
+        <p>
+            To attend the industry track, you will need an Industry Track
+            ticket.<br />
+            Tickets are EUR 99,- ex vat.
+        </p>
+        <ButtonGroup>
+            <Button
+                link="https://www.eventbrite.nl/e/industry-track-rustweek-2025-tickets-1115250035879"
+                >Get Industry Track ticket</Button
+            >
+        </ButtonGroup>
+    </Markdown>
+    <Fragment slot="speakers">
+        <Speaker
+            name="Julius Gustavsson"
+            image="julius.jpeg"
+            description="System architect at Volvo Cars"
+        />
+        <Speaker
+            name="Niko Matsakis"
+            image="niko.png"
+            description="Senior Principal Engineer at Amazon Web Services"
+        />
+    </Fragment>
+
+    <div slot="sponsors">
+        <SponsorTier name="Ecosystem partners">
+            <Sponsor
+                name="Rust Foundation"
+                tier="industry-partner"
+                image="rustfoundation.png"
+                link="https://foundation.rust-lang.org/"
+            />
+        </SponsorTier>
+        <SponsorTier name="Powered by">
+            <Sponsor
+                name="Tweede golf"
+                tier="industry-partner"
+                image="tweede-golf-v2.png"
+                link="https://tweedegolf.nl"
+            />
+            <Sponsor
+                name="RustNL"
+                tier="industry-partner"
+                image="../rustnl-logo-square.svg"
+                link="/about"
+            />
+        </SponsorTier>
+    </div></IndustryLayout
+>
+
+<style lang="scss">
+    @import "../styles/variables.scss";
+
+    .header {
+        font-size: $font-size-2xl;
+    }
+
+    .venue {
+        font-size: $font-size-lg;
+    }
+</style>
