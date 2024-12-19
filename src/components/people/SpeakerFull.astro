@@ -17,41 +17,33 @@ const {
 ---
 
 <div class="person" id={link}>
-    <div class="image-part">
-        <img
-            src={`/images/people/${image}`}
-            alt={`Picture of ${name}`}
-        />
-        <div class="main-info">
-            <h2>{name}</h2>
-            <p class="speaker-title">{title}</p>
+    <img
+        src={`/images/people/${image}`}
+        alt={`Picture of ${name}`}
+    />
+    <div class="main-info">
+        <h2>{name}</h2>
+        <p class="speaker-title">{title}</p>
 
-            <div class="socials">
-                {linkedin && <a href={linkedin}><Icon name="linkedin" /></a>}
-                {twitter && <a href={twitter}><Icon name="x" /></a>}
-                {mastodon && <a href={mastodon}><Icon name="mastodon" /></a>}
-                {github && <a href={github}><Icon name="github" /></a>}
-            </div>
-            {
-                bio && (
-                    <div class="bio">
-                        <h3>About</h3>
-                        <p>{bio}</p>
-                    </div>
-                )
-            }
+        <div class="socials">
+            {linkedin && <a href={linkedin}><Icon name="linkedin" /></a>}
+            {twitter && <a href={twitter}><Icon name="x" /></a>}
+            {mastodon && <a href={mastodon}><Icon name="mastodon" /></a>}
+            {github && <a href={github}><Icon name="github" /></a>}
         </div>
-    </div>
-
-    <div>
         <div>
-            {talkTitle && <h3>The talk</h3>}<br />
-            {talkTitle && <p style="font-style: italic;">{talkTitle}</p>}<br
-            />
+        {
+        bio && (
+            <p class="bio">
+                {bio}
+            </p>
+        )
+        }
+            {talkTitle && <h3>The talk</h3>}
+            {talkTitle && <p style="font-style: italic;">{talkTitle}</p>}
             {talkAbstract && <p>{talkAbstract}</p>}
             <slot />
         </div>
-
         {
             link && (
                 <a href={`/schedule#${link}`} class="time">
@@ -67,30 +59,18 @@ const {
     @import "../../styles/breakpoint.scss";
 
     .person {
-        display: flex;
-        flex-direction: column;
+        @include wider_than(lg) {
+            width: 50em;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2em;
+        }
 
-
-        width: 50em;
         @include smaller_than(lg) {
-            width: 100%;
-            margin-left: 2em;
-            margin-right: 2em;
+            display: flex;
+            flex-direction: column;
         }
 
-        .image-part {
-            @include wider_than(lg) {
-                display: grid;
-                grid-template-columns: 1fr 2fr;
-                gap: 2em;
-            }
-
-            @include smaller_than(lg) {
-                display: flex;
-                flex-direction: column;
-            }
-
-        }
 
         img {
             border-radius: 0.5em;
@@ -111,7 +91,7 @@ const {
 
         .main-info {
             position: relative;
-            font-size: $font-size-lg;
+            font-size: $font-size-md;
 
 
             @include smaller_than(lg) {
@@ -125,9 +105,8 @@ const {
                 font-weight: $font-weight-light;
                 line-height: $line-height-tight;
 
-                margin-top: 0.25em;
                 margin-bottom: 0em;
-
+                padding-top: 0em;
 
                 @include wider_than(lg) {
                     text-align: left !important;
@@ -136,6 +115,7 @@ const {
 
             .speaker-title {
                 font-size: $font-size-md;
+                margin: 0.5em 0;
             }
 
             .socials {
@@ -150,18 +130,11 @@ const {
             }
 
             .bio {
-                h3 {
-                    margin: 0;
-                    font-size: $font-size-lg;
-                }
+                margin: 0.5em 0 0 0;
 
-                p {
-                    margin: 0;
-
-                    @include wider_than(lg) {
-                        font-size: $font-size-md;
-                        text-align: left;
-                    }
+                @include wider_than(lg) {
+                    font-size: $font-size-md;
+                    text-align: left;
                 }
             }
         }
