@@ -56,18 +56,19 @@ switch (tier) {
 }
 
 <style lang="scss">
-    @import "../../styles/variables.scss";
+    @use "../../styles/variables.scss";
 
     a {
-        font-size: $font-size-lg;
+        font-size: variables.$font-size-lg;
     }
 
     .sponsor {
         aspect-ratio: 16 / 9;
         display: flex;
         box-sizing: border-box;
-        border-radius: space(1);
-        border: 1px solid $color-red-400;
+        border-radius: variables.space(1);
+        border: 1px solid variables.$color-red-400;
+
         max-width: 20rem;
         width: 100%;
         padding: 1em;

@@ -1,25 +1,25 @@
 @use 'sass:map';
-@import '../breakpoint.scss';
-@import '../variables.scss';
-@import '../maps.scss';
+@use '../breakpoint.scss';
+@use '../variables.scss';
+@use '../maps.scss';
 
 @for $i from 1 through 24 {
   .space-y-#{$i}>*+* {
-    margin-block-start: space($i);
+    margin-block-start: variables.space($i);
   }
 }
 
 @for $i from 1 through 24 {
   .p-#{$i} {
-    padding: space($i);
+    padding: variables.space($i);
   }
 
   .px-#{$i} {
-    padding-inline: space($i);
+    padding-inline: variables.space($i);
   }
 
   .py-#{$i} {
-    padding-block: space($i);
+    padding-block: variables.space($i);
   }
 
   .pt-#{$i} {
@@ -31,35 +31,35 @@
   }
 }
 
-@each $breakpoint in map.keys($breakpoints) {
-  @include wider_than($breakpoint) {
+@each $breakpoint in map.keys(breakpoint.$breakpoints) {
+  @include breakpoint.wider_than($breakpoint) {
     .#{$breakpoint}\:space-y-0>*+* {
       margin-block-start: 0;
     }
   }
 
   @for $i from 1 through 24 {
-    @include wider_than($breakpoint) {
+    @include breakpoint.wider_than($breakpoint) {
       .#{$breakpoint}\:space-y-#{$i}>*+* {
-        margin-block-start: space($i);
+        margin-block-start: variables.space($i);
       }
     }
 
-    @include wider_than($breakpoint) {
+    @include breakpoint.wider_than($breakpoint) {
       .#{$breakpoint}\:p-#{$i} {
-        padding: space($i);
+        padding: variables.space($i);
       }
     }
 
-    @include wider_than($breakpoint) {
+    @include breakpoint.wider_than($breakpoint) {
       .#{$breakpoint}\:px-#{$i} {
-        padding-inline: space($i);
+        padding-inline: variables.space($i);
       }
     }
 
-    @include wider_than($breakpoint) {
+    @include breakpoint.wider_than($breakpoint) {
       .#{$breakpoint}\:py-#{$i} {
-        padding-block: space($i);
+        padding-block: variables.space($i);
       }
     }
   }

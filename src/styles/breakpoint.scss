@@ -10,16 +10,16 @@ $breakpoints: (
 );
 
 @mixin wider_than($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @media (min-width: map-get($breakpoints, $breakpoint)) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media (min-width: map.get($breakpoints, $breakpoint)) {
       @content;
     }
   }
 }
 
 @mixin smaller_than($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @media not (min-width: map-get($breakpoints, $breakpoint)) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media not (min-width: map.get($breakpoints, $breakpoint)) {
       @content;
     }
   }

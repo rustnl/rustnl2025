@@ -21,11 +21,11 @@ import PersonList from "../components/people/PeopleList.astro";
 <!doctype html>
 <html lang="en">
     <style lang="scss">
-        @import "../styles/variables.scss";
+        @use "../styles/variables.scss";
 
         .down-arrow {
             aspect-ratio: 1;
-            border: solid $color-red-400;
+            border: solid variables.$color-red-400;
             border-width: 0 1rem 1rem 0;
             display: inline-block;
             rotate: 0deg;
@@ -45,7 +45,7 @@ import PersonList from "../components/people/PeopleList.astro";
         }
 
         .leftheader {
-            font-size: $font-size-2xl;
+            font-size: variables.$font-size-2xl;
         }
 
         #schedule {

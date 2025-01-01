@@ -11,20 +11,19 @@ const { style = "page" }: Props = Astro.props;
 </section>
 
 <style lang="scss" is:global>
-    @import "../../styles/breakpoint.scss";
-    @import "../../styles/variables.scss";
+    @use "../../styles/breakpoint.scss";
+    @use "../../styles/variables.scss";
 
     .hero {
         align-items: center;
-        background: $color-yellow-400;
+
+        background: variables.$color-yellow-400;
         box-sizing: border-box;
         color: white;
         display: flex;
         flex-direction: column;
-        font-size: $font-size-lg;
-        @include wider_than(sm) {
-            font-size: $font-size-xl;
-        }
+        font-size: variables.$font-size-lg;
+
         font-weight: 600;
 
         // background:
@@ -34,31 +33,35 @@ const { style = "page" }: Props = Astro.props;
         // no-repeat right 30% / cover url("images/backgrounds/background-conf-stage-opening.jpeg");
         // no-repeat right 30% / cover url("images/backgrounds/background-conf-stage-side.jpg");
 
-        gap: space(10);
+        gap: variables.space(10);
         justify-content: center;
-        line-height: $line-height-tight;
+        line-height: variables.$line-height-tight;
         min-height: 100svh;
-        padding-block: space(12);
-        padding-inline: space(6);
+        padding-block: variables.space(12);
+        padding-inline: variables.space(6);
         position: relative;
         text-align: center;
         z-index: 0;
         margin-block-end: 2rem;
 
-        @include wider_than(md) {
-            border-width: space(6) space(6) 0 space(6);
-            padding-block: space(12);
-            padding-inline: space(6);
+        @include breakpoint.wider_than(sm) {
+            font-size: variables.$font-size-xl;
         }
 
-        @include wider_than(xl) {
-            border-width: space(12) space(12) 0 space(12);
-            padding-block: space(24);
-            padding-inline: space(12);
+        @include breakpoint.wider_than(md) {
+            border-width: variables.space(6) variables.space(6) 0 variables.space(6);
+            padding-block: variables.space(12);
+            padding-inline: variables.space(6);
+        }
+
+        @include breakpoint.wider_than(xl) {
+            border-width: variables.space(12) variables.space(12) 0 variables.space(12);
+            padding-block: variables.space(24);
+            padding-inline: variables.space(12);
         }
 
         &::before {
-            background: $color-yellow-500;
+            background: variables.$color-yellow-500;
             clip-path: polygon(0 0, 100% 0, 100% 100%);
             content: "";
             inset: 0;
@@ -73,7 +76,7 @@ const { style = "page" }: Props = Astro.props;
             background-size: 100% auto;
             bottom: 0;
             content: "";
-            height: space(6);
+            height: variables.space(6);
             max-width: 44.25rem;
             position: absolute;
             width: 100%;
@@ -83,18 +86,18 @@ const { style = "page" }: Props = Astro.props;
             height: auto;
             max-width: 95vw;
 
-            @include wider_than(md) {
+            @include breakpoint.wider_than(md) {
                 max-width: 60vw;
             }
 
-            @include wider_than(xl) {
+            @include breakpoint.wider_than(xl) {
                 max-width: 40vw;
             }
         }
 
         .nav {
             display: flex;
-            justify-content: space-between;
+            justify-content: spacebetween;
             flex: 1;
             width: 100%;
             align-items: center;

@@ -32,8 +32,8 @@ const { title, time, speaker, link } = Astro.props;
 </li>
 
 <style lang="scss">
-    @import "../../styles/variables.scss";
-    @import "../../styles/breakpoint.scss";
+    @use "../../styles/variables.scss";
+    @use "../../styles/breakpoint.scss";
 
     a {
         all: unset;
@@ -46,24 +46,24 @@ const { title, time, speaker, link } = Astro.props;
         padding-right: 0.5em;
 
         display: flex;
-        gap: space(3);
-        padding-block: space(6);
+        gap: variables.space(3);
+        padding-block: variables.space(6);
 
-        @include wider_than(xl) {
+        @include breakpoint.wider_than(xl) {
             align-items: center;
-            font-size: $font-size-lg;
-            gap: space(6);
+            font-size: variables.$font-size-lg;
+            gap: variables.space(6);
         }
 
         &:not(:first-child) {
-            border-block-start: 1px solid $color-yellow-400;
+            border-block-start: 1px solid variables.$color-yellow-400;
         }
     }
     li:target {
         /* invert the colour of highlighted elements */
-        border: 2px solid $color-red-500;
-        background-color: $color-red-500;
-        color: $color-neutral-400;
+        border: 2px solid variables.$color-red-500;
+        background-color: variables.$color-red-500;
+        color: variables.$color-neutral-400;
         border-radius: 0.5em;
     }
     li:target + li {
@@ -81,7 +81,7 @@ const { title, time, speaker, link } = Astro.props;
     }
 
     .name {
-        font-size: $font-size-md;
+        font-size: variables.$font-size-md;
         font-weight: 700;
         text-align: left;
     }
