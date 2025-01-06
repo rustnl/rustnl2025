@@ -3,21 +3,21 @@ import CommonLayout from "../layouts/CommonLayout.astro";
 import LocationDusRooms from "../components/LocationDusRooms.astro";
 import LocationDusVenue from "../components/LocationDusVenue.astro";
 import UnconfSchedule from "../components/schedule/UnconfSchedule.astro";
-import Divider from "../components/Divider.astro";
-import SponsorTier from "../components/sponsor/sponsor-tier.astro";
 import Sponsor from "../components/sponsor/sponsor.astro";
+import SponsorTier from "../components/sponsor/sponsor-tier.astro";
+import Divider from "../components/Divider.astro";
 ---
 
 <CommonLayout title="RustWeek unconf 2025" header="RustWeek unconf" withoutMenu>
     <section class="container md:grid md:cols-12">
         <div
             class="abouttext text-center md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
-            style="font-style: bold;font-size: smaller;"
+            style="font-size: smaller;"
         >
             <a href="#groups">Groups</a> &bullet;
             <a href="#venue">Venue</a> &bullet;
-            <a href="#weekschedule">Week schedule</a> &bullet;
             <a href="#unconf-details">Unconf days</a> &bullet;
+            <a href="#sponsors">Sponsors</a> &bullet;
             <a href="#travel">Travel</a> &bullet;
             <a href="#questions">Questions</a>
         </div>
@@ -40,8 +40,8 @@ import Sponsor from "../components/sponsor/sponsor.astro";
                     <li>Rust for Linux</li>
                     <li>Bevy</li>
                     <li>Rust Embedded Working Group</li>
-                    <li>UI/app development</li>
-                    <li>and more (tba)!</li>
+                    <li>UI & App dev</li>
+                    <li>and more TBA!</li>
                 </ul>
             </p>
             <p
@@ -76,7 +76,9 @@ import Sponsor from "../components/sponsor/sponsor.astro";
     <section class="container anchor" id="schedule">
         <UnconfSchedule />
     </section>
-    <section class="container md:grid md:cols-12 py-12">
+    <section
+        class="container md:grid md:cols-12 py-12"
+    >
         <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10">
             <p>
                 RustWeek 2025 includes social activities organised by and for
@@ -85,19 +87,6 @@ import Sponsor from "../components/sponsor/sponsor.astro";
             </p>
             <p>
                 Check out the <a href="/">RustWeek 2025</a> homepage for details.
-            </p>
-            <h2 id="conf">Conference (Tue + Wed)</h2>
-            <p>
-                The 2-day conference is held next to the Utrecht Central Station
-                at Kinepolis Jaarbeurs (not the same venue as the unconf!), on
-                Tuesday and Wednesday.
-            </p>
-            <p>
-                On Tuesday one of the tracks, the Ecosystem track, has one
-                reserved talk for each unconf group. The group can suggest a
-                talk, which can be any topic. It could be a deep-dive
-                functioning as a warm-up for discussions at the unconf or a talk
-                about how to join your community and start contributing.
             </p>
             <h2 id="celebration">Celebration (Thursday afternoon)</h2>
             <p>
@@ -115,14 +104,6 @@ import Sponsor from "../components/sponsor/sponsor.astro";
                 free for all attendees of the RustWeek unconf. (More info
                 later.)
             </p>
-        </div>
-    </section>
-
-    <section
-        class="container md:grid md:cols-12 py-12"
-        style="padding-block: 1em;"
-    >
-        <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10">
             <h2 id="unconf-details">Unconf (Friday and Saturday)</h2>
             <p>
                 The RustWeek unconf will begin on Friday. Other than a quick
@@ -144,9 +125,9 @@ import Sponsor from "../components/sponsor/sponsor.astro";
             </p>
         </div>
     </section>
+
     <section
-        class="container md:grid md:cols-12 py-12"
-        style="padding-block: 1em;"
+        class="container md:grid md:cols-12 pt-12 pb-24"
         id="floorplan"
     >
         <div class="md:col-start-1 md:col-end-13 xl:col-start-2 xl:col-end-12">
@@ -159,14 +140,10 @@ import Sponsor from "../components/sponsor/sponsor.astro";
     <section class="container text-center py-12" id="sponsors">
         <h2>Unconf Sponsors</h2>
         <p>
-            We are thankful for the support as <strong>name sponsor:</strong><br
-            /><br />
+            We are thankful for the support as <strong>name sponsor:</strong><br /><br />
             &bullet; Rust for Linux - <strong>Google</strong><br />
-            &bullet; Bevy - <span style="font-style:italic;">available</span><br
-            />
-            &bullet; Rust Embedded WG - <span style="font-style:italic;"
-                >available</span
-            ><br />
+            &bullet; Bevy - <span style="font-style:italic;">available</span><br />
+            &bullet; Rust Embedded WG - <span style="font-style:italic;">available</span><br />
             &bullet; UI & App dev - <strong>Futurewei</strong><br />
         </p>
 
@@ -209,7 +186,9 @@ import Sponsor from "../components/sponsor/sponsor.astro";
 
     <Divider />
 
-    <section class="container md:grid md:cols-12 py-12">
+    <section
+        class="container md:grid md:cols-12 py-12"
+    >
         <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10">
             <h2>Co-located Rust project All-Hands</h2>
             <p>
@@ -222,8 +201,6 @@ import Sponsor from "../components/sponsor/sponsor.astro";
                 you can ask to join one of the project team rooms to take part
                 in discussion about relevant new Rust features for your group.
             </p>
-        </div>
-        <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10">
             <h2 id="rooms">Rooms</h2>
             <p>
                 The venue has 20+ airconditioned rooms, of which 10 are reserved
@@ -249,12 +226,6 @@ import Sponsor from "../components/sponsor/sponsor.astro";
                 We are currently working on hotel recommendations and
                 reservations.
             </p>
-        </div>
-    </section>
-    <section class="container md:grid md:cols-12">
-        <div
-            class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
-        >
             <h2 id="questions">Questions?</h2>
             <p>
                 This page will be updated with more information in the following
