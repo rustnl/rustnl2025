@@ -1,17 +1,35 @@
 ---
-const { name, image, description, linkedin, twitter, mastodon, github, youtube } = Astro.props;
+
+interface Props {
+    name: string;
+    image: string;
+    description: string;
+    tracks?: Array<string>;
+}
+
+const { name, image, description, tracks } = Astro.props;
 ---
 
 <div class="person">
-    <img 
-        src={`/images/people/${image}`} 
-        alt={`Picture of ${name}`}
-    />
+    <div class="image-container">
+        <img src={`/images/people/${image}`} alt={`Picture of ${name}`} />
+        <div class="tags">
+            {
+                tracks && tracks.map( track => (
+                    <span class={`tag ${track}`}>
+                        <span>
+                            {track} track
+                        </span>
+                    </span>
+
+                ))
+            }
+        </div>
+    </div>
     <div>
         <h4>{name}</h4>
         <p class="description">{description}</p>
     </div>
-
 </div>
 
 <style lang="scss">
@@ -52,15 +70,47 @@ const { name, image, description, linkedin, twitter, mastodon, github, youtube }
             font-size: $font-size-sm;
         }
 
-        img {
-            align-self: center;
-            border-radius: 0.3em;
-            height: auto;
-            vertical-align: middle;
-            width: 100%;
-            background: $color-yellow-400;
+        .image-container {
+            position: relative;
 
-            aspect-ratio: 1/1;
+            img {
+                align-self: center;
+                border-radius: 0.3em;
+                height: auto;
+                vertical-align: middle;
+                width: 100%;
+                background: $color-yellow-400;
+    
+                aspect-ratio: 1/1;
+            }
+    
+            div.tags {
+                position: absolute;
+                bottom: 0.75rem;
+                left: 0.75rem;
+    
+                .tag {
+                    padding: 0.3rem 0.5rem;
+                    margin-right: 0.75rem;
+                    
+                    border-radius: 5px;
+                    font-size: $font-size-xs;
+                    background-color: $color-blue-400;
+
+                    &.project {
+                        background-color: $color-red-400;
+                    }
+    
+                    &.industry {
+                        background-color: $color-yellow-400;
+                    }
+
+                    span {
+                        font-weight: bold;
+                        text-transform: lowercase;
+                    }
+                }
+            }
         }
     }
 </style>
