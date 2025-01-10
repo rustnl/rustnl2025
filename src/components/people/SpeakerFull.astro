@@ -12,6 +12,7 @@ const {
     twitter,
     mastodon,
     github,
+    bluesky,
     link,
 } = Astro.props;
 ---
@@ -30,6 +31,7 @@ const {
             {twitter && <a href={twitter}><Icon name="x" /></a>}
             {mastodon && <a href={mastodon}><Icon name="mastodon" /></a>}
             {github && <a href={github}><Icon name="github" /></a>}
+            {bluesky && <a href={bluesky}><Icon name="bluesky" /></a>}
         </div>
         <div>
         {
