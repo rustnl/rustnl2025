@@ -11,3 +11,9 @@ yarn install
 ```
 yarn run dev
 ```
+
+To check the build succeeds:
+
+```
+yarn run build
+```
