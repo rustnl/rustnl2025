@@ -89,32 +89,70 @@ import Divider from "../components/Divider.astro";
                 >Sponsorship prospectus</a
             > or <a href="mailto:sponsors@rustnl.org">contact us</a>
         </p>
-        <!-- <SponsorTier name="Headline sponsor"> -->
-        <!-- </SponsorTier> -->
-        <SponsorTier name="">
+        <SponsorTier name="Diamond sponsors">
             <Sponsor
-            name="Google"
-            tier="ecosystem-partner"
-            image="google.png"
-            link="https://google.com/"
+                name="JetBrains"
+                tier="diamond"
+                image="jetbrains.png"
+                link="https://www.jetbrains.com/"
             />
+        </SponsorTier>
+        <SponsorTier name="Gold sponsors">
+            <Sponsor
+                name="Zed"
+                tier="gold"
+                image="zed.svg"
+                link="https://zed.dev/"
+            />
+        </SponsorTier>
+        <SponsorTier name="Ecosystem partners">
+            <Sponsor
+                name="Google"
+                tier="ecosystem-partner"
+                image="google.png"
+                link="https://google.com/"
+            />
+            <Sponsor
+                name="Rust Foundation"
+                tier="ecosystem-partner"
+                image="rustfoundation.png"
+                link="https://foundation.rust-lang.org/"
+            />
+        </SponsorTier>
+        <SponsorTier name="Silver sponsors">
             <Sponsor
                 name="Arm"
                 tier="silver"
                 image="arm-blue.png"
                 link="https://www.arm.com/"
             />
+        </SponsorTier>
+        <SponsorTier name="Bronze sponsors">
             <Sponsor
                 name="Espressif"
                 tier="bronze"
                 image="unconf/espressif.svg"
                 link="https://espressif.com/"
-                />
+            />
             <Sponsor
-                name="Rust Foundation"
-                tier="ecosystem-partner"
-                image="rustfoundation.png"
-                link="https://foundation.rust-lang.org/"
+                name="TandemDrive"
+                tier="bronze"
+                image="tandemdrive.png"
+                link="https://tandemdrive.com/"
+            />
+        </SponsorTier>
+        <SponsorTier name="Supporters">
+            <Sponsor
+                name="ROCSYS"
+                tier="supporter"
+                image="rocsys.png"
+                link="https://rocsys.com"
+            />
+            <Sponsor
+                name="NLnet Labs"
+                tier="supporter"
+                image="nlnetlabs.png"
+                link="https://nlnetlabs.nl"
             />
         </SponsorTier>
         <SponsorTier name="Organizing partners">
@@ -131,18 +169,6 @@ import Divider from "../components/Divider.astro";
                 link="https://hexcat.nl"
             />
         </SponsorTier>
-        <!-- <SponsorTier name="Workshop partner"> -->
-        <!--     <div class="sponsors-row"></div> -->
-        <!-- </SponsorTier> -->
-        <!-- <SponsorTier name="Ecosystem supporters"> -->
-        <!--     <div class="sponsors-row"></div> -->
-        <!-- </SponsorTier> -->
-        <!-- <SponsorTier name="NL Community sponsors"> -->
-        <!--     <div class="sponsors-row"></div> -->
-        <!-- </SponsorTier> -->
-        <!-- <SponsorTier name="NL Community supporters"> -->
-        <!--     <div class="sponsors-row"></div> -->
-        <!-- </SponsorTier> -->
     </Fragment>
     <div slot="about">
         <h2 id="about">About RustWeek</h2>
