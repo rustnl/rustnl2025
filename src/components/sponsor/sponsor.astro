@@ -6,26 +6,24 @@ const { name, tier, link, image } = Astro.props;
 let className = "size-md";
 switch (tier) {
     case "headline":
+    case "diamond":
         className = "size-xl";
         break;
     case "gold":
         className = "size-l";
         break;
+    case "ecosystem-partner":
     case "silver":
     case "organizing-partner":
-    case "ecosystem-partner":
         className = "size-md";
         break;
     case "nl-sponsor":
     case "workshop-partner":
-    case "livestream":
     case "industry-partner":
-        className = "size-s";
-        break;
-    case "nl-supporter":
+    case "supporter":
     case "last-year":
     case "ecosystem-supporter":
-        className = "size-xs";
+        className = "size-s";
         break;
     default:
         className = "size-md";
