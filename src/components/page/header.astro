@@ -43,6 +43,24 @@ const { withLogo = false, withoutMenu = false }: Props = Astro.props;
     }
 
     toggle?.addEventListener("click", toggleMenu);
+
+    const header = document.querySelector(".header");
+    const hero = document.querySelector('.hero');
+
+    function scrollHanlde(event: Event) {
+      const heroHeight = (hero as HTMLElement).offsetHeight;
+      const headerHeight = (header as HTMLElement).offsetHeight;
+      const treshold = heroHeight - headerHeight;
+      const scroll = window.scrollY;
+
+      if (scroll > treshold) {
+        header?.classList.add('scrolled');
+      } else {
+        header?.classList.remove('scrolled');
+      }
+    }
+
+    document.addEventListener('scroll', scrollHanlde);
 </script>
 
 <style lang="scss">
@@ -54,9 +72,16 @@ const { withLogo = false, withoutMenu = false }: Props = Astro.props;
         display: flex;
         height: space(24);
         padding-inline: space(4);
-        position: absolute;
+        position: fixed;
         width: 100%;
         z-index: 1;
+        background-color: transparent;
+        transition-property: background-color;
+        transition-duration: 150ms;
+        
+        &.scrolled {
+          background-color: $color-yellow-500;
+        }
 
         .logo {
             img {

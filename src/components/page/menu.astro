@@ -51,7 +51,7 @@ const { location }: Props = Astro.props;
                 </li>
             </ul>
         </li>
-        <li class="child">
+        <li class="parent">
             <Button
                 link="https://www.eventbrite.nl/e/rust-week-2025-tickets-1001676961757?aff=oddtdtcreator"
                 ty="primary"
@@ -82,6 +82,16 @@ const { location }: Props = Astro.props;
         &.header {
           > ul {
             display: flex;
+            flex-direction: column;
+            row-gap: space(3);
+
+            @include wider_than(lg) {
+              flex-direction: row;
+            }
+          }
+
+          ul {
+            padding: 0;
           }
 
           li {
@@ -94,25 +104,36 @@ const { location }: Props = Astro.props;
             text-decoration: none;
           }
 
-          .submenu {
-            opacity: var(--submenu-opacity, 0);
-            position: absolute;
-            visibility: var(--submenu-visibility, hidden);
-            bottom: 0;
-            translate: 0 100%;
-            background-color: $color-background;
-            padding: 0;
-            border: 4px solid $color-blue-400;
-            color: $color-black;
-            width: max-content;
+          span {
+            cursor: pointer;
           }
 
-          .submenu a {
-            display: flex;
-            height: 48px;
-            align-items: center;
-            padding-inline: 16px;
+          .submenu {
+            @include wider_than(lg) {
+              background-color: $color-background;
+              border: 4px solid $color-blue-400;
+              bottom: 0;
+              color: $color-black;
+              opacity: var(--submenu-opacity, 0);
+              padding: 0;
+              pointer-events: var(--submenu-pointer-events, none);
+              position: absolute;
+              translate: 0 100%;
+              visibility: var(--submenu-visibility, hidden);
+              width: max-content;
+            }
+          }
+
+          .submenu a {            
             font-weight: 400;
+            display: flex;
+            height: space(12);
+            align-items: center;
+            
+            @include wider_than(lg) {
+              height: space(12);
+              padding-inline: space(4);
+            }
 
             &:hover {
               text-decoration: underline;
@@ -120,19 +141,30 @@ const { location }: Props = Astro.props;
           }
 
           .parent {
-            color: $color-background;;
+            justify-content: center;
             display: flex;
             flex-direction: column;
-            flex: 1;
             font-weight: 700;
-            justify-content: center;
-            margin: 0;
-            padding-inline: space(4);
-            position: relative;
+            min-height: space(12);
+            cursor: pointer;
+            
+            @include wider_than(lg) {
+              color: $color-background;;
+              flex: 1;
+              min-height: auto;
+              margin: 0;
+              padding-inline: space(4);
+              position: relative;
+  
+              &:has(.submenu):hover {
+                --submenu-opacity: 1;
+                --submenu-visibility: visible;
+                --submenu-pointer-events: all;
+              }
+            }
 
-            &:has(.submenu):hover {
-              --submenu-opacity: 1;
-              --submenu-visibility: visible;
+            &:last-child {
+              margin-block-start: space(3);
             }
           }
         }
