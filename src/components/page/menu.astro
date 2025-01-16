@@ -10,48 +10,48 @@ const { location }: Props = Astro.props;
 
 <div class:list={["menu", location]}>
     <ul>
-        <li>
+        <li class="parent">
             <span>Schedule</span>
-            <ul>
-                <li>
+            <ul class="submenu">
+                <li class="child">
                     <a
                         href="/#schedule"
                         onclick="document.querySelector('[data-menu-toggle]').click()"
                         >Overview</a
                     >
                 </li>
-                <li><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
             </ul>
         </li>
-        <li>
+        <li class="parent">
             <a
                 href="/#cfp"
                 onclick="document.querySelector('[data-menu-toggle]').click()"
                 >CFP</a
             >
         </li>
-        <li>
+        <li class="parent">
             <a href="/speakers">Speakers</a>
         </li>
-        <li>
+        <li class="parent">
             <a
                 href="/#sponsors"
                 onclick="document.querySelector('[data-menu-toggle]').click()"
                 >Sponsors</a
             >
         </li>
-        <li>
+        <li class="parent">
             <span>About</span>
-            <ul>
-                <li>
+            <ul class="submenu">
+                <li class="child">
                     <a href="/about">About</a>
                 </li>
-                <li>
+                <li class="child">
                     <a href="mailto:2025@rustnl.org">Contact</a>
                 </li>
             </ul>
         </li>
-        <li>
+        <li class="child">
             <Button
                 link="https://www.eventbrite.nl/e/rust-week-2025-tickets-1001676961757?aff=oddtdtcreator"
                 ty="primary"
@@ -80,28 +80,61 @@ const { location }: Props = Astro.props;
         }
 
         &.header {
-            a {
-                align-items: center;
-                color: inherit;
-                display: flex;
-                font-weight: 700;
-                min-height: space(12);
-                text-decoration: none;
-                width: 100%;
+          > ul {
+            display: flex;
+          }
 
-                @include wider_than(lg) {
-                    color: #ffffff;
-                    width: auto;
-                }
+          li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+          }
+
+          a {
+            text-decoration: none;
+          }
+
+          .submenu {
+            opacity: var(--submenu-opacity, 0);
+            position: absolute;
+            visibility: var(--submenu-visibility, hidden);
+            bottom: 0;
+            translate: 0 100%;
+            background-color: $color-background;
+            padding: 0;
+            border: 4px solid $color-blue-400;
+            color: $color-black;
+            width: max-content;
+          }
+
+          .submenu a {
+            display: flex;
+            height: 48px;
+            align-items: center;
+            padding-inline: 16px;
+            font-weight: 400;
+
+            &:hover {
+              text-decoration: underline;
             }
+          }
 
-            a:last-child {
-                margin-block-start: space(3);
+          .parent {
+            color: $color-background;;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            font-weight: 700;
+            justify-content: center;
+            margin: 0;
+            padding-inline: space(4);
+            position: relative;
 
-                @include wider_than(lg) {
-                    margin-block-start: 0;
-                }
+            &:has(.submenu):hover {
+              --submenu-opacity: 1;
+              --submenu-visibility: visible;
             }
+          }
         }
     }
 </style>
