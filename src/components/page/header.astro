@@ -70,17 +70,25 @@ const { withLogo = false, withoutMenu = false }: Props = Astro.props;
     .header {
         align-items: center;
         display: flex;
-        height: space(24);
+        height: space(18);
         padding-inline: space(4);
         position: fixed;
         width: 100%;
         z-index: 1;
         background-color: transparent;
-        transition-property: background-color;
+        transition-property: background-color, height;
         transition-duration: 150ms;
+
+        @include wider_than(lg) {
+          height: space(24);
+        }
         
         &.scrolled {
           background-color: $color-yellow-500;
+
+          @include wider_than(lg) {
+            height: space(20);
+          }
         }
 
         .logo {
@@ -91,7 +99,8 @@ const { withLogo = false, withoutMenu = false }: Props = Astro.props;
 
         .hamburger {
             margin-inline-start: auto;
-            padding: 0.5em 1em;
+            height: space(12);
+            padding-inline: 1rem;
 
             @include wider_than(lg) {
                 display: none;
@@ -110,7 +119,7 @@ const { withLogo = false, withoutMenu = false }: Props = Astro.props;
             align-items: flex-start;
             background-color: $color-neutral-400;
             border: 1px solid $color-red-500;
-            bottom: space(3);
+            bottom: space(0);
             display: flex;
             flex-direction: column;
             left: space(4);
@@ -125,6 +134,9 @@ const { withLogo = false, withoutMenu = false }: Props = Astro.props;
             visibility: hidden;
             width: calc(100% - space(8));
             gap: space(3);
+
+            max-height: calc(100vh - 88px);
+            overflow: auto;
 
             @include wider_than(lg) {
                 align-items: center;

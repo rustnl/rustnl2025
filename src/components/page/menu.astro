@@ -21,6 +21,33 @@ const { location }: Props = Astro.props;
                     >
                 </li>
                 <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+                <li class="child"><a href="/industry">Industry track</a></li>
+
             </ul>
         </li>
         <li class="parent">
@@ -81,11 +108,14 @@ const { location }: Props = Astro.props;
 
         &.header {
           > ul {
+            align-items: flex-start;
             display: flex;
             flex-direction: column;
             row-gap: space(3);
+            width: 100%;
 
             @include wider_than(lg) {
+              align-items: center;
               flex-direction: row;
             }
           }
@@ -165,6 +195,10 @@ const { location }: Props = Astro.props;
 
             &:last-child {
               margin-block-start: space(3);
+
+              @include wider_than(lg) {
+                margin-block-start: 0;
+              }
             }
           }
         }
