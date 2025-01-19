@@ -13,11 +13,12 @@ const {
     mastodon,
     github,
     bluesky,
-    link,
 } = Astro.props;
+
+const link = encodeURIComponent(name);
 ---
 
-<div class="person" id={link}>
+<div class="person" id=`${link}`>
     <img
         src={`/images/people/${image}`}
         alt={`Picture of ${name}`}
