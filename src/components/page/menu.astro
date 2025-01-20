@@ -1,182 +1,202 @@
 ---
-import Button from "../Button.astro";
+import Button from '../Button.astro';
 
 interface Props {
-    location: "header" | "footer";
+  location: 'header' | 'footer';
 }
 
 const { location }: Props = Astro.props;
 ---
 
-<div class:list={["menu", location]}>
-    <ul>
-        <li class="parent">
-            <span>Schedule</span>
-            <ul class="submenu">
-                <li class="child">
-                    <a
-                        href="/#schedule"
-                        onclick="document.querySelector('[data-menu-toggle]').click()"
-                        >Overview</a
-                    >
-                </li>
-                <li class="child"><a href="/industry">Industry track</a></li>
-            </ul>
+<div class:list={['menu', location]}>
+  <ul>
+    <li class="parent">
+      <span>Schedule</span>
+      <ul class="submenu">
+        <li class="child">
+          <a
+            href="/#schedule"
+            onclick="document.querySelector('[data-menu-toggle]').click()"
+            >Overview</a
+          >
         </li>
-        <li class="parent">
-            <a
-                href="/#cfp"
-                onclick="document.querySelector('[data-menu-toggle]').click()"
-                >CFP</a
-            >
+        <li class="child"><a href="/industry">Industry track</a></li>
+      </ul>
+    </li>
+    <li class="parent">
+      <a
+        href="/#cfp"
+        onclick="document.querySelector('[data-menu-toggle]').click()">CFP</a
+      >
+    </li>
+    <li class="parent">
+      <a href="/speakers">Speakers</a>
+    </li>
+    <li class="parent">
+      <a
+        href="/#sponsors"
+        onclick="document.querySelector('[data-menu-toggle]').click()"
+        >Sponsors</a
+      >
+    </li>
+    <li class="parent">
+      <span>About</span>
+      <ul class="submenu">
+        <li class="child">
+          <a href="/about">About</a>
         </li>
-        <li class="parent">
-            <a href="/speakers">Speakers</a>
+        <li class="child">
+          <a href="mailto:2025@rustnl.org">Contact</a>
         </li>
-        <li class="parent">
-            <a
-                href="/#sponsors"
-                onclick="document.querySelector('[data-menu-toggle]').click()"
-                >Sponsors</a
-            >
-        </li>
-        <li class="parent">
-            <span>About</span>
-            <ul class="submenu">
-                <li class="child">
-                    <a href="/about">About</a>
-                </li>
-                <li class="child">
-                    <a href="mailto:2025@rustnl.org">Contact</a>
-                </li>
-            </ul>
-        </li>
-        <li class="parent">
-            <Button
-                link="https://www.eventbrite.nl/e/rust-week-2025-tickets-1001676961757?aff=oddtdtcreator"
-                ty="primary"
-                inFooter={location == "footer"}>Tickets</Button
-            >
-        </li>
-    </ul>
+      </ul>
+    </li>
+    <li class="parent">
+      <Button
+        link="https://www.eventbrite.nl/e/rust-week-2025-tickets-1001676961757?aff=oddtdtcreator"
+        ty="primary"
+        inFooter={location == 'footer'}>Tickets</Button
+      >
+    </li>
+  </ul>
 </div>
 
 <style lang="scss">
-    @import "../../styles/variables.scss";
-    @import "../../styles/breakpoint.scss";
+  @import '../../styles/variables.scss';
+  @import '../../styles/breakpoint.scss';
 
-    .menu {
-        display: contents;
+  .menu {
+    display: contents;
 
-        &.footer {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: space(2);
+    &.footer {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: space(2);
 
-            a {
-                color: #ffffff;
-            }
-        }
-
-        &.header {
-          > ul {
-            align-items: flex-start;
-            display: flex;
-            flex-direction: column;
-            row-gap: space(3);
-            width: 100%;
-
-            @include wider_than(lg) {
-              align-items: stretch;
-              flex-direction: row;
-            }
-          }
-
-          ul {
-            padding: 0;
-          }
-
-          li {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-          }
-
-          a {
-            text-decoration: none;
-          }
-
-          span {
-            cursor: pointer;
-          }
-
-          .submenu {
-            padding-inline-start: 0.75rem;
-
-            @include wider_than(lg) {
-              background-color: $color-background;
-              border: 4px solid $color-blue-400;
-              bottom: 0;
-              color: $color-black;
-              opacity: var(--submenu-opacity, 0);
-              padding: 0;
-              pointer-events: var(--submenu-pointer-events, none);
-              position: absolute;
-              padding-inline-start: 0;
-              translate: 0 100%;
-              visibility: var(--submenu-visibility, hidden);
-              width: max-content;
-            }
-          }
-
-          .submenu a {            
-            font-weight: 400;
-            display: flex;
-            height: space(12);
-            align-items: center;
-            
-            @include wider_than(lg) {
-              height: space(12);
-              padding-inline: space(4);
-            }
-
-            &:hover {
-              text-decoration: underline;
-            }
-          }
-
-          .parent {
-            justify-content: center;
-            display: flex;
-            flex-direction: column;
-            font-weight: 700;
-            min-height: space(12);
-            cursor: pointer;
-            
-            @include wider_than(lg) {
-              color: $color-background;;
-              flex: 1;
-              min-height: auto;
-              margin: 0;
-              padding-inline: space(4);
-              position: relative;
-  
-              &:has(.submenu):hover {
-                --submenu-opacity: 1;
-                --submenu-visibility: visible;
-                --submenu-pointer-events: all;
-              }
-            }
-
-            &:last-child {
-              margin-block-start: space(3);
-
-              @include wider_than(lg) {
-                margin-block-start: 0;
-              }
-            }
-          }
-        }
+      a {
+        color: #ffffff;
+      }
     }
+
+    &.header {
+      > ul {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        row-gap: space(3);
+        width: 100%;
+
+        @include wider_than(lg) {
+          align-items: stretch;
+          flex-direction: row;
+        }
+      }
+
+      ul {
+        padding: 0;
+      }
+
+      li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      span {
+        cursor: pointer;
+      }
+
+      .submenu {
+        padding-inline-start: 0.75rem;
+
+        @include wider_than(lg) {
+          background-color: $color-background;
+          border: 1px solid $color-black;
+          bottom: 0;
+          color: $color-black;
+          opacity: var(--submenu-opacity, 0);
+          padding: 0;
+          pointer-events: var(--submenu-pointer-events, none);
+          position: absolute;
+          padding-inline-start: 0;
+          translate: 0 100%;
+          visibility: var(--submenu-visibility, hidden);
+          width: max-content;
+        }
+      }
+
+      .submenu a {
+        font-weight: 400;
+        display: flex;
+        height: space(12);
+        align-items: center;
+
+        @include wider_than(lg) {
+          height: space(12);
+          padding-inline: space(4);
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .parent {
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        font-weight: 700;
+        min-height: space(12);
+        cursor: pointer;
+
+        @include wider_than(lg) {
+          color: $color-background;
+          flex: 1;
+          min-height: auto;
+          margin: 0;
+          padding-inline: space(4);
+          position: relative;
+
+          &:has(.submenu):hover {
+            --submenu-opacity: 1;
+            --submenu-visibility: visible;
+            --submenu-pointer-events: all;
+          }
+        }
+
+        &:last-child {
+          margin-block-start: space(3);
+
+          @include wider_than(lg) {
+            margin-block-start: 0;
+          }
+        }
+
+        &:hover span::after {
+          rotate: 180deg;
+        }
+      }
+
+      .parent span {
+        display: flex;
+        align-items: center;
+        gap: space(2);
+
+        &::after {
+          background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNy4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjUgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0yMDEuNCAzNzQuNmMxMi41IDEyLjUgMzIuOCAxMi41IDQ1LjMgMGwxNjAtMTYwYzEyLjUtMTIuNSAxMi41LTMyLjggMC00NS4zcy0zMi44LTEyLjUtNDUuMyAwTDIyNCAzMDYuNyA4Ni42IDE2OS40Yy0xMi41LTEyLjUtMzIuOC0xMi41LTQ1LjMgMHMtMTIuNSAzMi44IDAgNDUuM2wxNjAgMTYweiIvPjwvc3ZnPg==');
+          background-position: center center;
+          background-repeat: no-repeat;
+          content: '';
+          height: space(4);
+          transition-duration: 150ms;
+          transition-property: rotate;
+          width: space(4);
+        }
+      }
+    }
+  }
 </style>
