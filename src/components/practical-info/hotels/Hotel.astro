@@ -1,0 +1,73 @@
+---
+
+interface Props {
+    name: string;
+    link: string;
+    image: string;
+    distance_dus: string;
+    distance_kinopolis: string;
+    description: string;
+}
+
+const { name, link, image, description, distance_dus, distance_kinopolis } = Astro.props;
+
+---
+
+<div class="hotel">
+    <div class="image-container">
+        <a href={link}><img src={`/images/hotels/${image}`} alt={`Picture of ${name} hotel`} /></a>
+    </div>
+    <div>
+        <h4>{name}</h4>
+        <p>distance to DUS: {distance_dus} </p>
+        <p>distance to Kinepolis: {distance_kinopolis}</p>
+        <p class="description">{description}</p>
+    </div>
+</div>
+
+<style lang="scss">
+    @import "../../../styles/breakpoint.scss";
+    @import "../../../styles/variables.scss";
+
+    .hotel {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        a {
+            color: inherit;
+            text-decoration: underline;
+            display: inline-block;
+        }
+
+        h4 {
+            font-size: $font-size-lg;
+            font-weight: $font-weight-light;
+            line-height: $line-height-tight;
+
+            margin-bottom: 0;
+            margin-top: 0.2em;
+        }
+
+        .description {
+            margin-top: 0.5em;
+            font-size: $font-size-sm;
+        }
+
+        .image-container {
+            position: relative;
+
+            img {
+                align-self: center;
+                border-radius: 0.3em;
+                height: auto;
+                vertical-align: middle;
+                object-fit: cover;
+                width: 100%;
+                background: $color-yellow-400;
+    
+                aspect-ratio: 1/1;
+            }
+        }
+    }
+</style>
