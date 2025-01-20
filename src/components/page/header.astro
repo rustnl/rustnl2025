@@ -44,12 +44,12 @@ const { withLogo = false, withoutMenu = false }: Props = Astro.props;
 
     toggle?.addEventListener("click", toggleMenu);
 
-    const header = document.querySelector(".header");
-    const hero = document.querySelector('.hero');
+    const header = document.querySelector(".header") as HTMLElement;
+    const hero = document.querySelector('.hero') as HTMLElement;
 
     function scrollHanlde(event: Event) {
-      const heroHeight = (hero as HTMLElement).offsetHeight;
-      const headerHeight = (header as HTMLElement).offsetHeight;
+      const heroHeight = hero.offsetHeight;
+      const headerHeight = header.offsetHeight;
       const treshold = heroHeight - headerHeight;
       const scroll = window.scrollY;
 
