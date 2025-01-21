@@ -34,6 +34,7 @@ The address of the venue is:
 > Nederland**
 
 The most convenient method to get there is by train, since it's next to the train station.
+More information on how to get to Utrecht and the conference can be found in the [Where](/#where) section.
 
 <iframe style="width: 100%; aspect-ratio: 16/9" src="https://www.openstreetmap.org/export/embed.html?bbox=5.0765419006347665%2C52.074283572700224%2C5.133190155029298%2C52.09822788008951&amp;layer=mapnik&amp;marker=52.086263500028004%2C5.104854000000046" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=52.08626&amp;mlon=5.10485#map=15/52.08626/5.10485">View Larger Map</a></small>
 
