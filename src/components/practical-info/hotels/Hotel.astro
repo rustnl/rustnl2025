@@ -5,12 +5,12 @@ interface Props {
     link: string;
     image: string;
     distance_dus: string;
-    distance_kinopolis: string;
+    distance_kinepolis: string;
     price_range: string;
     description: string;
 }
 
-const { name, link, image, description, distance_dus, distance_kinopolis, price_range } = Astro.props;
+const { name, link, image, description, distance_dus, distance_kinepolis, price_range } = Astro.props;
 
 ---
 
@@ -19,9 +19,9 @@ const { name, link, image, description, distance_dus, distance_kinopolis, price_
         <a href={link}><img src={`/images/hotels/${image}`} alt={`Picture of ${name} hotel`} /></a>
     </div>
     <div>
-        <h4>{name}</h4>
+        <a href={link}><h4>{name}</h4></a>
         <p>distance to DUS: {distance_dus} </p>
-        <p>distance to Kinepolis: {distance_kinopolis}</p>
+        <p>distance to Kinepolis: {distance_kinepolis}</p>
         <p>price range: {price_range}</p>
         <p class="description">{description}</p>
     </div>

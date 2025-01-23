@@ -4,14 +4,15 @@ import Hotel from "../components/practical-info/hotels/Hotel.astro";
 import CommonLayout from "../layouts/CommonLayout.astro"; 
 ---
 <CommonLayout title="Hotel Recommendations" header="Hotel Recommendations" withLogo>
-    <p>For convenience, we've compiled a list of hotel recommendations in and around Utrecht, spanning a range of different budgets.</p>
+    <p>For convenience, we've compiled a list of hotel recommendations in and around Utrecht.</p>
+    <p>All the distances mentioned on this page refer to the shortest path when making use of public transport.</p>
     <HotelList>
         <Hotel
             name="2L De Blend"
             link="https://2ldeblend.nl/nl/"
             image="deblend.jpg"
-            distance_dus="2.6km"
-            distance_kinopolis="3.1km"
+            distance_dus="33 min"
+            distance_kinepolis="22 min"
             price_range="140-200€"
             description="A small cozy hotel with affordable prices and a bed and breakfast vibe."
         />
@@ -19,8 +20,8 @@ import CommonLayout from "../layouts/CommonLayout.astro";
             name="Moxy Utrecht"
             link="https://www.marriott.com/en-us/hotels/amsou-moxy-utrecht/overview/"
             image="moxy.avif"
-            distance_dus="5.7km"
-            distance_kinopolis="2.3km"
+            distance_dus="44 min"
+            distance_kinepolis="13 min"
             price_range="200-250€"
             description="A trendy hotel with a morden vibe. Provides meeting rooms, co-working facilities and a bar. On the more expensive side."
         />        
@@ -28,8 +29,8 @@ import CommonLayout from "../layouts/CommonLayout.astro";
             name="NH Utrecht (Jaarbeursplein)"
             link="https://www.nh-hotels.com/nl/hotel/nh-utrecht"
             image="nh-utrecht.jpg"
-            distance_dus="4.1km"
-            distance_kinopolis="600m"
+            distance_dus="33 min"
+            distance_kinepolis="7 min"
             price_range="200-250€"
             description="Sleek hotel in the center of Utrecht."
         />
@@ -37,8 +38,8 @@ import CommonLayout from "../layouts/CommonLayout.astro";
             name="NH Amersfoort"
             link="https://www.nh-hotels.com/nl/hotel/nh-amersfoort"
             image="nh-amersfoort.jpg"
-            distance_dus="4.1km"
-            distance_kinopolis="600m"
+            distance_dus="1 hr 8 min"
+            distance_kinepolis="31 min"
             price_range="100-120€"
             description="Neat hotel close to the station in Amersfoort. Short commute by train to Utrecht, but on the more affordable side."
         />
@@ -46,8 +47,8 @@ import CommonLayout from "../layouts/CommonLayout.astro";
             name="Inntel Hotel Utrecht"
             link="https://www.inntelhotelsutrechtcentre.nl/"
             image="inntel.jpg"
-            distance_dus="4.1km"
-            distance_kinopolis="600m"
+            distance_dus="28 min"
+            distance_kinepolis="12 min"
             price_range="250-300€"
             description="Very central, more luxurious hotel. Not suitable for large groups."
         />
@@ -55,19 +56,46 @@ import CommonLayout from "../layouts/CommonLayout.astro";
             name="Hampton by Hilton"
             link="https://www.hilton.com/nl/hotels/amsunhx-hampton-utrecht-central-station/"
             image="hilton.jpeg"
-            distance_dus="4.1km"
-            distance_kinopolis="600m"
-            price_range="250-300€"
-            description="Very central, more luxurious hotel."
+            distance_dus="35 min"
+            distance_kinepolis="13 min"
+            price_range="200-240€"
+            description="Modern hotel very close to the central station of Utrecht. Part of the Hoog Caterijne shopping complex."
         />
         <Hotel
             name="Crowne Plaza"
-            link="https://www.hilton.com/nl/hotels/amsunhx-hampton-utrecht-central-station/"
-            image="hilton.jpeg"
-            distance_dus="4.1km"
-            distance_kinopolis="600m"
-            price_range="250-300€"
-            description="Very central, more luxurious hotel."
+            link="https://www.ihg.com/crowneplaza/hotels/nl/nl/utrecht/utcur/hoteldetail/"
+            image="crowne-plaza.jpeg"
+            distance_dus="40 min"
+            distance_kinepolis="15min"
+            price_range="200-250€"
+            description="Central and modern hotel close to the station. Provides meeting rooms and a 24/7 gym."
+        />
+        <Hotel
+            name="Van der Valk Utrecht"
+            link="https://www.vandervalkhotelutrecht.nl/"
+            image="vdv.jpg"
+            distance_dus="59 min"
+            distance_kinepolis="18 min"
+            price_range="200-250€"
+            description="Neat hotel slightly outside of Utrecht (on the A12). Comfortable and modern rooms, and easy to reach by car. Includes a wellness centre."
+        />
+        <Hotel
+            name="Park Plaza"
+            link="https://www.parkplazautrecht.nl/"
+            image="park-plaza.jpg"
+            distance_dus="32 min"
+            distance_kinepolis="9min"
+            price_range="200-250€"
+            description="Trendy hotel in the centre of Utrecht. Offers facilities for meetings and families."
+        />
+        <Hotel
+            name="Bunk Utrecht"
+            link="https://wearebunk.com/utrecht/nl/"
+            image="bunk.jpg"
+            distance_dus="28 min"
+            distance_kinepolis="16 min"
+            price_range="~50€ for a sleeping place in a shared room, ~150€ for a private room"
+            description="Trendy hotel in the centre of Utrecht. Offers facilities for meetings and families."
         />
     </HotelList>
 </CommonLayout>
