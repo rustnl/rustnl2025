@@ -6,10 +6,11 @@ interface Props {
     image: string;
     distance_dus: string;
     distance_kinopolis: string;
+    price_range: string;
     description: string;
 }
 
-const { name, link, image, description, distance_dus, distance_kinopolis } = Astro.props;
+const { name, link, image, description, distance_dus, distance_kinopolis, price_range } = Astro.props;
 
 ---
 
@@ -21,6 +22,7 @@ const { name, link, image, description, distance_dus, distance_kinopolis } = Ast
         <h4>{name}</h4>
         <p>distance to DUS: {distance_dus} </p>
         <p>distance to Kinepolis: {distance_kinopolis}</p>
+        <p>price range: {price_range}</p>
         <p class="description">{description}</p>
     </div>
 </div>
