@@ -5,8 +5,8 @@ import CommonLayout from "../layouts/CommonLayout.astro";
 ---
 
 <CommonLayout
-    title="Hotel Recommendations"
-    header="Hotel Recommendations"
+    title="Hotels"
+    header="Hotels"
     withLogo
 >
     <section class="container md:grid md:cols-12">
@@ -19,7 +19,10 @@ import CommonLayout from "../layouts/CommonLayout.astro";
             </p>
             <p>
                 All the distances mentioned on this page refer to the shortest
-                path when making use of public transport.
+                path when walking or making use of public transport.
+            </p>
+            <p>
+                Prices and availability can change quickly; May is a popular holiday time. We will do our best to keep the list up to date.
             </p>
             <p>
                 If you can't find affordable options in Utrecht, consider staying in one
@@ -35,6 +38,14 @@ import CommonLayout from "../layouts/CommonLayout.astro";
     <h2 id="utrecht">Utrecht</h2>
     <br />
     <HotelList>
+        <Hotel
+            name="Bunk Utrecht"
+            link="https://wearebunk.com/utrecht/nl/"
+            image="bunk.jpg"
+            distance_kinepolis="16 min"
+            price_range="50€(shared)-150€(private)"
+            description="Trendy hotel in the centre of Utrecht. Offers facilities for meetings and families."
+        />
         <Hotel
             name="2L De Blend"
             link="https://2ldeblend.nl/nl/"
@@ -58,14 +69,6 @@ import CommonLayout from "../layouts/CommonLayout.astro";
             distance_kinepolis="7 min"
             price_range="200-250€"
             description="Sleek hotel in the center of Utrecht."
-        />
-        <Hotel
-            name="Inntel Hotel Utrecht"
-            link="https://www.inntelhotelsutrechtcentre.nl/"
-            image="inntel.jpg"
-            distance_kinepolis="12 min"
-            price_range="250-300€"
-            description="Very central, more luxurious hotel. Not suitable for large groups."
         />
         <Hotel
             name="Hampton by Hilton"
@@ -100,15 +103,15 @@ import CommonLayout from "../layouts/CommonLayout.astro";
             description="Trendy hotel in the centre of Utrecht. Offers facilities for meetings and families."
         />
         <Hotel
-            name="Bunk Utrecht"
-            link="https://wearebunk.com/utrecht/nl/"
-            image="bunk.jpg"
-            distance_kinepolis="16 min"
-            price_range="~50€ (shared), ~150€ (private)"
-            description="Trendy hotel in the centre of Utrecht. Offers facilities for meetings and families."
+            name="Inntel Hotel Utrecht"
+            link="https://www.inntelhotelsutrechtcentre.nl/"
+            image="inntel.jpg"
+            distance_kinepolis="12 min"
+            price_range="250-300€"
+            description="Very central, more luxurious hotel. Not suitable for large groups."
         />
     </HotelList>
-
+    
     <h2 id="around-utrecht">Around Utrecht</h2>
     <section class="container md:grid md:cols-12">
         <div
@@ -139,6 +142,14 @@ import CommonLayout from "../layouts/CommonLayout.astro";
             description="Neat hotel close to the station in Amersfoort. Short commute by train to Utrecht, but on the more affordable side."
         />
         <Hotel
+            name="Amrâth Hotel Media Park Hilversum"
+            link="https://www.booking.com/hotel/nl/tulipinnhilversum.nl.html?label=gen173nr-1BCAEoggI46AdIM1gEaKkBiAEBmAEcuAEZyAEM2AEB6AEBiAIBqAIDuAK-wMm8BsACAdICJGFhYjYwZDE3LTU0NDMtNDYxNS1hODM3LWI4ODE2Y2MxOTg1OdgCBeACAQ&sid=7c7dec01c9077633555d6da5ed24e404&aid=304142&ucfs=1&checkin=2025-05-12&checkout=2025-05-13&dest_id=-2146221&dest_type=city&group_adults=2&no_rooms=1&group_children=0&matching_block_id=1073702_0_2_0_0&atlas_src=sr_iw_title"
+            image="hilversum1.png"
+            distance_kinepolis="40 min"
+            price_range="110-130€"
+            description="Neat hotel close to the station in Hilversum. Short commute by train to Utrecht, but on the more affordable side."
+        />
+        <Hotel
             name="Postillion Utrecht Bunnik"
             link="https://www.postillionhotels.com/utrecht/"
             image="postillion-bunnik.png"
@@ -153,14 +164,6 @@ import CommonLayout from "../layouts/CommonLayout.astro";
             distance_kinepolis="40 min"
             price_range="130-150€"
             description="Neat hotel close to the station in Amersfoort. Short commute by train to Utrecht, but on the more affordable side."
-        />
-        <Hotel
-            name="Amrâth Hotel Media Park Hilversum"
-            link="https://www.booking.com/hotel/nl/tulipinnhilversum.nl.html?label=gen173nr-1BCAEoggI46AdIM1gEaKkBiAEBmAEcuAEZyAEM2AEB6AEBiAIBqAIDuAK-wMm8BsACAdICJGFhYjYwZDE3LTU0NDMtNDYxNS1hODM3LWI4ODE2Y2MxOTg1OdgCBeACAQ&sid=7c7dec01c9077633555d6da5ed24e404&aid=304142&ucfs=1&checkin=2025-05-12&checkout=2025-05-13&dest_id=-2146221&dest_type=city&group_adults=2&no_rooms=1&group_children=0&matching_block_id=1073702_0_2_0_0&atlas_src=sr_iw_title"
-            image="hilversum1.png"
-            distance_kinepolis="40 min"
-            price_range="110-130€"
-            description="Neat hotel close to the station in Hilversum. Short commute by train to Utrecht, but on the more affordable side."
-        />
+        />      
     </HotelList>
 </CommonLayout>
