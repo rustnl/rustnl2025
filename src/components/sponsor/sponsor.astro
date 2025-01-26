@@ -33,12 +33,12 @@ switch (tier) {
 
 {
     image && (
-        <div
-            title={name}
-            onclick={`window.open('${link}', '_blank', 'noopener, noreferrer')`}
-            class={`sponsor ${className}`}
-            style={`--image: url(/images/sponsors/${image}`}
-        />
+        <a href=`${link}` class={`sponsor ${className}`}>
+            <img
+                alt={name}
+                src={`/images/sponsors/${image}`}
+            />
+        </a>
     )
 }
 {
@@ -47,7 +47,6 @@ switch (tier) {
             <a
                 title={name}
                 href={link}
-                target="_blank"
                 class=className
             >
                 {name}
@@ -65,15 +64,20 @@ switch (tier) {
 
     .sponsor {
         aspect-ratio: 16 / 9;
+        display: flex;
+        box-sizing: border-box;
         border-radius: space(1);
         border: 1px solid $color-red-400;
         max-width: 20rem;
         width: 100%;
-        background-image: var(--image);
-        background-size: 80% auto;
-        background-repeat: no-repeat;
-        background-position: center center;
+        padding: 1em;
         cursor: pointer;
+
+        img {
+            object-fit: scale-down;
+            width: 100%;
+            height: 100%;
+        }
 
         &.size-xl {
             max-width: 30rem;
