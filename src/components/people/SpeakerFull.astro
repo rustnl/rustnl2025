@@ -13,11 +13,12 @@ const {
     mastodon,
     github,
     bluesky,
-    link,
 } = Astro.props;
+
+const link = encodeURIComponent(name);
 ---
 
-<div class="person" id={link}>
+<div class="person" id=`${link}`>
     <img
         src={`/images/people/${image}`}
         alt={`Picture of ${name}`}
@@ -46,13 +47,13 @@ const {
             {talkAbstract && <p>{talkAbstract}</p>}
             <slot />
         </div>
-        {
-            link && (
-                <a href={`/schedule#${link}`} class="time">
-                    <strong>show in schedule</strong>
-                </a>
-            )
-        }
+        <!-- { -->
+        <!--     link && ( -->
+        <!--         <a href={`/schedule#${link}`} class="time"> -->
+        <!--             <strong>show in schedule</strong> -->
+        <!--         </a> -->
+        <!--     ) -->
+        <!-- } -->
     </div>
 </div>
 
