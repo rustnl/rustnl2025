@@ -24,8 +24,8 @@ const {align_end = false}: Props = Astro.props;
 </div>
 
 <style lang="scss">
-    @import "../../styles/variables.scss";
-    @import "../../styles/breakpoint.scss";
+    @use "../../styles/variables.scss";
+    @use "../../styles/breakpoint.scss";
 
     .align-end {
         margin-top: auto;
@@ -50,13 +50,6 @@ const {align_end = false}: Props = Astro.props;
         }
 
         .activities {
-            :global(p) {
-                margin: 0;
-                padding: 0;
-                margin-bottom: 0.4em;
-                line-height: 1em;
-            }
-
             margin: 0;
             margin-top: 0.4em;
             padding: 0;
@@ -64,23 +57,31 @@ const {align_end = false}: Props = Astro.props;
             flex-direction: column;
 
             flex-grow: 1;
+
+            :global(p) {
+                margin: 0;
+                padding: 0;
+                margin-bottom: 0.4em;
+                line-height: 1em;
+            }
         }
 
         .attendees {
-            font-size: $font-size-sm;
-            color: $color-blue-400;
+            font-size: variables.$font-size-sm;
+            color: variables.$color-blue-400;
             font-style: italic;
+
+            @include breakpoint.wider_than(lg) {
+                font-size: variables.$font-size-sm;
+            }
 
             *:only-child {
                 display: none;
             }
         }
 
-        .time {
-        }
-
         h4 {
-            font-size: $font-size-sm;
+            font-size: variables.$font-size-sm;
             // @include wider_than(lg) {
             //     font-size: $font-size-md;
             // }

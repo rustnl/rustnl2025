@@ -122,13 +122,13 @@ import Timetable from "../components/timetable/timetable.astro";
 </CommonLayout>
 
 <style lang="scss">
-    @import "../styles/variables.scss";
+    @use "../styles/variables.scss";
 
     .boat-description {
-        font-size: $font-size-lg;
+        font-size: variables.$font-size-lg;
 
         h2 {
-            font-size: $font-size-xl;
+            font-size: variables.$font-size-xl;
         }
     }
 </style>

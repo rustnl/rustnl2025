@@ -1,5 +1,4 @@
 ---
-import Menu from "./menu.astro";
 ---
 
 <footer class="footer">
@@ -25,26 +24,27 @@ import Menu from "./menu.astro";
 </footer>
 
 <style lang="scss">
-    @import "../../styles/variables.scss";
+    @use "../../styles/variables.scss";
 
     .footer {
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: $color-red-500;
-        margin-block-start: space(24);
-        padding: space(8) space(4);
+        background-color: variables.$color-red-500;
+        margin-block-start: variables.space(24);
+        padding: variables.space(8) variables.space(4);
 
         .menu {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: space(4);
-            margin-block-end: space(3);
-            padding-block-end: space(3);
+
+            margin-block-end: variables.space(3);
+            padding-block-end: variables.space(3);
 
             a {
-                color: $color-neutral-400;
+                color: variables.$color-neutral-400;
             }
         }
     }

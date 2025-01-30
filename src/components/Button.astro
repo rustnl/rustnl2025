@@ -1,6 +1,4 @@
 ---
-import { string } from 'astro/zod';
-
 interface Props {
     link: string;
     ty?: "primary" | "secondary";
@@ -14,37 +12,37 @@ const { link, ty = "primary", inFooter = false, scale = 1 }: Props = Astro.props
 
 <a
     class:list={["button", ty, inFooter ? "footer" : null]}
-    style=`text-decoration: none;color:$color-neutral-400;`
     href={link}
 >
     <slot>{link}</slot>
 </a>
 
 <style lang="scss" is:global define:vars={{ scale }}>
-    @import "../styles/variables.scss";
+    @use "../styles/variables.scss";
 
     .button {
+        color: variables.$color-neutral-400;
+
         align-items: center;
-        border-radius: space(1);
+        border-radius: variables.space(1);
         border: 1px solid transparent;
         cursor: pointer;
         display: inline-flex;
-        font-size: calc(var(--scale) * $font-size-md);
+        font-size: calc(var(--scale) * variables.$font-size-md);
         font-weight: 700;
-        // min-height: calc(var(--scale) * space(12));
-        padding: calc(var(--scale) * space(3)) calc(var(--scale) * space(6));
+        padding: calc(var(--scale) * variables.space(3)) calc(var(--scale) * variables.space(6));
         text-align: center;
         text-decoration: none;
         user-select: none;
 
         &.primary {
-            background-color: $color-red-400;
-            color: $color-neutral-400;
+            background-color: variables.$color-red-400;
+            color: variables.$color-neutral-400;
         }
 
         &.secondary {
-            border: 1px solid $color-red-400;
-            color: $color-red-400;
+            border: 1px solid variables.$color-red-400;
+            color: variables.$color-red-400;
         }
 
         &.footer {
@@ -52,7 +50,7 @@ const { link, ty = "primary", inFooter = false, scale = 1 }: Props = Astro.props
 
             text-decoration: underline !important;
             cursor: pointer;
-            color: $color-neutral-400;
+            color: variables.$color-neutral-400;
         }
     }
 </style>

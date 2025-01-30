@@ -7,8 +7,8 @@
 </div>
 
 <style lang="scss">
-    @import "../../styles/variables.scss";
-    @import "../../styles/breakpoint.scss";
+    @use "../../styles/variables.scss";
+    @use "../../styles/breakpoint.scss";
 
     @media not all and (max-width: 768px) {
         .speakers {
@@ -19,13 +19,13 @@
     }
 
     .speakers {
-        background-color: $color-yellow-400;
-        border: 1px solid $color-yellow-500;
+        background-color: variables.$color-yellow-400;
+        border: 1px solid variables.$color-yellow-500;
         position: relative;
         z-index: 0;
 
         &::after {
-            background-color: $color-yellow-500;
+            background-color: variables.$color-yellow-500;
             clip-path: polygon(0 0, 0% 100%, 100% 0);
             content: "";
             inset: 0;

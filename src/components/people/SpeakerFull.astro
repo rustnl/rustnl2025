@@ -58,18 +58,18 @@ const link = encodeURIComponent(name);
 </div>
 
 <style lang="scss">
-    @import "../../styles/variables.scss";
-    @import "../../styles/breakpoint.scss";
+    @use "../../styles/variables.scss";
+    @use "../../styles/breakpoint.scss";
 
     .person {
-        @include wider_than(lg) {
+        @include breakpoint.wider_than(lg) {
             width: 50em;
             display: grid;
             grid-template-columns: 1fr 2fr;
             gap: 2em;
         }
 
-        @include smaller_than(lg) {
+        @include breakpoint.smaller_than(lg) {
             display: flex;
             flex-direction: column;
         }
@@ -86,7 +86,7 @@ const link = encodeURIComponent(name);
 
             aspect-ratio: 1/1;
 
-            @include smaller_than(lg) {
+            @include breakpoint.smaller_than(lg) {
                 max-width: 50%;
                 align-self: center;
             }
@@ -94,10 +94,10 @@ const link = encodeURIComponent(name);
 
         .main-info {
             position: relative;
-            font-size: $font-size-md;
+            font-size: variables.$font-size-md;
 
 
-            @include smaller_than(lg) {
+            @include breakpoint.smaller_than(lg) {
                 display: flex;
                 align-items: center;
                 flex-direction: column;
@@ -105,19 +105,19 @@ const link = encodeURIComponent(name);
 
 
             h2 {
-                font-weight: $font-weight-light;
-                line-height: $line-height-tight;
+                font-weight: variables.$font-weight-light;
+                line-height: variables.$line-height-tight;
 
                 margin-bottom: 0em;
                 padding-top: 0em;
 
-                @include wider_than(lg) {
+                @include breakpoint.wider_than(lg) {
                     text-align: left !important;
                 }
             }
 
             .speaker-title {
-                font-size: $font-size-md;
+                font-size: variables.$font-size-md;
                 margin: 0.5em 0;
             }
 
@@ -126,8 +126,8 @@ const link = encodeURIComponent(name);
                 flex-direction: row;
                 gap: 0.3em;
 
-                @include wider_than(lg) {
-                    font-size: $font-size-md;
+                @include breakpoint.wider_than(lg) {
+                    font-size: variables.$font-size-md;
                     text-align: left !important;
                 }
             }
@@ -135,8 +135,8 @@ const link = encodeURIComponent(name);
             .bio {
                 margin: 0.5em 0 0 0;
 
-                @include wider_than(lg) {
-                    font-size: $font-size-md;
+                @include breakpoint.wider_than(lg) {
+                    font-size: variables.$font-size-md;
                     text-align: left;
                 }
             }

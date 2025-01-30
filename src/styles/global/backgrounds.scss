@@ -1,29 +1,29 @@
-@import "../variables.scss";
+@use "../variables.scss";
 
 .bg-neutral-400 {
-  background-color: $color-neutral-400;
+  background-color: variables.$color-neutral-400;
 }
 
 .bg-neutral-500 {
-  background-color: $color-neutral-500;
+  background-color: variables.$color-neutral-500;
 }
 
 .bg-red-400 {
-  background-color: $color-red-400;
+  background-color: variables.$color-red-400;
 }
 
 .bg-red-500 {
-  background-color: $color-red-500;
+  background-color: variables.$color-red-500;
 }
 
 .bg-blue-400 {
-  background-color: $color-blue-400;
+  background-color: variables.$color-blue-400;
 }
 
 .bg-yellow-400 {
-  background-color: $color-yellow-400;
+  background-color: variables.$color-yellow-400;
 }
 
 .bg-yellow-500 {
-  background-color: $color-yellow-400;
+  background-color: variables.$color-yellow-400;
 }

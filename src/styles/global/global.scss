@@ -1,27 +1,29 @@
-@import "../variables.scss";
+@use "../variables.scss";
+@use "../breakpoint.scss";
 
 :root {
-  --hero-color: white;
+    --hero-color: white;
 }
 
 html {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 body {
-  background-color: $color-background;
-  color: $color-black;
-  font-family: $font-family;
-  font-size: $font-size-md;
-  font-weight: 300;
-  line-height: $line-height-normal;
+    background-color: variables.$color-background;
+    color: variables.$color-black;
+    font-family: variables.$font-family;
+    font-size: variables.$font-size-md;
+
+    font-weight: 300;
+    line-height: variables.$line-height-normal;
 }
 
 h1,
@@ -32,62 +34,63 @@ h5,
 h6,
 strong,
 b {
-  font-weight: 700;
+    font-weight: 700;
 }
 
-h1, h2 {
-  // note: writing this as text-decoration shorthand does not work on safari 
-  text-decoration-line: underline;
-  text-decoration-color: $color-red-400;
-  text-decoration-thickness: 0.3rem;
+h1,
+h2 {
+    // note: writing this as text-decoration shorthand does not work on safari
+    text-decoration-line: underline;
+    text-decoration-color: variables.$color-red-400;
+    text-decoration-thickness: 0.3rem;
 }
-
 
 [id] {
-  scroll-margin-top: space(24);
+    scroll-margin-top: variables.space(24);
 }
 
 ul {
-  padding-left: 40px;
+    padding-left: 40px;
 }
 
 li {
-  list-style: disc;
-  padding-bottom: 0.2em;
+    list-style: disc;
+    padding-bottom: 0.2em;
 }
 
 blockquote {
-  border-left: solid 4px $color-red-500;
-  padding-left: 1em;
+    border-left: solid 4px variables.$color-red-500;
+    padding-left: 1em;
 }
 
 blockquote>p {
-  margin-block-start: space(6);
+    margin-block-start: variables.space(6);
 
 }
 
 h1 {
-  font-size: $font-size-xl;
-  text-align: center;
-  margin: 0;
-  padding-block: 2rem;
+    font-size: variables.$font-size-xl;
+    text-align: center;
+    margin: 0;
+    padding-block: 2rem;
 
-  @include wider_than(sm) {
-    font-size: $font-size-2xl;
-  }
+    @include breakpoint.wider_than(sm) {
+        font-size: variables.$font-size-2xl;
+    }
 }
 
 h2 {
-  font-size: $font-size-lg;
-  margin: 0;
-  padding-block: 1rem 0.5rem;
-  @include wider_than(sm) {
-    font-size: $font-size-xl;
-  }
+    font-size: variables.$font-size-lg;
+    margin: 0;
+    padding-block: 1rem 0.5rem;
+
+    @include breakpoint.wider_than(sm) {
+        font-size: variables.$font-size-xl;
+    }
 }
 
 .text-center {
-  text-align: center;
+    text-align: center;
 }
 
 a {
@@ -95,15 +98,14 @@ a {
     text-decoration: underline;
 
     &:hover {
-      text-decoration-color: $color-red-400;
+        text-decoration-color: variables.$color-red-400;
     }
 
     &:visited {
-      color: inherit;
+        color: inherit;
     }
 }
 
 .schedule a {
-  color: inherit;
+    color: inherit;
 }
-
