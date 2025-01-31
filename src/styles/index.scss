@@ -1,8 +1,8 @@
-@import './global/reset.scss';
+@use 'global/reset.scss';
 
-@import './global/backgrounds.scss';
-@import './global/global.scss';
+@use 'global/backgrounds.scss';
+@use 'global/global.scss';
 
-@import './layout/container.scss';
-@import './layout/grid.scss';
-@import './layout/space.scss';
+@use 'layout/container.scss';
+@use 'layout/grid.scss';
+@use 'layout/space.scss';

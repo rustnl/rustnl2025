@@ -11,22 +11,22 @@
 </div>
 
 <style lang="scss">
-    @import "../../styles/variables.scss";
-    @import "../../styles/breakpoint.scss";
+    @use "../../styles/variables.scss";
+    @use "../../styles/breakpoint.scss";
 
     .schedule-section {
         display: flex;
         flex-direction: column;
 
-        background: $color-neutral-400;
+        background: variables.$color-neutral-400;
 
         padding: 0.2em 0.4em 0.1em 0.4em;
         border-radius: 0.25em;
 
         flex-grow: 1;
-        font-size: $font-size-sm;
+        font-size: variables.$font-size-sm;
         .location {
-            font-size: $font-size-xs;
+            font-size: variables.$font-size-xs;
             text-align: center;
             margin-bottom: 0.5em;
             margin-left: -0.4em;

@@ -7,11 +7,11 @@
 </div>
 
 <style lang="scss" is:global>
-    @import "../styles/variables.scss";
+    @use "../styles/variables.scss";
 
     .markdown {
         > * + * {
-            margin-block-start: calc($font-size-md * $line-height-normal);
+            margin-block-start: calc(variables.$font-size-md * variables.$line-height-normal);
         }
 
         a {
@@ -21,7 +21,7 @@
 
         ul {
             list-style: disc;
-            padding-inline-start: $font-size-lg;
+            padding-inline-start: variables.$font-size-lg;
         }
     }
 </style>

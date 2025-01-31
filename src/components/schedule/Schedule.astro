@@ -36,14 +36,26 @@ const { logo = false } = Astro.props;
 </div>
 
 <style lang="scss">
-    @import "../../styles/variables.scss";
-    @import "../../styles/breakpoint.scss";
+    @use "../../styles/variables.scss";
+    @use "../../styles/breakpoint.scss";
 
     .schedule {
         display: grid;
         padding: 2em 2em 2em 2em;
 
-        @include smaller_than(md) {
+        gap: 2em;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        align-items: center;
+
+        position: relative;
+
+        color: variables.$color-red-500;
+        background: variables.$color-yellow-400;
+        z-index: 0;
+
+
+        @include breakpoint.smaller_than(md) {
             padding: 1em 2em 4em 1em;
         }
 
@@ -54,19 +66,10 @@ const { logo = false } = Astro.props;
             }
         }
 
-        gap: 2em;
-        grid-template-columns: auto;
-        grid-template-rows: auto auto;
-        align-items: center;
-
-        position: relative;
-        color: $color-red-500;
-        background: $color-yellow-400;
-        z-index: 0;
 
 
         &::before {
-            background-color: $color-yellow-500;
+            background-color: variables.$color-yellow-500;
             clip-path: polygon(0 0, 100% 0, 100% 100%);
             content: "";
             inset: 0;
@@ -81,7 +84,7 @@ const { logo = false } = Astro.props;
             background-size: min(40rem, 60%) auto;
             bottom: 0;
             content: "";
-            height: space(3);
+            height: variables.space(3);
             position: absolute;
             width: 100%;
             align-self: center;
@@ -95,7 +98,7 @@ const { logo = false } = Astro.props;
 
             color: white;
             font-style: italic;
-            font-size: $font-size-sm;
+            font-size: variables.$font-size-sm;
             width: min(10em, 80vw);
             text-align: right;
             line-height: 1em;
@@ -130,22 +133,23 @@ const { logo = false } = Astro.props;
                 position: relative;
 
                 text-align: center;
-
-                @include smaller_than(lg) {
-                    margin-top: 0.5em;
-                }
-
-                font-size: $font-size-sm;
-                @include wider_than(lg) {
-                    font-size: calc(1.4 * $font-size-sm);
-                    margin-bottom: 0.1em;
-                }
+                font-size: variables.$font-size-sm;
 
                 margin-left: -1em;
                 margin-right: -1em;
 
-                @include wider_than(xl) {
-                    font-size: $font-size-md !important;
+                @include breakpoint.smaller_than(lg) {
+                    margin-top: 0.5em;
+                }
+
+                @include breakpoint.wider_than(lg) {
+                    font-size: calc(1.4 * variables.$font-size-sm);
+                    margin-bottom: 0.1em;
+                }
+
+
+                @include breakpoint.wider_than(xl) {
+                    font-size: variables.$font-size-md !important;
                 }
             }
 
@@ -161,7 +165,7 @@ const { logo = false } = Astro.props;
             .thu {
                 grid-area: thu;
 
-                @include smaller_than(lg) {
+                @include breakpoint.smaller_than(lg) {
                     margin-top: 2em;
                 }
             }
@@ -172,8 +176,8 @@ const { logo = false } = Astro.props;
                 grid-area: sat;
             }
 
-            @include wider_than(lg) {
-                @include smaller_than(xl) {
+            @include breakpoint.wider_than(lg) {
+                @include breakpoint.smaller_than(xl) {
                     grid-template-columns: repeat(3, 1fr);
                     grid-template-rows: auto;
                     grid-template-areas:
@@ -187,7 +191,7 @@ const { logo = false } = Astro.props;
                     justify-content: unset;
 
                     div {
-                        font-size: $font-size-lg;
+                        font-size: variables.$font-size-lg;
                     }
 
                     .thu,
@@ -198,7 +202,7 @@ const { logo = false } = Astro.props;
                 }
             }
 
-            @include wider_than(xl) {
+            @include breakpoint.wider_than(xl) {
                 grid-template-columns: repeat(6, 1fr);
                 grid-template-rows: auto;
                 grid-template-areas:
@@ -210,23 +214,23 @@ const { logo = false } = Astro.props;
                 justify-content: unset;
 
                 div {
-                    font-size: $font-size-sm;
+                    font-size: variables.$font-size-sm;
                 }
             }
         }
 
         .image-wrapper {
-            color: $color-neutral-400;
+            color: variables.$color-neutral-400;
             height: min(5em, 30vw);
             aspect-ratio: 3;
             align-self: center;
             justify-self: center;
 
-            @include wider_than(md) {
+            @include breakpoint.wider_than(md) {
                 max-width: 60vw;
             }
 
-            @include wider_than(xl) {
+            @include breakpoint.wider_than(xl) {
                 max-width: 40vw;
             }
         }

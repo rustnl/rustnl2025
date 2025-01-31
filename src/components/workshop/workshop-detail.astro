@@ -15,10 +15,10 @@ const { title, time, id } = Astro.props;
 </div>
 
 <style lang="scss">
-    @import "../../styles/variables.scss";
+    @use "../../styles/variables.scss";
 
     .workshop-detail h2 {
-        font-size: $font-size-lg;
+        font-size: variables.$font-size-lg;
         font-style: italic;
     }
 </style>

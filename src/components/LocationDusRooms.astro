@@ -15,13 +15,13 @@
 </section>
 
 <style lang="scss">
-    @import "../styles/breakpoint.scss";
-    @import "../styles/variables.scss";
+    @use "../styles/breakpoint.scss";
+    @use "../styles/variables.scss";
 
     .location {
         position: relative;
 
-        @include wider_than(sm) {
+        @include breakpoint.wider_than(sm) {
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-areas:
@@ -31,7 +31,7 @@
 
         &::before {
             aspect-ratio: 16 / 9;
-            background-color: $color-neutral-500;
+            background-color: variables.$color-neutral-500;
             clip-path: polygon(0 100%, 100% 0, 100% 100%);
             content: "";
             position: absolute;
@@ -45,7 +45,7 @@
         > .ferris {
             display: none;
 
-            @include wider_than(sm) {
+            @include breakpoint.wider_than(sm) {
                 align-items: flex-start;
                 aspect-ratio: 16 / 9;
                 display: flex;
@@ -58,24 +58,24 @@
                 z-index: -2;
             }
 
-            @include wider_than(xl) {
+            @include breakpoint.wider_than(xl) {
                 top: -24px;
             }
 
             img {
-                @include wider_than(sm) {
+                @include breakpoint.wider_than(sm) {
                     rotate: -30deg;
                     width: 144px;
                 }
 
-                @include wider_than(xl) {
+                @include breakpoint.wider_than(xl) {
                     width: 288px;
                 }
             }
         }
 
         .image {
-            background-color: $color-neutral-500;
+            background-color: variables.$color-neutral-500;
             position: relative;
         }
 
@@ -89,14 +89,14 @@
                 background-image: url("/images/boat2.jpg");
             }
 
-            @include wider_than(sm) {
+            @include breakpoint.wider_than(sm) {
                 aspect-ratio: auto;
                 grid-area: a;
             }
 
             &::after {
                 aspect-ratio: 16 / 9;
-                background-color: $color-red-400;
+                background-color: variables.$color-red-400;
                 clip-path: polygon(0 0, 100% 0, 0 100%);
                 content: "";
                 left: 0;
@@ -138,7 +138,7 @@
                 background-image: url("/images/vakwerkhuis.jpg");
             }
 
-            @include wider_than(sm) {
+            @include breakpoint.wider_than(sm) {
                 grid-area: b;
             }
         }
@@ -146,9 +146,9 @@
         .image:nth-of-type(3) {
             display: none;
 
-            @include wider_than(sm) {
+            @include breakpoint.wider_than(sm) {
                 aspect-ratio: 16 / 9;
-                background-color: $color-yellow-400;
+                background-color: variables.$color-yellow-400;
                 grid-area: c;
                 display: flex;
                 align-items: center;
@@ -156,8 +156,8 @@
             }
 
             &::after {
-                @include wider_than(sm) {
-                    background-color: $color-yellow-500;
+                @include breakpoint.wider_than(sm) {
+                    background-color: variables.$color-yellow-500;
                     content: "";
                     inset: 0 50% 0 0;
                     position: absolute;
@@ -165,29 +165,29 @@
             }
 
             &:hover .ferris {
-                @include wider_than(sm) {
-                    translate: 0;
-                }
-
                 /* This timing is for the entering animation */
                 transition: translate 300ms 200ms ease-out;
+
+                @include breakpoint.wider_than(sm) {
+                    translate: 0;
+                }
             }
 
             &:hover .ferris-arms {
-                @include wider_than(sm) {
-                    opacity: 1;
-                    translate: 0px;
-                }
-
                 /* This timing is for the entering animation */
                 transition:
                     opacity 200ms ease-in,
                     translate 200ms ease-out;
+
+                @include breakpoint.wider_than(sm) {
+                    opacity: 1;
+                    translate: 0px;
+                }
             }
 
             > .ferris,
             > .ferris-arms {
-                @include wider_than(sm) {
+                @include breakpoint.wider_than(sm) {
                     background-repeat: no-repeat;
                     background-size: contain;
                     height: 120px;
@@ -196,14 +196,14 @@
                     width: 144px;
                 }
 
-                @include wider_than(xl) {
+                @include breakpoint.wider_than(xl) {
                     height: 240px;
                     width: 288px;
                 }
             }
 
             > .ferris {
-                @include wider_than(sm) {
+                @include breakpoint.wider_than(sm) {
                     background-image: url("/images/ferris.png");
                     /* This timing is for the leaving animation */
                     transition: translate 300ms ease-out;
@@ -212,7 +212,7 @@
             }
 
             > .ferris-arms {
-                @include wider_than(sm) {
+                @include breakpoint.wider_than(sm) {
                     background-image: url("/images/ferris-arms.png");
                     background-position: center -12px;
                     /* This timing is for the leaving animation */

@@ -1,5 +1,4 @@
 ---
-import Header from "../components/page/header.astro";
 import Location from "../components/Location.astro";
 import Button from "../components/Button.astro";
 
@@ -82,7 +81,7 @@ import "../styles/index.scss";
 </CommonLayout>
 
 <style lang="scss">
-@import "../styles/variables.scss";
+@use "../styles/variables.scss";
 
 .track-schedule:after, .speakers:before, .sponsors:before {
   margin-top: 30px;
@@ -99,14 +98,14 @@ import "../styles/index.scss";
 }
 
 .tickets-text {
-    font-size: $font-size-lg;
+    font-size: variables.$font-size-lg;
     text-align: center;
 }
 
 .schedule-header, 
 .speakers-header,
 .track-partners-header {
-    font-size: $font-size-2xl;
+    font-size: variables.$font-size-2xl;
     margin-block: 0;
 }
 
@@ -120,9 +119,9 @@ import "../styles/index.scss";
 }
 
 .industry-track-anouncement {
-    font-size: $font-size-xl;
+    font-size: variables.$font-size-xl;
 }
 .about-text, .schedule-description {
-    font-size: $font-size-lg;
+    font-size: variables.$font-size-lg;
 }
 </style>

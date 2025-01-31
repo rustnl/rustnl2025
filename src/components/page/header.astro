@@ -47,7 +47,7 @@ const { withLogo = false, withoutMenu = false }: Props = Astro.props;
     const header = document.querySelector(".header") as HTMLElement;
     const hero = document.querySelector('.hero') as HTMLElement;
 
-    function scrollHanlde(event: Event) {
+    function scrollHanlde(_event: Event) {
       const heroHeight = hero.offsetHeight;
       const headerHeight = header.offsetHeight;
       const treshold = heroHeight - headerHeight;
@@ -64,45 +64,47 @@ const { withLogo = false, withoutMenu = false }: Props = Astro.props;
 </script>
 
 <style lang="scss">
-    @import "../../styles/variables.scss";
-    @import "../../styles/breakpoint.scss";
+    @use "../../styles/variables.scss";
+    @use "../../styles/breakpoint.scss";
 
     .header {
         align-items: center;
         display: flex;
-        height: space(18);
-        padding-inline: space(4);
+
+        height: variables.space(18);
+        padding-inline: variables.space(4);
         position: fixed;
+
         width: 100%;
         z-index: 1;
         background-color: transparent;
         transition-property: background-color, height;
         transition-duration: 150ms;
 
-        @include wider_than(lg) {
-          height: space(24);
+        @include breakpoint.wider_than(lg) {
+          height: variables.space(24);
         }
-        
-        &.scrolled {
-          background-color: $color-yellow-500;
 
-          @include wider_than(lg) {
-            height: space(20);
+        &.scrolled {
+          background-color: variables.$color-yellow-500;
+
+          @include breakpoint.wider_than(lg) {
+            height: variables.space(20);
           }
         }
 
         .logo {
             img {
-                height: space(12);
+                height: variables.space(12);
             }
         }
 
         .hamburger {
             margin-inline-start: auto;
-            height: space(12);
+            height: variables.space(12);
             padding-inline: 1rem;
 
-            @include wider_than(lg) {
+            @include breakpoint.wider_than(lg) {
                 display: none;
             }
 
@@ -117,14 +119,16 @@ const { withLogo = false, withoutMenu = false }: Props = Astro.props;
 
         .menu {
             align-items: flex-start;
-            background-color: $color-neutral-400;
-            border: 1px solid $color-red-500;
-            bottom: space(0);
+
+            background-color: variables.$color-neutral-400;
+            border: 1px solid variables.$color-red-500;
+            bottom: variables.space(0);
+
             display: flex;
             flex-direction: column;
-            left: space(4);
+            left: variables.space(4);
             opacity: 0;
-            padding: space(4);
+            padding: variables.space(4);
             position: absolute;
             transform-origin: top;
             transform: scaleY(0);
@@ -132,19 +136,19 @@ const { withLogo = false, withoutMenu = false }: Props = Astro.props;
             transition-property: opacity, visibility, transform;
             translate: 0 100%;
             visibility: hidden;
-            width: calc(100% - space(8));
-            gap: space(3);
+            width: calc(100% - variables.space(8));
+            gap: variables.space(3);
 
             max-height: calc(100vh - 88px);
             overflow: auto;
 
-            @include wider_than(lg) {
+            @include breakpoint.wider_than(lg) {
                 align-items: center;
                 background-color: transparent;
                 border: none;
                 bottom: auto;
                 flex-direction: row;
-                gap: space(6);
+                gap: variables.space(6);
                 left: auto;
                 margin-inline-start: auto;
                 opacity: 1;
@@ -165,7 +169,7 @@ const { withLogo = false, withoutMenu = false }: Props = Astro.props;
         }
 
         .overlay {
-            background-color: $color-yellow-500;
+            background-color: variables.$color-yellow-500;
             inset: 0;
             opacity: 0;
             pointer-events: none;
@@ -175,7 +179,7 @@ const { withLogo = false, withoutMenu = false }: Props = Astro.props;
             visibility: hidden;
             z-index: -1;
 
-            @include wider_than(lg) {
+            @include breakpoint.wider_than(lg) {
                 visibility: hidden;
                 display: none;
             }

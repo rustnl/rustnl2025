@@ -28,7 +28,7 @@ import ButtonGroup from "../components/ButtonGroup.astro";
         <h3 class="venue">City & venue</h3>
         <p class="venue">
             Kinepolis Jaarbeurs Utrecht, <br /> Jaarbeursboulevard 300, <br /> 3521
-            BC Utrecht, The Netherlands
+            BC Utrecht, <br />The Netherlands
         </p>
     </Markdown>
     <Timetable slot="timetable-day">
@@ -82,9 +82,10 @@ import ButtonGroup from "../components/ButtonGroup.astro";
     <Markdown slot="tickets">
         <h2 class="header space-y-6" id="about">Tickets</h2>
         <p>
-            To attend the industry track, you will need an Industry Track
-            ticket.<br />
             Tickets are EUR 99,- ex vat.
+        </p>
+        <p>
+            Please note: the Industry Track and RustWeek conference are co-located events and require separate tickets.
         </p>
         <ButtonGroup>
             <Button
@@ -144,17 +145,17 @@ import ButtonGroup from "../components/ButtonGroup.astro";
                 link="/about"
             />
         </SponsorTier>
-    </div></IndustryLayout
->
+    </div>
+</IndustryLayout>
 
 <style lang="scss">
-    @import "../styles/variables.scss";
+    @use "../styles/variables.scss";
 
     .header {
-        font-size: $font-size-2xl;
+        font-size: variables.$font-size-2xl;
     }
 
     .venue {
-        font-size: $font-size-lg;
+        font-size: variables.$font-size-lg;
     }
 </style>

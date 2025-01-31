@@ -1,5 +1,5 @@
 @use 'sass:math';
-@import './breakpoint.scss';
+@use 'breakpoint.scss';
 
 /* $color-background: #fff8f0; */
 $color-background: #fff0e6;
@@ -41,6 +41,6 @@ $line-height-tight: 1.125;
 }
 
 
-@include wider_than(xl) {
+@include breakpoint.wider_than(xl) {
   $font-size-scale: 1.414;
 }

@@ -18,9 +18,9 @@ const { header }: Props = Astro.props;
 </section>
 
 <style lang="scss">
-    @import "../styles/variables.scss";
+    @use "../styles/variables.scss";
 
     .text {
-        font-size: $font-size-lg;
+        font-size: variables.$font-size-lg;
     }
 </style>

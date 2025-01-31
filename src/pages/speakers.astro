@@ -79,8 +79,8 @@ import CommonLayout from "../layouts/CommonLayout.astro";
 </CommonLayout>
 
 <style lang="scss">
-    @import "../styles/variables.scss";
-    @import "../styles/breakpoint.scss";
+    @use "../styles/variables.scss";
+    @use "../styles/breakpoint.scss";
 
     .speakers {
         padding-top: 5em;
@@ -95,7 +95,7 @@ import CommonLayout from "../layouts/CommonLayout.astro";
     }
 
     .more-soon {
-        font-weight: $font-weight-bold;
+        font-weight: variables.$font-weight-bold;
         text-align: center;
         font-size: 1.5em;
     }

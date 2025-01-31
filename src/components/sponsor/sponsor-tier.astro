@@ -11,10 +11,10 @@ const { name } = Astro.props;
 </div>
 
 <style lang="scss">
-    @import "../../styles/variables.scss";
+    @use "../../styles/variables.scss";
 
     h3 {
-        font-size: $font-size-lg;
+        font-size: variables.$font-size-lg;
     }
 
     .sponsors-tiers {
@@ -24,7 +24,7 @@ const { name } = Astro.props;
     .sponsors-row {
         display: flex;
         flex-wrap: wrap;
-        gap: space(6);
+        gap: variables.space(6);
         justify-content: center;
     }
 </style>
