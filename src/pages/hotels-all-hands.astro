@@ -1,0 +1,63 @@
+---
+import HotelList from "../components/practical-info/hotels/HotelList.astro";
+import Hotel from "../components/practical-info/hotels/Hotel.astro";
+import CommonLayout from "../layouts/CommonLayout.astro";
+---
+
+<CommonLayout
+    title="All Hands Hotels"
+    header="All Hands Hotels"
+    withLogo
+>
+
+    <div class="space-y-6">
+      <section class="container md:grid md:cols-12">
+          <div
+              class="abouttext md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
+          >
+              <p>
+                We have selected 3 hotels and reserved blocks of rooms for the All Hands participants. Breakfast included and flexible cancellation. 
+              </p>
+              <p>
+                The hotel links below will take you to custom booking page created for us, with favourable rates.  
+              </p>
+              <p>
+                Please note that the 'NH Amersfoort' is <strong>not</strong> in Utrecht, but in the nearby, beautiful city of Amersfoort. Amersfoort is a 12 min train ride to Utrecht.
+              </p>
+              <p>
+                  All the distances mentioned on this page refer to the shortest
+                  path when walking and/or making use of public transport.
+              </p>
+              <p>
+                  If you're looking for more hotel options, have a look at our <a href="/hotels">other hotel recommendations</a>.
+              </p>
+          </div>
+      </section>
+      <HotelList>
+          <Hotel
+                name="NH Amersfoort"
+                link="https://www.nh-hotels.com/en/event/rustweek-2025-nh-amersfoort"
+                image="nh-amersfoort.jpg"
+                distance_kinepolis="31 min"
+                price_range="160€"
+                description="Neat hotel close to the station in Amersfoort. Short commute by train to Utrecht, but on the more affordable side. 25 rooms reserved"
+          />
+          <Hotel
+              name="Moxy Utrecht"
+              link="https://www.marriott.com/event-reservations/reservation-link.mi?id=1738165935863&key=GRP&guestreslink2=true&app=resvlink"
+              image="moxy.avif"
+              distance_kinepolis="13 min"
+              price_range="200-220€"
+              description="A trendy hotel with a morden vibe. Provides meeting rooms, co-working facilities and a bar. 50 rooms reserved."
+          />
+          <Hotel
+              name="NH Utrecht (Jaarbeursplein)"
+              link="https://www.nh-hotels.com/en/event/rustweek-2025"
+              image="nh-utrecht.jpg"
+              distance_kinepolis="7 min"
+              price_range="235-250€"
+              description="Sleek hotel in the center of Utrecht. Short walk to the conference venue. 50 rooms reserved."
+          />
+      </HotelList>
+    </div>
+</CommonLayout>
