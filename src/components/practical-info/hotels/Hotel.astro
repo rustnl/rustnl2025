@@ -28,8 +28,8 @@ const { name, link, image, description, distance_kinepolis, price_range } = Astr
 </div>
 
 <style lang="scss">
-    @import "../../../styles/breakpoint.scss";
-    @import "../../../styles/variables.scss";
+    @use "../../../styles/breakpoint.scss";
+    @use "../../../styles/variables.scss";
 
     .hotel {
         display: flex;
@@ -43,9 +43,9 @@ const { name, link, image, description, distance_kinepolis, price_range } = Astr
         }
 
         h4 {
-            font-size: $font-size-md;
-            font-weight: $font-weight-light;
-            line-height: $line-height-tight;
+            font-size: variables.$font-size-md;
+            font-weight: variables.$font-weight-light;
+            line-height: variables.$line-height-tight;
 
             margin-bottom: 0;
             margin-top: 0.2em;
@@ -55,13 +55,13 @@ const { name, link, image, description, distance_kinepolis, price_range } = Astr
 
         ul {
             padding-left: 1rem;
-            font-size: $font-size-sm;
+            font-size: variables.$font-size-sm;
             font-weight: bold;
         }
 
         .description {
             margin-top: 0.5em;
-            font-size: $font-size-sm;
+            font-size: variables.$font-size-sm;
         }
 
         .image-container {
@@ -74,7 +74,7 @@ const { name, link, image, description, distance_kinepolis, price_range } = Astr
                 vertical-align: middle;
                 object-fit: cover;
                 width: 100%;
-                background: $color-yellow-400;
+                background: variables.$color-yellow-400;
     
                 aspect-ratio: 1/1;
             }
