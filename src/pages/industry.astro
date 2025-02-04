@@ -58,34 +58,33 @@ import ButtonGroup from "../components/ButtonGroup.astro";
         <TimetableItem time="12.15" title="Lunch" />
         <TimetableItem
             time="13.15"
-            title="Global State of Rust"
-            speaker="Speaker to be announced"
-        />
-        <TimetableItem
-            time="13.45"
             title="Expert Tables Round 2 - choose a topic and learn from a seasoned Rust expert as well as your industry peers"
             speaker="Experts to be announced"
         />
-        <TimetableItem time="14.45" title="Coffee break" />
+        <TimetableItem time="14.15" title="Coffee break" />
         <TimetableItem
-            time="15.00"
+            time="14.30"
             title="Expert Tables Round 2 Recap"
             speaker="Hugo van de Pol"
         />
         <TimetableItem
-            time="15.15"
+            time="14.45"
             title="Closing Keynote"
             speaker="Speaker to be announced"
         />
-        <TimetableItem time="15.30" title="Drinks" />
+        <TimetableItem
+            time="15.15"
+            title="Live Recording of 'Rust in Production' Podcast on stage"
+            speaker="Matthias Endler ft. Niko Matsakis"
+        />
+        <TimetableItem time="15.15" title="Drinks" />
     </Timetable>
     <Markdown slot="tickets">
         <h2 class="header space-y-6" id="about">Tickets</h2>
+        <p>Tickets are EUR 99,- ex vat.</p>
         <p>
-            Tickets are EUR 99,- ex vat.
-        </p>
-        <p>
-            Please note: the Industry Track and RustWeek conference are co-located events and require separate tickets.
+            Please note: the Industry Track and RustWeek conference are
+            co-located events and require separate tickets.
         </p>
         <ButtonGroup>
             <Button
@@ -119,6 +118,16 @@ import ButtonGroup from "../components/ButtonGroup.astro";
             name="Matthias Endler"
             image="matthias.jpg"
             description="Founder and Rust Consultant at corrode"
+        />
+        <Speaker
+            name="Kris van Rens"
+            image="kris.jpeg"
+            description="Software Architect at ViNotion and Rust Trainer"
+        />
+        <Speaker
+            name="Hugo van de Pol"
+            image="hugo.jpeg"
+            description="Director at Tweede golf"
         />
     </Fragment>
 
