@@ -1,0 +1,287 @@
+---
+import WorkshopDetail from "../components/workshop/workshop-detail.astro";
+import Workshop from "../components/workshop/Workshop.astro";
+
+import Person from "../components/people/SpeakerFull.astro";
+import CommonLayout from "../layouts/CommonLayout.astro";
+import Divider from "../components/Divider.astro";
+---
+
+<CommonLayout title="Workshops" header="Workshops" withLogo>
+    <section class="container py-12 space-y-6">
+        <div class="grid xl:cols-12" id="workshops">
+            <div class="xl:col-start-4 xl:col-end-10 space-y-12">
+                <div
+                    class="abouttext text-center md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
+                    style="font-size: smaller;"
+                >
+                    <a href="#bevy">Bevy</a> &bullet;
+                    <a href="#diesel">Diesel</a> &bullet;
+                    <a href="#clippy">Clippy</a> &bullet;
+                    <a href="#python">Python</a> &bullet;
+                    <a href="#cli">CLI</a> &bullet;
+                    <a href="#embedded">Embedded</a> &bullet;
+                    <a href="#makepad">Makepad</a>
+                </div>
+                
+                <slot />
+
+                <Workshop>
+                    <WorkshopDetail
+                        title="Bevy"
+                        time="Thu May 15 09:00-13:00"
+                        id="bevy"
+                    >
+                        <p>
+                            Bevy workshop
+                        </p>
+                        <p>
+                        </p>
+                    </WorkshopDetail>
+                    <div class="space-y-3">
+                        <h4>Workshop by</h4>
+                        <Person
+                            name="Francois"
+                            image="empty.png"
+                            description="Job"
+                            bio="Bio"
+                            linkedin=""
+                            twitter=""
+                            mastodon=""
+                            github=""
+                        />
+                    </div>
+                    <div class="space-y-3">
+                        <h4 >Get your ticket!</h4>
+                        <p>
+                            TODO
+                        </p>
+                        <!-- <p>
+                            Go to <a
+                                href="https://www.eventbrite.com/e/790061233417/?discount=postcard-workshop"
+                                >Workshop tickets</a
+                            >, and choose the <strong>"Postcard"</strong> workshop
+                            ticket.
+                        </p> -->
+                    </div>
+                </Workshop>
+
+                <Divider />
+
+                <Workshop>
+                    <WorkshopDetail
+                        title="Diesel"
+                        time="Thu May 15 09:00-13:00"
+                        id="diesel"
+                    >
+                        <p>
+                            Diesel workshop
+                        </p>
+                        <p>
+                        </p>
+                    </WorkshopDetail>
+                    <div class="space-y-3">
+                        <h4>Workshop by</h4>
+                        <Person
+                            name="Georg"
+                            image="empty.png"
+                            description="Job"
+                            bio="Bio"
+                            linkedin=""
+                            twitter=""
+                            mastodon=""
+                            github=""
+                        />
+                    </div>
+                    <div class="space-y-3">
+                        <h4 >Get your ticket!</h4>
+                        <p>
+                            TODO
+                        </p>
+                    </div>
+                </Workshop>
+
+                <Divider />
+
+                <Workshop>
+                    <WorkshopDetail
+                        title="Clippy"
+                        time="Thu May 15 09:00-13:00"
+                        id="clippy"
+                    >
+                        <p>
+                            Clippy workshop
+                        </p>
+                        <p>
+                        </p>
+                    </WorkshopDetail>
+                    <div class="space-y-3">
+                        <h4>Workshop by</h4>
+                        <Person
+                            name="Andre"
+                            image="empty.png"
+                            description="Job"
+                            bio="Bio"
+                            linkedin=""
+                            twitter=""
+                            mastodon=""
+                            github=""
+                        />
+                    </div>
+                    <div class="space-y-3">
+                        <h4 >Get your ticket!</h4>
+                        <p>
+                            TODO
+                        </p>
+                    </div>
+                </Workshop>
+
+                <Divider />
+
+                <Workshop>
+                    <WorkshopDetail
+                        title="Python"
+                        time="Thu May 15 09:00-13:00"
+                        id="python"
+                    >
+                        <p>
+                            Python workshop
+                        </p>
+                        <p>
+                        </p>
+                    </WorkshopDetail>
+                    <div class="space-y-3">
+                        <h4>Workshop by</h4>
+                        <Person
+                            name="Tamme Dittrich"
+                            image="tamme.jpg"
+                            description="Embedded Rust engineer @ Tweede golf"
+                            bio="With both an educational and professional background in industrial applications of embedded software, Tamme's experience stretches from FPGAs to Industrial automation protocols."
+                            linkedin="https://www.linkedin.com/in/tamme-dittrich-81b225227/"
+                            github="https://github.com/tdittr"
+                        />
+                    </div>
+                    <div class="space-y-3">
+                        <h4 >Get your ticket!</h4>
+                        <p>
+                            TODO
+                        </p>
+                    </div>
+                </Workshop>
+
+                <Divider />
+
+                <Workshop>
+                    <WorkshopDetail
+                        title="CLI"
+                        time="Thu May 15 09:00-13:00"
+                        id="cli"
+                    >
+                        <p>
+                            CLI workshop
+                        </p>
+                        <p>
+                        </p>
+                    </WorkshopDetail>
+                    <div class="space-y-3">
+                        <h4>Workshop by</h4>
+                        <Person
+                            name="Matthias"
+                            image="matthias.jpg"
+                            description=""
+                            linkedin=""
+                            twitter=""
+                            mastodon=""
+                            github=""
+                        />
+                    </div>
+                    <div class="space-y-3">
+                        <h4 >Get your ticket!</h4>
+                        <p>
+                            TODO
+                        </p>
+                    </div>
+                </Workshop>
+
+                <Divider />
+
+
+                <Workshop>
+                    <WorkshopDetail
+                        title="Embedded"
+                        time="Thu May 15 09:00-13:00"
+                        id="embedded"
+                    >
+                        <p>
+                            Embedded workshop
+                        </p>
+                        <p>
+                        </p>
+                    </WorkshopDetail>
+                    <div class="space-y-3">
+                        <h4>Workshop by</h4>
+                        <Person
+                            name="Micheal"
+                            image="empty.jpeg"
+                            description=""
+                            linkedin=""
+                            twitter=""
+                            mastodon=""
+                            github=""
+                        />
+                    </div>
+                    <div class="space-y-3">
+                        <h4 >Get your ticket!</h4>
+                        <p>
+                            TODO
+                        </p>
+                    </div>
+                </Workshop>
+
+                <Divider />
+
+                <Workshop>
+                    <WorkshopDetail
+                        title="Makepad"
+                        time="Thu May 15 09:00-13:00"
+                        id="makepad"
+                    >
+                        <p>
+                            Makepad workshop
+                        </p>
+                        <p>
+                        </p>
+                    </WorkshopDetail>
+                    <div class="space-y-3">
+                        <h4>Workshop by</h4>
+                        <Person
+                            name="Rik Arends"
+                            image="rik.jpeg"
+                            description="Founder @ Makepad"
+                            linkedin="https://www.linkedin.com/in/arendsrik/"
+                            twitter="https://twitter.com/rikarends"
+                            mastodon=""
+                            github="https://github.com/makepad/makepad"
+                        />
+                    </div>
+                    <div class="space-y-3">
+                        <h4 >Get your ticket!</h4>
+                        <p>
+                            TODO
+                        </p>
+                    </div>
+                </Workshop>
+
+                <Divider />
+                
+            </div>
+        </div>
+    </section>
+</CommonLayout>
+
+<style lang="scss">
+@use "../styles/variables.scss";
+h4 {
+    font-size: variables.$font-size-lg;
+    }
+</style>
