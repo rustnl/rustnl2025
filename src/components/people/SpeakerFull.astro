@@ -37,9 +37,7 @@ const link = encodeURIComponent(name);
         <div>
         {
         bio && (
-            <p class="bio">
-                {bio}
-            </p>
+            <div class="bio" set:html={bio} />
         )
         }
             {talkTitle && <h3>The talk</h3>}
