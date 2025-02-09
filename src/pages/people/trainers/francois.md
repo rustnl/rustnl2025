@@ -1,6 +1,6 @@
 ---
 layout: "../../../layouts/MarkdownLayout.astro"
-title: "François"
+title: "François Mockers"
 image: "francois.avif"
 description: "Maintainer @ Bevy"
 linkedin: ""

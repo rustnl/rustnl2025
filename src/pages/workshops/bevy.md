@@ -7,9 +7,5 @@ level: "intermediate"
 beginnerFriendly: false
 ---
 
-After an introduction to Bevy, attendees will be able to select a starter kit for a Bevy game, then we'll look at finishing it.
-
-Attendees should be able to leave with a game that run natively on their laptop, in Wasm on their browser, and if all goes well as a game on their mobile phone too.
-
-LEVEL: Intermediate
+The goal of the workshop is to start from scratch with Bevy, go though the basis in theory, see how it can be used, and then dig deeper into each part and how they work with each other to make a game. Depending on the focus of the workshop, it’s possible to go deeper into Bevy, or to see how it’s possible to build a Rust game for native, for Wasm and for mobile (Android or iOS depending on attendees phone of choice).
 

@@ -6,3 +6,5 @@ slug: "makepad"
 level: "intermediate"
 beginnerFriendly: false
 ---
+
+Workshop contents TBA!
