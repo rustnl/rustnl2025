@@ -1,13 +1,12 @@
 ---
-layout: "../../layouts/MarkdownLayout.astro"
+layout: "../../layouts/WorkshopLayout.astro"
 title: "Rust CLI Tools: Building A Fast File Finder"
+abstract: "Participants will build a complete command-line file finder in Rust, learning about file system operations, error handling, and CLI design patterns."
 time: "9:00 - 13:00"
 slug: "cli"
 level: "intermediate"
 beginnerFriendly: true
 ---
-
-"Workshop: Rust CLI Tools: Building A Fast File Finder
 
 Participants will build a complete command-line file finder in Rust, learning about file system operations, error handling, and CLI design patterns.
 

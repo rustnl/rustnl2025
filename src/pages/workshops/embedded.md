@@ -1,6 +1,7 @@
 ---
-layout: "../../layouts/MarkdownLayout.astro"
+layout: "../../layouts/WorkshopLayout.astro"
 title: "Build cross-platform GUIs in Rust"
+abstract: "This workshop introduces Slint, a Rust based declarative GUI toolkit, and will show you how to build GUI applications with Rust. By the end of the workshop, you will have built a fully functioning cross-platform application in Rust."
 time: "9:00 - 13:00"
 slug: "embedded"
 level: "intermediate"
@@ -18,21 +19,24 @@ The workshop is run in collaboration with Espressif; each participant will be pr
 The rough agenda could look as follows:
 
 Starting with Slint 
-a. Visual Studio Extension 
-b. Weather station boilerplate app
+
+1. Visual Studio Extension 
+2. Weather station boilerplate app
 
 Slint Language
-a. Syntax and Concepts
-b. Building Widgets to display weather data
+
+1. Syntax and Concepts
+2. Building Widgets to display weather data
 
 Slint Rust API 
-a. slint-build crate
-b. Threading and Event-Loop 
-c. Model trait 
-d. Integrating a Rust backend for weather station UI
+
+1. slint-build crate
+2. Threading and Event-Loop 
+3. Model trait 
+4. Integrating a Rust backend for weather station UI
     
 Overview Target Platforms 
-a. Desktop 
-b. WebAssembly 
-c. Embedded Linux 
-d. ESP
+1. Desktop 
+2. WebAssembly 
+3. Embedded Linux 
+4. ESP

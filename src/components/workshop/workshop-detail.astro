@@ -1,9 +1,13 @@
 ---
+import Markdown from "../../components/Markdown.astro";
+
 const {
     title,
     slug,
     time,
-    content
+    abstract,
+    description,
+    full
 } = Astro.props;
 ---
 
@@ -13,8 +17,14 @@ const {
         <strong>
             {time}
         </strong>
-        <div class="space-y-6" set:html={content}>
-        </div>
+        { !full && 
+        <p>
+            {abstract}
+        </p>
+        }
+        { full && 
+        <div class="space-y-6" set:html={description} />
+        }
     </div>
 </div>
 
@@ -22,7 +32,7 @@ const {
     @use "../../styles/variables.scss";
 
     .workshop-detail h2 {
-        font-size: variables.$font-size-lg;
-        font-style: italic;
+        font-size: variables.$font-size-xl;
+        font-style: normal;
     }
 </style>

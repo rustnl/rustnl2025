@@ -1,8 +1,8 @@
 ---
 layout: "../../../layouts/MarkdownLayout.astro"
-title: "François Mockers"
-image: "francois.avif"
-description: "Maintainer @ Bevy"
+name: "François Mockers"
+image: "francois.png"
+title: "Maintainer @ Bevy"
 linkedin: ""
 twitter: ""
 mastodon: ""

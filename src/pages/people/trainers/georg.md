@@ -1,8 +1,8 @@
 ---
 layout: "../../../layouts/MarkdownLayout.astro"
-title: "Georg Semmler"
+name: "Georg Semmler"
 image: "georg.jpeg"
-description: "Diesel Maintainer"
+title: "Diesel Maintainer"
 linkedin: ""
 twitter: ""
 mastodon: "https://social.weiznich.de/@weiznich"

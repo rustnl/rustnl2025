@@ -1,8 +1,8 @@
 ---
 layout: "../../../layouts/MarkdownLayout.astro"
-title: "Andre Bogus"
+name: "Andre Bogus"
 image: "andre.jpg"
-description: "Distinguished Engineer"
+title: "Distinguished Engineer"
 linkedin: ""
 twitter: "https://twitter.com/llogiq"
 mastodon: ""

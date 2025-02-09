@@ -1,8 +1,8 @@
 ---
 layout: "../../../layouts/MarkdownLayout.astro"
-title: "Rik Arends"
+name: "Rik Arends"
 image: "rik.jpeg"
-description: "Founder @ Makepad"
+title: "Founder @ Makepad"
 linkedin: "https://www.linkedin.com/in/arendsrik/"
 twitter: "https://twitter.com/rikarends"
 mastodon: ""

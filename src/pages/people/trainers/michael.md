@@ -1,8 +1,8 @@
 ---
 layout: "../../../layouts/MarkdownLayout.astro"
-title: "Michael Winkelmann"
+name: "Michael Winkelmann"
 image: "michaelw.jpg"
-description: "Independent Software Consultant"
+title: "Independent Software Consultant"
 linkedin: ""
 twitter: ""
 mastodon: ""

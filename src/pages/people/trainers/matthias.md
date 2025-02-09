@@ -1,8 +1,8 @@
 ---
 layout: "../../../layouts/MarkdownLayout.astro"
-title: "Matthias Endler"
+name: "Matthias Endler"
 image: "matthias.jpg"
-description: "Rust Consultant & 'Rust in Production' podcast host"
+title: "Rust Consultant & 'Rust in Production' podcast host"
 linkedin: "https://www.linkedin.com/in/endlermatthias/"
 twitter: "https://twitter.com/matthiasendler"
 mastodon: "https://mastodon.social/@mre"

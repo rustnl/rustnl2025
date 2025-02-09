@@ -1,8 +1,8 @@
 ---
 layout: "../../../layouts/MarkdownLayout.astro"
-title: "Tamme Dittrich"
+name: "Tamme Dittrich"
 image: "tamme.jpg"
-description: "Embedded Rust engineer @ Tweede golf"
+title: "Embedded Rust engineer @ Tweede golf"
 linkedin: "https://www.linkedin.com/in/tamme-dittrich-81b225227/"
 twitter: ""
 mastodon: "https://social.weiznich.de/@weiznich"
