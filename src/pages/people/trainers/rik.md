@@ -2,7 +2,7 @@
 layout: "../../../layouts/MarkdownLayout.astro"
 name: "Rik Arends"
 image: "rik.jpeg"
-title: "Founder @ Makepad"
+title: "Founder Makepad"
 linkedin: "https://www.linkedin.com/in/arendsrik/"
 twitter: "https://twitter.com/rikarends"
 mastodon: ""
