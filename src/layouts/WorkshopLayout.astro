@@ -1,0 +1,46 @@
+---
+import WorkshopDetail from "../components/workshop/workshop-detail.astro";
+import SpeakerFull from "../components/people/SpeakerFull.astro";
+import CommonLayout from "../layouts/CommonLayout.astro";
+import "../styles/index.scss";
+import Button from "../components/Button.astro";
+
+const { frontmatter } = Astro.props;
+const { title } = frontmatter;
+
+const trainers = await Astro.glob('../pages/people/trainers/*.md');
+---
+
+<CommonLayout title={title} header="Workshop" withLogo>
+    <section class="container md:grid md:cols-12 py-12">
+        <div class="md:col-start-3 md:col-end-11">
+            <WorkshopDetail {...frontmatter} description={Astro.slots.render('default')} full />
+
+            <div class="space-y-3">    
+                <div class="space-y-3">
+                    <h3>Workshop by</h3>
+                </div>
+            {trainers
+                .filter((trainer) => trainer.frontmatter.workshop == frontmatter.slug)
+                .map((workshopTrainer) =>
+                <SpeakerFull {...workshopTrainer.frontmatter} bio={workshopTrainer.compiledContent()} />
+            )}
+            </div>
+
+            <h3>Get your ticket!</h3>
+            <p>
+                All workshops are held on Thu May 15 at the DUS venue.
+            </p>
+            <p>
+                Workshop tickets are available in combination with a conference ticket, called 'Conference + workshop - Individuals' or 'Conference + workshop - Employer-paid'.
+            </p>
+            <div class="space-y-3">
+                <Button
+                    link="https://www.eventbrite.nl/e/industry-track-rustweek-2025-tickets-1115250035879"
+                >Get your ticket</Button>
+                <br /><br />
+            </div>
+
+        </div>
+    </section>
+</CommonLayout>

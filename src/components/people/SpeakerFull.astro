@@ -37,9 +37,7 @@ const link = encodeURIComponent(name);
         <div>
         {
         bio && (
-            <p class="bio">
-                {bio}
-            </p>
+            <div class="bio" set:html={bio} />
         )
         }
             {talkTitle && <h3>The talk</h3>}
@@ -72,8 +70,8 @@ const link = encodeURIComponent(name);
         @include breakpoint.smaller_than(lg) {
             display: flex;
             flex-direction: column;
+            padding-block-end: 3rem;
         }
-
 
         img {
             border-radius: 0.5em;
@@ -83,6 +81,7 @@ const link = encodeURIComponent(name);
             height: auto;
 
             display: inline-block;
+            margin-block-end: 2rem;
 
             aspect-ratio: 1/1;
 
@@ -94,15 +93,12 @@ const link = encodeURIComponent(name);
 
         .main-info {
             position: relative;
-            font-size: variables.$font-size-md;
-
 
             @include breakpoint.smaller_than(lg) {
                 display: flex;
                 align-items: center;
                 flex-direction: column;
             }
-
 
             h2 {
                 font-weight: variables.$font-weight-light;
@@ -136,7 +132,6 @@ const link = encodeURIComponent(name);
                 margin: 0.5em 0 0 0;
 
                 @include breakpoint.wider_than(lg) {
-                    font-size: variables.$font-size-md;
                     text-align: left;
                 }
             }

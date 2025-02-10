@@ -1,16 +1,28 @@
 ---
-const { title, time, id } = Astro.props;
+const {
+    title,
+    slug,
+    time,
+    abstract,
+    description,
+    full
+} = Astro.props;
 ---
 
 <div class="markdown workshop-detail">
     <div class="space-y-6">
-        <h2>{title}</h2>
+        <h2 id={slug}>{title}</h2>
         <strong>
             {time}
         </strong>
-        <div class="space-y-6" id={id}>
-            <slot />
-        </div>
+        { !full && 
+        <p>
+            {abstract}
+        </p>
+        }
+        { full && 
+        <div class="space-y-6" set:html={description} />
+        }
     </div>
 </div>
 
@@ -18,7 +30,7 @@ const { title, time, id } = Astro.props;
     @use "../../styles/variables.scss";
 
     .workshop-detail h2 {
-        font-size: variables.$font-size-lg;
-        font-style: italic;
+        font-size: variables.$font-size-xl;
+        font-style: normal;
     }
 </style>

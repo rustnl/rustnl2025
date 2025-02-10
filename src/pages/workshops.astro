@@ -1,0 +1,67 @@
+---
+import WorkshopDetail from "../components/workshop/workshop-detail.astro";
+import Workshop from "../components/workshop/Workshop.astro";
+
+import SpeakerFull from "../components/people/SpeakerFull.astro";
+import CommonLayout from "../layouts/CommonLayout.astro";
+import Divider from "../components/Divider.astro";
+import Button from "../components/Button.astro";
+
+const workshops = await Astro.glob('./workshops/*.md');
+const trainers = await Astro.glob('./people/trainers/*.md');
+---
+
+<CommonLayout title="Workshops" header="Workshops" withLogo>
+    <section class="container py-12 space-y-6">
+        <div class="grid xl:cols-12" id="workshops">
+            <div class="xl:col-start-3 xl:col-end-11 space-y-12">
+                <div
+                    class="abouttext text-center md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
+                    style="font-size: smaller;"
+                >
+                {workshops.map(( workshop )  =>
+                    <Fragment>
+                        <a href={`#${workshop.frontmatter.slug}`}>{workshop.frontmatter.slug}</a> &bullet;
+                    </Fragment>
+                )}
+                </div>
+                
+                <p>
+                    All workshops are held on Thu May 15 at the DUS venue.
+                </p>
+
+                <Divider />
+
+                {workshops.map(( workshop )  =>
+                <Workshop>
+                    <WorkshopDetail {...workshop.frontmatter} description={workshop.compiledContent()} />
+                        <div class="space-y-3">
+                            <h4>Workshop by</h4>
+                        </div>
+                        {trainers
+                            .filter((trainer) => trainer.frontmatter.workshop == workshop.frontmatter.slug)
+                            .map((workshopTrainer) =>
+                            <SpeakerFull {...workshopTrainer.frontmatter} />
+                        )}
+                    
+                </Workshop>
+                <div class="space-y-3">
+                    <Button
+                        link={`/workshops/${workshop.frontmatter.slug}`}
+                    >Details & tickets</Button>
+                    <br /><br />
+                </div>
+                <Divider />
+                )}
+                
+            </div>
+        </div>
+    </section>
+</CommonLayout>
+
+<style lang="scss">
+@use "../styles/variables.scss";
+h4 {
+    font-size: variables.$font-size-lg;
+    }
+</style>
