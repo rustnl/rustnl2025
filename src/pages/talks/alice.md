@@ -23,3 +23,4 @@ TBA
 
 ////// <!-- sepatator between abstract and bio -->
 
+Alice leads and coordinates Bevy's bubbling open source community as they build the next generation of game engine in Rust!
