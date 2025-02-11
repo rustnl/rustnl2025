@@ -1,7 +1,7 @@
 ---
 layout: "../../../layouts/MarkdownLayout.astro"
 name: "Matthias Endler"
-image: "matthias.jpg"
+image: "matthias.jpg" # images go in public/images/people
 title: "Rust Consultant & 'Rust in Production' podcast host"
 linkedin: "https://www.linkedin.com/in/endlermatthias/"
 twitter: "https://twitter.com/matthiasendler"

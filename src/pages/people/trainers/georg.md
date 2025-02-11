@@ -1,7 +1,7 @@
 ---
 layout: "../../../layouts/MarkdownLayout.astro"
 name: "Georg Semmler"
-image: "georg.jpeg"
+image: "georg.jpeg" # images go in public/images/people
 title: "Diesel Maintainer"
 linkedin: ""
 twitter: ""

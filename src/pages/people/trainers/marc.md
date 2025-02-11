@@ -1,7 +1,7 @@
 ---
 layout: "../../../layouts/MarkdownLayout.astro"
 name: "Marc Schoolderman"
-image: "marc.jpeg"
+image: "marc.jpeg" # images go in public/images/people
 title: "Software engineer @ Tweede golf"
 linkedin: "https://www.linkedin.com/in/marc-schoolderman/"
 twitter: ""
