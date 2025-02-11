@@ -36,13 +36,13 @@ const trainers = await Astro.glob('./people/trainers/*.md');
                 <Workshop>
                     <WorkshopDetail {...workshop.frontmatter} description={workshop.compiledContent()} />
                         <div class="space-y-3">
-                            <h4>Workshop by</h4>
+                            <strong>Workshop by</strong>
+                            {trainers
+                                .filter((trainer) => trainer.frontmatter.workshop == workshop.frontmatter.slug)
+                                .map((workshopTrainer) =>
+                                <div class="trainer">{workshopTrainer.frontmatter.name}</div>
+                            )}
                         </div>
-                        {trainers
-                            .filter((trainer) => trainer.frontmatter.workshop == workshop.frontmatter.slug)
-                            .map((workshopTrainer) =>
-                            <SpeakerFull {...workshopTrainer.frontmatter} />
-                        )}
                     
                 </Workshop>
                 <div class="space-y-3">
@@ -60,8 +60,12 @@ const trainers = await Astro.glob('./people/trainers/*.md');
 </CommonLayout>
 
 <style lang="scss">
-@use "../styles/variables.scss";
-h4 {
-    font-size: variables.$font-size-lg;
+    @use "../styles/variables.scss";
+    .trainer {
+        font-size: variables.$font-size-md;
+            // note: writing this as text-decoration shorthand does not work on safari
+        text-decoration-line: underline;
+        text-decoration-color: variables.$color-red-400;
+        text-decoration-thickness: 0.3rem;
     }
 </style>

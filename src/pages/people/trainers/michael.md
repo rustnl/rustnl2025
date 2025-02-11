@@ -1,7 +1,7 @@
 ---
 layout: "../../../layouts/MarkdownLayout.astro"
 name: "Michael Winkelmann"
-image: "michaelw.jpg"
+image: "michaelw.jpg" # images go in public/images/people
 title: "Independent Software Consultant"
 linkedin: ""
 twitter: ""

@@ -1,7 +1,7 @@
 ---
 layout: "../../../layouts/MarkdownLayout.astro"
 name: "Andre Bogus"
-image: "andre.jpg"
+image: "andre.jpg" # images go in public/images/people
 title: "Distinguished Engineer"
 linkedin: ""
 twitter: "https://twitter.com/llogiq"
