@@ -11,6 +11,6 @@ workshop: "cli"
 slug: "matthias"
 ---
 
-Hi, I’m Matthias Endler, a Rust developer and open-source maintainer with 20 years of experience in software development. I'm also the host of 'Rust in Production' podcast.
+Hi, I’m Matthias Endler, a Rust developer and open-source maintainer with 20 years of experience in software development. I'm also the host of the 'Rust in Production' podcast.
 
 I help clients worldwide get the most out of Rust through training, consulting, and writing no-frills, easy-to-follow, idiomatic Rust code.
