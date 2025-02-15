@@ -1,0 +1,85 @@
+---
+import CommonLayout from "../layouts/CommonLayout.astro";
+import TimetableItem from "../components/TimetableItem.astro";
+import TimetableMultiItem from "../components/TimetableMultiItem.astro";
+import TimetableDivider from "../components/TimetableDivider.astro";
+
+let collapsed_times = [
+    "9:00 - 9:30",
+    "11:00 - 11:30",
+    "12:30 - 13:30",
+    "15:10 - 15:40",
+    "17:00 - 19:00",
+];
+
+let collapsed: [[number, number], [number, number]][] = [];
+for (const s of collapsed_times) {
+    let [start, end] = s.split("-");
+    let start2 = start.split(":");
+    let end2 = end.split(":");
+    let start3: [number, number] = [parseInt(start2[0]), parseInt(start2[1])];
+    let end3: [number, number] = [parseInt(end2[0]), parseInt(end2[1])];
+    collapsed.push([start3, end3]);
+}
+
+function lt(time1: [number, number], time2: [number, number]) {
+    let res;
+    if (time1[0] < time2[0]) {
+        res = true;
+    } else if (time1[0] == time2[0]) {
+        res = time1[1] < time2[1];
+    } else {
+        res = false;
+    }
+    return res;
+}
+
+function in_range(
+    time: [number, number],
+    range: [[number, number], [number, number]],
+) {
+    let [start, end] = range;
+    return lt(start, time) && lt(time, end);
+}
+
+let times = "";
+for (let h = 9; h < 19; h++) {
+    for (let m = 0; m < 60; m += 5) {
+        let skip = false;
+        for (let range of collapsed) {
+            if (in_range([h, m], range)) {
+                skip = true;
+                break;
+            }
+        }
+        if (skip) {
+            continue;
+        }
+        if (m < 10) {
+            times += ` [time${h}_0${m}] minmax(1em, min-content)`;
+        } else {
+            times += ` [time${h}_${m}] minmax(1em, min-content)`;
+        }
+    }
+}
+
+const main = "main";
+const secondary = "room 2";
+---
+
+<div class="schedule">
+    <slot></slot>
+</div>
+
+<style define:vars={{ times }}>
+    .schedule {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        /* Our resolution for the schedule is 15 minutes */
+        grid-template-rows: var(--times);
+
+        gap: 16px;
+        width: min(90vw, 85ch);
+    }
+</style>

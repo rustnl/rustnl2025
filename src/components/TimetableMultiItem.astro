@@ -1,0 +1,86 @@
+---
+import TimetableBlock from './TimetableBlock.astro';
+
+interface Props {
+    room: string;
+    track: number;
+    // as a string
+    time: string;
+    // in minutes?
+    duration: number;
+    color: string;
+    talks: {
+        speaker: string,
+        title: string,
+        image: string,
+    }[];
+    striped?: boolean,
+}
+
+const {room, track, time, duration, color, talks, striped = false }: Props = Astro.props;
+
+const time_underscore = time.replace(":", "_");
+---
+
+<TimetableBlock room={room} track={track} time={time} duration={duration} color={color} striped={striped} >
+    <div class="talks">
+    {talks.map((talk) => (
+        <div class:list={["subitem", color]}>
+            <div class="title">{talk.title}</div>
+            { talk.speaker && (
+                <div class="speaker">
+                    { talk.image && <img class="speaker-img" src={`/images/people/${talk.image}`} alt={`Picture of ${talk.speaker}`} /> }
+                    <p>{talk.speaker}</p>
+                </div>
+            )}
+        </div>
+    ))}
+    </div>
+</TimetableBlock>
+
+<style>
+    .title {
+        font-weight: 700;
+    }
+
+    .speaker-img {
+        height: 2em;
+    }
+
+    .speaker {
+        font-size: 0.7em;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.3em;
+        height: 2em;
+        margin-top: 0.5em;
+    }
+
+    .subitem {
+        flex: 1;
+    }
+
+    .talks {
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+        flex: 1;
+    }
+
+    .subitem:not(:last-child) {
+        border-bottom: solid 1px;
+    }
+
+    .subitem.yellow {
+        border-color: #e69600;
+    }
+
+    .subitem.blue {
+        border-color: #729ecb;
+    }
+
+    .subitem.red {
+        border-color: #e74310;
+    }
+</style>

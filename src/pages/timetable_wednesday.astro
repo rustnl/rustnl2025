@@ -1,0 +1,235 @@
+---
+import CommonLayout from "../layouts/CommonLayout.astro";
+import TimetableItem from "../components/TimetableItem.astro";
+import TimetableMultiItem from "../components/TimetableMultiItem.astro";
+import TimetableDivider from "../components/TimetableDivider.astro";
+import Timetable from "../components/Timetable.astro";
+
+const main = "main";
+const secondary = "room 2";
+const tertiary = "room 3";
+---
+
+<CommonLayout title="Timetable Wednesday" header="Timetable Wednesday">
+    <Timetable>
+        <TimetableDivider start="9:00" end="9:30">Doors open</TimetableDivider>
+        <TimetableItem
+            title="Opening"
+            color="yellow"
+            track={1}
+            time="9:30"
+            duration={10}
+            room={main}
+        />
+        <TimetableItem
+            title="Talk"
+            speaker="Miguel Ojeda"
+            color="yellow"
+            track={1}
+            time="9:40"
+            duration={40}
+            room={main}
+        />
+        <TimetableItem
+            title="Talk"
+            speaker="Matt Campbell"
+            color="yellow"
+            track={1}
+            time="10:20"
+            duration={40}
+            room={main}
+        />
+        <TimetableItem
+            title="Opening"
+            color="blue"
+            track={2}
+            time="9:30"
+            duration={10}
+            room={secondary}
+        />
+        <TimetableItem
+            title="Talk"
+            speaker="Fabian Beutel"
+            color="blue"
+            track={2}
+            time="9:40"
+            duration={40}
+            room={secondary}
+        />
+        <TimetableItem
+            title="Talk"
+            speaker="Jack Pertschuk"
+            color="blue"
+            track={2}
+            time="10:20"
+            duration={40}
+            room={secondary}
+        />
+        <TimetableItem
+            title="Project track (TBD)"
+            color="red"
+            track={3}
+            time="9:30"
+            duration={90}
+            room={tertiary}
+            striped
+        />
+        <TimetableDivider start="11:00" end="11:30"> Break </TimetableDivider>
+        <TimetableItem
+            title="Talk"
+            speaker="Michał &ldquo;FractalFir&rdquo; Kostrubiec"
+            color="yellow"
+            track={1}
+            time="11:30"
+            duration={40}
+            room={main}
+        />
+        <TimetableItem
+            title="Talk"
+            speaker="Martin Larralde"
+            color="yellow"
+            track={1}
+            time="12:10"
+            duration={20}
+            room={main}
+        />
+        <TimetableItem
+            title="Talk"
+            speaker="Waffle"
+            color="blue"
+            track={2}
+            time="11:30"
+            duration={40}
+            room={secondary}
+        />
+        <TimetableItem
+            title="Talk"
+            speaker="Emmanuel Baccelli"
+            color="blue"
+            track={2}
+            time="12:10"
+            duration={20}
+            room={secondary}
+        />
+        <TimetableItem
+            title="Project track (TBD)"
+            color="red"
+            track={3}
+            time="11:30"
+            duration={60}
+            room={tertiary}
+            striped
+        />
+        <TimetableDivider start="12:30" end="13:30"> Lunch </TimetableDivider>
+        <TimetableItem
+            title="Talk"
+            speaker="Ciara"
+            color="yellow"
+            track={1}
+            time="13:30"
+            duration={40}
+            room={main}
+        />
+        <TimetableItem
+            title="Talk"
+            speaker="Waqar Ahmed Khan"
+            color="yellow"
+            track={1}
+            time="14:10"
+            duration={40}
+            room={main}
+        />
+        <TimetableItem
+            title="Talk"
+            speaker="Valdemar Erk"
+            color="yellow"
+            track={1}
+            time="14:50"
+            duration={20}
+            room={main}
+        />
+        <TimetableItem
+            title="Talk"
+            speaker="Tim de Jager"
+            color="blue"
+            track={2}
+            time="13:30"
+            duration={40}
+            room={secondary}
+        />
+        <TimetableItem
+            title="Talk"
+            speaker="Noah Hüsser"
+            color="blue"
+            track={2}
+            time="14:10"
+            duration={40}
+            room={secondary}
+        />
+        <TimetableItem
+            title="Talk"
+            speaker="Conrad Irwin"
+            color="blue"
+            track={2}
+            time="14:50"
+            duration={20}
+            room={secondary}
+        />
+        <TimetableItem
+            title="Project track (TBD)"
+            color="red"
+            track={3}
+            time="13:30"
+            duration={100}
+            room={tertiary}
+            striped
+        />
+        <TimetableDivider start="15:10" end="15:40"> Break </TimetableDivider>
+        <TimetableItem
+            title="Talk"
+            speaker="Victor Ciura"
+            color="yellow"
+            track={1}
+            time="15:40"
+            duration={40}
+            room={main}
+        />
+        <TimetableItem
+            title="Talk"
+            speaker="Alice I. Cecile"
+            color="yellow"
+            track={1}
+            time="16:20"
+            duration={40}
+            room={main}
+        />
+        <TimetableItem
+            title="Talk"
+            speaker="Dion Dokter"
+            color="blue"
+            track={2}
+            time="15:40"
+            duration={40}
+            room={secondary}
+        />
+        <TimetableItem
+            title="Talk"
+            speaker="Cliff L. Biffle"
+            color="blue"
+            track={2}
+            time="16:20"
+            duration={40}
+            room={secondary}
+        />
+        <TimetableItem
+            title="Project track (TBD)"
+            color="red"
+            track={3}
+            time="15:40"
+            duration={80}
+            room={tertiary}
+            striped
+        />
+        <TimetableDivider start="17:00" end="19:00"> Drinks </TimetableDivider>
+    </Timetable>
+</CommonLayout>

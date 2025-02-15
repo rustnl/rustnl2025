@@ -1,0 +1,124 @@
+---
+import { library, icon } from "@fortawesome/fontawesome-svg-core";
+import { faLocationDot, faClock } from "@fortawesome/free-solid-svg-icons";
+
+interface Props {
+    room: string;
+    track: number;
+    // as a string
+    time: string;
+    // in minutes
+    duration: number;
+    color?: string;
+    striped: boolean;
+}
+
+const { room, track, time, duration, color, striped }: Props =
+    Astro.props;
+
+const time_underscore = time.replace(":", "_");
+
+library.add(faLocationDot, faClock);
+
+const locationIcon = icon({ prefix: "fas", iconName: faLocationDot.iconName });
+const clockIcon = icon({ prefix: "fas", iconName: faClock.iconName });
+
+function addMinutes(date: Date, minutes: number) {
+    return new Date(date.getTime() + minutes*60000);
+}
+
+const start_time = new Date();
+start_time.setHours(parseInt(time.split(":")[0]));
+start_time.setMinutes(parseInt(time.split(":")[1]));
+const tmp = addMinutes(start_time, duration);
+let minutes: string;
+if (tmp.getMinutes() < 10) {
+    minutes = `0${tmp.getMinutes()}`; 
+} else {
+    minutes = `${tmp.getMinutes()}`; 
+}
+const end_time = `${tmp.getHours()}:${minutes}`;
+---
+
+<div
+    class:list={["item", color ? color : null, striped ? "striped" : null]}
+    style={{
+        gridColumn: track,
+        gridRowStart: `time${time_underscore}`,
+        gridRowEnd: `span ${duration / 5}`,
+    }}
+>
+    <div class="meta">
+        <div>
+            <div class="icon"><Fragment set:html={clockIcon.html} /></div>
+            {time}
+            -
+            {end_time}
+        </div>
+        <div>
+            <div class="icon"><Fragment set:html={locationIcon.html} /></div>
+            {room}
+        </div>
+    </div>
+    <slot></slot>
+</div>
+
+<style lang="scss">
+    .item {
+        border: solid 1px;
+        border-top-width: 4px;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .meta {
+        font-size: 0.7em;
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+    }
+
+    .item.yellow {
+        --color-one: #ffe5b3;
+        --color-two:  #e69600;
+    }
+
+    .item.blue {
+        --color-one: #d9e7f6;
+        --color-two: #729ecb;
+    }
+
+    .item.red {
+        --color-one: #f8c7b7;
+        --color-two: #d14c23;
+    }
+    
+    .item.purple {
+        --color-one: #e8defb;
+        --color-two: #9c4db4;
+    }
+
+    .item {
+        background: var(--color-one);
+        border-color: var(--color-two);
+    }
+    
+    .icon {
+        display: inline;
+    }
+
+    .icon {
+        color: var(--color-two);
+    }
+
+    .item.striped {
+        background: repeating-linear-gradient(
+            135deg,
+            color-mix(in hsl, var(--color-one), white 10%),
+            color-mix(in hsl, var(--color-one), white 10%) 10px,
+            color-mix(in hsl, var(--color-one), black 5%) 10px,
+            color-mix(in hsl, var(--color-one), black 5%) 20px
+        );
+    }
+</style>

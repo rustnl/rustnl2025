@@ -113,3 +113,13 @@ a {
 .schedule a {
     color: inherit;
 }
+
+
+/* For fontawesome */
+.svg-inline--fa {
+    overflow: visible;
+    box-sizing: content-box;
+    display: inline-block;
+    height: 1em;
+    vertical-align: -0.125em;
+}

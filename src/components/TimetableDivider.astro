@@ -1,0 +1,27 @@
+---
+
+interface Props {
+    start: string,
+    end: string,
+}
+
+const { start, end } = Astro.props;
+const time_underscore = start.replace(":", "_");
+---
+
+<div class="wide" style={`grid-row: time${time_underscore}`}>
+    <span class="time">{start} - {end}</span> <slot>Insert text</slot>
+</div>
+
+<style>
+.wide {
+    border-top: solid 1px #e69600;
+    border-bottom: solid 1px #e69600;
+    grid-column: 1 / span 3;
+    padding: 0.5em;
+}
+
+.wide > .time {
+    font-weight: 700;
+}
+</style>

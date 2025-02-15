@@ -1,0 +1,52 @@
+---
+import TimetableBlock from "./TimetableBlock.astro";
+import { library, icon } from "@fortawesome/fontawesome-svg-core";
+import { faLocationDot, faClock } from "@fortawesome/free-solid-svg-icons";
+
+interface Props {
+    title: string;
+    speaker?: string;
+    image?: string;
+    room: string;
+    track: number;
+    // as a string
+    time: string;
+    // in minutes?
+    duration: number;
+    color?: string;
+    striped?: boolean;
+}
+
+const { title, speaker, image, room, track, time, duration, color, striped = false }: Props =
+    Astro.props;
+---
+
+<TimetableBlock room={room} track={track} time={time} duration={duration} color={color} striped={striped} >
+    <div>
+        <div class="title">{title}</div>
+        <div class="speaker">
+            { image && <img class="speaker-img" src={`/images/people/${image}`} alt={`Picture of ${speaker}`} /> }
+            <p>{speaker}</p>
+        </div>
+    </div>
+</TimetableBlock>
+
+<style>
+.title {
+    font-weight: 700;
+}
+
+.speaker-img {
+    height: 2em;
+}
+
+.speaker {
+    font-size: 0.7em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.3em;
+    height: 2em;
+    margin-top: 0.5em;
+}
+</style>
