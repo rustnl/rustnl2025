@@ -19,10 +19,12 @@ const link = encodeURIComponent(name);
 ---
 
 <div class="person" id=`${link}`>
-    <img
-        src={`/images/people/${image}`}
-        alt={`Picture of ${name}`}
-    />
+    { image && (
+        <img
+            src={`/images/people/${image}`}
+            alt={`Picture of ${name}`}
+        />
+    )}
     <div class="main-info">
         <h2>{name}</h2>
         <p class="speaker-title">{title}</p>
