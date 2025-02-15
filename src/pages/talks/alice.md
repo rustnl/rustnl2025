@@ -7,22 +7,19 @@ org: ""
 bio: ""
 tracks: 
  - main_stage
-talkTitle: "Bevy talk title"
+talkTitle: "TBA"
 talkLevel: ""
 talkTags: []
 talkDuration: 30 # 15 or 30 min
 url: ""
+bluesky: "https://bsky.app/profile/alice-i-cecile.bsky.social"
 linkedin: ""
 twitter: ""
-mastodon: ""
-github: ""
+mastodon: "https://mastodon.gamedev.place/@alice_i_cecile"
+github: "https://github.com/alice-i-cecile"
 ---
 
-Bevy talk abstract
-
-List
-- Bevy
-- and more
+TBA
 
 ////// <!-- sepatator between abstract and bio -->
 

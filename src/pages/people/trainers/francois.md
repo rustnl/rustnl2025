@@ -3,10 +3,10 @@ layout: "../../../layouts/MarkdownLayout.astro"
 name: "François Mockers"
 image: "francois.png" # images go in public/images/people
 title: "Maintainer @ Bevy"
-linkedin: ""
+linkedin: "https://www.linkedin.com/in/fran%C3%A7ois-mockers"
 twitter: ""
-mastodon: ""
-github: ""
+mastodon: "https://hachyderm.io/@FrancoisMockers"
+github: "https://github.com/mockersf"
 workshop: "bevy"
 slug: "francois"
 ---
