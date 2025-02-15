@@ -1,0 +1,45 @@
+---
+import SpeakerFull from "../components/people/SpeakerFull.astro";
+import CommonLayout from "../layouts/CommonLayout.astro";
+import "../styles/index.scss";
+import Button from "../components/Button.astro";
+
+const { frontmatter } = Astro.props;
+const { talkTitle, tracks, talkTags, org } = frontmatter;
+const content = await Astro.slots.render('default');
+const abstract = content.split('//////')[0];
+const bio = content.split('//////')[1];
+---
+
+<CommonLayout title={talkTitle} header={talkTitle} withLogo>
+    <section class="container md:grid md:cols-12 py-12">
+        <div class="md:col-start-3 md:col-end-11">
+            <!-- <slot /> -->
+            <div set:html={abstract}>
+
+            </div>
+            <div class="space-y-3">
+                <strong>Tags:</strong>
+                {talkTags.join(", ")}
+                <br /><strong>Org:</strong>
+                {org}
+                <br /><strong>Stage:</strong>
+                {tracks.map(( track: String )  =>
+                    <Fragment>
+                        {track} 
+                    </Fragment>
+                )}
+            </div>
+            <div class="py-6">    
+                    <h3>Talk by</h3>
+                    <SpeakerFull {...frontmatter} talkTitle={false} bio={bio} />
+            </div>
+            <div class="space-y-3">
+                <Button
+                    link="https://www.eventbrite.nl/e/rustweek-2025-tickets-1001676961757?aff=oddtdtcreator"
+                >Get your ticket</Button>
+                <br /><br />
+            </div>
+        </div>
+    </section>
+</CommonLayout>

@@ -1,0 +1,27 @@
+---
+layout: "../../layouts/TalkLayout.astro"
+name: "Stephen Buchanan"
+image: "stephen.jpeg" # images go in public/images/people
+title: ""
+org: "Random Studio"
+tracks: 
+ - main_stage
+talkTitle: "Creative coding or serious engineering: why not both?"
+talkLevel: "All"
+talkTags: ["media", "design", "embedded systems", "game development", "creative industry"]
+talkDuration: 15 # 15 or 30 min
+url: "https://random.studio/"
+bluesky: ""
+linkedin: "https://www.linkedin.com/in/stephendbuchanan/"
+twitter: ""
+mastodon: ""
+github: "https://github.com/anselanza"
+---
+
+Creative Technologist: a hybrid engineer/artist making interactive installations, exhibitions, generative performances and more. Behind all this: hacky spaghetti code or sophisticated integration of software and hardware? Turns out, Rust might be the perfect tool for such idiosyncratic developers!
+
+////// <!-- sepatator between abstract and bio -->
+
+Stephen Buchanan studied Television Journalism and Media Studies and somehow also Computer Science. After working as a video editor and motion graphics designer for many years, he turned to event production technology and eventually full-time into web, games and interactive installation development. With a background in Java, C++ and TypeScript, his attentions have turned to Rust in the last 4 years, finding it surprisingly fitting for an industry more known for creative hacking than precision and high performance programming. Stephen is currently a senior “Creative Technologist” at Random Studio, an experience design agency based in Amsterdam and Paris.
+
+
