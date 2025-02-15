@@ -14,14 +14,14 @@ In this hands-on workshop, you will learn how Diesel can be used to
 build complex database-dependent applications.
 
 
-Target Audience:
+### Target Audience
 
 This workshop is designed for developers using Rust to develop software
 that interacts with database system.
 Participants are assumed to have at least basic Rust knowledge.
 
 
-Contents:
+### Contents
 
 All parts of the workshop are accompanied by hands-on exercises.
 Participants will build their own
@@ -52,16 +52,10 @@ and the `diesel-async` crate.
 You will learn how they interact with each other, what the advantages
 and disadvantages of each crate are and when to use one or the other.
 
-Prerequisites:
+### Prerequisites
 
 The workshop material will be shared publicly before the workshop.
 Participants are expected to bring their own laptop with a working
 Rust development setup.
 
-Notes:
-
-The workshop materials (slides for the talk, starting points for the
-exercises) will be shared beforehand in a GitHub repository.
-This repository will also be used to publish the solutions to the
-exercises during the workshop.
 
