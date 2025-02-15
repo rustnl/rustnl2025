@@ -5,7 +5,7 @@ image: "valdemar.png" # images go in public/images/people
 title: ""
 org: ""
 tracks: 
- - main_stage
+ - main
 talkTitle: "Garfields worst nightmare (or how a API difference caused a bad bug)"
 talkLevel: "All"
 talkTags: ["Rust", "Garfield", "Comic", "Postmortem", "API"]

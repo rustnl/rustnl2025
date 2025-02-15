@@ -6,7 +6,7 @@ title: "Bevy community leader & mad scientist"
 org: ""
 bio: ""
 tracks: 
- - main_stage
+ - main
 talkTitle: "TBA"
 talkLevel: ""
 talkTags: []

@@ -5,7 +5,7 @@ image: "alex_crichton.jpg" # images go in public/images/people
 title: "Core Contributor of WasmTime"
 org: ""
 tracks: 
- - main_stage
+ - main
 talkTitle: "TBA"
 talkLevel: ""
 talkTags: []

@@ -5,8 +5,8 @@ image: "niko.png" # images go in public/images/people
 title: "Senior Principal Engineer at AWS"
 org: ""
 tracks: 
- - project_track
- - industry_track
+ - project
+ - industry
 talkTitle: "Our Vision for Rust"
 talkLevel: "All"
 talkTags: []

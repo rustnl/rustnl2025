@@ -5,7 +5,7 @@ image: "" # images go in public/images/people
 title: "Senior Software Engineer"
 org: "Esri"
 tracks: 
- - main_stage
+ - main
 talkTitle: "Atomic break down: understanding ordering"
 talkLevel: "Intermediate"
 talkTags: ["rust", "atomics", "ordering"]

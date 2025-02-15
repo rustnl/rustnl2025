@@ -5,7 +5,7 @@ image: "caroline.jpeg" # images go in public/images/people
 title: ""
 org: "Parakeet Consulting"
 tracks: 
- - main_stage
+ - main
 talkTitle: "Healthy Data, Rusty Code: Epidemiology Meets Modern Systems Programming"
 talkLevel: "All"
 talkTags: ["epidemiology", "scientific programming", "rust", "py03"]

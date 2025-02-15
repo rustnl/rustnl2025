@@ -5,7 +5,7 @@ image: "joe.jpeg" # images go in public/images/people
 title: ""
 org: "Rustls"
 tracks: 
- - main_stage
+ - main
 talkTitle: "Graviola: fast, high-assurance cryptography for Rust"
 talkLevel: "Advanced"
 talkTags: ["security"]

@@ -5,7 +5,7 @@ image: "" # images go in public/images/people
 title: ""
 org: ""
 tracks: 
- - main_stage
+ - main
 talkTitle: "Corrosive C - Compiling Rust to C to target new platforms"
 talkLevel: "Intermediate"
 talkTags: ["Rust", "Compiler", "Backend", "C"]

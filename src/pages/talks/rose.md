@@ -5,7 +5,7 @@ image: "rose.png" # images go in public/images/people
 title: ""
 org: "Foresight Spatial Labs"
 tracks: 
- - main_stage
+ - main
 talkTitle: "Floating Point Hashing: Why you shouldn't do it, and why I did it one time anyway"
 talkLevel: "All"
 talkTags: ["educational", "floating point", "hashing", "math"]

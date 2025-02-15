@@ -5,7 +5,7 @@ image: "waqar.jpeg" # images go in public/images/people
 title: ""
 org: "Amazon"
 tracks: 
- - main_stage
+ - main
 talkTitle: "Breaking Speed Limits: Rust and the Next-Gen S3 Transfer Manager"
 talkLevel: "All"
 talkTags: ["networking", "cloud-computing", "s3", "data-transfer", "systems-programming", "c-to-rust", "optimization", "rust", "performance"]

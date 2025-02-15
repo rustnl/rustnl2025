@@ -5,7 +5,7 @@ image: "pietro_albini.jpg" # images go in public/images/people
 title: "Rust Project's Infra & Release teams"
 org: ""
 tracks: 
- - main_stage
+ - main
 talkTitle: "TBA"
 talkLevel: ""
 talkTags: []
