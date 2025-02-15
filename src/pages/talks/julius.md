@@ -5,7 +5,7 @@ image: "julius.jpeg" # images go in public/images/people
 title: "System architect at Volvo Cars"
 org: ""
 tracks: 
- - industry_track
+ - industry
 talkTitle: "Rust at Volvo Cars"
 talkLevel: ""
 talkTags: []

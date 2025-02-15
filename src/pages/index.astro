@@ -2,13 +2,16 @@
 import HomeLayout from "../layouts/HomeLayout.astro";
 
 import Person from "../components/people/Person.astro";
-import TwoSpeakers from "../components/people/TwoSpeakers.astro";
-
 import Sponsor from "../components/sponsor/sponsor.astro";
 import SponsorTier from "../components/sponsor/sponsor-tier.astro";
 
 import Button from "../components/Button.astro";
 import ButtonGroup from "../components/ButtonGroup.astro";
+import { useTalks } from "../components/useTalks";
+
+
+const talks = await Astro.glob('./talks/*.md');
+const {alice, julius, pietro, alex, niko, miguel} = useTalks(talks);
 ---
 
 <HomeLayout>
@@ -198,70 +201,11 @@ import ButtonGroup from "../components/ButtonGroup.astro";
         </ButtonGroup>
     </div>
     <Fragment slot="speakers">
-        <Person
-            name="Alice Ivy Cecile"
-            image="alice_cecile.jpg"
-            description="Bevy community leader & mad scientist"
-            tracks={["main"]}
-        />
-        <Person
-            name="Niko Matsakis"
-            image="niko.png"
-            description="Senior Principal Engineer at AWS"
-            tracks={["project", "industry"]}
-        />
-        <Person
-            name="Pietro Albini"
-            image="pietro_albini.jpg"
-            description="Rust Project's Infra & Release teams"
-            tracks={["main"]}
-        />
-        <Person
-            name="Alex Crichton"
-            image="alex_crichton.jpg"
-            description="Core Contributor of WasmTime"
-            tracks={["main"]}
-        />
-        <Person
-            name="Julius Gustavsson"
-            image="julius.jpeg"
-            description="System architect at Volvo Cars"
-            tracks={["industry"]}
-        />
-        <Person
-            name="Miguel Ojeda"
-            image="miguel_ojeda.jpg"
-            description="Maintainer of Rust for Linux"
-            tracks={["main"]}
-        />
-    </Fragment>
-    <Fragment slot="workshops">
-        <Person
-            name="James Munns"
-            image="james.png"
-            description="Embedded, systems and Rust consultant & Director @ OneVariable"
-        />
-        <Person
-            name="Rik Arends"
-            image="rik.jpeg"
-            description="Founder @ Makepad"
-        />
-        <TwoSpeakers>
-            <Person
-                name="Tamme Dittrich"
-                image="tamme.jpg"
-                description="Embedded Rust engineer @ Tweede golf"
-            />
-            <Person
-                name="Henk Oordt"
-                image="henk.png"
-                description="Writing & teaching Rust @ Tweede golf"
-            />
-        </TwoSpeakers>
-        <Person
-            name="Luca Palmieri"
-            image="luca.png"
-            description="Principal Engineering Consultant @ Mainmatter"
-        />
+        <Person {...alice} />
+        <Person {...niko} />
+        <Person {...pietro}/>
+        <Person {...alex} />
+        <Person {...julius} />
+        <Person {...miguel} />
     </Fragment>
 </HomeLayout>

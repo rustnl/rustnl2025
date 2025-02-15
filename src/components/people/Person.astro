@@ -3,11 +3,12 @@
 interface Props {
     name: string;
     image: string;
-    description: string;
+    description?: string;
+    title?: string;
     tracks?: Array<string>;
 }
 
-const { name, image, description, tracks } = Astro.props;
+const { name, image, description, title, tracks } = Astro.props;
 ---
 
 <div class="person">
@@ -30,7 +31,12 @@ const { name, image, description, tracks } = Astro.props;
     </div>
     <div>
         <h4>{name}</h4>
-        <p class="description">{description}</p>
+        { description && (
+            <p class="description">{description}</p>
+        )}
+        { title && (
+            <p class="description">{title}</p>
+        )}
     </div>
 </div>
 
@@ -77,13 +83,13 @@ const { name, image, description, tracks } = Astro.props;
             a {
                 aspect-ratio: 1/1;
                 align-self: center;
-                border-radius: 0.3em;
                 height: auto;
                 vertical-align: middle;
                 width: 100%;
 
                 img {
                     background: variables.$color-yellow-400;
+                    border-radius: 0.5em;
 
                     width: 100%;
                     height: 100%;
@@ -94,7 +100,7 @@ const { name, image, description, tracks } = Astro.props;
 
             div.tags {
                 position: absolute;
-                bottom: 0.75rem;
+                bottom: 1.25rem;
                 left: 0.75rem;
 
                 .tag {

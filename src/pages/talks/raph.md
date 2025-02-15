@@ -5,7 +5,7 @@ image: "raph.jpg" # images go in public/images/people
 title: "Research engineer"
 org: "Google"
 tracks: 
- - main_stage
+ - main
 talkTitle: "Faster, easier 2D vector rendering"
 talkLevel: "All"
 talkTags: ["graphics"]

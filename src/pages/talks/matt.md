@@ -5,7 +5,7 @@ image: "" # images go in public/images/people
 title: ""
 org: ""
 tracks: 
- - main_stage
+ - main
 talkTitle: "AccessKit: reusable UI accessibility"
 talkLevel: "All"
 talkTags: ["ui and mobile"]

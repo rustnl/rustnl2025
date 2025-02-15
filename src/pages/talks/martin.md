@@ -5,7 +5,7 @@ image: "martin.jpeg" # images go in public/images/people
 title: ""
 org: "Leiden University Medical Center"
 tracks: 
- - main_stage
+ - main
 talkTitle: "Gigabytes per second of DNA: using Rust for matching genomic motifs"
 talkLevel: "Intermediate"
 talkTags: ["bioinformatics", "genomics", "simd", "science"]

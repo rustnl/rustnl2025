@@ -5,7 +5,7 @@ image: "miguel_ojeda.jpg" # images go in public/images/people
 title: "Maintainer of Rust for Linux"
 org: "Rust for Linux"
 tracks: 
- - main_stage
+ - main
 talkTitle: "TBA"
 talkLevel: ""
 talkTags: []

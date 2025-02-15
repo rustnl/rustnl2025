@@ -5,7 +5,7 @@ image: "stefan.jpeg" # images go in public/images/people
 title: ""
 org: "oida.dev, Dynatrace"
 tracks: 
- - main_stage
+ - main
 talkTitle: "Refactoring in Rust"
 talkLevel: "Intermediate"
 talkTags: ["traits", "refactoring"] 

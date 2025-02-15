@@ -5,7 +5,7 @@ image: "victor.jpg" # images go in public/images/people
 title: ""
 org: "Microsoft"
 tracks: 
- - main_stage
+ - main
 talkTitle: "Duck-Tape Chronicles: Rust/C++ Interop"
 talkLevel: "All"
 talkTags: ["C++", "Rust", "idioms", "oxidation", "rewrite", "interop", "windows-rs", "FFI", "ABI", "Windows", "security", "Azure", "cargo", "tooling", "crates", "CI/CD", "static analysis", "unsafe", "API", "cbindgen", "cxx", "crubit", "CMake", "hybrid", "LLVM", "MSVC"]

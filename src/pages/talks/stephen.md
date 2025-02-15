@@ -5,7 +5,7 @@ image: "stephen.jpeg" # images go in public/images/people
 title: ""
 org: "Random Studio"
 tracks: 
- - main_stage
+ - main
 talkTitle: "Creative coding or serious engineering: why not both?"
 talkLevel: "All"
 talkTags: ["media", "design", "embedded systems", "game development", "creative industry"]

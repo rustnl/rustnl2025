@@ -5,7 +5,7 @@ image: "shane.png" # images go in public/images/people
 title: ""
 org: "Google"
 tracks: 
- - main_stage
+ - main
 talkTitle: "Beyond ICU4X 2.0: ZeroVec, Diplomat, Yoke, and Unicode's Contributions to the Rust Ecosystem"
 talkLevel: ""
 talkTags: ["i18n", "embedded systems", "crates"]

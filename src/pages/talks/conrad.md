@@ -5,7 +5,7 @@ image: "conrad.png" # images go in public/images/people
 title: ""
 org: "Zed"
 tracks: 
- - main_stage
+ - main
 talkTitle: "Rewriting Vim in Rust: Lessons Learned"
 talkLevel: "All"
 talkTags: ["tooling"]
