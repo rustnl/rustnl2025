@@ -11,9 +11,10 @@ interface Props {
     duration: number;
     color?: string;
     striped: boolean;
+    url: string | null;
 }
 
-const { room, track, time, duration, color, striped }: Props =
+const { room, track, time, duration, color, striped, url }: Props =
     Astro.props;
 
 const time_underscore = time.replace(":", "_");
@@ -40,13 +41,14 @@ if (tmp.getMinutes() < 10) {
 const end_time = `${tmp.getHours()}:${minutes}`;
 ---
 
-<div
+<a
     class:list={["item", color ? color : null, striped ? "striped" : null]}
     style={{
         gridColumn: track,
         gridRowStart: `time${time_underscore}`,
         gridRowEnd: `span ${duration / 5}`,
     }}
+    href={url}
 >
     <div class="meta">
         <div>
@@ -61,7 +63,7 @@ const end_time = `${tmp.getHours()}:${minutes}`;
         </div>
     </div>
     <slot></slot>
-</div>
+</a>
 
 <style lang="scss">
     .item {
@@ -70,6 +72,7 @@ const end_time = `${tmp.getHours()}:${minutes}`;
         padding: 16px;
         display: flex;
         flex-direction: column;
+        text-decoration: none;
     }
 
     .meta {
@@ -115,10 +118,10 @@ const end_time = `${tmp.getHours()}:${minutes}`;
     .item.striped {
         background: repeating-linear-gradient(
             135deg,
-            color-mix(in hsl, var(--color-one), white 10%),
-            color-mix(in hsl, var(--color-one), white 10%) 10px,
-            color-mix(in hsl, var(--color-one), black 5%) 10px,
-            color-mix(in hsl, var(--color-one), black 5%) 20px
+            color-mix(in hsl, var(--color-one), white 30%),
+            color-mix(in hsl, var(--color-one), white 30%) 10px,
+            color-mix(in hsl, var(--color-one), black 0%) 10px,
+            color-mix(in hsl, var(--color-one), black 0%) 20px
         );
     }
 </style>

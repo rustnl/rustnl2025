@@ -1,12 +1,10 @@
 ---
+import { EMPTY_PATH } from "astro:schema";
 import TimetableBlock from "./TimetableBlock.astro";
-import { library, icon } from "@fortawesome/fontawesome-svg-core";
-import { faLocationDot, faClock } from "@fortawesome/free-solid-svg-icons";
 
 interface Props {
-    title: string;
-    speaker?: string;
-    image?: string;
+    talk?: string;
+    title?: string;
     room: string;
     track: number;
     // as a string
@@ -17,36 +15,78 @@ interface Props {
     striped?: boolean;
 }
 
-const { title, speaker, image, room, track, time, duration, color, striped = false }: Props =
-    Astro.props;
+const {
+    talk,
+    title = "",
+    room,
+    track,
+    time,
+    duration,
+    color,
+    striped = false,
+}: Props = Astro.props;
+
+const matches = import.meta.glob("../pages/talks/*.md", { eager: true });
+const files = Object.values(matches);
+let file: any = null;
+if (talk !== null) {
+    file = files.find((v: any) => {
+        return v.url.split("/")[2] == talk;
+    });
+}
+
+const talk_title = title ? title : file ? file.frontmatter.talkTitle : "ERROR";
+const speaker = file?.frontmatter?.name;
+const image = file ? (file?.frontmatter?.image || "empty.png") : null;
+const url = file?.url;
 ---
 
-<TimetableBlock room={room} track={track} time={time} duration={duration} color={color} striped={striped} >
+<TimetableBlock
+    room={room}
+    track={track}
+    time={time}
+    duration={duration}
+    color={color}
+    striped={striped}
+    url={url}
+>
     <div>
-        <div class="title">{title}</div>
+        <div class="title">{talk_title}</div>
         <div class="speaker">
-            { image && <img class="speaker-img" src={`/images/people/${image}`} alt={`Picture of ${speaker}`} /> }
+            {
+                image && (
+                    <img
+                    class="speaker-img"
+                    src={`/images/people/${image}`}
+                    alt={`Picture of ${speaker}`}
+                    />
+                )
+            }
             <p>{speaker}</p>
         </div>
     </div>
 </TimetableBlock>
 
 <style>
-.title {
-    font-weight: 700;
-}
+    .title {
+        font-weight: 500;
+        margin-top: 0.2em;
+    }
 
-.speaker-img {
-    height: 2em;
-}
+    .speaker-img {
+        height: 2em;
+        border-radius: 0.2em;
+        background: #fff0e6;
+        margin-right: 0.3em;
+    }
 
-.speaker {
-    font-size: 0.7em;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.3em;
-    height: 2em;
-    margin-top: 0.5em;
-}
+    .speaker {
+        font-size: 0.8em;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.3em;
+        height: 2em;
+        margin-top: 0.5em;
+    }
 </style>
