@@ -5,16 +5,19 @@ interface Props {
     image: string;
     description?: string;
     title?: string;
+    slug?: string;
     tracks?: Array<string>;
 }
 
-const { name, image, description, title, tracks } = Astro.props;
+const { name, image, description, title, slug, tracks } = Astro.props;
+const imageFile = image ? image : "empty.png";
+const url = slug ? slug : "/speakers";
 ---
 
 <div class="person">
     <div class="image-container">
-        <a href=`/speakers#${encodeURIComponent(name)}`>
-            <img src={`/images/people/${image}`} alt={`Picture of ${name}`} />
+        <a href={url}>
+            <img src={`/images/people/${imageFile}`} alt={`Picture of ${name}`} />
         </a>
         <div class="tags">
             {
@@ -32,11 +35,12 @@ const { name, image, description, title, tracks } = Astro.props;
     <div>
         <h4>{name}</h4>
         { description && (
-            <p class="description">{description}</p>
+            <p>{description}</p>
         )}
         { title && (
-            <p class="description">{title}</p>
+            <p>{title}</p>
         )}
+        <slot />
     </div>
 </div>
 
@@ -55,15 +59,6 @@ const { name, image, description, title, tracks } = Astro.props;
             display: inline-block;
         }
 
-        .socials {
-            display: flex;
-            gap: 12px;
-        }
-
-        .speaker-detail {
-            text-align: left;
-        }
-
         h4 {
             font-size: variables.$font-size-lg;
             font-weight: variables.$font-weight-light;
@@ -73,8 +68,7 @@ const { name, image, description, title, tracks } = Astro.props;
             margin-top: 0.2em;
         }
 
-        .description {
-            margin-top: 0.5em;
+        p {
             font-size: variables.$font-size-sm;
         }
 
