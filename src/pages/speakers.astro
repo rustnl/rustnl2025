@@ -2,7 +2,6 @@
 import PersonList from "../components/people/PeopleList.astro";
 import Person from "../components/people/Person.astro";
 import CommonLayout from "../layouts/CommonLayout.astro";
-import { useTalks } from "../components/useTalks";
 
 const talks = await Astro.glob("./talks/*.md");
 ---
@@ -17,13 +16,11 @@ const talks = await Astro.glob("./talks/*.md");
                             name={talk.frontmatter.name}
                             image={talk.frontmatter.image}
                             tracks={talk.frontmatter.tracks}
-                            slug={`/talks/${talk.url?.replace("/talks/", "")}`}
+                            slug={talk.url}
                         >
                             <p>
                                 <em>Talk</em>:
-                                <a
-                                    href={`/talks/${talk.url?.replace("/talks/", "")}`}
-                                >
+                                <a href={talk.url}>
                                     {talk.frontmatter.talkTitle}
                                 </a>
                             </p>
