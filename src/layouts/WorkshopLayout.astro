@@ -1,9 +1,9 @@
 ---
 import WorkshopDetail from "../components/workshop/workshop-detail.astro";
-import SpeakerFull from "../components/people/SpeakerFull.astro";
 import CommonLayout from "../layouts/CommonLayout.astro";
 import "../styles/index.scss";
 import Button from "../components/Button.astro";
+import Person from "../components/people/Person.astro";
 
 const { frontmatter } = Astro.props;
 const { title } = frontmatter;
@@ -23,7 +23,7 @@ const trainers = await Astro.glob('../pages/people/trainers/*.md');
             {trainers
                 .filter((trainer) => trainer.frontmatter.workshop == frontmatter.slug)
                 .map((workshopTrainer) =>
-                <SpeakerFull {...workshopTrainer.frontmatter} bio={workshopTrainer.compiledContent()} />
+                <Person {...workshopTrainer.frontmatter} description={workshopTrainer.compiledContent()}/>
             )}
             </div>
 

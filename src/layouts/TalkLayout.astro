@@ -1,11 +1,11 @@
 ---
-import SpeakerFull from "../components/people/SpeakerFull.astro";
 import CommonLayout from "../layouts/CommonLayout.astro";
 import "../styles/index.scss";
 import Button from "../components/Button.astro";
+import Person from "../components/people/Person.astro";
 
 const { frontmatter } = Astro.props;
-const { talkTitle, tracks, talkTags, org } = frontmatter;
+const { talkTitle, tracks, talkTags, org, talkLevel, talkDuration } = frontmatter;
 const content = await Astro.slots.render('default');
 const abstract = content.split('//////')[0];
 const bio = content.split('//////')[1];
@@ -19,6 +19,10 @@ const bio = content.split('//////')[1];
 
             </div>
             <div class="space-y-3">
+                <strong>Audience:</strong>
+                {talkLevel}<br />
+                <strong>Length:</strong>
+                {talkDuration}<br />
                 <strong>Tags:</strong>
                 {talkTags.join(", ")}
                 <br /><strong>Org:</strong>
@@ -31,8 +35,10 @@ const bio = content.split('//////')[1];
                 )}
             </div>
             <div class="py-6">    
-                    <h3>Talk by</h3>
-                    <SpeakerFull {...frontmatter} talkTitle={false} bio={bio} />
+                <h3>Talk by</h3>
+                <Person {...frontmatter}>
+                    <div set:html={bio} />
+                </Person>
             </div>
             <div class="space-y-3">
                 <Button

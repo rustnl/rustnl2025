@@ -13,6 +13,7 @@ const talks = await Astro.glob("./talks/*.md");
                 {
                     talks.map((talk) => (
                         <Person
+                            tile
                             name={talk.frontmatter.name}
                             image={talk.frontmatter.image}
                             tracks={talk.frontmatter.tracks}

@@ -1,45 +1,110 @@
 ---
+import Icon from "../Icon.astro";
 
 interface Props {
-    name: string;
-    image: string;
-    description?: string;
+    name?: string;
+    image?: string;
     title?: string;
+    description?: string; // bio
     slug?: string;
     tracks?: Array<string>;
+    url?: string;
+    linkedin?: string;
+    twitter?: string;
+    mastodon?: string;
+    github?: string;
+    bluesky?: string;
+    tile?: boolean;
 }
 
-const { name, image, description, title, slug, tracks } = Astro.props;
+const {
+    name,
+    image,
+    description,
+    title,
+    slug,
+    tracks,
+    url,
+    linkedin,
+    twitter,
+    mastodon,
+    github,
+    bluesky,
+    tile = false,
+} = Astro.props;
 const imageFile = image ? image : "empty.png";
-const url = slug ? slug : "/speakers";
+const link = slug ? slug : "/speakers";
 ---
 
 <div class="person">
     <div class="image-container">
-        <a href={url}>
-            <img src={`/images/people/${imageFile}`} alt={`Picture of ${name}`} />
+        <a href={link}>
+            <img
+                src={`/images/people/${imageFile}`}
+                alt={`Picture of ${name}`}
+            />
         </a>
         <div class="tags">
             {
-                tracks && tracks.map( track => (
-                    <span class={`tag ${track}`}>
-                        <span>
-                            {track} track
+                tracks &&
+                    tracks.map((track) => (
+                        <span class={`tag ${track}`}>
+                            <span>{track} track</span>
                         </span>
-                    </span>
-
-                ))
+                    ))
             }
         </div>
     </div>
+    {!tile && (
+    <div class="socials">
+        {
+            linkedin && (
+                <a href={linkedin}>
+                    <Icon name="linkedin" />
+                </a>
+            )
+        }
+        {
+            twitter && (
+                <a href={twitter}>
+                    <Icon name="x" />
+                </a>
+            )
+        }
+        {
+            mastodon && (
+                <a href={mastodon}>
+                    <Icon name="mastodon" />
+                </a>
+            )
+        }
+        {
+            github && (
+                <a href={github}>
+                    <Icon name="github" />
+                </a>
+            )
+        }
+        {
+            bluesky && (
+                <a href={bluesky}>
+                    <Icon name="bluesky" />
+                </a>
+            )
+        }
+        {
+            url && (
+                <a href={url}>
+                    <Icon name="github" />
+                </a>
+            )
+        }
+    </div>
+    )}
     <div>
         <h4>{name}</h4>
-        { description && (
-            <p>{description}</p>
-        )}
-        { title && (
-            <p>{title}</p>
-        )}
+        {description && <span set:html={description}></span>}
+        {title && <p>{title}</p>}
         <slot />
     </div>
 </div>
@@ -118,6 +183,17 @@ const url = slug ? slug : "/speakers";
                         text-transform: lowercase;
                     }
                 }
+            }
+        }
+
+        .socials {
+            display: flex;
+            flex-direction: row;
+            gap: 0.3em;
+
+            @include breakpoint.wider_than(lg) {
+                font-size: variables.$font-size-md;
+                text-align: left !important;
             }
         }
     }
