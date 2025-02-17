@@ -11,7 +11,7 @@ talkDuration: 0 # 15 or 30 min
 
 speakers: [{
     name: "Julius Gustavsson",
-    image: "julius.jpeg",
+    image: "julius.png",
     title: "System architect at Volvo Cars",
     url: "",
     bluesky: "https://bsky.app/profile/j-gust.bsky.social",

@@ -203,7 +203,7 @@ const featured_talks = [alice, julius, pietro, alex, niko, miguel];
     </div>
     <Fragment slot="speakers">
         {featured_talks.map((talk) => (
-            <Person tile slug={talk.slug} tracks={talk.tracks} {...talk.speakers[0]} />
+            <Person tile link={talk.slug} tracks={talk.tracks} {...talk.speakers[0]} />
         ))}
     </Fragment>
 </HomeLayout>
