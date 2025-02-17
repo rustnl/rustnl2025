@@ -35,7 +35,24 @@ const {
   tile = false,
   hideName = false,
 } = Astro.props;
-const imageFile = image ? image : 'empty.png';
+
+const speakers = await Astro.glob('../../pages/talks/*.md');
+let github_of_person = null;
+
+outer: for (const i of speakers) {
+    for (const speaker of i.frontmatter.speakers) {
+        if (speaker.name === name && speaker.github && speaker.github !== "") {
+            if (!speaker.github.includes("https://github.com")) {
+                github_of_person = `https://github.com/${speaker.github}`;
+            }else {
+                github_of_person = speaker.github.replace(/\/$/g, '');
+            }
+            break outer;
+        }
+    }
+}
+
+const imageFile = image? `/images/people/${image}` : github_of_person? `${github_of_person}.png` : "/images/people/empty.png";
 ---
 
 <div class="person">
@@ -43,11 +60,11 @@ const imageFile = image ? image : 'empty.png';
     {
       link ? (
         <a href={link}>
-          <img src={`/images/people/${imageFile}`} alt={`Picture of ${name}`} />
+          <img src={`${imageFile}`} alt={`Picture of ${name}`} />
         </a>
       ) : (
         <div class="image">
-          <img src={`/images/people/${imageFile}`} alt={`Picture of ${name}`} />
+          <img src={`${imageFile}`} alt={`Picture of ${name}`} />
         </div>
       )
     }

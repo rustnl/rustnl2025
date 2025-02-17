@@ -50,17 +50,19 @@ const bio = content.split(sep)[1].replace(/^\n|\n$/g, '');
               </div>
             </div>
           ))
-        }
-        <Button
-          link="https://www.eventbrite.nl/e/rustweek-2025-tickets-1001676961757?aff=oddtdtcreator"
-        >
-          Get your ticket
-        </Button>
-        <Button
-            link=`/timetable#${url.split('/').pop()}`
-        >
-            Find in timetable
-        </Button>
+          }
+        <div class="buttons">
+            <Button
+              link="https://www.eventbrite.nl/e/rustweek-2025-tickets-1001676961757?aff=oddtdtcreator"
+            >
+              Get your ticket
+            </Button>
+            <Button
+                link=`/timetable#${url.split('/').pop()}`
+            >
+                Find in timetable
+            </Button>
+        </div>
       </div>
     </div>
   </section>
@@ -119,5 +121,17 @@ const bio = content.split(sep)[1].replace(/^\n|\n$/g, '');
 
 h1 {
   padding: 0;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+
+    @include breakpoint.smaller_than(lg) {
+        flex-direction: column;
+    }
 }
 </style>
