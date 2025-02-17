@@ -7,7 +7,8 @@ const talks = await Astro.glob('./talks/*.md');
 ---
 
 <CommonLayout title="Speakers" header="Speakers" withLogo>
-  <section id="speakers" class="speakers">
+  <img data-pagefind-meta="image[src]" style="display: none;">
+  <section id="speakers" class="speakers" >
     <div class="space-y-6">
       <PersonList>
         {
@@ -39,6 +40,7 @@ const talks = await Astro.glob('./talks/*.md');
 
   .speakers {
     padding-top: 2em;
+    width: min(70em, 95vw);
   }
 
   p {
