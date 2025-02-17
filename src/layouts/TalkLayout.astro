@@ -40,9 +40,10 @@ const bio = content.split(sep)[1].replace(/^\n|\n$/g, '');
         {
           frontmatter.speakers.map((speaker: any) => (
             <div class="speaker">
-              <div>
-                <Person {...speaker} />
+              <div class="picture">
+                <Person {...speaker} hideName />
               </div>
+              <h4 class="name">{speaker.name}</h4>
               <div class="bio">
                 <div set:html={bio} />
                 {speaker.title}
@@ -84,18 +85,30 @@ const bio = content.split(sep)[1].replace(/^\n|\n$/g, '');
 
       display: grid;
       grid-template-columns: 2fr 3fr;
-      gap: 2em;
+      grid-template-areas:
+        "picture name"
+        "picture bio";
 
      @include breakpoint.smaller_than(lg) {
         display: flex;
         flex-direction: column;
      }
+     @include breakpoint.wider_than(lg) {
+        gap: 0.5em 2em;
+     }
 }
 
 .bio {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
+    grid-area: bio;
+}
+.name {
+    padding: 0;
+    margin: 0;
+    grid-area: name;
+    font-size: variables.$font-size-lg;
+}
+.picture {
+    grid-area: picture;
 }
 
 .kicker {
