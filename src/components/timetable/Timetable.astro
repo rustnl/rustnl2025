@@ -71,7 +71,9 @@ const secondary = "room 2";
     <slot></slot>
 </div>
 
-<style define:vars={{ times }}>
+<style define:vars={{ times }} lang="scss">
+@use "../../styles/breakpoint.scss";
+
     .schedule {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -81,5 +83,10 @@ const secondary = "room 2";
 
         gap: 16px;
         width: min(90vw, 85ch);
+
+        @include breakpoint.smaller_than(md) {
+            display: flex;
+            flex-direction: column;
+        }
     }
 </style>
