@@ -4,8 +4,10 @@
 .container {
     margin-inline: auto;
     padding-inline: variables.space(4);
-    /* width: min(100%, 96rem); */
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     @include breakpoint.wider_than(md) {
         padding-inline: variables.space(6);
