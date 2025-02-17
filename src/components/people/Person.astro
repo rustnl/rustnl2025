@@ -89,7 +89,7 @@ const imageFile = image ? image : 'empty.png';
         )}
         {url && (
           <a href={url}>
-            <Icon name="github" />
+            <Icon name="website" />
           </a>
         )}
       </div>
@@ -115,7 +115,9 @@ const imageFile = image ? image : 'empty.png';
     a {
       color: inherit;
       text-decoration: underline;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
     h4 {
@@ -133,10 +135,11 @@ const imageFile = image ? image : 'empty.png';
 
     .image-container {
       position: relative;
+      max-width: 30rem;
+      align-self: center;
       a,
       .image {
         aspect-ratio: 1/1;
-        align-self: center;
         height: auto;
         vertical-align: middle;
         width: 100%;

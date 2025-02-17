@@ -26,7 +26,7 @@ const {
     striped = false,
 }: Props = Astro.props;
 
-const matches = import.meta.glob("../pages/talks/*.md", { eager: true });
+const matches = import.meta.glob("../../pages/talks/*.md", { eager: true });
 const files = Object.values(matches);
 let file: any = null;
 if (talk !== null) {
