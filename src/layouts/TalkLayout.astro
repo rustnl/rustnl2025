@@ -1,51 +1,79 @@
 ---
-import CommonLayout from "../layouts/CommonLayout.astro";
-import "../styles/index.scss";
-import Button from "../components/Button.astro";
-import Person from "../components/people/Person.astro";
+import CommonLayout from '../layouts/CommonLayout.astro';
+import '../styles/index.scss';
+import Button from '../components/Button.astro';
+import Person from '../components/people/Person.astro';
 
 const { frontmatter } = Astro.props;
-const { talkTitle, tracks, talkTags, org, talkLevel, talkDuration } = frontmatter;
+const { talkTitle, tracks, talkTags, org, talkLevel, talkDuration } =
+  frontmatter;
 const content = await Astro.slots.render('default');
 const abstract = content.split('//////')[0];
 const bio = content.split('//////')[1];
 ---
 
-<CommonLayout title={talkTitle} header={talkTitle} withLogo>
-    <section class="container md:grid md:cols-12 py-12">
-        <div class="md:col-start-3 md:col-end-11">
-            <!-- <slot /> -->
-            <div set:html={abstract}>
+<CommonLayout title={talkTitle} withLogo>
+  <div class="container text-center" slot="header">
+    <div class="kicker">Workshop</div>
+    <h1>
+      {talkTitle}
+    </h1>
+  </div>
 
+  <section class="container md:grid md:cols-12 py-12">
+    <div class="md:col-start-3 md:col-end-11">
+      <!-- <slot /> -->
+      <div set:html={abstract} />
+      <div class="space-y-3">
+        {
+          talkLevel && (
+            <Fragment>
+              <strong>Audience:</strong> {talkLevel}
+            </Fragment>
+          )
+        }
+      </div>
+      <div class="py-6">
+        <h3>Talk by</h3>
+        {
+          frontmatter.speakers.map((speaker: any) => (
+            <div class="grid md:cols-3 speaker">
+              <div class="col-1">
+                <Person {...speaker} />
+              </div>
+              <div class="col-2 bio">
+                <div set:html={bio} />
+                {speaker.title}
+              </div>
             </div>
-            <div class="space-y-3">
-                <strong>Audience:</strong>
-                {talkLevel}<br />
-                <strong>Length:</strong>
-                {talkDuration}<br />
-                <strong>Tags:</strong>
-                {talkTags.join(", ")}
-                <br /><strong>Org:</strong>
-                {org}
-                <br /><strong>Stage:</strong>
-                {tracks.map(( track: String )  =>
-                    <Fragment>
-                        {track} 
-                    </Fragment>
-                )}
-            </div>
-            <div class="py-6">    
-                <h3>Talk by</h3>
-                <Person {...frontmatter}>
-                    <div set:html={bio} />
-                </Person>
-            </div>
-            <div class="space-y-3">
-                <Button
-                    link="https://www.eventbrite.nl/e/rustweek-2025-tickets-1001676961757?aff=oddtdtcreator"
-                >Get your ticket</Button>
-                <br /><br />
-            </div>
-        </div>
-    </section>
+          ))
+        }
+        <Button
+          link="https://www.eventbrite.nl/e/rustweek-2025-tickets-1001676961757?aff=oddtdtcreator"
+        >
+          Get your ticket
+        </Button>
+      </div>
+    </div>
+  </section>
 </CommonLayout>
+
+<style lang="scss">
+  @use '../styles/variables.scss';
+
+  .speaker {
+    border-bottom: 1px solid variables.$color-red-400;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .kicker {
+    color: variables.$color-red-400;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    padding: 0;
+  }
+</style>

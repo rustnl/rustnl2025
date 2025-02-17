@@ -6,13 +6,20 @@ import Hero from '../components/page/Hero.astro';
 import '../styles/index.scss';
 
 interface Props {
+  small?: boolean;
   title: string;
   header?: string;
   withLogo?: boolean;
   withoutMenu?: boolean;
 }
 
-const { title, header, withLogo = false, withoutMenu = false } = Astro.props;
+const {
+  small,
+  title,
+  header,
+  withLogo = false,
+  withoutMenu = false,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -29,9 +36,9 @@ const { title, header, withLogo = false, withoutMenu = false } = Astro.props;
     </Hero>
 
     <section>
-      {header ? <h1>{header}</h1> : <slot name="header" />}
+      {header ? <h1 class="container">{header}</h1> : <slot name="header" />}
       <section>
-        <section class="main">
+        <section class={small ? 'main' : 'container'}>
           <slot />
         </section>
 
