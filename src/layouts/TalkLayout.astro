@@ -7,9 +7,11 @@ import Person from '../components/people/Person.astro';
 const { frontmatter } = Astro.props;
 const { talkTitle, tracks, talkTags, org, talkLevel, talkDuration } =
   frontmatter;
+
+const sep = /\/\/\/\/\/\/.*/;
 const content = await Astro.slots.render('default');
-const abstract = content.split('//////')[0];
-const bio = content.split('//////')[1];
+const abstract = content.split(sep)[0];
+const bio = content.split(sep)[1].replace(/^\n|\n$/g, '');
 ---
 
 <CommonLayout title={talkTitle} withLogo>
@@ -37,11 +39,11 @@ const bio = content.split('//////')[1];
         <h3>Talk by</h3>
         {
           frontmatter.speakers.map((speaker: any) => (
-            <div class="grid md:cols-3 speaker">
-              <div class="col-1">
+            <div class="speaker">
+              <div>
                 <Person {...speaker} />
               </div>
-              <div class="col-2 bio">
+              <div class="bio">
                 <div set:html={bio} />
                 {speaker.title}
               </div>
@@ -58,22 +60,46 @@ const bio = content.split('//////')[1];
   </section>
 </CommonLayout>
 
-<style lang="scss">
-  @use '../styles/variables.scss';
-
-  .speaker {
-    border-bottom: 1px solid variables.$color-red-400;
-    padding-bottom: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .kicker {
-    color: variables.$color-red-400;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-
-  h1 {
+<style is:global>
+.bio p {
+    margin: 0;
     padding: 0;
-  }
+    min-height: 0;
+}
+</style>
+
+<style lang="scss">
+@use '../styles/variables.scss';
+@use '../styles/breakpoint.scss';
+
+.speaker {
+      border-bottom: 1px solid variables.$color-red-400;
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
+
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: 2em;
+
+     @include breakpoint.smaller_than(lg) {
+        display: flex;
+        flex-direction: column;
+     }
+}
+
+.bio {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.kicker {
+  color: variables.$color-red-400;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h1 {
+  padding: 0;
+}
 </style>
