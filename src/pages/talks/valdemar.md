@@ -1,21 +1,26 @@
 ---
 layout: "../../layouts/TalkLayout.astro"
-name: "Valdemar Erk"
-image: "valdemar.png" # images go in public/images/people
-title: ""
-org: ""
+
 tracks: 
  - main
 talkTitle: "Garfields worst nightmare (or how a API difference caused a bad bug)"
 talkLevel: "All"
 talkTags: ["Rust", "Garfield", "Comic", "Postmortem", "API"]
 talkDuration: 15 # 15 or 30 min
-url: "https://blog.erk.dev/"
-bluesky: ""
-linkedin: ""
-twitter: ""
-mastodon: ""
-github: "https://github.com/Erk-"
+
+
+speakers: [{
+    name: "Valdemar Erk",
+    image: "valdemar.png",
+    title: "",
+    org: "",
+    url: "https://blog.erk.dev/",
+    bluesky: "",
+    linkedin: "",
+    twitter: "",
+    mastodon: "",
+    github: "https://github.com/Erk-",
+}]
 ---
 
 This talk will present a postmortem of the worst bug you can imagine happen for a bot which only feature is to post comics: The wrong comic being posted.

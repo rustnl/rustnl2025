@@ -1,21 +1,25 @@
 ---
 layout: "../../layouts/TalkLayout.astro"
-name: "Stefan Baumgartner"
-image: "stefan.jpeg" # images go in public/images/people
-title: ""
-org: "oida.dev, Dynatrace"
+
 tracks: 
  - main
 talkTitle: "Refactoring in Rust"
 talkLevel: "Intermediate"
 talkTags: ["traits", "refactoring"] 
 talkDuration: 30 # 15 or 30 min
-url: "https://oida.dev"
-bluesky: "https://bsky.app/profile/deadparrot.dev"
-linkedin: ""
-twitter: ""
-mastodon: "https://mastodon.social/@deadparrot"
-github: "https://github.com/ddprrt"
+
+speakers: [{
+    name: "Stefan Baumgartner",
+    image: "stefan.jpeg",
+    title: "",
+    org: "oida.dev, Dynatrace",
+    url: "https://oida.dev",
+    bluesky: "https://bsky.app/profile/deadparrot.dev",
+    linkedin: "",
+    twitter: "",
+    mastodon: "https://mastodon.social/@deadparrot",
+    github: "https://github.com/ddprrt",
+}]
 ---
 
 We refactor a Rust program that has just left the prototyping stage into code that is a delight to read and follow, easy to use, easy to maintain, and that plays along nicely with the ecosystem, all by learning Rust-specific refactoring techniques.

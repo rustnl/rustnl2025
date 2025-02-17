@@ -1,9 +1,6 @@
 ---
 layout: "../../layouts/TalkLayout.astro"
-name: "Niko Matsakis"
-image: "niko.png" # images go in public/images/people
-title: "Senior Principal Engineer at AWS"
-org: ""
+
 tracks: 
  - project
  - industry
@@ -11,12 +8,19 @@ talkTitle: "Our Vision for Rust"
 talkLevel: "All"
 talkTags: []
 talkDuration: 15 # 15 or 30 min
-url: ""
-bluesky: "https://bsky.app/profile/nikomatsakis.com"
-linkedin: "https://www.linkedin.com/in/nicholas-matsakis-615614/"
-twitter: "https://x.com/nikomatsakis"
-mastodon: ""
-github: ""
+
+speakers: [{
+    name: "Niko Matsakis",
+    image: "niko.png",
+    title: "Senior Principal Engineer at AWS",
+    org: "",
+    url: "",
+    bluesky: "https://bsky.app/profile/nikomatsakis.com",
+    linkedin: "https://www.linkedin.com/in/nicholas-matsakis-615614/",
+    twitter: "https://x.com/nikomatsakis",
+    mastodon: "",
+    github: "",
+}]
 ---
 
 TBA

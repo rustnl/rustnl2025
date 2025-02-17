@@ -7,28 +7,32 @@ const talks = await Astro.glob('./talks/*.md');
 ---
 
 <CommonLayout title="Speakers" header="Speakers" withLogo>
-  <section id="speakers" class="speakers">
-    <div class="container space-y-6">
-      <PersonList>
-        {
-          talks.map((talk) => (
-            <Person
-              tile
-              name={talk.frontmatter.name}
-              image={talk.frontmatter.image}
-              tracks={talk.frontmatter.tracks}
-              link={talk.url}
-            >
-              <p>
-                <em>Talk</em>:
-                <a href={talk.url}>{talk.frontmatter.talkTitle}</a>
-              </p>
-            </Person>
-          ))
-        }
-      </PersonList>
-    </div>
-  </section>
+    <section id="speakers" class="speakers">
+        <div class="container space-y-6">
+            <PersonList>
+                {
+                    talks.map((talk: any) => {
+                        return talk.frontmatter.speakers.map((speaker: any) => (
+                            <Person
+                                tile
+                                name={speaker.name}
+                                image={speaker.image}
+                                tracks={talk.frontmatter.tracks}
+                                slug={talk.url}
+                            >
+                                <p>
+                                    <em>Talk</em>:
+                                    <a href={talk.url}>
+                                        {talk.frontmatter.talkTitle}
+                                    </a>
+                                </p>
+                            </Person>
+                        ));
+                    })
+                }
+            </PersonList>
+        </div>
+    </section>
 </CommonLayout>
 
 <style lang="scss">

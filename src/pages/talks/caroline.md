@@ -1,21 +1,23 @@
 ---
 layout: "../../layouts/TalkLayout.astro"
-name: "Caroline Morton"
-image: "caroline.jpeg" # images go in public/images/people
-title: ""
-org: "Parakeet Consulting"
 tracks: 
  - main
 talkTitle: "Healthy Data, Rusty Code: Epidemiology Meets Modern Systems Programming"
 talkLevel: "All"
 talkTags: ["epidemiology", "scientific programming", "rust", "py03"]
 talkDuration: 30 # 15 or 30 min
-url: "https://www.carolinemorton.co.uk/"
-bluesky: ""
-linkedin: "https://www.linkedin.com/in/caroline-morton-0/"
-twitter: ""
-mastodon: ""
-github: "https://github.com/CarolineMorton"
+speakers: [{
+    name: "Caroline Morton",
+    image: "caroline.jpeg",
+    title: "",
+    org: "Parakeet Consulting",
+    url: "https://www.carolinemorton.co.uk/",
+    bluesky: "",
+    linkedin: "https://www.linkedin.com/in/caroline-morton-0/",
+    twitter: "",
+    mastodon: "",
+    github: "https://github.com/CarolineMorton",
+}]
 ---
 
 Epidemiology relies on codelists for health data, but managing them can be error-prone. This talk introduces codelist-tools: open-source Rust libraries with Python/R bindings, offering a safe, efficient way to manage codelists and making modern systems programming accessible to non-Rust users.

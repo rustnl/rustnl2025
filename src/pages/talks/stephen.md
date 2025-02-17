@@ -1,21 +1,25 @@
 ---
 layout: "../../layouts/TalkLayout.astro"
-name: "Stephen Buchanan"
-image: "stephen.jpeg" # images go in public/images/people
-title: ""
-org: "Random Studio"
+
 tracks: 
  - main
 talkTitle: "Creative coding or serious engineering: why not both?"
 talkLevel: "All"
 talkTags: ["media", "design", "embedded systems", "game development", "creative industry"]
 talkDuration: 15 # 15 or 30 min
-url: "https://random.studio/"
-bluesky: ""
-linkedin: "https://www.linkedin.com/in/stephendbuchanan/"
-twitter: ""
-mastodon: ""
-github: "https://github.com/anselanza"
+
+speakers: [{
+    name: "Stephen Buchanan",
+    image: "stephen.jpeg",
+    title: "",
+    org: "Random Studio",
+    url: "https://random.studio/",
+    bluesky: "",
+    linkedin: "https://www.linkedin.com/in/stephendbuchanan/",
+    twitter: "",
+    mastodon: "",
+    github: "https://github.com/anselanza",
+}]
 ---
 
 Creative Technologist: a hybrid engineer/artist making interactive installations, exhibitions, generative performances and more. Behind all this: hacky spaghetti code or sophisticated integration of software and hardware? Turns out, Rust might be the perfect tool for such idiosyncratic developers!

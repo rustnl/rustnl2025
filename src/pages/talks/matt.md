@@ -1,21 +1,25 @@
 ---
 layout: "../../layouts/TalkLayout.astro"
-name: "Matt Campbell"
-image: "" # images go in public/images/people
-title: ""
-org: ""
+
 tracks: 
  - main
 talkTitle: "AccessKit: reusable UI accessibility"
 talkLevel: "All"
 talkTags: ["ui and mobile"]
 talkDuration: 30 # 15 or 30 min
-url: "https://accesskit.dev/"
-bluesky: ""
-linkedin: ""
-twitter: ""
-mastodon: "https://toot.cafe/@matt"
-github: "https://github.com/mwcampbell"
+
+speakers: [{
+    name: "Matt Campbell",
+    image: null,
+    title: "",
+    org: "",
+    url: "https://accesskit.dev/",
+    bluesky: "",
+    linkedin: "",
+    twitter: "",
+    mastodon: "https://toot.cafe/@matt",
+    github: "https://github.com/mwcampbell",
+}]
 ---
 
 Rust's modularity enables reusable, cross-platform UI accessibility infrastructure. And Rust's minimal runtime overhead enables reuse across languages as well.

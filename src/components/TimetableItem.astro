@@ -36,9 +36,8 @@ if (talk !== null) {
 }
 
 const talk_title = title ? title : file ? file.frontmatter.talkTitle : "ERROR";
-const speaker = file?.frontmatter?.name;
-const image = file ? (file?.frontmatter?.image || "empty.png") : null;
 const url = file?.url;
+const speakers = file?.frontmatter?.speakers ?? [];
 ---
 
 <TimetableBlock
@@ -52,18 +51,18 @@ const url = file?.url;
 >
     <div>
         <div class="title">{talk_title}</div>
-        <div class="speaker">
-            {
-                image && (
+        {
+            speakers.map((speaker: any) => (
+                <div class="speaker">
                     <img
-                    class="speaker-img"
-                    src={`/images/people/${image}`}
-                    alt={`Picture of ${speaker}`}
+                        class="speaker-img"
+                        src={`/images/people/${speaker.image ?? "empty.png"}`}
+                        alt={`Picture of ${speaker.name}`}
                     />
-                )
-            }
-            <p>{speaker}</p>
-        </div>
+                    <p>{speaker.name}</p>
+                </div>
+            ))
+        }
     </div>
 </TimetableBlock>
 

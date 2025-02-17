@@ -1,21 +1,25 @@
 ---
 layout: "../../layouts/TalkLayout.astro"
-name: "Martin Larralde"
-image: "martin.jpeg" # images go in public/images/people
-title: ""
-org: "Leiden University Medical Center"
+
 tracks: 
  - main
 talkTitle: "Gigabytes per second of DNA: using Rust for matching genomic motifs"
 talkLevel: "Intermediate"
 talkTags: ["bioinformatics", "genomics", "simd", "science"]
 talkDuration: 15 # 15 or 30 min
-url: "https://zellerlab.github.io/team/larralde-martin"
-bluesky: ""
-linkedin: ""
-twitter: ""
-mastodon: ""
-github: "https://github.com/althonos"
+
+speakers: [{
+    name: "Martin Larralde",
+    image: "martin.jpeg",
+    title: "",
+    org: "Leiden University Medical Center",
+    url: "https://zellerlab.github.io/team/larralde-martin",
+    bluesky: "",
+    linkedin: "",
+    twitter: "",
+    mastodon: "",
+    github: "https://github.com/althonos",
+}]
 ---
 
 In a classic case of "Rewrite It In Rust", implementing a novel

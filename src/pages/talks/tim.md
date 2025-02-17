@@ -1,21 +1,25 @@
 ---
 layout: "../../layouts/TalkLayout.astro"
-name: "Tim de Jager"
-image: "tim.jpeg" # images go in public/images/people
-title: ""
-org: "Prefix.dev"
+
 tracks: 
  - deep_dive
 talkTitle: "SAT for Rustaceans"
 talkLevel: "Intermediate"
 talkTags: ["tooling", "educational"]
 talkDuration: 30 # 15 or 30 min
-url: ""
-bluesky: ""
-linkedin: "https://www.linkedin.com/in/tim-de-jager-150342b0/"
-twitter: ""
-mastodon: ""
-github: "https://github.com/tdejager/"
+
+speakers: [{
+    name: "Tim de Jager",
+    image: "tim.jpeg",
+    title: "",
+    org: "Prefix.dev",
+    url: "",
+    bluesky: "",
+    linkedin: "https://www.linkedin.com/in/tim-de-jager-150342b0/",
+    twitter: "",
+    mastodon: "",
+    github: "https://github.com/tdejager/",
+}]
 ---
 
 We open-sourced a SAT solver, Resolvo, for our package manager. In this talk we'll take you on a journey where we show you how we made this performant, ergonomic, sync/async with a single code path. Starting with: What is SAT, why should I care and moving on towards more advanced SAT+Rust patterns.

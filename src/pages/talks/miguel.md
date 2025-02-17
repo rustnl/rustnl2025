@@ -1,21 +1,25 @@
 ---
 layout: "../../layouts/TalkLayout.astro"
-name: "Miguel Ojeda"
-image: "miguel_ojeda.jpg" # images go in public/images/people
-title: "Maintainer of Rust for Linux"
-org: "Rust for Linux"
+
 tracks: 
  - main
 talkTitle: "TBA"
 talkLevel: ""
 talkTags: []
 talkDuration: 30 # 15 or 30 min
-url: "https://rust-for-linux.com/"
-bluesky: ""
-linkedin: "https://www.linkedin.com/in/ojedamiguel/"
-twitter: ""
-mastodon: ""
-github: "https://github.com/ojeda"
+
+speakers: [{
+    name: "Miguel Ojeda",
+    image: "miguel_ojeda.jpg",
+    title: "Maintainer of Rust for Linux",
+    org: "Rust for Linux",
+    url: "https://rust-for-linux.com/",
+    bluesky: "",
+    linkedin: "https://www.linkedin.com/in/ojedamiguel/",
+    twitter: "",
+    mastodon: "",
+    github: "https://github.com/ojeda",
+}]
 ---
 
 TBA

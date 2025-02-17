@@ -1,21 +1,25 @@
 ---
 layout: "../../layouts/TalkLayout.astro"
-name: "Dion Dokter"
-image: "dion.jpeg" # images go in public/images/people
-title: ""
-org: "Tweede golf"
+
 tracks: 
  - deep_dive
 talkTitle: "Codegen your problems away - device-driver toolkit"
 talkLevel: "Intermediate"
 talkTags: ["codegen", "macros", "drivers", "embedded systems", "tooling"]
 talkDuration: 30 # 15 or 30 min
-url: "https://tweedegolf.nl/en/about/23/dion/blogs"
-bluesky: "https://bsky.app/profile/diondokter.bsky.social"
-linkedin: ""
-twitter: ""
-mastodon: "https://fosstodon.org/@diondokter"
-github: "https://github.com/diondokter"
+
+speakers: [{
+    name: "Dion Dokter",
+    image: "dion.jpeg",
+    title: "",
+    org: "Tweede golf",
+    url: "https://tweedegolf.nl/en/about/23/dion/blogs",
+    bluesky: "https://bsky.app/profile/diondokter.bsky.social",
+    linkedin: "",
+    twitter: "",
+    mastodon: "https://fosstodon.org/@diondokter",
+    github: "https://github.com/diondokter",
+}]
 ---
 
 Are you having to choose between writing your device driver quickly or writing it well?

@@ -1,21 +1,25 @@
 ---
 layout: "../../layouts/TalkLayout.astro"
-name: "Noah Hüsser"
-image: "noah.jpeg" # images go in public/images/people
-title: ""
-org: ""
+
 tracks: 
  - deep_dive
 talkTitle: "Embedded tooling worthy of 2025"
 talkLevel: "All"
 talkTags: ["Rust", "embedded systems", "webapp", "tooling"]
 talkDuration: 30 # 15 or 30 min
-url: "https://probe.rs"
-bluesky: ""
-linkedin: "https://www.linkedin.com/in/noah-huesser/"
-twitter: ""
-mastodon: ""
-github: "https://github.com/Yatekii"
+
+speakers: [{
+    name: "Noah Hüsser",
+    image: "noah.jpeg",
+    title: "",
+    org: "",
+    url: "https://probe.rs",
+    bluesky: "",
+    linkedin: "https://www.linkedin.com/in/noah-huesser/",
+    twitter: "",
+    mastodon: "",
+    github: "https://github.com/Yatekii",
+}]
 ---
 
 This talk is about probe-rs, the embedded toolkit, that is on track to become the new defacto standard for embedded development.

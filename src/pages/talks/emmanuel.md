@@ -1,20 +1,34 @@
 ---
 layout: "../../layouts/TalkLayout.astro"
-name: "Emmanuel Baccelli"
-image: "emmanuel.jpg" # images go in public/images/people
-title: ""
-org: "Inria & Freie Universität Berlin"
 tracks: 
  - deep_dive
 talkTitle: "Ariel OS - An Open Source Embedded Rust OS for Networked Multi-Core Microcontrollers"
 talkLevel: "Intermediate"
 talkTags: ["embedded systems"]
 talkDuration: 15 # 15 or 30 min
-url: "https://emmanuelbaccelli.com/"
-linkedin: ""
-twitter: ""
-mastodon: ""
-github: ""
+speakers: [
+    {
+        name: "Emmanuel Baccelli",
+        title: "",
+        org: "Inria & Freie Universität Berlin",
+        image: "emmanuel.jpg",
+        url: "https://emmanuelbaccelli.com/",
+        linkedin: "",
+        twitter: "",
+        mastodon: "",
+        github: "",
+    },
+    {
+        name: "Koen Zandberg",
+        title: "",
+        org: "Inria & Freie Universität Berlin",
+        url: "https://emmanuelbaccelli.com/",
+        linkedin: "",
+        twitter: "",
+        mastodon: "",
+        github: "https://github.com/bergzand",
+    },
+]
 ---
 
 The Rust Embedded ecosystem is alive & kicking, but trails the C world regarding integration. Enter Ariel OS, integrating the best of Rust on microcontrollers (Embassy, esp-hal, defmt…) and adding missing OS features (multi-core scheduler, metabuild system…) for safe, ergonomic embedded development.
