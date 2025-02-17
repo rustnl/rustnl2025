@@ -49,6 +49,7 @@ const end_time = `${tmp.getHours()}:${minutes}`;
         gridRowEnd: `span ${duration / 5}`,
     }}
     href={url}
+    id={url? url.split('/').pop():null}
 >
     <div class="meta">
         <div>

@@ -5,7 +5,7 @@ import Button from '../components/Button.astro';
 import Person from '../components/people/Person.astro';
 
 const { frontmatter } = Astro.props;
-const { talkTitle, tracks, talkTags, org, talkLevel, talkDuration } =
+const { talkTitle, tracks, talkTags, org, talkLevel, talkDuration, url } =
   frontmatter;
 
 const sep = /\/\/\/\/\/\/.*/;
@@ -54,6 +54,11 @@ const bio = content.split(sep)[1].replace(/^\n|\n$/g, '');
           link="https://www.eventbrite.nl/e/rustweek-2025-tickets-1001676961757?aff=oddtdtcreator"
         >
           Get your ticket
+        </Button>
+        <Button
+            link=`/timetable#${url.split('/').pop()}`
+        >
+            Find in timetable
         </Button>
       </div>
     </div>
