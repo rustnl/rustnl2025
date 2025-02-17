@@ -1,5 +1,5 @@
 ---
-import TimetableBlock from './TimetableBlock.astro';
+import Block from './Block.astro';
 
 interface Props {
     room: string;
@@ -22,7 +22,7 @@ const {room, track, time, duration, color, talks, striped = false }: Props = Ast
 const time_underscore = time.replace(":", "_");
 ---
 
-<TimetableBlock room={room} track={track} time={time} duration={duration} color={color} striped={striped} >
+<Block room={room} track={track} time={time} duration={duration} color={color} striped={striped} >
     <div class="talks">
     {talks.map((talk) => (
         <div class:list={["subitem", color]}>
@@ -36,7 +36,7 @@ const time_underscore = time.replace(":", "_");
         </div>
     ))}
     </div>
-</TimetableBlock>
+</Block>
 
 <style>
     .title {

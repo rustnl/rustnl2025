@@ -1,6 +1,6 @@
 ---
 import { EMPTY_PATH } from "astro:schema";
-import TimetableBlock from "./TimetableBlock.astro";
+import Block from "./Block.astro";
 
 interface Props {
     talk?: string;
@@ -40,7 +40,7 @@ const url = file?.url;
 const speakers = file?.frontmatter?.speakers ?? [];
 ---
 
-<TimetableBlock
+<Block
     room={room}
     track={track}
     time={time}
@@ -64,7 +64,7 @@ const speakers = file?.frontmatter?.speakers ?? [];
             ))
         }
     </div>
-</TimetableBlock>
+</Block>
 
 <style>
     .title {

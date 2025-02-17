@@ -1,8 +1,9 @@
 ---
-import TimetableItem from "../components/TimetableItem.astro";
-import TimetableMultiItem from "../components/TimetableMultiItem.astro";
-import TimetableDivider from "../components/TimetableDivider.astro";
-import Timetable from "../components/Timetable.astro";
+import CommonLayout from "../layouts/CommonLayout.astro";
+import Item from "./Item.astro";
+import MultiItem from "./MultiItem.astro";
+import Divider from "./Divider.astro";
+import Timetable from "./Timetable.astro";
 
 const main = "Main";
 const secondary = "Room 2";
@@ -10,8 +11,8 @@ const tertiary = "Room 3";
 ---
 
 <Timetable>
-    <TimetableDivider start="9:00" end="9:30">Doors open</TimetableDivider>
-    <TimetableItem
+    <Divider start="9:00" end="9:30">Doors open</Divider>
+    <Item
         title="Opening"
         color="yellow"
         track={1}
@@ -19,48 +20,33 @@ const tertiary = "Room 3";
         duration={10}
         room={main}
     />
-    <TimetableItem
-        talk="miguel"
+    <Item
+        talk="alex"
         color="yellow"
         track={1}
         time="9:40"
         duration={40}
         room={main}
     />
-    <TimetableItem
-        talk="matt"
+    <Item
+        talk="rose"
         color="yellow"
         track={1}
         time="10:20"
         duration={40}
         room={main}
     />
-    <TimetableItem
-        title="Opening"
+    <Item
+        title="Ecosystem track (TBA)"
         color="blue"
         track={2}
         time="9:30"
-        duration={10}
+        duration={90}
         room={secondary}
+        striped
     />
-    <TimetableItem
-        talk="fabian"
-        color="blue"
-        track={2}
-        time="9:40"
-        duration={40}
-        room={secondary}
-    />
-    <TimetableItem
-        talk="jack"
-        color="blue"
-        track={2}
-        time="10:20"
-        duration={40}
-        room={secondary}
-    />
-    <TimetableItem
-        title="Project track (TBA)"
+    <Item
+        title="Industry track (TBA)"
         color="red"
         track={3}
         time="9:30"
@@ -68,41 +54,34 @@ const tertiary = "Room 3";
         room={tertiary}
         striped
     />
-    <TimetableDivider start="11:00" end="11:30"> Break </TimetableDivider>
-    <TimetableItem
-        talk="michal"
+    <Divider start="11:00" end="11:30"> Break </Divider>
+    <Item
+        talk="raph"
         color="yellow"
         track={1}
         time="11:30"
         duration={40}
         room={main}
     />
-    <TimetableItem
-        talk="martin"
+    <Item
+        talk="shane"
         color="yellow"
         track={1}
         time="12:10"
         duration={20}
         room={main}
     />
-    <TimetableItem
-        talk="waffle"
+    <Item
+        title="Ecosystem track (TBA)"
         color="blue"
         track={2}
         time="11:30"
-        duration={40}
-        room={secondary}
+        duration={60}
+        room={tertiary}
+        striped
     />
-    <TimetableItem
-        talk="emmanuel"
-        color="blue"
-        track={2}
-        time="12:10"
-        duration={20}
-        room={secondary}
-    />
-    <TimetableItem
-        title="Project track (TBA)"
+    <Item
+        title="Industry track (TBA)"
         color="red"
         track={3}
         time="11:30"
@@ -110,57 +89,72 @@ const tertiary = "Room 3";
         room={tertiary}
         striped
     />
-    <TimetableDivider start="12:30" end="13:30"> Lunch </TimetableDivider>
-    <TimetableItem
-        talk="ciara"
+    <Divider start="12:30" end="13:30"> Lunch </Divider>
+    <Item
+        talk="joe"
         color="yellow"
         track={1}
         time="13:30"
         duration={40}
         room={main}
     />
-    <TimetableItem
-        talk="waqar"
+    <Item
+        talk="caroline"
         color="yellow"
         track={1}
         time="14:10"
         duration={40}
         room={main}
     />
-    <TimetableItem
-        talk="valdemar"
+    <Item
+        talk="stephen"
         color="yellow"
         track={1}
         time="14:50"
         duration={20}
         room={main}
     />
-    <TimetableItem
-        talk="tim"
-        color="blue"
+    <MultiItem
+        talks={Array(3).fill({
+            speaker: "",
+            title: "GOSIM spotlight",
+            image: "",
+        })}
+        color="purple"
         track={2}
         time="13:30"
         duration={40}
         room={secondary}
+        striped
     />
-    <TimetableItem
-        talk="noah"
-        color="blue"
+    <MultiItem
+        talks={Array(3).fill({
+            speaker: "",
+            title: "GOSIM spotlight",
+            image: "",
+        })}
+        color="purple"
         track={2}
         time="14:10"
         duration={40}
         room={secondary}
+        striped
     />
-    <TimetableItem
-        talk="conrad"
-        color="blue"
+    <MultiItem
+        talks={Array(1).fill({
+            speaker: "",
+            title: "GOSIM spotlight",
+            image: "",
+        })}
+        color="purple"
         track={2}
         time="14:50"
         duration={20}
         room={secondary}
+        striped
     />
-    <TimetableItem
-        title="Project track (TBA)"
+    <Item
+        title="Industry track (TBA)"
         color="red"
         track={3}
         time="13:30"
@@ -168,41 +162,38 @@ const tertiary = "Room 3";
         room={tertiary}
         striped
     />
-    <TimetableDivider start="15:10" end="15:40"> Break </TimetableDivider>
-    <TimetableItem
-        talk="victor"
+    <Divider start="15:10" end="15:40"> Break </Divider>
+    <Item
+        talk="stefan"
         color="yellow"
         track={1}
         time="15:40"
         duration={40}
         room={main}
     />
-    <TimetableItem
-        talk="alice"
+    <Item
+        talk="pietro"
         color="yellow"
         track={1}
         time="16:20"
         duration={40}
         room={main}
     />
-    <TimetableItem
-        talk="dion"
-        color="blue"
+    <MultiItem
+        talks={Array(3).fill({
+            speaker: "",
+            title: "GOSIM spotlight",
+            image: "",
+        })}
+        color="purple"
         track={2}
         time="15:40"
         duration={40}
         room={secondary}
+        striped
     />
-    <TimetableItem
-        talk="cliff"
-        color="blue"
-        track={2}
-        time="16:20"
-        duration={40}
-        room={secondary}
-    />
-    <TimetableItem
-        title="Project track (TBA)"
+    <Item
+        title="Industry track (TBA)"
         color="red"
         track={3}
         time="15:40"
@@ -210,5 +201,5 @@ const tertiary = "Room 3";
         room={tertiary}
         striped
     />
-    <TimetableDivider start="17:00" end="19:00"> Drinks </TimetableDivider>
+    <Divider start="17:00" end="19:00"> Drinks </Divider>
 </Timetable>
