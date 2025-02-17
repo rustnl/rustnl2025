@@ -1,15 +1,15 @@
 ---
-import Head from "../components/page/head.astro";
-import Footer from "../components/page/footer.astro";
-import Header from "../components/page/header.astro";
-import Hero from "../components/page/Hero.astro";
-import "../styles/index.scss";
+import Head from '../components/page/head.astro';
+import Footer from '../components/page/footer.astro';
+import Header from '../components/page/header.astro';
+import Hero from '../components/page/Hero.astro';
+import '../styles/index.scss';
 
 interface Props {
-    title: string;
-    header: string;
-    withLogo?: boolean;
-    withoutMenu?: boolean;
+  title: string;
+  header?: string;
+  withLogo?: boolean;
+  withoutMenu?: boolean;
 }
 
 const { title, header, withLogo = false, withoutMenu = false } = Astro.props;
@@ -17,41 +17,40 @@ const { title, header, withLogo = false, withoutMenu = false } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-    <Head title={`${title} - RustWeek 2025`} />
+  <Head title={`${title} - RustWeek 2025`} />
 
-    <body>
-        <style lang="scss">
-            @use "../styles/variables.scss";
-        </style>
-            <Header withLogo={withLogo} withoutMenu={withoutMenu} />
-        <Hero>
-            <slot name="hero" />
-        </Hero>
+  <body>
+    <style lang="scss">
+      @use '../styles/variables.scss';
+    </style>
+    <Header withLogo={withLogo} withoutMenu={withoutMenu} />
+    <Hero>
+      <slot name="hero" />
+    </Hero>
 
-        <section>
-            <h1>{header}</h1> 
-        <section>
-
+    <section>
+      {header ? <h1>{header}</h1> : <slot name="header" />}
+      <section>
         <section class="main">
-            <slot />
+          <slot />
         </section>
 
         <Footer />
-    </body>
+      </section>
+    </section>
+
+    <style>
+      .main {
+        width: max(40em, 90%);
+        max-width: 100%;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </body>
 </html>
-
-<style>
-
-
-.main {
-    width: max(40em, 90%);
-    max-width: 100%;
-
-    margin-left: auto;
-    margin-right: auto;
-
-    display: flex;
-    flex-direction: column;
-    align-items:  center;
-}
-</style>

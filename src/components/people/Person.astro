@@ -1,200 +1,195 @@
 ---
-import Icon from "../Icon.astro";
+import Icon from '../Icon.astro';
 
 interface Props {
-    name?: string;
-    image?: string;
-    title?: string;
-    description?: string; // bio
-    slug?: string;
-    tracks?: Array<string>;
-    url?: string;
-    linkedin?: string;
-    twitter?: string;
-    mastodon?: string;
-    github?: string;
-    bluesky?: string;
-    tile?: boolean;
+  name?: string;
+  image?: string;
+  title?: string;
+  description?: string; // bio
+  link?: string;
+  tracks?: Array<string>;
+  url?: string;
+  linkedin?: string;
+  twitter?: string;
+  mastodon?: string;
+  github?: string;
+  bluesky?: string;
+  tile?: boolean;
 }
 
 const {
-    name,
-    image,
-    description,
-    title,
-    slug,
-    tracks,
-    url,
-    linkedin,
-    twitter,
-    mastodon,
-    github,
-    bluesky,
-    tile = false,
+  name,
+  image,
+  description,
+  title,
+  link,
+  tracks,
+  url,
+  linkedin,
+  twitter,
+  mastodon,
+  github,
+  bluesky,
+  tile = false,
 } = Astro.props;
-const imageFile = image ? image : "empty.png";
-const link = slug ? slug : "/speakers";
+const imageFile = image ? image : 'empty.png';
 ---
 
 <div class="person">
-    <div class="image-container">
+  <div class="image-container">
+    {
+      link ? (
         <a href={link}>
-            <img
-                src={`/images/people/${imageFile}`}
-                alt={`Picture of ${name}`}
-            />
+          <img src={`/images/people/${imageFile}`} alt={`Picture of ${name}`} />
         </a>
-        <div class="tags">
-            {
-                tracks &&
-                    tracks.map((track) => (
-                        <span class={`tag ${track}`}>
-                            <span>{track} track</span>
-                        </span>
-                    ))
-            }
+      ) : (
+        <div class="image">
+          <img src={`/images/people/${imageFile}`} alt={`Picture of ${name}`} />
         </div>
+      )
+    }
+    <div class="tags">
+      {
+        tracks &&
+          tracks.map((track) => (
+            <span class={`tag ${track}`}>
+              <span>{track} track</span>
+            </span>
+          ))
+      }
     </div>
-    {!tile && (
-    <div class="socials">
-        {
-            linkedin && (
-                <a href={linkedin}>
-                    <Icon name="linkedin" />
-                </a>
-            )
-        }
-        {
-            twitter && (
-                <a href={twitter}>
-                    <Icon name="x" />
-                </a>
-            )
-        }
-        {
-            mastodon && (
-                <a href={mastodon}>
-                    <Icon name="mastodon" />
-                </a>
-            )
-        }
-        {
-            github && (
-                <a href={github}>
-                    <Icon name="github" />
-                </a>
-            )
-        }
-        {
-            bluesky && (
-                <a href={bluesky}>
-                    <Icon name="bluesky" />
-                </a>
-            )
-        }
-        {
-            url && (
-                <a href={url}>
-                    <Icon name="github" />
-                </a>
-            )
-        }
-    </div>
-    )}
-    <div>
-        <h4>{name}</h4>
-        {description && <span set:html={description}></span>}
-        {title && <p>{title}</p>}
-        <slot />
-    </div>
+  </div>
+  {
+    !tile && (
+      <div class="socials">
+        {linkedin && (
+          <a href={linkedin}>
+            <Icon name="linkedin" />
+          </a>
+        )}
+        {twitter && (
+          <a href={twitter}>
+            <Icon name="x" />
+          </a>
+        )}
+        {mastodon && (
+          <a href={mastodon}>
+            <Icon name="mastodon" />
+          </a>
+        )}
+        {github && (
+          <a href={github}>
+            <Icon name="github" />
+          </a>
+        )}
+        {bluesky && (
+          <a href={bluesky}>
+            <Icon name="bluesky" />
+          </a>
+        )}
+        {url && (
+          <a href={url}>
+            <Icon name="github" />
+          </a>
+        )}
+      </div>
+    )
+  }
+  <div>
+    <h4>{name}</h4>
+    {description && <span set:html={description} />}
+    {title && <p>{title}</p>}
+    <slot />
+  </div>
 </div>
 
 <style lang="scss">
-    @use "../../styles/breakpoint.scss";
-    @use "../../styles/variables.scss";
+  @use '../../styles/breakpoint.scss';
+  @use '../../styles/variables.scss';
 
-    .person {
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
+  .person {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 
-        a {
-            color: inherit;
-            text-decoration: underline;
-            display: inline-block;
-        }
-
-        h4 {
-            font-size: variables.$font-size-lg;
-            font-weight: variables.$font-weight-light;
-            line-height: variables.$line-height-tight;
-
-            margin-bottom: 0;
-            margin-top: 0.2em;
-        }
-
-        p {
-            font-size: variables.$font-size-sm;
-        }
-
-        .image-container {
-            position: relative;
-            a {
-                aspect-ratio: 1/1;
-                align-self: center;
-                height: auto;
-                vertical-align: middle;
-                width: 100%;
-
-                img {
-                    background: variables.$color-yellow-400;
-                    border-radius: 0.5em;
-
-                    width: 100%;
-                    height: 100%;
-
-                    object-fit: contain;
-                }
-            }
-
-            div.tags {
-                position: absolute;
-                bottom: 1.25rem;
-                left: 0.75rem;
-
-                .tag {
-                    padding: 0.3rem 0.5rem;
-                    margin-right: 0.75rem;
-
-                    border-radius: 5px;
-                    font-size: variables.$font-size-xs;
-                    background-color: variables.$color-blue-400;
-
-                    &.project {
-                        background-color: variables.$color-red-400;
-                    }
-
-                    &.industry {
-                        background-color: variables.$color-yellow-400;
-                    }
-
-                    span {
-                        font-weight: bold;
-                        text-transform: lowercase;
-                    }
-                }
-            }
-        }
-
-        .socials {
-            display: flex;
-            flex-direction: row;
-            gap: 0.3em;
-
-            @include breakpoint.wider_than(lg) {
-                font-size: variables.$font-size-md;
-                text-align: left !important;
-            }
-        }
+    a {
+      color: inherit;
+      text-decoration: underline;
+      display: inline-block;
     }
+
+    h4 {
+      font-size: variables.$font-size-lg;
+      font-weight: variables.$font-weight-light;
+      line-height: variables.$line-height-tight;
+
+      margin-bottom: 0;
+      margin-top: 0.2em;
+    }
+
+    p {
+      font-size: variables.$font-size-sm;
+    }
+
+    .image-container {
+      position: relative;
+      a,
+      .image {
+        aspect-ratio: 1/1;
+        align-self: center;
+        height: auto;
+        vertical-align: middle;
+        width: 100%;
+
+        img {
+          background: variables.$color-yellow-400;
+          border-radius: 0.5em;
+
+          width: 100%;
+          height: 100%;
+
+          object-fit: contain;
+        }
+      }
+
+      div.tags {
+        position: absolute;
+        bottom: 1.25rem;
+        left: 0.75rem;
+
+        .tag {
+          padding: 0.3rem 0.5rem;
+          margin-right: 0.75rem;
+
+          border-radius: 5px;
+          font-size: variables.$font-size-xs;
+          background-color: variables.$color-blue-400;
+
+          &.project {
+            background-color: variables.$color-red-400;
+          }
+
+          &.industry {
+            background-color: variables.$color-yellow-400;
+          }
+
+          span {
+            font-weight: bold;
+            text-transform: lowercase;
+          }
+        }
+      }
+    }
+
+    .socials {
+      display: flex;
+      flex-direction: row;
+      gap: 0.3em;
+
+      @include breakpoint.wider_than(lg) {
+        font-size: variables.$font-size-md;
+        text-align: left !important;
+      }
+    }
+  }
 </style>
