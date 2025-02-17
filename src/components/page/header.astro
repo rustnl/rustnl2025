@@ -10,18 +10,28 @@ const { withLogo = false, withoutMenu = false }: Props = Astro.props;
 ---
 
 <div class="header">
-    {
-        withLogo && (
-            <a class="logo" href="/">
-                <img
-                    src="/svg/hero-logo-rustweek.svg"
-                    alt="Logo RustWeek 2025"
-                />
-            </a>
-        )
-    }
+    <!-- { -->
+    <!--     withLogo && ( -->
+    <!--         <a class="logo" href="/"> -->
+    <!--             <img -->
+    <!--                 src="/svg/hero-logo-rustweek.svg" -->
+    <!--                 alt="Logo RustWeek 2025" -->
+    <!--             /> -->
+    <!--         </a> -->
+    <!--     ) -->
+    <!-- } -->
     {
         !withoutMenu && (
+            <script is:inline>
+              window.addEventListener('DOMContentLoaded', (event) => {
+                new PagefindUI({ element: '#search', resetStyles: false });
+              });
+            </script>
+            <div class="search-relative-parent">
+                <div id="search">
+                </div>
+            </div>
+
             <div class="hamburger button primary" data-menu-toggle></div>
             <div class="menu" data-menu>
                 <Menu location="header" />
@@ -63,20 +73,52 @@ const { withLogo = false, withoutMenu = false }: Props = Astro.props;
     document.addEventListener('scroll', scrollHanlde);
 </script>
 
+<style is:global>
+:root {
+    --pagefind-ui-scale: 0.75;
+    --pagefind-ui-primary: #034ad8;
+    --pagefind-ui-text: black;
+    --pagefind-ui-background: #fff0e6;
+
+    --pagefind-ui-border-width: 0px;
+    --pagefind-ui-border-radius: 0px;
+    --pagefind-ui-image-border-radius: 0px;
+    --pagefind-ui-image-box-ratio: 3 / 2;
+}
+
+#search {
+    background-color: #fff0e6;
+    flex: flex-grow;
+}
+#search>div>form>div {
+    border: 2px solid black;
+    padding: 2px;
+
+    max-height: min(60rem, 80vh);
+    overflow: scroll;
+}
+</style>
+
 <style lang="scss">
     @use "../../styles/variables.scss";
     @use "../../styles/breakpoint.scss";
 
+    .search-relative-parent {
+        position: relative;
+        height: calc(64px * var(--pagefind-ui-scale));
+    }
+
     .header {
         align-items: center;
         display: flex;
+        gap: 1em;
 
         height: variables.space(18);
         padding-inline: variables.space(4);
         position: fixed;
 
         width: 100%;
-        z-index: 1;
+        z-index: 100;
         background-color: transparent;
         transition-property: background-color, height;
         transition-duration: 150ms;
@@ -104,7 +146,7 @@ const { withLogo = false, withoutMenu = false }: Props = Astro.props;
             height: variables.space(12);
             padding-inline: 1rem;
 
-            @include breakpoint.wider_than(lg) {
+            @include breakpoint.wider_than(xl) {
                 display: none;
             }
 
@@ -142,7 +184,7 @@ const { withLogo = false, withoutMenu = false }: Props = Astro.props;
             max-height: calc(100vh - 88px);
             overflow: auto;
 
-            @include breakpoint.wider_than(lg) {
+            @include breakpoint.wider_than(xl) {
                 align-items: center;
                 background-color: transparent;
                 border: none;

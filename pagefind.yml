@@ -1,0 +1,5 @@
+exclude_selectors:
+  - ".menu"
+  - ".footer"
+  # - "blockquote > span"
+  # - "[id^='prefix-']"

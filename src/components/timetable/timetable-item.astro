@@ -1,0 +1,88 @@
+---
+interface Props {
+    title: string;
+    time: string;
+    speaker?: string;
+    link?: string;
+}
+
+const { title, time, speaker, link } = Astro.props;
+---
+
+<li id={link}>
+    <div class="time">{time}</div>
+
+    {
+        (link && (
+            <a href={`/speakers#${link}`}>
+                {speaker && <div class="name">{speaker}</div>}
+                <div class="title">
+                    {title}
+                </div>
+            </a>
+        )) || (
+            <div>
+                {speaker && <div class="name">{speaker}</div>}
+                <div class="title">
+                    {title}
+                </div>
+            </div>
+        )
+    }
+</li>
+
+<style lang="scss">
+    @use "../../styles/variables.scss";
+    @use "../../styles/breakpoint.scss";
+
+    a {
+        all: unset;
+        cursor: pointer;
+    }
+    li {
+        /* Make non-highlighted elements the same style but transparent */
+        border: 2px solid transparent;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+
+        display: flex;
+        gap: variables.space(3);
+        padding-block: variables.space(6);
+
+        @include breakpoint.wider_than(xl) {
+            align-items: center;
+            font-size: variables.$font-size-lg;
+            gap: variables.space(6);
+        }
+
+        &:not(:first-child) {
+            border-block-start: 1px solid variables.$color-yellow-400;
+        }
+    }
+    li:target {
+        /* invert the colour of highlighted elements */
+        border: 2px solid variables.$color-red-500;
+        background-color: variables.$color-red-500;
+        color: variables.$color-neutral-400;
+        border-radius: 0.5em;
+    }
+    li:target + li {
+        /* Remove the top border on elements after selected 
+           elements so there's no line between them anymore */
+        border-top: 0;
+    }
+
+    .time {
+        font-weight: 700;
+    }
+
+    .title {
+        text-align: left;
+    }
+
+    .name {
+        font-size: variables.$font-size-md;
+        font-weight: 700;
+        text-align: left;
+    }
+</style>

@@ -96,7 +96,7 @@ const imageFile = image ? image : 'empty.png';
     )
   }
   <div>
-    <h4>{name}</h4>
+    <h4 data-pagefind-filter="person">{name}</h4>
     {description && <span set:html={description} />}
     {title && <p>{title}</p>}
     <slot />
@@ -137,6 +137,7 @@ const imageFile = image ? image : 'empty.png';
       position: relative;
       max-width: 30rem;
       align-self: center;
+      width: 100%;
       a,
       .image {
         aspect-ratio: 1/1;

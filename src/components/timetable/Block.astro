@@ -11,10 +11,10 @@ interface Props {
     duration: number;
     color?: string;
     striped: boolean;
-    url: string | null;
+    url?: string | null;
 }
 
-const { room, track, time, duration, color, striped, url }: Props =
+const { room, track, time, duration, color, striped, url = null }: Props =
     Astro.props;
 
 const time_underscore = time.replace(":", "_");
