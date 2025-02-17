@@ -11,6 +11,12 @@ const { location }: Props = Astro.props;
 <div class:list={['menu', location]}>
   <ul>
     <li class="parent">
+      <a
+        href="/"
+        >Home</a
+      >
+    </li>
+    <li class="parent">
       <span>Schedule</span>
       <ul class="submenu">
         <li class="child">
@@ -26,18 +32,7 @@ const { location }: Props = Astro.props;
       </ul>
     </li>
     <li class="parent">
-      <span>Speakers</span>
-      <ul class="submenu">
-        <li class="child">
-            <a href="/speakers">Our speakers</a>
-        </li>
-        <li class="child">
-            <a
-            href="/#cfp"
-            onclick="document.querySelector('[data-menu-toggle]').click()">CFP</a
-            >
-        </li>
-      </ul>
+        <a href="/speakers">Speakers</a>
     </li>
     <li class="parent">
       <a
@@ -58,27 +53,19 @@ const { location }: Props = Astro.props;
           <li class="child">
             <a href="/kinepolis">Conference venue</a>
           </li>
+          <li class="child">
+            <a href="/hotels">Hotels</a>
+          </li>
+          <li class="child">
+            <a href="/accessibility">Accessibility</a>
+          </li>
         </ul>
-    </li>
-    <li class="parent">
-      <span>Practical&nbsp;info</span>
-      <ul class="submenu">
-        <li class="child">
-          <a href="/hotels">Hotels</a>
-        </li>
-        <li class="child">
-          <a href="/accessibility">Accessibility</a>
-        </li>
-      </ul>
     </li>
     <li class="parent">
       <span>About</span>
       <ul class="submenu">
         <li class="child">
           <a href="/about">About</a>
-        </li>
-        <li class="child">
-          <a href="/">Homepage</a>
         </li>
         <li class="child">
           <a href="mailto:2025@rustnl.org">Contact</a>

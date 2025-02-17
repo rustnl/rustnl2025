@@ -146,7 +146,7 @@ const { withLogo = false, withoutMenu = false }: Props = Astro.props;
             height: variables.space(12);
             padding-inline: 1rem;
 
-            @include breakpoint.wider_than(xl) {
+            @include breakpoint.wider_than(lg) {
                 display: none;
             }
 
@@ -184,7 +184,7 @@ const { withLogo = false, withoutMenu = false }: Props = Astro.props;
             max-height: calc(100vh - 88px);
             overflow: auto;
 
-            @include breakpoint.wider_than(xl) {
+            @include breakpoint.wider_than(lg) {
                 align-items: center;
                 background-color: transparent;
                 border: none;
