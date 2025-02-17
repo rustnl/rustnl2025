@@ -4,11 +4,11 @@ import TimetableMultiItem from "./MultiItem.astro";
 import TimetableDivider from "./Divider.astro";
 
 let collapsed_times = [
-    "9:00 - 9:30",
+    "8:45 - 9:30",
     "11:00 - 11:30",
-    "12:30 - 13:30",
-    "15:10 - 15:40",
-    "17:00 - 19:00",
+    "12:45 - 14:00",
+    "15:50 - 16:20",
+    "17:40 - 19:00",
 ];
 
 let collapsed: [[number, number], [number, number]][] = [];
@@ -42,7 +42,7 @@ function in_range(
 }
 
 let times = "";
-for (let h = 9; h < 19; h++) {
+for (let h = 8; h < 19; h++) {
     for (let m = 0; m < 60; m += 5) {
         let skip = false;
         for (let range of collapsed) {

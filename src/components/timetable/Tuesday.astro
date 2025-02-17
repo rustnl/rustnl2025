@@ -4,13 +4,13 @@ import MultiItem from "./MultiItem.astro";
 import Divider from "./Divider.astro";
 import Timetable from "./Timetable.astro";
 
-const main = "Main";
-const secondary = "Room 2";
-const tertiary = "Room 3";
+const main = "Cinema 12";
+const secondary = "Cinema 11";
+const tertiary = "Cinema 10";
 ---
 
 <Timetable>
-    <Divider start="9:00" end="9:30">Doors open</Divider>
+    <Divider start="8:45" end="9:30">Doors open & registration</Divider>
     <Item
         title="Opening"
         color="yellow"
@@ -24,32 +24,59 @@ const tertiary = "Room 3";
         color="yellow"
         track={1}
         time="9:40"
-        duration={40}
+        duration={35}
         room={main}
     />
     <Item
         talk="rose"
         color="yellow"
         track={1}
-        time="10:20"
-        duration={40}
+        time="10:25"
+        duration={35}
         room={main}
+    />
+    <Item
+        title="Ecosystem track opening"
+        color="blue"
+        track={2}
+        time="9:30"
+        duration={10}
+        room={secondary}
+        striped
     />
     <Item
         title="Ecosystem track (TBA)"
         color="blue"
         track={2}
-        time="9:30"
-        duration={90}
+        time="9:40"
+        duration={35}
         room={secondary}
+        striped
+    />
+    <Item
+        title="Ecosystem track (TBA)"
+        color="blue"
+        track={2}
+        time="10:25"
+        duration={35}
+        room={secondary}
+        striped
+    />
+    <Item
+        title="Industry track opening & registration"
+        color="red"
+        track={3}
+        time="9:30"
+        duration={30}
+        room={tertiary}
         striped
     />
     <Item
         title="Industry track (TBA)"
         color="red"
         track={3}
-        time="9:30"
-        duration={90}
+        time="10:00"
+        duration={60}
         room={tertiary}
         striped
     />
@@ -59,14 +86,14 @@ const tertiary = "Room 3";
         color="yellow"
         track={1}
         time="11:30"
-        duration={40}
+        duration={35}
         room={main}
     />
     <Item
         talk="shane"
         color="yellow"
         track={1}
-        time="12:10"
+        time="12:15"
         duration={20}
         room={main}
     />
@@ -75,7 +102,16 @@ const tertiary = "Room 3";
         color="blue"
         track={2}
         time="11:30"
-        duration={60}
+        duration={35}
+        room={tertiary}
+        striped
+    />
+    <Item
+        title="Ecosystem track (TBA)"
+        color="blue"
+        track={2}
+        time="12:15"
+        duration={20}
         room={tertiary}
         striped
     />
@@ -84,32 +120,32 @@ const tertiary = "Room 3";
         color="red"
         track={3}
         time="11:30"
-        duration={60}
+        duration={65}
         room={tertiary}
         striped
     />
-    <Divider start="12:30" end="13:30"> Lunch </Divider>
+    <Divider start="12:45" end="14:00"> Lunch </Divider>
     <Item
         talk="joe"
         color="yellow"
         track={1}
-        time="13:30"
-        duration={40}
+        time="14:00"
+        duration={35}
         room={main}
     />
     <Item
         talk="caroline"
         color="yellow"
         track={1}
-        time="14:10"
-        duration={40}
+        time="14:45"
+        duration={35}
         room={main}
     />
     <Item
         talk="stephen"
         color="yellow"
         track={1}
-        time="14:50"
+        time="15:30"
         duration={20}
         room={main}
     />
@@ -121,8 +157,8 @@ const tertiary = "Room 3";
         })}
         color="purple"
         track={2}
-        time="13:30"
-        duration={40}
+        time="14:00"
+        duration={35}
         room={secondary}
         striped
     />
@@ -134,8 +170,8 @@ const tertiary = "Room 3";
         })}
         color="purple"
         track={2}
-        time="14:10"
-        duration={40}
+        time="14:45"
+        duration={35}
         room={secondary}
         striped
     />
@@ -147,7 +183,7 @@ const tertiary = "Room 3";
         })}
         color="purple"
         track={2}
-        time="14:50"
+        time="15:30"
         duration={20}
         room={secondary}
         striped
@@ -156,26 +192,26 @@ const tertiary = "Room 3";
         title="Industry track (TBA)"
         color="red"
         track={3}
-        time="13:30"
-        duration={100}
+        time="14:00"
+        duration={110}
         room={tertiary}
         striped
     />
-    <Divider start="15:10" end="15:40"> Break </Divider>
+    <Divider start="15:50" end="16:20"> Break </Divider>
     <Item
         talk="stefan"
         color="yellow"
         track={1}
-        time="15:40"
-        duration={40}
+        time="16:20"
+        duration={35}
         room={main}
     />
     <Item
         talk="pietro"
         color="yellow"
         track={1}
-        time="16:20"
-        duration={40}
+        time="17:05"
+        duration={35}
         room={main}
     />
     <MultiItem
@@ -186,8 +222,8 @@ const tertiary = "Room 3";
         })}
         color="purple"
         track={2}
-        time="15:40"
-        duration={40}
+        time="16:20"
+        duration={35}
         room={secondary}
         striped
     />
@@ -195,10 +231,10 @@ const tertiary = "Room 3";
         title="Industry track (TBA)"
         color="red"
         track={3}
-        time="15:40"
-        duration={80}
+        time="16:20"
+        duration={35}
         room={tertiary}
         striped
     />
-    <Divider start="17:00" end="19:00"> Drinks </Divider>
+    <Divider start="17:40" end="19:00"> Drinks </Divider>
 </Timetable>
