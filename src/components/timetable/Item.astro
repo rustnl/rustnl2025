@@ -5,6 +5,8 @@ import Block from "./Block.astro";
 interface Props {
     talk?: string;
     title?: string;
+    speakers?: {name: string, image: string}[]
+    url?: string;
     room: string;
     track: number;
     // as a string
@@ -13,17 +15,23 @@ interface Props {
     duration: number;
     color?: string;
     striped?: boolean;
+    description?: string;
+    ticket?: string;
 }
 
 const {
     talk,
     title = "",
+    speakers,
     room,
     track,
     time,
     duration,
     color,
     striped = false,
+    description,
+    ticket,
+    url,
 }: Props = Astro.props;
 
 const matches = import.meta.glob("../../pages/talks/*.md", { eager: true });
@@ -36,8 +44,8 @@ if (talk !== null) {
 }
 
 const talk_title = title ? title : file ? file.frontmatter.talkTitle : "ERROR";
-const url = file?.url;
-const speakers = file?.frontmatter?.speakers ?? [];
+const talk_url = url ?? file?.url;
+const talk_speakers = speakers ?? file?.frontmatter?.speakers ?? [];
 ---
 
 <Block
@@ -47,12 +55,13 @@ const speakers = file?.frontmatter?.speakers ?? [];
     duration={duration}
     color={color}
     striped={striped}
-    url={url}
+    url={talk_url}
+    ticket={ticket}
 >
     <div>
         <div class="title">{talk_title}</div>
         {
-            speakers.map((speaker: any) => (
+            talk_speakers.map((speaker: any) => (
                 <div class="speaker">
                     <img
                         class="speaker-img"
@@ -63,6 +72,7 @@ const speakers = file?.frontmatter?.speakers ?? [];
                 </div>
             ))
         }
+        { description && <p>{description}</p>}
     </div>
 </Block>
 

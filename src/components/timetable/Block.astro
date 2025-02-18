@@ -11,11 +11,20 @@ interface Props {
     duration: number;
     color?: string;
     striped: boolean;
-    url?: string | null;
+    url?: string;
+    ticket?: string;
 }
 
-const { room, track, time, duration, color, striped, url = null }: Props =
-    Astro.props;
+const {
+    room,
+    track,
+    time,
+    duration,
+    color,
+    striped,
+    url,
+    ticket,
+}: Props = Astro.props;
 
 const time_underscore = time.replace(":", "_");
 
@@ -25,7 +34,7 @@ const locationIcon = icon({ prefix: "fas", iconName: faLocationDot.iconName });
 const clockIcon = icon({ prefix: "fas", iconName: faClock.iconName });
 
 function addMinutes(date: Date, minutes: number) {
-    return new Date(date.getTime() + minutes*60000);
+    return new Date(date.getTime() + minutes * 60000);
 }
 
 const start_time = new Date();
@@ -34,9 +43,9 @@ start_time.setMinutes(parseInt(time.split(":")[1]));
 const tmp = addMinutes(start_time, duration);
 let minutes: string;
 if (tmp.getMinutes() < 10) {
-    minutes = `0${tmp.getMinutes()}`; 
+    minutes = `0${tmp.getMinutes()}`;
 } else {
-    minutes = `${tmp.getMinutes()}`; 
+    minutes = `${tmp.getMinutes()}`;
 }
 const end_time = `${tmp.getHours()}:${minutes}`;
 ---
@@ -49,7 +58,7 @@ const end_time = `${tmp.getHours()}:${minutes}`;
         gridRowEnd: `span ${duration / 5}`,
     }}
     href={url}
-    id={url? url.split('/').pop():null}
+    id={url ? url.split("/").pop() : null}
 >
     <div class="meta">
         <div>
@@ -63,10 +72,26 @@ const end_time = `${tmp.getHours()}:${minutes}`;
             {room}
         </div>
     </div>
-    <slot></slot>
+    <slot />
+    {ticket && <div class="ticket">{ticket} ticket required</div>}
 </a>
 
 <style lang="scss">
+    a {
+        position: relative;
+    }
+    .ticket {
+        font-size: 0.6em;
+        font-weight: 500;
+        background: var(--color-two);
+        color: white;
+        position: absolute;
+        padding: 0.2em 0.5em;
+        bottom: 0;
+        right: 0;
+        border-top-left-radius: 0.5em;
+    }
+
     .item {
         border: solid 1px;
         border-top-width: 4px;
@@ -86,7 +111,7 @@ const end_time = `${tmp.getHours()}:${minutes}`;
 
     .item.yellow {
         --color-one: #ffe5b3;
-        --color-two:  #e69600;
+        --color-two: #e69600;
     }
 
     .item.blue {
@@ -98,7 +123,7 @@ const end_time = `${tmp.getHours()}:${minutes}`;
         --color-one: #f8c7b7;
         --color-two: #d14c23;
     }
-    
+
     .item.purple {
         --color-one: #e8defb;
         --color-two: #9c4db4;
@@ -108,7 +133,7 @@ const end_time = `${tmp.getHours()}:${minutes}`;
         background: var(--color-one);
         border-color: var(--color-two);
     }
-    
+
     .icon {
         display: inline;
     }

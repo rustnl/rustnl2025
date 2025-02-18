@@ -7,9 +7,18 @@ import Timetable from "./Timetable.astro";
 const main = "Cinema 12";
 const secondary = "Cinema 11";
 const tertiary = "Cinema 10";
+
+const breaks = [
+    "0:00 - 8:45",
+    "8:45 - 9:30",
+    "11:00 - 11:30",
+    "12:35 - 14:00",
+    "15:50 - 16:20",
+    "17:40 - 19:00",
+];
 ---
 
-<Timetable>
+<Timetable breaks={breaks}>
     <Divider start="8:45" end="9:30">Doors open & registration</Divider>
     <Item
         title="Opening"
@@ -125,7 +134,7 @@ const tertiary = "Cinema 10";
         room={tertiary}
         striped
     />
-    <Divider start="12:45" end="14:00"> Lunch </Divider>
+    <Divider start="12:35" end="14:00"> Lunch </Divider>
     <Item
         talk="ciara"
         color="yellow"

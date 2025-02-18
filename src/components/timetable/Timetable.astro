@@ -3,16 +3,14 @@ import TimetableItem from "./Item.astro";
 import TimetableMultiItem from "./MultiItem.astro";
 import TimetableDivider from "./Divider.astro";
 
-let collapsed_times = [
-    "8:45 - 9:30",
-    "11:00 - 11:30",
-    "12:45 - 14:00",
-    "15:50 - 16:20",
-    "17:40 - 19:00",
-];
+interface Props {
+    breaks: string[],
+}
+
+const { breaks } = Astro.props;
 
 let collapsed: [[number, number], [number, number]][] = [];
-for (const s of collapsed_times) {
+for (const s of breaks) {
     let [start, end] = s.split("-");
     let start2 = start.split(":");
     let end2 = end.split(":");
@@ -55,15 +53,12 @@ for (let h = 8; h < 19; h++) {
             continue;
         }
         if (m < 10) {
-            times += ` [time${h}_0${m}] minmax(1em, min-content)`;
+            times += ` [time${h}_0${m}] minmax(1.5em, min-content)`;
         } else {
-            times += ` [time${h}_${m}] minmax(1em, min-content)`;
+            times += ` [time${h}_${m}] minmax(1.5em, min-content)`;
         }
     }
 }
-
-const main = "main";
-const secondary = "room 2";
 ---
 
 <div class="schedule">
@@ -80,7 +75,7 @@ const secondary = "room 2";
         /* Our resolution for the schedule is 15 minutes */
         grid-template-rows: var(--times);
 
-        gap: 16px;
+        gap: 8px 16px;
         width: min(90vw, 85ch);
 
         @include breakpoint.smaller_than(md) {
