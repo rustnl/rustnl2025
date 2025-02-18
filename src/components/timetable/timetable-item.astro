@@ -10,7 +10,7 @@ const { title, time, speaker, link } = Astro.props;
 ---
 
 <li id={link}>
-    <div class="time">{time}</div>
+    <div class="time">{time.replace(".",":")}</div>
 
     {
         (link && (

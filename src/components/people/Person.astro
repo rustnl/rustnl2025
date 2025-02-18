@@ -36,6 +36,18 @@ const {
   hideName = false,
 } = Astro.props;
 
+function convertTrack(i: string): string {
+    switch(i) {
+        case "deep_dive": return "deep dive";
+        case "main": return "main";
+        case "project": return "project";
+        case "ecosystem": return "ecosystem";
+        case "industry": return "industry";
+    }
+
+    return i
+}
+
 const speakers = await Astro.glob('../../pages/talks/*.md');
 let github_of_person = null;
 
@@ -73,7 +85,7 @@ const imageFile = image? `/images/people/${image}` : github_of_person? `${github
         tracks &&
           tracks.map((track) => (
             <span class={`tag ${track}`}>
-              <span>{track} track</span>
+              <span>{convertTrack(track)} track</span>
             </span>
           ))
       }
