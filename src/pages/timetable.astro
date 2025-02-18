@@ -8,13 +8,13 @@ import TimetableWednesday from "../components/timetable/Wednesday.astro";
     <img data-pagefind-meta="image[src]" style="display: none;">
     <div class="timetables">
         <details name="timetable" open>
-            <summary>Tuesday 13 May</summary>
+            <summary>Tue 13 May</summary>
             <div class="timetable">
                 <TimetableTuesday />
             </div>
         </details>
         <details name="timetable">
-            <summary>Wednesday 14 May</summary>
+            <summary>Wed 14 May</summary>
             <div class="timetable">
                 <TimetableWednesday />
             </div>
@@ -56,11 +56,13 @@ details {
 summary {
     display: block;
     grid-row: 1;
+    flex-grow: 1;
+    flex-basis: 10ch;
     padding-bottom: 0.2em;
     border-bottom: 2px solid transparent;
     text-align: center;
     font-weight: 500;
-    width: 20ch;
+    width: 16ch;
     cursor: pointer;
     order: -1;
 }
