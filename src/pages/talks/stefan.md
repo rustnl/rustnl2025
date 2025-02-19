@@ -20,6 +20,7 @@ speakers: [{
     mastodon: "https://mastodon.social/@deadparrot",
     github: "https://github.com/ddprrt",
 }]
+day: "tuesday"
 ---
 
 We refactor a Rust program that has just left the prototyping stage into code that is a delight to read and follow, easy to use, easy to maintain, and that plays along nicely with the ecosystem, all by learning Rust-specific refactoring techniques.

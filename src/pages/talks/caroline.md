@@ -18,6 +18,7 @@ speakers: [{
     mastodon: "",
     github: "https://github.com/CarolineMorton",
 }]
+day: "tuesday"
 ---
 
 Epidemiology relies on codelists for health data, but managing them can be error-prone. This talk introduces codelist-tools: open-source Rust libraries with Python/R bindings, offering a safe, efficient way to manage codelists and making modern systems programming accessible to non-Rust users.

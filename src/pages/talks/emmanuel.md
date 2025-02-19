@@ -29,6 +29,7 @@ speakers: [
         github: "https://github.com/bergzand",
     },
 ]
+day: "wednesday"
 ---
 
 The Rust Embedded ecosystem is alive & kicking, but trails the C world regarding integration. Enter Ariel OS, integrating the best of Rust on microcontrollers (Embassy, esp-hal, defmt…) and adding missing OS features (multi-core scheduler, metabuild system…) for safe, ergonomic embedded development.

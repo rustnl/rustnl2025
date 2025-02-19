@@ -20,6 +20,7 @@ speakers: [{
     mastodon: "",
     github: "https://github.com/Yatekii",
 }]
+day: "wednesday"
 ---
 
 This talk is about probe-rs, the embedded toolkit, that is on track to become the new defacto standard for embedded development.

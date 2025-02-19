@@ -20,6 +20,7 @@ speakers: [{
     mastodon: "https://toot.cafe/@matt",
     github: "https://github.com/mwcampbell",
 }]
+day: "wednesday"
 ---
 
 Rust's modularity enables reusable, cross-platform UI accessibility infrastructure. And Rust's minimal runtime overhead enables reuse across languages as well.

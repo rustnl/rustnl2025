@@ -20,6 +20,7 @@ speakers: [{
     mastodon: "",
     github: "https://github.com/ctz",
 }]
+day: "tuesday"
 ---
 
 Graviola is a new cryptography crate for Rust. It focuses on being high-quality, fast and easy to build. In this talk, I'll cover what makes it different from other cryptography crates -- and my goals for this project.

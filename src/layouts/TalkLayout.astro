@@ -6,7 +6,7 @@ import Person from '../components/people/Person.astro';
 import Divider from '../components/Divider.astro';
 
 const { frontmatter } = Astro.props;
-const { talkTitle, talkLevel, url } =
+const { talkTitle, talkLevel, url, day = "tuesday" } =
   frontmatter;
 
 const sep = /\/\/\/\/\/\/.*/;
@@ -62,7 +62,7 @@ console.log(speaker_names);
               Get your ticket
             </Button>
             <Button
-                link=`/timetable#${url.split('/').pop()}`
+                        link=`/schedule/${day}/#${url.split('/').pop()}`
             >
                 Find in timetable
             </Button>

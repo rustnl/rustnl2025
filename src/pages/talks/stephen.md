@@ -20,6 +20,7 @@ speakers: [{
     mastodon: "",
     github: "https://github.com/anselanza",
 }]
+day: "tuesday"
 ---
 
 Creative Technologist: a hybrid engineer/artist making interactive installations, exhibitions, generative performances and more. Behind all this: hacky spaghetti code or sophisticated integration of software and hardware? Turns out, Rust might be the perfect tool for such idiosyncratic developers!

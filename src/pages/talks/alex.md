@@ -18,6 +18,7 @@ speakers: [{
     mastodon: "",
     github: "https://github.com/alexcrichton",
 }]
+day: "tuesday"
 ---
 
 TBA

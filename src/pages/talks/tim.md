@@ -20,6 +20,7 @@ speakers: [{
     mastodon: "",
     github: "https://github.com/tdejager/",
 }]
+day: "wednesday"
 ---
 
 We open-sourced a SAT solver, Resolvo, for our package manager. In this talk we'll take you on a journey where we show you how we made this performant, ergonomic, sync/async with a single code path. Starting with: What is SAT, why should I care and moving on towards more advanced SAT+Rust patterns.

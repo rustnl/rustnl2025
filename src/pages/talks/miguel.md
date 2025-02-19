@@ -20,6 +20,7 @@ speakers: [{
     mastodon: "",
     github: "https://github.com/ojeda",
 }]
+day: "wednesday"
 ---
 
 TBA

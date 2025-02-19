@@ -20,6 +20,7 @@ speakers: [{
     mastodon: "",
     github: "",
 }]
+day: "wednesday"
 ---
 
 "How many Vim shortcuts do you know? What's the most obscure? What's the most useful?

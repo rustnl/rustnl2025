@@ -20,6 +20,7 @@ speakers: [{
     mastodon: "https://hachyderm.io/@cliffle",
     github: "https://github.com/cbiffle",
 }]
+day: "wednesday"
 ---
 
 We all know Rust scales up, but what kind of resources do you need for Rust firmware in low-end embedded systems?

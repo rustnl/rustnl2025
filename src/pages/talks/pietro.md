@@ -20,6 +20,7 @@ speakers: [{
     mastodon: "https://hachyderm.io/@pietroalbini",
     github: "https://github.com/pietroalbini",
 }]
+day: "tuesday"
 ---
 
 Abstract

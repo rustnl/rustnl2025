@@ -20,6 +20,7 @@ speakers: [{
     mastodon: "https://fosstodon.org/@diondokter",
     github: "https://github.com/diondokter",
 }]
+day: "wednesday"
 ---
 
 Are you having to choose between writing your device driver quickly or writing it well?

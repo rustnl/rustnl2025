@@ -21,6 +21,7 @@ speakers: [{
     mastodon: "",
     github: "https://github.com/sixfold-origami",
 }]
+day: "tuesday"
 ---
 
 You may have heard that floating point numbers are "numerically unstable" and "shouldn't be hashed", but why? Today we'll learn all the reasons why this is a TERRIBLE idea, and then we'll break all the rules and do it anyway! What are they going to do, put me in floating point jail?

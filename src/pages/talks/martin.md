@@ -20,6 +20,7 @@ speakers: [{
     mastodon: "",
     github: "https://github.com/althonos",
 }]
+day: "wednesday"
 ---
 
 In a classic case of "Rewrite It In Rust", implementing a novel

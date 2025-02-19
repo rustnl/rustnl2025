@@ -21,6 +21,7 @@ speakers: [{
     mastodon: "https://hachyderm.io/@ciura_victor ",
     github: "",
 }]
+day: "wednesday"
 ---
 
 High-fidelity Rust/C++ interoperability without loss of performance has yet to be achieved. Just "making things work" is not enough - many of the explored solutions so far by the community fail to deliver on all the needed requirements, swinging the wide range between performant and ergonomic.

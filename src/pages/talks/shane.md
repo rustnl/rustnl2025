@@ -21,6 +21,7 @@ speakers: [{
     mastodon: "https://fosstodon.org/@sffc",
     github: "https://github.com/sffc",
 }]
+day: "tuesday"
 ---
 
 Unicode, Google, and Mozilla set out on a mission five years ago to make lightweight, portable, and secure i18n. The team not only achieved this but also contributed an array of utilities to the Rust ecosystem, including crates for zero-copy deserialization, FFI, and Unicode text handling.

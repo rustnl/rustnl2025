@@ -20,6 +20,7 @@ speakers: [{
     mastodon: "",
     github: "",
 }]
+day: "wednesday"
 ---
 
 We share findings from an ongoing research on Rust’s organizing processes. We found that Rust’s roadmaps lost effectiveness owing to pending work items, cultural issues, and external factors (e.g., the pandemic). We discuss its implications for how accountability emerged in the community.

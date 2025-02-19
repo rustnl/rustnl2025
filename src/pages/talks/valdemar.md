@@ -21,6 +21,7 @@ speakers: [{
     mastodon: "",
     github: "https://github.com/Erk-",
 }]
+day: "wednesday"
 ---
 
 This talk will present a postmortem of the worst bug you can imagine happen for a bot which only feature is to post comics: The wrong comic being posted.

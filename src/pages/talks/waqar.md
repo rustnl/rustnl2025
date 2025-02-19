@@ -20,6 +20,7 @@ speakers: [{
     mastodon: "",
     github: "https://github.com/waahm7/",
 }]
+day: "wednesday"
 ---
 
 Discover how we are rewriting our C-based S3 Transfer Manager in Rust, achieving over 100Gbps transfer speeds. Join us to explore how this open-source library empowers customers to run massive AI/ML workloads at scale, revolutionizing data-intensive operations in the cloud.

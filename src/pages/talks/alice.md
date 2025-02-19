@@ -18,6 +18,7 @@ speakers: [{
     mastodon: "https://mastodon.gamedev.place/@alice_i_cecile",
     github: "https://github.com/alice-i-cecile",
 }]
+day: "wednesday"
 ---
 
 TBA

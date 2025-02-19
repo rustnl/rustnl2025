@@ -19,6 +19,7 @@ speakers: [{
     mastodon: "",
     github: "",
 }]
+day: "wednesday"
 ---
 
 I will discuss building high performance search indexes in Rust and show that we can achieve SoTA performance for both sparse and dense vector retrieval. To achieve these results we leverage the Rust compiler’s access to vectorized instructions and granular compiler controls.

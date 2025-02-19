@@ -20,6 +20,7 @@ speakers: [{
     mastodon: "https://mastodon.online/@raph",
     github: "https://github.com/raphlinus",
 }]
+day: "tuesday"
 ---
 
 This talk presents new work on high performance vector path and text rendering, to make it not only fast but easier to integrate with other code. Multiple modes are supported, including CPU, GPU, and hybrid. At the heart is a new efficient representation of rendered paths: sparse strips.

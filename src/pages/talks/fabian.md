@@ -20,6 +20,7 @@ speakers: [{
     mastodon: "@fbeutel@mastodon.social",
     github: "fbeutel",
 }]
+day: "wednesday"
 ---
 
 This talk explores how Rust powers every layer of our single-photon detectors: from async firmware on microcontrollers with Embassy to auto-generated APIs and user interfaces. We demonstrate practical examples and share benefits and challenges of adopting Rust for scientific instrumentation.

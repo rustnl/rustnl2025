@@ -19,6 +19,7 @@ speakers: [{
     mastodon: "https://hachyderm.io/@ciara",
     github: "",
 }]
+day: "wednesday"
 ---
 
 Atomics and memory ordering are a commonly misunderstood, but incredibly useful part of Rust and C++. In this talk we will walk through why memory ordering is such a crucial part of the atomics model, and demystify when it's appropriate to use different ordering types.
