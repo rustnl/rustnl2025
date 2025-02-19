@@ -1,0 +1,77 @@
+---
+import CommonLayout from "./CommonLayout.astro"
+import Button from "../components/Button.astro"
+
+interface Props {
+    day: string,
+}
+
+const {day}: Props = Astro.props;
+
+---
+
+<CommonLayout title="Talk schedule" header={`Talk schedule ${day == "tuesday"? "Tuesday": "Wednesday"}`}>
+    <div class="timetable" id="top">
+        <div class="slot">
+            <div class="description" >
+                <p>
+                    This is the schedule for the talks on <b>{day == "tuesday"? "Tuesday 13 May" : "Wednesday 14 May"}</b>. There are two main conference days with talks. You can find <a href={day == "tuesday"?"/schedule/wednesday":"/schedule/tuesday"}>{day == "tuesday"? "Wednesday": "Tuesday"}'s schedule here</a>.
+                    Throughout the week there are all kinds of other activities as well. You can find an overview of the entire week <a href="/#schedule">here</a>.
+                </p>
+            </div>
+
+            <slot />
+        </div>
+
+        <div class="footer-nav">
+            You are currently on {day == "tuesday"? "Tuesday 13 May":"Wednesday 14 May"}'s talk schedule.
+
+            <div class="buttons">
+                <Button link={day == "tuesday"?"/schedule/wednesday":"/schedule/tuesday"}>
+                    {day == "tuesday"? "Wednesday": "Tuesday"}'s schedule
+                </Button>
+                <Button link="/#schedule">
+                    Week overview
+                </Button>
+                <Button link="#top">
+                    Back to top
+                </Button>
+            </div>
+        </div>
+    </div>
+</CommonLayout>
+
+<style lang="scss">
+
+.timetable {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .slot {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: min-content;
+    }
+
+    .footer-nav {
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 1em;
+        }
+
+        text-align: center;
+        margin-top: 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+}
+
+</style>
