@@ -9,7 +9,7 @@ If you have any questions not answered on this page, you can send an email to <j
 
 ## When am I speaking?
 
-You can find the time of the talks in the [timetable](https://2025.rustnl.org/timetable/).
+You can find the time of the talks in the [timetable](/schedule/tuesday). We'd like to ask you to come to the stage in the break before your talk so we can give you a microphone and check that your slides are set up properly.
 
 ## How long should my talk be?
 
