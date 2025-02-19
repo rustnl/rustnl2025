@@ -3,6 +3,7 @@ import CommonLayout from '../layouts/CommonLayout.astro';
 import '../styles/index.scss';
 import Button from '../components/Button.astro';
 import Person from '../components/people/Person.astro';
+import Divider from '../components/Divider.astro';
 
 const { frontmatter } = Astro.props;
 const { talkTitle, talkLevel, url } =
@@ -12,6 +13,18 @@ const sep = /\/\/\/\/\/\/.*/;
 const content = await Astro.slots.render('default');
 const abstract = content.split(sep)[0];
 const bio = content.split(sep)[1].replace(/^\n|\n$/g, '');
+
+function list(names: string[]){
+  const finalName = names.pop();
+  return names.length
+  ? names.join(', ') + ' & ' + finalName
+  : finalName;
+}
+
+console.log(frontmatter.speakers);
+const speaker_names = list(frontmatter.speakers.map((s: any) => s.name));
+console.log(speaker_names);
+
 ---
 
 <CommonLayout title={talkTitle} withLogo>
@@ -20,8 +33,8 @@ const bio = content.split(sep)[1].replace(/^\n|\n$/g, '');
     <h1>
       {talkTitle}
     </h1>
+    <h2>by {speaker_names}</h2>
   </div>
-
   <section class="container md:grid md:cols-12 py-12">
     <div class="md:col-start-3 md:col-end-11">
       <!-- <slot /> -->
@@ -36,19 +49,10 @@ const bio = content.split(sep)[1].replace(/^\n|\n$/g, '');
         }
       </div>
       <div class="py-6">
-        <h3>Talk by</h3>
+        <h3>{frontmatter.speakers.length == 1 ? "Speaker" : "Speakers"}</h3>
         {
           frontmatter.speakers.map((speaker: any) => (
-            <div class="speaker">
-              <div class="picture">
-                <Person {...speaker} hideName />
-              </div>
-              <h4 class="name">{speaker.name}</h4>
-              <div class="bio">
-                <div set:html={bio} />
-                {speaker.title}
-              </div>
-            </div>
+            <Person description={bio} {...speaker} />
           ))
           }
         <div class="buttons">
@@ -80,26 +84,6 @@ const bio = content.split(sep)[1].replace(/^\n|\n$/g, '');
 @use '../styles/variables.scss';
 @use '../styles/breakpoint.scss';
 
-.speaker {
-      border-bottom: 1px solid variables.$color-red-400;
-      padding-bottom: 1.5rem;
-      margin-bottom: 1.5rem;
-
-      display: grid;
-      grid-template-columns: 2fr 3fr;
-      grid-template-areas:
-        "picture name"
-        "picture bio";
-
-     @include breakpoint.smaller_than(lg) {
-        display: flex;
-        flex-direction: column;
-     }
-     @include breakpoint.wider_than(lg) {
-        gap: 0.5em 2em;
-     }
-}
-
 .bio {
     grid-area: bio;
 }
@@ -121,6 +105,11 @@ const bio = content.split(sep)[1].replace(/^\n|\n$/g, '');
 
 h1 {
   padding: 0;
+  text-decoration: none;
+}
+
+h2 {
+  text-decoration: none;
 }
 
 .buttons {

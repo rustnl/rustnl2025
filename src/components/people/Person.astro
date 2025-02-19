@@ -1,5 +1,5 @@
 ---
-import Icon from '../Icon.astro';
+import Icon from "../Icon.astro";
 
 interface Props {
   name?: string;
@@ -15,8 +15,6 @@ interface Props {
   github?: string;
   bluesky?: string;
   tile?: boolean;
-
-  hideName?: boolean;
 }
 
 const {
@@ -33,41 +31,49 @@ const {
   github,
   bluesky,
   tile = false,
-  hideName = false,
 } = Astro.props;
 
 function convertTrack(i: string): string {
-    switch(i) {
-        case "deep_dive": return "deep dive";
-        case "main": return "main";
-        case "project": return "project";
-        case "ecosystem": return "ecosystem";
-        case "industry": return "industry";
-    }
+  switch (i) {
+    case "deep_dive":
+      return "deep dive";
+    case "main":
+      return "main";
+    case "project":
+      return "project";
+    case "ecosystem":
+      return "ecosystem";
+    case "industry":
+      return "industry";
+  }
 
-    return i
+  return i;
 }
 
-const speakers = await Astro.glob('../../pages/talks/*.md');
+const speakers = await Astro.glob("../../pages/talks/*.md");
 let github_of_person = null;
 
 outer: for (const i of speakers) {
-    for (const speaker of i.frontmatter.speakers) {
-        if (speaker.name === name && speaker.github && speaker.github !== "") {
-            if (!speaker.github.includes("https://github.com")) {
-                github_of_person = `https://github.com/${speaker.github}`;
-            }else {
-                github_of_person = speaker.github.replace(/\/$/g, '');
-            }
-            break outer;
-        }
+  for (const speaker of i.frontmatter.speakers) {
+    if (speaker.name === name && speaker.github && speaker.github !== "") {
+      if (!speaker.github.includes("https://github.com")) {
+        github_of_person = `https://github.com/${speaker.github}`;
+      } else {
+        github_of_person = speaker.github.replace(/\/$/g, "");
+      }
+      break outer;
     }
+  }
 }
 
-const imageFile = image? `/images/people/${image}` : github_of_person? `${github_of_person}.png` : "/images/people/empty.png";
+const imageFile = image
+  ? `/images/people/${image}`
+  : github_of_person
+    ? `${github_of_person}.png`
+    : "/images/people/empty.png";
 ---
 
-<div class="person">
+<div class:list={["person", tile ? "tile" : "detail"]}>
   <div class="image-container">
     {
       link ? (
@@ -91,59 +97,90 @@ const imageFile = image? `/images/people/${image}` : github_of_person? `${github
       }
     </div>
   </div>
-  {
-    !tile && (
-      <div class="socials">
-        {linkedin && (
-          <a href={linkedin}>
-            <Icon name="linkedin" />
-          </a>
-        )}
-        {twitter && (
-          <a href={twitter}>
-            <Icon name="x" />
-          </a>
-        )}
-        {mastodon && (
-          <a href={mastodon}>
-            <Icon name="mastodon" />
-          </a>
-        )}
-        {github && (
-          <a href={github}>
-            <Icon name="github" />
-          </a>
-        )}
-        {bluesky && (
-          <a href={bluesky}>
-            <Icon name="bluesky" />
-          </a>
-        )}
-        {url && (
-          <a href={url}>
-            <Icon name="website" />
-          </a>
-        )}
-      </div>
-    )
-  }
-  <div>
-    {!hideName && <h4>{name}</h4>}
-    {description && <span set:html={description} />}
-    {title && <p>{title}</p>}
+  <div class="person-info">
+    <h4>{name}</h4>
+    {title && <div class="title">{title}</div>}
+    {
+      !tile && (
+        <div class="socials">
+          {linkedin && (
+            <a href={linkedin}>
+              <Icon name="linkedin" />
+            </a>
+          )}
+          {twitter && (
+            <a href={twitter}>
+              <Icon name="x" />
+            </a>
+          )}
+          {mastodon && (
+            <a href={mastodon}>
+              <Icon name="mastodon" />
+            </a>
+          )}
+          {github && (
+            <a href={github}>
+              <Icon name="github" />
+            </a>
+          )}
+          {bluesky && (
+            <a href={bluesky}>
+              <Icon name="bluesky" />
+            </a>
+          )}
+          {url && (
+            <a href={url}>
+              <Icon name="website" />
+            </a>
+          )}
+        </div>
+      )
+    }
+    {!tile && description && <div class="bio" set:html={description}></div>}
     <slot />
   </div>
 </div>
 
 <style lang="scss">
-  @use '../../styles/breakpoint.scss';
-  @use '../../styles/variables.scss';
+  @use "../../styles/breakpoint.scss";
+  @use "../../styles/variables.scss";
 
-  .person {
+  .person.tile {
     display: flex;
     flex-direction: column;
     gap: 1em;
+  }
 
+  .person.detail {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  
+    & h4 {
+      font-weight: 500;
+      margin-bottom: 0.5em;
+    }
+
+    @include breakpoint.wider_than(sm) {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      align-items: start;
+      // flex-direction: row;
+      gap: 1em;
+      width: 100%;
+    }
+  }
+
+  .title {
+    margin-bottom: 0.5em;
+  }
+
+  .bio {
+    margin-top: 1em;
+  }
+
+  .person {
+    margin-bottom: 1em;
     a {
       color: inherit;
       text-decoration: underline;
@@ -168,7 +205,6 @@ const imageFile = image? `/images/people/${image}` : github_of_person? `${github
     .image-container {
       position: relative;
       max-width: 30rem;
-      align-self: center;
       width: 100%;
       a,
       .image {
