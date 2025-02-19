@@ -1,21 +1,24 @@
 ---
 layout: "../../layouts/TalkLayout.astro"
-name: "Alex Crichton"
-image: "alex_crichton.jpg" # images go in public/images/people
-title: "Core Contributor of WasmTime"
-org: ""
 tracks: 
- - main_stage
+ - main
 talkTitle: "TBA"
 talkLevel: ""
 talkTags: []
 talkDuration: 30 # 15 or 30 min
-url: ""
-bluesky: ""
-linkedin: ""
-twitter: "https://x.com/alex_crichton"
-mastodon: ""
-github: "https://github.com/alexcrichton"
+speakers: [{
+    name: "Alex Crichton",
+    image: "alex_crichton.jpg", # images go in public/images/people
+    title: "Core Contributor of WasmTime",
+    org: "",
+    url: "",
+    bluesky: "",
+    linkedin: "",
+    twitter: "https://x.com/alex_crichton",
+    mastodon: "",
+    github: "https://github.com/alexcrichton",
+}]
+day: "tuesday"
 ---
 
 TBA

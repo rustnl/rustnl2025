@@ -1,12 +1,30 @@
 ---
 const {name} = Astro.props;
----
 
-<img class="icon" src={`https://unpkg.com/simple-icons@v13/icons/${name}.svg`} alt={`icon of ${name}`}>
+import { library, icon } from "@fortawesome/fontawesome-svg-core";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faGlobe);
+
+const globeIcon = icon({ prefix: "fas", iconName: faGlobe.iconName });
+
+---
+{(name == "website") ? (
+<div class="icon" set:html={globeIcon.html}></div>
+) : (
+    <img class="icon" src={`https://unpkg.com/simple-icons@v13/icons/${name}.svg`} alt={`icon of ${name}`}>
+)}
 
 <style>
 .icon {
     height: 1em;
     aspect-ratio: 1/1;
+    display: inline;
+}
+div.icon {
+    height: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 </style>

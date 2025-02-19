@@ -1,20 +1,25 @@
 ---
 layout: "../../layouts/TalkLayout.astro"
-name: "Jack Pertschuk"
-image: "jack.jpeg" # images go in public/images/people
-title: ""
-org: "Pinecone"
+
 tracks: 
  - deep_dive
 talkTitle: "Building High Performance Search Indexes in Rust with SIMD"
 talkLevel: "Intermediate"
 talkTags: ["search", "ai", "performance", "simd", "database"]
 talkDuration: 30 # 15 or 30 min
-url: ""
-linkedin: "https://www.linkedin.com/in/jack-pertschuk-833196114/"
-twitter: ""
-mastodon: ""
-github: ""
+
+speakers: [{
+    name: "Jack Pertschuk",
+    image: "jack.jpeg",
+    title: "",
+    org: "Pinecone",
+    url: "",
+    linkedin: "https://www.linkedin.com/in/jack-pertschuk-833196114/",
+    twitter: "",
+    mastodon: "",
+    github: "",
+}]
+day: "wednesday"
 ---
 
 I will discuss building high performance search indexes in Rust and show that we can achieve SoTA performance for both sparse and dense vector retrieval. To achieve these results we leverage the Rust compiler’s access to vectorized instructions and granular compiler controls.

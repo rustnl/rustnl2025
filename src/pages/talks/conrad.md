@@ -1,21 +1,26 @@
 ---
 layout: "../../layouts/TalkLayout.astro"
-name: "Conrad Irwin"
-image: "conrad.png" # images go in public/images/people
-title: ""
-org: "Zed"
+
 tracks: 
- - main_stage
+ - main
 talkTitle: "Rewriting Vim in Rust: Lessons Learned"
 talkLevel: "All"
 talkTags: ["tooling"]
 talkDuration: 15 # 15 or 30 min
-url: "https://zed.dev"
-bluesky: ""
-linkedin: ""
-twitter: ""
-mastodon: ""
-github: ""
+
+speakers: [{
+    name: "Conrad Irwin",
+    image: "conrad.png",
+    title: "",
+    org: "Zed",
+    url: "https://zed.dev",
+    bluesky: "",
+    linkedin: "",
+    twitter: "",
+    mastodon: "",
+    github: "",
+}]
+day: "wednesday"
 ---
 
 "How many Vim shortcuts do you know? What's the most obscure? What's the most useful?

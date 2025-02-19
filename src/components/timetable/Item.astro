@@ -1,0 +1,101 @@
+---
+import { EMPTY_PATH } from "astro:schema";
+import Block from "./Block.astro";
+
+interface Props {
+    talk?: string;
+    title?: string;
+    speakers?: {name: string, image: string}[]
+    url?: string;
+    room: string;
+    track: number;
+    // as a string
+    time: string;
+    // in minutes?
+    duration: number;
+    color?: string;
+    striped?: boolean;
+    description?: string;
+    ticket?: string;
+}
+
+const {
+    talk,
+    title = "",
+    speakers,
+    room,
+    track,
+    time,
+    duration,
+    color,
+    striped = false,
+    description,
+    ticket,
+    url,
+}: Props = Astro.props;
+
+const matches = import.meta.glob("../../pages/talks/*.md", { eager: true });
+const files = Object.values(matches);
+let file: any = null;
+if (talk !== null) {
+    file = files.find((v: any) => {
+        return v.url.split("/")[2] == talk;
+    });
+}
+
+const talk_title = title ? title : file ? file.frontmatter.talkTitle : "ERROR";
+const talk_url = url ?? file?.url;
+const talk_speakers = speakers ?? file?.frontmatter?.speakers ?? [];
+---
+
+<Block
+    room={room}
+    track={track}
+    time={time}
+    duration={duration}
+    color={color}
+    striped={striped}
+    url={talk_url}
+    ticket={ticket}
+>
+    <div>
+        <div class="title">{talk_title}</div>
+        {
+            talk_speakers.map((speaker: any) => (
+                <div class="speaker">
+                    <img
+                        class="speaker-img"
+                        src={speaker.image? `/images/people/${speaker.image}`: speaker.github? `${speaker.github}.png`: "/images/people/empty.png"}
+                        alt={`Picture of ${speaker.name}`}
+                    />
+                    <p>{speaker.name}</p>
+                </div>
+            ))
+        }
+        { description && <p>{description}</p>}
+    </div>
+</Block>
+
+<style>
+    .title {
+        font-weight: 500;
+        margin-top: 0.2em;
+    }
+
+    .speaker-img {
+        height: 2em;
+        border-radius: 0.2em;
+        background: #fff0e6;
+        margin-right: 0.3em;
+    }
+
+    .speaker {
+        font-size: 0.8em;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.3em;
+        height: 2em;
+        margin-top: 0.5em;
+    }
+</style>

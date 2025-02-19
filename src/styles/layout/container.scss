@@ -2,15 +2,32 @@
 @use '../variables.scss';
 
 .container {
-  margin-inline: auto;
-  padding-inline: variables.space(4);
-  width: min(100%, 96rem);
+    margin-inline: auto;
+    padding-inline: variables.space(4);
+    width: min(100%, 96rem);
 
-  @include breakpoint.wider_than(md) {
-    padding-inline: variables.space(6);
-  }
+    @include breakpoint.wider_than(md) {
+        padding-inline: variables.space(6);
+    }
 
-  @include breakpoint.wider_than(xl) {
-    padding-inline: variables.space(12);
-  }
+    @include breakpoint.wider_than(xl) {
+        padding-inline: variables.space(12);
+    }
+}
+
+.new-container {
+    margin-inline: auto;
+    padding-inline: variables.space(4);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include breakpoint.wider_than(md) {
+        padding-inline: variables.space(6);
+    }
+
+    @include breakpoint.wider_than(xl) {
+        padding-inline: variables.space(12);
+    }
 }

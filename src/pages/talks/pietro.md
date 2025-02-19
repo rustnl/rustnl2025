@@ -1,21 +1,26 @@
 ---
 layout: "../../layouts/TalkLayout.astro"
-name: "Pietro Albini"
-image: "pietro_albini.jpg" # images go in public/images/people
-title: "Rust Project's Infra & Release teams"
-org: ""
+
 tracks: 
- - main_stage
+ - main
 talkTitle: "TBA"
 talkLevel: ""
 talkTags: []
 talkDuration: 30 # 15 or 30 min
-url: ""
-bluesky: ""
-linkedin: ""
-twitter: ""
-mastodon: "https://hachyderm.io/@pietroalbini"
-github: "https://github.com/pietroalbini"
+
+speakers: [{
+    name: "Pietro Albini",
+    image: "pietro_albini.jpg",
+    title: "Rust Project's Infra & Release teams",
+    org: "",
+    url: "",
+    bluesky: "",
+    linkedin: "",
+    twitter: "",
+    mastodon: "https://hachyderm.io/@pietroalbini",
+    github: "https://github.com/pietroalbini",
+}]
+day: "tuesday"
 ---
 
 Abstract
