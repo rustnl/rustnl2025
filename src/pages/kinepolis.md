@@ -6,7 +6,7 @@ slug: "kinepolis"
 
 The RustWeek 2025 conference will be held in <a href=" https://kinepolis.nl/bioscopen/kinepolis-jaarbeurs-utrecht/info/">**Kinepolis Jaarbeurs Utrecht**</a>. This venue is a cinema in the center of Utrecht, right next to the Central Station.
 
-Note: please keep in mind that the workshops (Thu May 15) are not held in the conference venue, but in the second venue, called DUS. See [the week schedule](/#schedule).
+Note: please keep in mind that the workshops (<b>Thursday 15 May</b>) are not held in the conference venue, but in the second venue, called DUS. See [the week schedule](/#schedule).
 
 <img style="width: 100%" src="/images/venues/kinepolis/Kinepolis-Jaarbeurs-Utrecht3-1200x900.jpg" />
 
