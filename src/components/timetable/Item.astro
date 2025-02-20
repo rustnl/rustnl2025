@@ -53,7 +53,7 @@ const talk_title = title ? title : file ? file.frontmatter.talkTitle : "ERROR";
 const talk_url = url ?? file?.url;
 const talk_speakers = speakers ?? file?.frontmatter?.speakers ?? [];
 
-const timetable_url = `/schedule/${file?.frontmatter?.day || Astro.url.pathname.split("/").filter(i => i != "").pop()}#${talk_url?.split("/").pop()}`
+const timetable_url = `/schedule/${Astro.url.pathname.split("/").filter(i => i != "").pop()}#${talk_url?.split("/").pop()}`
 ---
 
 <Block
