@@ -10,7 +10,8 @@ talkDuration: 30 # 15 or 30 min
 speakers: [{
     name: "Ciara R",
     org: "Esri",
-    image: null,
+    image: "ciara.jpg",
+    imageSmall: "ciara-small.jpg",
     title: "Senior Software Engineer",
     url: "https://www.youtube.com/@rustandcppcardiffmeetup4173",
     bluesky: "",

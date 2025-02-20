@@ -10,7 +10,7 @@ talkDuration: 30 # 15 or 30 min
 
 speakers: [{
     name: "Matt Campbell",
-    image: null,
+    image: "matt-campbell.jpg",
     title: "",
     org: "",
     url: "https://accesskit.dev/",
