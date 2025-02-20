@@ -2,10 +2,13 @@
 import Block from "./Block.astro";
 import { library, icon } from "@fortawesome/fontawesome-svg-core";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
+import { faBookmark as regularBookmark } from "@fortawesome/free-regular-svg-icons";
 
 library.add(faBookmark);
+library.add(regularBookmark);
 
 const bookmarkIcon = icon({ prefix: "fas", iconName: faBookmark.iconName });
+const bookmarkIconRegular = icon({ prefix: "far", iconName: regularBookmark.iconName });
 
 interface Props {
     talk?: string;
@@ -83,7 +86,8 @@ const timetable_url = `/schedule/${Astro.url.pathname.split("/").filter(i => i !
 
         {talk_url && (
             <label class="checkbox" data-bookmark data-timetable-url={timetable_url}>
-                <span class="icon"><Fragment set:html={bookmarkIcon.html} /></span>
+                <span class="icon full"><Fragment set:html={bookmarkIcon.html} /></span>
+                <span class="icon empty"><Fragment set:html={bookmarkIconRegular.html} /></span>
             </label>
         )}
     </div>
@@ -137,9 +141,22 @@ const timetable_url = `/schedule/${Astro.url.pathname.split("/").filter(i => i !
             font-size: variables.$font-size-sm;
             padding: 0.5em;
             cursor: pointer;
+            color: color-mix(in hsl, var(--color-two), black 20%);
+
+           .empty {
+                display: inline;
+            }
+            .full {
+                display: none;
+            }
 
             &.checked {
-                color: var(--color-two);
+                .empty {
+                    display: none;
+                }
+                .full {
+                    display: inline;
+                }
             }
         }
 
