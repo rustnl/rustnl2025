@@ -75,32 +75,7 @@ const end_time = `${tmp.getHours()}:${minutes}`;
     {ticket && <div class="ticket">{ticket} ticket required</div>}
 </a>
 
-<style is:global>
-    .item.yellow {
-        --color-one: #ffe5b3;
-        --color-two: #e69600;
-    }
-
-    .item.blue {
-        --color-one: #d9e7f6;
-        --color-two: #729ecb;
-    }
-
-    .item.red {
-        --color-one: #f8c7b7;
-        --color-two: #d14c23;
-    }
-
-    .item.purple {
-        --color-one: #e8defb;
-        --color-two: #9c4db4;
-    }
-</style>
-
 <style lang="scss">
-    a {
-        position: relative;
-    }
     .ticket {
         font-size: 0.6em;
         font-weight: 500;
@@ -114,6 +89,7 @@ const end_time = `${tmp.getHours()}:${minutes}`;
     }
 
     .item {
+        position: relative;
         border: solid 1px;
         border-top-width: 4px;
         padding: 16px;

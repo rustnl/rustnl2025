@@ -6,7 +6,7 @@ import Person from '../components/people/Person.astro';
 import Divider from '../components/Divider.astro';
 
 const { frontmatter } = Astro.props;
-const { talkTitle, talkLevel, url, day = "tuesday" } =
+const { talkTitle, talkLevel, url, tracks = [], day = "tuesday" } =
   frontmatter;
 
 const sep = /\/\/\/\/\/\/.*/;
@@ -21,9 +21,7 @@ function list(names: string[]){
   : finalName;
 }
 
-console.log(frontmatter.speakers);
 const speaker_names = list(frontmatter.speakers.map((s: any) => s.name));
-console.log(speaker_names);
 
 ---
 
@@ -56,11 +54,22 @@ console.log(speaker_names);
           ))
           }
         <div class="buttons">
-            <Button
-              link="https://www.eventbrite.nl/e/rustweek-2025-tickets-1001676961757?aff=oddtdtcreator"
-            >
-              Get your ticket
-            </Button>
+            {
+                !tracks.includes("industry")?(
+                    <Button
+                      link="https://www.eventbrite.nl/e/rustweek-2025-tickets-1001676961757?aff=oddtdtcreator"
+                    >
+                        Get your ticket
+                    </Button>
+                ):(
+
+                    <Button
+                      link="https://www.eventbrite.nl/e/industry-track-rustweek-2025-tickets-1115250035879"
+                    >
+                        Get your ticket
+                    </Button>
+                )
+            }
             <Button
                         link=`/schedule/${day}/#${url.split('/').pop()}`
             >
