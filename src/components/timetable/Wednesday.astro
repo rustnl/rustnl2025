@@ -20,7 +20,7 @@ const breaks = [
 
 <Timetable breaks={breaks}>
     <Divider start="8:45" end="9:30">Doors open & registration</Divider>
-    <TrackIndicator afterDivider="9:30" track="Main track" />
+    <TrackIndicator afterDivider="9:30" track="Main track" color="yellow" first />
     <Item
         title="Opening"
         color="yellow"
@@ -45,9 +45,9 @@ const breaks = [
         duration={35}
         room={main}
     />
-    <TrackIndicator afterDivider="9:30" track="Deep dive track" />
+    <TrackIndicator afterDivider="9:30" track="Deep dive track" color="blue" first />
     <Item
-        title="Opening Deep Dive track"
+        title="Opening"
         color="blue"
         track={2}
         time="9:30"
@@ -70,9 +70,9 @@ const breaks = [
         duration={35}
         room={secondary}
     />
-    <TrackIndicator afterDivider="9:30" track="Project track" />
+    <TrackIndicator afterDivider="9:30" track="Project track" color="red" first />
     <Item
-        title="Opening Project track"
+        title="Opening"
         color="red"
         track={3}
         time="9:30"
@@ -96,7 +96,7 @@ const breaks = [
         room={tertiary}
     />
     <Divider start="11:00" end="11:30"> Break </Divider>
-    <TrackIndicator afterDivider="11:30" track="Main track" />
+    <TrackIndicator afterDivider="11:30" track="Main track" color="yellow" />
     <Item
         talk="michal"
         color="yellow"
@@ -113,7 +113,7 @@ const breaks = [
         duration={20}
         room={main}
     />
-    <TrackIndicator afterDivider="11:30" track="Deep dive track" />
+    <TrackIndicator afterDivider="11:30" track="Deep dive track" color="blue" />
     <Item
         talk="waffle"
         color="blue"
@@ -130,7 +130,7 @@ const breaks = [
         duration={20}
         room={secondary}
     />
-    <TrackIndicator afterDivider="11:30" track="Project track" />
+    <TrackIndicator afterDivider="11:30" track="Project track" color="red" />
     <Item
         title="Project track (TBA)"
         color="red"
@@ -141,7 +141,7 @@ const breaks = [
         striped
     />
     <Divider start="12:35" end="14:00"> Lunch </Divider>
-    <TrackIndicator afterDivider="14:00" track="Main track" />
+    <TrackIndicator afterDivider="14:00" track="Main track" color="yellow" />
     <Item
         talk="ciara"
         color="yellow"
@@ -166,7 +166,7 @@ const breaks = [
         duration={20}
         room={main}
     />
-    <TrackIndicator afterDivider="14:00" track="Deep dive track" />
+    <TrackIndicator afterDivider="14:00" track="Deep dive track" color="blue" />
     <Item
         talk="tim"
         color="blue"
@@ -191,7 +191,7 @@ const breaks = [
         duration={20}
         room={secondary}
     />
-    <TrackIndicator afterDivider="14:00" track="Project track" />
+    <TrackIndicator afterDivider="14:00" track="Project track" color="red" />
     <Item
         title="Project track (TBA)"
         color="red"
@@ -202,7 +202,7 @@ const breaks = [
         striped
     />
     <Divider start="15:50" end="16:20"> Break </Divider>
-    <TrackIndicator afterDivider="16:20" track="Main track" />
+    <TrackIndicator afterDivider="16:20" track="Main track" color="yellow" />
     <Item
         talk="victor"
         color="yellow"
@@ -219,7 +219,7 @@ const breaks = [
         duration={35}
         room={main}
     />
-    <TrackIndicator afterDivider="16:20" track="Deep dive track" />
+    <TrackIndicator afterDivider="16:20" track="Deep dive track" color="blue" />
     <Item
         talk="dion"
         color="blue"
@@ -236,7 +236,7 @@ const breaks = [
         duration={35}
         room={secondary}
     />
-    <TrackIndicator afterDivider="16:20" track="Project track" />
+    <TrackIndicator afterDivider="16:20" track="Project track" color="red" />
     <Item
         title="Project track (TBA)"
         color="red"
