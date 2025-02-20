@@ -50,14 +50,13 @@ if (tmp.getMinutes() < 10) {
 const end_time = `${tmp.getHours()}:${minutes}`;
 ---
 
-<a
+<div
     class:list={["item", color ? color : null, striped ? "striped" : null]}
     style={{
         gridColumn: track,
         gridRowStart: `time${time_underscore}`,
         gridRowEnd: `span ${duration / 5}`,
     }}
-    href={url}
     id={url ? url.split("/").pop() : null}
 >
     <div class="meta">
@@ -75,6 +74,28 @@ const end_time = `${tmp.getHours()}:${minutes}`;
     <slot />
     {ticket && <div class="ticket">{ticket} ticket required</div>}
 </a>
+
+<style is:global>
+    .item.yellow {
+        --color-one: #ffe5b3;
+        --color-two: #e69600;
+    }
+
+    .item.blue {
+        --color-one: #d9e7f6;
+        --color-two: #729ecb;
+    }
+
+    .item.red {
+        --color-one: #f8c7b7;
+        --color-two: #d14c23;
+    }
+
+    .item.purple {
+        --color-one: #e8defb;
+        --color-two: #9c4db4;
+    }
+</style>
 
 <style lang="scss">
     a {
@@ -111,26 +132,6 @@ const end_time = `${tmp.getHours()}:${minutes}`;
         display: flex;
         flex-direction: row;
         gap: 1em;
-    }
-
-    .item.yellow {
-        --color-one: #ffe5b3;
-        --color-two: #e69600;
-    }
-
-    .item.blue {
-        --color-one: #d9e7f6;
-        --color-two: #729ecb;
-    }
-
-    .item.red {
-        --color-one: #f8c7b7;
-        --color-two: #d14c23;
-    }
-
-    .item.purple {
-        --color-one: #e8defb;
-        --color-two: #9c4db4;
     }
 
     .item {
