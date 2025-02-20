@@ -41,6 +41,10 @@ const start_time = new Date();
 start_time.setHours(parseInt(time.split(":")[0]));
 start_time.setMinutes(parseInt(time.split(":")[1]));
 const tmp = addMinutes(start_time, duration);
+
+const diff_ms = (tmp as any) - (start_time as any);
+const diff_m = diff_ms / 1000 / 60;
+
 let minutes: string;
 if (tmp.getMinutes() < 10) {
     minutes = `0${tmp.getMinutes()}`;
@@ -63,8 +67,8 @@ const end_time = `${tmp.getHours()}:${minutes}`;
         <div>
             <div class="icon"><Fragment set:html={clockIcon.html} /></div>
             {time}
-            -
-            {end_time}
+
+            <span class="duration">({diff_m}&nbsp;min)</span>
         </div>
         <div>
             <div class="icon"><Fragment set:html={locationIcon.html} /></div>
@@ -86,6 +90,10 @@ const end_time = `${tmp.getHours()}:${minutes}`;
         bottom: 0;
         right: 0;
         border-top-left-radius: 0.5em;
+    }
+
+    .duration {
+        opacity: 60%;
     }
 
     .item {
