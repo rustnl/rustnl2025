@@ -3,7 +3,7 @@ layout: "../../layouts/TalkLayout.astro"
 
 tracks: 
  - main
-talkTitle: "TBA"
+talkTitle: "Rust for Linux"
 talkLevel: ""
 talkTags: []
 talkDuration: 30 # 15 or 30 min
