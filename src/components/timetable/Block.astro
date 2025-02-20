@@ -99,6 +99,10 @@ const end_time = `${tmp.getHours()}:${minutes}`;
         display: flex;
         flex-direction: column;
         text-decoration: none;
+
+        &:target {
+            border: solid 10px var(--color-two) !important;
+        }
     }
 
     .meta {

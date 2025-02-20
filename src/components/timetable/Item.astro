@@ -65,7 +65,7 @@ const talk_speakers = speakers ?? file?.frontmatter?.speakers ?? [];
                 <div class="speaker">
                     <img
                         class="speaker-img"
-                        src={speaker.image? `/images/people/${speaker.image}`: speaker.github? `${speaker.github}.png`: "/images/people/empty.png"}
+                        src={speaker.imageSmall? `/images/people/${speaker.imageSmall}`: speaker.image? `/images/people/${speaker.image}`: speaker.github? `${speaker.github}.png`: "/images/people/empty.png"}
                         alt={`Picture of ${speaker.name}`}
                     />
                     <p>{speaker.name}</p>
