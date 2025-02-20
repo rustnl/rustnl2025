@@ -9,7 +9,7 @@ talkDuration: 30 # 15 or 30 min
 speakers: [{
     name: "Alex Crichton",
     image: "alex_crichton.jpg", # images go in public/images/people
-    title: "Core Contributor of WasmTime",
+    title: "Core Contributor of Wasmtime",
     org: "",
     url: "",
     bluesky: "",
