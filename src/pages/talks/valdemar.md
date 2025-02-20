@@ -30,10 +30,8 @@ To explain the issue we will look at API's of various time and date libraries an
 
 ////// <!-- sepatator between abstract and bio -->
 
-I am a Rust engineer who have a large within the subject of programming languages.
-And specially the a bit more niche subject of program transformation.
+I am a Rust engineer who have a large interest within the subject of programming languages, and especially the bit more niche subject of program transformation.
 
-I have volunteered a lot in the past both for teaching and open source projects and 
-I practically live inside of Emacs.
+I have volunteered a lot in the past both for teaching and open source projects and I practically live inside of Emacs.
 
 
