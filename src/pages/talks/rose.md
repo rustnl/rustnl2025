@@ -28,6 +28,4 @@ You may have heard that floating point numbers are "numerically unstable" and "s
 
 ////// <!-- sepatator between abstract and bio -->
 
-BiExtremely average programmer, vacillating between "it's so over" and "we're so back". I write Rust for a living at the Foresight Spatial Labs, making CAD software with the Bevy engine. I love writing, making games, and folding origami! I'm also a grandmaster Tetris player.o
-
-
+Extremely average programmer, vacillating between "it's so over" and "we're so back". I write Rust for a living at the Foresight Spatial Labs, making CAD software with the Bevy engine. I love writing, making games, and folding origami! I'm also a grandmaster Tetris player.
