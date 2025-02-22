@@ -11,7 +11,7 @@ talkDuration: 30 # 15 or 30 min
 
 speakers: [{
     name: "Rose Peck",
-    image: "rose.png",
+    image: "rosepeck.jpg",
     title: "",
     org: "Foresight Spatial Labs",
     url: "https://sixfold-origami.com/",
