@@ -1,21 +1,27 @@
 ---
 layout: "../../layouts/TalkLayout.astro"
-name: "Shane F Carr"
-image: "shane.png" # images go in public/images/people
-title: ""
-org: "Google"
+
 tracks: 
- - main_stage
+ - main
 talkTitle: "Beyond ICU4X 2.0: ZeroVec, Diplomat, Yoke, and Unicode's Contributions to the Rust Ecosystem"
 talkLevel: ""
 talkTags: ["i18n", "embedded systems", "crates"]
 talkDuration: 15 # 15 or 30 min
-url: ""
-bluesky: "https://bsky.app/profile/sffc.bsky.social"
-linkedin: "https://linkedin.com/in/shanecarr"
-twitter: ""
-mastodon: "https://fosstodon.org/@sffc"
-github: "https://github.com/sffc"
+draft: true
+
+speakers: [{
+    name: "Shane F. Carr",
+    image: "shane.png",
+    title: "",
+    org: "Google",
+    url: "",
+    bluesky: "https://bsky.app/profile/sffc.bsky.social",
+    linkedin: "https://linkedin.com/in/shanecarr",
+    twitter: "",
+    mastodon: "https://fosstodon.org/@sffc",
+    github: "https://github.com/sffc",
+}]
+day: "tuesday"
 ---
 
 Unicode, Google, and Mozilla set out on a mission five years ago to make lightweight, portable, and secure i18n. The team not only achieved this but also contributed an array of utilities to the Rust ecosystem, including crates for zero-copy deserialization, FFI, and Unicode text handling.

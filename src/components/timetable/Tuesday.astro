@@ -1,0 +1,321 @@
+---
+import Item from "./Item.astro";
+import MultiItem from "./MultiItem.astro";
+import Divider from "./Divider.astro";
+import Timetable from "./Timetable.astro";
+import TrackIndicator from "./TrackIndicator.astro";
+
+const main = "Cinema 12";
+const secondary = "Cinema 11";
+const tertiary = "Cinema 10";
+
+const breaks = [
+    "0:00 - 8:45",
+    "8:45 - 9:30",
+    "11:00 - 11:30",
+    "12:45 - 14:00",
+    "15:50 - 16:20",
+    "17:40 - 19:00",
+];
+---
+
+<Timetable breaks={breaks}>
+    <Divider start="8:45" end="9:30">Doors open & registration</Divider>
+    <TrackIndicator afterDivider="9:30" track="Main track" color="yellow" first />
+    <Item
+        title="Opening"
+        color="yellow"
+        track={1}
+        time="9:30"
+        duration={10}
+        room={main}
+    />
+    <Item
+        talk="alex"
+        color="yellow"
+        track={1}
+        time="9:40"
+        duration={35}
+        room={main}
+    />
+    <Item
+        talk="rose"
+        color="yellow"
+        track={1}
+        time="10:25"
+        duration={35}
+        room={main}
+    />
+    <TrackIndicator afterDivider="9:30" track="Ecosystem track" color="blue" first />
+    <Item
+        title="Opening"
+        color="blue"
+        track={2}
+        time="9:30"
+        duration={10}
+        room={secondary}
+        striped
+    />
+    <Item
+        title="Ecosystem track (TBA)"
+        color="blue"
+        track={2}
+        time="9:40"
+        duration={35}
+        room={secondary}
+        striped
+    />
+    <Item
+        title="Ecosystem track (TBA)"
+        color="blue"
+        track={2}
+        time="10:25"
+        duration={35}
+        room={secondary}
+        striped
+    />
+    <TrackIndicator afterDivider="9:30" track="Industry track" color="red" first />
+    <Item
+        title="Opening & registration"
+        color="red"
+        track={3}
+        time="9:30"
+        duration={30}
+        room={tertiary}
+        ticket="Industry"
+        url="industry"
+    />
+    <Item
+        talk="niko"
+        color="red"
+        track={3}
+        time="10:00"
+        duration={20}
+        room={tertiary}
+        ticket="Industry"
+    />
+    <Item
+        talk="julius"
+        color="red"
+        track={3}
+        time="10:20"
+        duration={20}
+        room={tertiary}
+        ticket="Industry"
+    />
+    <Item
+        title="To be announced"
+        color="red"
+        track={3}
+        time="10:40"
+        duration={20}
+        room={tertiary}
+        striped
+        ticket="Industry"
+    />
+    <Divider start="11:00" end="11:30"> Break </Divider>
+    <TrackIndicator afterDivider="11:30" track="Main track" color="yellow" />
+    <Item
+        talk="raph"
+        color="yellow"
+        track={1}
+        time="11:30"
+        duration={35}
+        room={main}
+    />
+    <!-- talk="shane" -->
+    <Item
+        title="TBA"
+        color="yellow"
+        track={1}
+        time="12:15"
+        duration={20}
+        room={main}
+    />
+    <TrackIndicator afterDivider="11:30" track="Ecosystem track" color="blue" />
+    <Item
+        title="Ecosystem track (TBA)"
+        color="blue"
+        track={2}
+        time="11:30"
+        duration={35}
+        room={secondary}
+        striped
+    />
+    <Item
+        title="Ecosystem track (TBA)"
+        color="blue"
+        track={2}
+        time="12:15"
+        duration={20}
+        room={secondary}
+        striped
+    />
+    <TrackIndicator afterDivider="11:30" track="Industry track" color="red" />
+    <Item
+        title="Expert Tables Round 1"
+        color="red"
+        track={3}
+        time="11:30"
+        duration={60}
+        room={tertiary}
+        description="Choose a topic and learn from a seasoned Rust expert as well as your industry peers."
+        ticket="Industry"
+        url="industry"
+    />
+    <Item
+        title="Expert Tables recap"
+        color="red"
+        track={3}
+        time="12:30"
+        duration={15}
+        room={tertiary}
+        ticket="Industry"
+        url="industry"
+    />
+    <Divider start="12:45" end="14:00"> Lunch </Divider>
+    <TrackIndicator afterDivider="14:00" track="Main track" color="yellow" />
+    <Item
+        talk="joe"
+        color="yellow"
+        track={1}
+        time="14:00"
+        duration={35}
+        room={main}
+    />
+    <!-- talk="caroline" -->
+    <Item
+        title="TBA"
+        color="yellow"
+        track={1}
+        time="14:45"
+        duration={35}
+        room={main}
+    />
+    <Item
+        talk="stephen"
+        color="yellow"
+        track={1}
+        time="15:30"
+        duration={20}
+        room={main}
+    />
+    <TrackIndicator afterDivider="14:00" track="Ecosystem track" color="blue" />
+    <MultiItem
+        talks={Array(3).fill({
+            speaker: "",
+            title: "GOSIM spotlight",
+            image: "",
+        })}
+        color="blue"
+        track={2}
+        time="14:00"
+        duration={35}
+        room={secondary}
+        striped
+    />
+    <MultiItem
+        talks={Array(3).fill({
+            speaker: "",
+            title: "GOSIM spotlight",
+            image: "",
+        })}
+        color="blue"
+        track={2}
+        time="14:45"
+        duration={35}
+        room={secondary}
+        striped
+    />
+    <MultiItem
+        talks={Array(1).fill({
+            speaker: "",
+            title: "GOSIM spotlight",
+            image: "",
+        })}
+        color="blue"
+        track={2}
+        time="15:30"
+        duration={20}
+        room={secondary}
+        striped
+    />
+    <TrackIndicator afterDivider="14:00" track="Industry track" color="red" />
+    <Item
+        title="Expert Tables Round 2"
+        color="red"
+        track={3}
+        time="14:00"
+        duration={60}
+        room={tertiary}
+        description="Choose a topic and learn from a seasoned Rust expert as well as your industry peers."
+        ticket="Industry"
+        url="industry"
+    />
+    <Item
+        title="Expert Tables recap"
+        color="red"
+        track={3}
+        time="15:00"
+        duration={15}
+        room={tertiary}
+        ticket="Industry"
+        url="industry"
+    />
+    <Item
+        talk="jeffrey"
+        color="red"
+        track={3}
+        time="15:15"
+        duration={30}
+        room={tertiary}
+        ticket="Industry"
+        url="industry"
+    />
+    <Divider start="15:50" end="16:20"> Break </Divider>
+    <TrackIndicator afterDivider="16:20" track="Main track" color="yellow" />
+    <Item
+        talk="stefan"
+        color="yellow"
+        track={1}
+        time="16:20"
+        duration={35}
+        room={main}
+    />
+    <Item
+        talk="pietro"
+        color="yellow"
+        track={1}
+        time="17:05"
+        duration={35}
+        room={main}
+    />
+    <TrackIndicator afterDivider="16:20" track="Ecosystem track" color="blue" />
+    <MultiItem
+        talks={Array(3).fill({
+            speaker: "",
+            title: "GOSIM spotlight",
+            image: "",
+        })}
+        color="blue"
+        track={2}
+        time="16:20"
+        duration={35}
+        room={secondary}
+        striped
+    />
+    <TrackIndicator afterDivider="16:20" track="Industry track" color="red" />
+    <Item
+        title="Live Recording of 'Rust in Production'"
+        speakers={[
+            { name: "Matthias Endler", image: "matthias.jpg" },
+            { name: "Niko Matsakis", image: "niko.png" },
+        ]}
+        color="red"
+        track={3}
+        time="16:20"
+        duration={35}
+        room={tertiary}
+    />
+    <Divider start="17:40" end="19:00"> Drinks </Divider>
+</Timetable>

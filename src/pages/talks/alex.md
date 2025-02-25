@@ -1,27 +1,33 @@
 ---
 layout: "../../layouts/TalkLayout.astro"
-name: "Alex Crichton"
-image: "alex_crichton.jpg" # images go in public/images/people
-title: "Core Contributor of WasmTime"
-org: ""
 tracks: 
- - main_stage
+ - main
 talkTitle: "TBA"
 talkLevel: ""
 talkTags: []
 talkDuration: 30 # 15 or 30 min
-url: ""
-bluesky: ""
-linkedin: ""
-twitter: "https://x.com/alex_crichton"
-mastodon: ""
-github: "https://github.com/alexcrichton"
+speakers: [{
+    name: "Alex Crichton",
+    image: "alex_crichton.jpg", # images go in public/images/people
+    title: "Core Contributor of Wasmtime",
+    org: "",
+    url: "",
+    bluesky: "",
+    linkedin: "",
+    twitter: "https://x.com/alex_crichton",
+    mastodon: "",
+    github: "https://github.com/alexcrichton",
+}]
+day: "tuesday"
 ---
 
 TBA
 
 ////// <!-- sepatator between abstract and bio -->
 
-I'm a Rust team alumni who participated on a number of teams including Core, Cargo, Libs, and others. I contributed to Rust prior to it's 1.0 release in 2015 and the years afterwards. Nowadays I've shifted my focus to WebAssembly and primarily work on Wasmtime, an out-of-browser WebAssembly engine. I also help maintain the Rust and WebAssembly integration and targets.
-
-
+Miguel Ojeda is a software engineer who maintains the Rust for Linux
+project. He is a member of the Linux Foundation Technical Advisory
+Board. He was the Spanish NB in the ISO C committee, with an interest
+in Undefined Behavior and memory safety topics. Previously, Miguel was
+a Staff Member at CERN in the Beams department and a Fellow in the
+Physics department.

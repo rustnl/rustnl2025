@@ -1,9 +1,9 @@
 ---
-import WorkshopDetail from "../components/workshop/workshop-detail.astro";
-import SpeakerFull from "../components/people/SpeakerFull.astro";
-import CommonLayout from "../layouts/CommonLayout.astro";
-import "../styles/index.scss";
-import Button from "../components/Button.astro";
+import WorkshopDetail from '../components/workshop/workshop-detail.astro';
+import CommonLayout from '../layouts/CommonLayout.astro';
+import '../styles/index.scss';
+import Button from '../components/Button.astro';
+import Person from '../components/people/Person.astro';
 
 const { frontmatter } = Astro.props;
 const { title } = frontmatter;
@@ -11,38 +11,83 @@ const { title } = frontmatter;
 const trainers = await Astro.glob('../pages/people/trainers/*.md');
 ---
 
-<CommonLayout title={title} header="Workshop" withLogo>
-    <section class="container md:grid md:cols-12 py-12">
-        <div class="md:col-start-3 md:col-end-11">
-            <WorkshopDetail {...frontmatter} description={Astro.slots.render('default')} full />
+<CommonLayout title={title} withLogo>
+  <div class="container text-center" slot="header">
+    <div class="kicker">Workshop</div>
+    <h1>
+      {frontmatter.title}
+    </h1>
+  </div>
+  <section class="container md:grid md:cols-12 py-12">
+    <div class="md:col-start-3 md:col-end-11">
+      <WorkshopDetail
+        hasTitle={false}
+        {...frontmatter}
+        description={Astro.slots.render('default')}
+        full
+      />
 
-            <div class="space-y-3">    
-                <div class="space-y-3">
-                    <h3>Workshop by</h3>
-                </div>
-            {trainers
-                .filter((trainer) => trainer.frontmatter.workshop == frontmatter.slug)
-                .map((workshopTrainer) =>
-                <SpeakerFull {...workshopTrainer.frontmatter} bio={workshopTrainer.compiledContent()} />
-            )}
-            </div>
-
-            <h3>Get your ticket!</h3>
-            <p>
-                All workshops are held on Thu May 15 from 9:00 to 13:00. The location is DUS Utrecht.<br />
-                Address: DUS, Sophialaan 1, Utrecht, The Netherlands.
-            </p>
-            <p>
-                Workshop tickets are available in combination with a conference ticket, called 'Conference + workshop - Individuals' or 'Conference + workshop - Employer-paid'. 
-                <br />When ordering, choose '{title}' when asked for your preferred workshop.
-            </p>
-            <div class="space-y-3">
-                <Button
-                    link="https://www.eventbrite.nl/e/rustweek-2025-tickets-1001676961757?aff=oddtdtcreator"
-                >Get your ticket</Button>
-                <br /><br />
-            </div>
-
+      <div class="space-y-3 workshop-by">
+        <div class="space-y-3">
+          <h3>Workshop by</h3>
         </div>
-    </section>
+        <div class="grid md:cols-2">
+          {
+            trainers
+              .filter(
+                (trainer) => trainer.frontmatter.workshop == frontmatter.slug
+              )
+              .map((workshopTrainer) => (
+                <Person
+                  {...workshopTrainer.frontmatter}
+                  description={workshopTrainer.compiledContent()}
+                />
+              ))
+          }
+        </div>
+      </div>
+
+      <h3>Get your ticket!</h3>
+      <p>
+          All workshops are held on <b>Thursday 15 May</b> from 9:00 to 13:00. The location is DUS Utrecht.<br />
+          Address: DUS, Sophialaan 1, Utrecht, The Netherlands.
+      </p>
+      <p>
+        Workshop tickets are available in combination with a conference ticket,
+        called 'Conference + workshop - Individuals' or 'Conference + workshop -
+        Employer-paid'.
+      </p>
+      <div class="space-y-3">
+        <Button
+          link="https://www.eventbrite.nl/e/rustweek-2025-tickets-1001676961757?aff=oddtdtcreator"
+          >Get your ticket</Button
+        >
+        <br /><br />
+      </div>
+    </div>
+  </section>
 </CommonLayout>
+
+<style lang="scss">
+  @use '../styles/variables.scss';
+
+  .kicker {
+    color: variables.$color-red-400;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    padding: 0;
+  }
+
+  .workshop-by {
+    border-block: 1px solid variables.$color-red-400;
+    margin-block: 3rem;
+    padding-block: 3rem;
+
+    h3 {
+      margin: 0;
+    }
+  }
+</style>

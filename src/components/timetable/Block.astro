@@ -1,0 +1,143 @@
+---
+import { library, icon } from "@fortawesome/fontawesome-svg-core";
+import { faLocationDot, faClock } from "@fortawesome/free-solid-svg-icons";
+
+interface Props {
+    room: string;
+    track: number;
+    // as a string
+    time: string;
+    // in minutes
+    duration: number;
+    color?: string;
+    striped: boolean;
+    url?: string;
+    ticket?: string;
+}
+
+const {
+    room,
+    track,
+    time,
+    duration,
+    color,
+    striped,
+    url,
+    ticket,
+}: Props = Astro.props;
+
+const time_underscore = time.replace(":", "_");
+
+library.add(faLocationDot, faClock);
+
+const locationIcon = icon({ prefix: "fas", iconName: faLocationDot.iconName });
+const clockIcon = icon({ prefix: "fas", iconName: faClock.iconName });
+
+function addMinutes(date: Date, minutes: number) {
+    return new Date(date.getTime() + minutes * 60000);
+}
+
+const start_time = new Date();
+start_time.setHours(parseInt(time.split(":")[0]));
+start_time.setMinutes(parseInt(time.split(":")[1]));
+const tmp = addMinutes(start_time, duration);
+
+const diff_ms = (tmp as any) - (start_time as any);
+const diff_m = diff_ms / 1000 / 60;
+
+let minutes: string;
+if (tmp.getMinutes() < 10) {
+    minutes = `0${tmp.getMinutes()}`;
+} else {
+    minutes = `${tmp.getMinutes()}`;
+}
+const end_time = `${tmp.getHours()}:${minutes}`;
+---
+
+<div
+    class:list={["item", color ? color : null, striped ? "striped" : null]}
+    style={{
+        gridColumn: track,
+        gridRowStart: `time${time_underscore}`,
+        gridRowEnd: `span ${duration / 5}`,
+    }}
+    id={url ? url.split("/").pop() : null}
+>
+    <div class="meta">
+        <div>
+            <div class="icon"><Fragment set:html={clockIcon.html} /></div>
+            {time}
+
+            <span class="duration">({diff_m}&nbsp;min)</span>
+        </div>
+        <div>
+            <div class="icon"><Fragment set:html={locationIcon.html} /></div>
+            {room}
+        </div>
+    </div>
+    <slot />
+    {ticket && <div class="ticket">{ticket} ticket required</div>}
+</a>
+
+<style lang="scss">
+    .ticket {
+        font-size: 0.6em;
+        font-weight: 500;
+        background: var(--color-two);
+        color: white;
+        position: absolute;
+        padding: 0.2em 0.5em;
+        bottom: 0;
+        right: 0;
+        border-top-left-radius: 0.5em;
+    }
+
+    .duration {
+        opacity: 60%;
+    }
+
+    .item {
+        position: relative;
+        border: solid 1px;
+        border-top-width: 4px;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+
+        &:target {
+            border: solid 10px var(--color-two) !important;
+        }
+    }
+
+    .meta {
+        font-size: 0.8em;
+        font-weight: 400;
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+    }
+
+    .item {
+        background: var(--color-one);
+        border-color: var(--color-two);
+    }
+
+    .icon {
+        display: inline;
+    }
+
+    .icon {
+        color: var(--color-two);
+    }
+
+    .item.striped {
+        background: repeating-linear-gradient(
+            135deg,
+            color-mix(in hsl, var(--color-one), white 30%),
+            color-mix(in hsl, var(--color-one), white 30%) 10px,
+            color-mix(in hsl, var(--color-one), black 0%) 10px,
+            color-mix(in hsl, var(--color-one), black 0%) 20px
+        );
+    }
+</style>

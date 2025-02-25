@@ -1,0 +1,251 @@
+---
+import Item from "./Item.astro";
+import Divider from "./Divider.astro";
+import Timetable from "./Timetable.astro";
+import TrackIndicator from "./TrackIndicator.astro";
+
+const main = "Cinema 12";
+const secondary = "Cinema 11";
+const tertiary = "Cinema 10";
+
+const breaks = [
+    "0:00 - 8:45",
+    "8:45 - 9:30",
+    "11:00 - 11:30",
+    "12:35 - 14:00",
+    "15:50 - 16:20",
+    "17:40 - 19:00",
+];
+---
+
+<Timetable breaks={breaks}>
+    <Divider start="8:45" end="9:30">Doors open & registration</Divider>
+    <TrackIndicator afterDivider="9:30" track="Main track" color="yellow" first />
+    <Item
+        title="Opening"
+        color="yellow"
+        track={1}
+        time="9:30"
+        duration={10}
+        room={main}
+    />
+    <Item
+        talk="miguel"
+        color="yellow"
+        track={1}
+        time="9:40"
+        duration={35}
+        room={main}
+    />
+    <Item
+        talk="matt"
+        color="yellow"
+        track={1}
+        time="10:25"
+        duration={35}
+        room={main}
+    />
+    <TrackIndicator afterDivider="9:30" track="Deep dive track" color="blue" first />
+    <Item
+        title="Opening"
+        color="blue"
+        track={2}
+        time="9:30"
+        duration={10}
+        room={secondary}
+    />
+    <Item
+        talk="fabian"
+        color="blue"
+        track={2}
+        time="9:40"
+        duration={35}
+        room={secondary}
+    />
+    <Item
+        talk="jack"
+        color="blue"
+        track={2}
+        time="10:25"
+        duration={35}
+        room={secondary}
+    />
+    <TrackIndicator afterDivider="9:30" track="Project track" color="red" first />
+    <Item
+        title="Opening"
+        color="red"
+        track={3}
+        time="9:30"
+        duration={10}
+        room={tertiary}
+    />
+    <Item
+        talk="niko"
+        color="red"
+        track={3}
+        time="9:40"
+        duration={35}
+        room={tertiary}
+    />
+    <Item
+        talk="nandini"
+        color="red"
+        track={3}
+        time="10:25"
+        duration={35}
+        room={tertiary}
+    />
+    <Divider start="11:00" end="11:30"> Break </Divider>
+    <TrackIndicator afterDivider="11:30" track="Main track" color="yellow" />
+    <Item
+        talk="michal"
+        color="yellow"
+        track={1}
+        time="11:30"
+        duration={35}
+        room={main}
+    />
+    <!-- talk="martin" -->
+    <Item
+        title="TBA"
+        color="yellow"
+        track={1}
+        time="12:15"
+        duration={20}
+        room={main}
+    />
+    <TrackIndicator afterDivider="11:30" track="Deep dive track" color="blue" />
+    <Item
+        talk="waffle"
+        color="blue"
+        track={2}
+        time="11:30"
+        duration={35}
+        room={secondary}
+    />
+    <Item
+        talk="emmanuel"
+        color="blue"
+        track={2}
+        time="12:15"
+        duration={20}
+        room={secondary}
+    />
+    <TrackIndicator afterDivider="11:30" track="Project track" color="red" />
+    <Item
+        title="Project track (TBA)"
+        color="red"
+        track={3}
+        time="11:30"
+        duration={65}
+        room={tertiary}
+        striped
+    />
+    <Divider start="12:35" end="14:00"> Lunch </Divider>
+    <TrackIndicator afterDivider="14:00" track="Main track" color="yellow" />
+    <Item
+        talk="ciara"
+        color="yellow"
+        track={1}
+        time="14:00"
+        duration={35}
+        room={main}
+    />
+    <Item
+        talk="waqar"
+        color="yellow"
+        track={1}
+        time="14:45"
+        duration={35}
+        room={main}
+    />
+    <Item
+        talk="valdemar"
+        color="yellow"
+        track={1}
+        time="15:30"
+        duration={20}
+        room={main}
+    />
+    <TrackIndicator afterDivider="14:00" track="Deep dive track" color="blue" />
+    <Item
+        talk="tim"
+        color="blue"
+        track={2}
+        time="14:00"
+        duration={35}
+        room={secondary}
+    />
+    <Item
+        talk="noah"
+        color="blue"
+        track={2}
+        time="14:45"
+        duration={35}
+        room={secondary}
+    />
+    <Item
+        talk="conrad"
+        color="blue"
+        track={2}
+        time="15:30"
+        duration={20}
+        room={secondary}
+    />
+    <TrackIndicator afterDivider="14:00" track="Project track" color="red" />
+    <Item
+        title="Project track (TBA)"
+        color="red"
+        track={3}
+        time="14:00"
+        duration={110}
+        room={tertiary}
+        striped
+    />
+    <Divider start="15:50" end="16:20"> Break </Divider>
+    <TrackIndicator afterDivider="16:20" track="Main track" color="yellow" />
+    <Item
+        talk="victor"
+        color="yellow"
+        track={1}
+        time="16:20"
+        duration={35}
+        room={main}
+    />
+    <Item
+        talk="alice"
+        color="yellow"
+        track={1}
+        time="17:05"
+        duration={35}
+        room={main}
+    />
+    <TrackIndicator afterDivider="16:20" track="Deep dive track" color="blue" />
+    <Item
+        talk="dion"
+        color="blue"
+        track={2}
+        time="16:20"
+        duration={35}
+        room={secondary}
+    />
+    <Item
+        talk="cliff"
+        color="blue"
+        track={2}
+        time="17:05"
+        duration={35}
+        room={secondary}
+    />
+    <TrackIndicator afterDivider="16:20" track="Project track" color="red" />
+    <Item
+        title="Project track (TBA)"
+        color="red"
+        track={3}
+        time="16:20"
+        duration={80}
+        room={tertiary}
+        striped
+    />
+    <Divider start="17:40" end="19:00"> Drinks </Divider>
+</Timetable>

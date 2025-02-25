@@ -1,21 +1,26 @@
 ---
 layout: "../../layouts/TalkLayout.astro"
-name: "Cliff L. Biffle"
-image: "cliff.jpeg" # images go in public/images/people
-title: ""
-org: ""
+
 tracks: 
  - deep_dive
 talkTitle: "Really Small Rust"
 talkLevel: "Advanced"
 talkTags: ["embedded systems", "tooling", "size"]
 talkDuration: 30 # 15 or 30 min
-url: "https://cliffle.com/"
-bluesky: ""
-linkedin: ""
-twitter: ""
-mastodon: "https://hachyderm.io/@cliffle"
-github: "https://github.com/cbiffle"
+
+speakers: [{
+    name: "Cliff L. Biffle",
+    image: "cliff.jpeg",
+    title: "",
+    org: "",
+    url: "https://cliffle.com/",
+    bluesky: "",
+    linkedin: "",
+    twitter: "",
+    mastodon: "https://hachyderm.io/@cliffle",
+    github: "https://github.com/cbiffle",
+}]
+day: "wednesday"
 ---
 
 We all know Rust scales up, but what kind of resources do you need for Rust firmware in low-end embedded systems?

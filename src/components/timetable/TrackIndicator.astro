@@ -1,0 +1,35 @@
+
+---
+interface Props {
+    track: string,
+    afterDivider: string,
+    color: string,
+    first?: boolean
+}
+
+const {track, afterDivider, color, first=false}: Props = Astro.props;
+const afterDividerUnderscore = afterDivider.replace(":", "_");
+---
+
+<div class:list={["track-indicator", "item", color, !first?"not-first":null]} style={`grid-row: divider${afterDividerUnderscore}`}>
+    {track}
+</div>
+
+<style lang="scss">
+@use "../../styles/breakpoint.scss";
+
+.track-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-weight: 800;
+    color: var(--color-two);
+
+    &.not-first {
+        @include breakpoint.wider_than(md) {
+            display: none;
+        }
+    }
+}
+</style>

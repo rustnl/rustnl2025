@@ -1,45 +1,135 @@
 ---
-import SpeakerFull from "../components/people/SpeakerFull.astro";
-import CommonLayout from "../layouts/CommonLayout.astro";
-import "../styles/index.scss";
-import Button from "../components/Button.astro";
+import CommonLayout from '../layouts/CommonLayout.astro';
+import '../styles/index.scss';
+import Button from '../components/Button.astro';
+import Person from '../components/people/Person.astro';
+import Divider from '../components/Divider.astro';
 
 const { frontmatter } = Astro.props;
-const { talkTitle, tracks, talkTags, org } = frontmatter;
+const { talkTitle, talkLevel, url, tracks = [], day = "tuesday" } =
+  frontmatter;
+
+const sep = /\/\/\/\/\/\/.*/;
 const content = await Astro.slots.render('default');
-const abstract = content.split('//////')[0];
-const bio = content.split('//////')[1];
+const abstract = content.split(sep)[0];
+const bio = content.split(sep)[1].replace(/^\n|\n$/g, '');
+
+function list(names: string[]){
+  const finalName = names.pop();
+  return names.length
+  ? names.join(', ') + ' & ' + finalName
+  : finalName;
+}
+
+const speaker_names = list(frontmatter.speakers.map((s: any) => s.name));
+
 ---
 
-<CommonLayout title={talkTitle} header={talkTitle} withLogo>
-    <section class="container md:grid md:cols-12 py-12">
-        <div class="md:col-start-3 md:col-end-11">
-            <!-- <slot /> -->
-            <div set:html={abstract}>
+<CommonLayout title={talkTitle} withLogo>
+  <div class="container text-center" slot="header">
+    <div class="kicker">Talk</div>
+    <h1>
+      {talkTitle}
+    </h1>
+    <h2>by {speaker_names}</h2>
+  </div>
+  <section class="container md:grid md:cols-12 py-12">
+    <div class="md:col-start-3 md:col-end-11">
+      <!-- <slot /> -->
+      <div set:html={abstract} />
+      <div class="space-y-3">
+        {
+          talkLevel && (
+            <Fragment>
+              <strong>Audience:</strong> {talkLevel}
+            </Fragment>
+          )
+        }
+      </div>
+      <div class="py-6">
+        <h3>{frontmatter.speakers.length == 1 ? "Speaker" : "Speakers"}</h3>
+        {
+          frontmatter.speakers.map((speaker: any) => (
+            <Person description={bio} {...speaker} />
+          ))
+          }
+        <div class="buttons">
+            {
+                !tracks.includes("industry")?(
+                    <Button
+                      link="https://www.eventbrite.nl/e/rustweek-2025-tickets-1001676961757?aff=oddtdtcreator"
+                    >
+                        Get your ticket
+                    </Button>
+                ):(
 
-            </div>
-            <div class="space-y-3">
-                <strong>Tags:</strong>
-                {talkTags.join(", ")}
-                <br /><strong>Org:</strong>
-                {org}
-                <br /><strong>Stage:</strong>
-                {tracks.map(( track: String )  =>
-                    <Fragment>
-                        {track} 
-                    </Fragment>
-                )}
-            </div>
-            <div class="py-6">    
-                    <h3>Talk by</h3>
-                    <SpeakerFull {...frontmatter} talkTitle={false} bio={bio} />
-            </div>
-            <div class="space-y-3">
-                <Button
-                    link="https://www.eventbrite.nl/e/rustweek-2025-tickets-1001676961757?aff=oddtdtcreator"
-                >Get your ticket</Button>
-                <br /><br />
-            </div>
+                    <Button
+                      link="https://www.eventbrite.nl/e/industry-track-rustweek-2025-tickets-1115250035879"
+                    >
+                        Get your ticket
+                    </Button>
+                )
+            }
+            <Button
+                        link=`/schedule/${day}/#${url.split('/').pop()}`
+            >
+                Find in timetable
+            </Button>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 </CommonLayout>
+
+<style is:global>
+.bio p {
+    margin: 0;
+    padding: 0;
+    min-height: 0;
+}
+</style>
+
+<style lang="scss">
+@use '../styles/variables.scss';
+@use '../styles/breakpoint.scss';
+
+.bio {
+    grid-area: bio;
+}
+.name {
+    padding: 0;
+    margin: 0;
+    grid-area: name;
+    font-size: variables.$font-size-lg;
+}
+.picture {
+    grid-area: picture;
+}
+
+.kicker {
+  color: variables.$color-red-400;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h1 {
+  padding: 0;
+  text-decoration: none;
+}
+
+h2 {
+  text-decoration: none;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+
+    @include breakpoint.smaller_than(lg) {
+        flex-direction: column;
+    }
+}
+</style>

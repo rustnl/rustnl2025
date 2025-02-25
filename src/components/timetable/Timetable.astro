@@ -1,0 +1,121 @@
+---
+import TimetableItem from "./Item.astro";
+import TimetableMultiItem from "./MultiItem.astro";
+import TimetableDivider from "./Divider.astro";
+
+interface Props {
+    breaks: string[],
+}
+
+const { breaks } = Astro.props;
+
+let collapsed: [[number, number], [number, number]][] = [];
+for (const s of breaks) {
+    let [start, end] = s.split("-");
+    let start2 = start.split(":");
+    let end2 = end.split(":");
+    let start3: [number, number] = [parseInt(start2[0]), parseInt(start2[1])];
+    let end3: [number, number] = [parseInt(end2[0]), parseInt(end2[1])];
+    collapsed.push([start3, end3]);
+}
+
+function lt(time1: [number, number], time2: [number, number]) {
+    let res;
+    if (time1[0] < time2[0]) {
+        res = true;
+    } else if (time1[0] == time2[0]) {
+        res = time1[1] < time2[1];
+    } else {
+        res = false;
+    }
+    return res;
+}
+
+function in_range(
+    time: [number, number],
+    range: [[number, number], [number, number]],
+) {
+    let [start, end] = range;
+    return lt(start, time) && lt(time, end);
+}
+
+function pad(num: number, size: number): string {
+    let snum = num.toString();
+    while (snum.length < size) snum = "0" + snum;
+    return snum;
+}
+
+let times = "";
+let skippedLast = false;
+for (let h = 8; h < 19; h++) {
+    for (let m = 0; m < 60; m += 5) {
+        let skip = false;
+        for (let range of collapsed) {
+            if (in_range([h, m], range)) {
+                skip = true;
+                break;
+            }
+        }
+        if (skip) {
+            skippedLast = true;
+            continue;
+        }
+
+        if (skippedLast) {
+            skippedLast = false;
+            times += ` [divider${h}_${pad(m, 2)}] min-content`;
+        }
+
+        if (m < 10) {
+            times += ` [time${h}_0${m}] minmax(1.5em, min-content)`;
+        } else {
+            times += ` [time${h}_${m}] minmax(1.5em, min-content)`;
+        }
+    }
+}
+---
+
+<div class="schedule">
+    <slot></slot>
+</div>
+
+<style is:global>
+    .item.yellow {
+        --color-one: #ffe5b3;
+        --color-two: #e69600;
+    }
+
+    .item.blue {
+        --color-one: #d9e7f6;
+        --color-two: #729ecb;
+    }
+
+    .item.red {
+        --color-one: #f8c7b7;
+        --color-two: #d14c23;
+    }
+
+    .item.purple {
+        --color-one: #e8defb;
+        --color-two: #9c4db4;
+    }
+</style>
+<style define:vars={{ times }} lang="scss">
+@use "../../styles/breakpoint.scss";
+
+    .schedule {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        /* Our resolution for the schedule is 15 minutes */
+        grid-template-rows: var(--times);
+
+        gap: 8px 16px;
+        width: min(80ch, 90vw);;
+
+        @include breakpoint.smaller_than(md) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+</style>

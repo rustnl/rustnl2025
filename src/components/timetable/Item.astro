@@ -1,0 +1,194 @@
+---
+import Block from "./Block.astro";
+import { library, icon } from "@fortawesome/fontawesome-svg-core";
+import { faBookmark } from "@fortawesome/free-solid-svg-icons";
+import { faBookmark as regularBookmark } from "@fortawesome/free-regular-svg-icons";
+
+library.add(faBookmark);
+library.add(regularBookmark);
+
+const bookmarkIcon = icon({ prefix: "fas", iconName: faBookmark.iconName });
+const bookmarkIconRegular = icon({ prefix: "far", iconName: regularBookmark.iconName });
+
+interface Props {
+    talk?: string;
+    title?: string;
+    speakers?: {name: string, image: string}[]
+    url?: string;
+    room: string;
+    track: number;
+    // as a string
+    time: string;
+    // in minutes?
+    duration: number;
+    color?: string;
+    striped?: boolean;
+    description?: string;
+    ticket?: string;
+}
+
+
+const {
+    talk,
+    title = "",
+    speakers,
+    room,
+    track,
+    time,
+    duration,
+    color,
+    striped = false,
+    description,
+    ticket,
+    url,
+}: Props = Astro.props;
+
+const matches = import.meta.glob("../../pages/talks/*.md", { eager: true });
+const files = Object.values(matches);
+let file: any = null;
+if (talk !== null) {
+    file = files.find((v: any) => {
+        return v.url.split("/")[2] == talk;
+    });
+}
+
+const talk_title = title ? title : file ? file.frontmatter.talkTitle : "ERROR";
+const talk_url = url ?? file?.url;
+const talk_speakers = speakers ?? file?.frontmatter?.speakers ?? [];
+
+const timetable_url = `/schedule/${Astro.url.pathname.split("/").filter(i => i != "").pop()}#${talk_url?.split("/").pop()}`
+---
+
+<Block
+    room={room}
+    track={track}
+    time={time}
+    duration={duration}
+    color={color}
+    striped={striped}
+    ticket={ticket}
+>
+    <div class="block">
+        <a class="title" href={talk_url}>{talk_title}</a>
+        {
+            talk_speakers.map((speaker: any) => (
+                <a class="speaker" href={talk_url}>
+                    <img
+                        class="speaker-img"
+                        src={speaker.imageSmall? `/images/people/${speaker.imageSmall}`: speaker.image? `/images/people/${speaker.image}`: speaker.github? `${speaker.github}.png`: "/images/people/empty.png"}
+                        alt={`Picture of ${speaker.name}`}
+                    />
+                    <p>{speaker.name}</p>
+                </a>
+            ))
+        }
+        { description && <p>{description}</p>}
+
+        {talk_url && (
+            <label class="checkbox" data-bookmark data-timetable-url={timetable_url}>
+                <span class="icon full"><Fragment set:html={bookmarkIcon.html} /></span>
+                <span class="icon empty"><Fragment set:html={bookmarkIconRegular.html} /></span>
+            </label>
+        )}
+    </div>
+
+    <script>
+        const LOCAL_STORAGE_BOOKMARK_KEY = "bookmarks";
+
+        const initialBookmarks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_BOOKMARK_KEY) ?? "[]");
+
+        document.querySelectorAll('[data-bookmark]').forEach(e => {
+            const timetableUrl = (e as any).dataset.timetableUrl;
+
+            e.addEventListener("click", e => {
+                if (e.currentTarget instanceof Element) {
+                    const classList = e.currentTarget.classList;
+
+                    let bookmarks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_BOOKMARK_KEY) ?? "[]");
+
+                    if (classList.contains("checked")) {
+                        classList.remove("checked")
+                        bookmarks.splice(bookmarks.indexOf(timetableUrl), 1);
+                    } else {
+                        classList.add("checked")
+
+                        if (!bookmarks.includes(timetableUrl)) {
+                            bookmarks.push(timetableUrl);
+                        }
+                    }
+
+                    localStorage.setItem(LOCAL_STORAGE_BOOKMARK_KEY, JSON.stringify(bookmarks));
+                }
+            });
+
+            if (initialBookmarks.includes(timetableUrl)) {
+                e.classList.add("checked")
+            }
+        });
+    </script>
+</Block>
+
+<style lang="scss">
+    @use "../../styles/variables.scss";
+
+    .block {
+        position: relative;
+        height: 100%;
+
+        .checkbox {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            font-size: variables.$font-size-sm;
+            padding: 0.5em;
+            cursor: pointer;
+            color: color-mix(in hsl, var(--color-two), black 20%);
+
+           .empty {
+                display: inline;
+            }
+            .full {
+                display: none;
+            }
+
+            &.checked {
+                .empty {
+                    display: none;
+                }
+                .full {
+                    display: inline;
+                }
+            }
+        }
+    }
+
+    .title {
+        font-weight: 500;
+        margin-top: 0.2em;
+
+        text-decoration: none;
+    }
+
+    .speaker-img {
+        height: 2em;
+        border-radius: 0.2em;
+        background: #fff0e6;
+        margin-right: 0.3em;
+    }
+
+    .speaker {
+        font-size: 0.8em;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.3em;
+        height: 2em;
+        margin-top: 0.5em;
+
+        text-decoration: none;
+    }
+
+    .icon {
+        display: inline;
+    }
+</style>

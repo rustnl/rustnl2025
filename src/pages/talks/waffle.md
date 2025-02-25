@@ -1,24 +1,30 @@
 ---
 layout: "../../layouts/TalkLayout.astro"
-name: "Waffle"
-image: "waffle_cat.jpg" # images go in public/images/people
-title: ""
-org: "Rust project; tasking.com"
-bio: ""
+
 tracks: 
  - deep_dive
 talkTitle: "Re-inventing trait objects"
 talkLevel: "Intermediate"
 talkTags: ["vtable", "trait object", "rust", "rust-lang"]
 talkDuration: 30 # 15 or 30 min
-url: "https://blog.ihatereality.space"
-linkedin: ""
-twitter: ""
-mastodon: ""
-github: "https://github.com/wafflelapkin"
+
+
+speakers: [{
+    name: "Waffle",
+    image: "waffle.jpg",
+    title: "",
+    org: "Rust project; tasking.com",
+    bio: "",
+    url: "https://blog.ihatereality.space",
+    linkedin: "",
+    twitter: "",
+    mastodon: "",
+    github: "https://github.com/wafflelapkin",
+}]
+day: "wednesday"
 ---
 
-Trait objects are everywhere in Rust, but how do they actually work? Join me as we implement vtables them from scratch, discovering how and why they work and how they handle edge cases.
+Trait objects are everywhere in Rust, but do you know how they actually work? Join me as I re-implement trait objects from scratch, discovering their inner workings and all the smart design decisions that have been put into them.
 
 //////
 
