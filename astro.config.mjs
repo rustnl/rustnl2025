@@ -11,4 +11,7 @@ export default defineConfig({
             }
         }
     },
+    redirects: {
+        "/schedule": "/schedule/tuesday"
+    }
 });
