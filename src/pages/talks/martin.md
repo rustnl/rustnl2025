@@ -7,6 +7,7 @@ talkTitle: "Gigabytes per second of DNA: using Rust for matching genomic motifs"
 talkLevel: "Intermediate"
 talkTags: ["bioinformatics", "genomics", "simd", "science"]
 talkDuration: 15 # 15 or 30 min
+draft: true
 
 speakers: [{
     name: "Martin Larralde",

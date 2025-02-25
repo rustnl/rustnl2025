@@ -6,6 +6,8 @@ talkTitle: "Healthy Data, Rusty Code: Epidemiology Meets Modern Systems Programm
 talkLevel: "All"
 talkTags: ["epidemiology", "scientific programming", "rust", "py03"]
 talkDuration: 30 # 15 or 30 min
+draft: true
+
 speakers: [{
     name: "Caroline Morton",
     image: "caroline.jpeg",
