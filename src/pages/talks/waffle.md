@@ -11,7 +11,7 @@ talkDuration: 30 # 15 or 30 min
 
 speakers: [{
     name: "Waffle",
-    image: "waffle_cat.jpg",
+    image: "waffle.jpg",
     title: "",
     org: "Rust project; tasking.com",
     bio: "",
@@ -24,7 +24,7 @@ speakers: [{
 day: "wednesday"
 ---
 
-Trait objects are everywhere in Rust, but how do they actually work? Join me as we implement vtables them from scratch, discovering how and why they work and how they handle edge cases.
+Trait objects are everywhere in Rust, but do you know how they actually work? Join me as I re-implement trait objects from scratch, discovering their inner workings and all the smart design decisions that have been put into them.
 
 //////
 
