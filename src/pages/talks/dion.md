@@ -14,7 +14,7 @@ speakers: [{
     title: "",
     org: "Tweede golf",
     url: "https://tweedegolf.nl/en/about/23/dion/blogs",
-    bluesky: "https://bsky.app/profile/diondokter.bsky.social",
+    bluesky: "https://bsky.app/profile/diondokter.nl",
     linkedin: "",
     twitter: "",
     mastodon: "https://fosstodon.org/@diondokter",
