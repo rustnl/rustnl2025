@@ -7,7 +7,6 @@ talkTitle: "Gigabytes per second of DNA: using Rust for matching genomic motifs"
 talkLevel: "Intermediate"
 talkTags: ["bioinformatics", "genomics", "simd", "science"]
 talkDuration: 15 # 15 or 30 min
-draft: true
 
 speakers: [{
     name: "Martin Larralde",
@@ -31,10 +30,6 @@ to C & C++, which are still in use predominantly in high-performance bioinformat
 
 ////// <!-- sepatator between abstract and bio -->
 
-Hi, I'm Martin (or @althonos online)! Originally from Paris, I started my PhD at the [EMBL](https://www.embl.org/) in Heidelberg in 2019, in partnership with [ETH Zürich](https://ethz.ch/en.html), before moving to the [Leiden University Medical Center](https://www.lumc.nl/en/) in 2024. Molecular Biologist and Computer Scientist by training, I've been working on high-performance computing on the side of my main research project focusing on the human gut microbiome.
-
-I started writing Rust code in 2017, used it primarily for my MSc thesis project in 2019, and since then I have eagerly followed the evolution of the core language as well as the flourishing ecosystem of libraries. I use Rust for high-performance computing when possible, although I also end up supporting legacy scientific code written in C/C++, and my main language for data analysis or quick prototyping remains Python. 
-
-I am interested in high-performance computing, but also in API design, embedded systems, and more. I'm leading a small programming club at our institute, where we go over various topics regarding software engineering. I play the bass and the guitar and I make random covers in my living room when I (rarely) get the time.
-
-
+Martin is a PhD student in Bioinformatics, originally from Paris. After starting his PhD at [EMBL](https://www.embl.org/) in Heidelberg in 2019, in co-supervision with [ETH Zürich](https://ethz.ch/en.html), he moved to the [Leiden University Medical Center in 2024](https://www.lumc.nl/en/).
+Molecular Biologist and Computer Scientist by training, he used part of his PhD to write Python APIs for legacy C and C++ scientific code ([PyHMMER](https://github.com/althonos/pyhmmer), [Pyrodigal](https://github.com/althonos/pyrodigal)), as well as new implementations for high-performance computing problems, where Rust is gaining traction.
+When he's not writing code or research papers, he plays the bass and the guitar for a solo post-punk project.
