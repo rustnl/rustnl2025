@@ -2,8 +2,8 @@
 layout: "../../layouts/TalkLayout.astro"
 tracks: 
  - main
-talkTitle: "TBA"
-talkLevel: ""
+talkTitle: "10 Years of Rust: Why?"
+talkLevel: "All"
 talkTags: []
 talkDuration: 30 # 15 or 30 min
 speakers: [{
