@@ -21,7 +21,7 @@ speakers: [{
 day: "tuesday"
 ---
 
-TBA
+Rust of today looks and feels quite different from Rust of 10+ years ago. When I started many of today's key features did not exist: stability, Cargo, crates.io, async, Tokio, MSVC integration, wasm integration, proc macros, project governance, conferences, production users, or a community-at-scale. What in the world could motivate someone to stick around so long until this all came into existence? I hope to convince you that I'm not a madman for still being here and also stick around for another 10 years of Rust. I know I plan to do so!
 
 ////// <!-- sepatator between abstract and bio -->
 
