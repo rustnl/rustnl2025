@@ -57,7 +57,7 @@ const breaks = [
         striped
     />
     <Item
-        title="Ecosystem track (TBA)"
+        title="Ecosystem track: Bevy Engine (TBA)"
         color="blue"
         track={2}
         time="9:40"
@@ -65,8 +65,12 @@ const breaks = [
         room={secondary}
         striped
     />
-    <Item
-        title="Ecosystem track (TBA)"
+    <MultiItem
+        talks={Array(3).fill({
+            speaker: "",
+            title: "GOSIM spotlight",
+            image: "",
+        })}
         color="blue"
         track={2}
         time="10:25"
@@ -134,7 +138,7 @@ const breaks = [
     />
     <TrackIndicator afterDivider="11:30" track="Ecosystem track" color="blue" />
     <Item
-        title="Ecosystem track (TBA)"
+        title="Ecosystem track: App dev (TBA)"
         color="blue"
         track={2}
         time="11:30"
@@ -142,8 +146,12 @@ const breaks = [
         room={secondary}
         striped
     />
-    <Item
-        title="Ecosystem track (TBA)"
+    <MultiItem
+        talks={Array(1).fill({
+            speaker: "",
+            title: "GOSIM spotlight",
+            image: "",
+        })}
         color="blue"
         track={2}
         time="12:15"
@@ -201,12 +209,8 @@ const breaks = [
         room={main}
     />
     <TrackIndicator afterDivider="14:00" track="Ecosystem track" color="blue" />
-    <MultiItem
-        talks={Array(3).fill({
-            speaker: "",
-            title: "GOSIM spotlight",
-            image: "",
-        })}
+        <Item
+        title="Ecosystem track: Rust Embedded WG (TBA)"
         color="blue"
         track={2}
         time="14:00"
@@ -227,12 +231,9 @@ const breaks = [
         room={secondary}
         striped
     />
-    <MultiItem
-        talks={Array(1).fill({
-            speaker: "",
-            title: "GOSIM spotlight",
-            image: "",
-        })}
+
+    <Item
+        title="Ecosystem track: Critical infrastructure (TBA)"
         color="blue"
         track={2}
         time="15:30"
@@ -300,6 +301,15 @@ const breaks = [
         color="blue"
         track={2}
         time="16:20"
+        duration={35}
+        room={secondary}
+        striped
+    />
+    <Item
+        title="Ecosystem track: Rust for Linux (TBA)"
+        color="blue"
+        track={2}
+        time="17:05"
         duration={35}
         room={secondary}
         striped
