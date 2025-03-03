@@ -1,28 +1,24 @@
 ---
-import CommonLayout from '../layouts/CommonLayout.astro';
-import '../styles/index.scss';
-import Button from '../components/Button.astro';
-import Person from '../components/people/Person.astro';
-import Divider from '../components/Divider.astro';
+import CommonLayout from "../layouts/CommonLayout.astro";
+import "../styles/index.scss";
+import Button from "../components/Button.astro";
+import Person from "../components/people/Person.astro";
+import Divider from "../components/Divider.astro";
 
 const { frontmatter } = Astro.props;
-const { talkTitle, talkLevel, url, tracks = [], day = "tuesday" } =
-  frontmatter;
+const { talkTitle, talkLevel, url, tracks = [], day = "tuesday" } = frontmatter;
 
 const sep = /\/\/\/\/\/\/.*/;
-const content = await Astro.slots.render('default');
+const content = await Astro.slots.render("default");
 const abstract = content.split(sep)[0];
-const bio = content.split(sep)[1].replace(/^\n|\n$/g, '');
+const bio = content.split(sep)[1].replace(/^\n|\n$/g, "");
 
-function list(names: string[]){
+function list(names: string[]) {
   const finalName = names.pop();
-  return names.length
-  ? names.join(', ') + ' & ' + finalName
-  : finalName;
+  return names.length ? names.join(", ") + " & " + finalName : finalName;
 }
 
 const speaker_names = list(frontmatter.speakers.map((s: any) => s.name));
-
 ---
 
 <CommonLayout title={talkTitle} withLogo>
@@ -52,29 +48,24 @@ const speaker_names = list(frontmatter.speakers.map((s: any) => s.name));
           frontmatter.speakers.map((speaker: any) => (
             <Person description={bio} {...speaker} />
           ))
-          }
+        }
+      </div>
+      <div class="py-6">
         <div class="buttons">
-            {
-                !tracks.includes("industry")?(
-                    <Button
-                      link="https://www.eventbrite.nl/e/rustweek-2025-tickets-1001676961757?aff=oddtdtcreator"
-                    >
-                        Get your ticket
-                    </Button>
-                ):(
-
-                    <Button
-                      link="https://www.eventbrite.nl/e/industry-track-rustweek-2025-tickets-1115250035879"
-                    >
-                        Get your ticket
-                    </Button>
-                )
-            }
-            <Button
-                        link=`/schedule/${day}/#${url.split('/').pop()}`
-            >
-                Find in timetable
-            </Button>
+          {
+            !tracks.includes("industry") ? (
+              <Button link="https://www.eventbrite.nl/e/rustweek-2025-tickets-1001676961757?aff=oddtdtcreator">
+                Get your ticket
+              </Button>
+            ) : (
+              <Button link="https://www.eventbrite.nl/e/industry-track-rustweek-2025-tickets-1115250035879">
+                Get your ticket
+              </Button>
+            )
+          }
+          <Button link=`/schedule/${day}/#${url.split('/').pop()}`>
+            Find in timetable
+          </Button>
         </div>
       </div>
     </div>
@@ -82,46 +73,46 @@ const speaker_names = list(frontmatter.speakers.map((s: any) => s.name));
 </CommonLayout>
 
 <style is:global>
-.bio p {
+  .bio p {
     margin: 0;
     padding: 0;
     min-height: 0;
-}
+  }
 </style>
 
 <style lang="scss">
-@use '../styles/variables.scss';
-@use '../styles/breakpoint.scss';
+  @use "../styles/variables.scss";
+  @use "../styles/breakpoint.scss";
 
-.bio {
+  .bio {
     grid-area: bio;
-}
-.name {
+  }
+  .name {
     padding: 0;
     margin: 0;
     grid-area: name;
     font-size: variables.$font-size-lg;
-}
-.picture {
+  }
+  .picture {
     grid-area: picture;
-}
+  }
 
-.kicker {
-  color: variables.$color-red-400;
-  font-weight: 700;
-  text-transform: uppercase;
-}
+  .kicker {
+    color: variables.$color-red-400;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
 
-h1 {
-  padding: 0;
-  text-decoration: none;
-}
+  h1 {
+    padding: 0;
+    text-decoration: none;
+  }
 
-h2 {
-  text-decoration: none;
-}
+  h2 {
+    text-decoration: none;
+  }
 
-.buttons {
+  .buttons {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -129,7 +120,7 @@ h2 {
     gap: 1em;
 
     @include breakpoint.smaller_than(lg) {
-        flex-direction: column;
+      flex-direction: column;
     }
-}
+  }
 </style>
