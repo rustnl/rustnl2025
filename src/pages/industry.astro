@@ -33,51 +33,55 @@ import ButtonGroup from "../components/ButtonGroup.astro";
     </Markdown>
     <Timetable slot="timetable-day">
         <TimetableItem time="9.30" title="Registration" />
-        <TimetableItem time="10.00" title="Opening" speaker="Hugo van de Pol" />
+        <TimetableItem time="9.55" title="Opening" speaker="Hugo van de Pol" />
         <TimetableItem
-            time="10.05"
+            time="10.00"
             title="Our Vision for Rust"
             speaker="Niko Matsakis"
         />
         <TimetableItem
-            time="10.25"
+            time="10.20"
             title="Rust at Volvo Cars"
             speaker="Julius Gustavsson"
         />
-        <TimetableItem time="10.45" title="Short break" />
         <TimetableItem
-            time="11.00"
+            time="10.40"
+            title="Rust at the Dutch Electoral Council"
+            speaker="Mark Janssen"
+        />
+        <TimetableItem time="11.00" title="Break" />
+        <TimetableItem
+            time="11.30"
             title="Expert Tables Round 1 - choose a topic and learn from a seasoned Rust expert as well as your industry peers"
-            speaker="Experts to be announced"
+            speaker="Various industry experts"
         />
         <TimetableItem
-            time="12.00"
+            time="12.30"
             title="Expert Tables Round 1 Recap"
             speaker="Hugo van de Pol"
         />
-        <TimetableItem time="12.15" title="Lunch" />
+        <TimetableItem time="12.45" title="Lunch" />
         <TimetableItem
-            time="13.15"
+            time="14.00"
             title="Expert Tables Round 2 - choose a topic and learn from a seasoned Rust expert as well as your industry peers"
-            speaker="Experts to be announced"
+            speaker="Various industry experts"
         />
-        <TimetableItem time="14.15" title="Coffee break" />
         <TimetableItem
-            time="14.30"
+            time="15.00"
             title="Expert Tables Round 2 Recap"
             speaker="Hugo van de Pol"
         />
         <TimetableItem
-            time="14.45"
+            time="15.15"
             title="Closing Keynote"
             speaker="Jeffrey Vander Stoep"
         />
+        <TimetableItem time="15.50" title="Drinks" />
         <TimetableItem
-            time="15.15"
-            title="Live Recording of 'Rust in Production' Podcast on stage"
+            time="16.20"
+            title="OPEN TO ALL: Live Recording of 'Rust in Production' Podcast on stage"
             speaker="Matthias Endler ft. Niko Matsakis"
         />
-        <TimetableItem time="15.15" title="Drinks" />
     </Timetable>
     <Markdown slot="tickets">
         <h2 class="header space-y-6" id="about">Tickets</h2>
@@ -97,7 +101,7 @@ import ButtonGroup from "../components/ButtonGroup.astro";
         <Speaker
             name="Julius Gustavsson"
             image="julius.jpeg"
-            description="System architect at Volvo Cars"
+            description="System Architect at Volvo Cars"
         />
         <Speaker
             name="Niko Matsakis"
@@ -105,14 +109,19 @@ import ButtonGroup from "../components/ButtonGroup.astro";
             description="Senior Principal Engineer at Amazon Web Services"
         />
         <Speaker
+            name="Mark Janssen"
+            image="empty.png"
+            description="Software Architect at the Dutch Electoral Council"
+        />
+        <Speaker
             name="Rik Arends"
             image="rik.jpeg"
             description="Founder at Makepad"
         />
         <Speaker
-            name="Paul Lenz"
-            image="paullenz.jpg"
-            description="Director of Finance and Funding at Rust Foundation"
+            name="Tamme Dittrich"
+            image="tamme.jpg"
+            description="Embedded Software Engineer at Tweede golf"
         />
         <Speaker
             name="Matthias Endler"
@@ -120,14 +129,39 @@ import ButtonGroup from "../components/ButtonGroup.astro";
             description="Founder and Rust Consultant at corrode"
         />
         <Speaker
-            name="Kris van Rens"
-            image="kris.jpeg"
-            description="Software Architect at ViNotion and Rust Trainer"
+            name="Wouter Geraedts"
+            image="wouter.jpeg"
+            description="Owner and Embedded Engineer at Sarif"
+        />
+        <Speaker
+            name="Olivier Goffart"
+            image="olivier.jpeg"
+            description="Co-founder at Slint"
+        />
+        <Speaker
+            name="Paul Lenz"
+            image="paullenz.jpg"
+            description="Director of Finance and Funding at Rust Foundation"
+        />
+        <Speaker 
+            name="Tiago Manczak"
+            image="tiago.jpeg"
+            description="Principal Firmware Engineer at Infineon Technologies"
+        />
+        <Speaker 
+            name="James Munns"
+            image="james.png"
+            description="CEO and Embedded Engineer at OneVariable"
         />
         <Speaker
             name="Hugo van de Pol"
             image="hugo.jpeg"
             description="Director at Tweede golf"
+        />
+        <Speaker
+            name="Kris van Rens"
+            image="kris.jpeg"
+            description="Software Architect at ViNotion and Rust Trainer"
         />
     </Fragment>
 
