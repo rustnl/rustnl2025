@@ -1,42 +1,45 @@
 ---
 layout: "../../layouts/WorkshopLayout.astro"
-title: "Build cross-platform GUIs in Rust"
-abstract: "This workshop introduces Slint, a Rust based declarative GUI toolkit, and will show you how to build GUI applications with Rust. By the end of the workshop, you will have built a fully functioning cross-platform application in Rust."
+title: "Building Embedded GUIs with Rust"
+abstract: "Developing graphical user interfaces for embedded systems comes with challenges such as limited resources, diverse hardware platforms, and real-time constraints. This workshop will introduce you to Slint and the Espressif Rust ecosystem, guiding you through building a weather station app on Espressif’s hardware. By the end, you will have a fully functional GUI running on an embedded device, with insights into how Rust is shaping the future of embedded development."
 time: "9:00 - 13:00"
 slug: "embedded"
 level: "intermediate"
 beginnerFriendly: false
 ---
 
-As a low level language, Rust is perfectly suitable for making user interfaces the old fashioned way, with native APIs. Rust’s expressiveness and high level abstractions make it ideal for building intricate and complex user interfaces. However, writing a GUI application in today’s world typically means supporting many platforms.
+Developing graphical user interfaces for embedded systems comes with challenges such as limited resources, diverse hardware platforms, and real-time constraints. This workshop will introduce you to Slint and the Espressif Rust ecosystem, guiding you through building a weather station app on Espressif’s hardware. By the end, you will have a fully functional GUI running on an embedded device, with insights into how Rust is shaping the future of embedded development.
 
-This workshop introduces Slint, a Rust based declarative GUI toolkit, and will show you how to build GUI applications with Rust. By the end of the workshop, you will have built a fully functioning cross-platform application in Rust. Little to basic Rust knowledge is sufficient to follow the contents of the workshop.
+Slint, a Rust-based declarative GUI toolkit, provides a lightweight and efficient way to build modern UIs for embedded devices. While optimized for resource-constrained environments, Slint also enables seamless cross-platform development, allowing the same codebase to run on embedded devices, desktops, and even WebAssembly.
 
-In the workshop, the participants will build a weather station app to learn the basics of Slint and its Rust API.
+Espressif Systems is known for its widely used ESP32 series of microcontrollers, powering IoT and embedded applications worldwide. Espressif has been actively adding first-class Rust support for their hardware, making Rust a compelling choice for embedded development.
 
-The workshop is run in collaboration with Espressif; each participant will be provided with hardware.
+**Workshop Details**
 
-The rough agenda could look as follows:
+This workshop provides each participant with hardware to develop and test their applications.
 
-Starting with Slint 
+**Agenda**
 
-1. Visual Studio Extension 
-2. Weather station boilerplate app
+1 . Getting Started with Rust and Slint on Espressif
 
-Slint Language
+- Setting up the Rust toolchain for Espressif hardware
+- Installing and configuring Slint for embedded development
+- Using the Visual Studio Code extension
+- Exploring the weather station boilerplate app
 
-1. Syntax and Concepts
-2. Building Widgets to display weather data
+2 . Slint Language Fundamentals
 
-Slint Rust API 
+- Syntax and key concepts
+- Creating widgets to display real-time sensor data
 
-1. slint-build crate
-2. Threading and Event-Loop 
-3. Model trait 
-4. Integrating a Rust backend for weather station UI
-    
-Overview Target Platforms 
-1. Desktop 
-2. WebAssembly 
-3. Embedded Linux 
-4. ESP
+3 . Slint Rust API for Embedded Systems
+
+- Understanding the slint-build crate
+- Threading and event loops in embedded environments
+- Implementing the Model trait
+- Integrating a Rust backend for sensor data processing
+
+4 . Target Platform Overview
+
+- ESP-based microcontrollers
+- Desktop (Windows, macOS, Linux)
