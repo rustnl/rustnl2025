@@ -90,6 +90,10 @@ const { location }: Props = Astro.props;
   .menu {
     display: contents;
 
+    @include breakpoint.smaller_than(lg) {
+        font-size: variables.$font-size-md;
+    }
+
     &.footer {
       display: flex;
       justify-content: center;
@@ -173,7 +177,6 @@ const { location }: Props = Astro.props;
         display: flex;
         flex-direction: column;
         font-weight: 700;
-        min-height: variables.space(12);
         cursor: pointer;
 
         @include breakpoint.wider_than(lg) {
