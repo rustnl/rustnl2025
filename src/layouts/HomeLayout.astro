@@ -59,6 +59,13 @@ import PersonList from "../components/people/PeopleList.astro";
             flex-wrap: wrap;
             justify-content: center;
         }
+
+        .details-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1em;
+        }
     </style>
 
     <Head title="RustWeek 2025" />
@@ -89,6 +96,10 @@ import PersonList from "../components/people/PeopleList.astro";
             </section>
             <section class="container anchor" id="schedule">
                 <MainSchedule />
+
+                <div class="details-button">
+                    <Button link="/overview">More details</Button>
+                </div>
             </section>
 
             <section class="container">

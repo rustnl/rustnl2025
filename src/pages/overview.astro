@@ -1,0 +1,109 @@
+---
+import CommonLayout from "../layouts/CommonLayout.astro";
+import MainSchedule from "../components/schedule/MainSchedule.astro";
+import Button from "../components/Button.astro";
+import OneColumnText from "../components/OneColumnText.astro";
+
+---
+
+<CommonLayout title="overview" header="overview">
+
+    <section class='new-container'>
+        <OneColumnText>
+            <p>
+                The following is a schedule of all events throughout the week. Below you can find a brief explanation of each.
+            </p>
+        </OneColumnText>
+
+        <MainSchedule />
+
+        <OneColumnText>
+            <div class="event">
+                <h3>Social Activities</h3>
+
+                <p>
+                </p>
+
+                <!-- <Button link="/industry">See More</Button> -->
+            </div>
+
+            <div class="event">
+                <h3>Conference Days</h3>
+
+                <p>
+                    In total there will be two "conference days", on Wednesday and Tuesdays. On these days there will be talks on various tracks.
+                </p>
+
+                <Button link="/schedule">Talk Schedule</Button>
+            </div>
+
+            <div class="event">
+                <h3>Industry Track</h3>
+
+                <p>
+                    The industry track features a mixed program with three inspiring talks and two rounds of Expert Tables.
+                </p>
+
+                <Button link="/industry">See More</Button>
+            </div>
+
+            <div class="event">
+                <h3>Ecosystem Track</h3>
+
+                <p>
+                    blablabla
+                </p>
+
+                <Button link="/schedule/tuesday#ecosystem">Find out when</Button>
+            </div>
+            <div class="event">
+                <h3>Hackathon</h3>
+
+                <p>
+                    blablabla
+                </p>
+
+                <!-- <Button link="/hackathon">Find out when</Button> -->
+            </div>
+           <div class="event">
+                <h3>Unconference</h3>
+
+                <p>
+                    blablabla
+                </p>
+
+                <!-- <Button link="/hackathon">Find out when</Button> -->
+            </div>
+           <div class="event">
+                <h3>All hands</h3>
+
+                <p>
+                    blablabla
+                </p>
+
+                <!-- <Button link="/hackathon">Find out when</Button> -->
+            </div>
+            <div class="event">
+                <h3>Project Track</h3>
+
+                <p>
+                </p>
+
+                <Button link="/industry">See More</Button>
+            </div>
+        </OneColumnText>
+
+
+
+    </section>
+
+</CommonLayout>
+
+<style lang="scss">
+.event {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+</style>
+
