@@ -7,11 +7,11 @@ talkTitle: "Beyond ICU4X 2.0: ZeroVec, Diplomat, Yoke, and Unicode's Contributio
 talkLevel: ""
 talkTags: ["i18n", "embedded systems", "crates"]
 talkDuration: 15 # 15 or 30 min
-draft: true
+draft: false
 
 speakers: [{
     name: "Shane F. Carr",
-    image: "shane.png",
+    image: "shane.jpg",
     title: "",
     org: "Google",
     url: "",
