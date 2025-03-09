@@ -3,15 +3,26 @@ import CommonLayout from "../layouts/CommonLayout.astro";
 import MainSchedule from "../components/schedule/MainSchedule.astro";
 import Button from "../components/Button.astro";
 import OneColumnText from "../components/OneColumnText.astro";
+import { library, icon } from "@fortawesome/fontawesome-svg-core";
+import { faLocationDot, faClock } from "@fortawesome/free-solid-svg-icons";
+import Divider from "../components/Divider.astro";
 
+library.add(faLocationDot, faClock);
+const clockIcon = icon({ prefix: "fas", iconName: faClock.iconName });
+
+const tracks = await Astro.glob("../pages/events/tracks/*.md");
+tracks.sort(
+    (a, b) =>
+        Date.parse(b.frontmatter.dates[0]) - Date.parse(a.frontmatter.date),
+);
 ---
 
-<CommonLayout title="overview" header="overview">
-
-    <section class='new-container'>
+<CommonLayout title="Overview" header="Overview">
+    <section class="overview new-container space-y-12">
         <OneColumnText>
             <p>
-                The following is a schedule of all events throughout the week. Below you can find a brief explanation of each.
+                The following is a schedule of all events throughout the week.
+                Below you can find a brief explanation of each.
             </p>
         </OneColumnText>
 
@@ -19,91 +30,61 @@ import OneColumnText from "../components/OneColumnText.astro";
 
         <OneColumnText>
             <div class="event">
-                <h3>Social Activities</h3>
-
+                <h2>Tue+Wed: Conference days</h2>
                 <p>
+                    The conference is a 2-day event on Tuesday and Wednesday,
+                    with talks in various tracks:
                 </p>
-
-                <!-- <Button link="/industry">See More</Button> -->
             </div>
-
-            <div class="event">
-                <h3>Conference Days</h3>
-
-                <p>
-                    In total there will be two "conference days", on Wednesday and Tuesdays. On these days there will be talks on various tracks.
-                </p>
-
-                <Button link="/schedule">Talk Schedule</Button>
-            </div>
-
-            <div class="event">
-                <h3>Industry Track</h3>
-
-                <p>
-                    The industry track features a mixed program with three inspiring talks and two rounds of Expert Tables.
-                </p>
-
-                <Button link="/industry">See More</Button>
-            </div>
-
-            <div class="event">
-                <h3>Ecosystem Track</h3>
-
-                <p>
-                    blablabla
-                </p>
-
-                <Button link="/schedule/tuesday#ecosystem">Find out when</Button>
-            </div>
-            <div class="event">
-                <h3>Hackathon</h3>
-
-                <p>
-                    blablabla
-                </p>
-
-                <!-- <Button link="/hackathon">Find out when</Button> -->
-            </div>
-           <div class="event">
-                <h3>Unconference</h3>
-
-                <p>
-                    blablabla
-                </p>
-
-                <!-- <Button link="/hackathon">Find out when</Button> -->
-            </div>
-           <div class="event">
-                <h3>All hands</h3>
-
-                <p>
-                    blablabla
-                </p>
-
-                <!-- <Button link="/hackathon">Find out when</Button> -->
-            </div>
-            <div class="event">
-                <h3>Project Track</h3>
-
-                <p>
-                </p>
-
-                <Button link="/industry">See More</Button>
-            </div>
+            {
+                tracks.map((track: any) => (
+                    <div class="event">
+                        <h3>{track.frontmatter.title}</h3>
+                        {track.frontmatter.dates.map((date: string) => (
+                            <div class="date-time">
+                                <div class="icon">
+                                    <Fragment set:html={clockIcon.html} />
+                                </div>
+                                <span>
+                                    {new Date(date).toLocaleDateString(
+                                        "en-EN",
+                                        { weekday: "short" },
+                                    ) +
+                                        " " +
+                                        track.frontmatter.startTime}
+                                </span>
+                            </div>
+                        ))}
+                        <div set:html={track.compiledContent()} />
+                        {track.frontmatter.detailLink && (
+                            <div>
+                                <a href={track.frontmatter.detailLink}>More details</a>
+                            </div>
+                        )}
+                        {track.frontmatter.scheduleLink && (
+                            <div>
+                                <a href={track.frontmatter.scheduleLink}>Find in schedule</a>
+                            </div>
+                        )}
+                    </div>
+                ))
+            }
         </OneColumnText>
-
-
-
     </section>
-
 </CommonLayout>
 
 <style lang="scss">
-.event {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-</style>
+    .event {
+        margin-block-start: 3rem;
+        .date-time {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    }
 
+    // the page currently has a nested new-container; the padding is added twice
+    .overview.new-container {
+        padding-inline: 0;
+    }
+</style>
