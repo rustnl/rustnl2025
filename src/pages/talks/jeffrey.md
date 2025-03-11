@@ -10,12 +10,12 @@ talkDuration: 15 # 15 or 30 min
 
 speakers: [{
     name: "Jeffrey Vander Stoep",
-    image: null,
+    image: jeffrey.png,
     title: "",
     org: "",
     url: "",
     bluesky: "",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/jeffrey-vander-stoep-8a56629/",
     twitter: "",
     mastodon: "",
     github: "",
