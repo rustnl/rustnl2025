@@ -1,0 +1,40 @@
+---
+import EventDate from "./EventDate.astro";
+
+interface Props {
+    tracks: any[];
+    date: string;
+}
+
+const { tracks, date } = Astro.props;
+
+
+---
+{
+    tracks.filter((track: any) => track.frontmatter.dates.includes(date) == true ).map((track: any) => (
+        <div class="event">
+            <h3>{track.frontmatter.title}</h3>
+            {track.frontmatter.dates.map((date: string) => (
+                <EventDate
+                    date={date}
+                    startTime={track.frontmatter.startTime}
+                />
+            ))}
+            <div set:html={track.compiledContent()} />
+            {track.frontmatter.detailLink && (
+                <div>
+                    <a href={track.frontmatter.detailLink}>
+                        More details
+                    </a>
+                </div>
+            )}
+            {track.frontmatter.scheduleLink && (
+                <div>
+                    <a href={track.frontmatter.scheduleLink}>
+                        Find in schedule
+                    </a>
+                </div>
+            )}
+        </div>
+    ))
+}

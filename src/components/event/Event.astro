@@ -1,0 +1,50 @@
+---
+import EventDate from "./EventDate.astro";
+import Divider from "../../components/Divider.astro";
+
+interface Props {
+    title?: string;
+    dates?: string[];
+    startTime?: string;
+    detailLink?: string;
+    scheduleLink?: string;
+}
+
+const { title, dates, startTime, detailLink, scheduleLink } = Astro.props;
+---
+   
+<div class="event">
+    <h2>{title}</h3>
+    {dates && dates.map((date: string) => (
+        <EventDate
+            date={date}
+            startTime={startTime}
+        />
+    ))}
+    <slot />
+    {detailLink && (
+        <div>
+            <a href={detailLink}>
+                More details
+            </a>
+        </div>
+    )}
+    {scheduleLink && (
+        <div>
+            <a href={scheduleLink}>
+                Find in schedule
+            </a>
+        </div>
+    )}
+</div>
+
+<Divider />
+
+<style lang="scss">
+
+.event {
+    margin-block-start: 3rem;
+    margin-block-end: 5rem;
+}
+
+</style>

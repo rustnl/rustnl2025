@@ -1,6 +1,6 @@
 ---
-title: 'Project track'
-dates: [2025-05-14]
+title: 'Rust Project track'
+dates: ['2025-05-14']
 startTime: "9:30"
 scheduleLink: /schedule/wednesday
 image:
@@ -8,4 +8,4 @@ image:
     alt: ''
 ---
 
-Project track description
+The Rust Project track offers talks by the teams of the Rust project.

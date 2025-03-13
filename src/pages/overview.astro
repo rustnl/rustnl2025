@@ -1,88 +1,82 @@
 ---
 import CommonLayout from "../layouts/CommonLayout.astro";
 import MainSchedule from "../components/schedule/MainSchedule.astro";
-import Button from "../components/Button.astro";
 import OneColumnText from "../components/OneColumnText.astro";
-import { library, icon } from "@fortawesome/fontawesome-svg-core";
-import { faLocationDot, faClock } from "@fortawesome/free-solid-svg-icons";
-import Divider from "../components/Divider.astro";
-
-library.add(faLocationDot, faClock);
-const clockIcon = icon({ prefix: "fas", iconName: faClock.iconName });
+import EventTracks from "../components/event/EventTracks.astro";
+import Event from "../components/event/Event.astro";
 
 const tracks = await Astro.glob("../pages/events/tracks/*.md");
-tracks.sort(
-    (a, b) =>
-        Date.parse(b.frontmatter.dates[0]) - Date.parse(a.frontmatter.date),
-);
+const events = await Astro.glob("../pages/events/*.md");
+events
+    .sort(
+        (a, b) =>
+            Date.parse(a.frontmatter.dates[0]) -
+            Date.parse(b.frontmatter.dates[0]),
+    )
+    .filter((event) => (event.frontmatter.published = true));
 ---
 
-<CommonLayout title="Overview" header="Overview">
+<CommonLayout title="Overview of RustWeek" header="Overview of RustWeek">
     <section class="overview new-container space-y-12">
         <OneColumnText>
             <p>
-                The following is a schedule of all events throughout the week.
-                Below you can find a brief explanation of each.
+                Find out what RustWeek is all about in this <strong
+                    >week schedule</strong
+                >.
+                <br />
+                Below the schedule you can find more info about each <strong
+                    >track</strong
+                > or <strong>event</strong>.
             </p>
         </OneColumnText>
 
         <MainSchedule />
 
         <OneColumnText>
-            <div class="event">
-                <h2>Tue+Wed: Conference days</h2>
+
+            <Event title="Social activities">
                 <p>
-                    The conference is a 2-day event on Tuesday and Wednesday,
-                    with talks in various tracks:
+                    Starting Monday, and running throughout the week there will
+                    be social activities e.g. a city tour, Ferris sticker hunt,
+                    bouldering, bowling, laser tag, museum or visiting one of
+                    the beautiful cities surrounding Utrecht.
                 </p>
-            </div>
-            {
-                tracks.map((track: any) => (
-                    <div class="event">
-                        <h3>{track.frontmatter.title}</h3>
-                        {track.frontmatter.dates.map((date: string) => (
-                            <div class="date-time">
-                                <div class="icon">
-                                    <Fragment set:html={clockIcon.html} />
-                                </div>
-                                <span>
-                                    {new Date(date).toLocaleDateString(
-                                        "en-EN",
-                                        { weekday: "short" },
-                                    ) +
-                                        " " +
-                                        track.frontmatter.startTime}
-                                </span>
-                            </div>
-                        ))}
-                        <div set:html={track.compiledContent()} />
-                        {track.frontmatter.detailLink && (
-                            <div>
-                                <a href={track.frontmatter.detailLink}>More details</a>
-                            </div>
-                        )}
-                        {track.frontmatter.scheduleLink && (
-                            <div>
-                                <a href={track.frontmatter.scheduleLink}>Find in schedule</a>
-                            </div>
-                        )}
-                    </div>
-                ))
-            }
+                <p>
+                    Do you have any suggestions for fun social activities with
+                    other Rustaceans? Let us know by filling out <a
+                        href="https://forms.gle/fKocgjB4x4TejQYV9">this form</a
+                    >.
+                </p>
+            </Event>
+
+            <Event title="Conference day 1">
+                <p>
+                    Day 1 of the conference has three tracks, the Main track
+                    (Room 12, ~ 600p), the Ecosystem track (Room 11, ~ 150p) and
+                    the Industry track (Room 10, ~ 120p).
+                </p>
+                <EventTracks tracks={tracks} date="2025-05-13" />
+            </Event>
+
+            <Event title="Conference day 2">
+                <p>
+                    Day 2 of the conference has three tracks, the Main track
+                    (Room 12, ~ 600p), the Deep Dive track (Room 11, ~ 150p) and
+                    the Rust Project track (Room 10, ~ 120p).
+                </p>
+                <EventTracks tracks={tracks} date="2025-05-14" />
+            </Event>
+
+            {events.map((event)=>(
+                <Event {...event.frontmatter}>
+                    <div set:html={event.compiledContent()} />
+                </Event>
+            ))}
         </OneColumnText>
     </section>
 </CommonLayout>
 
 <style lang="scss">
-    .event {
-        margin-block-start: 3rem;
-        .date-time {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-    }
-
     // the page currently has a nested new-container; the padding is added twice
     .overview.new-container {
         padding-inline: 0;
