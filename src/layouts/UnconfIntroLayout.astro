@@ -1,0 +1,30 @@
+---
+import CommonLayout from "./CommonLayout.astro";
+import OneColumnText from "../components/OneColumnText.astro";
+import Button from "../components/Button.astro";
+import Divider from "../components/Divider.astro";
+import "../styles/index.scss";
+
+import UnconfSponsors from "../components/unconf/UnconfSponsors.astro";
+
+const { frontmatter } = Astro.props;
+const { title } = frontmatter;
+
+---
+
+<CommonLayout title={title} header={title} withLogo small>
+    <OneColumnText>
+        <slot />
+    </OneColumnText>
+    <div>
+        <Button link="/unconf">Guide for participants</Button>
+    </div>
+    <div class="space-y-12">
+        <Divider />
+    </div>
+    <UnconfSponsors />
+</CommonLayout>
+
+<style lang="scss">
+      @use '../styles/variables.scss';
+</style>

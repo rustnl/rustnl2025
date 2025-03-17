@@ -1,0 +1,51 @@
+---
+import Sponsor from "../sponsor/sponsor.astro";
+import SponsorTier from "../sponsor/sponsor-tier.astro";
+---
+<section class="container text-center py-12" id="sponsors">
+    <h2>Unconf Sponsors</h2>
+    <p>
+        We are thankful for the support as <strong>name sponsor:</strong><br /><br />
+        &bullet; Rust for Linux - <strong>Google</strong><br />
+        &bullet; Bevy - <span style="font-style:italic;">available</span><br />
+        &bullet; Rust Embedded WG - <span style="font-style:italic;">available</span><br />
+        &bullet; UI & App dev - <strong>Futurewei</strong><br />
+        &bullet; Critical infrastructure - <span style="font-style:italic;">available</span><br />
+    </p>
+
+    <SponsorTier name="Room sponsors">
+        <Sponsor
+            name="Google"
+            tier="ecosystem-partner"
+            image="google.png"
+            link="https://google.com/"
+        />
+        <Sponsor
+            name="Futurewei"
+            tier="ecosystem-partner"
+            image="futurewei.png"
+            link="https://futurewei.com/"
+        />
+    </SponsorTier>
+    <SponsorTier name="Unconf supporters">
+        <Sponsor
+            name="Rust Foundation"
+            tier="ecosystem-supporter"
+            image="rustfoundation.png"
+            link="https://foundation.rust-lang.org/"
+        />
+        <Sponsor
+            name="Espressif"
+            tier="ecosystem-supporter"
+            image="unconf/espressif.svg"
+            link="https://espressif.com/"
+        />
+    </SponsorTier>
+    <p>
+        Interested in sponsoring the unconf?<br />Download our <a
+            target="_blank"
+            href="/resources/sponsorship-prospectus-rustweek-2025.pdf"
+            >Sponsorship prospectus</a
+        >, or <a href="mailto:sponsors@rustnl.org">contact us</a>,
+    </p>
+</section>
