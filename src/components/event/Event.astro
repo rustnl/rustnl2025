@@ -3,6 +3,7 @@ import EventDate from "./EventDate.astro";
 import Divider from "../../components/Divider.astro";
 
 interface Props {
+    id?: string;
     title?: string;
     dates?: string[];
     startTime?: string;
@@ -10,41 +11,62 @@ interface Props {
     scheduleLink?: string;
 }
 
-const { title, dates, startTime, detailLink, scheduleLink } = Astro.props;
+const { id = "", title, dates = [], startTime, detailLink, scheduleLink } = Astro.props;
 ---
-   
-<div class="event">
-    <h2>{title}</h3>
-    {dates && dates.map((date: string) => (
-        <EventDate
-            date={date}
-            startTime={startTime}
-        />
-    ))}
+
+<div class="event" id={id.replace("/events/", "")}>
+    <div class="kicker">
+        {
+            dates.map((date: string) =>
+                new Date(date).toLocaleDateString("en-EN", { weekday: "long" }),
+            ).join(" & ")
+        }
+    </div>
+    <h2>{title}</h2>
+    {
+        dates.map((date: string) => (
+            <EventDate date={date} startTime={startTime} />
+        ))
+    }
     <slot />
-    {detailLink && (
-        <div>
-            <a href={detailLink}>
-                More details
-            </a>
-        </div>
-    )}
-    {scheduleLink && (
-        <div>
-            <a href={scheduleLink}>
-                Find in schedule
-            </a>
-        </div>
-    )}
+    {
+        detailLink && (
+            <div class="track-link">
+                <a href={detailLink}>More details</a>
+            </div>
+        )
+    }
+    {
+        scheduleLink && (
+            <div class="track-link">
+                <a href={scheduleLink}>Find in schedule</a>
+            </div>
+        )
+    }
 </div>
 
 <Divider />
 
 <style lang="scss">
+    @use "../../styles/variables.scss";
 
-.event {
-    margin-block-start: 3rem;
-    margin-block-end: 5rem;
-}
+    .kicker {
+        color: variables.$color-red-400;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
 
+    h2 {
+        padding-top: 0;
+    }
+
+    .event {
+        margin-block-start: 5rem;
+        margin-block-end: 5rem;
+
+        .track-link a {
+            font-weight: bold;
+            color: variables.$color-red-400;
+        }
+    }
 </style>

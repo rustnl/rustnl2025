@@ -12,7 +12,7 @@ const { tracks, date } = Astro.props;
 ---
 {
     tracks.filter((track: any) => track.frontmatter.dates.includes(date) == true ).map((track: any) => (
-        <div class="event">
+        <div class="event track">
             <h3>{track.frontmatter.title}</h3>
             {track.frontmatter.dates.map((date: string) => (
                 <EventDate
@@ -22,14 +22,14 @@ const { tracks, date } = Astro.props;
             ))}
             <div set:html={track.compiledContent()} />
             {track.frontmatter.detailLink && (
-                <div>
+                <div class="track-link">
                     <a href={track.frontmatter.detailLink}>
                         More details
                     </a>
                 </div>
             )}
             {track.frontmatter.scheduleLink && (
-                <div>
+                <div class="track-link">
                     <a href={track.frontmatter.scheduleLink}>
                         Find in schedule
                     </a>
@@ -38,3 +38,21 @@ const { tracks, date } = Astro.props;
         </div>
     ))
 }
+
+<style lang="scss">
+    @use "../../styles/variables.scss";
+
+    .event.track {
+        margin-block-start: 3rem;
+        h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .track-link a {
+            font-weight: bold;
+            color: variables.$color-red-400;
+        }
+    }
+    
+    </style>
+    

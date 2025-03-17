@@ -5,15 +5,16 @@ import LocationDusVenue from "../components/LocationDusVenue.astro";
 import UnconfSchedule from "../components/schedule/UnconfSchedule.astro";
 import UnconfSponsors from "../components/unconf/UnconfSponsors.astro";
 import Divider from "../components/Divider.astro";
+
+const unconfIntro = await Astro.glob("./unconf-intro.md");
 ---
 
-<CommonLayout title="RustWeek unconf 2025" header="RustWeek unconf" withoutMenu withLogo>
+<CommonLayout title="Unconf participants guide" header="Unconf participants guide" withLogo>
     <section class="container md:grid md:cols-12">
         <div
             class="abouttext text-center md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
             style="font-size: smaller;"
         >
-            <a href="#groups">Groups</a> &bullet;
             <a href="#venue">Venue</a> &bullet;
             <a href="#unconf-details">Unconf days</a> &bullet;
             <a href="#sponsors">Sponsors</a> &bullet;
@@ -22,30 +23,12 @@ import Divider from "../components/Divider.astro";
         </div>
         <div
             class="abouttext md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
+            set:html={unconfIntro[0].compiledContent()}
         >
-            <p>
-                The <strong>RustWeek unconference</strong> is invite-only two day event that
-                will take place as part of <a href="/">RustWeek 2025</a>, which also
-                includes a conference, workshops and other activities.
-            </p>
-            <p>
-                RustWeek is held in Utrecht, The Netherlands from May 12 - 17. The unconference takes place on Fri May 16 & Sat May 17.
-            </p>
         </div>
-    </section>
-    <section class="container md:grid md:cols-12 pb-6">
-        <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10">
-            <h2 id="groups">The unconf groups</h2>
-            <p>
-                The unconference is for Rust maintainers of these groups:
-                <ul>
-                    <li>Rust for Linux</li>
-                    <li>Bevy</li>
-                    <li>Rust Embedded Working Group</li>
-                    <li>UI & App dev</li>
-                    <li>Critical infrastructure</li>
-                </ul>
-            </p>
+        <div
+            class="abouttext md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
+        >   
             <p
                 style="border: 1px solid black; padding: 1rem; font-style: italic; font-size: smaller;"
             >

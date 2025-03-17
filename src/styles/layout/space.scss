@@ -23,11 +23,11 @@
   }
 
   .pt-#{$i} {
-    padding-block-start: space($i);
+    padding-block-start: variables.space($i);
   }
 
   .pb-#{$i} {
-    padding-block-end: space($i);
+    padding-block-end: variables.space($i);
   }
 }
 

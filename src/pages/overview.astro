@@ -6,14 +6,18 @@ import EventTracks from "../components/event/EventTracks.astro";
 import Event from "../components/event/Event.astro";
 
 const tracks = await Astro.glob("../pages/events/tracks/*.md");
-const events = await Astro.glob("../pages/events/*.md");
+let events = await Astro.glob("../pages/events/*.md");
 events
     .sort(
         (a, b) =>
             Date.parse(a.frontmatter.dates[0]) -
             Date.parse(b.frontmatter.dates[0]),
-    )
-    .filter((event) => (event.frontmatter.published = true));
+    ).sort(
+        (a, b) =>
+            a.frontmatter.dates.length -
+            b.frontmatter.dates.length,
+    );
+events = events.filter((event) => (event.frontmatter.published == true));
 ---
 
 <CommonLayout title="Overview of RustWeek" header="Overview of RustWeek">
@@ -33,43 +37,10 @@ events
         <MainSchedule />
 
         <OneColumnText>
-
-            <Event title="Social activities">
-                <p>
-                    Starting Monday, and running throughout the week there will
-                    be social activities e.g. a city tour, Ferris sticker hunt,
-                    bouldering, bowling, laser tag, museum or visiting one of
-                    the beautiful cities surrounding Utrecht.
-                </p>
-                <p>
-                    Do you have any suggestions for fun social activities with
-                    other Rustaceans? Let us know by filling out <a
-                        href="https://forms.gle/fKocgjB4x4TejQYV9">this form</a
-                    >.
-                </p>
-            </Event>
-
-            <Event title="Conference day 1">
-                <p>
-                    Day 1 of the conference has three tracks, the Main track
-                    (Room 12, ~ 600p), the Ecosystem track (Room 11, ~ 150p) and
-                    the Industry track (Room 10, ~ 120p).
-                </p>
-                <EventTracks tracks={tracks} date="2025-05-13" />
-            </Event>
-
-            <Event title="Conference day 2">
-                <p>
-                    Day 2 of the conference has three tracks, the Main track
-                    (Room 12, ~ 600p), the Deep Dive track (Room 11, ~ 150p) and
-                    the Rust Project track (Room 10, ~ 120p).
-                </p>
-                <EventTracks tracks={tracks} date="2025-05-14" />
-            </Event>
-
             {events.map((event)=>(
-                <Event {...event.frontmatter}>
+                <Event {...event.frontmatter} id={event.url}>
                     <div set:html={event.compiledContent()} />
+                    <EventTracks tracks={tracks} date={event.frontmatter.dates[0]} />
                 </Event>
             ))}
         </OneColumnText>

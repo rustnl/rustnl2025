@@ -9,4 +9,4 @@ image:
     alt: ''
 ---
 
-On Thursday morning we have 9 workshops to choose from ranging from game development to embedded GUIs.
+On Thursday morning we have 7 workshops to choose from ranging from game development to embedded GUIs.
