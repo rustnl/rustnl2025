@@ -1,8 +1,7 @@
 ---
 layout: "../../layouts/TalkLayout.astro"
-
-tracks: 
- - project
+tracks:
+ - rust project
  - industry
 talkTitle: "Our Vision for Rust"
 talkLevel: "All"
