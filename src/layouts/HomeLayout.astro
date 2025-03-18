@@ -52,12 +52,11 @@ import PersonList from "../components/people/PeopleList.astro";
             margin-block-start: 2rem;
         }
 
-        #speakers {
+        .details-button {
             display: flex;
-            flex-direction: row;
-            gap: space(6);
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding: 1em;
         }
     </style>
 
@@ -89,6 +88,10 @@ import PersonList from "../components/people/PeopleList.astro";
             </section>
             <section class="container anchor" id="schedule">
                 <MainSchedule />
+
+                <div class="details-button">
+                    <Button link="/overview">More details</Button>
+                </div>
             </section>
 
             <section class="container">

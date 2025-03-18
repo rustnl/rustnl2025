@@ -1,0 +1,55 @@
+---
+import CommonLayout from "../layouts/CommonLayout.astro";
+import MainSchedule from "../components/schedule/MainSchedule.astro";
+import OneColumnText from "../components/OneColumnText.astro";
+import EventTracks from "../components/event/EventTracks.astro";
+import Event from "../components/event/Event.astro";
+
+const tracks = await Astro.glob("../pages/events/tracks/*.md");
+let events = await Astro.glob("../pages/events/*.md");
+events
+    .sort(
+        (a, b) =>
+            Date.parse(a.frontmatter.dates[0]) -
+            Date.parse(b.frontmatter.dates[0]),
+    ).sort(
+        (a, b) =>
+            a.frontmatter.dates.length -
+            b.frontmatter.dates.length,
+    );
+events = events.filter((event) => (event.frontmatter.published == true));
+---
+
+<CommonLayout title="Overview of RustWeek" header="Overview of RustWeek">
+    <section class="overview new-container space-y-12">
+        <OneColumnText>
+            <p>
+                Find out what RustWeek is all about in this <strong
+                    >week schedule</strong
+                >.
+                <br />
+                Below the schedule you can find more info about each <strong
+                    >track</strong
+                > or <strong>event</strong>.
+            </p>
+        </OneColumnText>
+
+        <MainSchedule />
+
+        <OneColumnText>
+            {events.map((event)=>(
+                <Event {...event.frontmatter} id={event.url}>
+                    <div set:html={event.compiledContent()} />
+                    <EventTracks tracks={tracks} date={event.frontmatter.dates[0]} />
+                </Event>
+            ))}
+        </OneColumnText>
+    </section>
+</CommonLayout>
+
+<style lang="scss">
+    // the page currently has a nested new-container; the padding is added twice
+    .overview.new-container {
+        padding-inline: 0;
+    }
+</style>

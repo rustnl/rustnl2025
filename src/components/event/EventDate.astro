@@ -1,0 +1,38 @@
+---
+import { library, icon } from "@fortawesome/fontawesome-svg-core";
+import { faLocationDot, faClock } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faLocationDot, faClock);
+const clockIcon = icon({ prefix: "fas", iconName: faClock.iconName });
+
+interface Props {
+    date: string;
+    startTime?: string;
+}
+
+const { date, startTime } = Astro.props;
+
+
+---
+
+<div class="date-time">
+    <div class="icon">
+        <Fragment set:html={clockIcon.html} />
+    </div>
+    <span>
+        {new Date(date).toLocaleDateString(
+            "en-EN",
+            { weekday: "short" },
+        ) +
+            " " +
+            startTime}
+    </span>
+</div>
+
+<style lang="scss">
+    .date-time {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+</style>

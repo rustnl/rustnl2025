@@ -25,6 +25,7 @@ interface Props {
     striped?: boolean;
     description?: string;
     ticket?: string;
+    id?: string | null;
 }
 
 
@@ -41,6 +42,7 @@ const {
     description,
     ticket,
     url,
+    id = null,
 }: Props = Astro.props;
 
 const matches = import.meta.glob("../../pages/talks/*.md", { eager: true });
@@ -69,7 +71,7 @@ const timetable_url = `/schedule/${Astro.url.pathname.split("/").filter(i => i !
     ticket={ticket}
     url={talk_url}
 >
-    <div class="block">
+    <div class="block" id={id}>
         <a class="title" href={talk_url}>{talk_title}</a>
         {
             talk_speakers.map((speaker: any) => (
