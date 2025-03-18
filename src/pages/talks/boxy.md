@@ -27,6 +27,7 @@ A minimum subset of const generics was stabilized in 2021 with a significant
 number of limitations. While not much has changed stabley for const generics
 since then, the state of const generics on nightly has shifted massively,
 getting much closer to being able to lift the majority of these limitations.
+
 This talk presents a brief overview of the set of unstable features relating to
 const generics, what's made them so difficult to ship, and where they currently
 stand regarding stabilization.
