@@ -36,12 +36,13 @@ speakers: [
 day: "wednesday"
 ---
 
-TBD
+David and Lukas share their recent work to migrate rust-analyzer to the new Salsa,
+which gives rust-analyzer persistence, in-query parallelism, raw speed, gc-able interned values with Copy keys, and more.
 
 ////// <!-- sepatator between abstract and bio -->
 
-TBD
+David works at <s>Facebook</s> Meta. He also works on the Tracing library. Before that, he worked at Amazon.
 
 ////// <!-- sepatator between abstract and bio -->
 
-TBD
+Lukas is a software engineer at Ferrous Systems and the current team lead of the rust-analyzer team.
