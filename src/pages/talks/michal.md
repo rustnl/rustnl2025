@@ -20,7 +20,7 @@ speakers: [{
     mastodon: "",
     github: "https://github.com/FractalFir",
 }]
-day: "wednesday"
+day: "tuesday"
 ---
 
 Rust is a language we all know and love; however, we can't yet use it on all systems. Certain architectures / platforms don't support Rust at all, only providing a C compiler. In this talk, I will show you how we can compile Rust to C, allowing us to bring the language to new places!

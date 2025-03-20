@@ -90,7 +90,10 @@ const breaks = [
         url="industry"
     />
     <Item
-        talk="niko"
+        title="Our Vision for Rust"
+        speakers={[
+            { name: "Niko Matsakis", image: "niko.png" },
+        ]}
         color="red"
         track={3}
         time="10:00"
@@ -182,7 +185,7 @@ const breaks = [
     <Divider start="12:45" end="14:00"> Lunch </Divider>
     <TrackIndicator afterDivider="14:00" track="Main track" color="yellow" />
     <Item
-        talk="joe"
+        talk="michal"
         color="yellow"
         track={1}
         time="14:00"
@@ -320,6 +323,14 @@ const breaks = [
         color="red"
         track={3}
         time="16:20"
+        duration={35}
+        room={tertiary}
+    />
+    <Item
+        talk="nandini"
+        color="red"
+        track={3}
+        time="17:05"
         duration={35}
         room={tertiary}
     />
