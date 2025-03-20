@@ -1,68 +1,68 @@
 ---
-import Button from '../Button.astro';
+import Button from "../Button.astro";
 
 interface Props {
-  location: 'header' | 'footer';
+  location: "header" | "footer";
 }
 
 const { location }: Props = Astro.props;
 ---
 
-<div class:list={['menu', location]}>
-  <ul>
-    <li class="parent">
-      <a
-        href="/"
-        >Home</a
-      >
+<div class:list={["menu", location]} aria-label="Main menu">
+  <ul role="menubar">
+    <li class="parent" role="menuitem">
+      <a href="/">Home</a>
     </li>
-    <li class="parent">
-      <span>Schedule</span>
-      <ul class="submenu">
-        <li class="child">
+    <li class="parent" role="menuitem">
+      <button>Schedule</button>
+      <ul class="submenu" role="menu">
+        <li class="child" role="menuitem">
           <a
             href="/overview"
             >Overview of the week</a
           >
-          <a href="/schedule/tuesday">Tuesday talks</a>
-          <a href="/schedule/wednesday">Wednesday Talks</a>
-          <a href="/workshops">Workshops</a>
+          <a href="/schedule/tuesday" role="menuitem">Tuesday talks</a>
+          <a href="/schedule/wednesday" role="menuitem">Wednesday Talks</a>
+          <a href="/workshops" role="menuitem">Workshops</a>
         </li>
-        <li class="child"><a href="/industry">Industry track</a></li>
+        <li class="child" role="menuitem">
+          <a href="/industry">Industry track</a>
+        </li>
       </ul>
     </li>
-    <li class="parent">
-        <a href="/speakers">Speakers</a>
+    <li class="parent" role="menuitem">
+      <a href="/speakers">Speakers</a>
     </li>
-    <li class="parent">
+    <li class="parent" role="menuitem">
       <a
         href="/#sponsors"
         onclick="document.querySelector('[data-menu-toggle]').click()"
         >Sponsors</a
       >
     </li>
-    <li class="parent">
-        <span>Location</span>
-        <ul class="submenu">
-          <li class="child">
-            <a 
-              href="/#where"
-              onclick="document.querySelector('[data-menu-toggle]').click()">Utrecht</a
-            >
-          </li>
-          <li class="child">
-            <a href="/kinepolis">Conference venue</a>
-          </li>
-          <li class="child">
-            <a href="/hotels">Hotels</a>
-          </li>
-          <li class="child">
-            <a href="/accessibility">Accessibility</a>
-          </li>
-        </ul>
+    <li class="parent" role="menuitem">
+      <button>Location</button>
+      <ul class="submenu" role="menu">
+        <li class="child" role="menuitem">
+          <a
+            href="/#where"
+            onclick="document.querySelector('[data-menu-toggle]').click()"
+            >Utrecht</a
+          >
+        </li>
+        <li class="child" role="menuitem">
+          <a href="/kinepolis">Conference venue</a>
+        </li>
+        <li class="child" role="menuitem">
+          <a href="/hotels">Hotels</a>
+        </li>
+        <li class="child" role="menuitem">
+          <a href="/accessibility">Accessibility</a>
+        </li>
+      </ul>
     </li>
     <li class="parent">
-      <span>About</span>
+      <button>About</button>
       <ul class="submenu">
         <li class="child">
           <a href="/about">About</a>
@@ -76,16 +76,15 @@ const { location }: Props = Astro.props;
       <Button
         link="https://www.eventbrite.nl/e/rust-week-2025-tickets-1001676961757?aff=oddtdtcreator"
         ty="primary"
-        inFooter={location == 'footer'}>Tickets</Button
+        inFooter={location == "footer"}>Tickets</Button
       >
     </li>
   </ul>
 </div>
 
 <style lang="scss">
-
-    @use "../../styles/variables.scss";
-    @use "../../styles/breakpoint.scss";
+  @use "../../styles/variables.scss";
+  @use "../../styles/breakpoint.scss";
 
   .menu {
     display: contents;
@@ -187,7 +186,8 @@ const { location }: Props = Astro.props;
           padding-inline: variables.space(4);
           position: relative;
 
-          &:has(.submenu):hover {
+          &:has(.submenu):hover,
+          &:has(.submenu):focus-within {
             --submenu-opacity: 1;
             --submenu-visibility: visible;
             --submenu-pointer-events: all;
@@ -209,7 +209,14 @@ const { location }: Props = Astro.props;
         }
       }
 
-      .parent span {
+      .parent button {
+        background-color: transparent;
+        border: none;
+        font-family: inherit;
+        color: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+
         @include breakpoint.wider_than(lg) {
           display: flex;
           align-items: center;
@@ -218,10 +225,10 @@ const { location }: Props = Astro.props;
 
         &::after {
           @include breakpoint.wider_than(lg) {
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNy4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjUgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0yMDEuNCAzNzQuNmMxMi41IDEyLjUgMzIuOCAxMi41IDQ1LjMgMGwxNjAtMTYwYzEyLjUtMTIuNSAxMi41LTMyLjggMC00NS4zcy0zMi44LTEyLjUtNDUuMyAwTDIyNCAzMDYuNyA4Ni42IDE2OS40Yy0xMi41LTEyLjUtMzIuOC0xMi41LTQ1LjMgMHMtMTIuNSAzMi44IDAgNDUuM2wxNjAgMTYweiIvPjwvc3ZnPg==');
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNy4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjUgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0yMDEuNCAzNzQuNmMxMi41IDEyLjUgMzIuOCAxMi41IDQ1LjMgMGwxNjAtMTYwYzEyLjUtMTIuNSAxMi41LTMyLjggMC00NS4zcy0zMi44LTEyLjUtNDUuMyAwTDIyNCAzMDYuNyA4Ni42IDE2OS40Yy0xMi41LTEyLjUtMzIuOC0xMi41LTQ1LjMgMHMtMTIuNSAzMi44IDAgNDUuM2wxNjAgMTYweiIvPjwvc3ZnPg==");
             background-position: center center;
             background-repeat: no-repeat;
-            content: '';
+            content: "";
             height: variables.space(4);
             transition-duration: 150ms;
             transition-property: rotate;
