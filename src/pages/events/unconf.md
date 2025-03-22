@@ -1,7 +1,7 @@
 ---
 title: 'Unconference'
 dates: ['2025-05-16', '2025-05-17']
-startTime: "9:00"
+startTime: "09:00"
 detailLink: /unconf-intro
 scheduleLink: null
 published: true

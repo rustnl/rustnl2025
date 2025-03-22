@@ -1,7 +1,7 @@
 ---
 title: 'Workshops'
 dates: ['2025-05-15']
-startTime: "9:00"
+startTime: "09:00"
 scheduleLink: /workshops
 published: true
 image:
