@@ -11,8 +11,8 @@ import { useTalks } from "../components/useTalks";
 
 
 const talks = await Astro.glob('./talks/*.md');
-const {alice, julius, pietro, alex, niko, miguel} = useTalks(talks);
-const featured_talks = [alice, julius, pietro, alex, niko, miguel];
+const {alice, julius, pietro, alex, niko, miguel, ciara, raph} = useTalks(talks);
+const featured_talks = [alice, julius, pietro, alex, niko, miguel, ciara, raph];
 ---
 
 <HomeLayout>

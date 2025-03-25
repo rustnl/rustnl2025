@@ -9,7 +9,7 @@ talkDuration: 20
 speakers: [{
     name: "Niko Matsakis",
     image: "niko.png",
-    title: "co-lead of the Rust vision doc project group and the Rust language design team / Sr. Principal Engineer at Amazon",
+    title: "Co-lead Rust vision doc & Language team / Sr. Principal Engineer at Amazon",
     org: "",
     url: "https://smallcultfollowing.com/babysteps/",
     bluesky: "https://bsky.app/profile/nikomatsakis.com",
