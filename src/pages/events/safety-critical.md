@@ -12,4 +12,4 @@ image:
 
 The Safety-Critical Rust Consortium, backed by the Rust Foundation, aims to foster responsible use of the Rust programming language within safety-critical software.
 
-The meeting is for members of the consortium. For details see the link below.
+The meeting is invite-only for members of the consortium. For details see the link below.
