@@ -3,13 +3,13 @@ layout: "../../layouts/TalkLayout.astro"
 tracks:
  - rust project
 talkTitle: "The Death and Life of Unsafe Fields"
-talkLevel: "Rust Project members and contributors"
+talkLevel: "People who write unsafe code"
 talkTags: ["rustc"]
 talkDuration: 20
 speakers: [
     {
         name: "Jack Wrenn",
-        title: "Applied Scientist at AWS",
+        title: "",
         org: "",
         image: "",
         url: "https://jack.wrenn.fyi",
