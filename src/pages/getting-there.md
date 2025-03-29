@@ -48,8 +48,8 @@ directions here][2].
 There's no need to buy a ticket for the national trains; just check in and
 out with your bank card, credit card, or phone.
 
-Many international trains pass by Utrecht, but even the trains that don't stop
-there, go to Amsterdam which is only half an hour away with frequent service.
+Many international trains stop in Utrecht.
+And Amsterdam, just a 30 minute train ride away, provides even more options.
 
 You can also find [night trains][3] to Utrecht and Amsterdam.
 
