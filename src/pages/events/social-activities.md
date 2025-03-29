@@ -1,7 +1,7 @@
 ---
 title: 'Social activities'
 dates: ['2025-05-12']
-startTime: "9:00"
+startTime: "12:00"
 detailLink: null
 scheduleLink: null
 published: true

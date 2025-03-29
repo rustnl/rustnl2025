@@ -1,7 +1,7 @@
 ---
 title: 'Conference day 2'
 dates: ["2025-05-14"]
-startTime: "9:30"
+startTime: "08:45"
 detailLink: /schedule/wednesday
 scheduleLink: null
 published: true

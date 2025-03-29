@@ -17,6 +17,6 @@ The unconference is for Rust maintainers of these groups:
 - Rust for Linux
 - Bevy Engine
 - Rust Embedded Working Group
-- UI & App dev (including: Browser Summit)
+- UI, App dev & Browser Summit
 - Critical infrastructure
 

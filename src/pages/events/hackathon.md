@@ -1,7 +1,7 @@
 ---
 title: 'Hackathon'
 dates: ['2025-05-16']
-startTime: "9:00"
+startTime: "09:00"
 scheduleLink: null
 detailLink: null
 published: true

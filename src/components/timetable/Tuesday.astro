@@ -90,7 +90,10 @@ const breaks = [
         url="industry"
     />
     <Item
-        talk="niko"
+        title="Our Vision for Rust"
+        speakers={[
+            { name: "Niko Matsakis", image: "niko.png" },
+        ]}
         color="red"
         track={3}
         time="10:00"
@@ -136,13 +139,12 @@ const breaks = [
     />
     <TrackIndicator afterDivider="11:30" track="Ecosystem track" color="blue" />
     <Item
-        title="Ecosystem track: App dev (TBA)"
+        talk="bart"
         color="blue"
         track={2}
         time="11:30"
         duration={35}
         room={secondary}
-        striped
     />
     <MultiItem
         talks={Array(1).fill({
@@ -182,7 +184,7 @@ const breaks = [
     <Divider start="12:45" end="14:00"> Lunch </Divider>
     <TrackIndicator afterDivider="14:00" track="Main track" color="yellow" />
     <Item
-        talk="joe"
+        talk="michal"
         color="yellow"
         track={1}
         time="14:00"
@@ -206,14 +208,13 @@ const breaks = [
         room={main}
     />
     <TrackIndicator afterDivider="14:00" track="Ecosystem track" color="blue" />
-        <Item
-        title="Ecosystem track: Rust Embedded WG (TBA)"
+    <Item
+        talk="kevin"
         color="blue"
         track={2}
         time="14:00"
         duration={35}
         room={secondary}
-        striped
     />
     <MultiItem
         talks={Array(3).fill({
@@ -302,13 +303,12 @@ const breaks = [
         striped
     />
     <Item
-        title="Ecosystem track: Rust for Linux (TBA)"
+        talk="nandini"
         color="blue"
         track={2}
         time="17:05"
         duration={35}
         room={secondary}
-        striped
     />
     <TrackIndicator afterDivider="16:20" track="Industry track" color="red" />
     <Item

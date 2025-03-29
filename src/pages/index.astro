@@ -11,8 +11,8 @@ import { useTalks } from "../components/useTalks";
 
 
 const talks = await Astro.glob('./talks/*.md');
-const {alice, julius, pietro, alex, niko, miguel} = useTalks(talks);
-const featured_talks = [alice, julius, pietro, alex, niko, miguel];
+const {alice, julius, pietro, alex, niko, miguel, ciara, raph} = useTalks(talks);
+const featured_talks = [alice, julius, pietro, alex, niko, miguel, ciara, raph];
 ---
 
 <HomeLayout>
@@ -86,6 +86,12 @@ const featured_talks = [alice, julius, pietro, alex, niko, miguel];
                 tier="diamond"
                 image="jetbrains.png"
                 link="https://www.jetbrains.com/"
+            />
+            <Sponsor
+                name="AWS"
+                tier="diamond"
+                image="aws.png"
+                link="https://aws.amazon.com/"
             />
         </SponsorTier>
         <SponsorTier name="Gold sponsors">
@@ -162,6 +168,18 @@ const featured_talks = [alice, julius, pietro, alex, niko, miguel];
                 tier="supporter"
                 image="rocsys2025.png"
                 link="https://rocsys.com"
+            />
+            <Sponsor
+                name="IXON"
+                tier="supporter"
+                image="ixon.svg"
+                link="https://www.ixon.cloud/en/"
+            />
+            <Sponsor
+                name="HighTec"
+                tier="supporter"
+                image="hightec.png"
+                link="https://hightec-rt.com/"
             />
             <Sponsor
                 name="NLnet Labs"

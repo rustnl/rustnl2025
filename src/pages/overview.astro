@@ -10,8 +10,8 @@ let events = await Astro.glob("../pages/events/*.md");
 events
     .sort(
         (a, b) =>
-            Date.parse(a.frontmatter.dates[0]) -
-            Date.parse(b.frontmatter.dates[0]),
+            Date.parse(a.frontmatter.dates[0] + " " + a.frontmatter.startTime) -
+            Date.parse(b.frontmatter.dates[0] + " " + b.frontmatter.startTime),
     ).sort(
         (a, b) =>
             a.frontmatter.dates.length -
