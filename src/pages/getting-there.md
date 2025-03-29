@@ -4,13 +4,10 @@ title: "Getting There"
 slug: "getting-there"
 ---
 
-Our main venue is [**Kinepolis Jaarbeurs Utrecht**][1]. As the name implies,
-this is in the beautiful (and very well-connected) city of [Utrecht](/#where).
+Our main venue is [**Kinepolis Jaarbeurs**][1] in [Utrecht](/#where).
 
 As you plan your trip, it is important to remember that The Netherlands is
-very dense and that traveling between cities is easy by train. For
-example, flying to Amsterdam and staying in a hotel in Hilversum is not a
-problem!
+very dense and that traveling between cities is easy by train.
 
 You might also want to take a look at our [hotel recommendations](/hotels)
 
