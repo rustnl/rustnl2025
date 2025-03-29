@@ -62,24 +62,23 @@ Directly from the airport, you can hop on the high frequent rail connection to U
 There's no need to buy a ticket for the train; just check in and out with your
 bank card, credit card, or phone.
 
-The Rotterdam/The Hague or Eindhoven airports are sometimes also a good option for flying
-to The Netherlands from some places. You can get to Utrecht by train within an hour
-from there.
+Rotterdam The Hague Airport and Eindhoven Airport are alternative options.
+You can get to Utrecht by train within an hour from there.
 
 ## By Car
 
-We don't encourage taking the car to the venue, but it is possible. Do note
-that the venue charges €4,75 per hour for parking, with a maximum of €31,00 per day.
+We don't encourage taking the car to the venue, but it is possible.
+Do note that parking can be costly at €31 per day.
 
 If you have to come to Utrecht by car, we recommend you park at one of the
 P+R spots around the city. You can find more about this option [here][4].
 
-There is more information about parking, you can check the [venue page][1].
- 
+For more information about parking, you can check the [venue page][1].
+
 ## By Bike
 
-If you live in Utrecht (or if you are ambitious), come to the venue by bike!
-There's a bicycle garage next to the venue.
+If you live in or near Utrecht, come to the venue by bike!
+There's indoor bicycle parking next to the venue.
 
 [1]: /kinepolis
 [2]: https://www.openstreetmap.org/directions?engine=graphhopper_foot&route=52.0893925%2C5.109821%3B52.0862635%2C5.104854#map=17/52.087718/5.107167
