@@ -2,7 +2,7 @@
 layout: "../../layouts/TalkLayout.astro"
 tracks:
  - rust project
-talkTitle: "Salsa in Rust-Analyzer"
+talkTitle: "An incrementally spicer rust-analyzer"
 talkLevel: "Intermediate"
 talkTags: ["salsa", "rust-analyzer"]
 talkDuration: 30
