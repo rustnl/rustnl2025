@@ -19,6 +19,7 @@ speakers: [
         mastodon: "",
         github: "https://github.com/davidbarsky",
         bluesky: "https://bsky.app/profile/davidbarsky.com",
+        description: "David Barsky is a rust-analyzer team member and is employed by Meta. He also helps maintains the tokio-rs/tracing library.",
     },
     {
         name: "Lukas Wirth",
@@ -31,6 +32,7 @@ speakers: [
         mastodon: "",
         github: "https://github.com/veykril",
         bluesky: "https://bsky.app/profile/lukaswirth.bsky.social",
+        description: "Lukas is the rust-analyzer team lead and is employed by Ferrous Systems.",
     },
 ]
 day: "wednesday"
@@ -45,9 +47,3 @@ Salsa. We’ll also discuss how Salsa works internally and how you can use it in
 your own projects.
 
 ////// <!-- sepatator between abstract and bio -->
-
-David Barsky is a rust-analyzer team member and is employed by Meta. He also helps maintains the tokio-rs/tracing library.
-
-////// <!-- sepatator between abstract and bio -->
-
-Lukas is the rust-analyzer team lead and is employed by Ferrous Systems.
