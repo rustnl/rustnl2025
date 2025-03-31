@@ -36,13 +36,18 @@ speakers: [
 day: "wednesday"
 ---
 
-David and Lukas share their recent work to migrate rust-analyzer to the new Salsa,
-which gives rust-analyzer persistence, in-query parallelism, raw speed, gc-able interned values with Copy keys, and more.
+rust-analyzer recently migrated to a new version of its incremental computation
+library, Salsa. This has yielded both major and minor performance wins in
+rust-analyzer. In this talk, we’ll discuss the challenges (self-referential
+interning! a 5x memory usage regression!), benefits (parallel autocomplete,
+persistent caches, and near-instant crate graph additions/removals) of new
+Salsa. We’ll also discuss how Salsa works internally and how you can use it in
+your own projects.
 
 ////// <!-- sepatator between abstract and bio -->
 
-David works at <s>Facebook</s> Meta. He also works on the Tracing library. Before that, he worked at Amazon.
+David Barsky is a rust-analyzer team member and is employed by Meta. He also helps maintains the tokio-rs/tracing library.
 
 ////// <!-- sepatator between abstract and bio -->
 
-Lukas is a software engineer at Ferrous Systems and the current team lead of the rust-analyzer team.
+Lukas is the rust-analyzer team lead and is employed by Ferrous Systems.
