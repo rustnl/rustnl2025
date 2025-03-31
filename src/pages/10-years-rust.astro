@@ -1,0 +1,231 @@
+---
+import Head from "../components/page/head.astro";
+import Button from "../components/Button.astro";
+import '../styles/index.scss';
+
+const title = '10th years rust';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<Head title={`${title} - RustWeek 2025`} />
+<body>
+  <section class="container section postcards grid cols-12">
+    <div class="postcard back"></div>
+    <div class="postcard front"></div>
+  </section>
+  <section class="section party">
+    <div class="container grid cols-12">
+      <div class="balloon">
+        <h2>Lets party!!!</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur pariatur quisquam minima temporibus, voluptatem impedit magni vel! Facilis in quam delectus praesentium reiciendis! Deserunt, similique! Officiis quia illo repellendus eaque!</p>
+      </div>
+    </div>
+  </section>
+  <section class="section container grid cols-12">
+    <div class="schedule">
+      <h2>Schedule</h2>
+      <ul>
+        <li>
+          <div class="slab">10:00</div>
+          <div>Name</div>
+        </li>
+        <li>
+          <div class="slab">10:00</div>
+          <div>Name</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+</body>
+</html>
+
+<style lang="scss">
+  body {
+    background-color: #FFDC0C;
+    border: 1rem solid #FF7500;
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  .slab {
+    text-decoration: none;
+    font-family: 'Alfa Slab One';
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .section {
+    padding-block: 3rem;
+
+    @media (width >= 768px) {
+      padding-block: 9rem;
+    }
+  }
+
+  .postcard {
+    aspect-ratio: 3/2;
+    background-colorf: gray;
+    background-size: cover;
+    border-radius: 1rem;
+    border: 4px solid black;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    grid-row: 1;
+  }
+
+  .postcard.back {
+    background-image: url('images/postcard-back.webp');
+    rotate: -3deg;
+    grid-column: 1 / 13;
+    
+    @media (width >= 768px) {
+      grid-column: 2 / span 7;
+    }
+  }
+
+  .postcard.front {
+    background-image: url('images/postcard-front.webp');
+    grid-column: 1 / 13;
+    rotate: 3deg;
+
+    @media (width >= 768px) {
+      grid-column: 5 / span 7;
+    }
+  }
+
+  .section.party {
+    position: relative;
+
+    &::before {
+      aspect-ratio: 1;
+      background-image: url('images/ferris-happy.png');
+      background-position: right center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      content: '';
+      position: absolute;
+      height: 9rem;
+      left: 0;
+      top: -2rem;
+      
+      @media (width >= 768px) {
+        translate: 0 -50%;
+        height: calc(100% - 9rem);
+        top: 50%;
+      }
+    }
+  }
+
+  .schedule,
+  .balloon {
+    background-color: #fff;
+    border-radius: 1rem;
+    border: 8px solid #FF7500;
+    padding: 1.5rem;
+
+    @media (width >= 768px) {
+      padding: 2.5rem;
+    }
+  }
+
+  .balloon {
+    grid-column: span 12;
+    position: relative;
+
+    @media (width >= 768px) {
+      grid-column: 5 / 12;
+    }
+
+    &::before {
+      @media (width >= 768px) {
+        background-color: #FF7500;
+        clip-path: polygon(100% 0, 0 0, 100% 100%);
+        content: '';
+        left: 0;
+        position: absolute;
+        top: 2.5rem;
+        translate: -100%;
+        width: 7.5rem;
+        z-index: -1;
+      }
+    }
+  }
+
+  .schedule {
+    color: #FF7500;
+    grid-column: span 12;
+    position: relative;
+
+    @media (width >= 768px) {
+      grid-column: 2 / 12;
+    }
+
+    &::after {
+      @media (width >= 768px) {
+        position: absolute;
+        content: '';
+        right: 0;
+        bottom: 0;
+        background-image: url('images/ferris-happy.png');
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        width: 12rem;
+        aspect-ratio: 1;
+        translate: 50%;
+        bottom: -2.5rem;
+      }
+    }
+
+    > * + * {
+      margin-block-start: 1rem;
+
+      @media (width >= 768px) {
+        margin-block-start: 1.5rem;          
+      }
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    ul {
+      padding: 0;
+
+      > * + * {
+        margin-block-start: 1rem;
+
+        @media (width >= 768px) {
+          margin-block-start: 1.5rem;          
+        }
+      }
+    }
+
+    li {
+      border-block: 1px solid #FF7500;
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      padding-block: 1rem;
+      
+      @media (width >= 768px) {
+        padding-block: 1.5rem;
+        flex-direction: row;
+        font-size: 1.5rem;
+        gap: 3rem;
+      }
+    }
+  }
+
+
+</style>
