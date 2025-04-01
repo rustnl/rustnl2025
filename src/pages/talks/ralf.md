@@ -28,8 +28,11 @@ TBD
 
 ////// <!-- sepatator between abstract and bio -->
 
-Ralf Jung is assistant professor at ETH Zurich, leading the Programming Language Foundations Lab.
-He began researching Rust in 2015, shortly after the 1.0 release.
-His PhD thesis, "Understanding and Evolving the Rust Programming Language",
-was the first formalization of the core principles of safe and unsafe Rust and has received multiple awards.
-He is maintainer of miri, frequent rustc contributor, advisor to the Rust language team, and leads the Rust operational semantics team.
+Ralf Jung is an assistant professor at ETH Zurich working on formal
+verification and formal foundations for real-world programming languages, with
+a focus on Rust. He's doing research on Rust since 2015 and actively involved
+in the Rust project since 2018 in various roles: as maintainer of Miri, as
+co-lead of the operational semantics team, as language team advisor, and as a
+compiler contributor and team member. His main goal is to give Rust a
+mathematically formal official semantics that can be used for testing and
+verification.
