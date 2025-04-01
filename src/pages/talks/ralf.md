@@ -9,9 +9,9 @@ talkDuration: 30
 speakers: [
     {
         name: "Ralf Jung",
-        title: "",
+        title: "ETH Zurich, Department of Computer Science",
         org: "",
-        image: "",
+        image: "ralf.png",
         url: "https://www.ralfj.de/",
         linkedin: "",
         twitter: "",
