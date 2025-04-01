@@ -35,7 +35,7 @@ speakers: [
         description: "Lukas is the rust-analyzer team lead and is employed by Ferrous Systems.",
     },
 ]
-day: "wednesday"
+day: "tuesday"
 ---
 
 rust-analyzer recently migrated to a new version of its incremental computation

@@ -289,21 +289,20 @@ const breaks = [
         room={main}
     />
     <TrackIndicator afterDivider="16:20" track="Ecosystem track" color="blue" />
+    <Item
+        talk="salsa"
+        color="blue"
+        track={2}
+        time="16:20"
+        duration={35}
+        room={secondary}
+    />
     <MultiItem
         talks={Array(3).fill({
             speaker: "",
             title: "GOSIM spotlight",
             image: "",
         })}
-        color="blue"
-        track={2}
-        time="16:20"
-        duration={35}
-        room={secondary}
-        striped
-    />
-    <Item
-        talk="nandini"
         color="blue"
         track={2}
         time="17:05"
@@ -320,6 +319,14 @@ const breaks = [
         color="red"
         track={3}
         time="16:20"
+        duration={35}
+        room={tertiary}
+    />
+    <Item
+        talk="nandini"
+        color="red"
+        track={3}
+        time="17:05"
         duration={35}
         room={tertiary}
     />
