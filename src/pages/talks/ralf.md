@@ -30,8 +30,7 @@ The state of the art is to write extensive specifications in plain English in an
 the specification is not executable, so it cannot be tested to ensure that it matches the intent of their authors,
 and the specification is hard to interpret, resulting in ambiguity and conflicting interpretations.
 
-Rust is a modern language with a strong focus on safety and reliability.
-However, to enable programmers to eek out every last bit of performance, Rust also allows "unsafe code" where safety can no longer be guaranteed by the compiler -- in unsafe Rust, Undefined Behavior is possible.
+Since unsafe Rust programs can suffer from UB, all of these problems also affect us in Rust.
 Rust therefore needs a specification which ensures that programmers and compiler writers agree on what is and is not Undefined Behavior.
 
 In this talk I will present my work-in-progress project MiniRust, a core language for Rust.
