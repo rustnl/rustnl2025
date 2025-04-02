@@ -6,8 +6,8 @@ slug: "getting-there"
 
 Our main venue is [**Kinepolis Jaarbeurs**][1] in [Utrecht](/#where).
 
-As you plan your trip, it is important to remember that The Netherlands is
-very dense and that traveling between cities is easy by train.
+As you plan your trip, it is important to remember that traveling between cities is easy by train
+in The Netherlands.
 
 You might also want to take a look at our [hotel recommendations](/hotels)
 
