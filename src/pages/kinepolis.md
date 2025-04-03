@@ -4,9 +4,22 @@ title: "Conference Venue: Kinepolis"
 slug: "kinepolis"
 ---
 
-The RustWeek 2025 conference will be held in <a href=" https://kinepolis.nl/bioscopen/kinepolis-jaarbeurs-utrecht/info/">**Kinepolis Jaarbeurs Utrecht**</a>. This venue is a cinema in the center of Utrecht, right next to the Central Station.
+The RustWeek 2025 conference will be held in **Kinepolis Jaarbeurs Utrecht**. This venue is a cinema in the center of Utrecht, right next to the Central Station.
 
-Note: please keep in mind that the workshops (<b>Thursday 15 May</b>) are not held in the conference venue, but in the second venue, called DUS. See [the week schedule](/#schedule).
+The address of the venue is:
+
+> **Kinepolis Jaarbeurs\
+> Jaarbeursboulevard 300\
+> 3521 BC Utrecht\
+> Nederland**
+
+Note: please keep in mind that the **workshops** (Thursday 15 May) are **not** held in the conference venue, but in the second venue, called [DUS](/dus).
+
+Check out our  [Getting There](getting-there) page for instructions for getting to the venue.
+
+## Accessibility
+
+The venue is fully accessible by wheelchair. Every room has wheelchair spaces. There are also elevators to every room that is part of the conference. Accessible toilets are also present.
 
 <img style="width: 100%" src="/images/venues/kinepolis/Kinepolis-Jaarbeurs-Utrecht3-1200x900.jpg" />
 
@@ -36,7 +49,7 @@ The address of the venue is:
 The most convenient method to get there is by train, since it's next to the train station.
 More information on how to get to Utrecht and the conference can be found in the [Where](/#where) section.
 
-<iframe style="width: 100%; aspect-ratio: 16/9" src="https://www.openstreetmap.org/export/embed.html?bbox=5.0765419006347665%2C52.074283572700224%2C5.133190155029298%2C52.09822788008951&amp;layer=mapnik&amp;marker=52.086263500028004%2C5.104854000000046" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=52.08626&amp;mlon=5.10485#map=15/52.08626/5.10485">View Larger Map</a></small>
+<iframe style="width: 100%; aspect-ratio: 16/9;border: 1px solid black;" src="https://www.openstreetmap.org/export/embed.html?bbox=5.0765419006347665%2C52.074283572700224%2C5.133190155029298%2C52.09822788008951&amp;layer=mapnik&amp;marker=52.086263500028004%2C5.104854000000046"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=52.08626&amp;mlon=5.10485#map=15/52.08626/5.10485">View Larger Map</a></small>
 
 If you need the latest information about parking, you can check [their website](https://kinepolis.nl/bioscopen/kinepolis-jaarbeurs-utrecht/info/).
 

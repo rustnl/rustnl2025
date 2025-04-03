@@ -1,5 +1,10 @@
 ---
+layout: "../../layouts/EventLayout.astro"
 title: '10 Years of Rust Celebration'
+venue: 
+    name: 'DUS'
+    link: /dus
+room: null
 dates: ['2025-05-15']
 startTime: "16:00"
 detailLink: null

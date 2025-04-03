@@ -11,8 +11,8 @@ import { useTalks } from "../components/useTalks";
 
 
 const talks = await Astro.glob('./talks/*.md');
-const {alice, julius, pietro, alex, niko, miguel} = useTalks(talks);
-const featured_talks = [alice, julius, pietro, alex, niko, miguel];
+const {alice, julius, pietro, alex, niko, miguel, ciara, raph} = useTalks(talks);
+const featured_talks = [alice, julius, pietro, alex, niko, miguel, ciara, raph];
 ---
 
 <HomeLayout>
@@ -55,28 +55,18 @@ const featured_talks = [alice, julius, pietro, alex, niko, miguel];
         </p>
         <p>
             Utrecht's train station is the biggest and most central train
-            station in the country, making it the central hub for trains
+            station in the country, making it the central hub for (international) trains
             in the Netherlands.
-            Many international trains stop here as well, so the conference will be
-            easy to reach by train.
         </p>
         <p>
-            If you have to come by airplane, a 24/7 <a
-                href="https://www.ns.nl/en/journeyplanner/#/?vertrek=Schiphol Airport&aankomst=Utrecht Centraal"
-                >train connection</a
-            >
-            from Amsterdam Schiphol Airport (AMS) takes you directly to Utrecht in
-            just half an hour. (No need to buy a ticket; just check in and out with
-            your bank card, credit card, or phone.)
+            For more information, see our <a href="/getting-there">Getting There page</a>
         </p>
         <p>
-            The two conference days will take place at Kinepolis Jaarbeurs
-            Utrecht, just a few minutes walk from the Utrecht Centraal train
+            The two conference days will take place at <a href="/kinepolis">Kinepolis Jaarbeurs Utrecht</a>, just a few minutes walk from the Utrecht Centraal train
             station.
         </p>
         <p>
-            The workshops, all-hands, and unconference will take place at De
-            Utrechtse Stadsvrijheid, for which transport from the city centre
+            The workshops, all-hands, and unconference will take <a href="/dus">DUS Utrecht</a>, for which transport from the city centre
             will be provided.
         </p>
     </div>
@@ -159,6 +149,12 @@ const featured_talks = [alice, julius, pietro, alex, niko, miguel];
                 link="https://espressif.com/"
             />
             <Sponsor
+                name="Flox"
+                tier="bronze"
+                image="flox.svg"
+                link="https://flox.dev/"
+            />
+            <Sponsor
                 name="Aleph Alpha"
                 tier="bronze"
                 image="aleph-alpha.svg"
@@ -183,6 +179,12 @@ const featured_talks = [alice, julius, pietro, alex, niko, miguel];
                 tier="supporter"
                 image="ixon.svg"
                 link="https://www.ixon.cloud/en/"
+            />
+            <Sponsor
+                name="Polars"
+                tier="supporter"
+                image="polars.png"
+                link="https://pola.rs/"
             />
             <Sponsor
                 name="HighTec"

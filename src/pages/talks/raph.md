@@ -11,7 +11,7 @@ talkDuration: 30 # 15 or 30 min
 speakers: [{
     name: "Raph Levien",
     image: "raph.jpg",
-    title: "Research engineer",
+    title: "Research engineer at Google",
     org: "Google",
     url: "https://levien.com",
     bluesky: "https://bsky.app/profile/raphlinus.bsky.social",

@@ -1,5 +1,6 @@
 ---
 title: 'Main track'
+room: 'Cinema 12'
 dates: ['2025-05-13', '2025-05-14']
 startTime: "9:30"
 detailLink: null

@@ -1,7 +1,13 @@
 ---
+layout: "../../layouts/EventLayout.astro"
 title: 'Unconference'
+venue: 
+    name: 'DUS'
+    link: /dus
+room: null
 dates: ['2025-05-16', '2025-05-17']
 startTime: "09:00"
+invite: true
 detailLink: /unconf-intro
 scheduleLink: null
 published: true

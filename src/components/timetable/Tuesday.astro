@@ -8,6 +8,7 @@ import TrackIndicator from "./TrackIndicator.astro";
 const main = "Cinema 12";
 const secondary = "Cinema 11";
 const tertiary = "Cinema 10";
+const quaternary = "Reception Area";
 
 const breaks = [
     "0:00 - 8:45",
@@ -139,13 +140,12 @@ const breaks = [
     />
     <TrackIndicator afterDivider="11:30" track="Ecosystem track" color="blue" />
     <Item
-        title="Ecosystem track: App dev (TBA)"
+        talk="bart"
         color="blue"
         track={2}
         time="11:30"
         duration={35}
         room={secondary}
-        striped
     />
     <MultiItem
         talks={Array(1).fill({
@@ -167,7 +167,7 @@ const breaks = [
         track={3}
         time="11:30"
         duration={60}
-        room={tertiary}
+        room={quaternary}
         description="Choose a topic and learn from a seasoned Rust expert as well as your industry peers."
         ticket="Industry"
         url="industry"
@@ -209,14 +209,13 @@ const breaks = [
         room={main}
     />
     <TrackIndicator afterDivider="14:00" track="Ecosystem track" color="blue" />
-        <Item
-        title="Ecosystem track: Rust Embedded WG (TBA)"
+    <Item
+        talk="kevin"
         color="blue"
         track={2}
         time="14:00"
         duration={35}
         room={secondary}
-        striped
     />
     <MultiItem
         talks={Array(3).fill({
@@ -248,7 +247,7 @@ const breaks = [
         track={3}
         time="14:00"
         duration={60}
-        room={tertiary}
+        room={quaternary}
         description="Choose a topic and learn from a seasoned Rust expert as well as your industry peers."
         ticket="Industry"
         url="industry"
@@ -291,6 +290,14 @@ const breaks = [
         room={main}
     />
     <TrackIndicator afterDivider="16:20" track="Ecosystem track" color="blue" />
+    <Item
+        talk="salsa"
+        color="blue"
+        track={2}
+        time="16:20"
+        duration={35}
+        room={secondary}
+    />
     <MultiItem
         talks={Array(3).fill({
             speaker: "",
@@ -299,19 +306,9 @@ const breaks = [
         })}
         color="blue"
         track={2}
-        time="16:20"
-        duration={35}
-        room={secondary}
-        striped
-    />
-    <Item
-        title="Ecosystem track: Rust for Linux (TBA)"
-        color="blue"
-        track={2}
         time="17:05"
         duration={35}
         room={secondary}
-        striped
     />
     <TrackIndicator afterDivider="16:20" track="Industry track" color="red" />
     <Item
