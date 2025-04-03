@@ -1,5 +1,9 @@
 ---
 title: 'Workshops'
+venue: 
+    name: 'DUS'
+    link: /dus
+room: null
 dates: ['2025-05-15']
 startTime: "09:00"
 scheduleLink: /workshops

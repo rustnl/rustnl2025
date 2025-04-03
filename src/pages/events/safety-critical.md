@@ -1,5 +1,9 @@
 ---
 title: 'Safety Critical Rust Consortium Meeting'
+venue: 
+    name: 'DUS'
+    link: /dus
+room: 'Space 8'
 dates: ['2025-05-15']
 startTime: "09:00"
 detailLink: https://github.com/rustfoundation/safety-critical-rust-consortium

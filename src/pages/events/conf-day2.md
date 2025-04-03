@@ -1,5 +1,9 @@
 ---
 title: 'Conference day 2'
+venue: 
+    name: 'Kinepolis'
+    link: /kinepolis
+room: null
 dates: ["2025-05-14"]
 startTime: "08:45"
 detailLink: /schedule/wednesday

@@ -1,17 +1,20 @@
 ---
 import EventDate from "./EventDate.astro";
 import Divider from "../../components/Divider.astro";
+import EventLocation from "./EventLocation.astro";
 
 interface Props {
     id?: string;
     title?: string;
     dates?: string[];
     startTime?: string;
+    venue?: any;
+    room?: string;
     detailLink?: string;
     scheduleLink?: string;
 }
 
-const { id = "", title, dates = [], startTime, detailLink, scheduleLink } = Astro.props;
+const { id = "", title, dates = [], startTime, venue, room, detailLink, scheduleLink } = Astro.props;
 ---
 
 <div class="event" id={id.replace("/events/", "")}>
@@ -27,6 +30,10 @@ const { id = "", title, dates = [], startTime, detailLink, scheduleLink } = Astr
         dates.map((date: string) => (
             <EventDate date={date} startTime={startTime} />
         ))
+    }
+    {
+        venue &&
+            <EventLocation venueName={venue.name} venueLink={venue.link} room={room} />
     }
     <slot />
     {
