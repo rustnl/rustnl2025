@@ -16,7 +16,7 @@ const {day}: Props = Astro.props;
             <div class="description" >
                 <p>
                     This is the schedule for the talks on <b>{day == "tuesday"? "Tuesday 13 May" : "Wednesday 14 May"}</b>. There are two main conference days with talks.
-                    Throughout the week there are all kinds of other activities as well. You can find an overview of the entire week <a href="/#schedule">here</a>.
+                    Throughout the week there are all kinds of other activities as well. You can find an overview of the entire week <a href="/overview">here</a>.
                 </p>
             </div>
 
@@ -35,7 +35,7 @@ const {day}: Props = Astro.props;
                 <Button link={day == "tuesday"?"/schedule/wednesday":"/schedule/tuesday"}>
                     {day == "tuesday"? "Wednesday": "Tuesday"}'s schedule
                 </Button>
-                <Button link="/#schedule">
+                <Button link="/overview">
                     Week overview
                 </Button>
             </div>
