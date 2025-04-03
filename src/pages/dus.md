@@ -1,6 +1,6 @@
 ---
 layout: "../layouts/MarkdownLayout.astro"
-title: "Workshops, Unconf & All-Hands Venue: DUS Utrecht"
+title: "Venue: DUS Utrecht"
 slug: "dus"
 ---
 

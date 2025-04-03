@@ -1,34 +1,31 @@
 ---
 import { library, icon } from "@fortawesome/fontawesome-svg-core";
-import { faLocationDot, faClock } from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot, faHouse } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faLocationDot, faClock);
-const clockIcon = icon({ prefix: "fas", iconName: faClock.iconName });
+library.add(faLocationDot, faHouse);
+const houseIcon = icon({ prefix: "fas", iconName: faHouse.iconName });
 
 interface Props {
-    venueName: string;
-    venueLink: string;
+    venueName?: string;
+    venueLink?: string;
     room?: string;
 }
 
 const { venueName, venueLink, room } = Astro.props;
-
-
 ---
 
 <div class="location">
     <div class="icon">
-        <Fragment set:html={clockIcon.html} />
+        <Fragment set:html={houseIcon.html} />
     </div>
-    <span>
-        Venue: <a href={venueLink}>{venueName}</a>
-    </span>
     {
-        room &&
-        <span>
-            Room: {room}
-        </span>
+        venueName && (
+            <span>
+                Venue: <a href={venueLink}>{venueName}</a> {room && <span>&bullet;</span>}
+            </span>
+        )
     }
+    {room && <span>{room}</span>}
 </div>
 
 <style lang="scss">

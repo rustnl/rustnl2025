@@ -1,58 +1,100 @@
 ---
 import EventDate from "./EventDate.astro";
-import Divider from "../../components/Divider.astro";
 import EventLocation from "./EventLocation.astro";
+import { library, icon } from "@fortawesome/fontawesome-svg-core";
+import { faLocationDot, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faLocationDot, faEnvelope);
+const inviteIcon = icon({ prefix: "fas", iconName: faEnvelope.iconName });
 
 interface Props {
     id?: string;
     title?: string;
     dates?: string[];
     startTime?: string;
+    invite?: boolean;
     venue?: any;
     room?: string;
     detailLink?: string;
     scheduleLink?: string;
+    summary?: boolean;
 }
 
-const { id = "", title, dates = [], startTime, venue, room, detailLink, scheduleLink } = Astro.props;
+const {
+    id = "",
+    title,
+    dates = [],
+    startTime,
+    invite = false,
+    venue,
+    room,
+    detailLink,
+    scheduleLink,
+    summary = false,
+} = Astro.props;
 ---
 
 <div class="event" id={id.replace("/events/", "")}>
     <div class="kicker">
         {
-            dates.map((date: string) =>
-                new Date(date).toLocaleDateString("en-EN", { weekday: "long" }),
-            ).join(" & ")
+            dates
+                .map((date: string) =>
+                    new Date(date).toLocaleDateString("en-EN", {
+                        weekday: "long",
+                    }),
+                )
+                .join(" & ")
         }
     </div>
-    <h2>{title}</h2>
     {
-        dates.map((date: string) => (
-            <EventDate date={date} startTime={startTime} />
-        ))
-    }
-    {
-        venue &&
-            <EventLocation venueName={venue.name} venueLink={venue.link} room={room} />
-    }
-    <slot />
-    {
-        detailLink && (
-            <div class="track-link">
-                <a href={detailLink}>More details</a>
-            </div>
+        summary && (
+            <a href={id}>
+                <h3>{title}</h3>
+            </a>
+            <slot />
         )
     }
     {
-        scheduleLink && (
-            <div class="track-link">
-                <a href={scheduleLink}>Find in schedule</a>
-            </div>
+        !summary && (
+            <Fragment>
+                <h2>{title}</h2>
+                {dates.map((date: string) => (
+                    <EventDate date={date} startTime={startTime} />
+                ))}
+                {venue && (
+                    <EventLocation
+                        venueName={venue.name}
+                        venueLink={venue.link}
+                        room={room}
+                    />
+                )}
+                <div class="icon-container">
+                    {invite && (
+                        <div class="icon">
+                            <Fragment set:html={inviteIcon.html} />
+                        </div>
+                        <span>
+                            Invite-only
+                        </span>
+                    )}
+                </div>
+                <slot />
+                {detailLink && (
+                    <div class="track-link">
+                        <a href={detailLink}>More details</a>
+                    </div>
+                )}
+                {scheduleLink && (
+                    <div class="track-link">
+                        <a href={scheduleLink}>Find in schedule</a>
+                    </div>
+                )}
+            </Fragment>
         )
     }
 </div>
 
-<Divider />
+<!-- <Divider /> -->
 
 <style lang="scss">
     @use "../../styles/variables.scss";
@@ -67,13 +109,23 @@ const { id = "", title, dates = [], startTime, venue, room, detailLink, schedule
         padding-top: 0;
     }
 
+    a h3 {
+        margin: 0 0 1rem 0;
+    }
+
     .event {
-        margin-block-start: 5rem;
-        margin-block-end: 5rem;
+        margin-block-start: 3rem;
+        margin-block-end: 3rem;
 
         .track-link a {
             font-weight: bold;
             color: variables.$color-red-400;
         }
+    }
+
+    .icon-container {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
     }
 </style>

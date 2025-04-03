@@ -1,4 +1,5 @@
 ---
+layout: "../../layouts/EventLayout.astro"
 title: 'Hackathon'
 venue: 
     name: 'University of Utrecht (UU)'

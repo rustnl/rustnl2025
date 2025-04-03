@@ -1,4 +1,5 @@
 ---
+layout: "../../layouts/EventLayout.astro"
 title: '10 Years of Rust Celebration'
 venue: 
     name: 'DUS'

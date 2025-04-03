@@ -1,4 +1,5 @@
 ---
+layout: "../../layouts/EventLayout.astro"
 title: 'Memory safety in the EU Meeting'
 venue: 
     name: 'DUS'
@@ -6,6 +7,7 @@ venue:
 room: 'TBA'
 dates: ['2025-05-15']
 startTime: "10:00"
+invite: true
 detailLink: null
 scheduleLink: null
 published: true

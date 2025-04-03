@@ -1,4 +1,5 @@
 ---
+layout: "../../layouts/EventLayout.astro"
 title: 'Conference day 1'
 venue: 
     name: 'Kinepolis'
@@ -6,7 +7,7 @@ venue:
 room: null
 dates: ["2025-05-13"]
 startTime: "08:45"
-detailLink: /schedule/tuesday
+detailLink: null
 scheduleLink: null
 published: true
 image:
@@ -14,4 +15,4 @@ image:
     alt: ''
 ---
 
-Day 1 of the conference has three tracks, the **Main track** (Room 12, ~ 600p), the **Ecosystem track** (Room 11, ~ 150p) and the **Industry track** (Room 10, ~ 120p).
+Day 1 of the conference has three tracks, the Main track, the Ecosystem track and the Industry track.

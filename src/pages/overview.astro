@@ -12,12 +12,9 @@ events
         (a, b) =>
             Date.parse(a.frontmatter.dates[0] + " " + a.frontmatter.startTime) -
             Date.parse(b.frontmatter.dates[0] + " " + b.frontmatter.startTime),
-    ).sort(
-        (a, b) =>
-            a.frontmatter.dates.length -
-            b.frontmatter.dates.length,
-    );
-events = events.filter((event) => (event.frontmatter.published == true));
+    )
+    .sort((a, b) => a.frontmatter.dates.length - b.frontmatter.dates.length);
+events = events.filter((event) => event.frontmatter.published == true);
 ---
 
 <CommonLayout title="Overview of RustWeek" header="Overview of RustWeek">
@@ -28,21 +25,32 @@ events = events.filter((event) => (event.frontmatter.published == true));
                     >week schedule</strong
                 >.
                 <br />
-                Below the schedule you can find more info about each <strong
-                    >track</strong
-                > or <strong>event</strong>.
+                Below the schedule you can find a <strong>full list</strong> of all (sub)events and tracks.
             </p>
         </OneColumnText>
 
         <MainSchedule />
 
         <OneColumnText>
-            {events.map((event)=>(
-                <Event {...event.frontmatter} id={event.url}>
-                    <div set:html={event.compiledContent()} />
-                    <EventTracks tracks={tracks} date={event.frontmatter.dates[0]} />
-                </Event>
-            ))}
+            <h2 id="list">List of events</h2>
+            {
+                events.map((event) => (
+                    <Event summary {...event.frontmatter} id={event.url}>
+                        <ul>
+                        {tracks
+                            .filter(
+                                (track: any) =>
+                                    track.frontmatter.dates.includes(
+                                        event.frontmatter.dates[0],
+                                    ) == true,
+                            )
+                            .map((track: any) => (
+                                <li>{track.frontmatter.title}</li>
+                            ))}
+                            </ul>
+                    </Event>
+                ))
+            }
         </OneColumnText>
     </section>
 </CommonLayout>

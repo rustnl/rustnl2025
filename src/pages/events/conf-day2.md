@@ -1,4 +1,5 @@
 ---
+layout: "../../layouts/EventLayout.astro"
 title: 'Conference day 2'
 venue: 
     name: 'Kinepolis'

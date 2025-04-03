@@ -1,5 +1,6 @@
 ---
 import EventDate from "./EventDate.astro";
+import EventLocation from "./EventLocation.astro";
 
 interface Props {
     tracks: any[];
@@ -7,36 +8,40 @@ interface Props {
 }
 
 const { tracks, date } = Astro.props;
-
-
 ---
+
 {
-    tracks.filter((track: any) => track.frontmatter.dates.includes(date) == true ).map((track: any) => (
-        <div class="event track">
-            <h3>{track.frontmatter.title}</h3>
-            {track.frontmatter.dates.map((date: string) => (
-                <EventDate
-                    date={date}
-                    startTime={track.frontmatter.startTime}
-                />
-            ))}
-            <div set:html={track.compiledContent()} />
-            {track.frontmatter.detailLink && (
-                <div class="track-link">
-                    <a href={track.frontmatter.detailLink}>
-                        More details
-                    </a>
-                </div>
-            )}
-            {track.frontmatter.scheduleLink && (
-                <div class="track-link">
-                    <a href={track.frontmatter.scheduleLink}>
-                        Find in schedule
-                    </a>
-                </div>
-            )}
-        </div>
-    ))
+    tracks
+        .filter((track: any) => track.frontmatter.dates.includes(date) == true)
+        .map((track: any) => (
+            <div class="event track">
+                <h3>{track.frontmatter.title}</h3>
+                {track.frontmatter.dates.map((date: string) => (
+                    <EventDate
+                        date={date}
+                        startTime={track.frontmatter.startTime}
+                    />
+                ))}
+                {
+                    track.frontmatter.room && (
+                        <EventLocation room={track.frontmatter.room} />
+                    )
+                }
+                <div set:html={track.compiledContent()} />
+                {track.frontmatter.detailLink && (
+                    <div class="track-link">
+                        <a href={track.frontmatter.detailLink}>More details</a>
+                    </div>
+                )}
+                {track.frontmatter.scheduleLink && (
+                    <div class="track-link">
+                        <a href={track.frontmatter.scheduleLink}>
+                            Find in schedule
+                        </a>
+                    </div>
+                )}
+            </div>
+        ))
 }
 
 <style lang="scss">
@@ -53,6 +58,4 @@ const { tracks, date } = Astro.props;
             color: variables.$color-red-400;
         }
     }
-    
-    </style>
-    
+</style>
