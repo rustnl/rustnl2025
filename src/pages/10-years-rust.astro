@@ -1,49 +1,59 @@
 ---
 import Head from "../components/page/head.astro";
 import Button from "../components/Button.astro";
-import '../styles/index.scss';
+import "../styles/index.scss";
 
-const title = '10th years rust';
+const title = "10th years rust";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<Head title={`${title} - RustWeek 2025`} />
-<body>
-  <section class="container section postcards grid cols-12">
-    <div class="postcard back"></div>
-    <div class="postcard front"></div>
-  </section>
-  <section class="section party">
-    <div class="container grid cols-12">
-      <div class="balloon">
-        <h2>Lets party!!!</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur pariatur quisquam minima temporibus, voluptatem impedit magni vel! Facilis in quam delectus praesentium reiciendis! Deserunt, similique! Officiis quia illo repellendus eaque!</p>
+  <Head title={`${title} - RustWeek 2025`} />
+  <body>
+    <section class="container section postcards grid cols-12">
+      <div class="postcard back"></div>
+      <div class="postcard front"></div>
+    </section>
+    <section class="section party">
+      <div class="container grid cols-12">
+        <div class="balloon">
+          <h2>Lets party!!!</h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Consequatur pariatur quisquam minima temporibus, voluptatem impedit
+            magni vel! Facilis in quam delectus praesentium reiciendis!
+            Deserunt, similique! Officiis quia illo repellendus eaque!
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
-  <section class="section container grid cols-12">
-    <div class="schedule">
-      <h2>Schedule</h2>
-      <ul>
-        <li>
-          <div class="slab">10:00</div>
-          <div>Name</div>
-        </li>
-        <li>
-          <div class="slab">10:00</div>
-          <div>Name</div>
-        </li>
-      </ul>
-    </div>
-  </section>
-</body>
+    </section>
+    <section class="section container grid cols-12">
+      <div class="schedule">
+        <h2>Schedule</h2>
+        <ul>
+          <li>
+            <div class="slab">10:00</div>
+            <div>Welcome</div>
+          </li>
+          <li>
+            <div class="slab">10:00</div>
+            <div>Live release</div>
+          </li>
+          <li>
+            <div class="slab">10:00</div>
+            <div>Party time</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </body>
 </html>
 
 <style lang="scss">
   body {
-    background-color: #FFDC0C;
-    border: 1rem solid #FF7500;
+    background-color: #ffdc0c;
+    background-image: url("/images/confetti.webp");
+    border: 1rem solid #ff7500;
     min-height: 100vh;
   }
 
@@ -52,7 +62,7 @@ const title = '10th years rust';
   h3,
   .slab {
     text-decoration: none;
-    font-family: 'Alfa Slab One';
+    font-family: "Alfa Slab One";
     font-style: normal;
     font-weight: 400;
   }
@@ -84,17 +94,17 @@ const title = '10th years rust';
   }
 
   .postcard.back {
-    background-image: url('images/postcard-back.webp');
+    background-image: url("images/postcard-back.webp");
     rotate: -3deg;
     grid-column: 1 / 13;
-    
+
     @media (width >= 768px) {
       grid-column: 2 / span 7;
     }
   }
 
   .postcard.front {
-    background-image: url('images/postcard-front.webp');
+    background-image: url("images/postcard-front.webp");
     grid-column: 1 / 13;
     rotate: 3deg;
 
@@ -108,16 +118,16 @@ const title = '10th years rust';
 
     &::before {
       aspect-ratio: 1;
-      background-image: url('images/ferris-happy.png');
+      background-image: url("images/ferris-happy.png");
       background-position: right center;
       background-size: cover;
       background-repeat: no-repeat;
-      content: '';
+      content: "";
       position: absolute;
       height: 9rem;
       left: 0;
       top: -2rem;
-      
+
       @media (width >= 768px) {
         translate: 0 -50%;
         height: calc(100% - 9rem);
@@ -130,7 +140,7 @@ const title = '10th years rust';
   .balloon {
     background-color: #fff;
     border-radius: 1rem;
-    border: 8px solid #FF7500;
+    border: 8px solid #ff7500;
     padding: 1.5rem;
 
     @media (width >= 768px) {
@@ -146,11 +156,15 @@ const title = '10th years rust';
       grid-column: 5 / 12;
     }
 
+    h2 {
+      color: #ff7500;
+    }
+
     &::before {
       @media (width >= 768px) {
-        background-color: #FF7500;
+        background-color: #ff7500;
         clip-path: polygon(100% 0, 0 0, 100% 100%);
-        content: '';
+        content: "";
         left: 0;
         position: absolute;
         top: 2.5rem;
@@ -162,7 +176,7 @@ const title = '10th years rust';
   }
 
   .schedule {
-    color: #FF7500;
+    color: #ff7500;
     grid-column: span 12;
     position: relative;
 
@@ -173,10 +187,10 @@ const title = '10th years rust';
     &::after {
       @media (width >= 768px) {
         position: absolute;
-        content: '';
+        content: "";
         right: 0;
         bottom: 0;
-        background-image: url('images/ferris-happy.png');
+        background-image: url("images/ferris-happy-index.png");
         background-size: contain;
         background-position: center center;
         background-repeat: no-repeat;
@@ -191,7 +205,7 @@ const title = '10th years rust';
       margin-block-start: 1rem;
 
       @media (width >= 768px) {
-        margin-block-start: 1.5rem;          
+        margin-block-start: 1.5rem;
       }
     }
 
@@ -206,26 +220,24 @@ const title = '10th years rust';
         margin-block-start: 1rem;
 
         @media (width >= 768px) {
-          margin-block-start: 1.5rem;          
+          margin-block-start: 1.5rem;
         }
       }
     }
 
     li {
-      border-block: 1px solid #FF7500;
+      border-block: 1px solid #ff7500;
       display: flex;
       flex-direction: column;
       list-style: none;
       padding-block: 1rem;
-      
+
       @media (width >= 768px) {
         padding-block: 1.5rem;
         flex-direction: row;
-        font-size: 1.5rem;
+        font-size: 1.75rem;
         gap: 3rem;
       }
     }
   }
-
-
 </style>
