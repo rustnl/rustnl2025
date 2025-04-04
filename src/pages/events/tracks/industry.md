@@ -1,6 +1,6 @@
 ---
 title: 'Industry track'
-room: 'Cinema 10'
+room: 'Cinema 9'
 dates: ['2025-05-13']
 startTime: "9:30"
 detailLink: /industry
