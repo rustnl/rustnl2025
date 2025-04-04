@@ -36,15 +36,15 @@ const {
 function convertTrack(i: string): string {
   switch (i) {
     case "deep_dive":
-      return "deep dive";
+      return "deep dive track";
     case "main":
-      return "main";
+      return "main track";
     case "project":
-      return "project";
+      return "project track";
     case "ecosystem":
-      return "ecosystem";
+      return "ecosystem track";
     case "industry":
-      return "industry";
+      return "industry track";
   }
 
   return i;
@@ -66,6 +66,9 @@ outer: for (const i of speakers) {
   }
 }
 
+if ((image === null || (typeof image === "undefined")) && github_of_person === null && (typeof github !== "undefined") && github !== null) {
+    github_of_person = github.replace(/\/$/g, "");
+}
 const imageFile = image
   ? `/images/people/${image}`
   : github_of_person
@@ -91,7 +94,7 @@ const imageFile = image
         tracks &&
           tracks.map((track) => (
             <span class={`tag ${track}`}>
-              <span>{convertTrack(track)} track</span>
+              <span>{convertTrack(track)}</span>
             </span>
           ))
       }

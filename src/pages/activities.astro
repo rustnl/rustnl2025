@@ -1,0 +1,33 @@
+---
+import CommonLayout from "../layouts/CommonLayout.astro";
+import OneColumnText from "../components/OneColumnText.astro";
+import { library, icon } from "@fortawesome/fontawesome-svg-core";
+import { faLocationDot, faClock } from "@fortawesome/free-solid-svg-icons";
+library.add(faLocationDot, faClock);
+const clockIcon = icon({ prefix: "fas", iconName: faClock.iconName });
+
+---
+
+<CommonLayout title="Overview" header="Overview">
+    <section class="overview new-container space-y-12">
+        <OneColumnText>
+            
+        </OneColumnText>
+    </section>
+</CommonLayout>
+
+<style lang="scss">
+    .event {
+        margin-block-start: 3rem;
+        .date-time {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    }
+
+    // the page currently has a nested new-container; the padding is added twice
+    .overview.new-container {
+        padding-inline: 0;
+    }
+</style>
