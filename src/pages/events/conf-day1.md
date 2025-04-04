@@ -6,7 +6,7 @@ venue:
     link: /kinepolis
 room: null
 dates: ["2025-05-13"]
-startTime: "08:45"
+startTime: "08:30"
 detailLink: null
 scheduleLink: null
 published: true
