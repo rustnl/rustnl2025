@@ -11,8 +11,8 @@ const tertiary = "Cinema 10";
 const quaternary = "Reception Area";
 
 const breaks = [
-    "0:00 - 8:45",
-    "8:45 - 9:30",
+    "0:00 - 8:30",
+    "8:30 - 9:30",
     "11:00 - 11:40",
     "12:45 - 14:00",
     "15:50 - 16:20",
@@ -21,7 +21,7 @@ const breaks = [
 ---
 
 <Timetable breaks={breaks}>
-    <Divider start="8:45" end="9:30">Doors open & registration</Divider>
+    <Divider start="8:30" end="9:30">Doors open & registration</Divider>
     <TrackIndicator afterDivider="9:30" track="Main track" color="yellow" first />
     <Item
         title="Opening"
