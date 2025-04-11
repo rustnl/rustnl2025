@@ -2,6 +2,7 @@
 import Head from "../components/page/head.astro";
 import Button from "../components/Button.astro";
 import "../styles/index.scss";
+import ButtonGroup from "../components/ButtonGroup.astro";
 
 const title = "10th years rust";
 ---
@@ -24,6 +25,11 @@ const title = "10th years rust";
             magni vel! Facilis in quam delectus praesentium reiciendis!
             Deserunt, similique! Officiis quia illo repellendus eaque!
           </p>
+          <Button
+            scale={1.25}
+            link="https://www.eventbrite.nl/e/rust-week-2025-tickets-1001676961757?aff=oddtdtcreator">
+              Get your tickets
+          </Button>
         </div>
       </div>
     </section>
@@ -46,6 +52,13 @@ const title = "10th years rust";
         </ul>
       </div>
     </section>
+
+    <footer class="footer container">
+      <span>Artwork by Paige Jane Losare-Lusby</span>
+      <a href="">Code of conduct</a>
+      <a href="">Item 1</a>
+      <a href="">Item 2</a>
+    </footer>
   </body>
 </html>
 
@@ -172,6 +185,10 @@ const title = "10th years rust";
         z-index: -1;
       }
     }
+
+    > * + * {
+      margin-block-end: 1.5rem;
+    }
   }
 
   .schedule {
@@ -237,6 +254,32 @@ const title = "10th years rust";
         font-size: 1.75rem;
         gap: 3rem;
       }
+    }
+  }
+
+  .footer {
+    background-color: #ffdc0c;
+    border-top: 8px solid #ff7500;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    color: #ff7500;
+    padding-block: 2rem;
+    font-weight: 700;
+    position: relative;
+
+    &::before {
+      background-image: url("images/ferris-happy.png");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      content: '';
+      position: absolute;
+      height: 100%;
+      aspect-ratio: 1;
+      left: 0;
+      top: 0;
     }
   }
 </style>
