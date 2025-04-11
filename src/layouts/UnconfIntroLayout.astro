@@ -6,8 +6,7 @@ import Divider from "../components/Divider.astro";
 import "../styles/index.scss";
 
 import UnconfSponsors from "../components/unconf/UnconfSponsors.astro";
-import PersonList from "../components/people/PeopleList.astro";
-import Person from "../components/people/Person.astro";
+import UnconfLeaders from "../components/unconf/UnconfLeaders.astro";
 
 const { frontmatter } = Astro.props;
 const { title } = frontmatter;
@@ -24,71 +23,11 @@ const { title } = frontmatter;
         <Divider />
     </OneColumnText>
     <UnconfSponsors />
-    <section class="container" id="leaders">
-        <div class="space-y-6">
-            <h2 class="text-center">Unconf group leaders</h2>
-            <PersonList>
-                <Person
-                    name="Folkert de Vries"
-                    image="folkert.jpg"
-                    title="Critical Infrastructure"
-                    github="https://github/com/folkertdev"
-                />
-                <Person
-                    name="Dirkjan Ochtman"
-                    image="dirkjan.png"
-                    title="Critical Infrastructure"
-                    github="https://github/com/djo"
-                />
-                <Person
-                    name="Miguel Ojeda"
-                    image="miguel_ojeda.jpg"
-                    title="Rust for Linux"
-                    github="https://github.com/ojeda"
-                />
-                <Person
-                    name="Alice Ivy Cecile"
-                    image="alice_cecile.jpg"
-                    github="https://github.com/alice-i-cecile"
-                    title="Bevy Engine"
-                />
-                <Person
-                    name="Adam Greig"
-                    image="adam.jpeg"
-                    github="https://github.com/adamgreig"
-                    title="Embedded WG"
-                />
-                <Person
-                    name="Daniel Egger"
-                    github="https://github.com/therealprof"
-                    image="daniel.jpeg"
-                    title="Embedded WG"
-                />
-                <Person
-                    name="Kevin Boos"
-                    title="UI & App dev"
-                    image="kevin.jpg"
-                    github="https://github.com/kevinaboos"
-                />
-                <Person
-                    name="Erik Jonkers"
-                    title="Unconf coordination"
-                    image="erik.jpg"
-                    github="https://github.com/erikjee"
-                />
-            </PersonList>
-        </div>
-    </section>
+    <OneColumnText class="space-y-12">
+        <Divider />
+    </OneColumnText>
+    <UnconfLeaders />
+    <div class="py-12">
+        <Button link="/unconf">Guide for participants</Button>
+    </div>
 </CommonLayout>
-
-<style lang="scss">
-    @use "../styles/variables.scss";
-
-    #leaders {
-        width: min(80rem, 100%);
-
-        h2 {
-            margin-bottom: 3rem;
-        }
-    }
-</style>
