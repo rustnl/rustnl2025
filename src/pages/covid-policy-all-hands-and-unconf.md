@@ -26,7 +26,7 @@ Similarly, if you feel sick (regardless of any test result), please do not come 
 
 On all days of RustWeek, masks will be available for those who wish to make use of them.
 
-## CO₂ meters
+## CO₂ monitoring
 
 In every room at the All-Hands and Unconference, there wil be Aranet4 CO₂ meters to monitor the air quality.
 These can help you decide whether to enter a room or not, or whether to open a window for more ventilation.
