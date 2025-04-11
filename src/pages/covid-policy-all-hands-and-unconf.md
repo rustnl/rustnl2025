@@ -30,3 +30,9 @@ On all days of RustWeek, masks will be available for those who wish to make use 
 
 In every room at the All-Hands and Unconference, there wil be Aranet4 CO₂ meters to monitor the air quality.
 These can help you decide whether to enter a room or not, or whether to open a window for more ventilation.
+
+## Outdoor space
+
+Weather permitting, you can have lunch or conversations outdoors.
+At <a href="/dus">DUS</a> (the venue on Thursday, Friday and Saturday),
+we will have a lot of outdoor space available to ourselves with plenty of tables and seating.
