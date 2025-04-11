@@ -4,9 +4,9 @@ title: "Covid policy for the All-Hands/Unconf"
 slug: "covid-policy-all-hands-and-unconf"
 ---
 
-We are taking additional covid safety precautions on both Friday and Saturday for the All-Hands/Unconf.
-We're doing this so that everyone can safely attend, including those of us who are at risk of severe outcomes,
-take care of people who are at risk, or have any other reason to want to avoid infection.
+To make sure that everyone who wants to can safely attend the All-Hands/Unconf,
+including those who are immunocompromised,
+we are taking extra covid safety precautions on Friday and Saturday.
 
 ## Testing
 
