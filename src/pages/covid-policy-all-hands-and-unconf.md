@@ -15,7 +15,7 @@ On all days of RustWeek, covid self-tests will be available for anyone who wants
 On Friday and Saturday (at the All-Hands and Unconf), we expect <b>all attendees</b> to test themselves in the morning.
 
 If you are able to pick up self-tests earlier in the week, please test yourself before coming to the venue.
-If not, there will be self tests available at the door.
+If not, there will be self-tests available at the door.
 
 Covid infection rates have been very low lately, but in the unlikely case that you test positive,
 please do not come to the venue or leave as soon as possible, to avoid infecting others.
