@@ -1,0 +1,285 @@
+---
+import Head from "../components/page/head.astro";
+import Button from "../components/Button.astro";
+import "../styles/index.scss";
+import ButtonGroup from "../components/ButtonGroup.astro";
+
+const title = "10th years rust";
+---
+
+<!doctype html>
+<html lang="en">
+  <Head title={`${title} - RustWeek 2025`} />
+  <body>
+    <section class="container section postcards grid cols-12">
+      <div class="postcard back"></div>
+      <div class="postcard front"></div>
+    </section>
+    <section class="section party">
+      <div class="container grid cols-12">
+        <div class="balloon">
+          <h2>Lets party!!!</h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Consequatur pariatur quisquam minima temporibus, voluptatem impedit
+            magni vel! Facilis in quam delectus praesentium reiciendis!
+            Deserunt, similique! Officiis quia illo repellendus eaque!
+          </p>
+          <Button
+            scale={1.25}
+            link="https://www.eventbrite.nl/e/rust-week-2025-tickets-1001676961757?aff=oddtdtcreator">
+              Get your tickets
+          </Button>
+        </div>
+      </div>
+    </section>
+    <section class="section container grid cols-12">
+      <div class="schedule">
+        <h2>Schedule</h2>
+        <ul>
+          <li>
+            <div class="slab">10:00</div>
+            <div>Welcome</div>
+          </li>
+          <li>
+            <div class="slab">10:00</div>
+            <div>Live release</div>
+          </li>
+          <li>
+            <div class="slab">10:00</div>
+            <div>Party time</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="footer container">
+      <span>Artwork by Paige Jane Losare-Lusby</span>
+      <a href="">Code of conduct</a>
+      <a href="">Item 1</a>
+      <a href="">Item 2</a>
+    </footer>
+  </body>
+</html>
+
+<style lang="scss">
+  body {
+    background-color: #ffdc0c;
+    background-image: url("/images/confetti.webp");
+    border: 1rem solid #ff7500;
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  .slab {
+    text-decoration: none;
+    font-family: "Alfa Slab One";
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .section {
+    padding-block: 3rem;
+
+    @media (width >= 768px) {
+      padding-block: 9rem;
+    }
+  }
+
+  .postcard {
+    aspect-ratio: 1.43/1;
+    background-size: cover;
+    border-radius: 1rem;
+    border: 4px solid black;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    grid-row: 1;
+  }
+
+  .postcard.back {
+    background-image: url("images/postcard-back.webp");
+    rotate: -3deg;
+    grid-column: 1 / 13;
+
+    @media (width >= 768px) {
+      grid-column: 2 / span 7;
+    }
+  }
+
+  .postcard.front {
+    background-image: url("images/postcard-rust-10th-year.webp");
+    grid-column: 1 / 13;
+    rotate: 3deg;
+
+    @media (width >= 768px) {
+      grid-column: 5 / span 7;
+    }
+  }
+
+  .section.party {
+    position: relative;
+
+    &::before {
+      aspect-ratio: 1;
+      background-image: url("images/ferris-happy.png");
+      background-position: right center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      content: "";
+      position: absolute;
+      height: 9rem;
+      left: 0;
+      top: -2rem;
+
+      @media (width >= 768px) {
+        translate: 0 -50%;
+        height: calc(100% - 9rem);
+        top: 50%;
+      }
+    }
+  }
+
+  .schedule,
+  .balloon {
+    background-color: #fff;
+    border-radius: 1rem;
+    border: 8px solid #ff7500;
+    padding: 1.5rem;
+
+    @media (width >= 768px) {
+      padding: 2.5rem;
+    }
+  }
+
+  .balloon {
+    grid-column: span 12;
+    position: relative;
+
+    @media (width >= 768px) {
+      grid-column: 5 / 12;
+    }
+
+    h2 {
+      color: #ff7500;
+    }
+
+    &::before {
+      @media (width >= 768px) {
+        background-color: #ff7500;
+        clip-path: polygon(100% 0, 0 0, 100% 100%);
+        content: "";
+        left: 0;
+        position: absolute;
+        top: 2.5rem;
+        translate: -100%;
+        width: 7.5rem;
+        z-index: -1;
+      }
+    }
+
+    > * + * {
+      margin-block-end: 1.5rem;
+    }
+  }
+
+  .schedule {
+    color: #ff7500;
+    grid-column: span 12;
+    position: relative;
+
+    @media (width >= 768px) {
+      grid-column: 2 / 12;
+    }
+
+    &::after {
+      @media (width >= 768px) {
+        position: absolute;
+        content: "";
+        right: 0;
+        bottom: 0;
+        background-image: url("images/ferris-happy-index.webp");
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        width: 18rem;
+        aspect-ratio: 1;
+        translate: 50%;
+        bottom: -2.5rem;
+      }
+    }
+
+    > * + * {
+      margin-block-start: 1rem;
+
+      @media (width >= 768px) {
+        margin-block-start: 1.5rem;
+      }
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    ul {
+      padding: 0;
+
+      > * + * {
+        margin-block-start: 1rem;
+
+        @media (width >= 768px) {
+          margin-block-start: 1.5rem;
+        }
+      }
+    }
+
+    li {
+      border-block: 1px solid #ff7500;
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      padding-block: 1rem;
+
+      @media (width >= 768px) {
+        padding-block: 1.5rem;
+        flex-direction: row;
+        font-size: 1.75rem;
+        gap: 3rem;
+      }
+    }
+  }
+
+  .footer {
+    background-color: #ffdc0c;
+    border-top: 8px solid #ff7500;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    color: #ff7500;
+    padding-block: 2rem;
+    font-weight: 700;
+    position: relative;
+
+    &::before {
+      background-image: url("images/ferris-happy.png");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      content: '';
+      position: absolute;
+      height: 100%;
+      aspect-ratio: 1;
+      left: 0;
+      top: 0;
+    }
+  }
+</style>
