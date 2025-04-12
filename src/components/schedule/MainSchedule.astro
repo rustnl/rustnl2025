@@ -9,6 +9,16 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
 <Schedule logo>
     <ScheduleDay>
         <ScheduleSection>
+            <span slot="location">Kinepolis Jaarbeurs, Utrecht,&nbsp;NL</span>
+            <ScheduleItem>
+                <span slot="header">Pre-registration</span>
+                <span slot="time">11:00–14:00</span>
+                <Fragment slot="activities">
+                    <p>Get your badge</p>
+                </Fragment>
+            </ScheduleItem>
+        </ScheduleSection>
+        <ScheduleSection>
             <span slot="location">Utrecht,&nbsp;NL</span>
 
             <ScheduleItem>
@@ -16,14 +26,8 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
                 <span slot="attendees">in small groups</span>
                 <span slot="time">12:00–22:00</span>
                 <Fragment slot="activities">
-                    <p>City tour</p>
-                    <p>Ferris sticker hunt</p>
-                    <p>Bouldering</p>
-                    <p>Bowling</p>
-                    <p>Laser tag</p>
-                    <p>Museum visit</p>
-                    <p>…</p>
-                    <!-- <OrganizeOwnActivity /> -->
+                    <p>City tour, Ferris sticker hunt, Bouldering, Bowling, Laser tag, Museum visit, …</p>
+                    <OrganizeOwnActivity />
                 </Fragment>
             </ScheduleItem>
         </ScheduleSection>
@@ -43,6 +47,8 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
                     <p style="margin-top: auto;"><a href="/schedule/tuesday">Talk schedule</a></p>
                 </Fragment>
             </ScheduleItem>
+        </ScheduleSection>
+        <ScheduleSection>
             <ScheduleItem>
                 <span slot="header">Social activities</span>
                 <span slot="time">18:00–22:00</span>
@@ -68,6 +74,8 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
                     <p style="margin-top: auto;"><a href="/schedule/wednesday">Talk schedule</a></p>
                 </Fragment>
             </ScheduleItem>
+        </ScheduleSection>
+        <ScheduleSection>
             <ScheduleItem>
                 <span slot="header">Social activities</span>
                 <span slot="time">18:00–22:00</span>
@@ -89,10 +97,13 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
                 <span slot="time">09:00–13:00</span>
                 <Fragment slot="activities">
                     <p>7 workshops in total</p>
-                    <br />
                     <p><a href="/workshops">See details</a></p>
                 </Fragment>
             </ScheduleItem>
+        </ScheduleSection>
+        <ScheduleSection>
+            <span slot="location">DUS, Sophialaan&nbsp;1, Utrecht,&nbsp;NL</span>
+
             <ScheduleItem align_end>
                 <span slot="header">10 Years of Rust Celebration</span>
                 <span slot="attendees">400 attendees</span>
