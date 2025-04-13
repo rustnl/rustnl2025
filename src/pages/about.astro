@@ -2,123 +2,70 @@
 import Person from "../components/people/Person.astro";
 import PeopleList from "../components/people/PeopleList.astro";
 import CommonLayout from "../layouts/CommonLayout.astro";
+import OneColumnText from "../components/OneColumnText.astro";
 ---
 
 <CommonLayout title="About" header="About" withLogo>
-    <section class="container md:grid md:cols-12">
-        <div
-            class="abouttext md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
-        >
-            <p>
-                Stichting Rust Nederland, RustNL for short, is a non-profit that
-                strives to promote the implementation of the Rust programming
-                language.
-            </p>
-            <p>
-                RustNL is an associate member of the Rust Foundation. We organize meetups and events to bring the Rust community
-                together, like RustWeek. The foundation's details can be found on <a
-                href="https://rustnl.org">rustnl.org</a
-            >.
-            </p>
-            <h3>
-                Contact us
-            </h3>
-            <p>
-                Questions? Reach out to us via <a href="mailto:2025@rustnl.org">2025@rustnl.org</a>
-            </p>
-        </div>
-    </section>
-    <section class="container py-12 space-y-6">
-        <div
-            class="space-y-12 md:grid md:cols-2 md:space-y-0"
-            style="justify-content: center;"
-        >
-        </div>
-        <h2 class="text-center" id="organisers">RustWeek 2025 team</h2>
-        <PeopleList>
-            <Person
-                name="Erik Jonkers"
-                image="erik.jpg"
-                title="Board member of the RustNL foundation and Director of Open Source of software agency Tweede golf."
-                tile
-            />
-            <Person
-                name="Laura Pircalaboiu"
-                image="laura.png"
-                title="Embedded software engineer at Q*Bird"
-                tile
-            />
-            <Person
-                name="Jana Dönszelmann"
-                image="jana.png"
-                title="Lecturer in Embedded Systems at Delft University of Technology and founder of Hexcat"
-                tile
-            />
-            <Person
-                name="Terts Diepraam"
-                image="terts.png"
-                title="Maintainer on Uutils and Software Engineer at NLnet Labs"
-                tile
-            />
-            <Person
-                name="Mara Bos"
-                image="mara.jpg"
-                title="Rust leadership council and founder of Hexcat"
-                tile
-            />
-        </PeopleList>
-
-        <!-- <h3 class="py-12">Volunteers</h3> -->
-        <!-- <div class="grid md:cols-2 xl:cols-4" id="volunteers"> -->
-        <!--     <Organiser -->
-        <!--         name="Wouter Geraedts" -->
-        <!--         image="wouter.jpeg" -->
-        <!--         description="Board member of RustNL and one of the MCs of the conference." -->
-        <!--     /> -->
-        <!--     <Organiser -->
-        <!--         name="Dirkjan Ochtman" -->
-        <!--         image="dirkjan.png" -->
-        <!--         description="Board member of RustNL and advisor for the organizing team." -->
-        <!--     /> -->
-        <!--     <Organiser -->
-        <!--         name="Alex Band" -->
-        <!--         image="alex.jpg" -->
-        <!--         description="Alex is Director of Product Development at NLnet Labs and one of the MCs at the conference." -->
-        <!--     /> -->
-        <!--     <Organiser -->
-        <!--         name="Vivian Roest" -->
-        <!--         image="vivian.png" -->
-        <!--         description="MSC Student and Teaching Assistant at Delft University of Technology" -->
-        <!--     /> -->
-        <!--     <Organiser -->
-        <!--         name="Jonathan Brouwer" -->
-        <!--         image="jonathanb.png" -->
-        <!--         description="Software Engineer at Technolution and certified 'The other Jonathan'" -->
-        <!--     /> -->
-        <!--     <Organiser -->
-        <!--         name="Arav Khanna" -->
-        <!--         image="arav.png" -->
-        <!--         description="BSc Computer Science Student and Privacy Enthusiast" -->
-        <!--     /> -->
-        <!-- </div> -->
-
-        <!-- <h3 class="py-12">Supporting Us</h3> -->
-        <!-- <div class="grid md:cols-2 xl:cols-4" id="support"> -->
-        <!--     <Organiser -->
-        <!--         name="Tweede golf" -->
-        <!--         image="empty.png" -->
-        <!--         description="Tweede golf is organizing partner of RustNL 2024." -->
-        <!--     /> -->
-        <!--     <Organiser -->
-        <!--         name="The Red Dress Effect" -->
-        <!--         image="empty.png" -->
-        <!--         description="Anna Kocks of the Red Dress Effect is an event planner of tech events, supporting us with the logistics of the conference." -->
-        <!--     /> -->
-        <!--     <Organiser -->
-        <!--         name="Grafische Republiek" -->
-        <!--         image="empty.png" -->
-        <!--         description="Erwin is designer and front-end developer at Grafische Republiek." -->
-        <!--     /> -->
-        <!-- </div> -->
-    </section>
+    <OneColumnText>
+        
+        <p>
+            Stichting Rust Nederland, RustNL for short, is a non-profit that
+            strives to promote the implementation of the Rust programming
+            language.
+        </p>
+        <p>
+            RustNL is an associate member of the Rust Foundation. We organize meetups and events to bring the Rust community
+            together, like RustWeek. The foundation's details can be found on <a
+            href="https://rustnl.org">rustnl.org</a
+        >.
+        </p>
+        <h3>
+            Contact us
+        </h3>
+        <p>
+            Questions? Reach out to us via <a href="mailto:2025@rustnl.org">2025@rustnl.org</a>
+        </p>
+    </OneColumnText>
+    <h2 class="text-center py-12" id="organisers">RustWeek 2025 team</h2>
+    <PeopleList>
+        <Person
+            name="Erik Jonkers"
+            image="erik.jpg"
+            title="Board member of the RustNL foundation and Director of Open Source of software agency Tweede golf."
+            tile
+        />
+        <Person
+            name="Laura Pircalaboiu"
+            image="laura.png"
+            title="Embedded software engineer at Q*Bird"
+            tile
+        />
+        <Person
+            name="Jana Dönszelmann"
+            image="jana.png"
+            title="Lecturer in Embedded Systems at Delft University of Technology and founder of Hexcat"
+            tile
+        />
+        <Person
+            name="Terts Diepraam"
+            image="terts.png"
+            title="Maintainer on Uutils and Software Engineer at NLnet Labs"
+            tile
+        />
+        <Person
+            name="Mara Bos"
+            image="mara.jpg"
+            title="Rust leadership council and founder of Hexcat"
+            tile
+        />
+    </PeopleList>
+    <!-- <h2 class="text-center py-12">Volunteers</h2>
+    <PeopleList>
+        <Person
+            name="Name"
+            image="empty.png"
+            title="Description"
+            tile
+        />
+    </PeopleList> -->
 </CommonLayout>

@@ -2,7 +2,7 @@
 
 ---
 
-<section class="container pt-24 pb-6 space-y-12">
+<section class="wide pt-24 pb-6 space-y-12">
     <div class="location">
         <div class="image"></div>
         <div class="image"></div>
@@ -17,6 +17,10 @@
 <style lang="scss">
     @use "../styles/breakpoint.scss";
     @use "../styles/variables.scss";
+
+    section.wide {
+        width: 100%;
+    }
 
     .location {
         position: relative;
@@ -84,10 +88,6 @@
             background-image: url("/images/venues/dus-rooms1.jpg");
             background-position: right bottom;
             background-size: cover;
-
-            &.boat {
-                background-image: url("/images/boat2.jpg");
-            }
 
             @include breakpoint.wider_than(sm) {
                 aspect-ratio: auto;

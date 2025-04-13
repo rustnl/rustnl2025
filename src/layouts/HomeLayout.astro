@@ -15,7 +15,7 @@ import Location from "../components/Location.astro";
 import HeroImage from "../../public/svg/hero-logo-rustweek-by-rustnl.svg?raw";
 import "../styles/index.scss";
 import Divider from "../components/Divider.astro";
-import PersonList from "../components/people/PeopleList.astro";
+import PeopleList from "../components/people/PeopleList.astro";
 ---
 
 <!doctype html>
@@ -94,13 +94,11 @@ import PersonList from "../components/people/PeopleList.astro";
                 </div>
             </section>
 
-            <section class="container">
-                <div class="space-y-6">
-                    <h2 class="text-center">Speakers</h2>
-                    <PersonList>
-                        <slot name="speakers" />
-                    </PersonList>
-                </div>
+            <section class="container space-y-6">
+                <h2 class="text-center">Speakers</h2>
+                <PeopleList>
+                    <slot name="speakers" />
+                </PeopleList>
                 <ButtonGroup>
                     <Button link="/speakers">All speakers</Button>
                 </ButtonGroup>
