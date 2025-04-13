@@ -22,14 +22,14 @@ const speaker_names = list(frontmatter.speakers.map((s: any) => s.name));
 ---
 
 <CommonLayout title={talkTitle} withLogo>
-  <div class="container text-center" slot="header">
+  <div class="text-center" slot="header">
     <div class="kicker">Talk</div>
     <h1>
       {talkTitle}
     </h1>
     <h2>by {speaker_names}</h2>
   </div>
-  <section class="container md:grid md:cols-12 py-12">
+  <section class="md:grid md:cols-12 py-12">
     <div class="md:col-start-3 md:col-end-11">
       <!-- <slot /> -->
       <div set:html={abstract} />

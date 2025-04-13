@@ -12,7 +12,7 @@ const { frontmatter } = Astro.props;
 const { title } = frontmatter;
 ---
 
-<CommonLayout title={title} header={title} withLogo small>
+<CommonLayout title={title} header={title} withLogo>
     <OneColumnText>
         <slot />
     </OneColumnText>

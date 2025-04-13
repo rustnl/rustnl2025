@@ -1,28 +1,16 @@
 ---
 import CommonLayout from "./CommonLayout.astro";
 import Markdown from "../components/Markdown.astro";
-import "../styles/index.scss";
+import OneColumnText from "../components/OneColumnText.astro";
 
 const { frontmatter } = Astro.props;
 const { title } = frontmatter;
 ---
 
 <CommonLayout title={title} header={title} withLogo>
-    <div class="content">
+    <OneColumnText>
         <Markdown>
             <slot />
         </Markdown>
-    </div>
+    </OneColumnText>
 </CommonLayout>
-
-<style lang="scss">
-      @use '../styles/variables.scss';
-
-    .content {
-        font-size: variables.$font-size-md;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 45em;
-        padding: 1em;
-    }
-</style>
