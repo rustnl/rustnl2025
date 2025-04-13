@@ -18,7 +18,7 @@ import "../styles/index.scss";
     </Fragment>
 
     <Fragment>
-        <section class="container md:grid md:cols-12 py-12 about-industry">
+        <section class="md:grid md:cols-12 pb-12 about-industry">
             <div
                 class="about-text md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
             >
@@ -29,7 +29,7 @@ import "../styles/index.scss";
         <Location />
 
         <section
-            class="container py-24 space-y-12 track-schedule"
+            class="py-24 space-y-12 track-schedule"
             id="schedule"
         >
             <div class="space-y-12 md:grid md:cols-2 md:space-y-0">
@@ -64,7 +64,7 @@ import "../styles/index.scss";
         </section>
 
         <section
-            class="container md:grid md:cols-12 py-12 tickets"
+            class="md:grid md:cols-12 py-12 tickets"
             id="tickets">
         
             <div
@@ -73,14 +73,14 @@ import "../styles/index.scss";
                 <slot name="tickets" />
             </div>
         </section>
-        <section class="container py-6 space-y-6">
+        <section class="py-6 space-y-6">
             <div
                 class="space-y-12 md:grid md:cols-2 md:space-y-0"
                 style="justify-content: center;"
             >
             </div>
         </section>
-        <section class="container py-24 space-y-6 speakers">
+        <section class="py-24 space-y-6 speakers">
             <h3 class="speakers-header">Speakers and experts</h3>
             <div class="grid md:cols-2 xl:cols-4" id="speakers">
                 <slot name="speakers" />
@@ -113,14 +113,13 @@ import "../styles/index.scss";
 }
 
 .tickets-text {
-    font-size: variables.$font-size-lg;
     text-align: center;
 }
 
 .schedule-header, 
 .speakers-header,
 .track-partners-header {
-    font-size: variables.$font-size-2xl;
+    font-size: variables.$font-size-xl;
     margin-block: 0;
 }
 
@@ -131,12 +130,5 @@ import "../styles/index.scss";
 
 .speakers-header, .track-partners-header {
     margin-top: 100px;
-}
-
-.industry-track-anouncement {
-    font-size: variables.$font-size-xl;
-}
-.about-text, .schedule-description {
-    font-size: variables.$font-size-lg;
 }
 </style>
