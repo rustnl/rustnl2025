@@ -4,6 +4,7 @@ import LocationDusRooms from "../components/LocationDusRooms.astro";
 import LocationDusVenue from "../components/LocationDusVenue.astro";
 import UnconfSchedule from "../components/schedule/UnconfSchedule.astro";
 import UnconfSponsors from "../components/unconf/UnconfSponsors.astro";
+import UnconfLeaders from "../components/unconf/UnconfLeaders.astro";
 import Divider from "../components/Divider.astro";
 
 const unconfIntro = await Astro.glob("./unconf-intro.md");
@@ -17,6 +18,7 @@ const unconfIntro = await Astro.glob("./unconf-intro.md");
         >
             <a href="#venue">Venue</a> &bullet;
             <a href="#unconf-details">Unconf days</a> &bullet;
+            <a href="#group-leaders">Group leaders</a> &bullet;
             <a href="#sponsors">Sponsors</a> &bullet;
             <a href="#travel">Travel</a> &bullet;
             <a href="#questions">Questions</a>
@@ -130,6 +132,8 @@ const unconfIntro = await Astro.glob("./unconf-intro.md");
             </p>
         </div>
     </section>
+
+    <UnconfLeaders />
 
     <section
         class="md:grid md:cols-12 pt-12 pb-24"
