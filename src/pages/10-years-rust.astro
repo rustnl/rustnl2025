@@ -101,7 +101,7 @@ const title = "10th years rust";
     background-size: cover;
     border-radius: 1rem;
     border: 4px solid black;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: -40px 35px 32px 0px rgba(0,0,0,0.33);
     grid-row: 1;
   }
 
@@ -150,6 +150,7 @@ const title = "10th years rust";
 
   .schedule,
   .balloon {
+    box-shadow: -40px 35px 32px 0px rgba(0,0,0,0.33);
     background-color: #fff;
     border-radius: 1rem;
     border: 8px solid #ff7500;
@@ -270,16 +271,18 @@ const title = "10th years rust";
     position: relative;
 
     &::before {
-      background-image: url("images/ferris-happy.png");
+      background-image: url("images/paige.webp");
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
       content: '';
       position: absolute;
-      height: 100%;
+      height: calc(100% - 1.5rem);
       aspect-ratio: 1;
-      left: 0;
-      top: 0;
+      left: 0.75rem;
+      top: 50%;
+      translate: 0 -50%;
+      rotate: -4deg;
     }
   }
 </style>
