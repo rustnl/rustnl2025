@@ -10,6 +10,7 @@ interface Props {
   header?: string;
   withLogo?: boolean;
   withoutMenu?: boolean;
+  ogImage?: string;
 }
 
 const {
@@ -17,12 +18,13 @@ const {
   header,
   withLogo = false,
   withoutMenu = false,
+  ogImage,
 } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-  <Head title={`${title} - RustWeek 2025`} />
+  <Head title={`${title} - RustWeek 2025`} ogImage={ogImage} />
 
   <body>
     <style lang="scss">
