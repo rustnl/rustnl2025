@@ -1,7 +1,7 @@
 ---
 interface Props {
     link: string;
-    ty?: "primary" | "secondary";
+    ty?: "primary" | "secondary" | "primary-10";
     inFooter?: boolean;
     scale?: number;
 }
@@ -43,6 +43,11 @@ const { link, ty = "primary", inFooter = false, scale = 1 }: Props = Astro.props
         &.secondary {
             border: 1px solid variables.$color-red-400;
             color: variables.$color-red-400;
+        }
+
+        &.primary-10 {
+          background-color: #ff7500;
+          color: white;
         }
 
         &.footer {

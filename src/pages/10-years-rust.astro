@@ -25,7 +25,8 @@ const title = "10 Years of Rust Celebration";
             Deserunt, similique! Officiis quia illo repellendus eaque!
           </p>
           <Button
-            scale={1.25}
+            scale={1}
+            ty="primary-10"
             link="https://www.eventbrite.nl/e/rust-week-2025-tickets-1001676961757?aff=oddtdtcreator">
               Get your tickets
           </Button>
@@ -158,6 +159,15 @@ const title = "10 Years of Rust Celebration";
     @media (width >= 768px) {
       padding: 2.5rem;
     }
+
+    h1 {
+      font-size:  1.7329rem;
+      text-align: left;
+      
+      @media (width >= 768px) {
+        font-size:  2.3099557rem;
+      }
+    }
   }
 
   .balloon {
@@ -168,7 +178,8 @@ const title = "10 Years of Rust Celebration";
       grid-column: 5 / 12;
     }
 
-    h1, h2 {
+    h1, 
+    h2 {
       color: #ff7500;
     }
 
@@ -225,7 +236,7 @@ const title = "10 Years of Rust Celebration";
       }
     }
 
-    h1, h2 {
+    h2 {
       text-align: center;
     }
 
@@ -263,11 +274,18 @@ const title = "10 Years of Rust Celebration";
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 1rem;
     color: #ff7500;
     padding-block: 2rem;
     font-weight: 700;
     position: relative;
+    flex-direction: column;
+    align-items: center;
+
+    @media (width >= 768px) {
+      flex-direction: row;
+      gap: 2rem;
+    }
 
     &::before {
       background-image: url("images/paige.webp");
@@ -275,13 +293,20 @@ const title = "10 Years of Rust Celebration";
       background-size: cover;
       background-repeat: no-repeat;
       content: '';
-      position: absolute;
       height: calc(100% - 1.5rem);
       aspect-ratio: 1;
-      left: 0.75rem;
-      top: 50%;
-      translate: 0 -50%;
-      rotate: -4deg;
+      height: 6rem;
+      width: 6rem;
+      
+      @media (width >= 768px) {
+        position: absolute;
+        left: 0.75rem;
+        top: 50%;
+        translate: 0 -50%;
+        rotate: -4deg;
+        height: calc(100% - 1.5rem);
+        width: auto;
+      }
     }
   }
 </style>
