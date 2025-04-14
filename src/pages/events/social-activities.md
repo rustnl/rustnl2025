@@ -1,4 +1,5 @@
 ---
+layout: "../../layouts/EventLayout.astro"
 title: 'Social activities'
 dates: ['2025-05-12']
 startTime: "12:00"

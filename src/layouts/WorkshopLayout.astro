@@ -12,13 +12,13 @@ const trainers = await Astro.glob('../pages/people/trainers/*.md');
 ---
 
 <CommonLayout title={title} withLogo>
-  <div class="container text-center" slot="header">
+  <div class="text-center" slot="header">
     <div class="kicker">Workshop</div>
     <h1>
       {frontmatter.title}
     </h1>
   </div>
-  <section class="container md:grid md:cols-12 py-12">
+  <section class="md:grid md:cols-12 py-12">
     <div class="md:col-start-3 md:col-end-11">
       <WorkshopDetail
         hasTitle={false}

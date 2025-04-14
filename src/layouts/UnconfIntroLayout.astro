@@ -6,13 +6,13 @@ import Divider from "../components/Divider.astro";
 import "../styles/index.scss";
 
 import UnconfSponsors from "../components/unconf/UnconfSponsors.astro";
+import UnconfLeaders from "../components/unconf/UnconfLeaders.astro";
 
 const { frontmatter } = Astro.props;
 const { title } = frontmatter;
-
 ---
 
-<CommonLayout title={title} header={title} withLogo small>
+<CommonLayout title={title} header={title} withLogo>
     <OneColumnText>
         <slot />
     </OneColumnText>
@@ -23,8 +23,11 @@ const { title } = frontmatter;
         <Divider />
     </OneColumnText>
     <UnconfSponsors />
+    <OneColumnText class="space-y-12">
+        <Divider />
+    </OneColumnText>
+    <UnconfLeaders />
+    <div class="py-12">
+        <Button link="/unconf">Guide for participants</Button>
+    </div>
 </CommonLayout>
-
-<style lang="scss">
-      @use '../styles/variables.scss';
-</style>

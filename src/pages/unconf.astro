@@ -4,19 +4,21 @@ import LocationDusRooms from "../components/LocationDusRooms.astro";
 import LocationDusVenue from "../components/LocationDusVenue.astro";
 import UnconfSchedule from "../components/schedule/UnconfSchedule.astro";
 import UnconfSponsors from "../components/unconf/UnconfSponsors.astro";
+import UnconfLeaders from "../components/unconf/UnconfLeaders.astro";
 import Divider from "../components/Divider.astro";
 
 const unconfIntro = await Astro.glob("./unconf-intro.md");
 ---
 
 <CommonLayout title="Unconf participants guide" header="Unconf participants guide" withLogo>
-    <section class="container md:grid md:cols-12">
+    <section class="md:grid md:cols-12">
         <div
             class="abouttext text-center md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
             style="font-size: smaller;"
         >
             <a href="#venue">Venue</a> &bullet;
             <a href="#unconf-details">Unconf days</a> &bullet;
+            <a href="#group-leaders">Group leaders</a> &bullet;
             <a href="#sponsors">Sponsors</a> &bullet;
             <a href="#travel">Travel</a> &bullet;
             <a href="#questions">Questions</a>
@@ -49,7 +51,7 @@ const unconfIntro = await Astro.glob("./unconf-intro.md");
         </div>
     </section>
     <LocationDusVenue />
-    <section class="container md:grid md:cols-12 py-12">
+    <section class="md:grid md:cols-12 py-12">
         <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10">
             <h2 id="weekschedule">Schedule for the week</h2>
             <p>
@@ -58,13 +60,18 @@ const unconfIntro = await Astro.glob("./unconf-intro.md");
             </p>
         </div>
     </section>
-    <section class="container anchor" id="schedule">
+    <section class="anchor" id="schedule">
         <UnconfSchedule />
     </section>
     <section
-        class="container md:grid md:cols-12 py-12"
+        class="md:grid md:cols-12 py-12"
     >
         <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10">
+            <p>
+            <b>Location:</b>
+            Tuesday and Wednesday are at <a href="/kinepolis">Kinepolis</a>.
+            Thursday, Friday and Saturday are at <a href="/dus">DUS</a>.
+            </p>
             <p>
                 RustWeek 2025 includes social activities organised by and for
                 all attending Rustaceans. You are very welcome to join these
@@ -103,6 +110,9 @@ const unconfIntro = await Astro.glob("./unconf-intro.md");
             </p>
             <h2 id="unconf-details">Unconf (Friday and Saturday)</h2>
             <p>
+            <b>Covid policy:</b> Please review our <a href="/covid-policy-all-hands-and-unconf">covid policy</a> for the unconf.
+            </p>
+            <p>
                 The RustWeek unconf will begin on Friday. Other than a quick
                 plenary start of the unconf, each unconf group will have their
                 own schedule and their own dedicated rooms.
@@ -123,8 +133,10 @@ const unconfIntro = await Astro.glob("./unconf-intro.md");
         </div>
     </section>
 
+    <UnconfLeaders />
+
     <section
-        class="container md:grid md:cols-12 pt-12 pb-24"
+        class="md:grid md:cols-12 pt-12 pb-24"
         id="floorplan"
     >
         <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10">
@@ -145,7 +157,7 @@ const unconfIntro = await Astro.glob("./unconf-intro.md");
     <Divider />
 
     <section
-        class="container md:grid md:cols-12 py-12"
+        class="md:grid md:cols-12 py-12"
     >
         <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10">
             <h2>Co-located Rust project All-Hands</h2>
@@ -173,7 +185,7 @@ const unconfIntro = await Astro.glob("./unconf-intro.md");
         </div>
     </section>
     <LocationDusRooms />
-    <section class="container md:grid md:cols-12">
+    <section class="md:grid md:cols-12">
         <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10">
             <h2 id="travel">Travel and Hotel</h2>
             <p>

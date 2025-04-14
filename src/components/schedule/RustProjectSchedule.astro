@@ -9,6 +9,16 @@ import BottomNote from "./BottomNote.astro";
 <Schedule>
     <ScheduleDay>
         <ScheduleSection>
+            <span slot="location">Kinepolis Jaarbeurs, Utrecht,&nbsp;NL</span>
+            <ScheduleItem>
+                <span slot="header">Pre-registration</span>
+                <span slot="time">11:00–14:00</span>
+                <Fragment slot="activities">
+                    <p>Get your badge</p>
+                </Fragment>
+            </ScheduleItem>
+        </ScheduleSection>
+        <ScheduleSection>
             <span slot="location">Utrecht,&nbsp;NL</span>
 
             <ScheduleItem>
@@ -27,10 +37,10 @@ import BottomNote from "./BottomNote.astro";
             <ScheduleItem>
                 <span slot="header">Conference day 1</span>
                 <span slot="attendees">800 attendees</span>
-                <span slot="time">08:45–19:00</span>
+                <span slot="time">08:30–19:00</span>
                 <Fragment slot="activities">
                     <p>Enjoy talks and meet Rustaceans</p>
-                    <BottomNote>See <a href="/#explainer">RustWeek 2025</a></BottomNote>
+                    <BottomNote>See <a href="/schedule/tuesday/">schedule day 1</a></BottomNote>
                 </Fragment>
             </ScheduleItem>
         </ScheduleSection>
@@ -42,10 +52,10 @@ import BottomNote from "./BottomNote.astro";
             <ScheduleItem>
                 <span slot="header">Conference day 2</span>
                 <span slot="attendees">800 attendees</span>
-                <span slot="time">08:45–19:00</span>
+                <span slot="time">08:30–19:00</span>
                 <Fragment slot="activities">
                     <p>With dedicated<br /><em>Rust Project track</em></p>
-                    <BottomNote>Project talks TBD</BottomNote>
+                    <BottomNote>See <a href="/schedule/wednesday/">schedule day 2</a></BottomNote>
                 </Fragment>
             </ScheduleItem>
         </ScheduleSection>
@@ -57,7 +67,7 @@ import BottomNote from "./BottomNote.astro";
 
             <ScheduleItem>
                 <span slot="header">Pre-All-Hands</span>
-                <span slot="attendees">optional</span>
+                <span slot="attendees">120-150 attendees</span>
                 <span slot="time">09:00–16:00</span>
                 <Fragment slot="activities">
                     <p>Board games? Lego?</p>
@@ -81,7 +91,7 @@ import BottomNote from "./BottomNote.astro";
 
             <ScheduleItem>
                 <span slot="header">All-Hands</span>
-                <span slot="attendees">100-150 attendees</span>
+                <span slot="attendees">120-150 attendees</span>
                 <span slot="time">09:00–18:00</span>
                 <Fragment slot="activities">
                     <p>Dedicated rooms per team</p>
@@ -98,7 +108,7 @@ import BottomNote from "./BottomNote.astro";
 
             <ScheduleItem>
                 <span slot="header">All-Hands</span>
-                <span slot="attendees">100-150 attendees</span>
+                <span slot="attendees">120-150 attendees</span>
                 <span slot="time">09:00–18:00</span>
                 <Fragment slot="activities">
                     <p>Dedicated rooms per team</p>

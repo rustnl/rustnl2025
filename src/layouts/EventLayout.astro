@@ -1,0 +1,33 @@
+---
+import CommonLayout from "./CommonLayout.astro";
+import OneColumnText from "../components/OneColumnText.astro";
+import Button from "../components/Button.astro";
+import Divider from "../components/Divider.astro";
+import EventTracks from "../components/event/EventTracks.astro";
+import Event from "../components/event/Event.astro";
+import "../styles/index.scss";
+
+const tracks = await Astro.glob("../pages/events/tracks/*.md");
+const { frontmatter } = Astro.props;
+const { title } = frontmatter;
+
+---
+
+<CommonLayout title={title} withLogo>
+    <OneColumnText>
+        <Event {...frontmatter}>
+            <slot />
+            <EventTracks tracks={tracks} date={frontmatter.dates[0]} />
+        </Event>
+    </OneColumnText>
+    <OneColumnText class="space-y-12">
+        <Divider />
+    </OneColumnText>
+    <div class="py-12">
+        <Button link="/overview#list">List of events</Button>
+    </div>
+</CommonLayout>
+
+<style lang="scss">
+      @use '../styles/variables.scss';
+</style>

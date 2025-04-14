@@ -6,20 +6,20 @@ import TrackIndicator from "./TrackIndicator.astro";
 
 const main = "Cinema 12";
 const secondary = "Cinema 11";
-const tertiary = "Cinema 10";
+const tertiary = "Cinema 9";
 
 const breaks = [
-    "0:00 - 8:45",
-    "8:45 - 9:30",
-    "11:00 - 11:30",
-    "12:35 - 14:00",
+    "0:00 - 8:30",
+    "8:30 - 9:30",
+    "11:00 - 11:40",
+    "12:45 - 14:00",
     "15:50 - 16:20",
     "17:40 - 19:00",
 ];
 ---
 
 <Timetable breaks={breaks}>
-    <Divider start="8:45" end="9:30">Doors open & registration</Divider>
+    <Divider start="8:30" end="9:30">Doors open & registration</Divider>
     <TrackIndicator afterDivider="9:30" track="Main track" color="yellow" first />
     <Item
         title="Opening"
@@ -95,13 +95,13 @@ const breaks = [
         duration={60}
         room={tertiary}
     />
-    <Divider start="11:00" end="11:30"> Break </Divider>
-    <TrackIndicator afterDivider="11:30" track="Main track" color="yellow" />
+    <Divider start="11:00" end="11:40"> Break </Divider>
+    <TrackIndicator afterDivider="11:40" track="Main track" color="yellow" />
     <Item
         talk="joe"
         color="yellow"
         track={1}
-        time="11:30"
+        time="11:40"
         duration={35}
         room={main}
     />
@@ -109,16 +109,16 @@ const breaks = [
         talk="martin"
         color="yellow"
         track={1}
-        time="12:15"
+        time="12:25"
         duration={20}
         room={main}
     />
-    <TrackIndicator afterDivider="11:30" track="Deep dive track" color="blue" />
+    <TrackIndicator afterDivider="11:40" track="Deep dive track" color="blue" />
     <Item
         talk="waffle"
         color="blue"
         track={2}
-        time="11:30"
+        time="11:40"
         duration={35}
         room={secondary}
     />
@@ -126,16 +126,16 @@ const breaks = [
         talk="emmanuel"
         color="blue"
         track={2}
-        time="12:15"
+        time="12:25"
         duration={20}
         room={secondary}
     />
-    <TrackIndicator afterDivider="11:30" track="Rust Project track" color="red" />
+    <TrackIndicator afterDivider="11:40" track="Rust Project track" color="red" />
     <Item
         talk="jacob"
         color="red"
         track={3}
-        time="11:30"
+        time="11:40"
         duration={35}
         room={tertiary}
     />
@@ -143,11 +143,11 @@ const breaks = [
         talk="wrenn"
         color="red"
         track={3}
-        time="12:15"
+        time="12:25"
         duration={20}
         room={tertiary}
     />
-    <Divider start="12:35" end="14:00"> Lunch </Divider>
+    <Divider start="12:45" end="14:00"> Lunch </Divider>
     <TrackIndicator afterDivider="14:00" track="Main track" color="yellow" />
     <Item
         talk="ciara"
@@ -200,7 +200,7 @@ const breaks = [
     />
     <TrackIndicator afterDivider="14:00" track="Rust Project track" color="red" />
     <Item
-        talk="salsa"
+        talk="ralf"
         color="red"
         track={3}
         time="14:00"

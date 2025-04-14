@@ -7,12 +7,13 @@ import TrackIndicator from "./TrackIndicator.astro";
 
 const main = "Cinema 12";
 const secondary = "Cinema 11";
-const tertiary = "Cinema 10";
+const tertiary = "Cinema 9";
+const quaternary = "Reception Area";
 
 const breaks = [
-    "0:00 - 8:45",
-    "8:45 - 9:30",
-    "11:00 - 11:30",
+    "0:00 - 8:30",
+    "8:30 - 9:30",
+    "11:00 - 11:40",
     "12:45 - 14:00",
     "15:50 - 16:20",
     "17:40 - 19:00",
@@ -20,7 +21,7 @@ const breaks = [
 ---
 
 <Timetable breaks={breaks}>
-    <Divider start="8:45" end="9:30">Doors open & registration</Divider>
+    <Divider start="8:30" end="9:30">Doors open & registration</Divider>
     <TrackIndicator afterDivider="9:30" track="Main track" color="yellow" first />
     <Item
         title="Opening"
@@ -55,7 +56,6 @@ const breaks = [
         duration={10}
         room={secondary}
         id="ecosystem"
-        striped
     />
     <Item
         talk="jos"
@@ -119,13 +119,13 @@ const breaks = [
         room={tertiary}
         ticket="Industry"
     />
-    <Divider start="11:00" end="11:30"> Break </Divider>
-    <TrackIndicator afterDivider="11:30" track="Main track" color="yellow" />
+    <Divider start="11:00" end="11:40"> Break </Divider>
+    <TrackIndicator afterDivider="11:40" track="Main track" color="yellow" />
     <Item
         talk="raph"
         color="yellow"
         track={1}
-        time="11:30"
+        time="11:40"
         duration={35}
         room={main}
     />
@@ -133,16 +133,16 @@ const breaks = [
         talk="shane"
         color="yellow"
         track={1}
-        time="12:15"
+        time="12:25"
         duration={20}
         room={main}
     />
-    <TrackIndicator afterDivider="11:30" track="Ecosystem track" color="blue" />
+    <TrackIndicator afterDivider="11:40" track="Ecosystem track" color="blue" />
     <Item
         talk="bart"
         color="blue"
         track={2}
-        time="11:30"
+        time="11:40"
         duration={35}
         room={secondary}
     />
@@ -154,19 +154,19 @@ const breaks = [
         })}
         color="blue"
         track={2}
-        time="12:15"
+        time="12:25"
         duration={20}
         room={secondary}
         striped
     />
-    <TrackIndicator afterDivider="11:30" track="Industry track" color="red" />
+    <TrackIndicator afterDivider="11:40" track="Industry track" color="red" />
     <Item
         title="Expert Tables Round 1"
         color="red"
         track={3}
-        time="11:30"
-        duration={60}
-        room={tertiary}
+        time="11:40"
+        duration={50}
+        room={quaternary}
         description="Choose a topic and learn from a seasoned Rust expert as well as your industry peers."
         ticket="Industry"
         url="industry"
@@ -246,7 +246,7 @@ const breaks = [
         track={3}
         time="14:00"
         duration={60}
-        room={tertiary}
+        room={quaternary}
         description="Choose a topic and learn from a seasoned Rust expert as well as your industry peers."
         ticket="Industry"
         url="industry"
@@ -289,6 +289,14 @@ const breaks = [
         room={main}
     />
     <TrackIndicator afterDivider="16:20" track="Ecosystem track" color="blue" />
+    <Item
+        talk="salsa"
+        color="blue"
+        track={2}
+        time="16:20"
+        duration={35}
+        room={secondary}
+    />
     <MultiItem
         talks={Array(3).fill({
             speaker: "",
@@ -297,31 +305,34 @@ const breaks = [
         })}
         color="blue"
         track={2}
-        time="16:20"
+        time="17:05"
         duration={35}
         room={secondary}
         striped
     />
-    <Item
-        talk="nandini"
-        color="blue"
-        track={2}
-        time="17:05"
-        duration={35}
-        room={secondary}
-    />
-    <TrackIndicator afterDivider="16:20" track="Industry track" color="red" />
+    <TrackIndicator afterDivider="16:20" track="Extra track" color="purple" />
     <Item
         title="Live Recording of 'Rust in Production'"
         speakers={[
             { name: "Matthias Endler", image: "matthias.jpg" },
             { name: "Niko Matsakis", image: "niko.png" },
         ]}
-        color="red"
+        color="purple"
         track={3}
         time="16:20"
         duration={35}
         room={tertiary}
     />
+    <!--
+    <Item
+        title="..."
+        color="purple"
+        track={3}
+        time="17:05"
+        duration={35}
+        room={tertiary}
+        striped
+    />
+    -->
     <Divider start="17:40" end="19:00"> Drinks </Divider>
 </Timetable>

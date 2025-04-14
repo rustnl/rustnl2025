@@ -10,7 +10,7 @@ const trainers = await Astro.glob('./people/trainers/*.md');
 ---
 
 <CommonLayout title="Workshops" header="Workshops" withLogo>
-  <section class="container py-12 space-y-6">
+  <section class="py-12 space-y-6">
     <div class="grid xl:cols-12" id="workshops">
       <div class="xl:col-start-3 xl:col-end-11 space-y-12">
         <div
@@ -30,9 +30,7 @@ const trainers = await Astro.glob('./people/trainers/*.md');
         </div>
 
         <p>
-          The workshops are held on <b>Thursday 15 May</b> from 9:00 to 13:00. The location
-          is: DUS Utrecht.<br />
-          Address: DUS, Sophialaan 1, Utrecht, The Netherlands..
+          For the workshop location and time, see the <a href="/events/workshops">workshop event page</a>.
         </p>
         <div class="space-y-12">
           {

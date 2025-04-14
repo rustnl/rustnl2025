@@ -32,6 +32,12 @@ const { location }: Props = Astro.props;
         <li>
           <a href="/overview/#hackathon" role="menuitem"><span>fri</span>Hackathon</a>
         </li>
+        <li class="child" role="menuitem">
+          <a
+            href="/overview#list"
+            >List of all events</a
+          >
+        </li>
       </ul>
     </li>
     <li class="parent" role="menuitem">
@@ -48,10 +54,13 @@ const { location }: Props = Astro.props;
       <button>Location</button>
       <ul class="submenu" role="menu">
         <li class="child" role="menuitem">
+          <a href="/getting-there">Getting there</a>
+        </li>
+        <li class="child" role="menuitem">
           <a
             href="/#where"
             onclick="document.querySelector('[data-menu-toggle]').click()"
-            >Utrecht</a
+            >About Utrecht</a
           >
         </li>
         <li class="child" role="menuitem">
