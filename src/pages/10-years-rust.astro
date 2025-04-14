@@ -2,14 +2,13 @@
 import Head from "../components/page/head.astro";
 import Button from "../components/Button.astro";
 import "../styles/index.scss";
-import ButtonGroup from "../components/ButtonGroup.astro";
 
-const title = "10th years rust";
+const title = "10 Years of Rust Celebration";
 ---
 
 <!doctype html>
 <html lang="en">
-  <Head title={`${title} - RustWeek 2025`} />
+  <Head title={`${title} - RustWeek 2025`} ogImage="https://rustweek.org/images/share-rust-10-year.jpg"/>
   <body>
     <section class="container section postcards grid cols-12">
       <div class="postcard back"></div>
@@ -18,7 +17,7 @@ const title = "10th years rust";
     <section class="section party">
       <div class="container grid cols-12">
         <div class="balloon">
-          <h2>Lets party!!!</h2>
+          <h1>10 Years of Rust Celebration</h1>
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             Consequatur pariatur quisquam minima temporibus, voluptatem impedit
@@ -169,7 +168,7 @@ const title = "10th years rust";
       grid-column: 5 / 12;
     }
 
-    h2 {
+    h1, h2 {
       color: #ff7500;
     }
 
@@ -226,7 +225,7 @@ const title = "10th years rust";
       }
     }
 
-    h2 {
+    h1, h2 {
       text-align: center;
     }
 
