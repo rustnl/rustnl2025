@@ -28,7 +28,15 @@ if (!code) {
 ---
 <div class="stream">
     <h3>{name}</h3>
-    <iframe allowfullscreen="" frameborder="0" height="315" src={`http://www.youtube.com/embed/${code}`} width="720"></iframe>
+    <iframe 
+        style="aspect-ratio: 16/9; width: min(80ch, 90vw);" 
+        src={`http://www.youtube.com/embed/${code}`} 
+        title={`${name}`} 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen
+    ></iframe>
 </div>
 
 <style lang="scss">
