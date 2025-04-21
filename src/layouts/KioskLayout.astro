@@ -1,0 +1,38 @@
+---
+import Head from '../components/page/head.astro';
+import '../styles/index.scss';
+
+interface Props {
+    title: string
+}
+
+const {
+    title
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <Head title={`${title} - RustWeek 2025`} />
+
+  <body>
+    <style lang="scss">
+      @use '../styles/variables.scss';
+    </style>
+
+    <section class="main">
+            <slot /> 
+    </section>
+
+    <style>
+        .main, body, html {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+
+            overflow: hidden;
+        }
+    </style>
+  </body>
+</html>

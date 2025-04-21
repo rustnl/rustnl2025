@@ -11,7 +11,7 @@ const {track, afterDivider, color, first=false}: Props = Astro.props;
 const afterDividerUnderscore = afterDivider.replace(":", "_");
 ---
 
-<div class:list={["track-indicator", "item", color, !first?"not-first":null]} style={`grid-row: divider${afterDividerUnderscore}`}>
+<div class:list={["track-indicator", "item", color, !first?"not-first":null]} style={`grid-row: divider${afterDividerUnderscore}`} data-time={afterDivider}>
     {track}
 </div>
 
