@@ -25,7 +25,7 @@ import TimetableWednesday from "../../components/timetable/Wednesday.astro"
     function setup() {
         const now = getTime();
 
-        let day: string;
+        let day: "tuesday" | "wednesday";
         switch (now.format("dddd")) {
             case "Tuesday": day = "tuesday"; break;
             case "Wednesday": day = "wednesday"; break;
@@ -118,7 +118,7 @@ import TimetableWednesday from "../../components/timetable/Wednesday.astro"
     setInterval(updateTime, 1 * 1000);
     updateTime();
 
-    document.querySelectorAll(".last-updated").forEach(e => e.innerText = `last updated: ${dayjs().format(time_format)}`);
+    document.querySelectorAll(".last-updated").forEach(e => (e as HTMLElement).innerText = `last updated: ${dayjs().format(time_format)}`);
 </script>
 
 <KioskLayout title="live schedule">
