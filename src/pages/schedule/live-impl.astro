@@ -1,0 +1,214 @@
+---
+import KioskLayout from "../../layouts/KioskLayout.astro"
+import TimetableTuesday from "../../components/timetable/Tuesday.astro"
+import TimetableWednesday from "../../components/timetable/Wednesday.astro"
+
+
+---
+<script>
+    import dayjs from 'dayjs'
+    import customParseFormat from "dayjs/plugin/customParseFormat";
+    import isSameOrAfter from "dayjs/plugin/isSameOrAfter";
+    import {annotated_breaks, pad} from "../../components/timetable/data.ts";
+
+    dayjs.extend(customParseFormat);
+    dayjs.extend(isSameOrAfter)
+    const time_format = "HH:mm";
+
+    function getTime() {
+        return dayjs();
+        // return dayjs("13:30", time_format);
+    }
+
+    let blink_colon = false;
+
+    function setup() {
+        const now = getTime();
+
+        let day: string;
+        switch (now.format("dddd")) {
+            case "Tuesday": day = "tuesday"; break;
+            case "Wednesday": day = "wednesday"; break;
+            default:
+                // otherwise, assume it is tuesday
+                day = "tuesday";
+        }
+
+        document.querySelectorAll(`.${day}`).forEach(e => {
+            (e as HTMLElement).style.display = "block";
+        })
+
+        let activity: string = "Talks";
+        let next_end = null;
+        let next_start = "";
+        let prev_end = null;
+
+        for (const [time, msg] of Object.entries(annotated_breaks[day])) {
+            const [start, end] = time.split("-");
+            const start_time = dayjs(start.trim(), time_format);
+            const end_time = dayjs(end.trim(), time_format);
+
+            if (now.isSameOrAfter(start_time) && now.isBefore(end_time)) {
+                activity = msg;
+                next_end = `Until ${end_time.format(time_format)}`;
+            }
+
+            if (now.isSameOrAfter(prev_end) && now.isBefore(start_time)) {
+                next_start = `Until ${start_time.format(time_format)}`;
+            }
+
+            prev_end = end_time;
+        }
+
+        document.querySelectorAll('[data-current-activity]')
+            .forEach(e => {
+                (e as HTMLElement).innerText = activity;
+            });
+        document.querySelectorAll('[data-current-activity-until]')
+            .forEach(e => {
+                (e as HTMLElement).innerText = next_end || next_start;
+            });
+
+        let latest: dayjs.Dayjs | null = null;
+        let latest_element: HTMLElement | null = null;
+        document.querySelectorAll(`.${day} .kiosk`).forEach(e => {
+            const dataset = (e as HTMLElement).dataset;
+            if (!dataset.time) {
+                return;
+            }
+
+            const time = dayjs(dataset.time.trim(), time_format);
+
+            if (latest === null || (time.isSameOrAfter(latest) && !time.isAfter(now))) {
+                latest = time;
+                latest_element = e as HTMLElement;
+            }
+
+            (e as HTMLElement).style.display = "none";
+        });
+
+        if (latest_element !== null) {
+            (latest_element as HTMLElement).style.display = "";
+            const marker = (latest_element as HTMLElement).querySelector('.kiosk-time-marker');
+            const min = now.minute();
+            const roundedMin = Math.floor(min/5)*5;
+
+            (marker as HTMLElement).style.gridRow = `time${now.hour()}_${pad(roundedMin, 2)}`;
+        }
+    };
+
+    const current_time = document.querySelectorAll('[data-current-time]');
+
+    async function updateTime() {
+        const now = getTime();
+
+        blink_colon = !blink_colon;
+        current_time.forEach(e => {
+            let time = now.format(time_format);
+            if (blink_colon) {
+                time = time.replaceAll(":", " ");
+            }
+
+            (e as HTMLElement).innerText = time.trim();
+        });
+    }
+
+    setup();
+
+    setInterval(updateTime, 1 * 1000);
+    updateTime();
+
+    document.querySelectorAll(".last-updated").forEach(e => e.innerText = `last updated: ${dayjs().format(time_format)}`);
+</script>
+
+<KioskLayout title="live schedule">
+    <div class="main">
+        <div class="top">
+            <div class="last-updated"></div>
+            <span class="time" data-current-time></span>
+            <div class="activity">
+                <span class="what" data-current-activity></span>
+                <span class="until" data-current-activity-until></span>
+            </div>
+        </div>
+
+        <div class="current">
+            <div class="timetable tuesday">
+                <TimetableTuesday kiosk />
+            </div>
+            <div class="timetable wednesday">
+                <TimetableWednesday kiosk />
+            </div>
+        </div>
+    </div>
+</KioskLayout>
+
+<style lang="scss">
+    @use '../../styles/variables.scss';
+
+    .main {
+        height: 100%;
+
+        .top {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            margin: 0em 2em;
+            padding: 0;
+
+            .last-updated {
+                position: fixed;
+                bottom: 0.25em;
+                right: 1em;
+                text: variables.$font-size-xs;
+                z-index: 100;
+            }
+
+            span {
+                text-decoration-line: none !important;
+                margin: 0;
+                padding: 0;
+                font-weight: bold;
+                line-height: 1;
+            }
+
+            .time {
+                font-size: 13vw;
+                font-variant-numeric: tabular-nums;
+            }
+
+            .activity {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                text-align: right;
+
+                .what {
+                    font-size: 8vw;
+                    color: variables.$color-red-500;
+                }
+                .until {
+                    font-size: 5vw;
+                }
+            }
+        }
+
+        .current {
+            margin: 0 0 0 1em;
+            margin-top: 5em;
+            height: 100%;
+        }
+
+        .tuesday {
+            display: none;
+        }
+        .wednesday {
+            display: none;
+        }
+        .timetable {
+        }
+    }
+
+</style>
+

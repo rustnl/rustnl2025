@@ -2,53 +2,102 @@
 import TimetableItem from "./Item.astro";
 import TimetableMultiItem from "./MultiItem.astro";
 import TimetableDivider from "./Divider.astro";
+import { parseHTML } from 'linkedom'
+import { in_range, timeGenerator, lt, pad} from "./data.ts";
 
 interface Props {
     breaks: string[],
+    kiosk?: boolean,
 }
 
-const { breaks } = Astro.props;
+const { breaks, kiosk = false } = Astro.props;
 
-let collapsed: [[number, number], [number, number]][] = [];
-for (const s of breaks) {
-    let [start, end] = s.split("-");
-    let start2 = start.split(":");
-    let end2 = end.split(":");
-    let start3: [number, number] = [parseInt(start2[0]), parseInt(start2[1])];
-    let end3: [number, number] = [parseInt(end2[0]), parseInt(end2[1])];
-    collapsed.push([start3, end3]);
+const html = await Astro.slots.render('default')
+const { document } = parseHTML(html)
+
+let trackIndicatorDivider = null;
+if (kiosk) {
+    document.querySelectorAll(".track-indicator").forEach(e => {
+        if (!e.classList.contains("not-first")) {
+            trackIndicatorDivider = e.dataset.time.replace(":", "_");
+        }
+    });
 }
 
-function lt(time1: [number, number], time2: [number, number]) {
-    let res;
-    if (time1[0] < time2[0]) {
-        res = true;
-    } else if (time1[0] == time2[0]) {
-        res = time1[1] < time2[1];
-    } else {
-        res = false;
+function calculateSegments(): [number, number][] {
+    let talks: [string, string][] = [];
+
+    document.querySelectorAll(".item,.wide").forEach(e => {
+        const dataset = (e as HTMLElement).dataset;
+        if (!dataset.start || !dataset.end) {
+            return;
+        }
+
+        let start = dataset.start.trim();
+        let end = dataset.end.trim();
+
+        talks.push([start, end])
+    })
+
+    // the ends of all talks currently happening
+    let current_talk_ends = new Set<string>();
+    let segments = [];
+
+    for (const [h, m, _] of timeGenerator()) {
+        current_talk_ends.delete(`${h}:${pad(m, 2)}`);
+
+        let any_talk_started = false;
+        let ends_to_add = [];
+
+        for (const [start, end] of talks) {
+            if (start === `${h}:${pad(m, 2)}`) {
+                ends_to_add.push(end)
+                any_talk_started = true;
+            }
+        }
+
+
+        // did a new talk start?
+        if (any_talk_started) {
+            // when can we update the timetable to this starting point?
+            // when all other talks going on at this moment have ended
+            let largest = null;
+            for (const end of current_talk_ends) {
+                if (largest === null || lt(parseTime(end), largest)) {
+                    largest = parseTime(end);
+                }
+            }
+            segments.push([largest?largest:[h, m], [h, m]])
+        }
+
+        for (const end of ends_to_add) {
+            current_talk_ends.add(end)
+        }
     }
-    return res;
+
+    return segments
 }
 
-function in_range(
-    time: [number, number],
-    range: [[number, number], [number, number]],
-) {
-    let [start, end] = range;
-    return lt(start, time) && lt(time, end);
+function parseTime(t: string): [number, number] {
+    let t2 = t.split(":");
+    return [parseInt(t2[0]), parseInt(t2[1])];
 }
 
-function pad(num: number, size: number): string {
-    let snum = num.toString();
-    while (snum.length < size) snum = "0" + snum;
-    return snum;
-}
+function rows(custom_start: [number, number] | null = null): string {
+    let collapsed: [[number, number], [number, number]][] = [];
+    for (const s of breaks) {
+        let [start, end] = s.split("-");
+        collapsed.push([parseTime(start), parseTime(end)]);
+    }
 
-let times = "";
-let skippedLast = false;
-for (let h = 8; h < 19; h++) {
-    for (let m = 0; m < 60; m += 5) {
+    let times = "";
+    let skippedLast = false;
+
+    if (kiosk) {
+        times += ` [divider${trackIndicatorDivider}] min-content`;
+    }
+
+    for (const [h, m, name] of timeGenerator()) {
         let skip = false;
         for (let range of collapsed) {
             if (in_range([h, m], range)) {
@@ -60,24 +109,68 @@ for (let h = 8; h < 19; h++) {
             skippedLast = true;
             continue;
         }
+        if (custom_start !== null && lt([h, m], custom_start)) {
+            continue;
+        }
 
         if (skippedLast) {
             skippedLast = false;
-            times += ` [divider${h}_${pad(m, 2)}] min-content`;
+            times += ` [divider${name}] min-content`;
         }
 
-        if (m < 10) {
-            times += ` [time${h}_0${m}] minmax(1.5em, min-content)`;
+        if (kiosk) {
+            times += ` [time${name}] minmax(1em, min-content)`;
         } else {
-            times += ` [time${h}_${m}] minmax(1.5em, min-content)`;
+            times += ` [time${name}] minmax(1.5em, min-content)`;
         }
     }
+
+    return times;
 }
+
+function arraysEqual(arr1, arr2) {
+  if (arr1.length !== arr2.length) return false;
+  return arr1.every((value, index) => value === arr2[index]);
+}
+
+function removeBefore(document, last_start) {
+    document.querySelectorAll(".item,.wide").forEach(e => {
+        const dataset = (e as HTMLElement).dataset;
+        if (!dataset.start || !dataset.end) {
+            return;
+        }
+
+        let start = dataset.start.trim();
+
+        if (lt(parseTime(start), last_start)) {
+            e.remove()
+        }
+    })
+
+    return document
+}
+
 ---
 
-<div class="schedule">
-    <slot></slot>
-</div>
+{
+    kiosk
+    ?
+    calculateSegments().map(([time, last_talk]) => {
+        return <div class = "schedule kiosk" style=`grid-template-rows: ${rows(last_talk)}; display: none;` data-time=`${time[0]}:${pad(time[1], 2)}` data-last=`${last_talk[0]}:${pad(last_talk[1], 2)}`>
+            <Fragment set:html={removeBefore(document, last_talk)} />
+
+            <div class="kiosk-time-marker">
+                <span>Now</span>
+            </div>
+
+            <div class="kiosk-sidebar"></div>
+        </div>
+    })
+    :
+    <div class = "schedule" style=`grid-template-rows: ${rows()}`>
+        <Fragment set:html={document} />
+    </div>
+}
 
 <style is:global>
     .item.yellow {
@@ -100,22 +193,48 @@ for (let h = 8; h < 19; h++) {
         --color-two: #9c4db4;
     }
 </style>
-<style define:vars={{ times }} lang="scss">
-@use "../../styles/breakpoint.scss";
+    <style lang="scss">
+    @use "../../styles/breakpoint.scss";
+    @use "../../styles/variables.scss";
 
     .schedule {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
 
-        /* Our resolution for the schedule is 15 minutes */
-        grid-template-rows: var(--times);
-
         gap: 8px 16px;
-        width: min(80ch, 90vw);;
+        width: min(80ch, 90vw);
+
+        &.kiosk {
+            width: 100%;
+            font-size: 150%;
+            grid-template-columns: repeat(3, 1fr) 3em;
+
+            :global(.checkbox) {
+                display: none;
+            }
+
+            :global(.block) {
+                margin-bottom: 1em;
+            }
+        }
 
         @include breakpoint.smaller_than(md) {
             display: flex;
             flex-direction: column;
+        }
+
+        .kiosk-time-marker {
+            grid-column: 1/-1;
+            border-top: 5px dashed #00000099;
+
+            position: relative;
+
+            span {
+                position: absolute;
+                right: 0.5em;
+                top: -1.5em;
+                font-weight: bold;
+            }
         }
     }
 </style>
