@@ -10,32 +10,29 @@ const {day}: Props = Astro.props;
 
 ---
 
-<CommonLayout title="Talk schedule" header={`Talk schedule ${day == "tuesday"? "Tuesday": "Wednesday"}`}>
-    <div class="timetable" id="top">
+<CommonLayout title="🔴 Rust Week Live" header={`${day == "tuesday"? "Tuesday": "Wednesday"}'s Livestreams`}>
+    <div class="live" id="top">
         <div class="slot">
             <div class="description" >
                 <p>
-                    This is the schedule for the talks on <b>{day == "tuesday"? "Tuesday 13 May" : "Wednesday 14 May"}</b>. There are two main conference days with talks.
-                    Throughout the week there are all kinds of other activities as well. You can find an overview of the entire week <a href="/overview">here</a>.
-
-                    <!-- You can also watch streams of these tracks <a href={`/live/${day}`}>here</a> -->
+                    These are the livestreams of the talks of Rust Week 2025 for <b>{day == "tuesday"? "Tuesday 13 May" : "Wednesday 14 May"}</b>. There are two main conference days with talks.
                 </p>
             </div>
 
             <div class="tabbar">
-                <a href="/schedule/tuesday" class:list={[day == "tuesday"?"active":"inactive"]}>Tue 13 May</a>
-                <a href="/schedule/wednesday" class:list={[day == "wednesday"?"active":"inactive"]}>Wed 14 May</a>
+                <a href="/live/tuesday" class:list={[day == "tuesday"?"active":"inactive"]}>Tue 13 May</a>
+                <a href="/live/wednesday" class:list={[day == "wednesday"?"active":"inactive"]}>Wed 14 May</a>
             </div>
 
             <slot />
         </div>
 
         <div class="footer-nav">
-            <span>You are currently on <b>{day == "tuesday"? "Tuesday 13 May":"Wednesday 14 May"}</b>'s talk schedule.</span>
+            <span>You are currently on <b>{day == "tuesday"? "Tuesday 13 May":"Wednesday 14 May"}</b>'s stream page.</span>
 
             <div class="buttons">
-                <Button link={day == "tuesday"?"/schedule/wednesday":"/schedule/tuesday"}>
-                    {day == "tuesday"? "Wednesday": "Tuesday"}'s schedule
+                <Button link={day == "tuesday"?"/live/wednesday":"/live/tuesday"}>
+                    {day == "tuesday"? "Wednesday": "Tuesday"}'s stream
                 </Button>
                 <Button link="/overview">
                     Week overview
@@ -49,7 +46,7 @@ const {day}: Props = Astro.props;
 
 @use '../styles/variables.scss';
 
-.timetable {
+.live {
     width: 100%;
 
     display: flex;
@@ -84,7 +81,7 @@ const {day}: Props = Astro.props;
         flex-direction: column;
         align-items: center;
 
-        width: min-content;
+        width: min(80ch, 90vw);
     }
 
     .footer-nav {

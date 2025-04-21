@@ -1,0 +1,36 @@
+
+---
+interface Props {
+    link: string,
+    name: string,
+}
+
+const {link, name}: Props = Astro.props;
+
+const url = URL.parse(link);
+if (!url) {
+    throw Error(`bad youtube link: ${link}`);
+}
+
+const path = url.pathname;
+
+let code: null | string = null;
+for (const part of path.split("/")) {
+    if (part !== "embed" && part !== "live") {
+        code = part;
+    }
+}
+
+if (!code) {
+    throw Error(`bad youtube link: ${link}`);
+}
+
+---
+<div class="stream">
+    <h3>{name}</h3>
+    <iframe allowfullscreen="" frameborder="0" height="315" src={`http://www.youtube.com/embed/${code}`} width="720"></iframe>
+</div>
+
+<style lang="scss">
+    
+</style>
