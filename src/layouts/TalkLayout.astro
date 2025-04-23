@@ -5,7 +5,7 @@ import Button from "../components/Button.astro";
 import Person from "../components/people/Person.astro";
 
 const { frontmatter } = Astro.props;
-const { talkTitle, talkLevel, url, tracks = [], day = "tuesday" } = frontmatter;
+const { talkTitle, talkLevel, url, tracks = [], day = "tuesday", draft = false } = frontmatter;
 
 const sep = /\/\/\/\/\/\/.*/;
 const content = await Astro.slots.render("default");
@@ -18,17 +18,20 @@ function list(names: string[]) {
 }
 
 const speaker_names = list(frontmatter.speakers.map((s: any) => s.name));
+
+const ignore = draft? {"data-pagefind-ignore": "all"}: {}
+
 ---
 
 <CommonLayout title={talkTitle} withLogo>
-  <div class="text-center" slot="header">
+<div class="text-center" slot="header" {...ignore}>
     <div class="kicker">Talk</div>
     <h1>
       {talkTitle}
     </h1>
     <h2>by {speaker_names}</h2>
   </div>
-  <section class="md:grid md:cols-12 py-12">
+    <section class="md:grid md:cols-12 py-12" {...ignore}>
     <div class="md:col-start-3 md:col-end-11">
       <!-- <slot /> -->
       <div set:html={abstract} />

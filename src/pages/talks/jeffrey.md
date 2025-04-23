@@ -23,7 +23,9 @@ speakers: [{
 day: "tuesday"
 ---
 
-Transitioning a large, established codebase to memory-safe languages presents significant challenges. We’ll explore the Android project's journey in adopting Rust, sharing practical strategies and lessons learned on how to integrate Rust into an existing codebase and drive adoption.
+Transitioning a large, established codebase to memory-safe languages presents significant challenges.
+We’ll explore the Android project's journey in adopting Rust,
+sharing practical strategies and lessons learned on how to integrate Rust into an existing codebase and drive adoption.
 
 ////// <!-- sepatator between abstract and bio -->
 
