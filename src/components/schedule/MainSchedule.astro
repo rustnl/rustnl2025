@@ -4,7 +4,6 @@ import ScheduleDay from "./ScheduleDay.astro";
 import ScheduleSection from "./ScheduleSection.astro";
 import ScheduleItem from "./ScheduleItem.astro";
 import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
-import Discord from "../Discord.astro";
 ---
 
 <Schedule logo>
@@ -28,8 +27,7 @@ import Discord from "../Discord.astro";
                 <span slot="time">12:00–22:00</span>
                 <Fragment slot="activities">
                     <!-- <p>City tour, Ferris sticker hunt, Bouldering, Bowling, Laser tag, Museum visit, …</p> -->
-                    <!-- <OrganizeOwnActivity /> -->
-                    <Discord text="Join our discord to find others!" />
+                    <OrganizeOwnActivity />
                 </Fragment>
             </ScheduleItem>
         </ScheduleSection>
@@ -154,9 +152,8 @@ import Discord from "../Discord.astro";
                 <span slot="attendees">in small groups</span>
                 <span slot="time">09:00–22:00</span>
                 <Fragment slot="activities">
-                    <!-- <p>To be announced</p> -->
-                    <!-- <OrganizeOwnActivity /> -->
-                    <Discord text="Find others on discord!" />
+                    <p>To be announced</p>
+                    <OrganizeOwnActivity />
                 </Fragment>
             </ScheduleItem>
         </ScheduleSection>
@@ -174,10 +171,9 @@ import Discord from "../Discord.astro";
         </ScheduleSection>
     </ScheduleDay>
 
-    <!-- <div slot="extra"> -->
-        <!-- Do you have any suggestions for fun social activities with other Rustaceans? -->
-        <!-- Let us know by filling out <a href="https://forms.gle/fKocgjB4x4TejQYV9">this form</a >. -->
-    <!-- </div> -->
+    <div slot="extra">
+        <a href="https://discord.gg/9ezhugbhAM">Join our discord to discuss social activities and find others before the event</a>
+    </div>
 </Schedule>
 
 <style>
