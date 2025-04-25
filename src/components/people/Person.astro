@@ -15,6 +15,7 @@ interface Props {
   github?: string;
   bluesky?: string;
   tile?: boolean;
+  smalltile?: boolean;
 }
 
 const {
@@ -31,6 +32,7 @@ const {
   github,
   bluesky,
   tile = false,
+  smalltile = false,
 } = Astro.props;
 
 function convertTrack(i: string): string {
@@ -76,7 +78,7 @@ const imageFile = image
     : "/images/people/empty.png";
 ---
 
-<div class:list={["person", tile ? "tile" : "detail"]}>
+<div class:list={["person", tile ? "tile" : (smalltile? "small-tile": "detail")]}>
   <div class="image-container">
     {
       link ? (
@@ -104,7 +106,7 @@ const imageFile = image
     <h4>{name}</h4>
     {title && <div class="title">{title}</div>}
     {
-      !tile && (
+      !(tile || smalltile) && (
         <div class="socials">
           {linkedin && (
             <a href={linkedin}>
@@ -139,7 +141,7 @@ const imageFile = image
         </div>
       )
     }
-    {!tile && description && <div class="bio" set:html={description}></div>}
+    {!(tile || smalltile) && description && <div class="bio" set:html={description}></div>}
     <slot />
   </div>
 </div>
@@ -148,10 +150,14 @@ const imageFile = image
   @use "../../styles/breakpoint.scss";
   @use "../../styles/variables.scss";
 
-  .person.tile {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
+  .person.tile,.person.small-tile {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+
+      &.small-tile {
+          width: 15em;
+      }
   }
 
   .person.detail {

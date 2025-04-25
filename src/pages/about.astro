@@ -2,123 +2,219 @@
 import Person from "../components/people/Person.astro";
 import PeopleList from "../components/people/PeopleList.astro";
 import CommonLayout from "../layouts/CommonLayout.astro";
+import OneColumnText from "../components/OneColumnText.astro";
 ---
 
 <CommonLayout title="About" header="About" withLogo>
-    <section class="container md:grid md:cols-12">
-        <div
-            class="abouttext md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
-        >
-            <p>
-                Stichting Rust Nederland, RustNL for short, is a non-profit that
-                strives to promote the implementation of the Rust programming
-                language.
-            </p>
-            <p>
-                RustNL is an associate member of the Rust Foundation. We organize meetups and events to bring the Rust community
-                together, like RustWeek. The foundation's details can be found on <a
-                href="https://rustnl.org">rustnl.org</a
-            >.
-            </p>
-            <h3>
-                Contact us
-            </h3>
-            <p>
-                Questions? Reach out to us via <a href="mailto:2025@rustnl.org">2025@rustnl.org</a>
-            </p>
-        </div>
-    </section>
-    <section class="container py-12 space-y-6">
-        <div
-            class="space-y-12 md:grid md:cols-2 md:space-y-0"
-            style="justify-content: center;"
-        >
-        </div>
-        <h2 class="text-center" id="organisers">RustWeek 2025 team</h2>
+    <OneColumnText>
+        <p>
+            Stichting Rust Nederland, RustNL for short, is a non-profit that
+            strives to promote the implementation of the Rust programming
+            language.
+        </p>
+        <p>
+            RustNL is an associate member of the Rust Foundation. We organize meetups and events to bring the Rust community
+            together, like RustWeek. The foundation's details can be found on <a
+            href="https://rustnl.org">rustnl.org</a
+        >.
+        </p>
+        <h3>
+            Contact us
+        </h3>
+        <p>
+            Questions? Reach out to us via <a href="mailto:2025@rustnl.org">2025@rustnl.org</a>
+        </p>
+    </OneColumnText>
+
+    <div class="people">
+        <h2 class="text-center py-12" id="organisers">RustWeek 2025 team</h2>
         <PeopleList>
             <Person
                 name="Erik Jonkers"
                 image="erik.jpg"
                 title="Board member of the RustNL foundation and Director of Open Source of software agency Tweede golf."
-                tracks = {["organisation"]}
-                tile
+                tracks={["organisation"]}
+                smalltile
             />
             <Person
                 name="Laura Pircalaboiu"
                 image="laura.png"
                 title="Embedded software engineer at Q*Bird"
-                tracks = {["organisation"]}
-                tile
+                tracks={["organisation"]}
+                smalltile
             />
             <Person
                 name="Jana Dönszelmann"
                 image="jana.png"
-                title="Lecturer in Embedded Systems at Delft University of Technology, T-compiler, and founder of Hexcat"
-                tracks = {["organisation"]}
-                tile
+                title="Lecturer in Embedded Systems at Delft University of Technology and founder of Hexcat"
+                tracks={["organisation"]}
+                smalltile
             />
             <Person
                 name="Terts Diepraam"
                 image="terts.png"
                 title="Maintainer on Uutils and Software Engineer at NLnet Labs"
-                tracks = {["organisation", "mc"]}
-                tile
+                tracks={["organisation", "mc"]}
+                smalltile
             />
             <Person
                 name="Mara Bos"
                 image="mara.jpg"
                 title="Rust leadership council and founder of Hexcat"
-                tracks = {["organisation"]}
-                tile
+                tracks={["organisation", "mc"]}
+                smalltile
             />
         </PeopleList>
 
-        <h3 class="py-12">Volunteers</h3>
-        <div class="grid md:cols-2 xl:cols-4" id="volunteers">
+        <h2 class="text-center py-12">Volunteers</h2>
+        <p>
+            RustWeek would not be possible without the incredible help from our volunteers before and during the event.
+        </p>
+        <PeopleList>
             <Person
-                name="Alex"
+                name="Alex Band"
                 image="alex.jpg"
                 tracks={["mc"]}
-                tile
+                smalltile
+            />
+            <Person
+                name="Stefan Baumgartner"
+                image="stefan.jpeg"
+                tracks={["mc"]}
+                smalltile
+            />
+           <Person
+                name="Jonathan Brouwer"
+                image="jonathanb.png"
+                tracks={["on-site assistance"]}
+                smalltile
+            />
+            <Person
+                name="James Daly"
+                github="https://github.com/jamsiedaly"
+                tracks={["mc"]}
+                smalltile
+            />
+            <Person
+                name="Matthias Endler"
+                image="matthias.jpg"
+                tracks={["mc"]}
+                smalltile
             />
             <Person
                 name="Wouter Geraedts"
                 image="wouter.jpeg"
                 github="https://github.com/wassasin"
                 tracks={["mc"]}
-                tile
+                smalltile
+            />
+           <Person
+                name="Martijn Gribnau"
+                image="martijngribnau.jpg"
+                tracks={["on-site assistance"]}
+                smalltile
             />
             <Person
-                name="James Daly"
-                github="https://github.com/jamsiedaly"
-                tracks={["mc"]}
-                tile
+                name="Julius Gvozdiovas"
+                image="julius-g.jpg"
+                tracks={["on-site assistance"]}
+                smalltile
+            />
+           <Person
+                name="Lucas Holten"
+                image="lucasholten.jpg"
+                tracks={["on-site assistance"]}
+                smalltile
+            />
+            <Person
+                name="Josine Kamperman"
+                image="josinekamperman.jpg"
+                tracks={["logistics"]}
+                smalltile
+            />
+           <Person
+                name="Arya Khanna"
+                image="arya.png"
+                tracks={["on-site assistance"]}
+                smalltile
+            />
+           <Person
+                name="Karin Lammers"
+                image="karinlammers.jpg"
+                tracks={["on-site assistance"]}
+                smalltile
+            />
+            <Person
+                name="George Hellouin de Menibus"
+                image=""
+                tracks={["on-site assistance"]}
+                smalltile
+            />
+            <Person
+                name="Dirkjan Ochtman"
+                image="dirkjan.png"
+                smalltile
+            />
+            <Person
+                name="Paige"
+                image="paige.png"
+                tracks={["design"]}
+                smalltile
             />
             <Person
                 name="Hugo van de Pol"
                 github="https://github.com/hugovandepol"
                 tracks={["mc"]}
-                tile
+                smalltile
             />
-        </div>
+            <Person
+                name="Grafische Republiek (Goran & Erwin)"
+                tracks={["design"]}
+                smalltile
+            />
+            <Person
+                name="Liset Roos"
+                image="liset.jpg"
+                tracks={["social media"]}
+                smalltile
+            />
+           <Person
+                name="Anne Stijns"
+                image="annestijns.jpg"
+                tracks={["on-site assistance"]}
+                smalltile
+            />
+            <Person
+                name="Ricardo Vogel"
+                image="ricardovogel.jpg"
+                tracks={["on-site assistance"]}
+                smalltile
+            />
 
-        <!-- <h3 class="py-12">Supporting Us</h3> -->
-        <!-- <div class="grid md:cols-2 xl:cols-4" id="support"> -->
-        <!--     <Organiser -->
-        <!--         name="Tweede golf" -->
-        <!--         image="empty.png" -->
-        <!--         description="Tweede golf is organizing partner of RustNL 2024." -->
-        <!--     /> -->
-        <!--     <Organiser -->
-        <!--         name="The Red Dress Effect" -->
-        <!--         image="empty.png" -->
-        <!--         description="Anna Kocks of the Red Dress Effect is an event planner of tech events, supporting us with the logistics of the conference." -->
-        <!--     /> -->
-        <!--     <Organiser -->
-        <!--         name="Grafische Republiek" -->
-        <!--         image="empty.png" -->
-        <!--         description="Erwin is designer and front-end developer at Grafische Republiek." -->
-        <!--     /> -->
-        <!-- </div> -->
-    </section>
+
+            <!-- <Person -->
+            <!--     name="Pepijn" -->
+            <!--     image="" -->
+            <!--     tracks={["on-site assistance"]} -->
+            <!--     smalltile -->
+            <!-- /> -->
+            <!-- <Person -->
+            <!--     name="Kajetan Neumann" -->
+            <!--     image="" -->
+            <!--     tracks={["on-site assistance"]} -->
+            <!--     smalltile -->
+            <!-- /> -->
+
+            <!-- <Person -->
+            <!--     name="James Munns" -->
+            <!--     image="james.png" -->
+            <!--     tracks={["mc"]} -->
+            <!--     smalltile -->
+            <!-- /> -->
+        </PeopleList>
+    </div>
 </CommonLayout>
+
+<style lang="scss">
+    
+</style>
