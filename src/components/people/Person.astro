@@ -71,11 +71,14 @@ outer: for (const i of speakers) {
 if ((image === null || (typeof image === "undefined")) && github_of_person === null && (typeof github !== "undefined") && github !== null) {
     github_of_person = github.replace(/\/$/g, "");
 }
+
+const empty_path = "/images/people/empty.png";
+
 const imageFile = image
   ? `/images/people/${image}`
   : github_of_person
     ? `${github_of_person}.png`
-    : "/images/people/empty.png";
+    : empty_path;
 ---
 
 <div class:list={["person", tile ? "tile" : (smalltile? "small-tile": "detail")]}>
@@ -83,11 +86,11 @@ const imageFile = image
     {
       link ? (
         <a href={link}>
-          <img src={`${imageFile}`} alt={`Picture of ${name}`} />
+            <img src={`${imageFile}`} alt={`Picture of ${name}`} class={imageFile == empty_path?"empty":null} />
         </a>
       ) : (
         <div class="image">
-          <img src={`${imageFile}`} alt={`Picture of ${name}`} />
+          <img src={`${imageFile}`} alt={`Picture of ${name}`} class={imageFile == empty_path?"empty":null}/>
         </div>
       )
     }
@@ -224,13 +227,16 @@ const imageFile = image
         width: 100%;
 
         img {
-          background: variables.$color-yellow-400;
           border-radius: 0.5em;
 
           width: 100%;
           height: 100%;
 
           object-fit: fill;
+
+          &.empty {
+            background: variables.$color-yellow-400;
+          }
         }
       }
 
