@@ -18,7 +18,7 @@ events = events.filter((event) => event.frontmatter.published == true);
 ---
 
 <CommonLayout title="Overview of RustWeek" header="Overview of RustWeek">
-    <section class="overview new-container space-y-12">
+    <section class="overview space-y-12">
         <OneColumnText>
             <p>
                 Find out what RustWeek is all about in this <strong
@@ -54,10 +54,3 @@ events = events.filter((event) => event.frontmatter.published == true);
         </OneColumnText>
     </section>
 </CommonLayout>
-
-<style lang="scss">
-    // the page currently has a nested new-container; the padding is added twice
-    .overview.new-container {
-        padding-inline: 0;
-    }
-</style>

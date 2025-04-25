@@ -12,6 +12,8 @@ export default defineConfig({
         }
     },
     redirects: {
-        "/schedule": "/schedule/tuesday"
+        "/schedule": "/schedule/tuesday",
+        "/events": "/overview#list",
+        "/live": "/live/tuesday"
     }
 });

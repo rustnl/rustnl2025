@@ -6,25 +6,25 @@ import Hero from '../components/page/Hero.astro';
 import '../styles/index.scss';
 
 interface Props {
-  small?: boolean;
   title: string;
   header?: string;
   withLogo?: boolean;
   withoutMenu?: boolean;
+  ogImage?: string;
 }
 
 const {
-  small,
   title,
   header,
   withLogo = false,
   withoutMenu = false,
+  ogImage,
 } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-  <Head title={`${title} - RustWeek 2025`} />
+  <Head title={`${title} - RustWeek 2025`} ogImage={ogImage} />
 
   <body>
     <style lang="scss">
@@ -36,9 +36,9 @@ const {
     </Hero>
 
     <section>
-      {header ? <h1 class="new-container">{header}</h1> : <slot name="header" />}
+      {header ? <h1 class="title">{header}</h1> : <slot name="header" />}
       <section>
-        <section class={small ? 'main' : 'new-container'}>
+        <section class="main">
           <slot />
         </section>
 
@@ -53,13 +53,15 @@ const {
           margin-left: auto;
           margin-right: auto;
       }
-      .main {
-        width: min(96rem, 90%);
-        max-width: 100%;
 
+      .main, h1.title {
+        width: min(96rem, 90%);
         margin-left: auto;
         margin-right: auto;
+        max-width: 100%;
+      }
 
+      .main {
         display: flex;
         flex-direction: column;
         align-items: center;

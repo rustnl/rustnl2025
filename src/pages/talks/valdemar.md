@@ -3,7 +3,7 @@ layout: "../../layouts/TalkLayout.astro"
 
 tracks: 
  - main
-talkTitle: "Garfields worst nightmare (or how a API difference caused a bad bug)"
+talkTitle: "Garfield's worst nightmare (or how a API difference caused a bad bug)"
 talkLevel: "All"
 talkTags: ["Rust", "Garfield", "Comic", "Postmortem", "API"]
 talkDuration: 15 # 15 or 30 min

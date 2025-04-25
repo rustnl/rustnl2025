@@ -24,7 +24,7 @@ speakers: [{
 day: "wednesday"
 ---
 
-Trait objects are everywhere in Rust, but do you know how they actually work? Join me as I re-implement trait objects from scratch, discovering their inner workings and all the smart design decisions that have been put into them.
+Trait objects are everywhere in Rust, but do you know how they actually work? Join me as I re-invent trait objects from first principles, explain their inner workings, and discover all the smart design decisions behind them.
 
 //////
 

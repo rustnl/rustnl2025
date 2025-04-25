@@ -7,6 +7,7 @@ talkTitle: "Embedded tooling worthy of 2025"
 talkLevel: "All"
 talkTags: ["Rust", "embedded systems", "webapp", "tooling"]
 talkDuration: 30 # 15 or 30 min
+draft: true
 
 speakers: [{
     name: "Noah Hüsser",

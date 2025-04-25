@@ -1,18 +1,23 @@
 ---
-const {name} = Astro.props;
-
 import { library, icon } from "@fortawesome/fontawesome-svg-core";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 
+interface Props {
+    name: string,
+    large?: boolean,
+}
+
+const {name, large=false}: Props = Astro.props;
 library.add(faGlobe);
 
 const globeIcon = icon({ prefix: "fas", iconName: faGlobe.iconName });
+const big = large?"large":null;
 
 ---
 {(name == "website") ? (
-<div class="icon" set:html={globeIcon.html}></div>
+<div class:list={["icon", big]} set:html={globeIcon.html}></div>
 ) : (
-<img class="icon" src={`/svg/socials/${name}.svg`} alt={`icon of ${name}`}>
+<img class:list={["icon", big]} src={`/svg/socials/${name}.svg`} alt={`icon of ${name}`}>
 )}
 
 <style>
@@ -20,6 +25,10 @@ const globeIcon = icon({ prefix: "fas", iconName: faGlobe.iconName });
     height: 1em;
     aspect-ratio: 1/1;
     display: inline;
+
+    &.large {
+        height: 1.5em;
+    }
 }
 div.icon {
     height: 1em;
