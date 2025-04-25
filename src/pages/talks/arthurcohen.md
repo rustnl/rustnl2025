@@ -18,7 +18,7 @@ speakers: [{
     linkedin: "",
     twitter: "",
     mastodon: "https://hachyderm.io/@cohenarthur",
-    github: "CohenArthur",
+    github: "https://github.com/CohenArthur",
     description: "I am a french compiler software engineer working at Embecosm SAS. I’ve been contributing to the gccrs project for the past four years, and have contributed to alternative rustc compiler backends as well. I have always been really passionate about Rust and programming languages in general, and I hope to help increase its reach a little bit in our own way."
 }, {
     name: "Pierre-Emmanuel Patry",
