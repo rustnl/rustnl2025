@@ -4,7 +4,8 @@ title: "Getting There"
 slug: "getting-there"
 ---
 
-Our main venue is [**Kinepolis Jaarbeurs**][1] in [Utrecht](/#where).
+Our main venue, the conference venue, is [**Kinepolis Jaarbeurs**][1] in [Utrecht](/#where).  
+For the workshop venue, called DUS, see [here](/dus).
 
 As you plan your trip, it is important to remember that cities in The Netherlands are close to each
 other and traveling between cities by train is easy.
