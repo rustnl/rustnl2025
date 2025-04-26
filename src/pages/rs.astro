@@ -1,0 +1,28 @@
+---
+import CommonLayout from "../layouts/CommonLayout.astro";
+import OneColumnText from "../components/OneColumnText.astro";
+import Button from "src/components/Button.astro";
+import ButtonGroup from "src/components/ButtonGroup.astro";
+import Divider from "src/components/Divider.astro";
+
+---
+
+<CommonLayout title="RustWeek Today" header="RustWeek Today">
+    <section class="space-y-12">
+        <OneColumnText>
+            <ButtonGroup>
+                <Button link="/schedule/tuesday/">Talk schedule Tuesday</Button>
+
+                <!-- <Button link="/schedule/live/">Live schedule</Button> -->
+                
+                <Button link="/live/tuesday/">Livestream Tuesday</Button>
+            </ButtonGroup>
+        </OneColumnText>
+        <Divider />
+        <OneColumnText>
+            <ButtonGroup>
+                <Button link="/overview/">Overview of the Week</Button>
+            </ButtonGroup>
+        </OneColumnText>
+    </section>
+</CommonLayout>
