@@ -10,9 +10,6 @@ startTime: "16:00"
 detailLink: null
 scheduleLink: null
 published: true
-image:
-    path: ''
-    alt: ''
 ---
 
 Thursday May 15, 2025 is the 10 year celebration of Rust 1.0.

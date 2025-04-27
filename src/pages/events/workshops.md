@@ -9,9 +9,6 @@ dates: ['2025-05-15']
 startTime: "09:00"
 detailLink: null
 published: true
-image:
-    path: ''
-    alt: ''
 ---
 
 On Thursday morning we have 7 workshops ranging from game development to embedded GUIs.

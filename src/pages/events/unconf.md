@@ -11,9 +11,6 @@ invite: true
 detailLink: /unconf-intro
 scheduleLink: null
 published: true
-image:
-    path: ''
-    alt: ''
 ---
 
 The RustWeek unconference is an invite-only event for Rust maintainers.

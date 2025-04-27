@@ -11,9 +11,6 @@ invite: true
 detailLink: null
 scheduleLink: null
 published: true
-image:
-    path: ''
-    alt: ''
 ---
 
 At the meeting "Memory safety in the EU", leading organizations in the Secure by Design & Memory Safety space will gather to draft a statement outlining the importance of Memory Safety for Europe’s critical infrastructure and its urgency as part of Secure by Design policy.

@@ -23,8 +23,12 @@ const { tracks, date } = Astro.props;
                     />
                 ))}
                 {
-                    track.frontmatter.room && (
-                        <EventLocation room={track.frontmatter.room} />
+                    (track.frontmatter.venue || track.frontmatter.room) && (
+                        <EventLocation 
+                            venueName={track.frontmatter.venue ? track.frontmatter.venue.name : ""}
+                            venueLink={track.frontmatter.venue ? track.frontmatter.venue.link : ""}
+                            room={track.frontmatter.room}
+                        />
                     )
                 }
                 <div set:html={track.compiledContent()} />

@@ -20,7 +20,12 @@ const { location }: Props = Astro.props;
           <a
             href="/overview"
             >Overview of the week</a
-          >
+            >
+        </li>
+        <li>
+          <a href="/events/pre-registration" role="menuitem"><span>mon</span>Pre-registration</a>
+        </li>
+        <li>
           <a href="/schedule/tuesday" role="menuitem"><span>tue</span>Conference day 1</a>
         </li>
         <li>
@@ -31,6 +36,12 @@ const { location }: Props = Astro.props;
         </li>
         <li>
             <a href="/events/hackathon" role="menuitem"><span>fri</span>Hackathon</a>
+        </li>
+        <li class="child" role="menuitem">
+          <a
+            href="/events/social-activities"
+            >All-week social activities</a
+          >
         </li>
         <li class="child" role="menuitem">
           <a
@@ -64,16 +75,16 @@ const { location }: Props = Astro.props;
           >
         </li>
         <li class="child" role="menuitem">
-          <a href="/kinepolis">Conference venue (Kinepolis)</a>
+          <a href="/kinepolis">Conference venue</a>
         </li>
         <li class="child" role="menuitem">
-          <a href="/dus">Workshop venue (DUS)</a>
+          <a href="/dus">Workshop venue</a>
         </li>
         <li class="child" role="menuitem">
-          <a href="/dus">10-year celebration venue (DUS)</a>
+          <a href="/dus">10-year celebration venue</a>
         </li>
         <li class="child" role="menuitem">
-          <a href="/dus">Unconf & All-Hands venue (DUS)</a>
+          <a href="/dus">Unconf & All-Hands venue</a>
         </li>
         <li class="child" role="menuitem">
           <a href="/hotels">Hotels</a>
@@ -255,6 +266,7 @@ const { location }: Props = Astro.props;
         color: inherit;
         font-size: inherit;
         font-weight: inherit;
+        padding: 0;
 
         @include breakpoint.wider_than(lg) {
           display: flex;

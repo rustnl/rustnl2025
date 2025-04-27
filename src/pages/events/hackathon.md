@@ -10,9 +10,6 @@ startTime: "09:00"
 scheduleLink: null
 detailLink: https://www.meetup.com/rust-nederland/events/307107584/
 published: true
-image:
-    path: ''
-    alt: ''
 ---
 
 The RustWeek hackathon offers a day of collaborative coding and a chance to promote your own project!
