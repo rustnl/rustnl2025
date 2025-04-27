@@ -6,7 +6,8 @@ venue:
     name: 'Kinepolis'
     link: /kinepolis
 scheduleLink: null
-detailLink: https://www.meetup.com/rust-nederland
+# detailLink: https://www.meetup.com/rust-nederland
+published: true
 ---
 
-Discover Utrecht through a guided tour. Join on meetup.com via the link below.
+Discover Utrecht through a guided tour. Details to join on meetup.com to follow soon.

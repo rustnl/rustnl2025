@@ -12,7 +12,11 @@ const { tracks, date } = Astro.props;
 
 {
     tracks
-        .filter((track: any) => track.frontmatter.dates.includes(date) == true)
+        .filter(
+            (track: any) =>
+                track.frontmatter.dates.includes(date) == true &&
+                track.frontmatter.published == true,
+        )
         .map((track: any) => (
             <div class="event track">
                 <h3>{track.frontmatter.title}</h3>
@@ -22,15 +26,21 @@ const { tracks, date } = Astro.props;
                         startTime={track.frontmatter.startTime}
                     />
                 ))}
-                {
-                    (track.frontmatter.venue || track.frontmatter.room) && (
-                        <EventLocation 
-                            venueName={track.frontmatter.venue ? track.frontmatter.venue.name : ""}
-                            venueLink={track.frontmatter.venue ? track.frontmatter.venue.link : ""}
-                            room={track.frontmatter.room}
-                        />
-                    )
-                }
+                {(track.frontmatter.venue || track.frontmatter.room) && (
+                    <EventLocation
+                        venueName={
+                            track.frontmatter.venue
+                                ? track.frontmatter.venue.name
+                                : ""
+                        }
+                        venueLink={
+                            track.frontmatter.venue
+                                ? track.frontmatter.venue.link
+                                : ""
+                        }
+                        room={track.frontmatter.room}
+                    />
+                )}
                 <div set:html={track.compiledContent()} />
                 {track.frontmatter.detailLink && (
                     <div class="track-link">
