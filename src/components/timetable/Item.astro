@@ -26,6 +26,7 @@ interface Props {
     description?: string;
     ticket?: string;
     id?: string | null;
+    header?: string;
 }
 
 
@@ -43,6 +44,7 @@ const {
     ticket,
     url,
     id = null,
+    header,
 }: Props = Astro.props;
 
 const matches = import.meta.glob("../../pages/talks/*.md", { eager: true });
@@ -62,6 +64,7 @@ const timetable_url = `/schedule/${Astro.url.pathname.split("/").filter(i => i !
 ---
 
 <Block
+    header={header}
     room={room}
     track={track}
     time={time}
@@ -141,7 +144,7 @@ const timetable_url = `/schedule/${Astro.url.pathname.split("/").filter(i => i !
         .checkbox {
             position: absolute;
             right: 0;
-            bottom: 0;
+            bottom: 1.5em;
             font-size: variables.$font-size-sm;
             padding: 0.5em;
             cursor: pointer;

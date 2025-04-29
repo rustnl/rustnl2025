@@ -20,16 +20,18 @@ interface Props {
     color: string;
     talks: string[];
     striped?: boolean,
+    header?: string;
+    ticket?: string;
 }
 
-const {room, track, time, duration, color, talks, striped = false }: Props = Astro.props;
+const {header, ticket, room, track, time, duration, color, talks, striped = false }: Props = Astro.props;
 
 const time_underscore = time.replace(":", "_");
 const matches = import.meta.glob("../../pages/talks/*.md", { eager: true });
 const files = Object.values(matches);
 ---
 
-<Block room={room} track={track} time={time} duration={duration} color={color} striped={striped} >
+<Block header={header} ticket={ticket} room={room} track={track} time={time} duration={duration} color={color} striped={striped} >
     <div class="talks">
     {talks.map((talk) => {
         let file: any = null;
@@ -105,13 +107,13 @@ const files = Object.values(matches);
     </div>
 </Block>
 
-<style>
+<style lang="scss">
+    @use "../../styles/variables.scss";
     .checkbox {
         position: absolute;
         right: 0;
-        bottom: 0;
+        bottom: 1em;
         font-size: variables.$font-size-sm;
-        padding: 0.2em;
         cursor: pointer;
         color: color-mix(in hsl, var(--color-two), black 20%);
 
@@ -157,7 +159,7 @@ const files = Object.values(matches);
         gap: 0.3em;
         height: 2em;
         margin-top: 0.5em;
-        margin-bottom: 0.5em;
+        margin-bottom: 1em;
 
         text-decoration: none;
     }
