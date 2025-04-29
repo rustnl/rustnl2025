@@ -4,12 +4,17 @@ import MultiItem from "./MultiItem.astro";
 import Divider from "./Divider.astro";
 import Timetable from "./Timetable.astro";
 import TrackIndicator from "./TrackIndicator.astro";
-import {breaks, main, secondary, tertiary, quaternary} from "./data.ts";
-
+import { breaks, main, secondary, tertiary, quaternary } from "./data.ts";
 ---
+
 <Timetable breaks={breaks["tuesday"]} {...Astro.props}>
     <Divider start="8:30" end="9:30">Doors open & registration</Divider>
-    <TrackIndicator afterDivider="9:30" track="Main track" color="yellow" first />
+    <TrackIndicator
+        afterDivider="9:30"
+        track="Main track"
+        color="yellow"
+        first
+    />
     <Item
         title="Opening"
         color="yellow"
@@ -34,7 +39,12 @@ import {breaks, main, secondary, tertiary, quaternary} from "./data.ts";
         duration={35}
         room={main}
     />
-    <TrackIndicator afterDivider="9:30" track="Ecosystem track" color="blue" first />
+    <TrackIndicator
+        afterDivider="9:30"
+        track="Ecosystem track"
+        color="blue"
+        first
+    />
     <Item
         title="Opening"
         color="blue"
@@ -53,14 +63,19 @@ import {breaks, main, secondary, tertiary, quaternary} from "./data.ts";
         room={secondary}
     />
     <MultiItem
-        talks={["gu", "denis", "xiaolong"]}
+        talks={["gu", "denis"]}
         color="blue"
         track={2}
         time="10:25"
         duration={35}
         room={secondary}
     />
-    <TrackIndicator afterDivider="9:30" track="Industry track" color="red" first />
+    <TrackIndicator
+        afterDivider="9:30"
+        track="Industry track"
+        color="red"
+        first
+    />
     <Item
         title="Opening & registration"
         color="red"
@@ -73,9 +88,7 @@ import {breaks, main, secondary, tertiary, quaternary} from "./data.ts";
     />
     <Item
         title="Our Vision for Rust"
-        speakers={[
-            { name: "Niko Matsakis", image: "niko.png" },
-        ]}
+        speakers={[{ name: "Niko Matsakis", image: "niko.png" }]}
         color="red"
         track={3}
         time="10:00"
@@ -194,7 +207,7 @@ import {breaks, main, secondary, tertiary, quaternary} from "./data.ts";
         room={secondary}
     />
     <MultiItem
-        talks={["manuel"]}
+        talks={["manuel", "xiaolong"]}
         color="blue"
         track={2}
         time="14:45"
@@ -269,11 +282,11 @@ import {breaks, main, secondary, tertiary, quaternary} from "./data.ts";
         room={secondary}
     />
     <MultiItem
-        talks={Array(3).fill({
-            speaker: "",
-            title: "GOSIM spotlight",
-            image: "",
-        })}
+        talks={[
+            "GOSIM Spotlight (TBD)",
+            "GOSIM Spotlight (TBD)",
+            "GOSIM Spotlight (TBD)",
+        ]}
         color="blue"
         track={2}
         time="17:05"

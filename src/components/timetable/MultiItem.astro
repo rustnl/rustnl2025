@@ -39,7 +39,7 @@ const files = Object.values(matches);
             });
         }
 
-        const talk_title = file ? file.frontmatter.talkTitle : "ERROR";
+        const talk_title = file ? file.frontmatter.talkTitle : talk;
         const talk_url = file?.url;
         const talk_speakers = file?.frontmatter?.speakers ?? [];
         const timetable_url = `/schedule/${Astro.url.pathname.split("/").filter(i => i != "").pop()}#${talk_url?.split("/").pop()}`;
