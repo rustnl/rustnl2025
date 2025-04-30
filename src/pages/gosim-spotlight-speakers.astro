@@ -1,0 +1,52 @@
+---
+import PeopleList from '../components/people/PeopleList.astro';
+import Person from '../components/people/Person.astro';
+import CommonLayout from '../layouts/CommonLayout.astro';
+
+let talks = await Astro.glob('./talks/*.md');
+talks = talks.filter((talk) => talk.frontmatter.gosim == true);
+---
+
+<CommonLayout title="Speakers" header="Speakers" withLogo>
+  <img data-pagefind-meta="image[src]" style="display: none;">
+  <section id="speakers" class="speakers" >
+    <div class="space-y-6">
+      <PeopleList>
+        {
+            talks.filter((talk: any) => {
+                return typeof talk.frontmatter.draft === "undefined" || !talk.frontmatter.draft
+            }).map((talk: any) => {
+            return talk.frontmatter.speakers.map((speaker: any) => (
+              <Person
+                tile
+                name={speaker.name}
+                image={speaker.image}
+                tracks={talk.frontmatter.tracks}
+                link={talk.url}
+              >
+                <p>
+                  <em>Talk</em>:
+                  <a href={talk.url}>{talk.frontmatter.talkTitle}</a>
+                </p>
+              </Person>
+            ));
+          })
+        }
+      </PeopleList>
+    </div>
+  </section>
+</CommonLayout>
+
+<style lang="scss">
+  @use '../styles/variables.scss';
+  @use '../styles/breakpoint.scss';
+
+  .speakers {
+    padding-top: 2em;
+    width: 100%;
+  }
+
+  p {
+    font-size: variables.$font-size-sm;
+  }
+</style>
