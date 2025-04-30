@@ -16,7 +16,7 @@ speakers: [
         linkedin: "",
         twitter: "",
         mastodon: "",
-        github: https://github.com/bazhedov,
+        github: https://github.com/bazhenov,
     },
 
 ]
