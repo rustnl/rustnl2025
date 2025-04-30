@@ -1,45 +1,73 @@
 ---
-import PeopleList from '../components/people/PeopleList.astro';
-import Person from '../components/people/Person.astro';
-import CommonLayout from '../layouts/CommonLayout.astro';
+import OneColumnText from "src/components/OneColumnText.astro";
+import PeopleList from "../components/people/PeopleList.astro";
+import Person from "../components/people/Person.astro";
+import CommonLayout from "../layouts/CommonLayout.astro";
 
-let talks = await Astro.glob('./talks/*.md');
-talks = talks.filter((talk) => talk.frontmatter.gosim == true);
+let talks = await Astro.glob("./talks/*.md");
+talks = talks.filter(
+  (talk) => talk.frontmatter.talkTags.includes("GOSIM Spotlight") == true,
+);
 ---
 
-<CommonLayout title="Speakers" header="Speakers" withLogo>
-  <img data-pagefind-meta="image[src]" style="display: none;">
-  <section id="speakers" class="speakers" >
+<CommonLayout
+  title="GOSIM Spotlight Finalists"
+  header="GOSIM Spotlight Finalists"
+  withLogo
+>
+  <OneColumnText>
+    <div class="md:col-start-1 md:col-end-13 xl:col-start-2 xl:col-end-12" style="text-align: center;">
+      <img
+        style="width: 75%;"
+        src="/images/sponsors/gosim-spotlight-badge.svg"
+      />
+    </div>
+  </OneColumnText>
+  <img data-pagefind-meta="image[src]" style="display: none;" />
+  <section id="speakers" class="speakers">
     <div class="space-y-6">
       <PeopleList>
         {
-            talks.filter((talk: any) => {
-                return typeof talk.frontmatter.draft === "undefined" || !talk.frontmatter.draft
-            }).map((talk: any) => {
-            return talk.frontmatter.speakers.map((speaker: any) => (
-              <Person
-                tile
-                name={speaker.name}
-                image={speaker.image}
-                tracks={talk.frontmatter.tracks}
-                link={talk.url}
-              >
-                <p>
-                  <em>Talk</em>:
-                  <a href={talk.url}>{talk.frontmatter.talkTitle}</a>
-                </p>
-              </Person>
-            ));
-          })
+          talks
+            .filter((talk: any) => {
+              return (
+                typeof talk.frontmatter.draft === "undefined" ||
+                !talk.frontmatter.draft
+              );
+            })
+            .map((talk: any) => {
+              return talk.frontmatter.speakers.map((speaker: any) => (
+                <Person
+                  tile
+                  name={speaker.name}
+                  image={speaker.image}
+                  tracks={talk.frontmatter.tracks}
+                  link={talk.url}
+                >
+                  <p>
+                    <em>Talk</em>:
+                    <a href={talk.url}>{talk.frontmatter.talkTitle}</a>
+                  </p>
+                </Person>
+              ));
+            })
         }
       </PeopleList>
     </div>
   </section>
+  <OneColumnText>
+    <div class="md:col-start-1 md:col-end-13 xl:col-start-2 xl:col-end-12" style="text-align: center;">
+      <img
+        style="width: 75%"
+        src="/images/sponsors/gosim.svg"
+      />
+    </div>
+  </OneColumnText>
 </CommonLayout>
 
 <style lang="scss">
-  @use '../styles/variables.scss';
-  @use '../styles/breakpoint.scss';
+  @use "../styles/variables.scss";
+  @use "../styles/breakpoint.scss";
 
   .speakers {
     padding-top: 2em;

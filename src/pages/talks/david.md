@@ -2,6 +2,7 @@
 layout: "../../layouts/TalkLayout.astro"
 tracks:
  - ecosystem
+ - gosim-spotlight
 talkTitle: "Wild linker: status and plans"
 talkLevel: "All"
 talkTags: ["GOSIM Spotlight"]
