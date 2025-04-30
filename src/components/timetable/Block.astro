@@ -13,6 +13,7 @@ interface Props {
     striped: boolean;
     url?: string;
     ticket?: string;
+    header?: string;
 }
 
 const {
@@ -24,6 +25,7 @@ const {
     striped,
     url,
     ticket,
+    header,
 }: Props = Astro.props;
 
 const time_underscore = time.replace(":", "_");
@@ -65,23 +67,35 @@ const end_time = `${tmp.getHours()}:${minutes}`;
     data-start={time}
     data-end={end_time}
 >
-    <div class="meta">
-        <div>
-            <div class="icon"><Fragment set:html={clockIcon.html} /></div>
-            {time}
+    { header && <div class="block-header">{header}</div>}
+    <div class="content">
+        <div class="meta">
+            <div>
+                <div class="icon"><Fragment set:html={clockIcon.html} /></div>
+                {time}
 
-            <span class="duration">({diff_m}&nbsp;min)</span>
+                <span class="duration">({diff_m}&nbsp;min)</span>
+            </div>
+            <div>
+                <div class="icon"><Fragment set:html={locationIcon.html} /></div>
+                {room}
+            </div>
         </div>
-        <div>
-            <div class="icon"><Fragment set:html={locationIcon.html} /></div>
-            {room}
-        </div>
+        <slot />
+        {ticket && <div class="ticket">{ticket}</div>}
     </div>
-    <slot />
-    {ticket && <div class="ticket">{ticket} ticket required</div>}
 </a>
 
 <style lang="scss">
+    .block-header {
+        color: white;
+        background: var(--color-two);
+        padding-left: 16px;
+        padding-bottom: 2px;
+        font-size: 0.7em;
+        font-weight: 500;
+    }
+
     .ticket {
         font-size: 0.6em;
         font-weight: 500;
@@ -102,7 +116,7 @@ const end_time = `${tmp.getHours()}:${minutes}`;
         position: relative;
         border: solid 1px;
         border-top-width: 4px;
-        padding: 16px;
+        
         display: flex;
         flex-direction: column;
         text-decoration: none;
@@ -110,6 +124,11 @@ const end_time = `${tmp.getHours()}:${minutes}`;
         &:target {
             border: solid 10px var(--color-two) !important;
         }
+    }
+    
+    .content {
+        margin: 8px 16px 16px 16px;
+        flex: 1;
     }
 
     .meta {
