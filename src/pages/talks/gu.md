@@ -2,6 +2,7 @@
 layout: "../../layouts/TalkLayout.astro"
 tracks:
  - ecosystem
+ - gosim-spotlight
 talkTitle: "Put Rust in your keyboard"
 talkLevel: "All"
 talkTags: ["GOSIM Spotlight"]

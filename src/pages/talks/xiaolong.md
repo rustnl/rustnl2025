@@ -2,6 +2,7 @@
 layout: "../../layouts/TalkLayout.astro"
 tracks:
  - ecosystem
+ - gosim-spotlight
 talkTitle: "Dagrs - A High-Performance Asynchronous Task Programming Framework"
 talkLevel: "All"
 talkTags: ["GOSIM Spotlight"]

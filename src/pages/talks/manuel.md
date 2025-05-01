@@ -2,6 +2,7 @@
 layout: "../../layouts/TalkLayout.astro"
 tracks:
  - ecosystem
+ - gosim-spotlight
 talkTitle: "mantra – Open-Source Tooling for Requirements Traceability"
 talkLevel: "All"
 talkTags: ["GOSIM Spotlight"]

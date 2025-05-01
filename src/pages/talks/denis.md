@@ -2,6 +2,7 @@
 layout: "../../layouts/TalkLayout.astro"
 tracks:
  - ecosystem
+ - gosim-spotlight
 talkTitle: "Tango: Precise Performance Measurement through Direct Comparison"
 talkLevel: "All"
 talkTags: ["GOSIM Spotlight"]
