@@ -4,6 +4,7 @@ import ScheduleDay from "./ScheduleDay.astro";
 import ScheduleSection from "./ScheduleSection.astro";
 import ScheduleItem from "./ScheduleItem.astro";
 import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
+import BottomNote from "./BottomNote.astro";
 ---
 
 <Schedule logo>
@@ -12,15 +13,18 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
             <span slot="location">Kinepolis Jaarbeurs, Utrecht,&nbsp;NL</span>
             <ScheduleItem>
                 <span slot="header">Pre-registration</span>
+                <span slot="attendees">900</span>
                 <span slot="time">11:00–14:00</span>
                 <Fragment slot="activities">
                     <p>In town already?<br/>Get your badge early!</p>
+                    <BottomNote>
+                        <a href="/events/pre-registration">Details</a>
+                    </BottomNote>
                 </Fragment>
             </ScheduleItem>
         </ScheduleSection>
         <ScheduleSection>
             <span slot="location">Utrecht,&nbsp;NL</span>
-
             <ScheduleItem>
                 <span slot="header">Social activities</span>
                 <span slot="attendees">in small groups</span>
@@ -41,19 +45,20 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
                 <span slot="attendees">800 attendees</span>
                 <span slot="time">08:30–19:00</span>
                 <Fragment slot="activities">
-                    <p>Main stage</p>
-                    <p>Ecosystem track</p>
-                    <p><a href="/industry">Industry track</a> <a href="/industry#tickets">(ticket)</a></p>
-                    <p style="margin-top: auto;"><a href="/schedule/tuesday">Talk schedule</a></p>
+                    <p style="width: 80%;margin-left: auto;margin-right: auto;">3 tracks: Main, Ecosystem & Industry</p>
+                    <BottomNote>
+                        <a href="/schedule/tuesday">Talk schedule</a></p>
+                    </BottomNote>
                 </Fragment>
             </ScheduleItem>
         </ScheduleSection>
         <ScheduleSection>
+            <span slot="location">Utrecht,&nbsp;NL</span>
             <ScheduleItem>
                 <span slot="header">Social activities</span>
+                <span slot="attendees">in small groups</span>
                 <span slot="time">18:00–22:00</span>
                 <Fragment slot="activities">
-                    <p>To be announced</p>
                     <OrganizeOwnActivity />
                 </Fragment>
             </ScheduleItem>
@@ -68,19 +73,20 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
                 <span slot="attendees">800 attendees</span>
                 <span slot="time">08:30–19:00</span>
                 <Fragment slot="activities">
-                    <p>Main stage</p>
-                    <p>Deep Dive track</p>
-                    <p>Rust Project track</p>
-                    <p style="margin-top: auto;"><a href="/schedule/wednesday">Talk schedule</a></p>
+                    <p style="width: 75%;margin-left: auto;margin-right: auto;">3 tracks: Main, Deep Dive & Rust Project</p>
+                    <BottomNote>
+                        <a href="/schedule/wednesday">Talk schedule</a>
+                    </BottomNote>
                 </Fragment>
             </ScheduleItem>
         </ScheduleSection>
         <ScheduleSection>
+            <span slot="location">Utrecht,&nbsp;NL</span>
             <ScheduleItem>
                 <span slot="header">Social activities</span>
+                <span slot="attendees">in small groups</span>
                 <span slot="time">18:00–22:00</span>
                 <Fragment slot="activities">
-                    <p>To be announced</p>
                     <OrganizeOwnActivity />
                 </Fragment>
             </ScheduleItem>
@@ -126,7 +132,9 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
                 <span slot="time">09:00–18:00</span>
                 <Fragment slot="activities">
                     <p>Collaborative coding</p>
-                    <p><a href="/events/hackathon">See details</a></p>
+                    <BottomNote>
+                        <a href="/events/hackathon">See details</a>
+                    </BottomNote>
                 </Fragment>
             </ScheduleItem>
         </ScheduleSection>
@@ -138,7 +146,8 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
                 <span slot="attendees">250 attendees</span>
                 <span slot="time">09:00–18:00</span>
                 <Fragment slot="activities">
-                    <p>Invitation only</p>
+                    <p>&nbsp;</p>
+                    <BottomNote>Invitation only</BottomNote>
                 </Fragment>
             </ScheduleItem>
         </ScheduleSection>
@@ -151,9 +160,9 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
             <ScheduleItem>
                 <span slot="header">Social activities</span>
                 <span slot="attendees">in small groups</span>
-                <span slot="time">09:00–22:00</span>
+                <span slot="time">10:00–22:00</span>
                 <Fragment slot="activities">
-                    <p>To be announced</p>
+                    <p>&nbsp;</p>
                     <OrganizeOwnActivity />
                 </Fragment>
             </ScheduleItem>
@@ -166,7 +175,8 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
                 <span slot="attendees">250 attendees</span>
                 <span slot="time">09:00–18:00</span>
                 <Fragment slot="activities">
-                    <p>Invitation only</p>
+                    <p>&nbsp;</p>
+                    <BottomNote>Invitation only</BottomNote>
                 </Fragment>
             </ScheduleItem>
         </ScheduleSection>
