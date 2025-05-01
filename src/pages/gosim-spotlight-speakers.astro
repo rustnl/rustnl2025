@@ -16,9 +16,13 @@ talks = talks.filter(
   withLogo
 >
   <OneColumnText>
+    <p>
+      Here are the 10 projects selected for the <a href="https://spotlight.gosim.org/rust2025">GOSIM Rust Spotlight 2025</a>.<br />
+      You can come see them at their demo booths at the RustWeek conference and listen to their lightning talks on May 13 in the <a href="https://rustweek.org/schedule/tuesday/">Ecosystem track</a>.
+    </p>
     <div class="md:col-start-1 md:col-end-13 xl:col-start-2 xl:col-end-12" style="text-align: center;">
       <img
-        style="width: 75%;"
+        style="width: 60%;"
         src="/images/sponsors/gosim-spotlight-badge.svg"
       />
     </div>
@@ -72,9 +76,9 @@ talks = talks.filter(
   .speakers {
     padding-top: 2em;
     width: 100%;
+    p {
+      font-size: variables.$font-size-sm;
+    }
   }
 
-  p {
-    font-size: variables.$font-size-sm;
-  }
 </style>
