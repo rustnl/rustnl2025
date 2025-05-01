@@ -14,7 +14,7 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
                 <span slot="header">Pre-registration</span>
                 <span slot="time">11:00–14:00</span>
                 <Fragment slot="activities">
-                    <p>Get your badge</p>
+                    <p>In town already?<br/>Get your badge early!</p>
                 </Fragment>
             </ScheduleItem>
         </ScheduleSection>
@@ -26,7 +26,7 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
                 <span slot="attendees">in small groups</span>
                 <span slot="time">12:00–22:00</span>
                 <Fragment slot="activities">
-                    <p>City tour, Ferris sticker hunt, Bouldering, Bowling, Laser tag, Museum visit, …</p>
+                    <!-- <p>City tour, Ferris sticker hunt, Bouldering, Bowling, Laser tag, Museum visit, …</p> -->
                     <OrganizeOwnActivity />
                 </Fragment>
             </ScheduleItem>
@@ -97,7 +97,7 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
                 <span slot="time">09:00–13:00</span>
                 <Fragment slot="activities">
                     <p>7 workshops in total</p>
-                    <p><a href="/workshops">See details</a></p>
+                    <p><a href="/events/workshops">See details</a></p>
                 </Fragment>
             </ScheduleItem>
         </ScheduleSection>
@@ -135,7 +135,7 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
 
             <ScheduleItem>
                 <span slot="header">Rust All-Hands & Unconference</span>
-                <span slot="attendees">200 attendees</span>
+                <span slot="attendees">250 attendees</span>
                 <span slot="time">09:00–18:00</span>
                 <Fragment slot="activities">
                     <p>Invitation only</p>
@@ -163,7 +163,7 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
 
             <ScheduleItem>
                 <span slot="header">Rust All-Hands & Unconference</span>
-                <span slot="attendees">200 attendees</span>
+                <span slot="attendees">250 attendees</span>
                 <span slot="time">09:00–18:00</span>
                 <Fragment slot="activities">
                     <p>Invitation only</p>
@@ -173,8 +173,7 @@ import OrganizeOwnActivity from "./OrganizeOwnActivity.astro";
     </ScheduleDay>
 
     <div slot="extra">
-        Do you have any suggestions for fun social activities with other Rustaceans?
-        Let us know by filling out <a href="https://forms.gle/fKocgjB4x4TejQYV9">this form</a >.
+        <a href="https://discord.gg/9ezhugbhAM">Join our discord to discuss social activities and find others before the event</a>
     </div>
 </Schedule>
 

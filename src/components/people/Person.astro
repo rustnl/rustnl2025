@@ -15,6 +15,7 @@ interface Props {
   github?: string;
   bluesky?: string;
   tile?: boolean;
+  smalltile?: boolean;
 }
 
 const {
@@ -31,20 +32,21 @@ const {
   github,
   bluesky,
   tile = false,
+  smalltile = false,
 } = Astro.props;
 
 function convertTrack(i: string): string {
   switch (i) {
     case "deep_dive":
-      return "deep dive";
+      return "deep dive track";
     case "main":
-      return "main";
+      return "main track";
     case "project":
-      return "project";
+      return "project track";
     case "ecosystem":
-      return "ecosystem";
+      return "ecosystem track";
     case "industry":
-      return "industry";
+      return "industry track";
   }
 
   return i;
@@ -66,23 +68,29 @@ outer: for (const i of speakers) {
   }
 }
 
+if ((image === null || (typeof image === "undefined")) && github_of_person === null && (typeof github !== "undefined") && github !== null) {
+    github_of_person = github.replace(/\/$/g, "");
+}
+
+const empty_path = "/images/people/empty.png";
+
 const imageFile = image
   ? `/images/people/${image}`
   : github_of_person
     ? `${github_of_person}.png`
-    : "/images/people/empty.png";
+    : empty_path;
 ---
 
-<div class:list={["person", tile ? "tile" : "detail"]}>
+<div class:list={["person", tile ? "tile" : (smalltile? "small-tile": "detail")]}>
   <div class="image-container">
     {
       link ? (
         <a href={link}>
-          <img src={`${imageFile}`} alt={`Picture of ${name}`} />
+            <img src={`${imageFile}`} alt={`Picture of ${name}`} class={imageFile == empty_path?"empty":null} />
         </a>
       ) : (
         <div class="image">
-          <img src={`${imageFile}`} alt={`Picture of ${name}`} />
+          <img src={`${imageFile}`} alt={`Picture of ${name}`} class={imageFile == empty_path?"empty":null}/>
         </div>
       )
     }
@@ -91,7 +99,7 @@ const imageFile = image
         tracks &&
           tracks.map((track) => (
             <span class={`tag ${track}`}>
-              <span>{convertTrack(track)} track</span>
+              <span>{convertTrack(track)}</span>
             </span>
           ))
       }
@@ -101,7 +109,7 @@ const imageFile = image
     <h4>{name}</h4>
     {title && <div class="title">{title}</div>}
     {
-      !tile && (
+      !(tile || smalltile) && (
         <div class="socials">
           {linkedin && (
             <a href={linkedin}>
@@ -136,7 +144,7 @@ const imageFile = image
         </div>
       )
     }
-    {!tile && description && <div class="bio" set:html={description}></div>}
+    {!(tile || smalltile) && description && <div class="bio" set:html={description}></div>}
     <slot />
   </div>
 </div>
@@ -145,10 +153,15 @@ const imageFile = image
   @use "../../styles/breakpoint.scss";
   @use "../../styles/variables.scss";
 
-  .person.tile {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
+  .person.tile,.person.small-tile {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      width: 100%;
+
+      &.small-tile {
+          width: 15em;
+      }
   }
 
   .person.detail {
@@ -214,13 +227,16 @@ const imageFile = image
         width: 100%;
 
         img {
-          background: variables.$color-yellow-400;
           border-radius: 0.5em;
 
           width: 100%;
           height: 100%;
 
-          object-fit: fill;
+          object-fit: cover;
+
+          &.empty {
+            background: variables.$color-yellow-400;
+          }
         }
       }
 
@@ -241,7 +257,7 @@ const imageFile = image
             background-color: variables.$color-red-400;
           }
 
-          &.industry {
+          &.industry, &.gosim-spotlight {
             background-color: variables.$color-yellow-400;
           }
 

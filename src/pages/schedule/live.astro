@@ -1,0 +1,74 @@
+---
+import KioskLayout from "../../layouts/KioskLayout.astro"
+
+---
+<script>
+    // Reload the live page in an iframe every so often.
+    // This means that if we redeploy the website, the kiosk screens update.
+    let current = "1";
+    const src = "/schedule/live-impl";
+
+    function swapCurrent() {
+        current = getOther();
+    }
+
+    function getOther() {
+        if (current === "1") {
+            return "2";
+        } else {
+            return "1";
+        }
+    }
+
+    function reloadCheck() {
+        const curr = document.getElementById(current);
+        const other = document.getElementById(getOther());
+        if (!curr || !other) {
+            return
+        }
+
+        swapCurrent();
+
+        curr.onload = null;
+        console.log("start reload");
+
+        other.onload = () => {
+            console.log("page loaded");
+            setTimeout(() => {
+                curr.style.display = "none";
+                other.style.display = "block";
+
+                console.log("page swapped");
+                (curr as HTMLIFrameElement).src = "";
+            }, 2 * 1000);
+        }
+        (other as HTMLIFrameElement).src = src;
+    }
+
+    setInterval(reloadCheck, 2.5 * 60 * 1000);
+    reloadCheck();
+</script>
+
+<KioskLayout title="live schedule">
+    <iframe
+        src="/schedule/live-impl"
+        id="1"
+    >
+    </iframe>
+    <iframe
+        src="/schedule/live-impl"
+        id="2"
+        style="display:none";
+    >
+    </iframe>
+</KioskLayout>
+
+<style lang="scss">
+    iframe {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+

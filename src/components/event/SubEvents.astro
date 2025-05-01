@@ -1,0 +1,75 @@
+---
+import EventDate from "./EventDate.astro";
+import EventLocation from "./EventLocation.astro";
+
+interface Props {
+    tracks: any[];
+    date: string;
+}
+
+const { tracks, date } = Astro.props;
+---
+
+{
+    tracks
+        .filter(
+            (track: any) =>
+                track.frontmatter.dates.includes(date) == true &&
+                track.frontmatter.published == true,
+        )
+        .map((track: any) => (
+            <div class="event track">
+                <h3>{track.frontmatter.title}</h3>
+                {track.frontmatter.dates.map((date: string) => (
+                    <EventDate
+                        date={date}
+                        startTime={track.frontmatter.startTime}
+                    />
+                ))}
+                {(track.frontmatter.venue || track.frontmatter.room) && (
+                    <EventLocation
+                        venueName={
+                            track.frontmatter.venue
+                                ? track.frontmatter.venue.name
+                                : ""
+                        }
+                        venueLink={
+                            track.frontmatter.venue
+                                ? track.frontmatter.venue.link
+                                : ""
+                        }
+                        room={track.frontmatter.room}
+                    />
+                )}
+                <div set:html={track.compiledContent()} />
+                {track.frontmatter.detailLink && (
+                    <div class="track-link">
+                        <a href={track.frontmatter.detailLink}>More details</a>
+                    </div>
+                )}
+                {track.frontmatter.scheduleLink && (
+                    <div class="track-link">
+                        <a href={track.frontmatter.scheduleLink}>
+                            Find in schedule
+                        </a>
+                    </div>
+                )}
+            </div>
+        ))
+}
+
+<style lang="scss">
+    @use "../../styles/variables.scss";
+
+    .event.track {
+        margin-block-start: 3rem;
+        h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .track-link a {
+            font-weight: bold;
+            color: variables.$color-red-400;
+        }
+    }
+</style>

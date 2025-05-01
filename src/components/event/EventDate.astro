@@ -12,7 +12,6 @@ interface Props {
 
 const { date, startTime } = Astro.props;
 
-
 ---
 
 <div class="date-time">
@@ -22,10 +21,10 @@ const { date, startTime } = Astro.props;
     <span>
         {new Date(date).toLocaleDateString(
             "en-EN",
-            { weekday: "short" },
+            {    weekday: "short", month: "short", day: "numeric" },
         ) +
             " " +
-            startTime}
+            (startTime ? startTime : "") }
     </span>
 </div>
 

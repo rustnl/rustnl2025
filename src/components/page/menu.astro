@@ -20,17 +20,28 @@ const { location }: Props = Astro.props;
           <a
             href="/overview"
             >Overview of the week</a
-          >
+            >
+        </li>
+        <li>
+          <a href="/events/pre-registration" role="menuitem"><span>mon</span>Pre-registration</a>
+        </li>
+        <li>
           <a href="/schedule/tuesday" role="menuitem"><span>tue</span>Conference day 1</a>
         </li>
         <li>
           <a href="/schedule/wednesday" role="menuitem"><span>wed</span>Conference day 2</a>
         </li>
         <li>
-          <a href="/workshops" role="menuitem"><span>thu</span>Workshops</a>
+          <a href="/events/workshops" role="menuitem"><span>thu</span>Workshops</a>
         </li>
         <li>
-          <a href="/overview/#hackathon" role="menuitem"><span>fri</span>Hackathon</a>
+            <a href="/events/hackathon" role="menuitem"><span>fri</span>Hackathon</a>
+        </li>
+        <li class="child" role="menuitem">
+          <a
+            href="/events/social-activities"
+            >All-week social activities</a
+          >
         </li>
         <li class="child" role="menuitem">
           <a
@@ -41,7 +52,15 @@ const { location }: Props = Astro.props;
       </ul>
     </li>
     <li class="parent" role="menuitem">
-      <a href="/speakers">Speakers</a>
+      <button>Speakers</button>
+      <ul class="submenu" role="menu">
+        <li class="child" role="menuitem">
+          <a href="/speakers">All Speakers</a>
+        </li>
+        <li class="child" role="menuitem">
+          <a href="/gosim-spotlight-speakers">GOSIM Spotlight Finalists</a>
+        </li>
+      </ul>
     </li>
     <li class="parent" role="menuitem">
       <a
@@ -67,7 +86,13 @@ const { location }: Props = Astro.props;
           <a href="/kinepolis">Conference venue</a>
         </li>
         <li class="child" role="menuitem">
-          <a href="/dus">Workshop/Unconf/All-Hands venue</a>
+          <a href="/dus">Workshop venue</a>
+        </li>
+        <li class="child" role="menuitem">
+          <a href="/dus">10-year celebration venue</a>
+        </li>
+        <li class="child" role="menuitem">
+          <a href="/dus">Unconf & All-Hands venue</a>
         </li>
         <li class="child" role="menuitem">
           <a href="/hotels">Hotels</a>
@@ -249,6 +274,7 @@ const { location }: Props = Astro.props;
         color: inherit;
         font-size: inherit;
         font-weight: inherit;
+        padding: 0;
 
         @include breakpoint.wider_than(lg) {
           display: flex;

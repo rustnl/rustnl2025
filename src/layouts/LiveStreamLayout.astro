@@ -1,0 +1,106 @@
+---
+import CommonLayout from "./CommonLayout.astro"
+import Button from "../components/Button.astro"
+
+interface Props {
+    day: string,
+}
+
+const {day}: Props = Astro.props;
+
+---
+
+<CommonLayout title="🔴 Rust Week Live" header={`${day == "tuesday"? "Tuesday": "Wednesday"}'s Livestreams`}>
+    <div class="live" id="top">
+        <div class="slot">
+            <div class="description" >
+                <p>
+                    These are the livestreams of the talks of Rust Week 2025 for <b>{day == "tuesday"? "Tuesday 13 May" : "Wednesday 14 May"}</b>. There are two main conference days with talks.
+                </p>
+            </div>
+
+            <div class="tabbar">
+                <a href="/live/tuesday" class:list={[day == "tuesday"?"active":"inactive"]}>Tue 13 May</a>
+                <a href="/live/wednesday" class:list={[day == "wednesday"?"active":"inactive"]}>Wed 14 May</a>
+            </div>
+
+            <slot />
+        </div>
+
+        <div class="footer-nav">
+            <span>You are currently on <b>{day == "tuesday"? "Tuesday 13 May":"Wednesday 14 May"}</b>'s stream page.</span>
+
+            <div class="buttons">
+                <Button link={day == "tuesday"?"/live/wednesday":"/live/tuesday"}>
+                    {day == "tuesday"? "Wednesday": "Tuesday"}'s stream
+                </Button>
+                <Button link="/overview">
+                    Week overview
+                </Button>
+            </div>
+        </div>
+    </div>
+</CommonLayout>
+
+<style lang="scss">
+
+@use '../styles/variables.scss';
+
+.live {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .tabbar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        gap: 1em;
+
+        a {
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0em 0.5em;
+
+            &.active {
+                border-bottom: 4px solid variables.$color-red-400;
+            }
+            &.inactive {
+                border-bottom: 4px solid transparent;
+            }
+        }
+
+        margin: 1em 0em;
+    }
+
+    .slot {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: min(80ch, 90vw);
+    }
+
+    .footer-nav {
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 1em;
+
+
+            flex-wrap: wrap;
+        }
+
+        text-align: center;
+        margin-top: 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+}
+
+</style>

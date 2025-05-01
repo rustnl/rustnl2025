@@ -70,7 +70,9 @@ const { withLogo = false, withoutMenu = false }: Props = Astro.props;
       }
     }
 
-    document.addEventListener('scroll', scrollHanlde);
+    if (hero && header) {
+        document.addEventListener('scroll', scrollHanlde);
+    }
 </script>
 
 <style is:global>

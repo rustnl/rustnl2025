@@ -3,21 +3,28 @@ import CommonLayout from "./CommonLayout.astro";
 import OneColumnText from "../components/OneColumnText.astro";
 import Button from "../components/Button.astro";
 import Divider from "../components/Divider.astro";
-import EventTracks from "../components/event/EventTracks.astro";
+import SubEvents from "../components/event/SubEvents.astro";
 import Event from "../components/event/Event.astro";
 import "../styles/index.scss";
 
 const tracks = await Astro.glob("../pages/events/tracks/*.md");
+const activities = await Astro.glob("../pages/events/activities/*.md");
 const { frontmatter } = Astro.props;
-const { title } = frontmatter;
-
+const { title, hasActivities, hasTracks, dates } = frontmatter;
 ---
 
 <CommonLayout title={title} withLogo>
     <OneColumnText>
         <Event {...frontmatter}>
             <slot />
-            <EventTracks tracks={tracks} date={frontmatter.dates[0]} />
+            {hasTracks && <SubEvents tracks={tracks} date={dates[0]} />}
+            {
+                dates.map((date: any) => (
+                    hasActivities && (
+                        <SubEvents tracks={activities} date={date} />
+                    )
+                ))
+            }
         </Event>
     </OneColumnText>
     <OneColumnText class="space-y-12">
@@ -29,5 +36,5 @@ const { title } = frontmatter;
 </CommonLayout>
 
 <style lang="scss">
-      @use '../styles/variables.scss';
+    @use "../styles/variables.scss";
 </style>

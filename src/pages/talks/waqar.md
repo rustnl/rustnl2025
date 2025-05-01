@@ -7,6 +7,7 @@ talkTitle: "Breaking Speed Limits: Rust and the Next-Gen S3 Transfer Manager"
 talkLevel: "All"
 talkTags: ["networking", "cloud-computing", "s3", "data-transfer", "systems-programming", "c-to-rust", "optimization", "rust", "performance"]
 talkDuration: 30 # 15 or 30 min
+draft: true
 
 speakers: [{
     name: "Waqar Ahmed Khan",

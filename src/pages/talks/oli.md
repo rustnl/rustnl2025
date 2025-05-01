@@ -11,7 +11,7 @@ speakers: [
         name: "Oli Scherer",
         title: "Senior Rust Compiler Engineer at AWS",
         org: "",
-        image: "",
+        image: "oli.jpg",
         url: "",
         linkedin: "",
         twitter: "",

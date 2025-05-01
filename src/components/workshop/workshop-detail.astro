@@ -21,10 +21,10 @@ const clockIcon = icon({ prefix: 'fas', iconName: faClock.iconName });
   <div class="space-y-6">
     <div>
       {hasTitle && <h2 id={slug}>{title}</h2>}
-      <div class="workshop-detail-item">
+      <!-- <div class="workshop-detail-item">
         <div class="icon"><Fragment set:html={clockIcon.html} /></div>
         <span>{time}</span>
-      </div>
+      </div> -->
     </div>
     {!full && <p>{abstract}</p>}
     {full && <div class="space-y-6" set:html={description} />}

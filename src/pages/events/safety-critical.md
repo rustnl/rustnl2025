@@ -11,9 +11,6 @@ invite: true
 detailLink: https://github.com/rustfoundation/safety-critical-rust-consortium
 scheduleLink: null
 published: true
-image:
-    path: ''
-    alt: ''
 ---
 
 The Safety-Critical Rust Consortium, backed by the Rust Foundation, aims to foster responsible use of the Rust programming language within safety-critical software.

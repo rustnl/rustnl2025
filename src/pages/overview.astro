@@ -2,18 +2,20 @@
 import CommonLayout from "../layouts/CommonLayout.astro";
 import MainSchedule from "../components/schedule/MainSchedule.astro";
 import OneColumnText from "../components/OneColumnText.astro";
-import EventTracks from "../components/event/EventTracks.astro";
 import Event from "../components/event/Event.astro";
+import SubEventList from "src/components/event/SubEventList.astro";
 
 const tracks = await Astro.glob("../pages/events/tracks/*.md");
+const activities = await Astro.glob("../pages/events/activities/*.md");
 let events = await Astro.glob("../pages/events/*.md");
 events
+    .sort((a, b) => a.frontmatter.dates.length - b.frontmatter.dates.length)
     .sort(
         (a, b) =>
-            Date.parse(a.frontmatter.dates[0] + " " + a.frontmatter.startTime) -
-            Date.parse(b.frontmatter.dates[0] + " " + b.frontmatter.startTime),
-    )
-    .sort((a, b) => a.frontmatter.dates.length - b.frontmatter.dates.length);
+            Date.parse(a.frontmatter.dates[0]) -
+            Date.parse(b.frontmatter.dates[0]),
+    );
+
 events = events.filter((event) => event.frontmatter.published == true);
 ---
 
@@ -25,29 +27,27 @@ events = events.filter((event) => event.frontmatter.published == true);
                     >week schedule</strong
                 >.
                 <br />
-                Below the schedule you can find a <strong>full list</strong> of all (sub)events and tracks.
+                Below the schedule you can find a <strong>full list</strong> of all
+                (sub)events and tracks.
             </p>
         </OneColumnText>
+    </section>
 
-        <MainSchedule />
+    <MainSchedule />
 
+    <section class="overview space-y-12 py-12">
         <OneColumnText>
             <h2 id="list">List of events</h2>
             {
                 events.map((event) => (
                     <Event summary {...event.frontmatter} id={event.url}>
-                        <ul>
-                        {tracks
-                            .filter(
-                                (track: any) =>
-                                    track.frontmatter.dates.includes(
-                                        event.frontmatter.dates[0],
-                                    ) == true,
-                            )
-                            .map((track: any) => (
-                                <li>{track.frontmatter.title}</li>
-                            ))}
-                            </ul>
+                        { event.frontmatter.hasTracks &&
+                            <SubEventList subevents={tracks} dates={event.frontmatter.dates} />
+                        }
+                        { event.frontmatter.hasActivities &&
+                            <SubEventList subevents={activities} dates={event.frontmatter.dates} />
+                            
+                        }
                     </Event>
                 ))
             }

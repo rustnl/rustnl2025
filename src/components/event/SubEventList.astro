@@ -1,0 +1,23 @@
+---
+interface Props {
+    subevents: any[];
+    dates: string;
+}
+
+const { subevents, dates } = Astro.props;
+---
+
+{
+    (
+        <ul>
+            {subevents
+                .filter(
+                    (subevent: any) =>
+                        dates.includes(subevent.frontmatter.dates[0]) == true && subevent.frontmatter.published == true,
+                )
+                .map((subevent: any) => (
+                    <li>{subevent.frontmatter.title}</li>
+                ))}
+        </ul>
+    )
+}

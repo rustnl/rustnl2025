@@ -7,7 +7,6 @@ import OneColumnText from "../components/OneColumnText.astro";
 
 <CommonLayout title="About" header="About" withLogo>
     <OneColumnText>
-        
         <p>
             Stichting Rust Nederland, RustNL for short, is a non-profit that
             strives to promote the implementation of the Rust programming
@@ -26,46 +25,195 @@ import OneColumnText from "../components/OneColumnText.astro";
             Questions? Reach out to us via <a href="mailto:2025@rustnl.org">2025@rustnl.org</a>
         </p>
     </OneColumnText>
-    <h2 class="text-center py-12" id="organisers">RustWeek 2025 team</h2>
-    <PeopleList>
-        <Person
-            name="Erik Jonkers"
-            image="erik.jpg"
-            title="Board member of the RustNL foundation and Director of Open Source of software agency Tweede golf."
-            tile
-        />
-        <Person
-            name="Laura Pircalaboiu"
-            image="laura.png"
-            title="Embedded software engineer at Q*Bird"
-            tile
-        />
-        <Person
-            name="Jana Dönszelmann"
-            image="jana.png"
-            title="Lecturer in Embedded Systems at Delft University of Technology and founder of Hexcat"
-            tile
-        />
-        <Person
-            name="Terts Diepraam"
-            image="terts.png"
-            title="Maintainer on Uutils and Software Engineer at NLnet Labs"
-            tile
-        />
-        <Person
-            name="Mara Bos"
-            image="mara.jpg"
-            title="Rust leadership council and founder of Hexcat"
-            tile
-        />
-    </PeopleList>
-    <!-- <h2 class="text-center py-12">Volunteers</h2>
-    <PeopleList>
-        <Person
-            name="Name"
-            image="empty.png"
-            title="Description"
-            tile
-        />
-    </PeopleList> -->
+    <div class="people">
+        <h2 class="text-center py-12" id="organisers">RustWeek 2025 team</h2>
+        <PeopleList>
+            <Person
+                name="Erik Jonkers"
+                image="erik.jpg"
+                title="Board member of the RustNL foundation and Director of Open Source of software agency Tweede golf."
+                tracks={["organisation"]}
+                smalltile
+            />
+            <Person
+                name="Laura Pircalaboiu"
+                image="laura.png"
+                title="Embedded software engineer at Q*Bird"
+                tracks={["organisation"]}
+                smalltile
+            />
+            <Person
+                name="Jana Dönszelmann"
+                image="jana.png"
+                title="Lecturer in Embedded Systems at Delft University of Technology and founder of Hexcat"
+                tracks={["organisation"]}
+                smalltile
+            />
+            <Person
+                name="Terts Diepraam"
+                image="terts.png"
+                title="Maintainer on Uutils and Software Engineer at NLnet Labs"
+                tracks={["organisation", "mc"]}
+                smalltile
+            />
+            <Person
+                name="Mara Bos"
+                image="mara.jpg"
+                title="Rust leadership council and founder of Hexcat"
+                tracks={["organisation", "mc"]}
+                smalltile
+            />
+        </PeopleList>
+
+        <h2 class="text-center py-12">Volunteers</h2>
+        <p>
+            RustWeek would not be possible without the incredible help from our volunteers before and during the event.
+        </p>
+        <PeopleList>
+            <Person
+                name="Alex Band"
+                image="alex.jpg"
+                tracks={["mc"]}
+                smalltile
+            />
+            <Person
+                name="Stefan Baumgartner"
+                image="stefan.jpeg"
+                tracks={["mc"]}
+                smalltile
+            />
+           <Person
+                name="Jonathan Brouwer"
+                image="jonathanb.png"
+                tracks={["on-site assistance"]}
+                smalltile
+            />
+            <Person
+                name="James Daly"
+                github="https://github.com/jamsiedaly"
+                tracks={["mc"]}
+                smalltile
+            />
+            <Person
+                name="Matthias Endler"
+                image="matthias.jpg"
+                tracks={["mc"]}
+                smalltile
+            />
+            <Person
+                name="Wouter Geraedts"
+                image="wouter.jpeg"
+                github="https://github.com/wassasin"
+                tracks={["mc"]}
+                smalltile
+            />
+           <Person
+                name="Martijn Gribnau"
+                image="martijngribnau.jpg"
+                tracks={["on-site assistance"]}
+                smalltile
+            />
+            <Person
+                name="Julius Gvozdiovas"
+                image="julius-g.jpg"
+                tracks={["on-site assistance"]}
+                smalltile
+            />
+           <Person
+                name="Lucas Holten"
+                image="lucasholten.jpg"
+                tracks={["on-site assistance"]}
+                smalltile
+            />
+            <Person
+                name="Josine Kamperman"
+                image="josinekamperman.jpg"
+                tracks={["logistics"]}
+                smalltile
+            />
+           <Person
+                name="Arya Khanna"
+                image="arya.png"
+                tracks={["on-site assistance"]}
+                smalltile
+            />
+           <Person
+                name="Karin Lammers"
+                image="karinlammers.jpg"
+                tracks={["on-site assistance"]}
+                smalltile
+            />
+            <Person
+                name="George Hellouin de Menibus"
+                image=""
+                tracks={["on-site assistance"]}
+                smalltile
+            />
+            <Person
+                name="Dirkjan Ochtman"
+                image="dirkjan.png"
+                smalltile
+            />
+            <Person
+                name="Paige Losare-Lusby"
+                image="paige.png"
+                tracks={["design"]}
+                smalltile
+            />
+            <Person
+                name="Hugo van de Pol"
+                github="https://github.com/hugovandepol"
+                tracks={["mc"]}
+                smalltile
+            />
+            <Person
+                name="Grafische Republiek (Goran & Erwin)"
+                tracks={["design"]}
+                smalltile
+            />
+            <Person
+                name="Liset Roos"
+                image="liset.jpg"
+                tracks={["social media"]}
+                smalltile
+            />
+           <Person
+                name="Anne Stijns"
+                image="annestijns.jpg"
+                tracks={["on-site assistance"]}
+                smalltile
+            />
+            <Person
+                name="Ricardo Vogel"
+                image="ricardovogel.jpg"
+                tracks={["on-site assistance"]}
+                smalltile
+            />
+
+
+            <!-- <Person -->
+            <!--     name="Pepijn" -->
+            <!--     image="" -->
+            <!--     tracks={["on-site assistance"]} -->
+            <!--     smalltile -->
+            <!-- /> -->
+            <!-- <Person -->
+            <!--     name="Kajetan Neumann" -->
+            <!--     image="" -->
+            <!--     tracks={["on-site assistance"]} -->
+            <!--     smalltile -->
+            <!-- /> -->
+
+            <!-- <Person -->
+            <!--     name="James Munns" -->
+            <!--     image="james.png" -->
+            <!--     tracks={["mc"]} -->
+            <!--     smalltile -->
+            <!-- /> -->
+        </PeopleList>
+    </div>
 </CommonLayout>
+
+<style lang="scss">
+    
+</style>

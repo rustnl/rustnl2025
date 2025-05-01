@@ -1,6 +1,7 @@
 ---
 layout: "../../layouts/EventLayout.astro"
 title: 'Conference day 2'
+hasTracks: true
 venue: 
     name: 'Kinepolis'
     link: /kinepolis
@@ -10,9 +11,6 @@ startTime: "08:30"
 detailLink: /schedule/wednesday
 scheduleLink: null
 published: true
-image:
-    path: ''
-    alt: ''
 ---
 
-Day 2 of the conference has three tracks, the **Main track** (Room 12, ~ 600p), the **Deep Dive track** (Room 11, ~ 150p) and the **Rust Project track** (Room 10, ~ 120p).
+Day 2 of the conference has three tracks, the Main track, the Deep Dive track and the Rust Project track.

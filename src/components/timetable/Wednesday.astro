@@ -4,21 +4,10 @@ import Divider from "./Divider.astro";
 import Timetable from "./Timetable.astro";
 import TrackIndicator from "./TrackIndicator.astro";
 
-const main = "Cinema 12";
-const secondary = "Cinema 11";
-const tertiary = "Cinema 9";
-
-const breaks = [
-    "0:00 - 8:30",
-    "8:30 - 9:30",
-    "11:00 - 11:40",
-    "12:45 - 14:00",
-    "15:50 - 16:20",
-    "17:40 - 19:00",
-];
+import {breaks, main, secondary, tertiary} from "./data.ts";
 ---
 
-<Timetable breaks={breaks}>
+<Timetable breaks={breaks["wednesday"]} {...Astro.props}>
     <Divider start="8:30" end="9:30">Doors open & registration</Divider>
     <TrackIndicator afterDivider="9:30" track="Main track" color="yellow" first />
     <Item
@@ -158,7 +147,7 @@ const breaks = [
         room={main}
     />
     <Item
-        talk="waqar"
+        talk="martinkooij"
         color="yellow"
         track={1}
         time="14:45"
@@ -183,7 +172,7 @@ const breaks = [
         room={secondary}
     />
     <Item
-        talk="noah"
+        talk="arthurcohen"
         color="blue"
         track={2}
         time="14:45"

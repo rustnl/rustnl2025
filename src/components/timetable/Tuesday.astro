@@ -4,25 +4,17 @@ import MultiItem from "./MultiItem.astro";
 import Divider from "./Divider.astro";
 import Timetable from "./Timetable.astro";
 import TrackIndicator from "./TrackIndicator.astro";
-
-const main = "Cinema 12";
-const secondary = "Cinema 11";
-const tertiary = "Cinema 9";
-const quaternary = "Reception Area";
-
-const breaks = [
-    "0:00 - 8:30",
-    "8:30 - 9:30",
-    "11:00 - 11:40",
-    "12:45 - 14:00",
-    "15:50 - 16:20",
-    "17:40 - 19:00",
-];
+import { breaks, main, secondary, tertiary, quaternary } from "./data.ts";
 ---
 
-<Timetable breaks={breaks}>
+<Timetable breaks={breaks["tuesday"]} {...Astro.props}>
     <Divider start="8:30" end="9:30">Doors open & registration</Divider>
-    <TrackIndicator afterDivider="9:30" track="Main track" color="yellow" first />
+    <TrackIndicator
+        afterDivider="9:30"
+        track="Main track"
+        color="yellow"
+        first
+    />
     <Item
         title="Opening"
         color="yellow"
@@ -47,7 +39,12 @@ const breaks = [
         duration={35}
         room={main}
     />
-    <TrackIndicator afterDivider="9:30" track="Ecosystem track" color="blue" first />
+    <TrackIndicator
+        afterDivider="9:30"
+        track="Ecosystem track"
+        color="blue"
+        first
+    />
     <Item
         title="Opening"
         color="blue"
@@ -66,19 +63,20 @@ const breaks = [
         room={secondary}
     />
     <MultiItem
-        talks={Array(3).fill({
-            speaker: "",
-            title: "GOSIM spotlight",
-            image: "",
-        })}
+        talks={["gu", "denis"]}
         color="blue"
         track={2}
         time="10:25"
         duration={35}
         room={secondary}
-        striped
+        ticket="GOSIM Spotlight"
     />
-    <TrackIndicator afterDivider="9:30" track="Industry track" color="red" first />
+    <TrackIndicator
+        afterDivider="9:30"
+        track="Industry track"
+        color="red"
+        first
+    />
     <Item
         title="Opening & registration"
         color="red"
@@ -86,20 +84,18 @@ const breaks = [
         time="9:30"
         duration={30}
         room={tertiary}
-        ticket="Industry"
-        url="industry"
+        ticket="Industry ticket required"
+        url="/industry"
     />
     <Item
         title="Our Vision for Rust"
-        speakers={[
-            { name: "Niko Matsakis", image: "niko.png" },
-        ]}
+        speakers={[{ name: "Niko Matsakis", image: "niko.png" }]}
         color="red"
         track={3}
         time="10:00"
         duration={20}
         room={tertiary}
-        ticket="Industry"
+        ticket="Industry ticket required"
     />
     <Item
         talk="julius"
@@ -108,7 +104,7 @@ const breaks = [
         time="10:20"
         duration={20}
         room={tertiary}
-        ticket="Industry"
+        ticket="Industry ticket required"
     />
     <Item
         talk="mark"
@@ -117,7 +113,7 @@ const breaks = [
         time="10:40"
         duration={20}
         room={tertiary}
-        ticket="Industry"
+        ticket="Industry ticket required"
     />
     <Divider start="11:00" end="11:40"> Break </Divider>
     <TrackIndicator afterDivider="11:40" track="Main track" color="yellow" />
@@ -146,18 +142,14 @@ const breaks = [
         duration={35}
         room={secondary}
     />
-    <MultiItem
-        talks={Array(1).fill({
-            speaker: "",
-            title: "GOSIM spotlight",
-            image: "",
-        })}
+    <Item
+        talk="david"
         color="blue"
         track={2}
         time="12:25"
         duration={20}
         room={secondary}
-        striped
+        ticket="GOSIM Spotlight"
     />
     <TrackIndicator afterDivider="11:40" track="Industry track" color="red" />
     <Item
@@ -168,8 +160,8 @@ const breaks = [
         duration={50}
         room={quaternary}
         description="Choose a topic and learn from a seasoned Rust expert as well as your industry peers."
-        ticket="Industry"
-        url="industry"
+        ticket="Industry ticket required"
+        url="/industry"
     />
     <Item
         title="Expert Tables recap"
@@ -178,8 +170,8 @@ const breaks = [
         time="12:30"
         duration={15}
         room={tertiary}
-        ticket="Industry"
-        url="industry"
+        ticket="Industry ticket required"
+        url="/industry"
     />
     <Divider start="12:45" end="14:00"> Lunch </Divider>
     <TrackIndicator afterDivider="14:00" track="Main track" color="yellow" />
@@ -217,27 +209,22 @@ const breaks = [
         room={secondary}
     />
     <MultiItem
-        talks={Array(3).fill({
-            speaker: "",
-            title: "GOSIM spotlight",
-            image: "",
-        })}
+        talks={["manuel", "xiaolong"]}
         color="blue"
         track={2}
         time="14:45"
         duration={35}
         room={secondary}
-        striped
+        ticket="GOSIM Spotlight"
     />
 
     <Item
-        title="Ecosystem track: Critical infrastructure (TBA)"
+        talk="aria"
         color="blue"
         track={2}
         time="15:30"
         duration={20}
         room={secondary}
-        striped
     />
     <TrackIndicator afterDivider="14:00" track="Industry track" color="red" />
     <Item
@@ -248,8 +235,8 @@ const breaks = [
         duration={60}
         room={quaternary}
         description="Choose a topic and learn from a seasoned Rust expert as well as your industry peers."
-        ticket="Industry"
-        url="industry"
+        ticket="Industry ticket required"
+        url="/industry"
     />
     <Item
         title="Expert Tables recap"
@@ -258,8 +245,8 @@ const breaks = [
         time="15:00"
         duration={15}
         room={tertiary}
-        ticket="Industry"
-        url="industry"
+        ticket="Industry ticket required"
+        url="/industry"
     />
     <Item
         talk="jeffrey"
@@ -268,7 +255,7 @@ const breaks = [
         time="15:15"
         duration={30}
         room={tertiary}
-        ticket="Industry"
+        ticket="Industry ticket required"
     />
     <Divider start="15:50" end="16:20"> Break </Divider>
     <TrackIndicator afterDivider="16:20" track="Main track" color="yellow" />
@@ -298,11 +285,11 @@ const breaks = [
         room={secondary}
     />
     <MultiItem
-        talks={Array(3).fill({
-            speaker: "",
-            title: "GOSIM spotlight",
-            image: "",
-        })}
+        talks={[
+            "GOSIM Spotlight (TBD)",
+            "GOSIM Spotlight (TBD)",
+            "GOSIM Spotlight (TBD)",
+        ]}
         color="blue"
         track={2}
         time="17:05"

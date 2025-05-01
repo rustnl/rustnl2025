@@ -49,8 +49,8 @@ const trainers = await Astro.glob('../pages/people/trainers/*.md');
 
       <h3>Get your ticket!</h3>
       <p>
-          All workshops are held on <b>Thursday 15 May</b> from 9:00 to 13:00. The location is DUS Utrecht.<br />
-          Address: DUS, Sophialaan 1, Utrecht, The Netherlands.
+          All workshops are held on <b>Thursday 15 May</b> starting at 9:00.  
+          See the <strong><a href="/events/workshops">workshop event page</a></strong> for the location, time and other details.
       </p>
       <p>
         Workshop tickets are available in combination with a conference ticket,
@@ -58,10 +58,11 @@ const trainers = await Astro.glob('../pages/people/trainers/*.md');
         Employer-paid'.
       </p>
       <div class="space-y-3">
-        <Button
+        <!-- <Button
           link="https://www.eventbrite.nl/e/rustweek-2025-tickets-1001676961757?aff=oddtdtcreator"
           >Get your ticket</Button
-        >
+        > -->
+        <strong style="color:red;font-size: larger;">SOLD OUT</strong>
         <br /><br />
       </div>
     </div>
