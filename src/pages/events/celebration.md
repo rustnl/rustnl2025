@@ -19,4 +19,5 @@ Thursday May 15, 2025 is the 10 year celebration of Rust 1.0.
 
 We'll celebrate the occasion with Rust project team members, maintainers, sponsors and community members. The party includes the live release on stage of Rust 1.87!
 
-More details to be announced soon!
+[Details & tickets](/celebration)
+
