@@ -5,7 +5,7 @@ tracks:
 talkTitle: "The Rust Vision Doc and You"
 talkLevel: "Rust Project members and contributors"
 talkTags: ["vision"]
-talkDuration: 20
+talkDuration: 30
 speakers: [{
     name: "Niko Matsakis",
     image: "niko.png",
