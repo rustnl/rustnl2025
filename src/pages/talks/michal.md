@@ -10,7 +10,7 @@ talkDuration: 30 # 15 or 30 min
 
 speakers: [{
     name: "Michał “FractalFir” Kostrubiec",
-    image: null,
+    image: "michal.jpg",
     title: "",
     org: "",
     url: "https://fractalfir.github.io",
