@@ -1,4 +1,5 @@
 ---
+import Divider from "../Divider.astro";
 import EventDate from "./EventDate.astro";
 import EventLocation from "./EventLocation.astro";
 
@@ -54,6 +55,11 @@ const { tracks, date } = Astro.props;
                         </a>
                     </div>
                 )}
+                <div>
+                    <br />
+                    <br />
+                    <Divider />
+                </div>
             </div>
         ))
 }

@@ -3,7 +3,7 @@ title: 'Bowling at RustWeek'
 dates: ['2025-05-12']
 startTime: "14:00"
 venue: 
-    name: 'TBA'
+    name: 'Olround Utrecht, Mariaplaats 13A, Utrecht'
     link: null
 scheduleLink: null
 detailLink: https://www.meetup.com/rust-nederland/events/307676003/

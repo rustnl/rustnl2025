@@ -21,6 +21,7 @@ const { title, hasActivities, hasTracks, dates } = frontmatter;
             {
                 dates.map((date: any) => (
                     hasActivities && (
+                        <Divider />
                         <SubEvents tracks={activities} date={date} />
                     )
                 ))
