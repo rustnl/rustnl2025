@@ -12,4 +12,4 @@ published: true
 
 On Monday 12 May from 14:00 to 16:00 we've got reservations to go bowling!
 
-If you'd enjoy joining that after the pre-registration, sign up via the link below!
+If you'd enjoy joining that after the [pre-registration](/events/pre-registratioon), sign up via the link below!
