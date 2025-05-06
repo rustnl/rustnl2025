@@ -7,7 +7,7 @@ venue:
     link: /kinepolis
 scheduleLink: null
 detailLink: https://www.meetup.com/rust-nederland/events/307679174/
-published: true
+published: false
 ---
 
 Eric Seppanen will host a workshop to create your own rusty steel Rust logo!
