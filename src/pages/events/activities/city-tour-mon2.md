@@ -6,9 +6,14 @@ venue:
     name: 'Kinepolis'
     link: /kinepolis
 scheduleLink: null
-detailLink: null
+detailLink: https://www.meetup.com/rust-nederland/events/307661412/?eventOrigin=group_upcoming_events
 published: true
 ---
 
-Discover Utrecht through a (free!) guided tour. 
-More details about this tour (14:00) will be published on our meetup.com page soon!
+Discover Utrecht on foot with our friendly tour guides! This tour will take place at 14:00 AM on Monday, the 12th of May, and will take one and a half hours (until 15:30 AM). 
+
+The tour starts at Kinepolis (the conference venue) and is free of charge for RustWeek attendees. 
+
+Pro-tip: you can pick-up your conference badge before the tour starts; the [pre-registation](/events/pre-registration) is from 11:00 to 14:00.
+
+Join the tour via the link below.
