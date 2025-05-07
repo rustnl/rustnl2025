@@ -8,6 +8,11 @@ import Event from "../components/event/Event.astro";
 import "../styles/index.scss";
 
 const tracks = await Astro.glob("../pages/events/tracks/*.md");
+
+tracks.sort((a, b) => {
+    return (a.frontmatter.priority ?? 1) - (b.frontmatter.priority ?? 1)
+});
+
 const activities = await Astro.glob("../pages/events/activities/*.md");
 const { frontmatter } = Astro.props;
 const { title, hasActivities, hasTracks, dates } = frontmatter;

@@ -33,8 +33,15 @@ The talks will be held in cinema rooms, which has a couple of amazing features. 
 
 The catering area, called Speys, is a huge space; perfect for eating and socializing, and hosting our sponsor's booths. It allows for 1200 people, which is more than enough for the 800 attendees we hope to welcome. There will seats, tables and power outlets for everyone to talk, code and hang out. Lunch, snacks, and drinks are, of course, included with your ticket.
 
-<img style="width: 100%" src="/images/venues/kinepolis/Speys_01-1920px.jpg">
 <img style="width: 100%" src="/images/venues/kinepolis/Speys_03-1920px.jpg">
+
+<span id="mezzanine"><span>
+
+### Mezzanine floor
+
+In the catering area, on the mezzanine floor, you can come meet the [GOSIM finalists](/gosim-spotlight-speakers).
+
+<img style="width: 100%" src="/images/venues/kinepolis/Speys_01-1920px.jpg">
 
 
 ## Getting there

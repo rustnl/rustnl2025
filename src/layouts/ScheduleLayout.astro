@@ -20,6 +20,9 @@ const {day}: Props = Astro.props;
 
                     <!-- You can also watch streams of these tracks <a href={`/live/${day}`}>here</a> -->
                 </p>
+                <p>
+                    For descriptions of the tracks and other activities on this day, <a href={day == "tuesday" ? "/events/conf-day1" : "/events/conf-day2" }>see this page</a>.
+                </p>
             </div>
 
             <div class="tabbar">

@@ -13,7 +13,7 @@ const { subevents, dates } = Astro.props;
             {subevents
                 .filter(
                     (subevent: any) =>
-                        dates.includes(subevent.frontmatter.dates[0]) == true && subevent.frontmatter.published == true,
+                        subevent.frontmatter.dates.some((d: string) => dates.includes(d)) == true && subevent.frontmatter.published == true,
                 )
                 .map((subevent: any) => (
                     <li>{subevent.frontmatter.title}</li>

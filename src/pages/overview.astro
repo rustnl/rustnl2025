@@ -4,8 +4,14 @@ import MainSchedule from "../components/schedule/MainSchedule.astro";
 import OneColumnText from "../components/OneColumnText.astro";
 import Event from "../components/event/Event.astro";
 import SubEventList from "src/components/event/SubEventList.astro";
+import { bigint } from "astro:schema";
 
 const tracks = await Astro.glob("../pages/events/tracks/*.md");
+
+tracks.sort((a, b) => {
+    return (a.frontmatter.priority ?? 1) - (b.frontmatter.priority ?? 1)
+});
+
 const activities = await Astro.glob("../pages/events/activities/*.md");
 let events = await Astro.glob("../pages/events/*.md");
 events
