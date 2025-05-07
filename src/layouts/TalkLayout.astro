@@ -65,9 +65,13 @@ const ignore = draft? {"data-pagefind-ignore": "all"}: {}
               </Button>
             )
           }
-          <Button link=`/schedule/${day}/#${url.split('/').pop()}`>
-            Find in timetable
-          </Button>
+          {
+            day && (
+              <Button link=`/schedule/${day}/#${url.split('/').pop()}`>
+                Find in timetable
+              </Button>
+            )
+          }
         </div>
       </div>
     </div>

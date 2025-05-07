@@ -5,7 +5,6 @@ tracks:
  - ecosystem
  - gosim-spotlight
 talkTitle: "AccessKit"
-talkLevel: "All"
 talkTags: ["GOSIM Spotlight"]
 talkDuration: 10
 
@@ -21,7 +20,7 @@ speakers: [{
     mastodon: "https://fosstodon.org/@DataTriny",
     github: "https://github.com/DataTriny",
 }]
-day: "tuesday"
+day: null
 ---
 
 Arnold has been selected for the GOSIM spotlight for his work on AccessKit, but won't be presenting as there is [another talk about AccessKit at the conference](/talks/matt).
