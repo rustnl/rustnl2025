@@ -9,6 +9,7 @@ startTime: "9:30"
 detailLink: null
 scheduleLink: null
 published: true
+priority: 2
 ---
 
 The finalist from the GOSIM Spotlight will be at the Mezzanine Floor to discuss their projects! Swing by to talk with them!

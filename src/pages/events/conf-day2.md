@@ -2,7 +2,6 @@
 layout: "../../layouts/EventLayout.astro"
 title: 'Conference day 2'
 hasTracks: true
-hasActivities: true
 venue: 
     name: 'Kinepolis'
     link: /kinepolis
