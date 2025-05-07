@@ -17,3 +17,10 @@ The finalist from the GOSIM Spotlight will be at the Mezzanine Floor to discuss 
 The **GOSIM Spotlight** offers early-stage Rust projects a unique opportunity to shine at RustWeek 2025 and present their work. Finalists will receive travel grant to attend the RustWeek conference.
 
 Learn more on the [GOSIM Rust Spotlight website](https://spotlight.gosim.org/rust2025).
+
+<div style="text-align: center;">
+    <img
+    style="width: 50%; max-width: 14rem"
+    src="/images/sponsors/gosim-spotlight-badge.svg"
+    />
+</div>
