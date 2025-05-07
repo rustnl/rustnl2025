@@ -12,7 +12,7 @@ speakers: [
         name: "Manuel Drehwald",
         title: "Master's student",
         org: "University of Toronto",
-        image: null,
+        image: "manuel_drehwald.jpeg",
         url: "",
         linkedin: "https://www.linkedin.com/in/manuel-drehwald/",
         twitter: "",
