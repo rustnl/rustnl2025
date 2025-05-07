@@ -24,7 +24,7 @@ speakers: [{
 day: "tuesday"
 ---
 
-Arnold has been selected for the GOSIM spotlight for his work on AccessKit, but won't be presenting as there is [another talk about AccessKit at the conference](./matt).
+Arnold has been selected for the GOSIM spotlight for his work on AccessKit, but won't be presenting as there is [another talk about AccessKit at the conference](/talks/matt).
 
 ////// <!-- sepatator between abstract and bio -->
 
