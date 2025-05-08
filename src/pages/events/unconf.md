@@ -15,4 +15,4 @@ published: true
 
 The RustWeek unconference is an invite-only event for Rust maintainers.
 
-The goal of the unconference is to facilitate maintainers to work together in-person, to collaborate with other maintainer groups and with members of Rust project teams.
+The goal of the unconference is to facilitate maintainers to work together in-person, including cross-collaboration with other maintainer groups and with members of Rust project teams.

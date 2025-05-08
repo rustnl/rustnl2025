@@ -6,7 +6,7 @@ slug: "unconf-intro"
 
 The RustWeek unconference is an invite-only event for Rust maintainers, on Fri May 16 & Sat May 17.
 
-The goal of the unconference is to facilitate maintainers to work together in-person, to collaborate with other maintainer groups and with members of Rust project teams.
+The goal of the unconference is to facilitate maintainers to work together in-person, including cross-collaboration with other maintainer groups and with members of Rust project teams.
 
 The unconf is part of [RustWeek 2025](/), held in Utrecht, The Netherlands from May 12 - 17.  
 

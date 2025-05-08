@@ -10,27 +10,31 @@ import Divider from "../components/Divider.astro";
 const unconfIntro = await Astro.glob("./unconf-intro.md");
 ---
 
-<CommonLayout title="Unconf participants guide" header="Unconf participants guide" withLogo>
+<CommonLayout
+    title="Unconf participants guide"
+    header="Unconf participants guide"
+    withLogo
+>
     <section class="md:grid md:cols-12">
         <div
             class="abouttext text-center md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
             style="font-size: smaller;"
         >
             <a href="#venue">Venue</a> &bullet;
-            <a href="#unconf-details">Unconf days</a> &bullet;
-            <a href="#group-leaders">Group leaders</a> &bullet;
+            <a href="#unconf-details">Unconf schedule</a> &bullet;
+            <a href="#rooms">Rooms</a> &bullet;
+            <a href="#all-hands">All-Hands</a> &bullet;
             <a href="#sponsors">Sponsors</a> &bullet;
+            <a href="#group-leaders">Group leaders</a> &bullet;
             <a href="#travel">Travel</a> &bullet;
-            <a href="#questions">Questions</a>
         </div>
         <div
             class="abouttext md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
             set:html={unconfIntro[0].compiledContent()}
-        >
-        </div>
+        />
         <div
             class="abouttext md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10"
-        >   
+        >
             <p
                 style="border: 1px solid black; padding: 1rem; font-style: italic; font-size: smaller;"
             >
@@ -44,9 +48,14 @@ const unconfIntro = await Astro.glob("./unconf-intro.md");
                 Address: DUS, Sophialaan 1, Utrecht, The Netherlands.
             </p>
             <p>
-                See the <a href="#floorplan">floor plan</a> and <a href="#rooms"
-                    >rooms</a
-                > section for more details.
+                <strong>Getting there</strong><br />
+                See the <a href="/dus">DUS venue page</a> on how to reach the venue
+                by car, bike, public transport or the RustWeek DUS-BUS.<br />
+            </p>
+            <p>
+                See the <a href="#floorplan">venue layout</a> and <a
+                    href="#rooms">room assignments</a
+                > section for more details about the venue.
             </p>
         </div>
     </section>
@@ -63,14 +72,12 @@ const unconfIntro = await Astro.glob("./unconf-intro.md");
     <section class="anchor" id="schedule">
         <UnconfSchedule />
     </section>
-    <section
-        class="md:grid md:cols-12 py-12"
-    >
+    <section class="md:grid md:cols-12 py-12">
         <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10">
             <p>
-            <b>Location:</b>
-            Tuesday and Wednesday are at <a href="/kinepolis">Kinepolis</a>.
-            Thursday, Friday and Saturday are at <a href="/dus">DUS</a>.
+                <b>Location:</b>
+                Tuesday and Wednesday are at <a href="/kinepolis">Kinepolis</a>.
+                Thursday, Friday and Saturday are at <a href="/dus">DUS</a>.
             </p>
             <p>
                 RustWeek 2025 includes social activities organised by and for
@@ -83,15 +90,11 @@ const unconfIntro = await Astro.glob("./unconf-intro.md");
             <h2 id="conf">Conference (Tue + Wed)</h2>
             <p>
                 The 2-day conference is held next to the Utrecht Central Station
-                at Kinepolis Jaarbeurs (not the same venue as the unconf!), on
-                Tuesday and Wednesday.
+                at Kinepolis Jaarbeurs on Tuesday and Wednesday.
             </p>
             <p>
                 On Tuesday one of the tracks, the Ecosystem track, has one
-                reserved talk for each unconf group. The group can suggest a
-                talk, which can be any topic. It could be a deep-dive
-                functioning as a warm-up for discussions at the unconf or a talk
-                about how to join your community and start contributing.
+                reserved talk slot for each unconf group.
             </p>
             <h2 id="celebration">Celebration (Thursday afternoon)</h2>
             <p>
@@ -110,39 +113,47 @@ const unconfIntro = await Astro.glob("./unconf-intro.md");
             </p>
             <h2 id="unconf-details">Unconf (Friday and Saturday)</h2>
             <p>
-            <b>Covid policy:</b> Please review our <a href="/covid-policy-all-hands-and-unconf">covid policy</a> for the unconf.
+                <b>Covid policy:</b> Please review our <a
+                    href="/covid-policy-all-hands-and-unconf">covid policy</a
+                > for the unconf.
             </p>
             <p>
-                The RustWeek unconf will begin on Friday. Other than a quick
-                plenary start of the unconf, each unconf group will have their
-                own schedule and their own dedicated rooms.
+                The RustWeek unconf will begin on Friday. There will be no
+                plenary start of the unconf, each unconf group runs their own
+                schedule in their own dedicated rooms.
             </p>
             <p>
-                RustNL, the organizer of RustWeek, will coordinate with your
-                group about the schedules and room assignments in advance, and
-                can assist to create opportunities for collaboration between your
-                group, other unconf groups and Rust project teams.
+                Schedule for both days:<br />
+                <ul style="font-family: monospace;font-size: smaller;">
+                    <li>09:00 - 09:30: Arrival and registration</li>
+                    <li>09:30 - 13:00: Unconf sessions</li>
+                    <li>13:00 - 14:00: Lunch</li>
+                    <li>14:00 - 17:30: Unconf sessions</li>
+                    <li>17:30 - 18:30: Drinks & departing from the venue</li>
+                </ul>
             </p>
             <p>
-                Of course, the group itself (not RustNL) decides on participants
-                and its topics on the two unconf days. What needs to be
-                coordinated with RustNL is the maximum size of the group and
-                other logistics. For questions, the contact person of your group
-                can reach out to Erik via erik@rustnl.org.
+                See the <a href="#venue">getting there</a> section for bus departure times.
+            </p>
+            <p>
+                For questions about logistics or other, your <a
+                    href="#group-leaders">group leader</a
+                > can reach out to Erik via erik@rustnl.org, or join the <a
+                    href="https://discord.gg/9ezhugbhAM">RustWeek discord</a
+                > and ask there.
             </p>
         </div>
     </section>
 
     <UnconfLeaders />
 
-    <section
-        class="md:grid md:cols-12 pt-12 pb-24"
-        id="floorplan"
-    >
+    <section class="md:grid md:cols-12 pt-12 pb-24" id="floorplan">
         <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10">
             <h2>Venue layout</h2>
             <p>
-                Below is the floor plan of the venue. More information can be found on the <a href="/dus#floor-plan">DUS venue page</a>.
+                The venue has a socializing and outdoor area, the All-Hands wing
+                (pink) and the Unconference wing (green). More information can
+                be found on the <a href="/dus#floor-plan">DUS venue page</a>.
             </p>
         </div>
         <div class="md:col-start-1 md:col-end-13 xl:col-start-2 xl:col-end-12">
@@ -156,53 +167,103 @@ const unconfIntro = await Astro.glob("./unconf-intro.md");
 
     <Divider />
 
-    <section
-        class="md:grid md:cols-12 py-12"
-    >
+    <section class="md:grid md:cols-12 py-12">
         <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10">
-            <h2>Co-located Rust project All-Hands</h2>
+            <h2 id="all-hands">Co-located Rust project All-Hands</h2>
             <p>
-                At the same venue, in the other wing of the same building, there
-                will be a parallel event: the Rust project All-Hands.
+                At the same venue, in the other wing of the same buliding, there
+                will be a parallel event: the Rust project's All-Hands.
             </p>
             <p>
-                This provides a great opportunity for collaboration. You can
-                invite Rust project members to hear about your Rust needs, or
-                you can ask to join one of the project team rooms to take part
-                in discussion about relevant new Rust features for your group.
+                Collaboration is encouraged, but please do <strong>not</strong> walk
+                into the All-Hands wing and sessions uninvited. The Rust All-Hands
+                is a private event with its own schedule and sessions.
             </p>
-            <h2 id="rooms">Rooms</h2>
             <p>
+                Feel free to invite Rust project members to your sessions. If
+                you want to join any of the sessions of the Rust All-Hands, or
+                organize joint sessions, feel free to ask Mara, who is
+                coordinating the Rust All-Hands.
+            </p>
+            <p>
+                <strong>Rooms</strong><br />
                 The venue has 20+ airconditioned rooms, of which 10 are reserved
-                for the unconf. For lunch and socializing there are big inside
-                (~350p) and outside areas.
+                for the unconf. For lunch and socializing there are big inside (~350p)
+                and outside areas.
             </p>
             <p>
                 Each unconf group will have a main room and a breakout room. The
-                room will have tables made out of cardboard that you can write
-                on, a whiteboard and/or flipover, and a large HDMI screen.
+                rooms will have tables made out of cardboard that you can write
+                on, a flipover, and each group's main room has a large HDMI
+                screen.
             </p>
         </div>
     </section>
     <LocationDusRooms />
+    <section class="md:grid md:cols-12 py-12">
+        <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10">
+            <h2 id="all-hands">Venue rooms</h2>
+            <p>
+                The venue has 20+ airconditioned rooms, of which 10 are reserved
+                for the unconf. For lunch and socializing there are big inside (~350p)
+                and outside areas.
+            </p>
+            <p>
+                Each unconf group will have a main room and a breakout room. The
+                rooms will have tables made out of cardboard that you can write
+                on, a flipover, and each group's main room has a large HDMI
+                screen.
+            </p>
+        </div>
+    </section>
+    <section class="md:grid md:cols-12 py-12">
+        <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10">
+            <h2 id="rooms">Room assignments</h2>
+            <br />
+            <ul>
+                <li>
+                    Rust Embedded Working Group: room 1 + breakout rooms 1a and
+                    1b
+                </li>
+                <li>Rust for Linux: breakout room 2</li>
+                <li>Bevy Engine: room 4 + breakout room 3</li>
+                <li>
+                    UI, App dev & Browser Summit: room 11 and breakout room 10
+                </li>
+                <li>Critical infrastructure: room 5 and breakout room 6</li>
+            </ul>
+            <p>
+                Please note that breakout rooms 2, 3 & 6 do <strong>not</strong>
+                have a screen.
+            </p>
+        </div>
+        <div class="md:col-start-1 md:col-end-13 xl:col-start-2 xl:col-end-12">
+            <img
+                style="width: 100%; margin-bottom: 2rem;"
+                src="/images/venues/dus-rooms-fri-sat.png"
+            />
+        </div>
+    </section>
     <section class="md:grid md:cols-12">
         <div class="md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10">
             <h2 id="travel">Travel and Hotel</h2>
             <p>
-                See the <a href="/#where">RustWeek 2025 homepage</a> for details
-                on the location of the conference and how to travel there.
+                See the <a href="/getting-there">Getting there page</a> for details
+                on travel to Utrecht.
             </p>
             <p>
-                For hotel recommendations see our <a href="/hotels">hotels page</a>.
+                For hotel recommendations see our <a href="/hotels"
+                    >hotels page</a
+                >.
             </p>
             <p>
-                RustNL can help cover part of cost for travel and stay for upto 5 participants in each unconf group. The compensation is reserved for participants that are not covered by their employer or other sponsor. Please contact your group's leader(s) for details.
+                RustNL can help cover part of cost for travel and stay for upto
+                5 participants in each unconf group. The compensation is
+                reserved for participants that are not covered by their employer
+                or other sponsor. Please contact your group's leader(s) for
+                details.
             </p>
             <h2 id="questions">Questions?</h2>
-            <p>
-                This page will be updated with more information in the following
-                weeks and months.
-            </p>
             <p>
                 If you have any logistical or organisational questions, please
                 reach out to Erik via erik@rustnl.org.
