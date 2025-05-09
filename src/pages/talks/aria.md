@@ -23,7 +23,12 @@ speakers: [{
 day: "tuesday"
 ---
 
-TBA
+Cargo makes it easy for Rust devs to install Rust programs,
+but what about Python devs?
+How do we build our binaries and help users install them on millions of machines we know nothing about?
+Learn the absolute heroics that Rustup does for you all and the secrets of cross-compiling Rust!
+
+
 
 ////// <!-- sepatator between abstract and bio -->
 
