@@ -9,7 +9,7 @@ talkTags: ["GOSIM Spotlight"]
 talkDuration: 10
 speakers: [
     {
-        name: "Denis Bazhedov",
+        name: "Denis Bazhenov",
         title: "Software Developer",
         org: "JetBrains",
         image: "denis.jpg",
