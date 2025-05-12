@@ -9,9 +9,11 @@ scheduleLink: null
 published: true
 ---
 
-Starting Monday, and running throughout the week there will be social activities in and around Utrecht.
+Starting Monday, and running throughout the week, there will be social activities in and around Utrecht.
 
-Do you have any suggestions for fun social activities with other Rustaceans? Let us know by filling out [this form](https://forms.gle/fKocgjB4x4TejQYV9).
+The list below shows the organized activities that require sign-up via meetup.com, like city tours.
 
-Join [our discord](https://discord.gg/9ezhugbhAM) to discuss social activities and find others before the event.
+### Even more on Discord!
+
+Join [our discord](https://discord.gg/9ezhugbhAM) for more social activities and to find others before the event.
 
