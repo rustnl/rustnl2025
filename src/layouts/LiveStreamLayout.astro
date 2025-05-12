@@ -24,6 +24,12 @@ const {day}: Props = Astro.props;
                 <a href="/live/wednesday" class:list={[day == "wednesday"?"active":"inactive"]}>Wed 14 May</a>
             </div>
 
+            <div class="buttons">
+                <Button link={"/schedule/" + day}>
+                    Schedule
+                </Button>
+            </div>
+
             <slot />
         </div>
 
@@ -31,11 +37,11 @@ const {day}: Props = Astro.props;
             <span>You are currently on <b>{day == "tuesday"? "Tuesday 13 May":"Wednesday 14 May"}</b>'s stream page.</span>
 
             <div class="buttons">
+                <Button link={"/schedule/" + day}>
+                    Schedule
+                </Button>
                 <Button link={day == "tuesday"?"/live/wednesday":"/live/tuesday"}>
                     {day == "tuesday"? "Wednesday": "Tuesday"}'s stream
-                </Button>
-                <Button link="/overview">
-                    Week overview
                 </Button>
             </div>
         </div>
