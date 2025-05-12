@@ -25,10 +25,9 @@ day: "wednesday"
 
 Unintentional breakage sucks for everyone involved. It's a sociotechnical
 problem, and we need to do better on both the "socio" and the "technical"
-parts. SemVer is a part of it, but just a small part: it doesn't cover ABI
-stability, some stability guarantees are fuzzy (does impl PartialOrd mean "some
-order exists" or "this specific order is guaranteed"?), some changes are
-"breaking but not major" etc. If running cargo update breaks my program, being
+parts. SemVer is a part of it, but just a small part: it doesn't cover
+all aspects of stability, some stability guarantees are fuzzy, some changes are
+"breaking but not major" etc. If running `cargo update` breaks my program, being
 told "sorry, that change was breaking but not major" isn't any consolation!
 
 Solving this will require a user-centric view of breakage. Acting upon that
@@ -37,7 +36,6 @@ will be in the room. At minimum: rustdoc, cargo, lang, compiler, libs,
 crates.io + docs.rs. That's a lot of people! But here we get to decide what the
 experience of using Rust in 2030 and beyond is like, and I'd like to make a
 pitch for why this investment will pay off spectacularly if we do it right.
-
 
 ////// <!-- sepatator between abstract and bio -->
 
