@@ -24,12 +24,6 @@ const {day}: Props = Astro.props;
                 <a href="/live/wednesday" class:list={[day == "wednesday"?"active":"inactive"]}>Wed 14 May</a>
             </div>
 
-            <div class="buttons">
-                <Button link={"/schedule/" + day}>
-                    Schedule
-                </Button>
-            </div>
-
             <slot />
         </div>
 
