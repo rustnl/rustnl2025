@@ -285,11 +285,7 @@ import { breaks, main, secondary, tertiary, quaternary } from "./data.ts";
         room={secondary}
     />
     <MultiItem
-        talks={[
-            "michal2",
-            "nadri",
-            "josh",
-        ]}
+        talks={["michal2", "nadri", "josh"]}
         color="blue"
         track={2}
         time="17:05"
@@ -307,19 +303,20 @@ import { breaks, main, secondary, tertiary, quaternary } from "./data.ts";
         color="purple"
         track={3}
         time="16:20"
-        duration={35}
+        duration={45}
         room={tertiary}
     />
-    <!--
     <Item
-        title="..."
+        title="Live Recording 'Accessibility and Rust'"
+        speakers={[
+            { name: "Luuk van der Duim", image: "empty.png" },
+            { name: "Matt Campbell", image: "matt-campbell.jpg" },
+        ]}
         color="purple"
         track={3}
         time="17:05"
         duration={35}
         room={tertiary}
-        striped
     />
-    -->
     <Divider start="17:40" end="19:00"> Drinks </Divider>
 </Timetable>
