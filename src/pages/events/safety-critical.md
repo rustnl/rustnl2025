@@ -4,7 +4,7 @@ title: 'Safety Critical Rust Consortium Meeting'
 venue: 
     name: 'DUS'
     link: /dus
-room: 'Space 8'
+room: 'Space 11'
 dates: ['2025-05-15']
 startTime: "09:00"
 invite: true
