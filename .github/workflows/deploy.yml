@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: 2025.rustnl.org
+      url: 2026.rustweek.org
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
